@@ -45,6 +45,14 @@ All files are in `out/<slug>/review/`.
    - Anything that simply looks low quality.
 4. Don't invent problems you can't see, and don't give style opinions as defects. If you can't tell, write "unclear" and say why.
 
+## Verification rounds (round 2+)
+
+If `manifest.json` has an `only` list, this is an incremental run: only those shots (and their events) were re-rendered after fixes. Your brief will name the previous report (in `out/<slug>/review_history/`).
+- Check **each earlier must-fix and should-fix row**: open its current image and mark it **fixed**, **not fixed** or **regressed**.
+- Open every strip and event image of the shots in `only` and look for new problems the fix may have caused, including continuity with the shot just before and after (open their strips too).
+- Don't re-review untouched shots; their images are from the earlier round.
+- Report table: add a **Status** column (fixed / not fixed / regressed / new). The verdict rules are the same.
+
 ## What to return
 
 Write `out/<slug>/review/reviewer_report.md` with one row per finding:
