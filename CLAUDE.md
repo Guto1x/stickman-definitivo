@@ -138,7 +138,9 @@ All files live in `public/episodes/<slug>/`.
       - grounding, camera snaps (position step or turn rate), pose snaps and teleports;
       - forced jump cuts, flow continuity, and unresolved word cues (cards included);
       - a camera outside the room walls. Interior sets declare `room`, and the engine pulls such a camera back in along its sight line, but the framing is then tighter than written.
-   2. `node tools/review.mjs <slug>` renders labelled review frames into `out/<slug>/review/`:
+   2. **Cheap pre-check first:** `node tools/sheet.mjs <slug>` tiles one still per key shot (opening, each new set, the hook; ~20 s) into `out/lab/<slug>_sheet.jpg`; or pass ids (`sheet.mjs <slug> c8,r6`). Look at it and fix the obvious (sunk or floating feet, empty frames, wrong set, unreadable text) before the full review; every fix here saves a reviewer round.
+
+      Then `node tools/review.mjs <slug>` renders labelled review frames into `out/<slug>/review/`:
       - every event (swap, jump, flow) as before / at / after frames, with name tags and dashed "expect X" markers;
       - every shot as a strip of four frames: the first frame after the cut, then early, late and end;
       - blank-frame detection: a near-uniform picture, such as a camera inside a wall, is listed under `blank` in the manifest and printed;
