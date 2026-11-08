@@ -1,56 +1,19 @@
 # Source of public/episodes/quem-tem-crush/episode.json — edit HERE, then run:
 #   .venv/Scripts/python -I tools/episodes/quem_tem_crush.py
 # (episode.json is regenerated from this file; hand edits to the JSON get overwritten.)
-import json
 import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # python -I drops the script dir
+from kit import *  # noqa: E402,F401,F403  (A, S, C, cam, crush, TALK, episode, load_timing, write, …)
 
 SLUG = 'quem-tem-crush'
 PINK = '#ff4f9a'
-shots = []
-
-
-def A(id, pos, rot=0, pose='stand', face='neutral', **kw):
-    d = {'id': id, 'pos': pos, 'rot': rot, 'pose': pose, 'face': face}
-    d.update(kw)
-    return d
-
-
-def cam(shot, target, angle=0, **kw):
-    d = {'shot': shot, 'target': target, 'angle': angle}
-    d.update(kw)
-    return d
-
-
-def crush(actor, value, frm=None, at=0.3, **kw):
-    d = {'type': 'crush', 'actor': actor, 'value': value, 'at': at}
-    if frm is not None:
-        d['from'] = frm
-    d.update(kw)
-    return d
-
-
-def S(id, set_, vo=None, actors=None, camera=None, **kw):
-    d = {'id': id, 'set': set_}
-    if vo:
-        d['vo'] = vo
-    if actors:
-        d['actors'] = actors
-    if camera:
-        d['camera'] = camera
-    d.update(kw)
-    shots.append(d)
-
-
-def C(id, card, vo, **spec):
-    d = {'id': id, 'kind': 'card', 'card': card, 'vo': vo}
-    d.update(spec)
-    shots.append(d)
 
 
 BENCH2 = 'bench+-0.42,0,-0.42'  # next seat along the plaza bench (tangent to the ring at 135°)
 RIVAL = 'bench+1.1,0,-0.5'    # standing in front of the bench, facing it (rot -45)
 RULES = ['O BRILHO ATRAVESSA TUDO', 'O NÚMERO MUDA NA HORA', 'SUA VOZ FAZ O NÚMERO SUBIR']
-TALK = [[0.05, 3.0]]
 
 # ---------------------------------------------------------------- 1. abertura fria (sala de aula)
 S('c1', 'classroom', 'Você precisa de uma dupla pra feira de ciências. E ninguém olha pra você.',
@@ -65,11 +28,11 @@ S('c3', 'classroom', 'Aí você vê: a menina da fileira de trás está brilhand
   overlays=[crush('lia', 73, 0, at='@rosa')], sfx=[{'t': '@rosa', 'name': 'glint'}])
 S('c4', 'classroom', 'Você levanta e vai direto até ela.',
   actors=[A('lia', 'seat2', -90, 'sit', 'smile', glow=PINK),
-          A('hero', 'seat1', -90, 'stand', 'determined', path=[{'t': 0.2, 'pos': 'seat1+0,0,0.7'}, {'t': 1.6, 'pos': 'seat2+-0.75,0,0.7', 'gait': 'walk'}])],
+      A('hero', 'seat1', -90, 'stand', 'determined', path=[{'t': 0.2, 'pos': 'seat1+0,0,0.7'}, {'t': 1.6, 'pos': 'seat2+-0.75,0,0.7', 'gait': 'walk'}])],
   camera=cam('full', 'hero', 40, move='track'))
 S('c5', 'classroom', 'Ela diz sim antes de você terminar a pergunta. O estojo dela vai pro chão.',
   actors=[A('lia', 'seat2', -90, 'sit', 'grin', glow=PINK, faces=[{'t': 0.4, 'face': {'mouth': 1, 'open': 0.4, 'eyes': 0.8, 'blush': True}}]),
-          A('hero', 'seat2+-0.75,0,0.7', 60, 'relaxed', 'smile', look='lia')],
+      A('hero', 'seat2+-0.75,0,0.7', 60, 'relaxed', 'smile', look='lia')],
   props=[{'type': 'book', 'pos': [1.5, 0.8, 1.45], 'color': '#ff7a3d', 'path': [{'t': '@estojo', 'pos': [1.5, 0.8, 1.45]}, {'t': '@chão', 'pos': [1.15, 0.03, 1.2]}]}],
   camera=cam('medium', ['lia', 'hero'], -20),
   overlays=[crush('lia', 80, 73, at='@sim')], sfx=[{'t': '@chão', 'name': 'thud'}])
@@ -128,7 +91,7 @@ SCREEN = {'type': 'screen', 'pos': 'sideline+0,1.4,-3.2', 'w': 3.2, 'h': 1.4, 't
 S('p1', 'stadium', variant=1, vo='Na educação física, todo mundo usa uma faixa no peito que mede o coração.',
   props=[SCREEN],
   actors=[A('coach', 'sideline+2,0,-1', -90, 'armsCrossed', 'suspicious'), A('hero', 'sideline+-1,0,-1.5', 0, 'relaxed', 'happy'),
-          A('bestie', 'sideline+-2,0,-1.2', 20, 'relaxed', 'smile'), A('duda', 'sideline+3.2,0,-1.8', -10, 'stretch', 'happy')],
+      A('bestie', 'sideline+-2,0,-1.2', 20, 'relaxed', 'smile'), A('duda', 'sideline+3.2,0,-1.8', -10, 'stretch', 'happy')],
   camera=cam('wide', 'hero', 25, height=6, move='drift'))
 S('p2', 'stadium', variant=1, vo='Os batimentos de cada um aparecem no telão.',
   props=[dict(SCREEN, text='DUDA: 92 BPM')], camera={'pos': [-6, 1.9, 26.5], 'look': [-6, 1.6, 22.8], 'fov': 34})
@@ -137,7 +100,7 @@ S('p3', 'stadium', variant=1, vo='Prova.', who='male',
   camera=cam('close', 'bestie', 10))
 S('p4', 'stadium', variant=1, vo='Você passa do lado da Duda. Oitenta e um por cento.',
   actors=[A('duda', 'sideline+0.4,0,-2', 10, 'relaxed', 'happy', glow=PINK),
-          A('hero', 'sideline+-1.5,0,-1', 90, 'relaxed', 'smirk', path=[{'t': 0.1, 'pos': 'sideline+-1.5,0,-1'}, {'t': 2.0, 'pos': 'sideline+1.6,0,-1', 'gait': 'walk'}])],
+      A('hero', 'sideline+-1.5,0,-1', 90, 'relaxed', 'smirk', path=[{'t': 0.1, 'pos': 'sideline+-1.5,0,-1'}, {'t': 2.0, 'pos': 'sideline+1.6,0,-1', 'gait': 'walk'}])],
   camera=cam('full', 'duda', -15, move='drift'), overlays=[crush('duda', 81, 0, at='@duda')])
 C('p5', 'stat', 'No telão, o coração dela pula de noventa e dois pra cento e vinte e oito.',
   value=128, **{'from': 92}, unit='BPM', label='O CORAÇÃO DA DUDA', icon='heart')
@@ -145,11 +108,11 @@ S('p6', 'stadium', variant=1, vo='Passa de novo.', who='adulto',
   actors=[A('coach', 'sideline+2,0,-1', -90, 'armsCrossed', 'suspicious', talk=[[0.05, 0.9]])], camera=cam('close', 'coach', 10))
 S('p7', 'stadium', variant=1, vo='Você passa de novo. Cento e trinta.',
   actors=[A('duda', 'sideline+0.4,0,-2', 10, 'relaxed', 'embarrassed', glow=PINK),
-          A('hero', 'sideline+1.6,0,-1', -90, 'relaxed', 'smirk', path=[{'t': 0.1, 'pos': 'sideline+1.6,0,-1'}, {'t': 1.8, 'pos': 'sideline+-1.5,0,-1', 'gait': 'walk'}])],
+      A('hero', 'sideline+1.6,0,-1', -90, 'relaxed', 'smirk', path=[{'t': 0.1, 'pos': 'sideline+1.6,0,-1'}, {'t': 1.8, 'pos': 'sideline+-1.5,0,-1', 'gait': 'walk'}])],
   camera=cam('full', 'duda', 20), overlays=[crush('duda', 81, at=0), {'type': 'label', 'text': '130 BPM', 'at': '@cento', 'corner': 'tr'}])
 S('p8', 'stadium', variant=1, vo='O professor Ramos olha o telão. Olha pra você. Olha o telão de novo.',
   actors=[A('coach', 'sideline+2,0,-1', -90, 'thinking', 'suspicious',
-            poses=[{'t': 0.0, 'pose': {'spine': [4, 0, 0], 'armR': [55, 10, -40, 140], 'armL': [30, 20, -60, 115], 'head': [0, -50, 0]}}, {'t': '@você', 'pose': {'spine': [4, 0, 0], 'armR': [55, 10, -40, 140], 'armL': [30, 20, -60, 115], 'head': [0, 30, 0]}}, {'t': '@novo', 'pose': {'spine': [4, 0, 0], 'armR': [55, 10, -40, 140], 'armL': [30, 20, -60, 115], 'head': [0, -50, 0]}}])],
+        poses=[{'t': 0.0, 'pose': {'spine': [4, 0, 0], 'armR': [55, 10, -40, 140], 'armL': [30, 20, -60, 115], 'head': [0, -50, 0]}}, {'t': '@você', 'pose': {'spine': [4, 0, 0], 'armR': [55, 10, -40, 140], 'armL': [30, 20, -60, 115], 'head': [0, 30, 0]}}, {'t': '@novo', 'pose': {'spine': [4, 0, 0], 'armR': [55, 10, -40, 140], 'armL': [30, 20, -60, 115], 'head': [0, -50, 0]}}])],
   camera=cam('xclose', 'coach', 0))
 S('p9', 'stadium', variant=1, vo='Hidratação. Todo mundo bebe água.', who='adulto',
   actors=[A('coach', 'sideline+2,0,-1', -90, 'point', 'focused', talk=TALK)], camera=cam('medium', 'coach', 20))
@@ -173,7 +136,7 @@ S('r4', 'classroom', 'Algum problema com a parede?', who='adulta', variant=1,
 C('r5', 'rules', 'Regra dois: o número muda na hora.', title='AS REGRAS', prefix='REGRA', rules=RULES, current=2)
 S('r6', 'classroom', 'Você tropeça na frente da turma inteira. O da Lia cai de setenta e três pra sessenta e nove.',
   actors=[A('lia', 'seat2', -90, 'sit', 'surprised', glow=PINK),
-          A('hero', 'front+0.6,0,0.6', 90, 'stand', 'shocked', poses=[{'t': 0.3, 'pose': 'fall', 'blend': 0.2}, {'t': 0.75, 'pose': 'kneel', 'blend': 0.3}])],
+      A('hero', 'front+0.6,0,0.6', 90, 'stand', 'shocked', poses=[{'t': 0.3, 'pose': 'fall', 'blend': 0.2}, {'t': 0.75, 'pose': 'kneel', 'blend': 0.3}])],
   camera={'pos': [-5.0, 2.4, 2.6], 'look': [0.2, 0.6, 0.8], 'fov': 50}, overlays=[crush('lia', 69, 73, at='@lia')], sfx=[{'t': 0.5, 'name': 'thud'}])
 S('r7', 'classroom', 'Aí você faz piada do próprio tombo. Setenta e quatro.',
   actors=[A('lia', 'seat2', -90, 'sit', 'grin', glow=PINK), A('hero', 'front+0.6,0,0.6', 90, 'shrug', 'grin', look='lia')],
@@ -192,12 +155,12 @@ S('k1', 'cafeteria', 'E aí começa a parte boa. No refeitório, você nunca mai
   camera=cam('wide', 'hero', 10, move='drift'))
 PIC = 'picnic'
 GROUP = [A('hero', 'picnic+0,0,0.6', 180, 'kneel', 'smug'), A('bestie', 'picnic+0.9,0,0', -90, 'kneel', 'happy'),
-         A('extraA', 'picnic+0,0,-0.7', 0, 'kneel', 'surprised'), A('extraC', 'picnic+-0.9,0,0', 90, 'kneel', 'grin')]
+     A('extraA', 'picnic+0,0,-0.7', 0, 'kneel', 'surprised'), A('extraC', 'picnic+-0.9,0,0', 90, 'kneel', 'grin')]
 S('k2', 'park', 'No verdade ou desafio, alguém pergunta quem gosta de você. Você acerta todas.',
   actors=GROUP, camera=cam('medium', 'hero', 160, height=20, move='drift'))
 S('k3', 'park', 'Você é banido do verdade ou desafio. Pra sempre.',
   actors=[A('hero', 'picnic+0,0,0.6', 180, 'shrug', 'embarrassed'), A('bestie', 'picnic+0.9,0,0', -90, 'point', 'grin', look='hero'),
-          A('extraA', 'picnic+0,0,-0.7', 0, 'kneel', 'smug'), A('extraC', 'picnic+-0.9,0,0', 90, 'kneel', 'grin')],
+      A('extraA', 'picnic+0,0,-0.7', 0, 'kneel', 'smug'), A('extraC', 'picnic+-0.9,0,0', 90, 'kneel', 'grin')],
   camera=cam('medium', 'hero', -150, height=15), sfx=[{'t': '@banido', 'name': 'pop'}])
 S('k4', 'park', 'Você tenta abrir um negócio: cinco reais pra dizer se o crush de alguém gosta dele.',
   actors=[A('hero', 'bench', 135, 'sit', 'smug'), A('rival', RIVAL, -45, 'holdOut', 'happy', look='hero')],
@@ -213,7 +176,7 @@ S('k7', 'cafeteria', 'Uma tarde, o número da Duda despenca: de oitenta e um pra
   camera=cam('medium', 'duda', 15, move='pushIn'), overlays=[crush('duda', 40, 81, at='@despenca', countDur=1.4)])
 S('k8', 'cafeteria', 'Você não gosta dela desse jeito. Mas você vai até lá e conta a verdade, com cuidado.', variant=1,
   actors=[A('duda', 'seat2', 0, 'sit', 'sad', glow=PINK),
-          A('hero', [0.4, 0, 2.75], -90, 'relaxed', 'worried', path=[{'t': 0.2, 'pos': [0.4, 0, 2.75]}, {'t': 2.6, 'pos': [-3.0, 0, 2.75], 'gait': 'walk', 'rot': 180}])],
+      A('hero', [0.4, 0, 2.75], -90, 'relaxed', 'worried', path=[{'t': 0.2, 'pos': [0.4, 0, 2.75]}, {'t': 2.6, 'pos': [-3.0, 0, 2.75], 'gait': 'walk', 'rot': 180}])],
   camera={'pos': [-0.6, 1.6, 5.6], 'look': [-2.8, 1.0, 1.6], 'fov': 45})
 S('k9', 'cafeteria', 'Obrigada por falar primeiro.', who='female', variant=1,
   actors=[A('duda', 'seat2', 0, 'sit', 'smile', glow=PINK, talk=TALK), A('hero', [-3.0, 0, 2.75], 180, 'relaxed', 'worried')],
@@ -310,7 +273,7 @@ S('y6', 'park', 'Primeira: você fala do tempo. Falha.',
   camera=cam('medium', ['hero', 'extraA'], 85), sfx=[{'t': '@falha', 'name': 'pop'}])
 S('y7', 'park', 'Segunda: você fala do tempo de novo. Falha pior.',
   actors=[A('hero', 'center', -30, 'explain', 'closed', talk=TALK), A('extraB', 'center+-0.9,0,1.1', 150, 'relaxed', 'bored',
-          path=[{'t': '@falha', 'pos': 'center+-0.9,0,1.1'}, {'t': '@pior+0.6', 'pos': 'center+-4,0,4', 'gait': 'walk'}])],
+      path=[{'t': '@falha', 'pos': 'center+-0.9,0,1.1'}, {'t': '@pior+0.6', 'pos': 'center+-4,0,4', 'gait': 'walk'}])],
   camera=cam('medium', ['hero', 'extraB'], -85), sfx=[{'t': '@pior', 'name': 'pop'}])
 S('y8', 'park', 'Terceira: você pergunta uma coisa de verdade, e escuta a resposta.',
   actors=[A('hero', 'center', 0, 'relaxed', 'smile'), A('extraC', 'center+0,0,1.2', 180, 'explain', 'happy', talk=[[1.5, 4.0]])],
@@ -322,7 +285,7 @@ S('y10', 'bedroom', 'Você tira a planilha da tela inicial.',
 # ---------------------------------------------------------------- 11. crise (incêndio)
 S('z1', 'suburb', 'Por duas semanas, você fala primeiro. Nada de ruim acontece.',
   actors=[A('hero', 'sidewalk+-4,0,0', 90, 'relaxed', 'happy', path=[{'t': 0.2, 'pos': 'sidewalk+-4,0,0'}, {'t': 3.5, 'pos': 'sidewalk+3,0,0', 'gait': 'walk'}]),
-          A('bestie', 'sidewalk+-2.8,0,0.6', 90, 'relaxed', 'happy', path=[{'t': 0.2, 'pos': 'sidewalk+-2.8,0,0.6'}, {'t': 3.5, 'pos': 'sidewalk+4.2,0,0.6', 'gait': 'walk'}])],
+      A('bestie', 'sidewalk+-2.8,0,0.6', 90, 'relaxed', 'happy', path=[{'t': 0.2, 'pos': 'sidewalk+-2.8,0,0.6'}, {'t': 3.5, 'pos': 'sidewalk+4.2,0,0.6', 'gait': 'walk'}])],
   camera=cam('wide', 'hero', 20, move='track'))
 S('z2', 'apartments', 'Até um sábado à tarde, na rua da Lia.',
   actors=[A('extraA', 'crowd+-3,0,0', 90, 'relaxed', 'happy', path=[{'t': 0.2, 'pos': 'crowd+-3,0,0'}, {'t': 4, 'pos': 'crowd+2,0,0', 'gait': 'walk'}])],
@@ -343,7 +306,7 @@ LIA_BAL = A('lia', 'balcony+0,0,-0.3', 0, 'lie', 'sleepy', glow=PINK)
 S('z7', 'apartments', 'Mas você vê. No quarto andar, atrás da fumaça, um brilho rosa.',
   actors=[LIA_BAL, A('bombeiro', 'street+3,0,1.2', 180, 'point', 'focused', poses=[{'t': 0, 'pose': {'armR': [120, 10, 0, 0], 'handR': 'point'}}]), A('hero', 'crowd+0,0,0.3', 180, 'stand', 'surprised', look=[0, 9.5, -8.7])],
   props=[{'type': 'firetruck', 'pos': 'truck', 'stowed': True}, {'type': 'smoke', 'pos': [0, 9.15, -8.2], 'h': 9, 'size': 1.2},
-         {'type': 'glow', 'pos': 'balcony+0,0,-0.3', 'y': 0.45, 'size': 0.6, 'color': PINK}],
+     {'type': 'glow', 'pos': 'balcony+0,0,-0.3', 'y': 0.45, 'size': 0.6, 'color': PINK}],
   camera={'pos': [0.9, 1.0, 9.8], 'look': [0.1, 8.6, -8.6], 'fov': 52, 'move': 'pushIn'}, sfx=[{'t': '@brilho', 'name': 'glint'}])
 S('z8', 'apartments', 'Quarenta e um por cento. Caindo.',
   actors=[LIA_BAL],
@@ -361,8 +324,8 @@ S('d1', 'apartments', 'O bombeiro só vai subir pro quarto andar se você disser
   camera={'pos': [-1.5, 1.7, 9.8], 'look': [3.0, 1.4, -2.5], 'fov': 45}, overlays=[SW('1:10')])
 S('d2', 'apartments', 'Na frente da rua inteira. Da mãe dela. Do Caio, segurando a flor.',
   actors=[A('maeLia', 'crowd+1.2,0,-0.6', 180, 'scared', 'cry'), A('bestie', 'crowd+-1,0,0', 180, 'holdOut', 'worried', hold={'R': 'flower'}),
-          A('extraA', 'crowd+-0.2,0,1.0', 180, 'stand', 'worried'), A('extraC', 'crowd+2.4,0,0.4', 180, 'phone', 'worried', hold={'R': 'phone'}),
-          A('extraB', 'crowd+3.4,0,1.1', 180, 'shocked', 'scared'), A('rival', 'crowd+-2.2,0,0.9', 180, 'stand', 'worried')],
+      A('extraA', 'crowd+-0.2,0,1.0', 180, 'stand', 'worried'), A('extraC', 'crowd+2.4,0,0.4', 180, 'phone', 'worried', hold={'R': 'phone'}),
+      A('extraB', 'crowd+3.4,0,1.1', 180, 'shocked', 'scared'), A('rival', 'crowd+-2.2,0,0.9', 180, 'stand', 'worried')],
   camera={'pos': [-0.4, 1.7, 2.2], 'look': [0.6, 1.3, 7.8], 'fov': 46}, overlays=[SW('1:04')])
 S('d3', 'apartments', 'Se você falar, o segredo dela vira de todo mundo. Se você ficar quieto...',
   actors=[A('hero', 'crowd+0,0,0.3', 180, 'stand', 'worried')], camera=cam('xclose', 'hero', 5), overlays=[SW('0:58')])
@@ -411,7 +374,7 @@ S('e11', 'apartments', '[shouting] Lia!',
 S('e12', 'apartments', 'Vinte e cinco. Ela levanta a cabeça.',
   props=[{'type': 'firetruck', 'pos': 'truck'}, BASKET, {'type': 'smoke', 'pos': [0.9, 9.15, -7.85], 'h': 2.6, 'size': 0.23, 'n': 60, 'wind': [0.45, 0.1]}],
   actors=[A('bombeiro', HOVER, -131, 'reach', 'worried', gait='carried', contact=True),
-          A('lia', 'balcony+0,0,-0.3', 0, 'lie', 'sleepy', glow=PINK, poses=[{'t': 0.4, 'pose': {'hipY': -0.82, 'body': [-90, 0, 0], 'head': [35, 0, 0], 'armL': [0, 12, 0, 6], 'armR': [30, 25, 0, 40]}, 'blend': 0.8}])],
+      A('lia', 'balcony+0,0,-0.3', 0, 'lie', 'sleepy', glow=PINK, poses=[{'t': 0.4, 'pose': {'hipY': -0.82, 'body': [-90, 0, 0], 'head': [35, 0, 0], 'armL': [0, 12, 0, 6], 'armR': [30, 25, 0, 40]}, 'blend': 0.8}])],
   camera=BAL_CAM, overlays=[SW('0:17'), crush('lia', 25, 12, at=0.1)], sfx=[{'t': 0.1, 'name': 'chime'}])
 S('e13', 'apartments', '[shouting] Lia!',
   actors=[A('hero', 'crowd+0,0,0.3', 180, 'cheer', 'furious', talk=[[0.05, 0.8]])], camera=cam('close', 'hero', 20, height=-10),
@@ -419,7 +382,7 @@ S('e13', 'apartments', '[shouting] Lia!',
 S('e14', 'apartments', 'Quarenta. Ela se arrasta até a grade.',
   props=[{'type': 'firetruck', 'pos': 'truck'}, BASKET, {'type': 'smoke', 'pos': [0.9, 9.15, -7.85], 'h': 2.6, 'size': 0.19, 'n': 60, 'wind': [0.45, 0.1]}],
   actors=[A('bombeiro', HOVER, -131, 'reach', 'determined', gait='carried', contact=True),
-          A('lia', 'balcony+0,0,-0.3', 52, 'crouch', 'scared', glow=PINK, path=[{'t': 0.3, 'pos': 'balcony+0,0,-0.3'}, {'t': 2.2, 'pos': 'balcony+0.3,0,0.35', 'gait': 'carried'}])],
+      A('lia', 'balcony+0,0,-0.3', 52, 'crouch', 'scared', glow=PINK, path=[{'t': 0.3, 'pos': 'balcony+0,0,-0.3'}, {'t': 2.2, 'pos': 'balcony+0.3,0,0.35', 'gait': 'carried'}])],
   camera=BAL_CAM, overlays=[SW('0:13'), crush('lia', 40, 25, at=0.1)], sfx=[{'t': 0.1, 'name': 'chime'}])
 S('e15', 'apartments', '[shouting] Lia!',
   actors=[A('hero', 'crowd+0,0,0.3', 180, 'cheer', 'furious', talk=[[0.05, 0.8]])], camera=cam('medium', 'hero', 150, height=-12, move='crashIn'),
@@ -427,26 +390,26 @@ S('e15', 'apartments', '[shouting] Lia!',
 S('e16', 'apartments', 'Cinquenta e oito. A mão dela atravessa a fumaça.',
   props=[{'type': 'firetruck', 'pos': 'truck'}, BASKET, {'type': 'smoke', 'pos': [0.9, 9.15, -7.85], 'h': 2.6, 'size': 0.14, 'n': 60, 'wind': [0.45, 0.1]}],
   actors=[A('bombeiro', HOVER, -131, 'reach', 'determined', gait='carried', contact=True),
-          A('lia', 'balcony+0.3,0,0.35', 52, {'reachR': {'to': [0, 1.25, 0.8]}, 'spine': [15, 0, 0]}, 'scared', glow=PINK, contact=True)],
+      A('lia', 'balcony+0.3,0,0.35', 52, {'reachR': {'to': [0, 1.25, 0.8]}, 'spine': [15, 0, 0]}, 'scared', glow=PINK, contact=True)],
   camera=BAL_CAM, overlays=[SW('0:09'), crush('lia', 58, 40, at=0.1)], sfx=[{'t': 0.1, 'name': 'chime'}])
 S('e17', 'apartments', 'O bombeiro segura.',
   props=[{'type': 'firetruck', 'pos': 'truck'}, BASKET],
   actors=[A('bombeiro', HOVER, -131, {'reachR': {'to': [0, 1.2, 0.75]}, 'spine': [20, 0, 0]}, 'determined', gait='carried', contact=True),
-          A('lia', 'balcony+0.3,0,0.35', 52, {'reachR': {'to': [0, 1.25, 0.8]}, 'spine': [15, 0, 0]}, 'surprised', glow=PINK, contact=True)],
+      A('lia', 'balcony+0.3,0,0.35', 52, {'reachR': {'to': [0, 1.25, 0.8]}, 'spine': [15, 0, 0]}, 'surprised', glow=PINK, contact=True)],
   camera={'pos': [-1.8, 10.3, -5.0], 'look': [0.9, 9.8, -7.9], 'fov': 34}, overlays=[SW('0:07')], sfx=[{'t': 0.1, 'name': 'thud'}, {'t': 0.2, 'name': 'swell'}])
 RIDE_DOWN = [{'t': 0.3, 'pos': HOVER}, {'t': 3.5, 'pos': [10.6, 2.85, -2.4], 'gait': 'carried'}]
 S('e18', 'apartments', 'O cesto desce. Ela está tossindo. Viva.', hold=1.2,
   props=[{'type': 'firetruck', 'pos': 'truck'}, BASKET],
   actors=[A('bombeiro', HOVER, -150, 'carry', 'focused', path=RIDE_DOWN, gait='carried', contact=True),
-          A('lia', [1.1, 9.25, -7.2], -150, {'reachR': {'to': 'mouth'}, 'spine': [15, 0, 0]}, {'eyes': 0.35, 'open': 0.55, 'mouth': -0.3, 'brow': 0.8}, gait='carried', contact=True,
-            path=[{'t': 0.3, 'pos': [1.1, 9.25, -7.2]}, {'t': 3.5, 'pos': [10.2, 2.85, -2.3], 'gait': 'carried'}])],
+      A('lia', [1.1, 9.25, -7.2], -150, {'reachR': {'to': 'mouth'}, 'spine': [15, 0, 0]}, {'eyes': 0.35, 'open': 0.55, 'mouth': -0.3, 'brow': 0.8}, gait='carried', contact=True,
+        path=[{'t': 0.3, 'pos': [1.1, 9.25, -7.2]}, {'t': 3.5, 'pos': [10.2, 2.85, -2.3], 'gait': 'carried'}])],
   camera={'pos': [12, 2.0, 3.2], 'look': [3, 6.2, -7], 'fov': 54}, overlays=[{'type': 'stopwatch', 'from': '0:05', 'to': 'SALVA', 'persist': True, 'switchAt': '@viva'}])
 S('e19', 'apartments', 'Você tenta dizer alguma coisa. Não sai nada. Sua voz acabou.',
   actors=[A('hero', 'crowd+0,0,0.3', 180, {'spine': [14, 0, 0], 'head': [12, 0, 0], 'reachR': {'to': 'chin'}}, 'tired')], camera=cam('close', 'hero', 15))
 
 # ---------------------------------------------------------------- 14. consequência
 CRATES = [{'type': 'crate', 'pos': 'crowd+0,0,0.72', 'w': 0.5, 'h': 0.45, 'd': 0.45, 'color': '#9a6b45'},
-          {'type': 'crate', 'pos': 'crowd+-0.9,0,0.72', 'w': 0.5, 'h': 0.45, 'd': 0.45, 'color': '#9a6b45'}]
+      {'type': 'crate', 'pos': 'crowd+-0.9,0,0.72', 'w': 0.5, 'h': 0.45, 'd': 0.45, 'color': '#9a6b45'}]
 S('f1', 'apartments', 'Rouco por três dias, diz o paramédico.', props=CRATES,
   actors=[A('hero', 'crowd+0,0,0.6', 180, 'sit', 'tired'), A('bestie', 'crowd+-0.9,0,0.6', 180, 'sit', 'sad', hold={'R': 'flower'})],
   camera=cam('medium', ['hero', 'bestie'], 0, height=10))
@@ -496,7 +459,7 @@ S('g1', 'apartments', 'Mas o vídeo do vizinho mostra uma coisa que ninguém com
   camera={'pos': [3, 1.4, 6], 'look': [0, 8.5, -9], 'fov': 50}, fx={'grade': 'flashback'})
 S('g2', 'apartments', 'Do outro lado da rua, um homem de capa de chuva amarela. Num dia de sol.',
   actors=[A('estranho', 'crowd+4.5,0,1.2', 180, 'stand', 'neutral'), A('extraA', 'crowd+1.4,0,0.5', 180, 'phone', 'worried', hold={'R': 'phone'}),
-          A('extraB', 'crowd+2.6,0,0.2', 180, 'shocked', 'scared')],
+      A('extraB', 'crowd+2.6,0,0.2', 180, 'shocked', 'scared')],
   camera=cam('full', 'estranho', 20))
 S('g3', 'apartments', 'Todo mundo olha pro fogo. Ele olha pra você.',
   actors=[A('estranho', 'crowd+4.5,0,1.2', -100, 'stand', {'eyes': 1.1, 'mouth': -0.05, 'brow': -0.2, 'lid': 0.3})], camera=cam('close', 'estranho', 0, move='pushIn'))
@@ -507,8 +470,8 @@ S('g5', 'suburb', 'O homem da capa amarela. Parado. Olhando pra sua janela.', ti
   props=STREET_NIGHT, actors=[A('estranho', 'farSidewalk+1,0,0.4', 180, 'stand', 'neutral')], camera=cam('full', 'estranho', -20, move='pushIn'))
 S('g6', 'suburb', 'Ele atravessa a rua, deixa um envelope na sua caixa de correio, e vai embora devagar.', time='night',
   props=STREET_NIGHT, actors=[A('estranho', 'farSidewalk+1,0,0.4', 180, 'stand', 'neutral',
-                                path=[{'t': 0.3, 'pos': 'farSidewalk+1,0,0.4'}, {'t': 3.0, 'pos': 'mailbox+0,0,1', 'gait': 'walk'}, {'t': 4.6, 'pos': 'mailbox+0,0,1'},
-                                      {'t': 6.5, 'pos': 'mailbox+6,0,2', 'gait': 'walk'}])],
+                            path=[{'t': 0.3, 'pos': 'farSidewalk+1,0,0.4'}, {'t': 3.0, 'pos': 'mailbox+0,0,1', 'gait': 'walk'}, {'t': 4.6, 'pos': 'mailbox+0,0,1'},
+                                  {'t': 6.5, 'pos': 'mailbox+6,0,2', 'gait': 'walk'}])],
   camera=cam('wide', 'estranho', 30, move='track'))
 S('g7', 'suburb', 'Você desce sem fazer barulho. Não que você conseguisse fazer barulho.', time='night',
   actors=[A('hero', 'mailbox+0,0,0.8', 180, 'reach', 'worried')], camera=cam('medium', 'hero', 30))
@@ -551,77 +514,53 @@ S('i1', 'suburb', 'Então: quem você olharia primeiro, se pudesse ver o número
   overlays=[{'type': 'title', 'small': 'QUEM VOCÊ OLHARIA PRIMEIRO?', 'big': 'E O 87... É POR QUEM?', 'at': '@oitenta'}])
 
 # ---------------------------------------------------------------- episode
-idx = {s['id']: i for i, s in enumerate(shots)}
-assert len(idx) == len(shots), 'duplicate shot ids'
-ep = {
-    'slug': SLUG,
-    'title': 'E Se Você Pudesse Ver Quem Tem Crush em Você?',
-    'voice': {'id': 'u7N1p4OIOc6Fl7y72WE7', 'model': 'eleven_v4'},
-    'voices': {'adulto': 'u4sbCzXyUVxIAihOtCss', 'adulta': 'dxIMMSJYSsbUSMhioLNb'},
-    'cast': {
-        'bestie': {'name': 'Caio'},
-        'extraB': {'topColor': '#d0533f'},
-        'sister': {'name': 'Bia'},
-        'rival': {'name': 'Rafa'},
-        'teacher': {'name': 'Professora Sônia'},
-        'coach': {'name': 'Professor Ramos'},
-        'mom': {'name': 'Mãe'},
-        'lia': {'name': 'Lia', 'top': 'hoodie', 'topColor': '#7a5cc8', 'accent': '#e9ddff', 'bottom': 'pants', 'bottomColor': '#2c3e63', 'shoes': '#ffffff', 'hair': 'curly'},
-        'duda': {'name': 'Duda', 'top': 'tee', 'topColor': '#2fa6a0', 'bottom': 'skirt', 'bottomColor': '#3b4a6b', 'shoes': '#ffffff', 'hair': 'ponytail'},
-        'maeLia': {'name': 'Mãe da Lia', 'top': 'jacket', 'topColor': '#b8476a', 'accent': '#ffe1ea', 'bottom': 'skirt', 'bottomColor': '#2d3550', 'shoes': '#5a3e33', 'hair': 'bun'},
-        'bombeiro': {'name': 'Bombeiro', 'top': 'coat', 'topColor': '#c8302a', 'accent': '#f2c53c', 'bottom': 'pants', 'bottomColor': '#1f2433', 'shoes': '#1b1b20', 'hat': 'helmet', 'hatColor': '#f2c53c'},
-        'estranho': {'name': 'Homem da capa amarela', 'top': 'coat', 'topColor': '#ffd21f', 'accent': '#fff3d6', 'bottom': 'pants', 'bottomColor': '#1d2333', 'shoes': '#2b2622'},
-        'fotoA': {'top': 'tee', 'topColor': '#4bb37a', 'bottom': 'shorts', 'bottomColor': '#2c3e63', 'shoes': '#ffffff', 'hair': 'bun', 'height': 0.85},
-        'fotoB': {'top': 'hoodie', 'topColor': '#e8a23a', 'accent': '#fff3d6', 'bottom': 'pants', 'bottomColor': '#2b2f3a', 'shoes': '#ffffff', 'hair': 'spiky', 'height': 0.85},
-        'fotoC': {'top': 'tee', 'topColor': '#c94b8a', 'bottom': 'shorts', 'bottomColor': '#3d6fb6', 'shoes': '#ffffff', 'hair': 'afro', 'height': 0.7},
-        **{f'echo{k}': {'top': 'tee', 'topColor': '#4bb37a', 'bottom': 'shorts', 'bottomColor': '#2c3e63', 'shoes': '#ffffff', 'hair': 'bun', 'height': 0.85} for k in (1, 2, 3)},
+idx = shot_index()
+ep = episode(
+    SLUG, 'E Se Você Pudesse Ver Quem Tem Crush em Você?',
+    cast={
+    'bestie': {'name': 'Caio'},
+    'extraB': {'topColor': '#d0533f'},
+    'sister': {'name': 'Bia'},
+    'rival': {'name': 'Rafa'},
+    'teacher': {'name': 'Professora Sônia'},
+    'coach': {'name': 'Professor Ramos'},
+    'mom': {'name': 'Mãe'},
+    'lia': {'name': 'Lia', 'top': 'hoodie', 'topColor': '#7a5cc8', 'accent': '#e9ddff', 'bottom': 'pants', 'bottomColor': '#2c3e63', 'shoes': '#ffffff', 'hair': 'curly'},
+    'duda': {'name': 'Duda', 'top': 'tee', 'topColor': '#2fa6a0', 'bottom': 'skirt', 'bottomColor': '#3b4a6b', 'shoes': '#ffffff', 'hair': 'ponytail'},
+    'maeLia': {'name': 'Mãe da Lia', 'top': 'jacket', 'topColor': '#b8476a', 'accent': '#ffe1ea', 'bottom': 'skirt', 'bottomColor': '#2d3550', 'shoes': '#5a3e33', 'hair': 'bun'},
+    'bombeiro': {'name': 'Bombeiro', 'top': 'coat', 'topColor': '#c8302a', 'accent': '#f2c53c', 'bottom': 'pants', 'bottomColor': '#1f2433', 'shoes': '#1b1b20', 'hat': 'helmet', 'hatColor': '#f2c53c'},
+    'estranho': {'name': 'Homem da capa amarela', 'top': 'coat', 'topColor': '#ffd21f', 'accent': '#fff3d6', 'bottom': 'pants', 'bottomColor': '#1d2333', 'shoes': '#2b2622'},
+    'fotoA': {'top': 'tee', 'topColor': '#4bb37a', 'bottom': 'shorts', 'bottomColor': '#2c3e63', 'shoes': '#ffffff', 'hair': 'bun', 'height': 0.85},
+    'fotoB': {'top': 'hoodie', 'topColor': '#e8a23a', 'accent': '#fff3d6', 'bottom': 'pants', 'bottomColor': '#2b2f3a', 'shoes': '#ffffff', 'hair': 'spiky', 'height': 0.85},
+    'fotoC': {'top': 'tee', 'topColor': '#c94b8a', 'bottom': 'shorts', 'bottomColor': '#3d6fb6', 'shoes': '#ffffff', 'hair': 'afro', 'height': 0.7},
+    **{f'echo{k}': {'top': 'tee', 'topColor': '#4bb37a', 'bottom': 'shorts', 'bottomColor': '#2c3e63', 'shoes': '#ffffff', 'hair': 'bun', 'height': 0.85} for k in (1, 2, 3)},
     },
-    'music': [
-        {'shot': idx['c1'], 'mood': 'curious'},
-        {'shot': idx['x1'], 'mood': 'tension'},
-        {'shot': idx['y1'], 'mood': 'wonder'},
-        {'shot': idx['z2'], 'mood': 'tension'},
-        {'shot': idx['e1'], 'mood': 'action'},
-        {'shot': idx['f1'], 'mood': 'sad'},
-        {'shot': idx['f12'], 'mood': 'wonder'},
-        {'shot': idx['g1'], 'mood': 'tension'},
-        {'shot': idx['h6'], 'mood': 'none'},
-        {'shot': idx['i1'], 'mood': 'curious'},
-    ],
-    'shots': shots,
-}
+    music=[('c1', 'curious'), ('x1', 'tension'), ('y1', 'wonder'), ('z2', 'tension'), ('e1', 'action'),
+       ('f1', 'sad'), ('f12', 'wonder'), ('g1', 'tension'), ('h6', 'none'), ('i1', 'curious')],
+)
 
 # ---------------------------------------------------------------- fire countdown, from the real voice timing
 # One point every two seconds: the clock reads 2 x Lia's number. It ticks live while her number falls,
 # and jumps up with each shout when it rises. Needs timing.json (after `align`); the draft keeps the static values.
-_tpath = os.path.join(os.path.dirname(__file__), '..', '..', 'public', 'episodes', SLUG, 'timing.json')
-if os.path.exists(_tpath):
-    with open(_tpath, encoding='utf-8') as f:
-        _tm = json.load(f)
-    if len(_tm['shots']) == len(shots):
-        st = lambda sid: _tm['shots'][idx[sid]]['start']
-        wt = lambda sid, w: next(t for x, t in _tm['shots'][idx[sid]]['words'] if x == w)
-        fmt = lambda sec: f"{max(0, int(round(sec))) // 60}:{max(0, int(round(sec))) % 60:02d}"
-        t0 = st('z9') + wt('z9', 'minuto')  # the clock shows 1:22 here
-        T = 58 / (st('e9') + wt('e9', 'doze') - t0)  # story seconds per real second: 1:22 -> 0:24 exactly on "doze"
-        rem = lambda sid: 82 - T * (st(sid) - t0)
-        def put(sid, sw):
-            sh = shots[idx[sid]]
-            sh['overlays'] = [o for o in sh.get('overlays', []) if o['type'] != 'stopwatch'] + [sw]
-        put('z9', {'type': 'stopwatch', 'from': '1:22', 'tick': round(T, 3), 'keep': True, 'at': '@minuto'})
-        for sid in ['d1', 'd2', 'd3', 'd4', 'e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'e7', 'e8', 'e9', 'e10', 'e11']:
-            put(sid, {'type': 'stopwatch', 'from': fmt(rem(sid)), 'tick': round(T, 3), 'persist': True, 'keep': True})
-        put('e12', {'type': 'stopwatch', 'from': fmt(rem('e12')), 'to': '0:50', 'switchAt': '@vinte', 'persist': True, 'keep': True})
-        put('e13', {'type': 'stopwatch', 'from': '0:50', 'tick': round(T, 3), 'persist': True, 'keep': True})
-        put('e14', {'type': 'stopwatch', 'from': fmt(50 - T * (st('e14') - st('e13'))), 'to': '1:20', 'switchAt': '@quarenta', 'persist': True, 'keep': True})
-        put('e15', {'type': 'stopwatch', 'from': '1:20', 'tick': round(T, 3), 'persist': True, 'keep': True})
-        put('e16', {'type': 'stopwatch', 'from': fmt(80 - T * (st('e16') - st('e15'))), 'to': '1:56', 'switchAt': '@cinquenta', 'persist': True, 'keep': True})
-        put('e17', {'type': 'stopwatch', 'from': '1:56', 'to': 'SALVA', 'switchAt': '@segura', 'persist': True, 'keep': True})
-        put('e18', {'type': 'stopwatch', 'from': 'SALVA', 'persist': True})
-        print(f'clock: x{T:.2f} story time; e9 starts at {fmt(rem("e9"))}, reads 0:24 on "doze"; e12 starts at {fmt(rem("e12"))}')
+tm = load_timing(SLUG)
+if tm:
+    st, wt, fmt = tm.start, tm.word, tm.fmt
+    t0 = tm.at('z9', 'minuto')  # the clock shows 1:22 here
+    T = 58 / (st('e9') + wt('e9', 'doze') - t0)  # story seconds per real second: 1:22 -> 0:24 exactly on "doze"
+    rem = lambda sid: 82 - T * (st(sid) - t0)
+    def put(sid, sw):
+        sh = shots[idx[sid]]
+        sh['overlays'] = [o for o in sh.get('overlays', []) if o['type'] != 'stopwatch'] + [sw]
+    put('z9', {'type': 'stopwatch', 'from': '1:22', 'tick': round(T, 3), 'keep': True, 'at': '@minuto'})
+    for sid in ['d1', 'd2', 'd3', 'd4', 'e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'e7', 'e8', 'e9', 'e10', 'e11']:
+        put(sid, {'type': 'stopwatch', 'from': fmt(rem(sid)), 'tick': round(T, 3), 'persist': True, 'keep': True})
+    put('e12', {'type': 'stopwatch', 'from': fmt(rem('e12')), 'to': '0:50', 'switchAt': '@vinte', 'persist': True, 'keep': True})
+    put('e13', {'type': 'stopwatch', 'from': '0:50', 'tick': round(T, 3), 'persist': True, 'keep': True})
+    put('e14', {'type': 'stopwatch', 'from': fmt(50 - T * (st('e14') - st('e13'))), 'to': '1:20', 'switchAt': '@quarenta', 'persist': True, 'keep': True})
+    put('e15', {'type': 'stopwatch', 'from': '1:20', 'tick': round(T, 3), 'persist': True, 'keep': True})
+    put('e16', {'type': 'stopwatch', 'from': fmt(80 - T * (st('e16') - st('e15'))), 'to': '1:56', 'switchAt': '@cinquenta', 'persist': True, 'keep': True})
+    put('e17', {'type': 'stopwatch', 'from': '1:56', 'to': 'SALVA', 'switchAt': '@segura', 'persist': True, 'keep': True})
+    put('e18', {'type': 'stopwatch', 'from': 'SALVA', 'persist': True})
+    print(f'clock: x{T:.2f} story time; e9 starts at {fmt(rem("e9"))}, reads 0:24 on "doze"; e12 starts at {fmt(rem("e12"))}')
 
-out = os.path.join(os.path.dirname(__file__), '..', '..', 'public', 'episodes', SLUG, 'episode.json')
-with open(out, 'w', encoding='utf-8') as f:
-    json.dump(ep, f, ensure_ascii=False, indent=1)
-words = sum(len(s.get('vo', '').split()) for s in shots)
-print(f'{len(shots)} shots, {words} words -> {os.path.normpath(out)}')
+write(SLUG, ep, drop_none=False)
