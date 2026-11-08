@@ -118,19 +118,30 @@ function sh(cmd, args, opts = {}) {
 
 /** One ElevenLabs call, text in = alignment out: character-accurate timestamps for exactly the text sent,
  *  so there is nothing to transcribe or fuzzy-match afterwards (that whole class of bug is gone with Whisper). */
-async function synthesize(voiceId, text, model) {
+// Retries only answers that mean "nothing was generated, try later": 429 (too many concurrent requests /
+// rate limit) and 5xx. Any other error (bad key, bad voice, out of credits) fails at once.
+async function synthesize(voiceId, text, model, tag = '') {
   if (!process.env.ELEVENLABS_API_KEY) throw new Error('ELEVENLABS_API_KEY not set (expected in .env at the project root)');
-  const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}/with-timestamps`, {
-    method: 'POST',
-    headers: { 'xi-api-key': process.env.ELEVENLABS_API_KEY, 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      text,
-      model_id: model,
-      voice_settings: { stability: ep.voice.stability ?? 0.5, similarity_boost: ep.voice.similarityBoost ?? 0.8 },
-    }),
-  });
-  if (!res.ok) throw new Error(`ElevenLabs TTS failed ${res.status}: ${await res.text()}`);
-  return res.json(); // { audio_base64, alignment: {characters, character_start_times_seconds, character_end_times_seconds}, normalized_alignment }
+  for (let attempt = 1; ; attempt++) {
+    const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}/with-timestamps`, {
+      method: 'POST',
+      headers: { 'xi-api-key': process.env.ELEVENLABS_API_KEY, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        text,
+        model_id: model,
+        voice_settings: { stability: ep.voice.stability ?? 0.5, similarity_boost: ep.voice.similarityBoost ?? 0.8 },
+      }),
+    });
+    if (res.ok) return res.json(); // { audio_base64, alignment: {characters, character_start_times_seconds, character_end_times_seconds}, normalized_alignment }
+    const body = await res.text();
+    if ((res.status === 429 || res.status >= 500) && attempt < 6) {
+      const wait = Math.min(30, +(res.headers.get('retry-after') || 0) || 2 ** attempt) * 1000;
+      console.log(`${tag}: ElevenLabs ${res.status}, retry ${attempt}/5 in ${wait / 1000} s`);
+      await new Promise(r => setTimeout(r, wait));
+      continue;
+    }
+    throw new Error(`ElevenLabs TTS failed ${res.status}: ${body}`);
+  }
 }
 
 function processVoice(src, dst, tempoOverride) {
@@ -299,17 +310,38 @@ if (cmd === 'check') {
   const secs = read('sections.json');
   fs.mkdirSync(path.join(DIR, 'vo'), { recursive: true });
   const ids = rest.length ? rest : secs.filter(s => !s.file || !fs.existsSync(path.join(DIR, s.file))).map(s => s.id);
-  for (const id of ids) {
-    const s = secs.find(x => x.id === id);
-    if (!s) throw new Error('unknown section ' + id);
-    console.log(`${s.id}: calling ElevenLabs (${Buffer.byteLength(s.text)} chars, voice ${s.voice_id}, ${s.model})…`);
-    const r = await synthesize(s.voice_id, s.text, s.model);
-    fs.writeFileSync(path.join(DIR, 'vo', `${id}.mp3`), Buffer.from(r.audio_base64, 'base64'));
-    fs.writeFileSync(path.join(DIR, 'vo', `${id}.align.json`), JSON.stringify(r.alignment));
-    Object.assign(s, { file: `vo/${id}.wav` });
-    pace(s);
-  }
+  ids.forEach(id => { if (!secs.some(x => x.id === id)) throw new Error('unknown section ' + id); });
+  // a few calls at once (voice.parallel, default 3); sections.json is saved after EVERY finished section,
+  // so a crash or a failed call never loses (and never re-bills) the audio already paid for
+  const parallel = Math.max(1, ep.voice.parallel ?? 3);
+  const t0 = Date.now();
+  let next = 0;
+  const failed = [];
+  const worker = async () => {
+    while (next < ids.length) {
+      const id = ids[next++];
+      const s = secs.find(x => x.id === id);
+      console.log(`${s.id}: calling ElevenLabs (${Buffer.byteLength(s.text)} chars, voice ${s.voice_id}, ${s.model})…`);
+      try {
+        const r = await synthesize(s.voice_id, s.text, s.model, s.id);
+        fs.writeFileSync(path.join(DIR, 'vo', `${s.id}.mp3`), Buffer.from(r.audio_base64, 'base64'));
+        fs.writeFileSync(path.join(DIR, 'vo', `${s.id}.align.json`), JSON.stringify(r.alignment));
+        Object.assign(s, { file: `vo/${s.id}.wav` });
+        pace(s);
+        write('sections.json', secs);
+      } catch (e) {
+        failed.push(s.id);
+        console.error(`${s.id}: FAILED — ${e.message}`);
+      }
+    }
+  };
+  await Promise.all(Array.from({ length: Math.min(parallel, ids.length) }, worker));
   write('sections.json', secs);
+  console.log(`voice: ${ids.length - failed.length}/${ids.length} sections in ${((Date.now() - t0) / 1000).toFixed(0)} s (parallel ${parallel})`);
+  if (failed.length) {
+    console.error(`failed: ${failed.join(' ')} — fix the cause, then re-run 'voice ${slug}' (only these get a new call)`);
+    process.exit(1);
+  }
 } else if (cmd === 'pace') {
   // re-level and re-pace already-downloaded sections (no new ElevenLabs calls)
   const secs = read('sections.json');
