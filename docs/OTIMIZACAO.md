@@ -15,14 +15,17 @@ Máquina: 12 núcleos de CPU, NVIDIA RTX 3060. Ferramentas fora do PATH do termi
 
 ## Linha de base medida (para comparar depois)
 
-| Etapa | Custo medido |
-|---|---|
-| `review.mjs` (quadros de revisão, 162 planos × 4 + eventos ≈ 700 stills em série) | 10+ min por rodada; foram 3 rodadas |
-| Revisor independente | rodada 1 ≈ 330 mil tokens, rodada 2 ≈ 300 mil, rodada 3 (focada) ≈ 150 mil |
-| Render final (`--concurrency=4 --crf=14`) | ~25 min; arquivo de 1,17 GB |
-| Voz (`episode.mjs voice`, 47 chamadas em série) | ~3 min, ~3.700 créditos |
-| Cada `stills.cjs` | ~30 s só de empacotar o projeto antes do 1º quadro |
-| Retrabalho | 3 rodadas de revisão; a maioria por erros de encenação evitáveis (Fase 3) |
+| Etapa | Antes | Depois (medido 2026-11-08) |
+|---|---|---|
+| `review.mjs` completo (`quem-tem-crush`, 162 planos) | 10+ min por rodada | **3 min 20 s** (stills em paralelo) |
+| Rodada 2+ de revisão (quadros) | 10+ min (refazia tudo) | **27 s** com `--only` em 5 planos |
+| Pré-checagem antes da revisão | não existia | **23 s** (`sheet.mjs`, 16 planos-chave) |
+| Revisor, rodada 2+ | ≈ 300 mil tokens no modelo principal | só os planos alterados, em sonnet (`revisor-verificacao`); a medir no próximo episódio |
+| Leitura para escrever o roteiro | blueprint + análise ≈ 65 mil tokens | cola ≈ 3 mil tokens |
+| Render final | ~25 min, 1,17 GB (concorrência 4, CRF 14) | ~21% mais rápido, ~40% do tamanho (concorrência 8, CRF 18; medido em 20 s) |
+| Voz (47 seções) | ~3 min em série; falha no meio = pagar de novo | 3 em paralelo (no teste falso: 22 s), salva a cada seção |
+| Cada `stills.cjs` | "~30 s de bundle" | 2–3 s (cache do webpack); 11 s depois de editar `src/` |
+| Retrabalho | 3 rodadas, a maioria por encenação | regras novas no `CLAUDE.md` + 3 avisos novos no audit |
 
 ---
 
@@ -76,10 +79,10 @@ Máquina: 12 núcleos de CPU, NVIDIA RTX 3060. Ferramentas fora do PATH do termi
 
 ## Fase 4 — Fechar
 
-- [ ] **4.1 Medir de novo** no `quem-tem-crush` (sem regravar voz): tempo do `review.mjs`, do `review.mjs --only` com 5 planos, do render de 60 s. Anotar na tabela de linha de base acima ("antes → depois").
-- [ ] **4.2 Testes:** `npm run typecheck`, `npm test` (21/21), `node tools/qa.cjs audit quem-tem-crush` com 0 erros.
-- [ ] **4.3 Cópia portátil:** `node tools/pack/pack.mjs` (o `CLAUDE.md` pede para reempacotar depois de mudar motor, ferramentas ou docs).
-- [ ] **4.4 Commit** por fase (`git commit`), mensagem curta dizendo o ganho medido.
+- [x] **4.1 Medir de novo** *Feito:* tabela de linha de base acima atualizada. no `quem-tem-crush` (sem regravar voz): tempo do `review.mjs`, do `review.mjs --only` com 5 planos, do render de 60 s. Anotar na tabela de linha de base acima ("antes → depois").
+- [x] **4.2 Testes:** *Feito:* typecheck ok, 21/21, audit com 0 erros (7 avisos, os mesmos de antes). `npm run typecheck`, `npm test` (21/21), `node tools/qa.cjs audit quem-tem-crush` com 0 erros.
+- [x] **4.3 Cópia portátil:** *Feito:* 197 arquivos, 3,7 MB; inclui cola, kit e `revisor-verificacao`. `node tools/pack/pack.mjs` (o `CLAUDE.md` pede para reempacotar depois de mudar motor, ferramentas ou docs).
+- [x] **4.4 Commit** *Feito:* um commit por tarefa (`git log`). por fase (`git commit`), mensagem curta dizendo o ganho medido.
 
 ## ★ Lembrete: ensinar a escolher modelo por ação
 

@@ -1,6 +1,6 @@
 # Project instructions: 3D Stickman Long
 
-**Claude: read only lines 1–413 of this file.** Everything after that is the packed project (3.5 MB). If the user typed **start**, follow "For Claude: what start means" below.
+**Claude: read only lines 1–414 of this file.** Everything after that is the packed project (3.7 MB). If the user typed **start**, follow "For Claude: what start means" below.
 
 This one file rebuilds the 3D Stickman Long production system in an empty folder. That system makes IFOLOGY-style "What If" videos with a 3D stickman hero, built in code with Remotion 4 and Three.js, with Python sound effects and ElevenLabs narration. The file holds:
 - the engine, sets, cards and overlays;
@@ -10,7 +10,7 @@ This one file rebuilds the 3D Stickman Long production system in an empty folder
 - Claude's project memory;
 - the `/stickman <topic>` command (topic in, finished video and 3 thumbnails out).
 
-It holds 184 files in all, each with a checksum. It was packed on 2026-11-08. It holds no finished videos or episodes: you start with an empty channel.
+It holds 197 files in all, each with a checksum. It was packed on 2026-11-08. It holds no finished videos or episodes: you start with an empty channel.
 
 ## For the human
 
@@ -18,7 +18,7 @@ It holds 184 files in all, each with a checksum. It was packed on 2026-11-08. It
 2. Open a new Claude Code chat on that folder: the Code tab of the desktop app, or `claude` in a terminal there.
 3. Type **start**. (If Claude asks what to start, say "follow project instructions.md".)
 
-At 3.5 MB, the file is too big to paste into a chat, so it has to sit in the folder.
+At 3.7 MB, the file is too big to paste into a chat, so it has to sit in the folder.
 
 Claude asks four setup questions first:
 - what the main character wears (with ready-made looks if you don't want to describe one);
@@ -46,7 +46,7 @@ Everything else works before either is connected: ideas, scripts, shot lists, pr
 
 You are installing an existing project from this file. Every project file comes out of the payload, byte for byte, with its checksum verified. Never write a project file from memory or "improve" one while installing. The only edits you make are the ones the setup answers call for (step 7).
 
-Never read past line 413 with Read, cat or grep: the rest is 3.5 MB of payload. Keep a task list, and run the long installs in the background.
+Never read past line 414 with Read, cat or grep: the rest is 3.7 MB of payload. Keep a task list, and run the long installs in the background.
 
 **Shell.** Run every command in the Bash tool (Git Bash), with forward slashes, exactly as written here: `.venv/Scripts/python`, `--props='{"view":"close"}'`. If there is no Bash tool, use PowerShell:
 - write `.venv\Scripts\python`;
@@ -71,7 +71,7 @@ Ask all four in **one** AskUserQuestion call. If the tool isn't available, ask i
 2. Header "Language". Question: "What language should scripts, narration, overlays and thumbnails be written in?"
    - **English (Recommended)**: "The language the engine's docs and example scripts are written in."
    - **Portuguese (PT-BR)**: "Scripts, VO text, overlays and thumbnail text in Portuguese. Code, docs and comments stay in English."
-   - The automatic "Other" option lets the user name any other language; the story docs (`STORY_BLUEPRINT.md`, `IDEA_ENGINE.md`, `script_analysis.md`) get translated the same way.
+   - The automatic "Other" option lets the user name any other language; the story docs (`STORY_BLUEPRINT.md`, `COLA_ROTEIRO.md`, `IDEA_ENGINE.md`, `script_analysis.md`) get translated the same way.
 3. Header "Narrator". Question: "Which narrator voice should ElevenLabs use once it's connected?"
    - **Default for the chosen language (Recommended)**: "Claude picks a calm, warm narrator in that language from ElevenLabs' public voice library once connected, and confirms it with you by ear before locking it in."
    - **Audition first**: "When ElevenLabs is connected, Claude plays you free samples of 3–4 narrators in that language and you pick."
@@ -390,17 +390,18 @@ End with how to connect ElevenLabs (get a key, give it to Claude in a new chat) 
 
 | Path | Files | Size | What |
 |---|---|---|---|
-| `.claude/` | 1 | 4 KB | the `/stickman <topic>` command |
-| `(root)` | 8 | 189 KB | `CLAUDE.md` (the project rules), `HOW_TO_USE.md`, `package.json`, `package-lock.json`, Remotion and TypeScript config |
+| `.claude/` | 2 | 4 KB | the `/stickman <topic>` command and the `revisor-verificacao` subagent (sonnet) |
+| `(root)` | 9 | 195 KB | `CLAUDE.md` (the project rules), `HOW_TO_USE.md`, `package.json`, `package-lock.json`, Remotion and TypeScript config |
 | `.vscode/` | 1 | 0 KB |  |
-| `@memory/` | 10 | 16 KB | Claude's memory for this project (extracted into the new project's memory folder) |
+| `@memory/` | 12 | 20 KB | Claude's memory for this project (extracted into the new project's memory folder) |
 | `data/` | 47 | 415 KB | idea-engine data: competitor titles, beat sheets, transcripts, patterns, ideas backlog |
-| `docs/` | 15 (8 binary) | 1277 KB | style bible, story blueprint, idea engine, reviewer brief, ElevenLabs and Fish first-connect checklists, channel research with reference frames |
+| `docs/` | 17 (8 binary) | 1305 KB | style bible, story blueprint, idea engine, reviewer brief, ElevenLabs and Fish first-connect checklists, channel research with reference frames |
 | `final/` | 1 | 1 KB | its README (finished videos land here) |
+| `projeto-2/` | 1 | 0 KB |  |
 | `public/` | 4 | 7 KB | the `pipetest` fixture episode (JSON only), empty `music/` and `sfx/` |
-| `src/` | 66 | 546 KB | the engine (rig, Stickman, actors, cameras, materials, effects), sets, cards, overlays, the episode pipeline and its self-tests |
+| `src/` | 67 | 557 KB | the engine (rig, Stickman, actors, cameras, materials, effects), sets, cards, overlays, the episode pipeline and its self-tests |
 | `thumbnails/` | 7 (3 binary) | 306 KB | config, the prompt template, the 3 reference images, an example brief |
-| `tools/` | 24 | 173 KB | build, episode, QA, review, stills, thumbnail and pack tools; Python sound design, music and idea tools |
+| `tools/` | 29 | 307 KB | build, episode, QA, review, stills, thumbnail and pack tools; Python sound design, music and idea tools |
 
 Left out on purpose:
 - finished videos, episodes, voice-overs and thumbnails (you start with an empty channel);
@@ -418,7 +419,17 @@ To repack after changing the project, run `node tools/pack/pack.mjs`. It rewrite
 @@@@ DIR final/thumbnails
 @@@@ DIR public/music
 @@@@ DIR public/sfx
-@@@@ FILE .claude/commands/stickman.md | text | 3871 | b28e0ce4f0fb01d09874bf13c827e14b5e052a3d93f4dfb88cc7bbce513d1a1a
+@@@@ FILE .claude/agents/revisor-verificacao.md | text-crlf | 376 | ff917f65ef6113268a8d5953ed548b2c55cc52f5af2dedcfc70ae103cb39b62b
+---
+name: revisor-verificacao
+description: Rodada 2+ da revisão de um episódio. Confere se os problemas do relatório anterior foram corrigidos, olhando só os planos alterados (review.mjs --only).
+tools: Read, Glob, Grep, Write
+model: sonnet
+effort: medium
+---
+Você é o revisor de verificação. Siga docs/review/REVIEWER_BRIEF.md, seção "Verification rounds".
+@@@@ END
+@@@@ FILE .claude/commands/stickman.md | text | 4003 | 97ccf6c703694ba529fdc80459dc191e907299a248e78b250bafbd28ef4b3e61
 ---
 description: Make a full "What If" stickman episode from a topic, then generate its 3 thumbnails
 argument-hint: <video topic, e.g. What If You Could Swap Places With Anyone>
@@ -442,8 +453,8 @@ Make one complete narrated episode about this topic with the saved hero, then ge
 
 ## Run
 
-1. **Script** (`docs/story/STORY_BLUEPRINT.md`): beat sheet, script, plant ledger, fact check and score in `script_notes.md`.
-2. **Shot list:** `episode.json`, then `node tools/episode.mjs draft <slug>`, `npm test`, `node tools/qa.cjs audit <slug>` and `node tools/episode.mjs check <slug>` (vo text: tags, SSML, raw numbers — CLAUDE.md Voice step 5.0). Fix every error, then self-certify STORY_BLUEPRINT.md §9's "Tags de áudio e fala" group by eye — `check` is mechanical and won't catch a misplaced or mismatched tag.
+1. **Script** (`docs/story/COLA_ROTEIRO.md`; open `STORY_BLUEPRINT.md` only at the § it names): beat sheet, script, plant ledger, fact check and score in `script_notes.md`.
+2. **Shot list:** `episode.json`, generated from `tools/episodes/<slug>.py` (copy `_modelo.py`; helpers in `kit.py`), then `node tools/episode.mjs draft <slug>`, `npm test`, `node tools/qa.cjs audit <slug>` and `node tools/episode.mjs check <slug>` (vo text: tags, SSML, raw numbers — CLAUDE.md Voice step 5.0). Fix every error, then self-certify STORY_BLUEPRINT.md §9's "Tags de áudio e fala" group by eye — `check` is mechanical and won't catch a misplaced or mismatched tag.
 3. **One checkpoint before spending credits.** Check the ElevenLabs credit balance (`GET /v1/user/subscription`; if the API key lacks `user_read`, ask the user to check elevenlabs.io/app/subscription or widen the key) and show the user, in one message:
    - the title and a short synopsis;
    - the script score and the path to `script.md`;
@@ -468,16 +479,24 @@ Keep the final message short:
 @@@@ FILE .env | text | 71 | e2e9b2be43ba6353ae5405004fc726e5ee1d97b39e17ff6fd83e004d925133b0
 ELEVENLABS_API_KEY=sk_9ef151765d9a693da644a2efbe652f10f2b6e8b65cffba9d
 @@@@ END
-@@@@ FILE .gitignore | text | 19 | b4e6bbd79ad86dcfefe0b15b6ac92202d42293d4020e4a2e1d3b5a9a8b005a16
+@@@@ FILE .gitignore | text | 128 | 1294e608fde59b64f2361a2656738c8e0889a2f70c26707bc32fee6edba6b719
 .env
 node_modules/
+.venv/
+out/
+final/
+public/episodes/*/vo/
+public/episodes/*/raw/
+public/episodes/*/mix.wav
+__pycache__/
+*.pyc
 @@@@ END
 @@@@ FILE .vscode/settings.json | text-crlf | 44 | 9f46c0b92be738015393f3d975bebbdcc62838d47b61208e8502a225ac4c105d | noeol
 {
     "python.terminal.useEnvFile": true
 }
 @@@@ END
-@@@@ FILE @memory/MEMORY.md | text | 1541 | 9cfabd652e7cc913c9f13e739a1681074b1ef735f77e548be1da76522642c5b4
+@@@@ FILE @memory/MEMORY.md | text | 1877 | 1b4a5e69e7bfbe7d0ed799aada0077aa87cd637d008d0927006e9f6fd382e648
 - [IFOLOGY-style channel](project-ifology-style-channel.md) — IFOLOGY-look hero in a GRAY quarter-zip jacket (since 2026-11-08), flat final/ folder, Remotion+Three engine, Python SFX, ElevenLabs voice
 - [Review-and-fix loop](feedback-review-and-fix-loop.md) — audit + independent reviewer BEFORE final render, then review the render; fix everything; 1080p final
 - [No camera snaps](feedback-no-camera-snaps.md) — never cut between near-identical framings ("a few pixels over"); flow instead; real angle changes are fine
@@ -486,6 +505,8 @@ node_modules/
 - [ElevenLabs API key](reference-elevenlabs-key.md) — in D:\stickman-2\.env, gitignored; scoped (no user_read/models_read) — check balance on the dashboard
 - [Thumbnails via GPT Image 2.5](project-thumbnails-gpt-image.md) — 2D GPT Image thumbs, fish or chatgpt mode (chatgpt now), locked 3 variants at 2K medium, only when a video is ~finished; gray quarter-zip jacket
 - [Fish Audio pending](project-fish-pending.md) — Fish MCP NOT connected; now only needed for fish-mode thumbnails (chatgpt mode is current), not voice
+- [Optimization action plan](project-otimizacao.md) — docs/OTIMIZACAO.md in progress (checkboxes = status); 2nd account runs on a separate PC
+- [Projeto 2: future series idea](project-2-series-future.md) — NOT started; continuous "Day N" series voted by YouTube comments, reusing the engine not the What-If blueprint; see futuro.md
 - [ElevenLabs pending](project-elevenlabs-pending.md) — no working ELEVENLABS_API_KEY at setup; run docs/ELEVENLABS_SETUP.md once one is added to .env
 @@@@ END
 @@@@ FILE @memory/feedback-no-camera-snaps.md | text | 1227 | ddf5d3bc44744502e18811b0814b4ca88395f151c2c26b68eea6d9e4307575d0
@@ -546,6 +567,36 @@ On 2026-10-27 the user found a swap bug that two of my reviews had missed: the s
 - Tell the user what was found and fixed, and anything deferred.
 
 Related: [[project-ifology-style-channel]], [[feedback-no-camera-snaps]].
+@@@@ END
+@@@@ FILE @memory/project-2-series-future.md | text | 2673 | 62614de0eb046cb3f1c7a0c0ee5c6f43440e92d2bfae669d102ffc27491b18bb
+---
+name: project-2-series-future
+description: "Future idea (not started): 'Projeto 2' — a continuous 'Day N' series where the audience votes in YouTube comments on what happens next, reusing this project's engine but not its What-If script pipeline. Notes in futuro.md and projeto-2/"
+metadata:
+  node_type: memory
+  type: project
+  originSessionId: 37ab0cc5-5add-4480-ae42-47cb5751b23d
+  modified: 2026-11-08T13:55:01.099Z
+---
+
+On 2026-11-08 the user described a second content format they want to build **later**, not now: a continuous series where each video is "Day N" of one ongoing story, ending with a few options for what happens next; the audience votes in YouTube comments, and the winning option becomes canon for "Day N+1".
+
+They tried this concept before with other engines and it went badly (reason not detailed). They explicitly want to reuse this project's **engine** (Remotion + Three.js, the deterministic time-based rig — see the conversation about how the engine produces consistent frames) as the technical foundation, not its "What If" story pipeline (`STORY_BLUEPRINT.md` is for the current one-shot curiosity format only).
+
+**Why this memory exists:** so a future session doesn't have to be told the idea again or rediscover that it's intentionally parked.
+
+**Full requirements and detail live in `futuro.md` (project root) and `projeto-2/README.md`** — don't duplicate them here; read those files when this project is picked up. Short version of what the user flagged:
+- continuous episodes (state/canon must carry across videos, not just within one);
+- explicit worry about plot holes across a branching, voted-on story — needs a cross-episode canon ledger, not just the single-episode plant ledger the current blueprint has;
+- a voting mechanic (options presented at episode end, YouTube comment votes decide canon) — who reads/tallies votes is still undecided;
+- animation detail needs, not yet specified by the user — don't assume, ask when revisited;
+- richer recurring-character identity (`CastMember` today is just outfit/color/height — no personality traits or non-outfit visual identity), since a recurring cast across dozens of episodes needs the audience to recognize characters by more than clothing color.
+
+**How to apply:**
+- Do not start implementing this unless the user explicitly asks to pick it up.
+- When they do, read `futuro.md` and `projeto-2/README.md` first, then ask what's changed/clarified since 2026-11-08 before writing anything.
+- Keep it in `projeto-2/` — don't fold it into the active "E Se" channel pipeline or its docs.
+- Related: [[project-ifology-style-channel]], [[project-pt-br-adaptation]].
 @@@@ END
 @@@@ FILE @memory/project-elevenlabs-pending.md | text | 1029 | 91f3bcd842b13c6403b3eee218d0744d19068fd56da2652759cd14da658b5f4e
 ---
@@ -640,6 +691,27 @@ This replaces the old Fish Audio narrator ("Warm Storyteller") entirely — voic
 - Don't swap voices or models without asking.
 - Related: [[project-ifology-style-channel]], [[project-pt-br-adaptation]].
 @@@@ END
+@@@@ FILE @memory/project-otimizacao.md | text | 1380 | 99349992f25a183085a3a52a52f050303efa9259c2bcc51279cb4c27820577f6
+---
+name: project-otimizacao
+description: "Optimization plan docs/OTIMIZACAO.md — in progress; 0.1, 0.2, 2.1, 1.2, 2.3, 2.4 done 2026-11-08 (checkboxes in the file are the live status)"
+metadata:
+  node_type: memory
+  type: project
+  originSessionId: 37ab0cc5-5add-4480-ae42-47cb5751b23d
+  modified: 2026-11-08T23:24:19.352Z
+---
+
+The plan to cut tokens and speed up the pipeline lives in `docs/OTIMIZACAO.md` (phases 0–4). Its checkboxes and notes are the live status. Don't duplicate the status here.
+
+As of 2026-11-08, done: git repo, PATH, script cheat sheet (`docs/story/COLA_ROTEIRO.md`), `review.mjs --only`, `tools/sheet.mjs` pre-check, and the model-per-action lesson. For the lesson, the user created `.claude/agents/revisor-verificacao.md` (sonnet/medium) and answered the check correctly. Remaining: 1.1, 1.3, 1.4 (costs credits, ask first), 1.5, 2.2, phase 3, phase 4.
+
+The user runs a second Claude account on a **separate PC** with a copy of the project, so two sessions no longer share one engine folder. Git (commit per task) is how the copies stay in sync.
+
+**Why:** reviewer rounds cost ~150–330k tokens each, and the user called token spend "absurd". Token savings come first, then speed.
+
+**How to apply:** continue `docs/OTIMIZACAO.md` in order. Ask before spending ElevenLabs credits. Commit after each task. Related: [[feedback-review-and-fix-loop]].
+@@@@ END
 @@@@ FILE @memory/project-pt-br-adaptation.md | text | 1717 | 237d3d8e6b33ae23da6aae5791e17d79d6b33ecd06b4bf5e912cd432ed583995
 ---
 name: project-pt-br-adaptation
@@ -705,7 +777,7 @@ The ElevenLabs API key `tools/episode.mjs` uses lives in `D:\stickman-2\.env` as
 - To check the real remaining credit balance, ask the user to look at elevenlabs.io/app/subscription, or to create/widen a key with `user_read`.
 - To measure actual cost of a call, use `/v1/usage/character-stats?start_unix=<ms>&end_unix=<ms>&include_live_requests=true` and diff before/after — this works with the current key and is how the ~0.4 credits/char rate for eleven_v4 was measured (see [[project-narrator-voice]]).
 @@@@ END
-@@@@ FILE CLAUDE.md | text-crlf | 26257 | ce9358520db92c9ba8382e5e075504296e56e845c81a447a070f9b3a38b609ce
+@@@@ FILE CLAUDE.md | text-crlf | 29372 | 2c616dc4fbbd3ab271ef9285f619d950e7d0be2becff8d49c371b90a852d7029
 # 3D Stickman Long: production system
 
 > **ElevenLabs is not connected yet.** This copy was set up from `project instructions.md` without a working `ELEVENLABS_API_KEY`. The first time one is added to `.env`, run `docs/ELEVENLABS_SETUP.md` before any voice work; its last step deletes this note. Until then, take episodes as far as the draft preview. (Fish Audio is separate and optional — only needed for `fish`-mode thumbnails; see `docs/FISH_SETUP.md`.)
@@ -718,7 +790,7 @@ This project makes IFOLOGY-style 3D stickman videos: our gray-jacket hero in a l
 - Built with **Remotion 4 + Three.js** (`@remotion/three`, React Three Fiber). Everything is drawn, animated and changed in code.
 - Sound effects are synthesized in **Python** (`.venv`, numpy/scipy).
 - Voice uses the **ElevenLabs API**, called directly (no MCP) with a key in `.env` (`ELEVENLABS_API_KEY`, gitignored). Thumbnail image generation can still use the Fish Audio MCP in `fish` mode (see step 10) — that's a separate capability from voice and is unaffected by this.
-- Read `docs/STYLE.md` before any visual work and `docs/research/script_analysis.md` before writing a script.
+- Read `docs/STYLE.md` before any visual work and `docs/story/COLA_ROTEIRO.md` before writing a script. Don't read `docs/story/STORY_BLUEPRINT.md` (~50k tokens) or `docs/research/script_analysis.md` (~15k) whole: the cola condenses both and points to the § to open when you need detail or examples.
 
 ## `/stickman <topic>`: one command, whole episode
 
@@ -757,7 +829,7 @@ Preview interactively with `npm run studio`. Render a look-dev still with `npx r
   - **IK:** `reachR: { to: 'mouth' | 'face' | 'chin' | 'chest' | 'heart' | 'temple' | 'hip' | 'pocket' | [x, y, z] }` puts the wrist on a landmark. Root-local points ignore head tilt, so keep head nods small while reaching the face.
 - **Keyframes:** `poses: [{ t, pose, blend }]` and `faces: [{ t, face, blend }]`, in the same time base you pass to `evalActor`. Locomotion uses `path: [{ t, pos, gait }]`; gaits are walk, jog, run, sprint, `dash` (athletic sprint), sneak and float. For fake-speed shots, drive `gaitPose('dash', phase)` directly.
 - **Faces:** `FACES` in rig.ts (`happy`, `shocked`, `determined`, …), or `Face` objects with `eyes` (0–1.45), `pupils`, `look`, `brow` (−1 angry … 1 worried), `mouth` (−1 … 1), `open`, `width`, `tears`, `sweat`, `blush`. Blinks are automatic.
-- **Props in hand:** `hold: { R: 'pill' | 'phone' | 'cup' | 'book' | 'ball' | … }` (`src/sets/props.tsx`).
+- **Props in hand:** `hold: { R: 'pill' | 'phone' | 'cup' | 'book' | 'ball' | … }` (`src/sets/props.tsx`). `scaleR`/`scaleL` enlarges one about the palm (`hold: { R: 'flower', scaleR: 2 }`) when the narration points at it.
 - **Cameras** (`src/engine/cam.ts`):
   - `camAt(keys, T)` with eases `inOut`, `out`, `snap`, `linear`;
   - `shake(cam, T, amp, freq, seed)` combined with `impulse(T, t0, tau)` for hits;
@@ -789,6 +861,15 @@ These are bugs we already hit. Don't reintroduce them.
   - Or film through the gap between two bars (bars every 0.214 m), under the top rail.
 - **Hand props follow the wrist.** A tray or letter can end up edge-on, like a sign. Check them in a still, or swap to a clearer prop or pose.
 - **No more ASR alignment (obsolete bug class, kept for history).** Voice used to be transcribed with Whisper after the fact, which split compounds ("dodge balls") and mis-heard numbers, pushing words out of alignment. Since 2026-11-08, `align` reads ElevenLabs' own per-character timestamps for the exact text we sent — there's nothing to transcribe or fuzzy-match, so this bug class can't recur. If `align` ever prints a word-count mismatch, that means the model actually said something different from the script (mispronunciation), not an alignment bug — fix the script text, not the alignment code.
+- **Staging traps from `quem-tem-crush`** (each cost a reviewer round):
+  - **A partial pose resets the rest to standing.** On a seated actor, give the full seated pose, not just the changed arm.
+  - **`sitFloor` sinks the feet ~0.4 m.** For the floor or a kerb, use `sit` on a `crate` (h 0.45) or `kneel`.
+  - **A `smoke` prop near the lens reads as a rock.** Keep it far from the sight line; use small puffs (`size` ~0.25, `n` 60, `wind`).
+  - **Additive glow vanishes in daylight, whatever its colour.** Use a solid `glow` or the `crush` badge.
+  - **A flow needs the same props and actors in both shots.** Otherwise they vanish mid-move.
+  - **`insert` on a hand fails the audit.** Use `close` with `focus: 'handR'` and a short `dist`.
+  - **Two far-apart actors in one automatic framing give an empty frame.** Split the shot, or use an explicit camera.
+  - **A speaker must face the camera.** `over: '<listener>'` fixes most dialogue shots.
 - **Gray belongs to the hero.** Keep gray tops off cast, extras, crowds and team colours, including set palettes (`stadium.tsx`, the `kit.tsx` crowd, classroom shirts).
 
 ## Making a narrated episode (the long-form pipeline)
@@ -796,8 +877,8 @@ These are bugs we already hit. Don't reintroduce them.
 All files live in `public/episodes/<slug>/`.
 
 1. **Idea:** follow `docs/story/IDEA_ENGINE.md`. Generate candidates, check them with `python -I tools/ideas/novelty.py "<title>"`, score them, and pitch the top 3 to the user. Wait for their pick.
-2. **Script:** follow `docs/story/STORY_BLUEPRINT.md` (beat sheet, voice rules, checklist, scoring). Show the user the script, with its score, before spending voice credits. Once the shot list exists, `node tools/episode.mjs script <slug>` writes a readable `script.md` (speakers and timestamps). Keep the plant ledger, fact check and score in `script_notes.md`.
-3. **Shot list:** write `episode.json` (schema in `src/types.ts`: `Episode`, `Shot3D`, `CardShot`). Rules:
+2. **Script:** follow `docs/story/COLA_ROTEIRO.md` (beat sheet, voice rules, checklist, scoring, condensed from `STORY_BLUEPRINT.md`); open the blueprint only at the § the cola names. Show the user the script, with its score, before spending voice credits. Once the shot list exists, `node tools/episode.mjs script <slug>` writes a readable `script.md` (speakers and timestamps). Keep the plant ledger, fact check and score in `script_notes.md`.
+3. **Shot list:** write `episode.json` (schema in `src/types.ts`: `Episode`, `Shot3D`, `CardShot`) through a Python generator: copy `tools/episodes/_modelo.py` (the 17 beats, with helpers from `tools/episodes/kit.py`: `A`, `S`, `C`, `cam`, `walk`, `crush`, `episode`, `load_timing`, `resolve_countdowns`, `write`) to `tools/episodes/<slug>.py` and run it with `.venv/Scripts/python -I`. Edit the .py, never the JSON. `quem_tem_crush.py` is a full example. Rules:
    - one shot per 2.5–5 s of narration;
    - the `vo` text, read in order across shots, IS the script;
    - silent beats use `hold`, with no `vo`.
@@ -834,6 +915,8 @@ All files live in `public/episodes/<slug>/`.
    0. **Validate `vo` text before it can cost anything.** Run `node tools/episode.mjs check <slug>`. It's mechanical (unbalanced `[tags]`, unsupported SSML like `<break>`, raw digits that should be spelled out — STORY_BLUEPRINT.md §6.9/§6.4) and `voice` (step 2 below) refuses to call ElevenLabs while any of it fails, so this never silently eats credits. It does **not** judge tag placement, descriptiveness or voice-match — self-certify those against STORY_BLUEPRINT.md §9's checklist by eye before the credit checkpoint; that part needs a reader, not a regex.
    1. Run `node tools/episode.mjs sections <slug>`. It prints each section and its estimated credit cost (~0.4 credits/char on eleven_v4 — an estimate, not a bill) and a preview of any `check` problems.
    2. Run `node tools/episode.mjs voice <slug>`. It calls the ElevenLabs API directly (`text-to-speech/{voice}/with-timestamps`) for every section lacking audio, saves the raw mp3 and its per-character alignment, then trims/levels/paces it into `vo/sNN.wav`.
+      - It runs 3 calls at once (`voice.parallel` in `episode.json`) and retries 429/5xx by itself.
+      - It saves `sections.json` after every section. A failed call or a crash never re-bills audio already received: re-running `voice` calls only the sections still missing.
    3. Re-running `sections` keeps the audio for sections whose text didn't change. After a script edit, run `check` again before `voice <slug>` — only sections missing a `file` get a new (billed) call.
 6. **Align:** `node tools/episode.mjs align <slug>` turns the saved per-character alignment into word times — no transcription involved, so it can't mis-hear a word (see "Hard-won rules").
    - Every cut lands 0.12 s before its shot's first word.
@@ -848,18 +931,20 @@ All files live in `public/episodes/<slug>/`.
       - grounding, camera snaps (position step or turn rate), pose snaps and teleports;
       - forced jump cuts, flow continuity, and unresolved word cues (cards included);
       - a camera outside the room walls. Interior sets declare `room`, and the engine pulls such a camera back in along its sight line, but the framing is then tighter than written.
-   2. `node tools/review.mjs <slug>` renders labelled review frames into `out/<slug>/review/`:
+   2. **Cheap pre-check first:** `node tools/sheet.mjs <slug>` tiles one still per key shot (opening, each new set, the hook; ~20 s) into `out/lab/<slug>_sheet.jpg`; or pass ids (`sheet.mjs <slug> c8,r6`). Look at it and fix the obvious (sunk or floating feet, empty frames, wrong set, unreadable text) before the full review; every fix here saves a reviewer round.
+
+      Then `node tools/review.mjs <slug>` renders labelled review frames into `out/<slug>/review/`:
       - every event (swap, jump, flow) as before / at / after frames, with name tags and dashed "expect X" markers;
       - every shot as a strip of four frames: the first frame after the cut, then early, late and end;
       - blank-frame detection: a near-uniform picture, such as a camera inside a wall, is listed under `blank` in the manifest and printed;
       - a `manifest.json` that pairs each image with its narration, word timings and what must be true.
       Look at every event image yourself.
    3. Spawn an **independent reviewer** subagent (fresh context, `general-purpose`) told to follow `docs/review/REVIEWER_BRIEF.md` for `<slug>`. It writes `out/<slug>/review/reviewer_report.md` with must-fix / should-fix / nit rows and a verdict. Fix every must-fix and should-fix, or tell the user which ones you deferred and why.
-   4. After the fixes, re-run steps 1–2 and a round-2 reviewer that verifies each earlier row (`review.mjs` archives old reports in `out/<slug>/review_history/`). Build only on "ready for final render".
+   4. After the fixes, re-run step 1 and `node tools/review.mjs <slug> --only <ids of the shots you changed>` (only those shots and their events are re-rendered; the manifest's `only` lists them). If the voice was redone or shots were added/removed, it refuses: run the full `review.mjs`. Then a round-2 reviewer verifies each earlier row and checks only the changed shots: spawn the `revisor-verificacao` subagent (`.claude/agents/`, pinned to sonnet / medium effort — verification doesn't need the main model; round 1 stays `general-purpose` on the session model), naming the slug and the previous report (brief section "Verification rounds"; `review.mjs` archives old reports in `out/<slug>/review_history/`). Build only on "ready for final render".
 8. **Build:** `node tools/build-episode.mjs <slug>` makes the soundtrack, renders and muxes. A full build refuses to start while the scene audit has errors.
    - The soundtrack has narration, music ducked under the voice, per-set ambience, automatic sound effects, and the scripted `sfx`.
    - Output is `final/<Episode title>.mp4` at −14 LUFS, plus `out/<slug>/sheet_N.png` (one frame per shot). All finished videos sit together in `final/`. A full build moves the previous cut to `final/archive/<slug>_<date>.mp4`. Thumbnails go in `final/thumbnails/`, and `final/README.md` lists every episode.
-   - It renders about 2.5× real time: roughly 25 min for a 10-min episode.
+   - Defaults: concurrency = CPU cores − 4 (8 here) and CRF 18. Both were measured: 21% faster than 4/14, the file is ~40% of the size, and there's no visible difference. Override with `--concurrency N` / `--crf N`. A 10-min episode took ~25 min at the old 4/14, so expect ~20 min now.
 9. **Check the build**, per the loop above:
    - Look at every sheet: framing, occluders, the empty side of sets, overlays. Check loudness and that every swap strip still reads.
    - Listen for a leaked audio tag: ElevenLabs occasionally speaks a `[tag]`'s text instead of performing it (STORY_BLUEPRINT.md §6.9). If you hear one, rewrite that tag and re-voice just that section.
@@ -10800,6 +10885,114 @@ Run this checklist again whenever the Fish account changes: the thumbnail refere
 - Thumbnails (`fish` mode): 1,601 credits per 2K variant, so 3 variants are about 4.8k per episode.
 - Fish AI video models are not used for episodes. A clip costs 1.4k–53k credits, and the procedural engine is free.
 @@@@ END
+@@@@ FILE docs/OTIMIZACAO.md | text | 17928 | 5055bc9f843d056cfed6821d39dab0c79bfca61c7ef9ee5f5a651c581048a339
+# Plano de ação: otimizar tokens e velocidade
+
+Escrito em 2026-11-08, depois do episódio `quem-tem-crush` (10:13, 162 planos). **Para começar numa sessão nova:** leia este arquivo inteiro e execute as fases na ordem, marcando `[x]` em cada tarefa concluída e anotando o resultado medido. Pergunte ao usuário antes de qualquer coisa que mude o PATH do Windows ou gaste créditos.
+
+Máquina: 12 núcleos de CPU, NVIDIA RTX 3060. Ferramentas fora do PATH do terminal do Claude: `node` em `C:\Program Files\nodejs`, `ffmpeg`/`ffprobe` em `%LOCALAPPDATA%\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-9.0.2-full_build\bin`. Até a Fase 0 resolver, prefixe os comandos com:
+`export PATH="/c/Program Files/nodejs:/c/Users/G/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-9.0.2-full_build/bin:$PATH"`
+
+> ## ★ Prioridades destacadas pelo usuário
+>
+> 1. **Cola de roteiro (tarefa 2.1).** Criar uma versão resumida de 1–2 páginas do manual de roteiro (`docs/story/STORY_BLUEPRINT.md`, 928 linhas), que hoje é lido inteiro a cada episódio. É a economia de tokens mais simples e se repete em todo episódio.
+> 2. **Modelos mais fracos para ações que não precisam do mais forte (tarefa 2.4).** Rodadas de verificação, buscas e edições mecânicas não precisam do modelo principal.
+> 3. **Lembrete: ensinar o usuário a escolher o modelo por ação.** O usuário pediu explicitamente para aprender a fazer isso sozinho. Ver a seção "Lembrete: ensinar a escolher modelo por ação", no fim deste documento. A sessão que executar a tarefa 2.4 **deve ensinar, não só configurar**.
+
+**Atenção:** outra sessão do Claude pode estar produzindo outro episódio (`invasao-zumbi`) e mexendo nos mesmos arquivos do motor. Antes de editar `src/` ou `tools/`, confirme com o usuário que ela não está ativa.
+
+## Linha de base medida (para comparar depois)
+
+| Etapa | Antes | Depois (medido 2026-11-08) |
+|---|---|---|
+| `review.mjs` completo (`quem-tem-crush`, 162 planos) | 10+ min por rodada | **3 min 20 s** (stills em paralelo) |
+| Rodada 2+ de revisão (quadros) | 10+ min (refazia tudo) | **27 s** com `--only` em 5 planos |
+| Pré-checagem antes da revisão | não existia | **23 s** (`sheet.mjs`, 16 planos-chave) |
+| Revisor, rodada 2+ | ≈ 300 mil tokens no modelo principal | só os planos alterados, em sonnet (`revisor-verificacao`); a medir no próximo episódio |
+| Leitura para escrever o roteiro | blueprint + análise ≈ 65 mil tokens | cola ≈ 3 mil tokens |
+| Render final | ~25 min, 1,17 GB (concorrência 4, CRF 14) | ~21% mais rápido, ~40% do tamanho (concorrência 8, CRF 18; medido em 20 s) |
+| Voz (47 seções) | ~3 min em série; falha no meio = pagar de novo | 3 em paralelo (no teste falso: 22 s), salva a cada seção |
+| Cada `stills.cjs` | "~30 s de bundle" | 2–3 s (cache do webpack); 11 s depois de editar `src/` |
+| Retrabalho | 3 rodadas, a maioria por encenação | regras novas no `CLAUDE.md` + 3 avisos novos no audit |
+
+---
+
+## Fase 0 — Preparação (≈15 min)
+
+- [x] **0.1 Git.** *Feito:* commit `baseline` (203 arquivos, 4,9 MB; `core.autocrlf false`; também ignora `public/episodes/*/raw/` e `*.pyc`). O projeto não é repositório. `git init`, criar `.gitignore` com `node_modules/`, `.venv/`, `out/`, `final/`, `.env`, `public/episodes/*/vo/`, `public/episodes/*/mix.wav`, `__pycache__/`; commit inicial "baseline". *Por quê:* desfazer com segurança e ver o que outra sessão mudou. *Verificar:* `git status` limpo.
+- [x] **0.2 PATH.** *Feito:* `C:\Program Files\nodejs` adicionado ao PATH do usuário (o ffmpeg já estava). Vale depois de reiniciar o VS Code. Perguntar ao usuário se pode adicionar as duas pastas acima ao PATH do usuário (`setx` ou Configurações do Windows). *Ganho:* acaba com chamadas perdidas procurando `node`/`ffmpeg` em toda sessão. *Verificar:* num terminal novo, `node --version` e `ffmpeg -version`.
+
+## Fase 1 — Velocidade (código pequeno, ganho grande)
+
+- [x] **1.1 Stills em paralelo.** *Feito:* pool de páginas (`--parallel N`, padrão 4) e a composição é resolvida uma vez por props. 40 stills: 32 s em série → 13,7 s com 4 (2,3×). Com 6 fica mais lento (31 s; a GPU satura). Quadros idênticos (PSNR 92 dB). `tools/stills.cjs` renderiza um quadro por vez no laço `for (const j of jobs)`. Trocar por um pool de N páginas (padrão 4, opção `--parallel N`) usando o mesmo `browser`. *Ganho esperado:* `review.mjs` de ~12 min para ~3–4 min. *Verificar:* cronometrar `node tools/review.mjs quem-tem-crush` antes e depois; os arquivos em `out/quem-tem-crush/review/` saem iguais.
+- [x] **1.2 Revisão incremental.** *Feito:* `review.mjs <slug> --only id,id` (ids ou índices). Manifest guarda `timingHash`/`shotIds` e recusa `--only` se a voz ou a lista de planos mudou. `manifest.only` diz ao revisor o que mudou; `REVIEWER_BRIEF.md` ganhou a seção "Verification rounds". Pipetest: completo 35 s → `--only` 2 planos 15 s (quase tudo é o bundle de ~10 s, que a 1.5 ataca). Obs.: o manifest antigo do `quem-tem-crush` não tem hash; a 1ª rodada lá precisa ser completa. `tools/review.mjs` aceita só `<slug>` e refaz tudo. Adicionar `--only c8,r6,...` (ids de plano): renderiza e lista no `manifest.json` só esses planos (mais os eventos que os envolvem); o resto do manifest fica como estava. *Ganho:* rodadas 2+ em ~1 min. *Verificar:* `--only c8` gera só `shot_007*.jpg`.
+- [x] **1.3 Render final mais rápido e leve.** *Feito:* padrão concorrência = núcleos − 4 (8 aqui) e CRF 18, com `--concurrency`/`--crf`. Trecho de 20 s: concorrência 4 → 85 s, 6 → 74 s, 8 → 67 s, 10 → 66 s. CRF 18 = 39% do tamanho do CRF 14, SSIM 0,994, sem diferença visível. Aceleração de hardware não testada. `tools/build-episode.mjs` linha 45 fixa `--concurrency=4 --crf=14`. Trocar para concorrência padrão `Math.max(2, os.cpus().length - 4)` (8 nesta máquina) e CRF 18, com `--crf N` e `--concurrency N` para sobrescrever. *Ganho:* render ~40% mais rápido, arquivo ~metade (≈600 MB). *Verificar:* renderizar `quem-tem-crush --from 0 --to 60` com o antigo e o novo; comparar tempo, tamanho e um quadro lado a lado.
+  - Opcional: testar se o Remotion 4 instalado aceita aceleração de hardware no Windows/NVIDIA. Se não aceitar, não forçar.
+- [x] **1.4 Voz em paralelo.** *Feito sem gastar créditos:* 3 chamadas ao mesmo tempo (`voice.parallel`), com nova tentativa em 429/5xx (respeita `retry-after`). Também corrigi um bug: antes, o `sections.json` só era salvo no fim, então uma falha no meio fazia pagar de novo as seções já prontas; agora salva a cada seção. Testado com um ElevenLabs falso (`--import` de um mock que troca o `fetch`) sobre as 47 seções do `quem-tem-crush`: máx. 3 simultâneas, 14 erros 429 recuperados, 1 recusa isolada (46/47 salvas), a nova execução chamou só a que falhou, `align` sem diferença de palavras. Falta confirmar com a API real no próximo episódio. `tools/episode.mjs`, laço `for (const id of ids)` (~linha 302) chama `synthesize` uma seção por vez. Trocar por um pool de 3 chamadas simultâneas (opção `voice.parallel` no `episode.json`), com nova tentativa automática em erro 429 (limite da API). Manter a ordem do `sections.json`. *Ganho:* voz em <1 min. *Verificar:* rodar num episódio de teste curto (pipetest) e conferir que `align` não acusa diferença de palavras. **Gasta créditos: pedir OK ao usuário.**
+- [x] **1.5 Reaproveitar o bundle.** *Medido e descartado:* o cache do webpack já deixa o bundle em 1,8–2,9 s quando nada mudou (11 s depois de editar `src/`). Os "30 s" eram do cache frio. Guardar o bundle economizaria ~2 s por chamada e exigiria sincronizar os 333 MB de `public/`, então não compensa. `stills.cjs` chama `bundle()` a cada execução (~30 s). Guardar o bundle em `out/.bundle` e reaproveitar quando nenhum arquivo em `src/` ou `public/episodes/<slug>/` mudou (comparar a data de modificação mais recente). *Ganho:* ~30 s em cada chamada de stills/review. *Verificar:* a 2ª chamada seguida começa a renderizar sem a linha "bundled in".
+
+## Fase 2 — Menos tokens
+
+- [x] **★ 2.1 Cola de roteiro (prioridade do usuário).** *Feito em 2026-11-08:* `docs/story/COLA_ROTEIRO.md` (100 linhas, ~10 KB, ≈3 mil tokens) substitui a leitura do blueprint (76 KB, ≈50 mil tokens) **e** do `script_analysis.md` (52 KB, ≈15 mil) no passo 2. `CLAUDE.md`, `.claude/commands/stickman.md` e `tools/pack/fresh/stickman.md` apontam para a cola. Economia: ≈60 mil tokens por episódio. Criar `docs/story/COLA_ROTEIRO.md` (1–2 páginas) a partir do `STORY_BLUEPRINT.md` (928 linhas): tabela de batidas do 10:00 com tempos, fórmula de premissa, checklist §9 em forma curta, regras de tags §6.9 e números §6.4. No `CLAUDE.md` (passo 2 do episódio longo): "leia a cola; abra o blueprint completo só na seção que precisar". *Ganho:* dezenas de milhares de tokens por episódio.
+- [x] **2.2 Kit do gerador de episódio.** *Feito:* `tools/episodes/kit.py` reúne `A`, `S`, `C`, `cam`, `walk`, `crush`, `SW`, `episode()` (narrador e vozes da casa por padrão; música como pares (id, clima)), `load_timing()` (start/word/at/fmt), `resolve_countdowns()` genérico (veio do zumbi), `clean` e `write`. `quem_tem_crush.py` usa o kit; regenerado, o `episode.json` saiu idêntico (diff vazio). Criado `_modelo.py` com as 17 batidas. `invasao_zumbi.py` não foi mexido, porque pode estar em produção no outro PC. Passo 3 do `CLAUDE.md` e `/stickman` atualizados. Os helpers estão dentro de `tools/episodes/quem_tem_crush.py` (627 linhas): `A`, `S`, `C`, `cam`, `crush`, `shot_block`, e o cálculo do cronômetro a partir de `timing.json`. Mover para `tools/episodes/kit.py`, fazer `quem_tem_crush.py` importar dele, e criar `tools/episodes/_modelo.py` (esqueleto com as 17 batidas comentadas). *Verificar:* regenerar `quem-tem-crush` e confirmar que o `episode.json` sai idêntico (`git diff` vazio).
+- [x] **2.3 Pré-checagem barata.** *Feito:* `tools/sheet.mjs <slug> [ids]`; sem ids escolhe sozinho (abertura, 1º plano de cada set, 2 últimos; máx. 16). `quem-tem-crush`: 16 planos em 23 s, uma imagem só. Passo 7.2 do `CLAUDE.md` atualizado. Criar `tools/sheet.mjs <slug> <id,id,...>`: renderiza um still por plano (em ~70% da duração) e monta um mosaico 4×N em `out/lab/<slug>_sheet.jpg`. No `CLAUDE.md`, passo 7, antes do `review.mjs`: "rode a sheet em ~16 planos-chave (abertura, cada set novo, clímax, gancho) e corrija o óbvio". *Ganho:* pega a maior parte dos erros antes da revisão de 162 planos.
+- [x] **★ 2.4 Modelo certo para cada ação (prioridade do usuário).** *Feito em 2026-11-08:* lição dada (comandos conferidos na documentação oficial). O usuário criou `.claude/agents/revisor-verificacao.md` (`model: sonnet`, `effort: medium`) e acertou o teste: clímax → opus; conferir correções → sonnet/medium; render → sem ajudante. O `CLAUDE.md`, passo 7.4, usa esse ajudante na rodada 2+; ele também vai no pacote portátil. No `CLAUDE.md`, passo 7: rodada 1 da revisão completa com o modelo padrão; rodadas 2+ com `review.mjs --only <planos alterados>`, briefing focado nos itens abertos, e o revisor num modelo menor. Estender a mesma lógica às outras ações (tabela abaixo). O usuário pediu essa economia em 2026-11-08 **e quer aprender a fazer isso sozinho** — ver o lembrete no fim. *Ganho:* rodadas 2+ de ~300 mil para ~50–100 mil tokens, e menos custo em buscas e tarefas mecânicas.
+
+  | Ação no pipeline | Precisa do modelo forte? | Sugestão |
+  |---|---|---|
+  | Escrever o roteiro, decidir encenação e clímax | Sim | modelo principal da sessão |
+  | Revisão independente, rodada 1 (achar problemas) | Sim | modelo principal |
+  | Rodadas 2+ da revisão (conferir se foi corrigido) | Não | modelo intermediário |
+  | Buscar arquivo, procurar texto no código | Não | agente de busca rápido / modelo pequeno |
+  | Tradução de docs, edições mecânicas em lote | Não | modelo intermediário |
+  | Gerar quadros, rodar audit, build | Não usa modelo | só ferramentas; não delegar a agente |
+
+## Fase 3 — Evitar retrabalho
+
+- [x] **3.1 Regras novas no `CLAUDE.md`** *Feito:* bloco "Staging traps from quem-tem-crush" em Hard-won rules (a de números saiu, porque a 3.2 resolveu). (seção "Hard-won rules"), cada uma com uma linha de causa e solução:
+  - **Pose parcial volta o resto para "em pé":** passe a pose completa num personagem sentado.
+  - **`sitFloor` afunda os pés ~0,4 m:** para sentar no chão ou no meio-fio, use `sit` em cima de um `crate` (h 0,45) ou `kneel`.
+  - **Prop `smoke` perto da câmera parece pedra:** use puffs pequenos (`size` ~0,25, `n` 60, `wind`) e longe da linha de visão.
+  - **Brilho aditivo some de dia, em qualquer cor:** use `glow` sólido ou o selo `crush`.
+  - **Flow precisa dos mesmos props e atores nos dois planos;** se não, eles somem no meio do movimento.
+  - **`insert` de mão dá erro no audit:** use `close` com `focus: 'handR'` e `dist` curto.
+  - **Dois atores muito distantes no mesmo enquadramento automático deixam o quadro vazio:** separe os planos ou use câmera explícita.
+  - **Diálogo:** confira que quem fala está de frente; `over: '<ouvinte>'` resolve a maioria.
+  - **Números em cards formatam em inglês** até a tarefa 3.2.
+- [x] **3.2 Números em PT-BR.** *Feito:* conferido no still: `stat` 0,1 → "0,1"; `compare` 5000 → "5.000", selo "1.000×". Episódios antigos re-renderizados também mudam. `src/cards/kit.tsx:86` e `src/episode/overlays.tsx:16` usam `toLocaleString('en-US')`. Trocar para `'pt-BR'` (todo o conteúdo do canal é PT-BR desde 2026-11-08). *Verificar:* `npx remotion still CardLab` de um `stat` com 0,1 e de um `compare` com 5000 mostra "0,1" e "5.000". Avisar o usuário: muda também os episódios antigos se forem re-renderizados.
+- [x] **3.3 Tamanho de objeto na mão.** *Feito:* `hold: { R: 'flower', scaleR: 2 }` (também `scaleL`), escala pela palma. Conferido num still lado a lado (normal × 2). `HandProp` (`src/sets/props.tsx:12`, usado em `src/engine/Stickman.tsx:457`) só recebe `type`. Aceitar `hold: { R: 'flower', scaleR: 2 }` ou `holdScale`, para objetos que a narração destaca. *Verificar:* still do Caio com a flor em `scale` 2.
+- [x] **3.4 Avisos novos no audit** (opcional, `src/episode/audit.ts`). *Feito:* `pose` (pose parcial depois de sentar ou ajoelhar) e dois de `continuity` no flow (elenco diferente; props diferentes). Testados num episódio sintético: os três disparam. No `quem-tem-crush` não acusam nada novo (7 avisos antes e depois).
+  - **Pose parcial num ator sentado:** avisar quando ela faria o ator levantar.
+  - **Props diferentes num flow:** avisar quando os props mudam entre dois planos unidos por flow.
+
+## Fase 4 — Fechar
+
+- [x] **4.1 Medir de novo** *Feito:* tabela de linha de base acima atualizada. no `quem-tem-crush` (sem regravar voz): tempo do `review.mjs`, do `review.mjs --only` com 5 planos, do render de 60 s. Anotar na tabela de linha de base acima ("antes → depois").
+- [x] **4.2 Testes:** *Feito:* typecheck ok, 21/21, audit com 0 erros (7 avisos, os mesmos de antes). `npm run typecheck`, `npm test` (21/21), `node tools/qa.cjs audit quem-tem-crush` com 0 erros.
+- [ ] **4.3 Cópia portátil:** `node tools/pack/pack.mjs` (o `CLAUDE.md` pede para reempacotar depois de mudar motor, ferramentas ou docs).
+- [ ] **4.4 Commit** por fase (`git commit`), mensagem curta dizendo o ganho medido.
+
+## ★ Lembrete: ensinar a escolher modelo por ação
+
+**Para a sessão que executar a tarefa 2.4:** o usuário pediu para *aprender* a escolher o modelo por ação, não só que fique configurado. Pare antes de configurar, explique em português simples, com exemplos deste projeto, e deixe o usuário fazer pelo menos uma das configurações. Confirme cada nome de comando e de opção na documentação do Claude Code antes de ensinar (o agente `claude-code-guide` responde isso); não ensine nada de memória.
+
+O que ensinar, em ordem:
+1. **Trocar o modelo da sessão inteira:** o comando `/model`, que o usuário já usou em 2026-11-08 (`/model opus`). Quando vale a pena: roteiro e clímax no modelo forte; sessão de ajustes mecânicos num menor.
+2. **Escolher o modelo de um subagente na hora de criar:** o parâmetro de modelo da ferramenta de agentes. É o que o Claude usa ao disparar o revisor. Mostrar como pedir ("rode o revisor da rodada 2 num modelo menor").
+3. **Fixar o modelo de um tipo de agente:** criar um arquivo em `.claude/agents/` (ex.: `revisor-verificacao.md`) com o modelo definido no cabeçalho. Assim, toda rodada de verificação já usa o modelo certo sem precisar lembrar. Fazer junto com o usuário.
+4. **Modelo padrão dos subagentes:** a configuração que define o modelo usado por padrão quando nenhum é pedido. Confirmar o nome exato na documentação.
+5. **Esforço (effort):** além do modelo, dá para pedir menos ou mais esforço de raciocínio numa tarefa; explicar quando usar cada um.
+6. **Regra prática para o usuário:** criar e decidir → modelo forte; conferir, buscar e repetir → modelo menor; tarefas que só rodam ferramentas → não precisam de agente nenhum.
+
+No fim, pedir ao usuário que diga com as próprias palavras qual modelo usaria em 2–3 ações do pipeline, para confirmar que ficou claro.
+
+## Já resolvido nesta produção (não refazer)
+
+- Deixas `@palavra` com acento falhavam em silêncio: corrigido em `src/episode/cue.ts`, `src/episode/audit.ts` e `tools/sfx/episode_audio.py`.
+- O `cast` do episódio apagava a roupa do personagem (merge raso): corrigido em `src/episode/resolve.ts`.
+- Overlay `crush` (selo rosa com %): `src/overlays/CrushMeter.tsx`, já com proteção contra sair do quadro.
+- `episode.mjs check`: bloqueia a voz se houver colchete aberto, SSML ou dígito na narração.
+@@@@ END
 @@@@ FILE docs/STYLE.md | text-crlf | 5266 | 6eb58915c1c896c7548187bd01e4f630736cba956449332f01502fdedab90f29
 # House Style: 3D Stickman "What If" Films
 
@@ -11349,7 +11542,7 @@ Cada um tem um título, um dispositivo de HUD, uma tática de voz interior e uma
 9. **COMECEI 9. TERMINEI 0.**: uma estante de hobbies abandonados; a voz diz "você não é um finalizador"; o contador vira TERMINEI 1.
 10. **SILÊNCIO**: HUD "NOTIFICAÇÕES: 999+ / CONVERSAS REAIS: 0"; solidão dentro de um grupo. Termina com uma ligação em vez de uma mensagem de texto.
 @@@@ END
-@@@@ FILE docs/review/REVIEWER_BRIEF.md | text-crlf | 3996 | 3f1324d254e52f2558a81e338078cf932a0b8d38e31ec1692a6483dd71c08a72
+@@@@ FILE docs/review/REVIEWER_BRIEF.md | text-crlf | 4759 | a519033037ff42c2f9fa897394df86ade970382941d99289fa18ed262b86dc57
 # Independent reviewer brief
 
 You are the **second reviewer** for an animated episode. You review it **before the final render**.
@@ -11397,6 +11590,14 @@ All files are in `out/<slug>/review/`.
    - Anything that simply looks low quality.
 4. Don't invent problems you can't see, and don't give style opinions as defects. If you can't tell, write "unclear" and say why.
 
+## Verification rounds (round 2+)
+
+If `manifest.json` has an `only` list, this is an incremental run: only those shots (and their events) were re-rendered after fixes. Your brief will name the previous report (in `out/<slug>/review_history/`).
+- Check **each earlier must-fix and should-fix row**: open its current image and mark it **fixed**, **not fixed** or **regressed**.
+- Open every strip and event image of the shots in `only` and look for new problems the fix may have caused, including continuity with the shot just before and after (open their strips too).
+- Don't re-review untouched shots; their images are from the earlier round.
+- Report table: add a **Status** column (fixed / not fixed / regressed / new). The verdict rules are the same.
+
 ## What to return
 
 Write `out/<slug>/review/reviewer_report.md` with one row per finding:
@@ -11415,6 +11616,108 @@ End with:
 - a one-line verdict: **"ready for final render"** or **"not ready"**.
 
 Reply with the counts and every must-fix row.
+@@@@ END
+@@@@ FILE docs/story/COLA_ROTEIRO.md | text | 10102 | 11a9da9b479a951b2724a7a203a1160af75985fefdf13a5bc554f6df7df809e9
+# COLA DE ROTEIRO — episódio "E Se" de 10 min (2ª pessoa, PT-BR)
+
+Resumo de `STORY_BLUEPRINT.md`. **Leia só isto ao escrever.** Abra o blueprint apenas na seção indicada (§) quando precisar do detalhe ou de exemplos. Originalidade: copie estruturas, nunca falas, piadas, personagens ou bordões da IFOLOGY (§6.7).
+
+## Ordem de trabalho
+Premissa (fórmula abaixo) → outline nas 17 batidas → ficha de plantios → ficha de fatos (aritmética 2×) → checklist → nota ≥ 80 → rascunho → plano visual → renota → `episode.json`.
+
+## Fórmula de premissa (todo campo preenchido, senão a ideia não está pronta)
+```
+TÍTULO      E Se Você [Pudesse VERBO | Fosse N× ADJ | Tivesse N SUBST]?  (3–7 palavras, número se der)
+MECANISMO   [parte do corpo/sistema] muda por N.  (2–4 frases simples)
+CONTINUA    Tudo normal, especialmente [LIMITE]  ← plantado com linha de sinalização
+ÂNCORA      [animal/órgão/máquina] já faz versão minúscula: [fato + número]
+ESCADA      normal [base] → você [N×] → 3 comparações visualizáveis
+VANTAGENS   casa / escola / trabalho-dinheiro / esporte / bondade / grande exibição
+REGRAS      3, cada uma com cena de teste
+CUSTOS      irritante → caro → perigoso (cada: número, piada, solução barata)
+REAL        [LIMITE] transforma [vantagem] em perigo para outro / identidade
+REGRA TEMA  "instrução de post-it"
+CRISE       inocente da categoria plantada, lugar, relógio vindo de uma regra
+DILEMA      "A… ou B."  (força total machucaria / exporia)
+CLÍMAX      regra tema + ≥ 2 plantios; custo pago (corpo/objeto/status)
+ARTEFATO    clipe/manchete com título oposto-irônico ao poder
+MUNDO MAIOR quem viu chega com oferta/ameaça; contra-poder quebra regra
+CTA         P1 fantasia pessoal + P2 debate só de quem viu
+```
+Testes: dá pra dizer numa respirada · abertura mostra em 1 plano de 3 s · o limite (não a sorte) cria o clímax · 1 número repetível · dilema rende comentário · engine monta com o que existe.
+
+## Batidas do 10:00 (palavras = ref. a 175 wpm em inglês; os **tempos** valem, as palavras recalibre com `episode.mjs pace`)
+| # | Tempo | Batida | Pal. | Deve conter |
+|---|---|---|---|---|
+| 1 | 0:00–0:20 | Abertura fria | 55 | Plano 1 close de objeto; problema do dia a dia resolvido num movimento; poder visível ≤ 0:08; testemunha (≤ 8 pal.) + resposta impassível; 1 estranheza. Sem intro/canal/card |
+| 2 | 0:20–0:25 | Pergunta do título | 15 | Título palavra por palavra + pivô ("Veja o que realmente muda.") sobre plano aberto |
+| 3 | 0:25–0:50 | Mecanismo + limite | 75 | O que muda (número), o que continua, **sinalização do limite** |
+| 4 | 0:50–1:25 | Escada + âncora | 100 | Teaser → fato real → normal vs você → 3 comparações crescentes → bate-recorde/desmente mito |
+| 5 | 1:25–1:50 | Teste de prova | 70 | Autoridade cética + instrumento; olhar triplo; desconfia/pede repetição |
+| 6 | 1:50–2:30 | Regras | 115 | "Regra um…" 2–3, descobertas testando; cena + piada cada; ≥ 2 voltam no clímax |
+| 7 | 2:30–3:10 | Vantagens | 115 | 4 de escala crescente, 20–35 pal. cada, botão; 1 bondade; 1 falha cômica; nada perigoso |
+| 8 | 3:10–4:40 | "Mas" + Problemas 1–3 | 265 | Pivô de 1 linha; cada: nome → número → 2–4 consequências → solução barata → reação da família |
+| 9 | 4:40–5:25 | Problema real (47%) | 130 | "Nenhum desses é o real" reformulado; **palavra-chave do limite repetida**; quase-desastre por sorte |
+| 10 | 5:25–6:05 | Maestria + regra tema | 115 | Teaser → analogia natureza/máquina → treino com falha e amigos → **regra tema como instrução** |
+| 11 | 6:05–6:30 | Crise (61%) | 70 | Linha de compressão → dia/lugar → inocente em perigo → **relógio começa (número)** |
+| 12 | 6:30–6:50 | Dilema | 55 + 2 s | Conta de por que força total machuca; "A… ou B." (2–6 pal.); silêncio |
+| 13 | 6:50–7:35 | Clímax | 120 + 3 s | Executa regra tema; ≥ 3 plantios; repetição ×3 com SFX; custo na tela; perde objeto da piada; subestimação final (objeto, nunca pessoa) |
+| 14 | 7:35–8:00 | Consequência | 70 | Close do custo; payoff da piada recorrente; artefato com título irônico; 1 frase de mudança |
+| 15 | 8:00–9:10 | Mundo maior | 205 | Observador → chegada física (campainha/envelope) → oferta/ameaça; família 1 linha |
+| 16 | 9:10–9:40 | Gancho final | 85 | Quebra regra confiável (jogo justo); medo/contra-poder; tensão + 1 s de preto |
+| 17 | 9:40–10:00 | CTA | 50 | P1 + P2 → "Conta pra gente nos comentários." → `[ASSINATURA]` |
+
+8 min e 12 min: §4.2 / §4.3. Variante de corrupção (poderes indetectáveis, máx. 1 a cada 4 episódios): §4.
+
+## Estrutura (o que o checklist cobra)
+- **Mas/portanto** entre batidas; "e então" só na montagem de vantagens.
+- **Risco:** ≤ 2/5 até 45%, 5/5 em 60–65%, no 5 por ≤ 25% da duração. Escala: casa → escola → cidade → público → mundo (≥ 4 sets).
+- **Retenção:** informação nova a cada ≤ 40 s (primeiros 60%), regancho a cada ≤ 90 s, sempre 1 loop aberto. Viradas: "mas" 25–35%, real 43–50%, crise 56–65%, clímax 65–72%, mundo maior 76–88%.
+- **Plantios:** ≥ 5; ≥ 3 pagos no clímax; 1 piada recorrente paga na consequência; 1 loop aberto pra sequência. Falhas do poder ≥ 3, custo crescente (cômica → cara → quase-desastre).
+- **Regra do três:** 3 vantagens, 3 problemas, 3 golpes; o 3º é o mais longo/estranho.
+- **Desejo × necessidade:** no clímax você escolhe a necessidade (usa *menos* poder). Mudança mostrada por ação.
+- **Custo:** corpo/objeto/status; ninguém inocente paga.
+
+## Voz
+- 2ª pessoa, presente. Leitura de 2º–4º ano. Nomeie só 1–2 personagens.
+- Frase média 8–9 palavras; 35–45% ≤ 6; < 5% ≥ 20. Pico de ação: frases de 2–4 palavras. Comece por sujeito concreto ("Você…", "Sua mãe…"). PT-BR: priorize tempo de fala sobre contagem.
+- **Comédia:** 25–32 falas de personagem/10 min, ≥ 90% com ≤ 8 palavras (1 a cada 19–25 s); piada a cada ≤ 60 s antes da crise; nunca no dilema. Ferramentas: duplo tempo impassível, piadinha de testemunha, aparte do narrador (1–3), lista de três com virada, piada recorrente, subestimação no clímax.
+- **Diálogo é reação, não exposição.** Mãe 2–4 falas (nota o custo primeiro); amigo 3–5; cético 1–2; vilão frases curtas, ≤ 3 por fala.
+- **Transições:** use o banco da §6.6 e nunca repita uma dentro do episódio.
+- **Banidos (busque cada um):** "em um mundo onde", "de repente", "literalmente" (fora de diálogo), "jornada", "tudo mudou", "você não vai acreditar", "no final das contas", "mas espera, tem mais", "embarca", "desperta/libera", "insano/épico" (> 1×). Lista completa e assinaturas da IFOLOGY proibidas (estranho de casaco cinza, organização, slogan "IF"): §6.7. Sem marcas nem celebridades.
+
+## Números (§6.4)
+- 2–4/min na 1ª metade, ~1/min depois; **≥ 15 por 10 min**, todos na ficha de fatos.
+- Sempre par **normal vs você**; ≥ 3 dígitos ganha unidade familiar (campos de futebol, ônibus, pizzas).
+- 2–3 contas trabalhadas numa respirada, conferidas 2×. Teaser antes de todo fato. Máx. 2 números por frase. Todo número tem card ou overlay.
+- **No `vo` tudo por extenso:** números, datas, dinheiro, %, horas, siglas, abreviações ("trinta por cento", "duas da tarde", "doutor"). Dígitos só na tela.
+
+## Tags de áudio ElevenLabs (§6.9)
+- Inline no `vo`, em inglês, entre colchetes, **uma por reação real** (não por frase).
+- Antes do trecho = tom da fala; depois = reação a ela.
+- Catálogo: `[whispering] [softly] [slowly] [pause] [voice breaking] [weak] [tired] [bored] [playful] [angry] [excited] [menacing] [chuckling] [laughing] [sighing] [gasping] [panting] [scoffing] [sniffling] [clears throat] [sharp exhale]`. Combinações valem (`[sighs, tired]`). Fora disso, só testando antes.
+- Narrador calmo raramente leva `[excited]`/`[menacing]` (são de personagem). Nada que contradiga a cena.
+- Nunca SSML `<break>`; respiro com `…`, vírgula, `[pause]`. Pronúncia errada: IPA `/…/` só na palavra.
+- Gate mecânico: `node tools/episode.mjs check <slug>`.
+
+## Visual por batida (resumo; tabela completa §7)
+~20 cortes/min (planos de ~3 s); montagem 27–44; cards 8–15; clímax 10–15. Card ≤ 6 s, plano 3D ≤ 8 s. **8–14 cards/10 min**, ≥ 1 tableau congelado ou câmera lenta, 1 plano de elenco/multidão. Título: `title` com `bg:false` sobre plano aberto. Números: `compare`/`stat`/`speed`/`distance`. Regras: card `rules` antes de cada teste. Crise → clímax: `stopwatch` com `persist` até o fim. Clímax sem cards completos. CTA: card `title` com P1/P2.
+
+## Checklist rápido (tudo sim antes da voz; versão completa §9)
+- [ ] Fórmula cheia e 6 testes ok; título 3–7 palavras
+- [ ] Limite plantado ≤ 0:50 e resgatado por palavra-chave em 45–55%
+- [ ] Plantios ≥ 5 / ≥ 3 no clímax / piada recorrente / loop aberto
+- [ ] Mas/portanto; curva de risco; lacunas N ≤ 40 s e ↻ ≤ 90 s
+- [ ] Plano 1 close de objeto; poder ≤ 0:08; testemunha + impassível; título ≤ 0:40
+- [ ] ≥ 15 números pareados e verificados; 2–3 contas; teasers
+- [ ] Viradas nas janelas; relógio vindo de regra; dilema binário; regra tema vence; custo pago; objeto perdido; frase de mudança
+- [ ] 25–32 falas curtas; piada ≤ 60 s; estatística de frase; sem banidos
+- [ ] `check` passa; tags descritivas, bem posicionadas, coerentes com a voz; tudo por extenso
+- [ ] Artefato irônico → observador → chegada → gancho justo → CTA ≤ 20 s com assinatura
+- [ ] Toda batida montável com sets/cards/FX existentes
+
+## Nota (100; ≥ 85 manda, 80–84 corrige a pior, 70–79 refaz as 2 piores, < 70 repensa)
+Gancho 10 · Premissa 8 · Causalidade 10 · Setup/payoff 10 · Escalada 8 · Retenção 10 · Comédia 8 · Números 8 (número errado limita o total a 70) · Dilema/clímax 12 · Personagem 6 · Final 5 · Voz/produção 5. Critérios de cada nota: §10. Exemplo completo de outline nota 92: §11.
 @@@@ END
 @@@@ FILE docs/story/IDEA_ENGINE.md | text | 17497 | d4176d928a1fabfa5e36d5a4ec0192393b154b712f96e9c4ba5a8314ffb22a9d
 # MOTOR DE IDEIAS: gerando premissas "E Se" que vencem
@@ -12567,6 +12870,39 @@ Every finished video sits directly in this folder, named by its title, so you ca
 
 | Title | Slug | Length | Notes |
 |---|---|---|---|
+@@@@ END
+@@@@ FILE futuro.md | text | 3816 | 58e98a08fae18f48ae52055d3471e191bb88af474d4bcc285bb4154f17a6ef8b
+# Futuro: Projeto 2 — série contínua com votação do público
+
+Ideia registrada em 2026-11-08, a pedido do usuário. **Não iniciar sem ele pedir explicitamente.** Fica aqui só pra não perder o conceito nem os requisitos levantados, e pra não misturar com o pipeline ativo do canal "E Se" (`CLAUDE.md`, `docs/story/STORY_BLUEPRINT.md`).
+
+## Conceito
+
+Cada vídeo é "Dia N" de uma história contínua (não um episódio fechado como o formato atual). No fim de cada vídeo, a história apresenta algumas opções pro que acontece a seguir. O público vota nos comentários do YouTube; a opção mais votada vira o canon oficial do episódio "Dia N+1".
+
+## Por que depois, e por que este motor
+
+O usuário já tentou esse formato com outros motores e não deu certo (motivo ainda não detalhado). A intenção é reaproveitar a **arquitetura** deste projeto — Remotion + Three.js, o rig do stickman, a avaliação determinística por tempo (`evalActor`, `camAt`, ver a conversa sobre "como o motor gera quadros consistentes") — como base técnica do Projeto 2, em vez de recomeçar do zero. Não é pra reaproveitar o *conteúdo* nem o *blueprint de roteiro* do canal atual — só o motor.
+
+## Requisitos levantados pelo usuário, a detalhar quando o projeto for retomado
+
+1. **Episódios contínuos.** Não é "um vídeo = uma história fechada". Cada vídeo novo parte de onde o anterior (e o voto do público) deixou. Precisa de um jeito de registrar o estado real da história — o que já aconteceu, o que foi decidido por voto, o estado de cada personagem — pra todo roteiro novo partir desse estado real, não da memória de quem escreve.
+
+2. **Furos de roteiro.** Preocupação explícita do usuário. Numa série contínua e ramificada por voto, é fácil um episódio novo contradizer algo já estabelecido. Vai precisar de algo como uma "ficha de canon" por série — parecida com a ficha de plantios do `STORY_BLUEPRINT.md` atual (§2.5), mas **acumulada ao longo de todos os episódios já publicados**, não só dentro de um. Todo roteiro novo teria que ser conferido contra essa ficha antes de escrever.
+
+3. **Mecânica de votação.** Cada episódio termina apresentando N opções pro "Dia N+1" (provavelmente via overlay/card — o sistema de `src/cards` já existe e pode servir de base). O público vota no comentário do YouTube. Em aberto: quem lê os votos e decide o vencedor (o usuário manualmente? Claude lendo comentários via alguma integração?), e como esse resultado vira o ponto de partida do roteiro seguinte.
+
+4. **Detalhes de animação.** Citado pelo usuário sem detalhar — a conversar quando o projeto for retomado. Hipótese: nuances de atuação pros personagens recorrentes ao longo de uma história mais longa (reação ao resultado do voto, callbacks visuais a eventos de episódios anteriores), mas isso precisa de uma conversa específica, não deve ser assumido.
+
+5. **Personagens com características reais, não só cor fixa.** Hoje `CastMember` (`src/types.ts`) só tem roupa, cor, acessório, altura e largura do torso — nada de personalidade ou identidade visual duradoura além da roupa. Uma série com elenco recorrente em dezenas de episódios precisa de um sistema de personagem mais rico: traços de personalidade consistentes e, se possível, algo visual fixo que não seja só "camisa azul" (cabelo, proporção de corpo, maneirismo de pose ou fala padrão), pra o público reconhecer o mesmo personagem de episódio pra episódio mesmo quando a roupa muda.
+
+## Onde isso mora
+
+Pasta `projeto-2/` (criada vazia por enquanto, ver `projeto-2/README.md`) — reservada pro código e docs desse segundo formato quando for retomado. Não compartilha pipeline com o canal "E Se" atual.
+
+## Status
+
+Engavetado. Sem início de implementação.
 @@@@ END
 @@@@ FILE package-lock.json | text-crlf | 162068 | f6c41d40d300c503c828fd8246da4f5973c1ed89204b9023371821ef357f58b7
 {
@@ -16969,6 +17305,15 @@ Every finished video sits directly in this folder, named by its title, so you ca
   }
 }
 @@@@ END
+@@@@ FILE projeto-2/README.md | text | 479 | acfe6979f5c8b11936a49f0a183707a310e2ebb933e09870f980173f2b2e7bff
+# Projeto 2
+
+Pasta reservada. Nada implementado ainda — ver `../futuro.md` na raiz do projeto pro conceito completo e os requisitos levantados.
+
+Resumo de uma linha: série contínua "Dia N", onde o público vota nos comentários qual opção vira o canon do próximo episódio — reaproveitando o motor deste projeto (Remotion + Three.js, o rig do stickman), não o blueprint de roteiro do canal "E Se".
+
+Não começar a implementar aqui sem o usuário pedir explicitamente.
+@@@@ END
 @@@@ FILE public/episodes/pipetest/episode.json | text | 2103 | e03fb9dabd9126a72793eb0a838245c15c837182d018f8812c74260ea6a41801
 {
   "slug": "pipetest",
@@ -17698,7 +18043,7 @@ export const Thumbnail: React.FC<ThumbProps> = ({
   );
 };
 @@@@ END
-@@@@ FILE src/cards/chain.tsx | text | 5609 | f2722df10db431934d1ceab43855c2f5df880c3d803e13d1a611ee6c1771ae28
+@@@@ FILE src/cards/chain.tsx | text-crlf | 5744 | 2ef613f76efbc19d2dcb7d8a4cb51e341c68841ec1bc566d44c8a560789a38e4
 // `chain` card: 2–4 line-art icon nodes joined by arrows (EYES → BRAIN → MUSCLES). A gold pulse
 // travels node to node; each node lights up gold as it arrives, then pulses keep flowing.
 import React from 'react';
@@ -17711,14 +18056,14 @@ type Node = { icon?: string; label?: string; value?: string };
 
 export const ChainCard: React.FC<CardProps> = ({ t, dur, spec, W, H }) => {
   const rawNodes = Array.isArray(spec.nodes) ? (spec.nodes as unknown[]) : [];
-  const nodes: Node[] = rawNodes.slice(0, 4).map(n => (typeof n === 'string' ? { icon: n, label: n.toUpperCase() } : (n as Node)));
+  const nodes: Node[] = rawNodes.slice(0, 5).map(n => (typeof n === 'string' ? { icon: n, label: n.toUpperCase() } : (n as Node)));
   while (nodes.length < 2) nodes.push({ icon: 'question', label: '?' });
   const n = nodes.length;
   const title = sStr(spec, 'title');
   const step = sNum(spec, 'step', Math.min(0.75, Math.max(0.35, (dur - 1.2) / (n + 1))));
 
-  const R = n === 4 ? 112 : 128;
-  const spacing = n === 2 ? 640 : n === 3 ? 520 : 430;
+  const R = n >= 5 ? 96 : n === 4 ? 112 : 128;
+  const spacing = n === 2 ? 640 : n === 3 ? 520 : n === 4 ? 430 : 340;
   const cy = title ? 560 : 500;
   const xs = nodes.map((_, i) => W / 2 + (i - (n - 1) / 2) * spacing);
   const lightAt = (i: number) => 0.6 + i * step;
@@ -17805,7 +18150,7 @@ export const ChainCard: React.FC<CardProps> = ({ t, dur, spec, W, H }) => {
   );
 };
 @@@@ END
-@@@@ FILE src/cards/clock.tsx | text | 7222 | 223ff387abe59760d8ae4d927dde982dbe21ef2b5ed37e02dc6937b2c4adf5c2
+@@@@ FILE src/cards/clock.tsx | text-crlf | 7620 | 9f3889c98583cd2bdb4514c5cebfd8fef539d6ff4557c8988b871be5a874b4d6
 // `clock` card: a big line-art clock face whose gold second hand sweeps, then freezes (with a jolt, a
 // gold shock ring and the background dust stopping mid-air), slows down, speeds up or just ticks.
 // Optional gold value ("0.25 s") beside it and a caps label.
@@ -17857,8 +18202,11 @@ export const ClockCard: React.FC<CardProps> = ({ t, dur, spec, W, H }) => {
 
   const draw = seg(t, 0, 0.55);
   const sec = handAngle(mode, t, at, w);
-  const minute = 300 + sec / 12;
-  const hour = 250 + sec / 144;
+  // optional fixed time on the dial (spec.time = "HH:MM"); otherwise the old decorative 7:50
+  const tm = /^(\d{1,2}):(\d\d)$/.exec(sStr(spec, 'time') || '');
+  const m0 = tm ? +tm[2] * 6 : 300, h0 = tm ? ((+tm[1] % 12) * 30 + +tm[2] * 0.5) : 250;
+  const minute = m0 + sec / 720;
+  const hour = h0 + sec / 8640;
   const changed = mode !== 'tick' && t >= at;
   const dt = t - at;
   const ring = changed ? seg(dt, 0, 0.7) : 0;
@@ -18311,7 +18659,7 @@ export const TitleCard: React.FC<CardProps> = ({ t, dur, spec, W, H }) => {
   );
 };
 @@@@ END
-@@@@ FILE src/cards/icons.tsx | text | 21920 | 71ca94e925024ad24ee0497b7d0cdf564d2228ffc3e553e0c24ec7247e056e39
+@@@@ FILE src/cards/icons.tsx | text-crlf | 22755 | 3f4116642861143272e37a1f9856baef1199de767f843c03817560583c6acc44
 // Line-art icon library for the navy explainer cards (IFOLOGY look: thin white strokes with round
 // caps, gold accents). Every icon is drawn in a 100×100 box and draws itself on with
 // stroke-dashoffset as `p` goes 0→1; `t` drives small idle motions (blinks, ticking hands, beats).
@@ -18678,6 +19026,13 @@ export const ICONS: Record<string, IconFn> = {
       { d: line(14, 94, 38, 94), order: 1 },
     ];
   },
+  sun: (t) => [
+    { d: circlePath(50, 50, 18), accent: true, fill: true, fillOpacity: 0.18 },
+    ...Array.from({ length: 8 }, (_, i) => {
+      const a = (i / 8) * Math.PI * 2 + t * 0.4, r0 = 27, r1 = 38 + 3 * Math.sin(t * 3 + i);
+      return { d: line(50 + r0 * Math.cos(a), 50 + r0 * Math.sin(a), 50 + r1 * Math.cos(a), 50 + r1 * Math.sin(a)), accent: true, w: 1.2, order: 1 };
+    }),
+  ],
   question: (t) => [
     { d: circlePath(50, 50, 40) },
     { d: 'M38,40 C38,27 62,26 62,39 C62,49 50,49 50,60', accent: true, w: 1.3, order: 1, tf: `rotate(${f(4 * Math.sin(t * 2))} 50 50)` },
@@ -18843,7 +19198,7 @@ export const CARDS: Record<string, CardDef> = {
   },
 };
 @@@@ END
-@@@@ FILE src/cards/kit.tsx | text | 13179 | ae455b7b0890a13886aada953ff517272be1aaaaf8e470e90fb71e22a26ce656
+@@@@ FILE src/cards/kit.tsx | text | 13179 | 55c4728fdb5ede01647c427c5785acba3559ae740250a31c551c44f0cd9129e1
 // Shared kit for the IFOLOGY navy explainer cards and the 2D overlays: fonts, palette, easing,
 // spec readers, the navy background, gold serif text and stroke draw-on helpers.
 // Everything is a pure function of `t` (seconds), so any frame renders on its own.
@@ -18929,7 +19284,7 @@ export const decimalsOf = (v: unknown): number => {
   return i < 0 ? 0 : s.length - i - 1;
 };
 export const fmtNum = (v: number, decimals = 0) =>
-  v.toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+  v.toLocaleString('pt-BR', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
 /** Count-up value text: eases from `from` to `to` over [start, start+dur]. */
 export const countText = (t: number, from: number, to: number, start: number, dur: number, decimals = 0) => {
   const k = seg(t, start, start + dur);
@@ -19868,7 +20223,7 @@ export const Stage: React.FC<{
   </ThreeCanvas>
 );
 @@@@ END
-@@@@ FILE src/engine/Stickman.tsx | text-crlf | 26391 | 7b1042e975f5b94e5869cca297d05b7251d83d9f3fcb29cc3902bdb1c9456274
+@@@@ FILE src/engine/Stickman.tsx | text-crlf | 26550 | 67a6eb21ed88ef483908fb3583ff8c9355412aa1639f3717f7b88d53467d1c4a
 // The stickman, modelled on the IFOLOGY look: matte black sphere head with a cream crescent,
 // tiny line-art face, puffy cel-shaded clothing with thin black contours, stick limbs, mitten hands.
 import React, { createContext, useContext, useEffect, useMemo } from 'react';
@@ -20306,6 +20661,7 @@ const StickmanBody: React.FC<{ s: ActorState; shadowBlob?: boolean; faceGlow?: s
     const up = side === 'L' ? b.upperArmL : b.upperArmR, fo = side === 'L' ? b.forearmL : b.forearmR, ha = side === 'L' ? b.handL : b.handR;
     const kind = side === 'L' ? s.pose.handL : s.pose.handR;
     const held = s.spec.hold?.[side];
+    const heldScale = s.spec.hold?.[side === 'L' ? 'scaleL' : 'scaleR'] ?? 1;
     return (
       <group key={side}>
         <Bone m={up}>
@@ -20325,7 +20681,7 @@ const StickmanBody: React.FC<{ s: ActorState; shadowBlob?: boolean; faceGlow?: s
         </Bone>
         <Bone m={ha}>
           <Mitten kind={held ? 'fist' : kind} ink={ink} side={side === 'L' ? 1 : -1} />
-          {held && !ghostMat && <HandProp type={held} />}
+          {held && !ghostMat && (heldScale === 1 ? <HandProp type={held} /> : <group scale={heldScale}><HandProp type={held} /></group>)}
         </Bone>
       </group>
     );
@@ -21159,7 +21515,7 @@ export function outlineMaterial(): THREE.ShaderMaterial {
   return outline;
 }
 @@@@ END
-@@@@ FILE src/engine/rig.ts | text | 15283 | a860a99ce4cf258e63dbb7dfad7459dadb9e3a8bfdd59e658ccbcf96666dda23
+@@@@ FILE src/engine/rig.ts | text-crlf | 16459 | 9b3e97f7bff85b050ae84a501e4c09d036c9334d270fc5b92684d5a87f9c254a
 // Pose library, gait cycles and facial expressions for the stickman rig.
 // Angles in degrees. Arms: [fwd raise, out raise, twist, elbow]; legs: [fwd raise, out raise, knee].
 import type { Face, Gait, Pose, Vec3 } from '../types';
@@ -21226,6 +21582,7 @@ export const POSES: Record<string, Pose> = {
   focus: P({ head: [6, 0, 0], armR: [70, 35, -50, 145], armL: [6, 8, 0, 12] }), // fingers to temple
   explain: P({ spine: [0, 0, 6], armL: [40, 20, 40, 70], armR: [44, 22, 40, 60], handL: 'open', handR: 'open' }),
   hide: P({ hipY: -0.5, spine: [40, 0, 0], head: [-30, 0, 0], legL: [80, 10, 130], legR: [80, 10, 130], armL: [50, 10, 0, 80], armR: [50, 10, 0, 80] }),
+  zombie: P({ hipY: -0.01, spine: [10, 0, 4], head: [14, 0, 16], armL: [82, 6, 0, 12], armR: [76, 6, 0, 18], handL: 'open', handR: 'open', legL: [4, 5, 10], legR: [-2, 5, 6] }), // sleepwalker, arms out in front
 };
 
 export const FACES: Record<string, Face> = {
@@ -21256,6 +21613,7 @@ export const FACES: Record<string, Face> = {
   smug: { eyes: 1.15, lid: 0.45, brow: -0.35, mouth: 0.7, width: 1.1 },
   sly: { eyes: 1.0, lid: 0.55, brow: -0.6, mouth: 0.45, width: 0.9, look: [0.5, 0] },
   bored: { eyes: 1.0, lid: 0.6, mouth: -0.1 },
+  zombie: { eyes: 0.22, lid: 0.3, mouth: -0.25, open: 0.45, brow: 0.3, look: [0, -0.3] }, // half-asleep, jaw hanging
 };
 
 export const FACE_BASE: Required<Omit<Face, 'pupils' | 'tears' | 'sweat' | 'blush' | 'lidTilt'>> & Face = {
@@ -21419,6 +21777,19 @@ export function gaitPose(g: Gait, phase: number): FullPose {
         armL: [10, 25, 0, 20],
         armR: [10, 25, 0, 20],
       });
+    case 'shamble':
+      // zombie drag: short heavy steps, arms held out in front, head lolling, body rocking
+      return full({
+        hipY: -0.02 - Math.abs(s) * 0.012,
+        spine: [10, s * 5, s * 9],
+        head: [12, s * 6, 14 + s * 6],
+        legL: [s * 16 + 4, 5, 14 + Math.max(0, -s) * 18],
+        legR: [-s * 16 + 4, 5, 14 + Math.max(0, s) * 18],
+        armL: [82 + s * 6, 6, 0, 12],
+        armR: [78 - s * 6, 6, 0, 16],
+        handL: 'open',
+        handR: 'open',
+      });
     case 'walk':
     default:
       return full({
@@ -21433,8 +21804,8 @@ export function gaitPose(g: Gait, phase: number): FullPose {
   }
 }
 
-export const GAIT_SPEED: Record<Gait, number> = { walk: 1.35, jog: 2.6, run: 4.2, sprint: 9, dash: 9, sneak: 0.7, float: 1.2, glide: 4, carried: 4 };
-export const GAIT_STRIDE: Record<Gait, number> = { walk: 1.3, jog: 1.9, run: 2.6, sprint: 3.6, dash: 3.4, sneak: 0.8, float: 4, glide: 6, carried: 1 };
+export const GAIT_SPEED: Record<Gait, number> = { walk: 1.35, jog: 2.6, run: 4.2, sprint: 9, dash: 9, sneak: 0.7, float: 1.2, glide: 4, carried: 4, shamble: 0.55 };
+export const GAIT_STRIDE: Record<Gait, number> = { walk: 1.3, jog: 1.9, run: 2.6, sprint: 3.6, dash: 3.4, sneak: 0.8, float: 4, glide: 6, carried: 1, shamble: 0.9 };
 
 /** Small always-on life: breathing and weight shift. */
 export function idleOffset(p: FullPose, t: number, seed: number, amount = 1): FullPose {
@@ -21764,13 +22135,14 @@ export const ShotView: React.FC<{
   );
 };
 @@@@ END
-@@@@ FILE src/episode/audit.ts | text-crlf | 18260 | 93da253914508cb7e494a3ca2597c15d6c3d3a37b7cc3e86bc01973ba00fc533
+@@@@ FILE src/episode/audit.ts | text-crlf | 20496 | eb9775d75c44351f13102715cbf51b97e1c9ec02cb4fdcb0e0bad89b23cb978d
 // Pre-render scene audit: walks every frame of every 3D shot through evalShot (the same code the
 // renderer uses) and checks numbers, not pictures. Run: node tools/qa.cjs audit <slug>
 import * as THREE from 'three';
 import { at, type ActorState } from '../engine/actor';
 import { project, type CamState } from '../engine/cam';
-import type { CastMember, Episode, Shot3D, Timing } from '../types';
+import { POSES } from '../engine/rig';
+import type { CastMember, Episode, Pose, Shot3D, Timing } from '../types';
 import { castOf } from './resolve';
 import { evalShot, flowInfo, framingDelta, type ShotCtx } from './scene';
 
@@ -21831,7 +22203,7 @@ export function auditEpisode(ep: Episode, timing: Timing): AuditReport {
 
   const checkCues = (cues: string[], words: [string, number][], i: number, sid?: string) => {
     for (const c of cues) {
-      const m = /^@([a-z0-9']+)(?:#(\d+))?/i.exec(c);
+      const m = /^@([\p{L}\p{N}']+)(?:#(\d+))?/iu.exec(c);
       const hits = m ? words.filter(([w]) => w === m[1].toLowerCase()).length : 0;
       if (!m || hits < (m[2] ? parseInt(m[2], 10) : 1)) add({ sev: 'error', shot: i, id: sid, check: 'cue', msg: `word cue "${c}" not found in this shot's narration` });
     }
@@ -21886,7 +22258,26 @@ export function auditEpisode(ep: Episode, timing: Timing): AuditReport {
           const dr = Math.abs(((s.rot - p.rot + 540) % 360) - 180);
           if (dr > 35) add({ sev: 'warn', shot: i, id: sid, t: 0, check: 'continuity', msg: `${s.spec.id} turns ${dr.toFixed(0)}° across the continuous move (it will blend, but check it reads naturally)` });
         }
+        // a flow blends one camera move across both shots: anything present in only one of them pops in or out mid-move
+        const ids = (st: ActorState[]) => new Set(st.filter(s => !s.spec.ghost).map(s => s.spec.id));
+        const ia = ids(a.states), ib = ids(b.states);
+        const gone = [...ia].filter(x => !ib.has(x)), added = [...ib].filter(x => !ia.has(x));
+        if (gone.length || added.length) add({ sev: 'warn', shot: i, id: sid, t: 0, check: 'continuity', msg: `flow from shot ${i - 1}, but the cast changes (${[...gone.map(x => `-${x}`), ...added.map(x => `+${x}`)].join(', ')}): they pop in/out during the continuous move — keep the same actors in both shots, or make it a real cut (new angle)` });
+        const propKeys = (sh: Shot3D) => (sh.props || []).map(p => `${p.type}@${JSON.stringify(p.pos)}`);
+        const pa = propKeys(prev.shot), pb = propKeys(s3);
+        const pGone = pa.filter(x => !pb.includes(x)), pAdded = pb.filter(x => !pa.includes(x));
+        if (pGone.length || pAdded.length) add({ sev: 'warn', shot: i, id: sid, t: 0, check: 'continuity', msg: `flow from shot ${i - 1}, but the props differ (${[...pGone.map(x => `-${x.split('@')[0]}`), ...pAdded.map(x => `+${x.split('@')[0]}`)].join(', ')}): they pop in/out during the continuous move — copy the same props into both shots` });
       }
+    }
+
+    // --- a partial inline pose after a seated/kneeling one: its missing fields fall back to standing -----
+    for (const a of s3.actors || []) {
+      const seq = [a.pose, ...(a.poses || []).map(k => k.pose)];
+      const low = (p: unknown) => ((typeof p === 'string' ? POSES[p] : (p as Pose | undefined))?.hipY ?? 0) < -0.3;
+      const partial = (p: unknown) => !!p && typeof p === 'object' && (p as Pose).hipY === undefined && !(p as Pose).legL && !(p as Pose).legR;
+      const firstLow = seq.findIndex(low);
+      if (firstLow >= 0 && seq.slice(firstLow + 1).some(partial))
+        add({ sev: 'warn', shot: i, id: sid, check: 'pose', msg: `${a.id} sits/kneels, then gets a partial inline pose (no hipY/legs): the missing fields reset to standing, so they stand up — give the full seated pose plus the change` });
     }
 
     // --- effects should be tied to the narration, or a re-voice silently de-syncs them ---------
@@ -22157,7 +22548,7 @@ function finish(c: CamState, s: CameraSpec, t: number, amt: number): CamState {
   return { ...c, pos: c.pos.clone().add(new THREE.Vector3(noise1(t * 0.7, 1) * b, noise1(t * 0.6, 2) * b, 0)) };
 }
 @@@@ END
-@@@@ FILE src/episode/cue.ts | text-crlf | 798 | 0f5f4942e8c5d0101f1bf56d318e57c110a3ddcc5a9f515092d0157f0cfc9147
+@@@@ FILE src/episode/cue.ts | text-crlf | 803 | c078dc9a09719ddf16b4c6e1d8240ddf1571580706caabb9ca7eefb088f1bf2d
 // Word cues: any effect time can be a number (seconds into the shot) or "@word", "@word#2",
 // "@word+0.15" — resolved against the aligned narration so effects land on the spoken word.
 export type Words = [string, number][] | undefined;
@@ -22165,7 +22556,7 @@ export type Words = [string, number][] | undefined;
 export function cue(spec: number | string | undefined, words: Words, fallback = 0): number {
   if (spec === undefined) return fallback;
   if (typeof spec === 'number') return spec;
-  const m = /^@([a-z0-9']+)(?:#(\d+))?([+-][\d.]+)?$/i.exec(spec.trim());
+  const m = /^@([\p{L}\p{N}']+)(?:#(\d+))?([+-][\d.]+)?$/iu.exec(spec.trim());
   if (!m) return fallback;
   const word = m[1].toLowerCase(), nth = m[2] ? parseInt(m[2], 10) : 1, off = m[3] ? parseFloat(m[3]) : 0;
   const hits = (words || []).filter(([w]) => w === word);
@@ -22173,7 +22564,7 @@ export function cue(spec: number | string | undefined, words: Words, fallback = 
   return hit ? hit[1] + off : fallback;
 }
 @@@@ END
-@@@@ FILE src/episode/overlays.tsx | text-crlf | 3718 | ad877a58b04ecd60a307cc91733c3f55d690815389dcc341c01486b33021b996
+@@@@ FILE src/episode/overlays.tsx | text | 4067 | a505c69cd8452fc2b80160968e1b6af08b9236f0f3c073a9939a17985a9ffcff
 // Dispatches episode overlay specs (labels, titles, stats, bubbles…) onto overlay components.
 import React from 'react';
 import { AbsoluteFill } from 'remotion';
@@ -22183,12 +22574,13 @@ import { TitleOverlay } from '../overlays/TitleOverlay';
 import { Label } from '../overlays/Label';
 import { Stopwatch } from '../overlays/Stopwatch';
 import { Bubble } from '../overlays/Bubble';
+import { CrushMeter } from '../overlays/CrushMeter';
 import { NewsBar } from '../overlays/NewsBar';
 import type { Overlay } from '../types';
 
 export type Projector = (actorId: string) => { x: number; y: number; visible: boolean; scale: number } | null;
 
-const fmt = (v: number, decimals = 0) => v.toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+const fmt = (v: number, decimals = 0) => v.toLocaleString('pt-BR', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
 
 export const OverlayLayer: React.FC<{ overlays: Overlay[]; t: number; dur: number; project: Projector }> = ({ overlays, t, dur, project }) => (
   <>
@@ -22232,7 +22624,7 @@ const OverlayExt: React.FC<{ o: Overlay; t: number; project: Projector }> = ({ o
     case 'label':
       return <Label t={t} text={o.text} corner={o.corner} dur={dur} />;
     case 'stopwatch':
-      return <Stopwatch t={t} from={o.from || '0.00 s'} to={o.to} switchAt={(o as { switchAt?: number }).switchAt} dur={dur} persist={(o as { persist?: boolean }).persist} />;
+      return <Stopwatch t={t} from={o.from || '0.00 s'} to={o.to} switchAt={(o as { switchAt?: number }).switchAt} dur={dur} persist={(o as { persist?: boolean }).persist} tick={(o as { tick?: number }).tick} keep={(o as { keep?: boolean }).keep} corner={(o as { corner?: 'tl' | 'tr' | 'bl' | 'br' }).corner} />;
     case 'news':
       return <NewsBar t={t} headline={o.headline} ticker={o.ticker} tag={(o as { tag?: string }).tag} dur={dur} />;
     case 'bubble':
@@ -22241,12 +22633,17 @@ const OverlayExt: React.FC<{ o: Overlay; t: number; project: Projector }> = ({ o
       if (!p || !p.visible) return null;
       return <Bubble t={t} text={o.text} x={p.x} y={p.y} kind={o.type === 'thought' ? 'thought' : 'speech'} gap={Math.max(30, 0.12 * p.scale)} dur={dur} />;
     }
+    case 'crush': {
+      const p = project(o.actor);
+      if (!p || !p.visible) return null;
+      return <CrushMeter t={t} x={p.x} y={p.y} value={o.value} from={o.from} countDur={o.countDur} scale={p.scale} dur={dur} />;
+    }
     default:
       return null;
   }
 };
 @@@@ END
-@@@@ FILE src/episode/resolve.ts | text | 1403 | fbdd4c11843038361c260a98a6cea89a3f7180aee71a806780c454c9c714f31e
+@@@@ FILE src/episode/resolve.ts | text | 1636 | a8c747c3cc6ffe934c16abe1fb9230e10403055b231fffd1ae0df601d56bcfa3
 // Turns episode.json shapes into engine shapes: set marks → coordinates, cast merge.
 import { CAST } from '../cast';
 import { SETS } from '../sets';
@@ -22279,7 +22676,10 @@ export function resolveActor(a: EpisodeActor, set: string): ActorInShot {
 }
 
 export function castOf(ep: Episode): Record<string, CastMember> {
-  return { ...CAST, ...(ep.cast || {}) };
+  // per-character merge: an episode entry like { bestie: { name: 'Caio' } } renames without dropping the outfit
+  const out: Record<string, CastMember> = { ...CAST };
+  for (const [k, v] of Object.entries(ep.cast || {})) out[k] = { ...(CAST[k] || {}), ...v };
+  return out;
 }
 @@@@ END
 @@@@ FILE src/episode/scene.ts | text-crlf | 12782 | 4f977787a07f5809adc45fc8c9c97f22f45fbcd6437fa17b9229e6f9d9a6523d
@@ -22741,7 +23141,7 @@ export function runSelfTests(): TestResult[] {
   return out;
 }
 @@@@ END
-@@@@ FILE src/episode/validate.ts | text-crlf | 4534 | bcef5a982a77875629340e0ae6709d3a30cdc2b15eebc8e42cd330b8c20395c3
+@@@@ FILE src/episode/validate.ts | text-crlf | 4598 | 47283124f66d34049b62cadc7bdd4e4f60b32188407f70341a430a4bbb38979f
 // Checks an episode spec against the registries so mistakes fail fast with a readable list.
 // Runs inside calculateMetadata; check from the CLI with:
 //   npx remotion compositions src/index.ts --props='{"slug":"<slug>"}'
@@ -22754,13 +23154,13 @@ import { castOf } from './resolve';
 
 // Mirrors LIB in tools/sfx/episode_audio.py
 export const SFX_NAMES = ['whoosh', 'whooshUp', 'swoosh', 'boom', 'farBoom', 'thud', 'footsteps', 'gulp', 'click', 'pop', 'cloth', 'heartbeat',
-  'subdrop', 'riser', 'swell', 'zap', 'crackle', 'wind', 'debris', 'rustle', 'chime', 'glint', 'ticks'];
+  'subdrop', 'riser', 'swell', 'zap', 'crackle', 'wind', 'debris', 'rustle', 'chime', 'glint', 'ticks', 'ring', 'bell', 'whistle', 'groan', 'groanLow'];
 const PROPS = ['table', 'roundTable', 'chair', 'bed', 'desk', 'deskLamp', 'door', 'window', 'shelf', 'plant', 'tree', 'bush', 'lamp', 'fence', 'car', 'house',
   'building', 'clock', 'rug', 'crowd', 'sign', 'screen', 'box', 'crate', 'ball', 'basketball', 'cup', 'phone', 'book', 'laptop', 'glow', 'pillar', 'wall', 'portal', 'cone', 'trophy', 'skateboard', 'spot',
-  'fire', 'smoke', 'firetruck', 'basket', 'binoculars', 'trafficlight', 'pizza'];
+  'fire', 'smoke', 'firetruck', 'basket', 'binoculars', 'trafficlight', 'pizza', 'jar'];
 const SHOTS = ['establishing', 'wide', 'full', 'medium', 'close', 'xclose', 'insert'];
 const MOVES = ['static', 'drift', 'pushIn', 'pullOut', 'orbitL', 'orbitR', 'craneUp', 'craneDown', 'truckL', 'truckR', 'track', 'crashIn', 'shake', 'handheld'];
-const OVERLAYS = ['label', 'title', 'stopwatch', 'stat', 'bubble', 'thought', 'caption', 'flash', 'counter', 'news', 'hudList'];
+const OVERLAYS = ['label', 'title', 'stopwatch', 'stat', 'bubble', 'thought', 'crush', 'caption', 'flash', 'counter', 'news', 'hudList'];
 
 export function validate(ep: Episode): string[] {
   const out: string[] = [];
@@ -22889,6 +23289,65 @@ export const Bubble: React.FC<{
       </svg>
       <div style={box}>
         <span style={{ opacity: textIn }}>{text}</span>
+      </div>
+    </AbsoluteFill>
+  );
+};
+@@@@ END
+@@@@ FILE src/overlays/CrushMeter.tsx | text | 3195 | f2390f8367c1a275ef20b4c5824a2172cccf551b93b70b663377164e9292f028
+// Pink heart badge with a percentage floating above a character's head: how much they like the hero.
+// Anchored with `project()` like Bubble. Counts from `from` to `value` over `countDur`, pops in,
+// bobs gently, and pulses when the number climbs. 0% draws a dim, hollow heart.
+//
+// Props
+//   t         seconds since the badge appears (nothing for t < 0)
+//   x, y      screen point above the head (px), from project(headTop)
+//   value     target percentage 0..100
+//   from      starting percentage (default: value, i.e. no count)
+//   countDur  seconds for the count (default 0.9)
+//   scale     px per metre at the head, so far-away badges shrink
+//   dur       seconds on screen; shrinks out over the last 0.2 s (omit = stays)
+import React from 'react';
+import { AbsoluteFill } from 'remotion';
+import { COND, backOut, clamp01, easeIn, easeOut, seg } from '../cards/kit';
+
+const HEART = 'M12 21.3l-1.4-1.3C5.4 15.4 2 12.3 2 8.5 2 5.4 4.4 3 7.5 3c1.7 0 3.4.8 4.5 2.1C13.1 3.8 14.8 3 16.5 3 19.6 3 22 5.4 22 8.5c0 3.8-3.4 6.9-8.6 11.5L12 21.3z';
+
+export const CrushMeter: React.FC<{
+  t: number; x: number; y: number; value: number; from?: number; countDur?: number; scale?: number; dur?: number;
+}> = ({ t, x, y, value, from, countDur = 0.9, scale = 400, dur }) => {
+  if (t < 0) return null;
+  const outK = dur != null ? easeIn(seg(t, dur - 0.2, dur)) : 0;
+  if (outK >= 1) return null;
+  const start = from ?? value;
+  const k = easeOut(seg(t, 0.15, 0.15 + countDur));
+  const v = Math.round(start + (value - start) * k);
+  const rising = value > start && k > 0 && k < 1;
+  const pop = backOut(seg(t, 0, 0.28), 2.4) * (1 - outK);
+  const pulse = rising ? 1 + 0.08 * Math.sin(t * 22) : 1;
+  const size = Math.max(30, Math.min(58, scale * 0.11)); // number px, shrinks with distance
+  const empty = v <= 0;
+  const pink = empty ? '#c9b8c4' : '#ff4f9a';
+  const bob = Math.sin(t * 2.3) * 3;
+  const top = Math.max(y - size * 0.55 + bob, size * 1.45 + 14); // keep the whole badge inside the frame when the head is near the top
+  return (
+    <AbsoluteFill style={{ pointerEvents: 'none', opacity: clamp01(t / 0.06) }}>
+      <div
+        style={{
+          position: 'absolute', left: x, top, transform: `translate(-50%, -100%) scale(${pop * pulse})`, transformOrigin: '50% 100%',
+          display: 'flex', alignItems: 'center', gap: size * 0.18, padding: `${size * 0.12}px ${size * 0.34}px ${size * 0.12}px ${size * 0.22}px`,
+          background: empty ? 'rgba(40,30,48,0.78)' : 'rgba(58,14,40,0.82)', borderRadius: 999,
+          border: `${Math.max(2, size * 0.06)}px solid ${pink}`,
+          boxShadow: empty ? '0 4px 12px rgba(0,0,0,0.35)' : `0 0 ${size * 0.5}px rgba(255,79,154,0.75), 0 4px 12px rgba(0,0,0,0.35)`,
+          whiteSpace: 'nowrap',
+        }}
+      >
+        <svg width={size * 0.95} height={size * 0.95} viewBox="0 0 24 24">
+          <path d={HEART} fill={empty ? 'none' : pink} stroke={pink} strokeWidth={empty ? 2 : 0.5} />
+        </svg>
+        <span style={{ fontFamily: COND, fontWeight: 800, fontSize: size, lineHeight: 1, color: empty ? '#d9cdd5' : '#ffffff', letterSpacing: 1 }}>
+          {v}%
+        </span>
       </div>
     </AbsoluteFill>
   );
@@ -23239,7 +23698,7 @@ export const StatCallout: React.FC<{
   );
 };
 @@@@ END
-@@@@ FILE src/overlays/Stopwatch.tsx | text-crlf | 4973 | ed71c5ab98f1857b2cc69ecd34b1cc3457f14daf311438c45987d6cc692a3b80
+@@@@ FILE src/overlays/Stopwatch.tsx | text-crlf | 5485 | 2b8d43e0906d39ca46c9209eebeb5e689d21c64e310279a408cbfa6a64a5a6f6
 // Corner HUD stopwatch (Ifverse "reaction time" look): a white line-art stopwatch whose gold hand
 // spins, with a value under it that can change, e.g. "0.25 s" → "0.025 s" (old value flips up and
 // away, the new one pops in gold with a ring flash, and the hand slows to match).
@@ -23263,10 +23722,18 @@ import { C, COND, backOut, clamp01, easeIn, easeOut, seg } from '../cards/kit';
 
 export const Stopwatch: React.FC<{
   t: number; from: string; to?: string; switchAt?: number; corner?: 'tl' | 'tr' | 'bl' | 'br'; size?: number; speed?: number; speedAfter?: number;
-  dur?: number; persist?: boolean; W?: number; H?: number;
-}> = ({ t, from, to, switchAt = 1.2, corner = 'tr', size = 112, speed = 1, speedAfter, dur, persist, W = 1920, H = 1080 }) => {
+  dur?: number; persist?: boolean; tick?: number; keep?: boolean; W?: number; H?: number;
+}> = ({ t, from: from0, to, switchAt = 1.2, corner = 'tr', size = 112, speed = 1, speedAfter, dur, persist, tick, keep, W = 1920, H = 1080 }) => {
   if (t < 0) return null;
-  const outK = dur != null ? easeIn(seg(t, dur - 0.3, dur)) : 0;
+  // tick: live countdown — `from` ("M:SS") runs down at `tick` story-seconds per second, stopping at 0:00
+  let from = from0;
+  const mm = tick ? /^(\d+):(\d\d)$/.exec(from0) : null;
+  if (mm && tick) {
+    const left = Math.max(0, Math.ceil(+mm[1] * 60 + +mm[2] - t * tick));
+    from = `${Math.floor(left / 60)}:${String(left % 60).padStart(2, '0')}`;
+  }
+  // keep: the countdown continues into the next shot, so don't fade out at the cut
+  const outK = dur != null && !keep ? easeIn(seg(t, dur - 0.3, dur)) : 0;
   if (outK >= 1) return null;
   const right = corner === 'tr' || corner === 'br';
   const bottom = corner === 'bl' || corner === 'br';
@@ -23753,7 +24220,7 @@ export const BEDROOM_MARKS: Record<string, Vec3> = {
   rug: [0.5, 0, -0.4],
 };
 @@@@ END
-@@@@ FILE src/sets/cafeteria.tsx | text-crlf | 7116 | e070fac705992b61b52e033dcc967e1338b2304ed7bc47aa0de62293de99bb04
+@@@@ FILE src/sets/cafeteria.tsx | text | 6963 | 6db1b1e192892c97f66c907c5a9b551941e17659cab9740205e9c682a0593b82
 // School cafeteria from IFOLOGY "Stop Time": navy/yellow walls, grey checker floor, long white
 // tables with attached navy benches and lunch trays, menu board, dot banner, wall clock, bins.
 // Shares the classroom shell: x∈[-6,6], back wall z=-5, ceiling 3.2, one-sided fourth wall z=6.
@@ -23847,8 +24314,8 @@ const drawMenu = (g: CanvasRenderingContext2D, W: number, H: number) => {
   g.textAlign = 'center';
   g.textBaseline = 'middle';
   g.font = `800 ${H * 0.16}px ${BOLD_FONT}`;
-  g.fillText('TODAY’S LUNCH', W / 2, H * 0.14);
-  const items: [string, string][] = [['PIZZA SLICE', '2.50'], ['MAC & CHEESE', '2.00'], ['GARDEN SALAD', '1.80'], ['APPLE', '0.40'], ['MILK', '0.50']];
+  g.fillText('CARDÁPIO DE HOJE', W / 2, H * 0.14);
+  const items: [string, string][] = [['PIZZA', '5,00'], ['MACARRÃO', '4,00'], ['SALADA', '3,50'], ['MAÇÃ', '1,00'], ['SUCO', '2,00']];
   g.font = `700 ${H * 0.1}px ${BOLD_FONT}`;
   items.forEach(([a, p], i) => {
     const y = H * (0.32 + i * 0.14);
@@ -23874,14 +24341,14 @@ export const Cafeteria: React.FC<SetProps> = ({ t, time, variant }) => {
       <Box p={[0, 2.05, z0 + 0.03]} s={[2.5, 1.32, 0.06]} c="#2a2b33" />
       <Painted id="cafeteria-menu" p={[0, 2.05, z0 + 0.062]} w={2.36} h={1.2} draw={drawMenu} />
       <WallClock p={[-1.95, 2.55, z0 + 0.05]} s={0.7} t={t} />
-      <TextPoster id="eat" p={[1.75, 2.0, z0]} w={0.55} h={0.75} text="EAT" bg="#7bc043" fg="#f4efe2" sub={'your\ngreens'} />
+      <TextPoster id="eat" p={[1.75, 2.0, z0]} w={0.55} h={0.75} text="COMA" bg="#7bc043" fg="#f4efe2" sub={'verduras\ntodo dia'} />
       {/* left wall: banner + posters + door */}
       <DotBanner p={[x0 + 0.005, 2.55, -1.0]} r={Math.PI / 2} w={3.6} />
       <Picture p={[x0 + 0.005, 1.8, 1.9]} r={Math.PI / 2} w={0.6} h={0.8} art="abstract" seed={7} frame="#2c3f6e" />
       <Door p={[x0, 0, 4.3]} r={Math.PI / 2} c="#2c3f6e" frame="#eef0f2" />
       <Door p={[x0, 0, -3.4]} r={Math.PI / 2} c="#2c3f6e" frame="#eef0f2" />
       {/* right wall */}
-      <TextPoster id="wash" p={[x1 - 0.005, 1.85, -3.4]} r={-Math.PI / 2} w={0.6} h={0.8} text="WASH" bg="#3fb3c4" fg="#f4efe2" sub={'your\nhands'} />
+      <TextPoster id="wash" p={[x1 - 0.005, 1.85, -3.4]} r={-Math.PI / 2} w={0.6} h={0.8} text="LAVE" bg="#3fb3c4" fg="#f4efe2" sub={'as\nmãos'} />
       <Picture p={[x1 - 0.005, 1.95, 3.2]} r={-Math.PI / 2} w={0.8} h={0.6} art="dots" frame="#2c3f6e" />
       <LeafPlant p={[x1 - 0.5, 0, z0 + 0.5]} s={1.2} pot="#e8742f" seed={11} />
     </group>
@@ -24266,7 +24733,7 @@ export const CITY_MARKS: Record<string, Vec3> = {
   cones: [1.6, 0, 20.4], // just behind the line of cones
 };
 @@@@ END
-@@@@ FILE src/sets/classroom.tsx | text-crlf | 13562 | fb2f2a275472c929c7eadcb8fe3998afc75ee23589279ac537091ea920e79bb3
+@@@@ FILE src/sets/classroom.tsx | text | 13290 | 5d156662eccea2a4cf8198140f9f268da7fa3b5f68d27a62a0bd4271409c4cca
 // School classroom in IFOLOGY "Stop Time" colours: navy lower walls, white rail, yellow upper
 // walls, grey checker floor, light panels. The whiteboard is on the LEFT wall (x=-6) and the
 // 4×5 grid of desks faces it (students look -x), so a camera on the open +z side sees the class
@@ -24353,7 +24820,7 @@ const drawBoard = (g: CanvasRenderingContext2D, W: number, H: number) => {
   g.textBaseline = 'alphabetic';
   g.fillStyle = '#2a55b8';
   g.font = `bold ${H * 0.16}px ${HAND_FONT}`;
-  g.fillText('VOLCANOES!', W * 0.05, H * 0.24);
+  g.fillText('VULCÕES!', W * 0.05, H * 0.24);
   g.strokeStyle = '#2a55b8';
   g.lineWidth = H * 0.012;
   g.beginPath();
@@ -24362,9 +24829,9 @@ const drawBoard = (g: CanvasRenderingContext2D, W: number, H: number) => {
   g.stroke();
   g.fillStyle = '#2a2b33';
   g.font = `${H * 0.11}px ${HAND_FONT}`;
-  g.fillText('magma → lava → rock', W * 0.07, H * 0.5);
+  g.fillText('magma → lava → rocha', W * 0.07, H * 0.5);
   g.fillStyle = '#2f8f4e';
-  g.fillText('1,200 °C  (very hot)', W * 0.07, H * 0.7);
+  g.fillText('1.200 °C  (muito quente)', W * 0.07, H * 0.7);
   g.fillStyle = '#d23a3a';
   g.fillText('x 10 = ?', W * 0.07, H * 0.88);
   // red clock doodle
@@ -24530,17 +24997,17 @@ export const Classroom: React.FC<SetProps> = ({ t, time, variant }) => {
       <Painted id="classroom-board" p={[x0 + 0.052, 1.6, -0.6]} r={Math.PI / 2} w={4.2} h={1.28} draw={drawBoard} />
       <WallClock p={[x0 + 0.05, 2.72, -0.6]} r={Math.PI / 2} s={0.75} t={t} />
       <Door p={[x0, 0, 4.2]} r={Math.PI / 2} c="#2c3f6e" frame="#eef0f2" />
-      <TextPoster id="read" p={[x0 + 0.005, 1.85, -3.75]} r={Math.PI / 2} w={0.7} h={0.95} text="READ!" bg="#f2b632" fg="#2c3f6e" sub={'every day\nevery night'} />
+      <TextPoster id="read" p={[x0 + 0.005, 1.85, -3.75]} r={Math.PI / 2} w={0.7} h={0.95} text="LEIA!" bg="#f2b632" fg="#2c3f6e" sub={'todo dia\ntoda noite'} />
       <Chair p={[-4.95, 0, 2.2]} r={Math.PI / 2} c="#2c3f6e" />
       {/* right wall: banner, pin board, map, posters */}
       <DotBanner p={[x1 - 0.005, 2.62, -1.6]} r={-Math.PI / 2} w={3.0} />
       <Painted id="classroom-map" p={[x1 - 0.03, 1.85, 1.6]} r={-Math.PI / 2} w={1.7} h={1.05} draw={drawMap} />
       <Box p={[x1 - 0.0125, 1.85, 1.6]} s={[0.025, 1.13, 1.78]} c="#2a2b33" />
       <Pinboard p={[x1, 1.75, 3.9]} r={-Math.PI / 2} w={1.3} h={0.9} seed={4} />
-      <TextPoster id="science" p={[x1 - 0.005, 1.75, -4.1]} r={-Math.PI / 2} w={0.62} h={0.85} text="SCIENCE" bg="#3fb3c4" fg="#f4efe2" sub={'ask why'} />
+      <TextPoster id="science" p={[x1 - 0.005, 1.75, -4.1]} r={-Math.PI / 2} w={0.62} h={0.85} text="CIÊNCIAS" bg="#3fb3c4" fg="#f4efe2" sub={'pergunte por quê'} />
       {/* back wall between windows */}
       <Picture p={[-1.5, 2.05, z0]} w={0.55} h={0.75} art="dots" frame="#2c3f6e" />
-      <TextPoster id="math" p={[2.2, 2.05, z0]} r={0} w={0.6} h={0.8} text="MATH" bg="#e46f8e" fg="#f4efe2" sub={'1 + 1 = 2'} />
+      <TextPoster id="math" p={[2.2, 2.05, z0]} r={0} w={0.6} h={0.8} text="MATEMÁTICA" bg="#e46f8e" fg="#f4efe2" sub={'1 + 1 = 2'} />
       <LeafPlant p={[-5.4, 0, z0 + 0.5]} s={1.3} pot="#e8742f" seed={6} />
       <LeafPlant p={[5.45, 0, z0 + 0.5]} s={1.2} pot="#3fb3c4" seed={9} />
     </group>
@@ -25401,7 +25868,7 @@ export const Lighting: React.FC<{ p: Palette; center?: Vec3; shadowBox?: number;
   );
 };
 @@@@ END
-@@@@ FILE src/sets/outdoor.ts | text-crlf | 3726 | e8491826e137c9862927314bc251ce1e54bdf8c450b561bacee1081b417e060e
+@@@@ FILE src/sets/outdoor.ts | text-crlf | 3754 | 49ca09739de97df6278e4ff14cadf5f9747fb875e2b44daaaa216b54d207e373
 // Outdoor sets registry (owned by the outdoor-sets builder). Entries merge into SETS in index.ts.
 import type { SetDef } from './index';
 import { CITY_MARKS, CitySet } from './city';
@@ -25433,7 +25900,7 @@ export const OUTDOOR_SETS: Record<string, SetDef> = {
     marks: STADIUM_MARKS,
     shadowBox: 30,
     description:
-      'American-football stadium. Field along x: end lines x=±54.86, sidelines z=±24.38, turf top y 0.02, goal posts at x=±54.86, end zones x>45.7. Stands (instanced crowd ~14k) front walls z=±33 and x=±64; floodlights at corners; scoreboard above the west (-x) stand. Palettes: afternoon, golden, dusk, stadiumNight (floodlit night). Cams: sideline {pos:[0,1.7,14],look:[0,1.4,0]}; end zone {pos:[36,1.6,5],look:[52,2.5,0]}; wide {pos:[-42,17,21],look:[0,2,-4]}.',
+      'American-football stadium. Field along x: end lines x=±54.86, sidelines z=±24.38, turf top y 0.02, goal posts at x=±54.86, end zones x>45.7. Stands (instanced crowd ~14k) front walls z=±33 and x=±64; floodlights at corners; scoreboard above the west (-x) stand. Palettes: afternoon, golden, dusk, stadiumNight (floodlit night). variant odd = empty stands. Cams: sideline {pos:[0,1.7,14],look:[0,1.4,0]}; end zone {pos:[36,1.6,5],look:[52,2.5,0]}; wide {pos:[-42,17,21],look:[0,2,-4]}.',
   },
   apartments: {
     component: Apartments,
@@ -26139,7 +26606,7 @@ export const PARK_MARKS: Record<string, Vec3> = {
   west: along(1, 0.35).p.map((v, i) => (i === 1 ? 0.02 : v)) as Vec3, // path B (towards -x)
 };
 @@@@ END
-@@@@ FILE src/sets/props.tsx | text-crlf | 19986 | 621b4d2f1865fd151fd6c6626fab023ea8a90be36da16538c4bf9ac0176cda64
+@@@@ FILE src/sets/props.tsx | text-crlf | 21594 | fae91e079ebd04a6dfa43159bb1acb5a0966e070eb4afeda3a414cb68e964519
 // Props: things held in a hand (attached to the hand bone, which points down -Y) and
 // free-standing scene props placed by shot specs ({ type, pos, rot, scale, color, text, path }).
 import React from 'react';
@@ -26177,11 +26644,29 @@ export const HandProp: React.FC<{ type: string }> = ({ type }) => {
           <Cyl p={[0, 0.06, 0]} s={[0.008, 0.02, 0.008]} c="#2b2d36" />
         </At>
       );
+    case 'whistle':
+      // coach's whistle: orange barrel + mouthpiece, held up at the fist
+      return (
+        <At p={[0, -0.04, 0.05]} r={[-0.3, 0, 0]}>
+          <Cyl r={[0, 0, Math.PI / 2]} s={[0.032, 0.07, 0.032]} c="#ff8a1f" />
+          <Box p={[0.05, 0.012, 0]} s={[0.05, 0.022, 0.026]} c="#ff8a1f" />
+          <Box p={[0.0, 0.03, 0]} s={[0.022, 0.012, 0.02]} c="#2b2d36" />
+        </At>
+      );
     case 'phone':
       return (
         <At p={[0, -0.06, 0.03]} r={[-1.2, 0, 0]}>
           <Box s={[0.075, 0.15, 0.012]} c="#17181e" />
           <Plane p={[0, 0, 0.007]} s={[0.064, 0.135, 1]} c="#8fc2ff" glow />
+        </At>
+      );
+    case 'jar':
+      // specimen jar: glass body, glowing green fungus inside, dark lid
+      return (
+        <At p={[0, -0.02, 0.07]}>
+          <Cyl p={[0, 0.1, 0]} s={[0.075, 0.2, 0.075]} c="#cfeee4" />
+          <Cyl p={[0, 0.07, 0]} s={[0.06, 0.1, 0.06]} c="#8dff6a" glow />
+          <Cyl p={[0, 0.215, 0]} s={[0.08, 0.035, 0.08]} c="#2b2d36" />
         </At>
       );
     case 'cup':
@@ -26378,8 +26863,27 @@ export const WorldProp: React.FC<{ spec: PropSpec; t: number }> = ({ spec, t }) 
       case 'crate': return <Box p={[0, N(spec.h, 0.5) / 2, 0]} s={[N(spec.w, 0.5), N(spec.h, 0.5), N(spec.d, 0.5)]} c={c || '#b98a5e'} />;
       case 'ball': return <Ball p={[0, 0.11, 0]} s={0.11} c={c || '#f4f1ea'} />;
       case 'basketball': return <Ball p={[0, 0.12, 0]} s={0.12} c={c || '#e0702b'} />;
+      case 'jar': return (
+        <At>
+          <Cyl p={[0, 0.13, 0]} s={[0.1, 0.26, 0.1]} c={c || '#cfeee4'} />
+          {spec.empty ? null : <Cyl p={[0, 0.09, 0]} s={[0.08, 0.14, 0.08]} c="#8dff6a" glow />}
+          <Cyl p={[0, 0.28, 0]} s={[0.105, 0.045, 0.105]} c="#2b2d36" />
+        </At>
+      );
       case 'cup': return <At p={[0, 0.06, 0]}><Cyl s={[0.045, 0.11, 0.045]} c={c || '#f3efe6'} /></At>;
-      case 'phone': return <At p={[0, 0.006, 0]} r={[-Math.PI / 2, 0, 0]}><Box s={[0.075, 0.15, 0.012]} c="#17181e" /><Plane p={[0, 0, 0.007]} s={[0.064, 0.135, 1]} c={c || '#8fc2ff'} glow /></At>;
+      case 'phone': return (
+        <At p={[0, 0.006, 0]} r={[-Math.PI / 2, 0, 0]}>
+          <Box s={[0.075, 0.15, 0.012]} c="#17181e" />
+          <Plane p={[0, 0, 0.007]} s={[0.064, 0.135, 1]} c={spec.broken ? '#3a3d48' : c || '#8fc2ff'} glow={!spec.broken} />
+          {spec.broken ? (
+            <>
+              <Box p={[-0.008, 0.02, 0.009]} r={[0, 0, 0.9]} s={[0.05, 0.003, 0.002]} c="#e9edf5" />
+              <Box p={[0.012, -0.012, 0.009]} r={[0, 0, -0.5]} s={[0.055, 0.003, 0.002]} c="#e9edf5" />
+              <Box p={[0.004, -0.04, 0.009]} r={[0, 0, 1.3]} s={[0.04, 0.003, 0.002]} c="#e9edf5" />
+            </>
+          ) : null}
+        </At>
+      );
       case 'book': return <Box p={[0, 0.02, 0]} s={[0.17, 0.04, 0.23]} c={c || '#c8402f'} />;
       case 'laptop': return (
         <At>
@@ -27317,7 +27821,7 @@ export function seatedExtra(b: Batch, p: Vec3, yaw: number, shirt: string, pants
 
 export { rng, mix };
 @@@@ END
-@@@@ FILE src/sets/stadium.tsx | text-crlf | 16856 | d840f030ddefbc5422387035203380c2419710d72b8e26c6c78cf11f10661526
+@@@@ FILE src/sets/stadium.tsx | text | 17056 | 17518126253099994d24aadc651576ce62102a0da5ec8f29881071b834db192c
 // American-football stadium: striped turf with yard lines, numbers and coloured end zones, yellow
 // goal posts, stepped stands on all four sides filled with an instanced crowd (~13k people in a
 // handful of draw calls), floodlight towers in the corners and a scoreboard above the west stand.
@@ -27474,16 +27978,18 @@ const Scoreboard: React.FC<{ on: boolean }> = ({ on }) => (
     {[-8, 8].map(x => <Box key={x} p={[x, 7, -0.6]} s={[0.9, 14, 0.9]} c="#4d5262" />)}
     <Box p={[0, 19.5, -0.4]} s={[28, 12, 0.8]} c="#1d2333" />
     <Box p={[0, 25.8, -0.4]} s={[28.6, 0.6, 1.0]} c={HOME} />
-    <Sign p={[0, 23.6, 0.02]} w={22} h={2.6} text="CITY STADIUM" bg="#1d2333" fg="#f2c53c" />
+    <Sign p={[0, 23.6, 0.02]} w={22} h={2.6} text="ESTÁDIO MUNICIPAL" bg="#1d2333" fg="#f2c53c" />
     <Sign p={[-7, 18.6, 0.02]} w={9} h={6} text={'HOME\n21'} bg="#24305a" fg="#ffffff" />
     <Sign p={[7, 18.6, 0.02]} w={9} h={6} text={'AWAY\n14'} bg="#24503a" fg="#ffffff" />
     <Sign p={[0, 18.6, 0.02]} w={4.2} h={6} text={'Q4\n2:00'} bg="#111522" fg="#ffd27e" />
-    <Sign p={[0, 14.4, 0.02]} w={24} h={1.6} text="TOUCHDOWN!" bg="#111522" fg="#7fe0ff" />
+    <Sign p={[0, 14.4, 0.02]} w={24} h={1.6} text="GOOOL!" bg="#111522" fg="#7fe0ff" />
     {on && <Halo p={[0, 19.5, 2]} r={16} c="#9fb8ff" o={0.18} />}
   </At>
 );
 
 const BOARD_TEXT = ['HOME', 'GO TEAM!', 'STICK SODA', 'SPORTS 24', 'FAST FOOD', 'DEFENSE!', 'HOT DOGS', 'PURPLE PRIDE'];
+// empty variant = a school field: school banners instead of game-day ads (PT-BR content)
+const SCHOOL_TEXT = ['ESCOLA', 'VAI, TIME!', 'EDUCAÇÃO FÍSICA', 'CANTINA', 'JOGOS ESCOLARES', 'FEIRA DE CIÊNCIAS', 'TORNEIO', 'BIBLIOTECA'];
 const BOARD_BG = ['#6d3fc4', '#2f4f9a', '#3fb3c4', '#1d2333', '#f2b632', '#2f7a5a'];
 
 const Field: React.FC = React.memo(() => {
@@ -27518,7 +28024,7 @@ const Field: React.FC = React.memo(() => {
         <group key={s}>
           <Box p={[s * (GOAL_LINE + 5 * YD), TURF_Y / 2, 0]} s={[10 * YD, TURF_Y, HW * 2]} c={s > 0 ? HOME : AWAY} shadow={false} />
           <group position={[s * (GOAL_LINE + 5 * YD), TURF_Y + 0.004, 0]} rotation={[0, -s * Math.PI / 2, 0]}>
-            <mesh geometry={G.plane} material={mapMaterial(textTexture('HOME', { w: 1024, h: 256, fg: '#ffffff' }), false, true)} rotation={[-Math.PI / 2, 0, 0]} scale={[34, 8.5, 1]} receiveShadow />
+            <mesh geometry={G.plane} material={mapMaterial(textTexture('CASA', { w: 1024, h: 256, fg: '#ffffff' }), false, true)} rotation={[-Math.PI / 2, 0, 0]} scale={[34, 8.5, 1]} receiveShadow />
           </group>
         </group>
       ))}
@@ -27535,7 +28041,7 @@ const Field: React.FC = React.memo(() => {
       {/* midfield logo */}
       <mesh geometry={G.circle} material={decalMaterial('#6d3fc4')} position={[0, TURF_Y + 0.003, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={4.2} receiveShadow />
       <mesh geometry={G.circle} material={decalMaterial('#9f7bea')} position={[0, TURF_Y + 0.004, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={3.7} receiveShadow />
-      <mesh geometry={G.plane} material={mapMaterial(textTexture('CITY\nFC',{ w: 256, h: 256, fg: '#ffffff' }), false, true)} position={[0, TURF_Y + 0.006, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={5.4} receiveShadow />
+      <mesh geometry={G.plane} material={mapMaterial(textTexture('E.E.\nSOL',{ w: 256, h: 256, fg: '#ffffff' }), false, true)} position={[0, TURF_Y + 0.006, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={5.4} receiveShadow />
       {/* pylons */}
       {[-1, 1].map(sx => [-1, 1].map(sz => [GOAL_LINE, HL].map(x => <Box key={`${sx}${sz}${x}`} p={[sx * x, 0.25, sz * HW]} s={[0.12, 0.46, 0.12]} c="#ff7a1f" />)))}
       <GoalPost x={HL} />
@@ -27544,7 +28050,7 @@ const Field: React.FC = React.memo(() => {
   );
 });
 
-const Stand: React.FC<{ st: StandSpec; i: number }> = React.memo(({ st, i }) => {
+const Stand: React.FC<{ st: StandSpec; i: number; empty?: boolean }> = React.memo(({ st, i, empty }) => {
   const crowd = React.useMemo(() => crowdFor(st), [st]);
   const geo = st.rows === LONG_ROWS ? longStand : endStand;
   const top = H0 + st.rows * RISE;
@@ -27553,8 +28059,9 @@ const Stand: React.FC<{ st: StandSpec; i: number }> = React.memo(({ st, i }) => 
   for (let b = 0; b < nb; b++) {
     const w = -st.len / 2 + (b + 0.5) * (st.len / nb);
     const k = (b + i * 3) % BOARD_TEXT.length;
+    const text = (empty ? SCHOOL_TEXT : BOARD_TEXT)[k];
     const p = standToWorld(st, -0.02, 1.15, w);
-    boards.push(<Sign key={b} p={p} r={st.ry + Math.PI / 2 + Math.PI} w={st.len / nb - 0.4} h={1.5} text={BOARD_TEXT[k]} bg={BOARD_BG[(b + i) % BOARD_BG.length]} fg="#ffffff" />);
+    boards.push(<Sign key={b} p={p} r={st.ry + Math.PI / 2 + Math.PI} w={st.len / nb - 0.4} h={1.5} text={text} bg={BOARD_BG[(b + i) % BOARD_BG.length]} fg="#ffffff" />);
   }
   return (
     <group>
@@ -27574,14 +28081,18 @@ const Stand: React.FC<{ st: StandSpec; i: number }> = React.memo(({ st, i }) => 
         </>
       )}
       {boards}
-      <Instances geo={torsoGeo} mat={envMaterial('#ffffff')} items={() => crowd.bodies} k={`b${i}`} />
-      <Instances geo={armGeo} mat={inkMaterial()} items={() => crowd.arms} k={`a${i}`} receive={false} />
-      <Instances geo={headGeo} mat={inkMaterial()} items={() => crowd.heads} k={`h${i}`} receive={false} />
+      {!empty && (
+        <>
+          <Instances geo={torsoGeo} mat={envMaterial('#ffffff')} items={() => crowd.bodies} k={`b${i}`} />
+          <Instances geo={armGeo} mat={inkMaterial()} items={() => crowd.arms} k={`a${i}`} receive={false} />
+          <Instances geo={headGeo} mat={inkMaterial()} items={() => crowd.heads} k={`h${i}`} receive={false} />
+        </>
+      )}
     </group>
   );
 });
 
-const StadiumScene: React.FC<{ time: string }> = React.memo(({ time }) => {
+const StadiumScene: React.FC<{ time: string; empty?: boolean }> = React.memo(({ time, empty }) => {
   const on = lampsOn(time);
   return (
     <group>
@@ -27589,7 +28100,7 @@ const StadiumScene: React.FC<{ time: string }> = React.memo(({ time }) => {
       <mesh geometry={G.plane} material={envMaterial('#4c9a45')} rotation={[-Math.PI / 2, 0, 0]} scale={[2 * STAND_X + 2, 2 * STAND_Z + 2, 1]} receiveShadow />
       <mesh geometry={G.plane} material={envMaterial('#9aa0ac')} rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.02, 0]} scale={[900, 900, 1]} receiveShadow />
       <Field />
-      {STANDS.map((st, i) => <Stand key={i} st={st} i={i} />)}
+      {STANDS.map((st, i) => <Stand key={i} st={st} i={i} empty={empty} />)}
       {/* corner walls close the gaps between stands */}
       {[-1, 1].map(sx => [-1, 1].map(sz => (
         <Box key={`${sx}${sz}`} p={[sx * (STAND_X - 4), 2.2, sz * (STAND_Z + 6)]} s={[8, 4.4, 12]} c="#7f8aa3" />
@@ -27620,7 +28131,8 @@ const StadiumScene: React.FC<{ time: string }> = React.memo(({ time }) => {
   );
 });
 
-export const StadiumSet: React.FC<SetProps> = ({ time }) => <StadiumScene time={time} />;
+// variant odd = empty stands (a school field on a day with no game)
+export const StadiumSet: React.FC<SetProps> = ({ time, variant }) => <StadiumScene time={time} empty={variant % 2 === 1} />;
 
 export const STADIUM_MARKS: Record<string, Vec3> = {
   midfield: [0, TURF_Y, 0], // on the 50 (midfield logo)
@@ -27942,7 +28454,7 @@ export const VOID_MARKS: Record<string, Vec3> = {
   farRight: [4.5, 0, -1.5],
 };
 @@@@ END
-@@@@ FILE src/types.ts | text-crlf | 10339 | 57ed937c0e2281ee3b359ff0b2ac2545c1e5a7d127f41fd4358ada50761532df
+@@@@ FILE src/types.ts | text-crlf | 10812 | 8a335eb49a9bad531e7f1dca1494935ebfcaf4a23971d925227321443f8a88f4
 // Episode spec: the JSON Claude writes for every video (public/episodes/<slug>/episode.json).
 // Everything in a shot is in seconds relative to the shot start; positions are metres,
 // y up, a character with rot 0 faces +z (towards the default camera).
@@ -28027,7 +28539,7 @@ export type ActorInShot = {
   strafe?: boolean; // keep facing `rot` while moving along the path (rolling backwards, side-steps)
   look?: string | Vec3 | 'camera'; // head looks at actor id / point
   talk?: [number, number][]; // mouth flaps during these intervals
-  hold?: { L?: string; R?: string }; // props in hands
+  hold?: { L?: string; R?: string; scaleL?: number; scaleR?: number }; // props in hands; scaleX enlarges one about the palm (a prop the narration points at)
   scale?: number;
   ghost?: boolean; // translucent copy (afterimages, visions)
   glow?: string; // aura colour
@@ -28035,7 +28547,7 @@ export type ActorInShot = {
   contact?: boolean; // may touch/overlap other characters (hugs, tackles) without an audit error
 };
 
-export type Gait = 'walk' | 'run' | 'sprint' | 'dash' | 'sneak' | 'jog' | 'float' | 'glide' | 'carried'; // carried: moved by something (basket, seat, a flight) — the pose stays as keyed
+export type Gait = 'walk' | 'run' | 'sprint' | 'dash' | 'sneak' | 'jog' | 'float' | 'glide' | 'carried' | 'shamble'; // shamble: slow zombie drag, arms out in front. carried: moved by something (basket, seat, a flight) — the pose stays as keyed
 
 export type CameraSpec = {
   shot?: 'establishing' | 'wide' | 'full' | 'medium' | 'close' | 'xclose' | 'insert';
@@ -28072,10 +28584,11 @@ export type PropSpec = {
 export type Overlay =
   | { type: 'label'; text: string; at?: number; until?: number; corner?: 'tl' | 'tr' | 'bl' | 'br' }
   | { type: 'title'; small?: string; big: string; at?: number; until?: number }
-  | { type: 'stopwatch'; from?: string; to?: string; switchAt?: number | string; at?: number; until?: number; persist?: boolean } // switchAt may be a word cue ("@two")
+  | { type: 'stopwatch'; from?: string; to?: string; switchAt?: number | string; at?: number; until?: number; persist?: boolean; tick?: number; keep?: boolean; corner?: 'tl' | 'tr' | 'bl' | 'br' } // tick: live countdown of an "M:SS" from (story s per s); keep: no fade-out at the cut // switchAt may be a word cue ("@two")
   | { type: 'stat'; value: number | string; unit?: string; label?: string; at?: number; prefix?: string; decimals?: number; pos?: 'center' | 'top' | 'right' }
   | { type: 'bubble'; text: string; actor: string; at?: number; until?: number }
   | { type: 'thought'; text: string; actor: string; at?: number; until?: number }
+  | { type: 'crush'; actor: string; value: number; from?: number; countDur?: number; at?: number; until?: number } // pink heart + % above the actor's head
   | { type: 'caption'; text: string; at?: number; until?: number }
   | { type: 'flash'; at?: number; color?: string }
   | { type: 'counter'; text: string; at?: number }
@@ -28871,14 +29384,15 @@ export type Timing = {
   }
 }
 @@@@ END
-@@@@ FILE tools/build-episode.mjs | text-crlf | 4648 | f7e2299031da2558f01e0bfa446dfc67f569858a5e7307073b26a2a225d9dcb6
+@@@@ FILE tools/build-episode.mjs | text-crlf | 5183 | 8758e95b37e8d445352c72045a37080c2a5dd7bf76e67f9253a67f7d450efcfb
 // Finish an episode: (re)build the soundtrack, render the Episode composition, mux with a
 // loudness-normalised mix (−14 LUFS, −1 dBTP), and write review sheets (one frame per shot).
-//   node tools/build-episode.mjs <slug> [--from <sec> --to <sec>] [--no-audio] [--skip-audit]
+//   node tools/build-episode.mjs <slug> [--from <sec> --to <sec>] [--no-audio] [--skip-audit] [--crf 18] [--concurrency N]
 // A full build refuses to start while the scene audit has errors (range previews skip the gate).
 // Output: final/<Episode title>.mp4 (the previous cut moves to final/archive/), or out/<slug>/preview_<from>-<to>.mp4 for a range.
 import { spawnSync } from 'node:child_process';
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -28916,7 +29430,12 @@ if (!args.includes('--no-audio')) run(q(path.join(ROOT, '.venv', 'Scripts', 'pyt
 
 const silent = path.join(OUT, 'video_silent.mp4');
 const frames = from !== undefined ? [`--frames=${Math.round(+from * fps)}-${Math.round(+to * fps) - 1}`] : [];
-run('npx', ['remotion', 'render', 'Episode', q(silent), `--props=${q(JSON.stringify({ slug }).replace(/"/g, '\\"'))}`, '--muted', '--concurrency=4', '--crf=14', '--log=error', ...frames]);
+// defaults measured on a 12-core RTX 3060 box (20 s range): concurrency 4 → 85 s, 6 → 74 s, 8 → 67 s, 10 → 66 s;
+// CRF 18 is 39% of CRF 14's size at SSIM 0.994 (no visible difference; YouTube re-encodes anyway)
+const concurrency = opt('--concurrency') ?? Math.max(2, os.cpus().length - 4), crf = opt('--crf') ?? 18;
+const t0 = Date.now();
+run('npx', ['remotion', 'render', 'Episode', q(silent), `--props=${q(JSON.stringify({ slug }).replace(/"/g, '\\"'))}`, '--muted', `--concurrency=${concurrency}`, `--crf=${crf}`, '--log=error', ...frames]);
+console.log(`render: ${((Date.now() - t0) / 1000).toFixed(0)} s (concurrency ${concurrency}, crf ${crf})`);
 
 // Every finished episode sits directly in final/, named by its title (e.g. "What If You Could Swap Places With Anyone.mp4"),
 // so all the videos can be browsed in one folder. A rebuild moves the previous cut to final/archive/<slug>_<date>.mp4.
@@ -29000,7 +29519,7 @@ run('ffmpeg', ['-v', 'error', '-y', '-framerate', '30', '-i', `"${pattern}"`, '-
   '-frames:v', '1', '-update', '1', `"${path.join(outDir, 'sheet.png')}"`]);
 console.log('done:', final);
 @@@@ END
-@@@@ FILE tools/episode.mjs | text | 22390 | 82a64bc8aabac81c8069bc4b2bbf306bee6926581b742e6324826e874ce3449e
+@@@@ FILE tools/episode.mjs | text | 24062 | 0e375995c52ea457ea07ecd6c97fba5f41640e386a858602b0462b87eda49f94
 // Episode voice pipeline.
 //   node tools/episode.mjs check <slug>             validate vo text (tags, SSML, raw numbers) BEFORE spending credits — STORY_BLUEPRINT.md §6.9/§6.4
 //   node tools/episode.mjs sections <slug>          split narration into ElevenLabs TTS sections → sections.json (+ prints the credit estimate)
@@ -29121,19 +29640,30 @@ function sh(cmd, args, opts = {}) {
 
 /** One ElevenLabs call, text in = alignment out: character-accurate timestamps for exactly the text sent,
  *  so there is nothing to transcribe or fuzzy-match afterwards (that whole class of bug is gone with Whisper). */
-async function synthesize(voiceId, text, model) {
+// Retries only answers that mean "nothing was generated, try later": 429 (too many concurrent requests /
+// rate limit) and 5xx. Any other error (bad key, bad voice, out of credits) fails at once.
+async function synthesize(voiceId, text, model, tag = '') {
   if (!process.env.ELEVENLABS_API_KEY) throw new Error('ELEVENLABS_API_KEY not set (expected in .env at the project root)');
-  const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}/with-timestamps`, {
-    method: 'POST',
-    headers: { 'xi-api-key': process.env.ELEVENLABS_API_KEY, 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      text,
-      model_id: model,
-      voice_settings: { stability: ep.voice.stability ?? 0.5, similarity_boost: ep.voice.similarityBoost ?? 0.8 },
-    }),
-  });
-  if (!res.ok) throw new Error(`ElevenLabs TTS failed ${res.status}: ${await res.text()}`);
-  return res.json(); // { audio_base64, alignment: {characters, character_start_times_seconds, character_end_times_seconds}, normalized_alignment }
+  for (let attempt = 1; ; attempt++) {
+    const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}/with-timestamps`, {
+      method: 'POST',
+      headers: { 'xi-api-key': process.env.ELEVENLABS_API_KEY, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        text,
+        model_id: model,
+        voice_settings: { stability: ep.voice.stability ?? 0.5, similarity_boost: ep.voice.similarityBoost ?? 0.8 },
+      }),
+    });
+    if (res.ok) return res.json(); // { audio_base64, alignment: {characters, character_start_times_seconds, character_end_times_seconds}, normalized_alignment }
+    const body = await res.text();
+    if ((res.status === 429 || res.status >= 500) && attempt < 6) {
+      const wait = Math.min(30, +(res.headers.get('retry-after') || 0) || 2 ** attempt) * 1000;
+      console.log(`${tag}: ElevenLabs ${res.status}, retry ${attempt}/5 in ${wait / 1000} s`);
+      await new Promise(r => setTimeout(r, wait));
+      continue;
+    }
+    throw new Error(`ElevenLabs TTS failed ${res.status}: ${body}`);
+  }
 }
 
 function processVoice(src, dst, tempoOverride) {
@@ -29302,17 +29832,38 @@ if (cmd === 'check') {
   const secs = read('sections.json');
   fs.mkdirSync(path.join(DIR, 'vo'), { recursive: true });
   const ids = rest.length ? rest : secs.filter(s => !s.file || !fs.existsSync(path.join(DIR, s.file))).map(s => s.id);
-  for (const id of ids) {
-    const s = secs.find(x => x.id === id);
-    if (!s) throw new Error('unknown section ' + id);
-    console.log(`${s.id}: calling ElevenLabs (${Buffer.byteLength(s.text)} chars, voice ${s.voice_id}, ${s.model})…`);
-    const r = await synthesize(s.voice_id, s.text, s.model);
-    fs.writeFileSync(path.join(DIR, 'vo', `${id}.mp3`), Buffer.from(r.audio_base64, 'base64'));
-    fs.writeFileSync(path.join(DIR, 'vo', `${id}.align.json`), JSON.stringify(r.alignment));
-    Object.assign(s, { file: `vo/${id}.wav` });
-    pace(s);
-  }
+  ids.forEach(id => { if (!secs.some(x => x.id === id)) throw new Error('unknown section ' + id); });
+  // a few calls at once (voice.parallel, default 3); sections.json is saved after EVERY finished section,
+  // so a crash or a failed call never loses (and never re-bills) the audio already paid for
+  const parallel = Math.max(1, ep.voice.parallel ?? 3);
+  const t0 = Date.now();
+  let next = 0;
+  const failed = [];
+  const worker = async () => {
+    while (next < ids.length) {
+      const id = ids[next++];
+      const s = secs.find(x => x.id === id);
+      console.log(`${s.id}: calling ElevenLabs (${Buffer.byteLength(s.text)} chars, voice ${s.voice_id}, ${s.model})…`);
+      try {
+        const r = await synthesize(s.voice_id, s.text, s.model, s.id);
+        fs.writeFileSync(path.join(DIR, 'vo', `${s.id}.mp3`), Buffer.from(r.audio_base64, 'base64'));
+        fs.writeFileSync(path.join(DIR, 'vo', `${s.id}.align.json`), JSON.stringify(r.alignment));
+        Object.assign(s, { file: `vo/${s.id}.wav` });
+        pace(s);
+        write('sections.json', secs);
+      } catch (e) {
+        failed.push(s.id);
+        console.error(`${s.id}: FAILED — ${e.message}`);
+      }
+    }
+  };
+  await Promise.all(Array.from({ length: Math.min(parallel, ids.length) }, worker));
   write('sections.json', secs);
+  console.log(`voice: ${ids.length - failed.length}/${ids.length} sections in ${((Date.now() - t0) / 1000).toFixed(0)} s (parallel ${parallel})`);
+  if (failed.length) {
+    console.error(`failed: ${failed.join(' ')} — fix the cause, then re-run 'voice ${slug}' (only these get a new call)`);
+    process.exit(1);
+  }
 } else if (cmd === 'pace') {
   // re-level and re-pace already-downloaded sections (no new ElevenLabs calls)
   const secs = read('sections.json');
@@ -29404,6 +29955,1521 @@ function report(timing) {
   console.log(`total ${timing.total.toFixed(1)} s (${(timing.total / 60).toFixed(2)} min), ${timing.shots.length} shots, avg ${(timing.total / timing.shots.length).toFixed(2)} s/shot`);
   if (short.length) console.log('very short shots (merge or extend): ' + short.map(([i, d]) => `#${i} ${d}s`).join(', '));
 }
+@@@@ END
+@@@@ FILE tools/episodes/_modelo.py | text | 4208 | b366c20b69885761fc3b017681b434619167d27090c7e46938f3e17df91008c9
+# Skeleton for a new episode. Copy to tools/episodes/<slug_with_underscores>.py, set SLUG, fill the beats.
+#   .venv/Scripts/python -I tools/episodes/<file>.py   -> public/episodes/<slug>/episode.json
+# episode.json is regenerated from the .py: never hand-edit the JSON.
+# Beats, word budgets and rules: docs/story/COLA_ROTEIRO.md. Schema: src/types.ts. Cards: src/cards (CARDS).
+# One shot per 2.5–5 s of narration; ids unique (edits by id hit the first match); vo in PT-BR,
+# numbers spelled out, [tags] in English (COLA "Tags de áudio").
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # python -I drops the script dir
+from kit import *  # noqa: E402,F401,F403  (A, S, C, cam, walk, crush, TALK, SW, episode, load_timing, resolve_countdowns, write)
+
+SLUG = 'novo-episodio'
+TITLE = 'E Se Você ...?'
+
+# Marks and repeated actors/props go here, e.g.:
+# HERO_DESK = 'seat2'
+# RULES = ['REGRA UM', 'REGRA DOIS', 'REGRA TRÊS']
+
+# ---------------------------------------------------------------- 1. abertura fria (0:00–0:20)
+# Plan 1 = close of an object; power visible by 0:08; witness line + deadpan answer.
+# S('c1', 'bedroom', 'Você ...', [A('hero', 'bed+0.6,0,0', 180, 'stand', 'neutral')], cam('insert', 'hero'))
+
+# ---------------------------------------------------------------- 2. pergunta do título (0:20–0:25)
+# S('t1', 'suburb', 'E se você ...? Veja o que realmente muda.', camera=cam('establishing', 'hero'),
+#   overlays=[{'type': 'title', 'text': TITLE}])
+
+# ---------------------------------------------------------------- 3. mecanismo + limite (0:25–0:50)
+# C('m1', 'icon', '...')  # the body part; then the limit's signpost line ("Guarda isso.")
+
+# ---------------------------------------------------------------- 4. escada de números + ciência (0:50–1:25)
+# C('n1', 'compare', '...', ...)  # NORMAL vs VOCÊ
+
+# ---------------------------------------------------------------- 5. teste de prova (1:25–1:50)
+
+# ---------------------------------------------------------------- 6. regras (1:50–2:30)
+
+# ---------------------------------------------------------------- 7. montagem de vantagens (2:30–3:10)
+
+# ---------------------------------------------------------------- 8. "mas" + problemas 1–3 (3:10–4:40)
+
+# ---------------------------------------------------------------- 9. problema real (4:40–5:25)
+
+# ---------------------------------------------------------------- 10. maestria + regra tema (5:25–6:05)
+
+# ---------------------------------------------------------------- 11. crise (6:05–6:30)
+# Countdown that lines up across cuts: put {'type': 'stopwatch', 'cd': 'main'} in each shot's overlays,
+# then fill `clocks` at the bottom.
+
+# ---------------------------------------------------------------- 12. dilema (6:30–6:50)
+# Binary "A… ou B." then a silent hold: S('d9', ..., hold=2)
+
+# ---------------------------------------------------------------- 13. clímax (6:50–7:35)
+
+# ---------------------------------------------------------------- 14. consequência (7:35–8:00)
+
+# ---------------------------------------------------------------- 15. mundo maior (8:00–9:10)
+
+# ---------------------------------------------------------------- 16. gancho final (9:10–9:40)
+
+# ---------------------------------------------------------------- 17. CTA (9:40–10:00)
+# S('i1', 'suburb', 'Então: ...? E ...? Conta pra gente nos comentários. Todo poder tem um preço. Até a próxima.', ...)
+
+# ---------------------------------------------------------------- episode
+ep = episode(
+    SLUG, TITLE,
+    cast={
+        'bestie': {'name': '...'},
+        # 'mom': {'name': 'Mãe'},
+        # new characters: top/topColor/accent/bottom/bottomColor/shoes/hair — never gray (gray is the hero's)
+    },
+    music=[  # (first shot id, mood): curious, wonder, tension, action, sad, none
+        # ('c1', 'curious'),
+    ],
+)
+
+# Live countdowns from the real voice timing (no-op on the draft, which shows the fallback):
+tm = load_timing(SLUG)
+# clocks = {'main': (tm.at('<shot>', '<word>'), tm.at('<shot>', '<word>'), <total s>, 'tr', '<last shot id>')} if tm else {}
+# resolve_countdowns(tm, clocks)
+
+write(SLUG, ep)
+@@@@ END
+@@@@ FILE tools/episodes/invasao_zumbi.py | text-crlf | 59321 | b7f27668c1d7273657c97d430e1f86ec1464f99987b5e5bfd0bfead288a03f2f
+# Source of public/episodes/invasao-zumbi/episode.json — edit HERE, then run:
+#   .venv/Scripts/python -I tools/episodes/invasao_zumbi.py
+# (episode.json is regenerated from this file; hand edits to the JSON get overwritten.)
+import json
+import os
+
+SLUG = 'invasao-zumbi'
+GREEN = '#8dff6a'
+shots = []
+
+
+def A(id, pos, rot=0, pose='stand', face='neutral', **kw):
+    d = {'id': id, 'pos': pos, 'rot': rot, 'pose': pose, 'face': face}
+    d.update(kw)
+    return d
+
+
+def Z(id, pos, rot=0, **kw):
+    """A zombie: arms out, half-asleep face, green spore glow."""
+    kw.setdefault('pose', 'zombie')
+    kw.setdefault('face', 'zombie')
+    kw.setdefault('glow', GREEN)
+    pose, face = kw.pop('pose'), kw.pop('face')
+    return A(id, pos, rot, pose, face, **kw)
+
+
+def walk(a, b, t0=0.2, t1=3.0, gait='shamble'):
+    return [{'t': t0, 'pos': a}, {'t': t1, 'pos': b, 'gait': gait}]
+
+
+def cam(shot, target, angle=0, **kw):
+    d = {'shot': shot, 'target': target, 'angle': angle}
+    d.update(kw)
+    return d
+
+
+def S(id, set_, vo=None, actors=None, camera=None, **kw):
+    d = {'id': id, 'set': set_}
+    if vo:
+        d['vo'] = vo
+    if actors:
+        d['actors'] = actors
+    if camera:
+        d['camera'] = camera
+    d.update(kw)
+    shots.append(d)
+
+
+def C(id, card, vo, **spec):
+    d = {'id': id, 'kind': 'card', 'card': card, 'vo': vo}
+    d.update(spec)
+    shots.append(d)
+
+
+TALK = [[0.05, 3.0]]
+SW = lambda v: {'type': 'stopwatch', 'from': v, 'persist': True}
+WHISTLE = {'reachR': {'to': 'mouth'}, 'head': [-6, 0, 0], 'armL': [10, 14, 0, 20]}
+PHONE_DESK = [1.38, 0.79, 1.75]  # on the hero's desk (classroom seat2)
+LAB = [{'type': 'jar', 'pos': [-4.3, 0.78, 2.6]}, {'type': 'glow', 'pos': [-4.3, 0.78, 2.6], 'y': 0.12, 'size': 0.05, 'color': GREEN},
+       {'type': 'sign', 'pos': [-5.92, 1.95, 3.6], 'rot': 90, 'w': 1.1, 'h': 0.32, 'text': 'LAB. DE CIÊNCIAS', 'bg': '#f6f2e8', 'fg': '#1d2333'}]
+BELL_CAF = {'type': 'box', 'pos': [2.6, 2.55, -4.85], 'w': 0.5, 'h': 0.32, 'd': 0.18, 'color': '#c8402f'}
+BELL_CLS = {'type': 'box', 'pos': [-2.4, 2.6, -4.85], 'w': 0.5, 'h': 0.32, 'd': 0.18, 'color': '#c8402f'}
+SUNPATCH = {'type': 'rug', 'pos': [0.4, 0.005, -3.6], 'w': 2.4, 'd': 1.3, 'color': '#fff0b0'}
+FLOORSIT = {'hipY': -0.71, 'spine': [8, 0, 0], 'legL': [88, 8, 8], 'legR': [86, 8, 14], 'armL': [-25, 20, 0, 10], 'armR': [-25, 20, 0, 10], 'handL': 'open', 'handR': 'open'}
+def crowd(n, x0, x1, z0, z1, seed=1, gap=0.9, keep=()):
+    """n points on a jittered layout inside a box, never closer than `gap` to each other or to `keep` points."""
+    import random
+    rnd = random.Random(seed)
+    pts = list(keep)
+    out = []
+    tries = 0
+    while len(out) < n and tries < 6000:
+        tries += 1
+        px, pz = rnd.uniform(x0, x1), rnd.uniform(z0, z1)
+        if all((px - a) ** 2 + (pz - b) ** 2 >= gap * gap for a, b in pts):
+            pts.append((px, pz))
+            out.append((round(px, 2), round(pz, 2)))
+    return out
+
+
+def face_to(tx, tz):
+    import math
+    return lambda px, pz: round(math.degrees(math.atan2(tx - px, tz - pz)))
+
+
+def horde(pts, rot=0, first=1, to=None, t1=5.0, **kw):
+    """Zombie extras x01, x02… at pts; rot may be face_to(...); to=(tx, tz, frac) walks them that fraction toward a point."""
+    out = []
+    for k, (px, pz) in enumerate(pts):
+        r = rot(px, pz) if callable(rot) else rot
+        a = dict(kw)
+        if to:
+            tx, tz, fr = to
+            a['path'] = walk([px, 0, pz], [round(px + (tx - px) * fr, 2), 0, round(pz + (tz - pz) * fr, 2)], 0.0, t1)
+        out.append(Z(f'x{first + k:02d}', [px, 0, pz], r, **a))
+    return out
+
+
+CD = {'type': 'stopwatch', 'cd': 'bell'}   # live countdown to the noon bell, filled in from timing.json at the end
+CDS = {'type': 'stopwatch', 'cd': 'sun'}   # the 30 s sun timer (top-left corner, so it reads as a different clock)
+RULES = ['O SOM MAIS ALTO GANHA', 'ELES FOGEM DO SOL', 'ONDE UM VAI, O BANDO VAI']
+
+# ---------------------------------------------------------------- 1. abertura fria (sala de aula)
+S('c1', 'classroom', 'Seu celular toca. No meio da prova.',
+  props=[{'type': 'phone', 'pos': PHONE_DESK, 'rot': [-1.57, 0, 0.3],
+          'path': [{'t': round(0.1 + 0.07 * k, 2), 'pos': [round(PHONE_DESK[0] + (0.008 if k % 2 else -0.008), 3), PHONE_DESK[1], PHONE_DESK[2]]} for k in range(30)]}],
+  camera={'pos': [0.75, 1.1, 2.35], 'look': [1.38, 0.8, 1.75], 'fov': 30, 'move': 'pushIn'},
+  sfx=[{'t': 0.1, 'name': 'ring', 'dur': 2.2}])
+S('c2', 'classroom', 'A turma inteira vira pra você. Menos o Rafa.',
+  actors=[A('hero', 'seat2', -90, 'sit', 'embarrassed'), Z('rafa', 'seat3', -90, pose='sit', face='sleepy', glow=None)],
+  camera={'pos': [-1.7, 1.5, 3.0], 'look': [1.2, 0.85, 1.0], 'fov': 44, 'move': 'drift'}, sfx=[{'t': 0.1, 'name': 'ring', 'dur': 1.6}])
+S('c3', 'classroom', 'O Rafa levanta. Devagar. Braços pra frente. Olhos quase fechados.',
+  actors=[A('rafa', 'seat3', -90, 'sit', 'sleepy',
+            poses=[{'t': '@levanta', 'pose': 'stand', 'blend': 0.9}, {'t': '@braços', 'pose': {'hipY': -0.01, 'spine': [10, 0, 0], 'head': [14, 0, 16], 'armL': [88, 0, 0, 6], 'armR': [86, 0, 0, 8], 'handL': 'open', 'handR': 'open'}, 'blend': 0.6}],
+            faces=[{'t': '@olhos', 'face': 'zombie', 'blend': 0.4}])],
+  camera=cam('medium', 'rafa', 15, move='pushIn'), sfx=[{'t': '@devagar', 'name': 'groan'}])
+S('c4', 'classroom', 'E brilhando. Um verde fraquinho, tipo pulseira de festa.',
+  actors=[Z('rafa', 'seat3', -90)], camera=cam('close', 'rafa', -10, move='pushIn'), sfx=[{'t': '@brilhando', 'name': 'glint'}])
+S('c5', 'classroom', 'Ele anda direto pro seu celular.',
+  actors=[Z('rafa', 'seat3', -90, path=walk('seat3', 'aisle+0.2,0,0.1', 0.2, 2.6)), A('hero', 'seat2', -90, 'sit', 'scared', look='rafa')],
+  props=[{'type': 'phone', 'pos': PHONE_DESK, 'rot': [-1.57, 0, 0.3]}],
+  camera={'pos': [0.0, 2.7, 4.8], 'look': [1.3, 0.8, 1.0], 'fov': 42}, sfx=[{'t': 0.1, 'name': 'ring', 'dur': 2.4}])
+S('c6', 'classroom', 'Você joga o celular pro fundo da sala.',
+  actors=[A('hero', 'seat2', -90, 'sit', 'determined',
+            poses=[{'t': '@joga', 'pose': {'hipY': -0.46, 'legL': [88, 6, 92], 'legR': [88, 6, 92], 'spine': [-4, 0, -25], 'armR': [140, 30, 0, 10], 'handR': 'open'}, 'blend': 0.2}])],
+  props=[{'type': 'phone', 'pos': PHONE_DESK, 'rot': [-1.57, 0, 0.3],
+          'path': [{'t': '@joga', 'pos': PHONE_DESK}, {'t': '@fundo', 'pos': [3.6, 1.7, 2.6]}, {'t': '@sala', 'pos': [5.4, 0.02, 3.0]}]}],
+  camera=cam('medium', 'hero', 140, height=8), sfx=[{'t': '@joga', 'name': 'whoosh'}, {'t': '@sala', 'name': 'thud'}, {'t': '@sala+0.1', 'name': 'ring', 'dur': 2.0}])
+S('c7', 'classroom', 'O Rafa muda de direção na hora. E segue o som.',
+  actors=[Z('rafa', 'aisle+0.2,0,0.1', 90, path=[{'t': 0.3, 'pos': 'aisle+0.2,0,0.1'}, {'t': 2.6, 'pos': [3.0, 0, 0.9], 'gait': 'shamble'}, {'t': 4.6, 'pos': [4.7, 0, 2.3], 'gait': 'shamble'}]),
+          A('hero', 'seat2', -90, 'sit', 'shocked')],
+  props=[{'type': 'phone', 'pos': [5.4, 0.02, 3.0], 'rot': [-1.57, 0, 0.3]}],
+  camera={'pos': [1.2, 1.9, 6.6], 'look': [3.2, 0.9, 1.4], 'fov': 46}, sfx=[{'t': 0.1, 'name': 'ring', 'dur': 2.6}])
+S('c8', 'classroom', 'O Rafa sempre andou assim?', who='male',
+  actors=[A('bestie', 'seat1', 90, 'sit', 'confused', look='hero', talk=TALK), A('hero', 'seat2', -90, 'sit', 'worried')],
+  camera=cam('close', 'bestie', 15))
+S('c9', 'classroom', 'Só às segundas.', hold=0.3,
+  actors=[A('hero', 'seat2', -90, 'sit', 'smirk', look='bestie', talk=[[0.05, 0.9]])], camera=cam('close', 'hero', -25))
+S('c10', 'cafeteria', 'E no refeitório, mais doze alunos andando igual. Todos brilhando.', variant=1,
+  actors=[Z('zA', [-0.4, 0, -3.6], 0, path=walk([-0.4, 0, -3.6], [-0.3, 0, 0.4], 0.0, 6)),
+          Z('zB', [0.6, 0, -2.2], 10, path=walk([0.6, 0, -2.2], [0.7, 0, 1.6], 0.0, 6)),
+          Z('zC', [2.4, 0, 2.6], -80, path=walk([2.4, 0, 2.6], [0.9, 0, 3.0], 0.0, 6)),
+          Z('zD', [-2.6, 0, 2.7], 80, path=walk([-2.6, 0, 2.7], [-1.0, 0, 3.4], 0.0, 6))]
+         + horde([(-4.0, -2.0), (-2.0, -2.0), (2.0, -2.0), (4.0, -2.0), (-4.4, 4.6), (4.2, 4.4), (3.0, 5.4), (-3.4, 5.5)], rot=face_to(0, 6)),
+  camera={'pos': [0.3, 1.5, 7.6], 'look': [0, 1.0, -0.5], 'fov': 42, 'move': 'pushIn'}, sfx=[{'t': 0.5, 'name': 'groanLow'}])
+
+# ---------------------------------------------------------------- 2. pergunta do título
+S('t1', 'cafeteria', 'E se você salvasse sua escola de uma invasão zumbi? Vamos destrinchar isso.', variant=1,
+  actors=[A('hero', [-3.4, 0, 3.9], 60, 'hide', 'scared', look='zB'),
+          Z('zA', [-0.3, 0, 0.4], 0, path=walk([-0.3, 0, 0.4], [-0.2, 0, 2.6], 0.0, 6)),
+          Z('zB', [0.7, 0, 1.6], 20, path=walk([0.7, 0, 1.6], [1.6, 0, 3.6], 0.0, 6)),
+          Z('zC', [0.9, 0, 3.0], -90, path=walk([0.9, 0, 3.0], [3.0, 0, 3.4], 0.0, 6))],
+  camera={'pos': [-5.4, 2.6, 7.4], 'look': [0.4, 0.9, 1.2], 'fov': 42, 'move': 'pushIn'},
+  overlays=[{'type': 'title', 'small': 'E SE VOCÊ SALVASSE SUA ESCOLA', 'big': 'DE UMA INVASÃO ZUMBI?', 'at': 0.2}])
+
+# ---------------------------------------------------------------- 3. mecanismo + limite
+S('m1', 'classroom', 'Tudo começou no laboratório de ciências. A professora Helena trouxe de uma viagem um fungo raro, num pote fechado.', variant=1,
+  props=LAB, actors=[A('helena', 'teacher+0.3,0,0.9', 70, 'explain', 'happy', look=[-4.3, 0.9, 2.6])],
+  camera={'pos': [-1.6, 1.6, 4.6], 'look': [-4.4, 1.15, 2.7], 'fov': 40, 'move': 'drift'})
+S('m2', 'classroom', 'Hoje cedo, alguém derrubou o pote.', variant=1,
+  props=[{'type': 'jar', 'pos': [-4.3, 0.78, 2.6],
+          'path': [{'t': '@derrubou', 'pos': [-4.3, 0.78, 2.6], 'rot': [0, 0, 0]}, {'t': '@pote', 'pos': [-3.8, 0.1, 2.9], 'rot': [0, 0.4, 1.57]}]},
+         LAB[2]],
+  camera={'pos': [-2.5, 1.0, 4.4], 'look': [-4.1, 0.5, 2.7], 'fov': 34}, fx={'particles': 'dust'},
+  sfx=[{'t': '@pote', 'name': 'thud'}, {'t': '@pote+0.1', 'name': 'debris'}])
+C('m3', 'icon', 'O fungo solta esporos: um pó invisível, que voa pelo ar. Quem respira, em dez minutos, vira zumbi.',
+  icon='warning', caption='ESPOROS NO AR', sub='ZUMBI EM 10 MINUTOS')
+S('m4', 'void', 'Mas não do tipo de filme. Ninguém morde. Ninguém se machuca. Eles só andam devagar, gemem, e brilham verde.',
+  actors=[Z('zA', 'left', 20, path=walk('left', 'left+0.8,0,1.4', 0.2, 6)), Z('zC', 'right', -20, path=walk('right', 'right+-0.8,0,1.4', 0.2, 6))],
+  camera=cam('wide', ['zA', 'zC'], 0, move='pushIn'), sfx=[{'t': '@gemem', 'name': 'groan'}])
+S('m5', 'void', 'E querem encostar em você. Porque um toque passa o fungo adiante, em dez segundos.',
+  actors=[A('hero', 'center', 0, 'stand', 'worried', path=[{'t': 0.4, 'pos': 'center'}, {'t': 2.6, 'pos': 'front', 'gait': 'walk'}], strafe=True),
+          Z('zB', 'back', 0, path=walk('back', 'center+0,0,-0.9', 0.2, 5))],
+  camera=cam('medium', 'hero', 20, move='pullOut'))
+C('m6', 'icon', 'O resto continua igual. Menos uma coisa: eles quase não enxergam. Eles seguem o som. Sempre o som mais alto.',
+  icon='eye', caption='ELES QUASE NÃO ENXERGAM', sub='SEGUEM O SOM MAIS ALTO')
+S('m7', 'void', 'Guarda isso.',
+  actors=[A('hero', 'center', 0, 'point', 'determined')], camera=cam('xclose', 'hero', -10, move='pushIn'))
+
+# ---------------------------------------------------------------- 4. escada de números + ciência
+C('s1', 'icon', 'Agora, a parte estranha: esse fungo existe de verdade.', icon='globe', caption='ESSE FUNGO EXISTE')
+C('s2', 'chain', 'Na Mata Atlântica, aqui no Brasil, vive um fungo que invade formigas. Ele entra no corpo e decide pra onde ela anda.',
+  title='O FUNGO DAS FORMIGAS', nodes=[{'icon': 'globe', 'label': 'MATA ATLÂNTICA'}, {'icon': 'brain', 'label': 'FUNGO NO CORPO'}, {'icon': 'walk', 'label': 'FORMIGA ZUMBI'}])
+C('s3', 'stat', 'A formiga infectada sai do ninho, sobe numa planta, e morde uma folha a uns vinte e cinco centímetros do chão.',
+  value=25, unit='CENTÍMETROS', label='DO CHÃO, PRESA NUMA FOLHA', icon='flag')
+C('s4', 'clock', 'E quase sempre perto do meio-dia. Uma atrás da outra, na mesma hora.',
+  mode='tick', label='MEIO-DIA', value='12:00', time='12:00')
+S('s5', 'void', 'Esse é o zumbi de verdade. E sim: fungo é mais parente seu do que de uma alface.',
+  actors=[A('hero', 'center', 15, 'shrug', 'smirk')], camera=cam('medium', 'hero', 15, move='drift'))
+C('s6', 'stat', 'Agora, a conta. Cada zumbi encosta em alguém a cada cinco minutos. Então o número dobra.',
+  value=5, unit='MINUTOS', label='PRA DOBRAR', icon='clock')
+C('s7', 'chain', 'Um. Dois. Quatro. Oito. Dezesseis.',
+  title='ZUMBIS', nodes=[{'icon': 'stand', 'label': '1'}, {'icon': 'stand', 'label': '2'}, {'icon': 'stand', 'label': '4'}, {'icon': 'stand', 'label': '8'}, {'icon': 'stand', 'label': '16'}], step=0.6)
+C('s8', 'stat', 'Em cinquenta minutos, mais de seiscentos. A escola inteira.',
+  value=600, unit='ALUNOS', label='EM 50 MINUTOS', icon='house')
+S('s9', 'classroom', 'Cinquenta minutos. O tempo de uma aula. É isso que a sua escola tem.', variant=1,
+  actors=[A('hero', 'center', 20, 'stand', 'worried')], camera=cam('close', 'hero', 10, move='pushIn'), sfx=[{'t': 0.2, 'name': 'ticks', 'dur': 1.2}])
+
+# ---------------------------------------------------------------- 5. teste de prova (refeitório)
+S('p1', 'cafeteria', 'No refeitório, o inspetor Seu Jorge acha que é tudo brincadeira.', variant=1,
+  actors=[A('jorge', 'center', 135, 'armsCrossed', 'suspicious'),
+          Z('zA', [-1.2, 0, 1.0], 10), Z('zB', [-0.2, 0, 0.4], 0), Z('zC', [0.9, 0, 0.6], -15),
+          A('hero', [-4.6, 0, 4.6], 120, 'hide', 'worried', look='jorge'), A('bestie', [-5.3, 0, 4.1], 120, 'hide', 'scared', look='jorge')],
+  camera={'pos': [3.2, 1.7, 1.2], 'look': [-0.8, 1.0, 3.4], 'fov': 46, 'move': 'drift'})
+S('p2', 'cafeteria', '[shouting] Todo mundo sentado. Agora!', who='adulto', variant=1,
+  actors=[A('jorge', 'center', 180, 'point', 'angry', talk=TALK)], camera=cam('close', 'jorge', 0))
+S('p3', 'cafeteria', 'E apita. Bem alto.', variant=1,
+  actors=[A('jorge', 'center', 180, WHISTLE, 'angry', hold={'R': 'whistle'})], camera=cam('close', 'jorge', 30),
+  sfx=[{'t': '@apita', 'name': 'whistle', 'dur': 0.9}])
+S('p4', 'cafeteria', 'Os zumbis param. Viram a cabeça pra ele. E andam na direção do apito.', variant=1,
+  actors=[Z('zA', [-1.2, 0, 1.0], 10, look='jorge', path=walk([-1.2, 0, 1.0], [-0.8, 0, 2.6], '@andam', '@apito+1.6')),
+          Z('zB', [-0.2, 0, 0.4], 0, look='jorge', path=walk([-0.2, 0, 0.4], [0.05, 0, 2.3], '@andam', '@apito+1.6')),
+          Z('zC', [0.9, 0, 0.6], -15, look='jorge', path=walk([0.9, 0, 0.6], [0.9, 0, 2.6], '@andam', '@apito+1.6')),
+          A('jorge', 'center', 180, 'stand', 'surprised', hold={'R': 'whistle'})],
+  camera={'pos': [-0.3, 1.7, 6.4], 'look': [-0.1, 1.1, 1.4], 'fov': 42}, sfx=[{'t': '@param', 'name': 'groan'}])
+S('p5', 'cafeteria', 'Eu falei... sentado.', who='adulto', variant=1,
+  actors=[A('jorge', 'center', 180, 'stand', 'scared', hold={'R': 'whistle'}, talk=TALK)], camera=cam('close', 'jorge', -20))
+S('p6', 'cafeteria', 'Um toque no ombro.', variant=1,
+  actors=[A('jorge', 'center', 180, 'stand', 'shocked', hold={'R': 'whistle'}, contact=True),
+          Z('zB', 'center+-0.78,0,0.32', 119, contact=True, pose={'hipY': -0.01, 'spine': [8, 0, 0], 'head': [12, 0, 14], 'armL': [55, 8, 0, 14], 'armR': [92, -4, 0, 6], 'handL': 'open', 'handR': 'open'})],
+  camera={'pos': [-1.0, 1.55, 1.5], 'look': [-0.35, 1.35, 3.9], 'fov': 36})
+S('p7', 'cafeteria', 'Dez segundos depois, o Seu Jorge está gemendo junto.', variant=1,
+  actors=[Z('jorge', 'center', 180), Z('zA', 'center+-0.8,0,-0.6', 20), Z('zB', 'center+0.6,0,-0.7', -10)],
+  camera=cam('medium', 'jorge', -10, move='pushIn'), sfx=[{'t': '@gemendo', 'name': 'groanLow'}])
+S('p8', 'cafeteria', 'O apito cai no chão. Você pega, e guarda no bolso. Ainda não sabe por quê.', variant=1,
+  actors=[A('hero', [-4.6, 0, 4.6], 120, 'crouch', 'focused',
+            poses=[{'t': '@guarda', 'pose': 'stand', 'blend': 0.6}], hold={'R': 'whistle'})],
+  camera=cam('medium', 'hero', 20), sfx=[{'t': '@cai', 'name': 'click'}])
+
+# ---------------------------------------------------------------- 6. regras
+C('r1', 'rules', 'Em vinte minutos escondido, você aprende as regras.', title='AS REGRAS', prefix='REGRA', rules=RULES, current=0)
+C('r2', 'rules', 'Regra um: o som mais alto ganha.', title='AS REGRAS', prefix='REGRA', rules=RULES, current=1)
+CAF_Z = [('zA', [-1.6, 0, 3.2]), ('zC', [-0.2, 0, 3.7]), ('zD', [1.0, 0, 3.0])]
+S('r3', 'cafeteria', 'Você testa. Seu celular tocando de um lado. Um livro batendo no chão do outro.', variant=1,
+  props=[{'type': 'phone', 'pos': [-3.4, 0.78, 1.6], 'rot': [-1.57, 0, 0]}, {'type': 'book', 'pos': [3.8, 0.03, 4.4], 'color': '#c8402f'}],
+  actors=[Z(i, p, 40) for i, p in CAF_Z] + [A('hero', [-2.4, 0, 4.6], 120, 'crouch', 'focused')],
+  camera={'pos': [0.0, 2.6, 9.4], 'look': [0.4, 0.8, 2.6], 'fov': 46},
+  sfx=[{'t': '@celular', 'name': 'ring', 'dur': 2.4}, {'t': '@livro+0.4', 'name': 'thud'}, {'t': '@outro', 'name': 'thud'}])
+S('r4', 'cafeteria', 'Eles vão pro livro. O toque do seu celular é educado demais.', variant=1,
+  props=[{'type': 'phone', 'pos': [-3.4, 0.78, 1.6], 'rot': [-1.57, 0, 0]}, {'type': 'book', 'pos': [3.8, 0.03, 4.4], 'color': '#c8402f'}],
+  actors=[Z(i, p, 40, path=walk(p, q, 0.2, 4.5)) for (i, p), q in zip(CAF_Z, [[2.0, 0, 3.6], [2.9, 0, 4.7], [3.2, 0, 3.4]])] + [A('hero', [-2.4, 0, 4.6], 120, 'crouch', 'smirk')],
+  camera={'pos': [0.0, 2.6, 9.4], 'look': [1.0, 0.8, 2.8], 'fov': 46}, sfx=[{'t': 0.2, 'name': 'ring', 'dur': 2.0, 'vol': -8}])
+C('r5', 'rules', 'Regra dois: eles fogem do sol.', title='AS REGRAS', prefix='REGRA', rules=RULES, current=2)
+S('r6', 'classroom', 'Um zumbi chega perto da janela. Pisa numa faixa de sol. E recua, como quem pisa em água gelada.', variant=1,
+  props=[SUNPATCH],
+  actors=[Z('zE', [0.4, 0, -1.4], 180, path=[{'t': 0.2, 'pos': [0.4, 0, -1.4]}, {'t': '@pisa', 'pos': [0.4, 0, -3.0], 'gait': 'shamble'},
+                                         {'t': '@recua', 'pos': [0.4, 0, -3.0]}, {'t': '@gelada', 'pos': [0.4, 0, -2.0], 'gait': 'sneak'}],
+            strafe=True)],
+  camera={'pos': [3.4, 1.5, 0.6], 'look': [0.3, 0.9, -2.6], 'fov': 40}, sfx=[{'t': '@recua', 'name': 'groan'}])
+C('r7', 'rules', 'Regra três: onde um vai, o bando vai atrás.', title='AS REGRAS', prefix='REGRA', rules=RULES, current=3)
+S('r8', 'cafeteria', 'O Davi tropeça numa bandeja. Um zumbi vira. Depois outro. Depois o bando inteiro.', variant=1,
+  props=[{'type': 'box', 'pos': [-2.9, 0, 3.6], 'w': 0.36, 'h': 0.02, 'd': 0.25, 'color': '#3d6fb6'}],
+  actors=[A('bestie', [-3.6, 0, 3.8], 90, 'stand', 'shocked', poses=[{'t': '@tropeça', 'pose': 'fall', 'blend': 0.25}, {'t': '@tropeça+0.45', 'pose': FLOORSIT, 'blend': 0.35}]),
+          Z('zA', [0.2, 0, -1.6], 0, path=walk([0.2, 0, -1.6], [-0.8, 0, 0.4], '@um', '@um+3')),
+          Z('zC', [0.8, 0, 0.0], 0, path=walk([0.8, 0, 0.0], [-0.4, 0, 1.8], '@outro', '@outro+3')),
+          Z('zD', [-0.2, 0, -3.0], 0, path=walk([-0.2, 0, -3.0], [-1.0, 0, -1.2], '@bando', '@bando+3')),
+          Z('zE', [2.2, 0, 3.0], -90, path=walk([2.2, 0, 3.0], [0.8, 0, 3.4], '@bando', '@bando+3'))],
+  camera={'pos': [-5.3, 2.0, 7.8], 'look': [-0.8, 0.9, 1.0], 'fov': 44}, sfx=[{'t': '@tropeça', 'name': 'thud'}, {'t': '@bando', 'name': 'groanLow'}])
+S('r9', 'cafeteria', 'Foi mal! Foi mal!', who='male', variant=1,
+  actors=[A('bestie', [-3.6, 0, 3.8], 90, 'scared', 'scared', talk=TALK)], camera=cam('close', 'bestie', 10))
+
+# ---------------------------------------------------------------- 7. montagem de vantagens
+S('k1', 'cafeteria', 'E aí vem a parte boa: a escola é sua.', variant=1,
+  actors=[A('hero', 'center', 0, 'power', 'grin')], camera={'pos': [0.2, 1.5, 6.2], 'look': [0, 1.2, 2.0], 'fov': 40, 'to': {'pos': [0.3, 2.0, 9.2], 'look': [0, 1.1, 1.5]}})
+S('k2', 'cafeteria', 'Almoço sem fila. Sobremesa? Três.', variant=1,
+  actors=[A('hero', 'seat1', 0, 'sit', 'bliss', hold={'R': 'cup'}), A('bestie', 'seat1+1.2,0,0', 0, 'sit', 'happy', hold={'R': 'cup'})],
+  props=[{'type': 'pizza', 'pos': 'seat1+0,0.78,0.62'}],
+  camera=cam('medium', ['hero', 'bestie'], 0), sfx=[{'t': '@três', 'name': 'pop'}])
+S('k3', 'cafeteria', 'Pra atravessar um corredor cheio de zumbi, você só deixa uma música tocando do outro lado.', variant=1,
+  props=[{'type': 'phone', 'pos': [4.6, 0.78, 1.6], 'rot': [-1.57, 0, 0]}],
+  actors=[Z('zA', [-0.4, 0, 0.0], 90, path=walk([-0.4, 0, 0.0], [2.2, 0, 0.3], 0.3, 6)),
+          Z('zC', [-0.6, 0, 2.6], 90, path=walk([-0.6, 0, 2.6], [2.2, 0, 2.9], 0.3, 6)),
+          A('hero', [-3.4, 0, 4.4], 90, 'stand', 'smug', path=[{'t': 1.2, 'pos': [-3.4, 0, 4.4]}, {'t': 4.8, 'pos': [-5.0, 0, 4.4], 'gait': 'sneak'}])],
+  camera={'pos': [0.2, 2.4, 9.6], 'look': [-0.6, 0.9, 1.4], 'fov': 42}, sfx=[{'t': 0.2, 'name': 'ring', 'dur': 3.0, 'vol': -6}])
+S('k4', 'classroom', 'Você tenta guiar eles batendo palma.', variant=1,
+  actors=[A('hero', [-3.4, 0, 4.6], 30, {'armL': [75, 28, 0, 40], 'armR': [75, 28, 0, 40], 'handL': 'open', 'handR': 'open'}, 'smug',
+            poses=[{'t': round(0.45 + 0.5 * k + (0.25 if j else 0), 2), 'pose': {'armL': [75, 28 if j else -4, 0, 40], 'armR': [75, 28 if j else -4, 0, 40], 'handL': 'open', 'handR': 'open'}, 'blend': 0.12} for k in range(4) for j in (0, 1)])],
+  camera=cam('medium', 'hero', 10), sfx=[{'t': round(0.57 + 0.5 * k, 2), 'name': 'click'} for k in range(4)])
+S('k5', 'classroom', 'Eles vêm em você. Todos.', variant=1,
+  actors=[Z('zA', [0.9, 0, 4.4], -90, path=walk([0.9, 0, 4.4], [-1.6, 0, 4.5], 0.0, 4)),
+          Z('zB', [2.2, 0, 3.8], -90, path=walk([2.2, 0, 3.8], [-0.6, 0, 3.9], 0.0, 4)),
+          Z('zC', [2.4, 0, 4.9], -90, path=walk([2.4, 0, 4.9], [0.6, 0, 5.0], 0.0, 4)),
+          A('hero', [-3.4, 0, 4.6], 90, 'shocked', 'shocked', path=[{'t': '@todos', 'pos': [-3.4, 0, 4.6]}, {'t': '@todos+1.4', 'pos': [-5.2, 0, 4.4], 'gait': 'run'}])],
+  camera={'pos': [-0.6, 1.7, 9.0], 'look': [-1.0, 0.9, 4.4], 'fov': 46}, sfx=[{'t': '@todos', 'name': 'groanLow'}])
+S('k6', 'classroom', 'Na sala do primeiro ano, um menino se esconde embaixo da mesa. Três zumbis em volta.', variant=1,
+  actors=[A('kid', [-3.4, 0, 3.4], 60, 'hide', 'scared'),
+          Z('zD', [-2.3, 0, 2.7], -58), Z('zE', [-3.1, 0, 4.6], -166), Z('zF', [-4.4, 0, 4.2], 129)],
+  camera={'pos': [-0.6, 1.0, 4.4], 'look': [-3.2, 0.55, 3.4], 'fov': 38, 'move': 'pushIn'}, sfx=[{'t': 0.4, 'name': 'groan'}])
+S('k7', 'classroom', 'Você deixa o celular tocando lá no fundo. Os três vão atrás do som.', variant=1,
+  props=[{'type': 'phone', 'pos': [5.0, 0.02, 5.0], 'rot': [-1.57, 0, 0]}],
+  actors=[A('kid', [-3.4, 0, 3.4], 60, 'hide', 'worried'),
+          Z('zD', [-2.3, 0, 2.7], 90, path=walk([-2.3, 0, 2.7], [1.6, 0, 4.4], 0.4, 6)),
+          Z('zE', [-3.1, 0, 4.6], 90, path=walk([-3.1, 0, 4.6], [0.4, 0, 5.2], 0.6, 6)),
+          Z('zF', [-4.4, 0, 4.2], 90, path=walk([-4.4, 0, 4.2], [-0.8, 0, 4.5], 0.8, 6))],
+  camera={'pos': [-0.8, 1.7, 8.6], 'look': [-0.6, 0.8, 4.0], 'fov': 50}, sfx=[{'t': 0.2, 'name': 'ring', 'dur': 3.4, 'vol': -6}])
+S('k8', 'classroom', 'Você é tipo um super-herói?', who='female', variant=1,
+  actors=[A('kid', 'center+-3.8,0,-1.5', 49, 'relaxed', 'awe', look='hero', talk=TALK), A('hero', 'center+-3.0,0,-0.8', -131, 'crouch', 'smile', look='kid')],
+  camera={'pos': [-3.05, 1.0, 4.9], 'look': [-3.4, 0.85, 3.4], 'fov': 34})
+S('k9', 'classroom', 'Sou tipo um despertador.', variant=1,
+  actors=[A('hero', 'center+-3.0,0,-0.8', -131, 'crouch', 'smirk', look='kid', talk=[[0.05, 1.2]]), A('kid', 'center+-3.8,0,-1.5', 49, 'relaxed', 'happy')],
+  camera={'pos': [-3.0, 1.2, 2.6], 'look': [-2.9, 0.9, 3.8], 'fov': 40})
+S('k10', 'classroom', 'É a melhor coisa que você faz o dia inteiro.', variant=1,
+  actors=[A('kid', 'center+-3.8,0,-1.5', 49, 'hug', 'bliss', contact=True), A('hero', 'center+-3.45,0,-1.2', -131, 'hug', 'smile', contact=True)],
+  camera={'pos': [-1.4, 1.35, 1.9], 'look': [-3.2, 0.95, 3.5], 'fov': 40, 'move': 'pullOut'})
+# ---------------------------------------------------------------- 8. "mas" + problemas
+S('q1', 'void', 'Depois os problemas aparecem. Um de cada vez.',
+  actors=[A('hero', 'center', 0, 'sad', 'worried')], camera=cam('medium', 'hero', 0, move='pullOut'))
+C('q2', 'stat', 'Problema um: o seu celular é a sua única isca. E está com dezoito por cento.', value=18, unit='%', label='DE BATERIA', icon='phone')
+S('q3', 'classroom', 'Cada isca gasta uns três por cento. Seis iscas, e acabou.', variant=1,
+  actors=[A('hero', [-3.4, 0, 4.6], 20, 'phone', 'worried', hold={'R': 'phone'})], camera=cam('close', 'hero', 25),
+  overlays=[{'type': 'label', 'text': '6 ISCAS', 'at': '@seis', 'corner': 'tl'}])
+S('q4', 'cafeteria', 'Solução: você pega emprestado o celular do Seu Jorge. Ele não reclama.', variant=1,
+  actors=[Z('jorge', 'center', 0), A('hero', 'center+0.75,0,-0.2', -80, 'reach', 'focused', look='jorge', contact=True)],
+  camera={'pos': [2.8, 1.5, 5.4], 'look': [0.4, 1.1, 3.6], 'fov': 40}, sfx=[{'t': '@reclama', 'name': 'groan'}])
+S('q5', 'cafeteria', 'Isso é roubo.', who='male', variant=1,
+  actors=[A('bestie', [-3.3, 0, 4.4], 60, 'armsCrossed', 'suspicious', look=[0.4, 1.4, 3.8], talk=[[0.05, 1.0]])], camera=cam('close', 'bestie', 15))
+S('q6', 'cafeteria', '[whispering] É empréstimo.', variant=1,
+  actors=[A('hero', [-2.6, 0, 4.0], -120, 'phone', 'smug', hold={'R': 'phone'}, look='bestie', talk=[[0.05, 1.0]])], camera=cam('close', 'hero', -15))
+S('q7', 'classroom', 'Problema dois: a sala onde os sobreviventes se escondem. Quarenta alunos e a diretora, em silêncio total. Por horas.', variant=0,
+  actors=[A('celia', 'front+0.4,0,0.6', 90, 'armsCrossed', 'focused'), A('sister', 'seat1', -90, 'sit', 'worried'), A('hero', 'aisle', -90, 'stand', 'worried')],
+  camera={'pos': [0.8, 2.3, 10.5], 'look': [-0.2, 1, -0.5], 'fov': 40, 'move': 'pushIn'})
+S('q8', 'classroom', 'Aí alguém espirra. E na porta, um gemido.', variant=0,
+  actors=[A('sister', 'seat1', -90, 'sit', 'scared', look='celia'), A('hero', 'aisle', -150, 'stand', 'scared', look=[-5.4, 1.2, 4.2]),
+          A('celia', 'front+0.4,0,0.6', 150, 'scared', 'shocked', look=[-5.4, 1.2, 4.2])],
+  camera=cam('medium', ['hero', 'sister'], 40), sfx=[{'t': '@espirra', 'name': 'pop'}, {'t': '@gemido', 'name': 'groanLow'}])
+S('q9', 'classroom', 'Solução: chiclete pra todo mundo. Boca mastigando não conversa.', variant=0,
+  actors=[A('hero', 'aisle', -90, 'holdOut', 'smug', hold={'R': 'paper'}), A('sister', 'seat1', 90, 'sit', 'happy', look='hero')],
+  camera=cam('medium', ['hero', 'sister'], -40))
+S('q10', 'classroom', 'Chiclete? Na minha escola?', who='adulta', variant=0,
+  actors=[A('celia', 'front+0.4,0,0.6', 90, 'armsCrossed', 'angry', talk=TALK)], camera=cam('close', 'celia', 10))
+S('q11', 'cafeteria', 'Problema três: o banheiro fica do outro lado do refeitório. Com oito zumbis no caminho.', variant=1,
+  actors=[Z('zA', [-0.3, 0, -2.0], 0), Z('zB', [0.5, 0, -0.4], 20), Z('zC', [-0.5, 0, 1.0], -10), Z('zD', [0.4, 0, 2.6], 0)]
+         + horde([(-0.4, -4.2), (0.5, 1.6), (2.6, 3.4), (-0.6, -0.9)], rot=face_to(-4, 6)),
+  props=[{'type': 'sign', 'pos': [5.92, 1.9, 2.4], 'rot': -90, 'w': 0.9, 'h': 0.3, 'text': 'BANHEIRO →', 'bg': '#f6f2e8', 'fg': '#1d2333'}],
+  camera={'pos': [-4.2, 1.7, 6.8], 'look': [1.0, 1.0, 0.4], 'fov': 44, 'move': 'drift'})
+S('q12', 'cafeteria', 'Solução: revezamento. Alguém faz barulho numa ponta, e o resto atravessa na outra.', variant=1,
+  actors=[A('bestie', [-4.4, 0, -2.0], 90, 'cheer', 'determined', hold={'R': 'tray'}),
+          Z('zA', [-0.3, 0, -2.0], -90, path=walk([-0.3, 0, -2.0], [-2.3, 0, -2.0], 0.3, 6)),
+          Z('zB', [0.5, 0, -0.4], -100, path=walk([0.5, 0, -0.4], [-1.6, 0, -1.6], 0.3, 6)),
+          A('sister', [0.8, 0, 4.6], 90, 'stand', 'determined', path=[{'t': 1.6, 'pos': [0.8, 0, 4.6]}, {'t': 4.4, 'pos': [4.6, 0, 4.4], 'gait': 'sneak'}]),
+          A('kid', [-0.2, 0, 5.0], 90, 'stand', 'scared', path=[{'t': 2.0, 'pos': [-0.2, 0, 5.0]}, {'t': 4.8, 'pos': [3.6, 0, 5.0], 'gait': 'sneak'}])],
+  camera={'pos': [0.6, 2.8, 11.5], 'look': [0.0, 0.9, 1.0], 'fov': 44}, sfx=[{'t': 0.4, 'name': 'thud'}, {'t': 0.8, 'name': 'thud'}, {'t': 1.2, 'name': 'thud'}])
+S('q13', 'cafeteria', '[whispering] Eu não vou fazer xixi com zumbi escutando.', who='female', variant=1,
+  actors=[A('sister', [4.6, 0, 4.4], -150, 'armsCrossed', 'angry', look='camera', talk=TALK)], camera=cam('close', 'sister', 0))
+
+# ---------------------------------------------------------------- 9. problema real
+S('x1', 'void', 'Nada disso é o que te dá medo de verdade.',
+  actors=[A('hero', 'center', 0, 'stand', 'worried')], camera=cam('close', 'hero', 0, move='pushIn'), sfx=[{'t': '@verdade', 'name': 'subdrop'}])
+C('x2', 'icon', 'Lembra? Eles seguem o som mais alto. E qual é o som mais alto de uma escola?', icon='question', caption='O SOM MAIS ALTO', sub='DA ESCOLA')
+S('x3', 'cafeteria', 'O sinal.', variant=1, props=[BELL_CAF, {'type': 'sign', 'pos': [2.6, 2.22, -4.9], 'w': 0.6, 'h': 0.2, 'text': 'SINAL', 'bg': '#f6f2e8', 'fg': '#1d2333'}],
+  camera={'pos': [1.6, 1.9, -2.6], 'look': [2.6, 2.5, -4.85], 'fov': 30}, sfx=[{'t': 0.1, 'name': 'bell', 'dur': 1.2, 'vol': -4}])
+C('x4', 'clock', 'Ele toca sozinho, a cada cinquenta minutos. E o painel que desliga fica na diretoria. Lotada de zumbi.',
+  mode='tick', label='A CADA 50 MINUTOS', value='10:50', time='10:50')
+S('x5', 'cafeteria', 'Às dez e cinquenta, você está atravessando o refeitório. Bem embaixo da caixa de som.', variant=1, props=[BELL_CAF],
+  actors=[A('hero', [-1.4, 0, -4.1], 90, 'stand', 'focused', path=[{'t': 0.4, 'pos': [-1.4, 0, -4.1]}, {'t': 4.0, 'pos': [2.4, 0, -4.1], 'gait': 'sneak'}])],
+  camera={'pos': [0.4, 1.6, 2.4], 'look': [1.4, 1.4, -4.4], 'fov': 40})
+S('x6', 'cafeteria', 'Ele toca.', variant=1, props=[BELL_CAF],
+  actors=[A('hero', [2.4, 0, -4.1], 90, 'shocked', 'shocked', look=[2.6, 2.55, -4.85])],
+  camera=cam('close', 'hero', 30, height=-12, move='crashIn'), sfx=[{'t': 0.05, 'name': 'bell', 'dur': 3.0}])
+S('x7', 'cafeteria', 'Cento e cinquenta zumbis, de todas as salas, vindo ao mesmo tempo.', variant=1, props=[BELL_CAF],
+  actors=horde(crowd(14, -4.8, 4.8, -2.4, 5.4, seed=7, gap=1.0, keep=[(x, z) for x in (-3, 3) for z in (-0.8, 1.6)]), rot=face_to(2.6, -4.85), to=(1.6, -3.8, 0.35), t1=6),
+  camera={'pos': [2.2, 2.6, -4.2], 'look': [-0.6, 0.6, 3.0], 'fov': 52, 'move': 'shake'}, sfx=[{'t': 0.1, 'name': 'bell', 'dur': 2.5, 'vol': -6}, {'t': 0.6, 'name': 'groanLow'}])
+S('x8', 'cafeteria', 'Você se joga atrás da lixeira. Eles passam a um palmo do seu tênis.', variant=1,
+  props=[{'type': 'crate', 'pos': [2.4, 0, 4.6], 'w': 0.55, 'h': 0.85, 'd': 0.55, 'color': '#3f8a4a'}, {'type': 'sign', 'pos': [2.4, 0.55, 4.88], 'w': 0.4, 'h': 0.12, 'text': 'LIXO', 'bg': '#f6f2e8', 'fg': '#1d2333'}],
+  actors=[A('hero', [2.4, 0, 5.3], 180, 'hide', 'scared'),
+          Z('zE', [-0.4, 0, 3.7], 90, path=walk([-0.4, 0, 3.7], [5.2, 0, 3.8], 0.4, 7)),
+          Z('zB', [-1.4, 0, 3.2], 90, path=walk([-1.4, 0, 3.2], [4.2, 0, 3.1], 0.6, 7))],
+  camera={'pos': [5.4, 0.95, 5.85], 'look': [2.0, 0.6, 4.3], 'fov': 44}, sfx=[{'t': 0.3, 'name': 'thud'}])
+S('x9', 'cafeteria', 'Salvo por sorte. E daqui a cinquenta minutos, o sinal toca de novo.', variant=1,
+  props=[{'type': 'crate', 'pos': [2.4, 0, 4.6], 'w': 0.55, 'h': 0.85, 'd': 0.55, 'color': '#3f8a4a'}],
+  actors=[A('hero', [2.4, 0, 5.3], 120, 'hide', {'mouth': -0.3, 'brow': 0.8, 'eyes': 1.1, 'sweat': True})],
+  camera={'pos': [3.45, 0.9, 4.8], 'look': [2.4, 0.72, 5.3], 'fov': 34, 'move': 'pushIn'}, sfx=[{'t': '@sinal', 'name': 'heartbeat'}])
+# ---------------------------------------------------------------- 10. maestria + regra tema
+C('y1', 'icon', 'Então você volta pra origem de tudo: as formigas. Cientistas estudaram como elas se defendem.',
+  icon='brain', caption='COMO AS FORMIGAS', sub='SE DEFENDEM')
+C('y2', 'chain', 'Elas não lutam contra a doença dentro do ninho. Elas levam tudo que está contaminado pra fora.',
+  title='A DEFESA DAS FORMIGAS', nodes=[{'icon': 'house', 'label': 'NINHO'}, {'icon': 'arrow', 'label': 'LEVA'}, {'icon': 'flag', 'label': 'PRA FORA'}])
+C('y3', 'icon', 'E fungo que ataca inseto odeia sol: a luz ultravioleta destrói os esporos.',
+  icon='sun', caption='LUZ DO SOL', sub='DESTRÓI OS ESPOROS')
+S('y4', 'stadium', 'Aí você vê o Rafa. Ele seguiu um alarme de carro até o campo. E ficou parado no sol.', variant=1,
+  actors=[Z('rafa', 'midfield', 30)], camera=cam('wide', 'rafa', 20, height=10, move='pushIn'), sfx=[{'t': '@alarme', 'name': 'ticks', 'dur': 1.0}])
+S('y5', 'stadium', 'Trinta segundos depois, ele pisca.', variant=1,
+  actors=[A('rafa', 'midfield', 30, 'stand', 'sleepy', faces=[{'t': '@pisca', 'face': 'confused', 'blend': 0.3}])],
+  camera=cam('close', 'rafa', 10), overlays=[{'type': 'stopwatch', 'from': '0:30', 'at': 0.1}], sfx=[{'t': '@pisca', 'name': 'chime'}])
+S('y6', 'stadium', 'Eu perdi a prova?', who='male', variant=1,
+  actors=[A('rafa', 'midfield', 30, 'shrug', 'confused', talk=TALK)], camera=cam('medium', 'rafa', -20))
+S('y7', 'stadium', 'Trinta segundos de sol. É a cura.', variant=1,
+  actors=[A('hero', 'midfield+-3,0,3', 150, 'stand', 'awe')], camera=cam('xclose', 'hero', 0, height=-8, move='pushIn'), sfx=[{'t': '@cura', 'name': 'swell'}])
+S('y8', 'cafeteria', 'Você e o Davi treinam: levar grupos pequenos pro sol, usando o som.', variant=1,
+  actors=[A('hero', [-1.6, 0, 4.4], 120, 'holdOut', 'determined', hold={'R': 'phone'}), A('bestie', [-2.6, 0, 4.0], 110, 'thinking', 'focused', look='hero')],
+  camera=cam('medium', ['hero', 'bestie'], 0))
+S('y9', 'cafeteria', 'Primeira vez: o celular toca baixo demais. Eles param no bebedouro.', variant=1,
+  actors=[Z('zA', [0.4, 0, 0.0], 0, path=walk([0.4, 0, 0.0], [0.4, 0, 1.2], 0.2, 2.4)), Z('zC', [-0.4, 0, -0.4], 0, path=walk([-0.4, 0, -0.4], [-0.5, 0, 0.8], 0.2, 2.4)),
+          A('hero', [0.0, 0, 4.4], 180, 'holdOut', 'confused', hold={'R': 'phone'})],
+  camera={'pos': [3.4, 1.6, 6.4], 'look': [0.0, 1.0, 1.4], 'fov': 42}, sfx=[{'t': '@baixo', 'name': 'ring', 'dur': 1.2, 'vol': -14}, {'t': '@bebedouro', 'name': 'pop'}])
+S('y10', 'stadium', 'Segunda: você anda rápido demais, e eles perdem o som.', variant=1,
+  actors=[A('hero', 'midfield+-6,0,8', 150, 'stand', 'determined', hold={'R': 'phone'}, path=[{'t': 0.3, 'pos': 'midfield+-6,0,8'}, {'t': 2.2, 'pos': 'midfield+-2,0,2', 'gait': 'jog'}]),
+          Z('zA', 'midfield+-7.6,0,11', 150, path=walk('midfield+-7.6,0,11', 'midfield+-6.9,0,9.8', 0.2, 2.2)),
+          Z('zC', 'midfield+-8.6,0,10.2', 150, path=walk('midfield+-8.6,0,10.2', 'midfield+-8.0,0,9.2', 0.2, 2.2))],
+  camera=cam('wide', 'hero', 60, height=10), sfx=[{'t': '@perdem', 'name': 'pop'}])
+S('y11', 'stadium', 'Terceira: devagar. Sempre um passo na frente deles. Até o sol.', variant=1,
+  actors=[A('hero', 'midfield+-4,0,6', -30, 'holdOut', 'focused', hold={'R': 'phone'}, strafe=True,
+            path=[{'t': 0.2, 'pos': 'midfield+-4,0,6'}, {'t': 5.5, 'pos': 'midfield+-1.6,0,2.2', 'gait': 'walk'}]),
+          Z('zA', 'midfield+-5.2,0,7.6', 150, path=walk('midfield+-5.2,0,7.6', 'midfield+-2.8,0,3.8', 0.2, 5.5)),
+          Z('zC', 'midfield+-4.2,0,8.4', 150, path=walk('midfield+-4.2,0,8.4', 'midfield+-1.8,0,4.6', 0.2, 5.5))],
+  camera=cam('wide', 'hero', 90, height=12, move='track'), sfx=[{'t': 0.2, 'name': 'ring', 'dur': 3.0, 'vol': -8}])
+C('y12', 'chain', 'Cinco acordados. Depois doze. Depois vinte e três.', title='ACORDADOS',
+  nodes=[{'icon': 'check', 'label': '5'}, {'icon': 'check', 'label': '12'}, {'icon': 'check', 'label': '23'}], step=1.75)
+C('y13', 'rules', 'Sua regra: não lute. Leve pra fora.', title='A SUA REGRA', prefix='REGRA', rules=['NÃO LUTE.', 'LEVE PRA FORA.'], current=0)
+
+# ---------------------------------------------------------------- 11. crise
+WOKEN = [A(f'w{k}', p, r, FLOORSIT, f) for k, (p, r, f) in enumerate([('midfield+-2,0,2', 20, 'confused'), ('midfield+1,0,1', -30, 'tired'), ('midfield+-0.5,0,-1.5', 160, 'happy'), ('midfield+2.4,0,-0.6', -100, 'confused')], 1)]
+S('z1', 'stadium', 'Por uma hora, funciona.', variant=1,
+  actors=WOKEN + [A('hero', 'midfield+0.2,0,3.4', 170, 'confident', 'smile')], camera=cam('wide', 'hero', 10, height=14, move='craneUp'))
+S('z2', 'classroom', 'Até você olhar o relógio da parede. Onze e cinquenta e seis.', variant=0,
+  actors=[A('hero', 'aisle', -90, 'stand', 'shocked')], camera=cam('close', 'hero', 40, height=-6),
+  overlays=[{'type': 'label', 'text': '11:56', 'at': '@onze', 'corner': 'tr'}], sfx=[{'t': '@onze', 'name': 'ticks', 'dur': 1.4}])
+S('z3', 'classroom', 'O sinal do meio-dia é o mais longo do dia. E a caixa de som dele fica na parede desta sala.', variant=0, props=[BELL_CLS],
+  camera={'pos': [-0.6, 1.6, 0.6], 'look': [-2.4, 2.4, -4.85], 'fov': 36, 'move': 'pushIn'})
+S('z4', 'classroom', 'Onde estão quarenta alunos. A diretora. E a sua irmã.', variant=0,
+  actors=[A('sister', 'seat1', -90, 'sit', 'scared'), A('celia', 'front+0.4,0,0.6', 90, 'armsCrossed', 'worried')],
+  camera=cam('close', 'sister', -20, move='pushIn'))
+S('z5', 'cafeteria', 'No refeitório ao lado, quase quatrocentos zumbis. Parados. Esperando um som.', variant=1,
+  actors=[Z(i, p, r) for i, p, r in [('zA', [-0.4, 0, -2.6], 0), ('zB', [0.6, 0, -1.6], 10), ('zC', [-0.5, 0, -0.4], -5), ('zD', [0.5, 0, 0.8], 0),
+                                       ('zE', [-0.6, 0, 2.0], 15), ('zF', [0.7, 0, 3.0], -10), ('jorge', [2.2, 0, 3.4], -20), ('rafa2', [-2.2, 0, 3.3], 20)]]
+         + horde(crowd(12, -5.0, 5.0, -4.6, 4.6, seed=11, gap=0.95, keep=[(-0.4, -2.6), (0.6, -1.6), (-0.5, -0.4), (0.5, 0.8), (-0.6, 2.0), (0.7, 3.0), (2.2, 3.4), (-2.2, 3.3)] + [(x, z) for x in (-3, -2, -1.4, 1.4, 2, 3, 4, -4) for z in (-3.2, -0.8, 1.6)]), rot=0),
+  camera={'pos': [0.1, 1.4, 8.4], 'look': [0, 1.1, -1], 'fov': 34, 'move': 'pushIn'}, sfx=[{'t': 0.3, 'name': 'groanLow'}])
+S('z6', 'classroom', 'Quatro minutos até o sinal.', variant=0,
+  actors=[A('hero', 'aisle', -90, 'stand', 'scared')], camera=cam('xclose', 'hero', 15, height=-8),
+  overlays=[dict(CD)], sfx=[{'t': '@quatro', 'name': 'heartbeat'}])
+
+# ---------------------------------------------------------------- 12. dilema
+S('d1', 'classroom', 'Pra tirar quatrocentos zumbis do prédio, você precisa de um som mais alto que o sinal. Lá fora. No sol.', variant=0,
+  actors=[A('hero', 'aisle', -60, 'thinking', 'focused')], camera=cam('medium', 'hero', -30), overlays=[dict(CD)])
+C('d2', 'compare', 'Um sinal de escola faz uns noventa e cinco decibéis. Um apito de juiz, cento e quinze.',
+  title='O SOM MAIS ALTO', unit='DB', left={'label': 'SINAL', 'value': 95, 'icon': 'clock'}, right={'label': 'APITO', 'value': 115, 'icon': 'lightning'},
+  ratio=False, at='@apito', overlays=[dict(CD)])
+C('d3', 'stat', 'E cada dez decibéis a mais é dez vezes mais energia. Vinte a mais: cem vezes.',
+  value=100, unit='×', label='MAIS ENERGIA QUE O SINAL', icon='lightning', overlays=[dict(CD)])
+S('d4', 'classroom', 'O apito está no seu bolso. Só que o som mais alto do campo vai ser você. Quatrocentos zumbis vindo na sua direção. E basta um encostar.', variant=0,
+  actors=[A('hero', 'aisle', -60, 'holdOut', 'worried', hold={'R': 'whistle'})], camera=cam('close', 'hero', 20, move='pushIn'), overlays=[dict(CD)])
+S('d5', 'classroom', 'Você vai apitar pra quatrocentos zumbis?', who='male', variant=0,
+  actors=[A('bestie', 'seat3', 90, 'sit', 'scared', look='hero', talk=TALK)], camera=cam('close', 'bestie', 10), overlays=[dict(CD)])
+S('d6', 'classroom', 'A sua escola... ou você.', hold=2.0, variant=0,
+  actors=[A('hero', 'aisle', -60, 'stand', 'determined', hold={'R': 'whistle'})], camera=cam('xclose', 'hero', 0, move='pushIn'),
+  overlays=[dict(CD)], fx={'vignette': 0.35})
+
+# ---------------------------------------------------------------- 13. clímax
+S('e1', 'classroom', 'Você não luta. Você leva pra fora.', variant=0,
+  actors=[A('hero', 'aisle', -60, 'determined', 'determined', hold={'R': 'whistle'}, path=[{'t': '@leva', 'pos': 'aisle'}, {'t': '@fora+0.8', 'pos': 'aisle+0,0,3.4', 'gait': 'run'}])],
+  camera=cam('medium', 'hero', -40), overlays=[dict(CD)])
+S('e2', 'stadium', 'Você corre pro meio do campo. Meio-dia. Sol a pino. A mesma hora das formigas.', variant=1,
+  actors=[A('hero', 'midfield+-10,0,12', -20, 'stand', 'determined', hold={'R': 'whistle'}, path=[{'t': 0.1, 'pos': 'midfield+-10,0,12'}, {'t': 4.0, 'pos': 'midfield', 'gait': 'run'}])],
+  camera=cam('wide', 'hero', 70, height=14, move='track'), overlays=[dict(CD)])
+S('e3', 'stadium', 'Você apita. Uma vez.', variant=1,
+  actors=[A('hero', 'midfield', -20, WHISTLE, 'determined', hold={'R': 'whistle'})], camera=cam('close', 'hero', 0, height=-12),
+  overlays=[dict(CD)], sfx=[{'t': '@vez', 'name': 'whistle', 'dur': 1.0}])
+HORDE1 = [('zA', 'midfield+-9,0,20', -9.6), ('zB', 'midfield+-6,0,21', -7.4), ('zC', 'midfield+-12,0,19', -6.0)]
+S('e4', 'stadium', 'Os primeiros zumbis aparecem na beira do campo.', variant=1,
+  actors=[A('hero', 'midfield', -20, WHISTLE, 'determined', hold={'R': 'whistle'})] + [Z(i, p, 160, path=walk(p, q, 0.0, 5)) for i, p, q in
+          [('zA', 'midfield+-9,0,20', 'midfield+-7.2,0,15'), ('zB', 'midfield+-6,0,21', 'midfield+-4.8,0,16'), ('zC', 'midfield+-12,0,19', 'midfield+-9.6,0,14.6')]],
+  camera={'pos': [2.6, 1.5, -2.6], 'look': [-6.5, 1.2, 15], 'fov': 26}, overlays=[dict(CD)], sfx=[{'t': 0.5, 'name': 'groanLow'}])
+S('e5', 'stadium', 'Duas vezes. O bando vai atrás dos primeiros.', variant=1,
+  actors=[A('hero', 'midfield', -20, WHISTLE, 'determined', hold={'R': 'whistle'})] +
+         horde(crowd(10, -14, 6, 15, 23, seed=21, gap=1.4), rot=face_to(0, 0), to=(0, 0, 0.2), first=20) +
+         [Z(i, p, 150, path=walk(p, f'midfield+{x * 0.75},0,{z * 0.75}', 0.0, 5)) for i, p, x, z in
+          [('zA', 'midfield+-7.2,0,10.4', -7.2, 10.4), ('zB', 'midfield+-4.8,0,13.6', -4.8, 13.6), ('zC', 'midfield+-9.6,0,13', -9.6, 13), ('zD', 'midfield+-3,0,17', -3, 17),
+           ('zE', 'midfield+-11,0,17', -11, 17), ('zF', 'midfield+-7,0,18', -7, 18)]],
+  camera={'pos': [3.0, 3.2, -6.0], 'look': [-3.5, 0.8, 9.0], 'fov': 44}, overlays=[dict(CD)], sfx=[{'t': '@vezes', 'name': 'whistle', 'dur': 1.0}, {'t': '@bando', 'name': 'groanLow'}])
+S('e6', 'stadium', 'Três vezes. Lá dentro, o sinal toca. Ninguém volta. O seu apito é mais alto.', variant=1,
+  actors=[A('hero', 'midfield', -20, WHISTLE, 'furious', hold={'R': 'whistle'})], camera=cam('close', 'hero', -20, height=-10, move='crashIn'),
+  overlays=[dict(CD)], sfx=[{'t': '@vezes', 'name': 'whistle', 'dur': 1.2, 'vol': -3}, {'t': '@toca', 'name': 'bell', 'dur': 2.5, 'vol': -14}])
+RING = [('zA', -2.6, 4.2), ('zB', -0.4, 4.6), ('zC', -4.4, 2.4), ('zD', 1.6, 3.8), ('zE', -3.6, 5.6), ('zF', 0.8, 6.2), ('jorge', -1.6, 6.8), ('rafa2', 3.0, 5.4)]
+S('e7', 'stadium', 'Quatrocentos zumbis no sol. Agora, trinta segundos.', variant=1,
+  actors=[A('hero', 'midfield', -20, WHISTLE, 'determined', hold={'R': 'whistle'})] +
+         [Z(i, f'midfield+{x * 1.6},0,{z * 1.6}', 150, path=walk(f'midfield+{x * 1.6},0,{z * 1.6}', f'midfield+{x * 1.25},0,{z * 1.25}', 0.0, 5)) for i, x, z in RING] +
+         horde(crowd(30, -16, 10, 6, 24, seed=31, gap=1.3, keep=[(x * 1.6, z * 1.6) for _, x, z in RING]), rot=face_to(0, 0), to=(0, 0, 0.12), first=1),
+  camera={'pos': [-15, 10, -9], 'look': [-2, 0.8, 7], 'fov': 40, 'move': 'drift'},
+  overlays=[dict(CDS)], sfx=[{'t': 0.3, 'name': 'groanLow'}])
+S('e8', 'stadium', 'Mas eles continuam vindo. Dez metros. Cinco.', variant=1,
+  actors=[A('hero', 'midfield', -20, WHISTLE, 'scared', hold={'R': 'whistle'})] +
+         [Z(i, f'midfield+{x * 2.2},0,{z * 2.2}', 150, path=walk(f'midfield+{x * 2.2},0,{z * 2.2}', f'midfield+{x * 0.5},0,{z * 0.5}', 0.0, 3.4)) for i, x, z in RING[:6]],
+  camera={'over': 'hero', 'shot': 'medium', 'target': 'zB', 'dist': 1.7}, overlays=[dict(CDS)], sfx=[{'t': '@cinco', 'name': 'heartbeat'}])
+TOUCH = Z('zB', 'midfield+0.12,0,0.66', 175, contact=True, pose={'hipY': -0.01, 'spine': [8, 0, 0], 'head': [12, 0, 14], 'armL': [55, 8, 0, 14], 'armR': [88, -6, 0, 8], 'handL': 'open', 'handR': 'open'})
+S('e9', 'stadium', 'Um dedo encosta no seu ombro.', variant=1,
+  actors=[A('hero', 'midfield', -20, WHISTLE, 'shocked', hold={'R': 'whistle'}, contact=True), TOUCH],
+  camera=cam('medium', 'hero', 85), overlays=[dict(CDS)], sfx=[{'t': '@ombro', 'name': 'subdrop'}])
+S('e10', 'stadium', 'E o verde sobe pelo seu braço. Dez segundos.', variant=1,
+  actors=[A('hero', 'midfield', -20, WHISTLE, 'tired', hold={'R': 'whistle'}, glow=GREEN, contact=True), TOUCH],
+  camera=cam('close', 'hero', -40, move='pushIn'), overlays=[dict(CDS)], sfx=[{'t': '@verde', 'name': 'glint'}])
+S('e11', 'stadium', 'Você continua apitando. Até esquecer por quê.', hold=1.0, variant=1,
+  actors=[A('hero', 'midfield', -20, WHISTLE, 'zombie', hold={'R': 'whistle'}, glow=GREEN)],
+  camera=cam('xclose', 'hero', 0, height=-6, move='pushIn'), overlays=[dict(CDS)],
+  sfx=[{'t': 0.2, 'name': 'whistle', 'dur': 1.0, 'vol': -4}, {'t': '@esquecer', 'name': 'whistle', 'dur': 0.6, 'vol': -12}], fx={'vignette': 0.45})
+S('e12', 'stadium', 'Você acorda na grama. Sol na cara. Quatrocentos alunos piscando, confusos.', variant=1, cut='dip',
+  actors=[A('hero', 'midfield', -20, 'lie', 'closed', faces=[{'t': '@acorda', 'face': 'confused', 'blend': 0.3}], poses=[{'t': '@sol', 'pose': FLOORSIT, 'blend': 0.8}])] +
+         horde(crowd(16, -7, 5, 1.6, 9, seed=41, gap=1.1), rot=face_to(0, 0), pose='stand', face='confused', glow=None, first=1),
+  camera={'pos': [3.4, 4.2, -5.2], 'look': [-0.8, 0.5, 2.4], 'fov': 42, 'move': 'craneUp'}, sfx=[{'t': '@acorda', 'name': 'swell'}])
+S('e13', 'stadium', 'Seu celular está no chão. Pisado por oitocentos pés.', variant=1,
+  props=[{'type': 'phone', 'pos': 'midfield+1.4,0.01,1.2', 'rot': [-1.57, 0, 0.8], 'broken': True}],
+  camera={'pos': [1.0, 0.55, 2.0], 'look': [1.4, 0.0, 1.2], 'fov': 30}, sfx=[{'t': '@pisado', 'name': 'debris'}])
+
+# ---------------------------------------------------------------- 14. consequência
+S('f1', 'stadium', 'Você tá com cheiro de cogumelo.', who='female', variant=1,
+  actors=[A('sister', 'midfield+0.6,0,1.0', -150, 'armsCrossed', 'suspicious', look='hero', talk=TALK), A('hero', 'midfield', -20, FLOORSIT, 'tired', look='sister')],
+  camera=cam('close', 'sister', 10))
+S('f2', 'stadium', 'Quem estava apitando no recreio?', who='adulto', variant=1,
+  actors=[A('jorge', 'midfield+-1.1,0,1.2', 140, 'armsCrossed', 'angry', talk=TALK, look='hero'), A('hero', 'midfield', -20, FLOORSIT, 'embarrassed', look='jorge')],
+  camera=cam('medium', 'jorge', 20))
+S('f3', 'stadium', 'Você devolve o apito.', variant=1,
+  actors=[A('hero', 'midfield', -20, FLOORSIT, 'embarrassed', hold={'R': 'whistle'}, look='jorge',
+            poses=[{'t': '@devolve', 'pose': dict(FLOORSIT, armR=[70, 10, 0, 10], handR='fist')}])],
+  camera=cam('close', 'hero', -30))
+NEWS1 = 'ESCOLA FECHA POR UM DIA. MOTIVO OFICIAL: MOFO'
+NEWS2 = 'ALUNO LEVA SUSPENSÃO POR APITAR NO RECREIO'
+S('f4', 'home', 'No jornal da noite, a escola fecha por um dia. Motivo oficial: mofo.', time='interiorNight',
+  actors=[A('mom', 'couch', 90, 'sit', 'surprised'), A('hero', 'couch+0,0,0.9', 90, 'sit', 'tired')],
+  camera={'pos': [4.0, 1.35, 1.3], 'look': [1.75, 1.0, 0.05], 'fov': 40}, overlays=[{'type': 'news', 'headline': NEWS1, 'tag': 'URGENTE', 'at': 0.4}])
+S('f5', 'home', 'E o vídeo de um aluno viraliza. O título: aluno leva suspensão por apitar no recreio.', time='interiorNight',
+  actors=[A('mom', 'couch', 90, 'sit', 'suspicious', look='hero'), A('hero', 'couch+0,0,0.9', 90, 'sit', 'embarrassed')],
+  camera={'pos': [3.7, 1.3, 0.2], 'look': [1.75, 1.0, 0.25], 'fov': 38, 'move': 'pushIn'}, overlays=[{'type': 'news', 'headline': NEWS2, 'tag': 'VIRAL', 'at': '@viraliza'}])
+S('f6', 'home', 'Suspenso? Por apitar?', who='adulta', time='interiorNight',
+  actors=[A('mom', 'couch', 90, 'sit', 'confused', look='hero', talk=TALK)], camera={'pos': [3.0, 1.15, -0.9], 'look': [1.75, 1.05, -0.4], 'fov': 34})
+S('f7', 'home', 'É uma longa história.', time='interiorNight',
+  actors=[A('hero', 'couch+0,0,0.9', 90, 'sit', 'tired', look='mom', talk=[[0.05, 1.2]])], camera={'pos': [3.0, 1.15, 1.2], 'look': [1.75, 1.05, 0.5], 'fov': 34})
+S('f8', 'home', 'Vai tomar banho. Você tá com cheiro de cogumelo.', who='adulta', time='interiorNight',
+  actors=[A('mom', 'couch', 90, 'sit', 'smile', look='hero', talk=TALK), A('hero', 'couch+0,0,0.9', 90, 'sit', 'embarrassed')],
+  camera={'pos': [4.0, 1.35, 1.3], 'look': [1.75, 1.0, 0.05], 'fov': 40})
+S('f9', 'bedroom', 'De manhã, você jogou o celular longe pra fugir de um zumbi. De tarde, você chamou quatrocentos pra perto.', time='interiorNight',
+  actors=[A('hero', 'window', 180, 'stand', 'smile')], camera=cam('medium', 'hero', 150, move='pushIn'))
+
+# ---------------------------------------------------------------- 15. mundo maior
+S('g1', 'home', 'Mas naquela noite, você assiste o vídeo de novo. Quadro por quadro.', time='interiorNight',
+  actors=[A('hero', 'couch+0,0,0.9', 90, 'sit', 'focused', hold={'R': 'phone'})], camera={'pos': [3.0, 1.2, 1.4], 'look': [1.75, 1.0, 0.5], 'fov': 36, 'move': 'pushIn'})
+S('g2', 'stadium', 'No fundo da imagem, do lado de fora do campo, tem um homem de capa de chuva amarela. Num dia de sol.', variant=1,
+  actors=[A('estranho', 'midfield+-10,0,20', 170, 'stand', 'neutral', hold={'R': 'jar'})] +
+         [A(i, f'midfield+{x},0,{z}', r, 'stand', 'confused') for i, x, z, r in [('zA', -3.4, 4.6, 160), ('zC', -4.6, 2, 120), ('zD', 1.5, 3.6, 200)]],
+  camera={'pos': [2, 1.6, -4], 'look': [-8, 1.4, 18], 'fov': 34}, fx={'grade': 'flashback'})
+S('g3', 'stadium', 'Todo mundo olha pros zumbis. Ele olha pra você.', variant=1,
+  actors=[A('estranho', 'midfield+-10,0,20', 170, 'stand', 'neutral', hold={'R': 'jar'}, look=[0, 1.0, 0])],
+  camera=cam('close', 'estranho', 10, move='pushIn'), fx={'grade': 'flashback'})
+S('g4', 'stadium', 'E na mão dele, um pote. O pote da professora Helena. Vazio.', variant=1,
+  actors=[A('estranho', 'midfield+-10,0,20', 170, {'armR': [55, 8, 0, 60], 'handR': 'fist'}, 'neutral', hold={'R': 'jar'}, look=[0, 1.0, 0])],
+  camera=cam('medium', 'estranho', -20, focus='handR'), fx={'grade': 'flashback'}, sfx=[{'t': '@vazio', 'name': 'subdrop'}])
+S('g5', 'classroom', 'Alguém viu o meu pote?', who='adulta', variant=1,
+  props=LAB[2:], actors=[A('helena', 'teacher+0.3,0,0.9', 100, 'shrug', 'worried', talk=TALK)],
+  camera={'pos': [-2.4, 1.6, 4.0], 'look': [-4.6, 1.3, 3.0], 'fov': 34})
+C('g6', 'icon', 'No armário dela, sobrou só a etiqueta. Amostra dois de cinco.', icon='warning', caption='AMOSTRA 2 DE 5', sub='FUNGO DAS FORMIGAS')
+S('g7', 'bedroom', 'Dois de cinco. Então existem mais três. Em algum lugar.', time='interiorNight',
+  actors=[A('hero', 'window', 0, 'stand', 'worried')], camera=cam('xclose', 'hero', 10, move='pushIn'))
+
+# ---------------------------------------------------------------- 16. gancho final
+STRANGER_DAY = 'farSidewalk+1,0,0.4'
+S('h1', 'suburb', 'Na saída da escola, você vê ele de novo. Do outro lado da rua. No sol do meio-dia.',
+  actors=[A('estranho', STRANGER_DAY, 180, 'stand', 'neutral'), A('hero', 'sidewalk', 0, 'stand', 'worried', look='estranho')],
+  camera={'over': 'hero', 'shot': 'medium', 'target': 'estranho', 'dist': 1.7})
+S('h2', 'suburb', 'Ele levanta o rosto. E brilha. Verde.',
+  actors=[A('estranho', STRANGER_DAY, 180, 'stand', 'neutral', glow=GREEN, look='hero')], camera=cam('close', 'estranho', 0, move='pushIn'),
+  sfx=[{'t': '@verde', 'name': 'subdrop'}])
+S('h3', 'suburb', 'Ele está no sol faz muito mais que trinta segundos. E não cura. Não geme. Anda normal.',
+  actors=[A('estranho', STRANGER_DAY, 90, 'stand', 'neutral', glow=GREEN, path=[{'t': '@anda', 'pos': STRANGER_DAY}, {'t': '@normal+2', 'pos': 'farSidewalk+4,0,0.4', 'gait': 'walk'}])],
+  camera=cam('full', 'estranho', 40, move='track'))
+S('h4', 'suburb', 'Trinta segundos. Bom saber.', who='adulto',
+  actors=[A('estranho', 'farSidewalk+4,0,0.4', 180, 'stand', 'smirk', glow=GREEN, look='camera', talk=TALK)], camera=cam('xclose', 'estranho', 0))
+S('h5', 'suburb', 'Um zumbi que pensa. E agora, ele conhece as suas regras.', hold=1.2,
+  actors=[A('hero', 'sidewalk', 0, 'stand', 'scared')], camera=cam('xclose', 'hero', 10, move='pushIn'),
+  fx={'vignette': 0.5}, sfx=[{'t': '@regras', 'name': 'subdrop'}])
+
+# ---------------------------------------------------------------- 17. CTA
+S('i1', 'suburb', 'Então: o que você faria primeiro numa escola só sua? E o homem da capa amarela: ele trouxe o fungo... ou está fugindo dele? Conta pra gente nos comentários. Todo poder tem um preço. Até a próxima.',
+  time='golden', actors=[A('hero', 'sidewalk', 10, 'confident', 'smirk', hold={'R': 'whistle'})],
+  camera=cam('wide', 'hero', 30, height=5, move='pullOut'),
+  overlays=[{'type': 'title', 'small': 'O QUE VOCÊ FARIA PRIMEIRO?', 'big': 'ELE TROUXE O FUNGO?', 'at': '@capa'}])
+
+# ---------------------------------------------------------------- episode
+idx = {s['id']: i for i, s in enumerate(shots)}
+assert len(idx) == len(shots), 'duplicate shot ids'
+ZOMB = [('zA', 'hoodie', '#3d6fb6', None), ('zB', 'jacket', '#e2b23f', 'bun'), ('zC', 'tee', '#d77fc0', 'ponytail'), ('zD', 'tee', '#2fa6a0', 'curly'),
+        ('zE', 'hoodie', '#e8735a', None), ('zF', 'jacket', '#7a5cc8', 'spiky'), ('rafa2', 'tee', '#c8402f', 'bob')]
+cast = {
+    'bestie': {'name': 'Davi'},
+    'sister': {'name': 'Nina'},
+    'rafa': {'name': 'Rafa', 'top': 'jacket', 'topColor': '#6b4a35', 'accent': '#1b1b20', 'bottom': 'pants', 'bottomColor': '#1b1b20', 'shoes': '#e8e4da', 'hair': 'spiky'},
+    'helena': {'name': 'Professora Helena', 'top': 'coat', 'topColor': '#f3f1ea', 'accent': '#d9e6f2', 'bottom': 'pants', 'bottomColor': '#3a4256', 'shoes': '#2b2622', 'glasses': True, 'glassesColor': '#7fc3f0', 'hair': 'curly'},
+    'jorge': {'name': 'Seu Jorge', 'top': 'jacket', 'topColor': '#2b3a5c', 'accent': '#ffffff', 'bottom': 'pants', 'bottomColor': '#1f2433', 'shoes': '#ffffff', 'hat': 'cap', 'hatColor': '#1f2433'},
+    'celia': {'name': 'Dona Célia', 'top': 'suit', 'topColor': '#6b5a48', 'accent': '#a3242c', 'bottom': 'skirt', 'bottomColor': '#3a3430', 'shoes': '#2b2622', 'glasses': True, 'glassesColor': '#9fd3f2', 'hair': 'bun'},
+    'kid': {'name': 'Menino do primeiro ano'},
+    'mom': {'name': 'Mãe'},
+    'estranho': {'name': 'Homem da capa amarela', 'top': 'coat', 'topColor': '#f2c53c', 'accent': '#fff3d6', 'bottom': 'pants', 'bottomColor': '#1d2333', 'shoes': '#2b2622'},
+    **{z: {'top': top, 'topColor': c, 'accent': '#f4ead6', 'bottom': 'pants', 'bottomColor': '#2c3e63', 'shoes': '#ffffff', **({'hair': h} if h else {})} for z, top, c, h in ZOMB},
+    **{f'x{k:02d}': {'top': ['hoodie', 'jacket', 'tee'][k % 3], 'topColor': ['#3d6fb6', '#e2b23f', '#d77fc0', '#2fa6a0', '#e8735a', '#7a5cc8', '#c8402f', '#6b4a35', '#4a9fd8', '#d9a441'][k % 10],
+                    'bottom': 'pants', 'bottomColor': ['#2c3e63', '#3a3430', '#1d2333'][k % 3], 'shoes': '#ffffff', **({'hair': ['bun', 'ponytail', 'curly', 'spiky', 'bob'][k % 5]} if k % 2 else {})} for k in range(1, 41)},
+    **{f'w{k}': {'top': 'tee', 'topColor': c, 'bottom': 'pants', 'bottomColor': '#2c3e63', 'shoes': '#ffffff'} for k, c in enumerate(['#3d6fb6', '#e2b23f', '#d77fc0', '#2fa6a0'], 1)},
+}
+ep = {
+    'slug': SLUG,
+    'title': 'E Se Você Salvasse Sua Escola de Uma Invasão Zumbi?',
+    'voice': {'id': 'u7N1p4OIOc6Fl7y72WE7', 'model': 'eleven_v4'},
+    'voices': {'adulto': 'u4sbCzXyUVxIAihOtCss', 'adulta': 'dxIMMSJYSsbUSMhioLNb'},
+    'cast': cast,
+    'music': [
+        {'shot': idx['c1'], 'mood': 'curious'},
+        {'shot': idx['c10'], 'mood': 'tension'},
+        {'shot': idx['m3'], 'mood': 'curious'},
+        {'shot': idx['k1'], 'mood': 'curious'},
+        {'shot': idx['x1'], 'mood': 'tension'},
+        {'shot': idx['y1'], 'mood': 'wonder'},
+        {'shot': idx['z2'], 'mood': 'tension'},
+        {'shot': idx['e1'], 'mood': 'action'},
+        {'shot': idx['e12'], 'mood': 'wonder'},
+        {'shot': idx['f4'], 'mood': 'curious'},
+        {'shot': idx['g1'], 'mood': 'tension'},
+        {'shot': idx['h5'], 'mood': 'none'},
+        {'shot': idx['i1'], 'mood': 'curious'},
+    ],
+    'shots': shots,
+}
+
+
+def resolve_countdowns():
+    """Turn CD/CDS markers into live countdowns that line up across cuts (story time runs faster than screen time)."""
+    tp = os.path.join(os.path.dirname(__file__), '..', '..', 'public', 'episodes', SLUG, 'timing.json')
+    tm = json.load(open(tp, encoding='utf-8')) if os.path.exists(tp) else None
+    if not tm or len(tm['shots']) != len(shots):
+        for sh in shots:
+            for o in sh.get('overlays', []):
+                if o.pop('cd', None):
+                    o['from'] = '4:00'
+        return
+
+    def wt(sid, word):
+        sh = tm['shots'][idx[sid]]
+        return sh['start'] + next(t for w, t in sh['words'] if w == word)
+
+    clocks = {'bell': (wt('z6', 'quatro'), wt('e6', 'toca'), 240, 'tr', 'e6'),
+              'sun': (wt('e7', 'trinta'), tm['shots'][idx['e11']]['start'] + tm['shots'][idx['e11']]['dur'], 30, 'tl', 'e11')}
+    for i, sh in enumerate(shots):
+        for o in sh.get('overlays', []):
+            kind = o.pop('cd', None)
+            if not kind:
+                continue
+            t0, t1, total, corner, last = clocks[kind]
+            rate = total / (t1 - t0)
+            st = tm['shots'][i]['start']
+            begin = max(st, t0)
+            left = max(0.0, total - (begin - t0) * rate)
+            o.update({'from': f'{int(left // 60)}:{int(round(left % 60)) % 60:02d}' if round(left % 60) < 60 else f'{int(left // 60) + 1}:00',
+                      'tick': round(rate, 3), 'corner': corner, 'keep': sh['id'] != last})
+            if st < t0:
+                o['at'] = round(t0 - st, 3)
+            else:
+                o['persist'] = True
+
+
+resolve_countdowns()
+
+
+def clean(o):
+    """Drop None values (e.g. glow=None on a zombie that isn't glowing yet)."""
+    if isinstance(o, dict):
+        return {k: clean(v) for k, v in o.items() if v is not None}
+    if isinstance(o, list):
+        return [clean(v) for v in o]
+    return o
+
+
+out = os.path.join(os.path.dirname(__file__), '..', '..', 'public', 'episodes', SLUG, 'episode.json')
+os.makedirs(os.path.dirname(out), exist_ok=True)
+with open(out, 'w', encoding='utf-8') as f:
+    json.dump(clean(ep), f, ensure_ascii=False, indent=1)
+words = sum(len(s.get('vo', '').split()) for s in shots)
+print(f'{len(shots)} shots, {words} words -> {os.path.normpath(out)}')
+@@@@ END
+@@@@ FILE tools/episodes/kit.py | text | 6547 | 35c7dfc6bc59679b5bcf4878f363b02ba5b88230e898912f03612fe49e3ca63c
+"""Shared helpers for episode generators (tools/episodes/<slug>.py -> public/episodes/<slug>/episode.json).
+
+Use from a generator:
+    import os, sys
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # python -I drops the script dir
+    from kit import *
+
+Then build shots with S(...) / C(...), the episode dict with ep = episode(...), and finish with write(SLUG, ep).
+Start a new episode from _modelo.py.
+"""
+import json
+import os
+
+__all__ = ['shots', 'A', 'cam', 'S', 'C', 'crush', 'walk', 'TALK', 'SW', 'shot_index', 'episode',
+           'load_timing', 'resolve_countdowns', 'clean', 'write', 'NARRATOR', 'HOUSE_VOICES']
+
+ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
+NARRATOR = {'id': 'u7N1p4OIOc6Fl7y72WE7', 'model': 'eleven_v4'}  # Yuri (CLAUDE.md, Voice)
+HOUSE_VOICES = {'adulto': 'u4sbCzXyUVxIAihOtCss', 'adulta': 'dxIMMSJYSsbUSMhioLNb'}
+
+shots = []
+TALK = [[0.05, 3.0]]                                             # talk window for a short line
+
+
+def SW(v):
+    """A stopwatch that continues across cuts (no draw-in)."""
+    return {'type': 'stopwatch', 'from': v, 'persist': True}
+
+
+def A(id, pos, rot=0, pose='stand', face='neutral', **kw):
+    """An actor."""
+    d = {'id': id, 'pos': pos, 'rot': rot, 'pose': pose, 'face': face}
+    d.update(kw)
+    return d
+
+
+def cam(shot, target, angle=0, **kw):
+    """An automatic camera: shot = xclose|close|medium|full|wide|establishing|insert."""
+    d = {'shot': shot, 'target': target, 'angle': angle}
+    d.update(kw)
+    return d
+
+
+def S(id, set_, vo=None, actors=None, camera=None, **kw):
+    """A 3D shot, appended to `shots`."""
+    d = {'id': id, 'set': set_}
+    if vo:
+        d['vo'] = vo
+    if actors:
+        d['actors'] = actors
+    if camera:
+        d['camera'] = camera
+    d.update(kw)
+    shots.append(d)
+
+
+def C(id, card, vo, **spec):
+    """A card shot (src/cards), appended to `shots`."""
+    d = {'id': id, 'kind': 'card', 'card': card, 'vo': vo}
+    d.update(spec)
+    shots.append(d)
+
+
+def crush(actor, value, frm=None, at=0.3, **kw):
+    """The pink crush-meter overlay over an actor."""
+    d = {'type': 'crush', 'actor': actor, 'value': value, 'at': at}
+    if frm is not None:
+        d['from'] = frm
+    d.update(kw)
+    return d
+
+
+def walk(a, b, t0=0.2, t1=3.0, gait='walk'):
+    """A two-key path from a to b."""
+    return [{'t': t0, 'pos': a}, {'t': t1, 'pos': b, 'gait': gait}]
+
+
+def shot_index():
+    """{shot id: index}; fails on duplicate ids (edits by id hit the first match)."""
+    idx = {s['id']: i for i, s in enumerate(shots)}
+    assert len(idx) == len(shots), 'duplicate shot ids'
+    return idx
+
+
+def episode(slug, title, cast, music, voices=None, voice=None, **kw):
+    """The episode dict. music: [(shot id, mood), ...]."""
+    idx = shot_index()
+    ep = {
+        'slug': slug,
+        'title': title,
+        'voice': dict(voice or NARRATOR),
+        'voices': dict(voices if voices is not None else HOUSE_VOICES),
+        'cast': cast,
+        'music': [{'shot': idx[sid], 'mood': mood} for sid, mood in music],
+        'shots': shots,
+    }
+    ep.update(kw)
+    return ep
+
+
+class Timing:
+    """Real voice timing (timing.json after `align`), by shot id."""
+
+    def __init__(self, tm, idx):
+        self.tm, self.idx = tm, idx
+
+    def start(self, sid):
+        return self.tm['shots'][self.idx[sid]]['start']
+
+    def dur(self, sid):
+        return self.tm['shots'][self.idx[sid]]['dur']
+
+    def word(self, sid, w, n=1):
+        """Seconds into shot `sid` where word `w` is spoken (n-th occurrence)."""
+        hits = [t for x, t in self.tm['shots'][self.idx[sid]]['words'] if x == w]
+        return hits[n - 1]
+
+    def at(self, sid, w, n=1):
+        """Absolute episode time of word `w` in shot `sid`."""
+        return self.start(sid) + self.word(sid, w, n)
+
+    @staticmethod
+    def fmt(sec):
+        """m:ss, rounded, never negative."""
+        s = max(0, int(round(sec)))
+        return f'{s // 60}:{s % 60:02d}'
+
+
+def load_timing(slug):
+    """Timing helper, or None while there's no voice yet or the shot count changed (draft keeps static values)."""
+    p = os.path.join(ROOT, 'public', 'episodes', slug, 'timing.json')
+    if not os.path.exists(p):
+        return None
+    with open(p, encoding='utf-8') as f:
+        tm = json.load(f)
+    if len(tm['shots']) != len(shots):
+        return None
+    return Timing(tm, shot_index())
+
+
+def resolve_countdowns(timing, clocks, fallback='4:00'):
+    """Live countdowns that line up across cuts (story time can run faster than screen time).
+
+    Mark overlays with {'type': 'stopwatch', 'cd': '<clock name>'}; clocks maps each name to
+    (t0, t1, total_seconds, corner, last_shot_id): the clock reads `total` at absolute time t0 and 0 at t1.
+    Without timing (draft) every marker shows `fallback`."""
+    if timing is None:
+        for sh in shots:
+            for o in sh.get('overlays', []):
+                if o.pop('cd', None):
+                    o['from'] = fallback
+        return
+    for i, sh in enumerate(shots):
+        for o in sh.get('overlays', []):
+            kind = o.pop('cd', None)
+            if not kind:
+                continue
+            t0, t1, total, corner, last = clocks[kind]
+            rate = total / (t1 - t0)
+            st = timing.tm['shots'][i]['start']
+            begin = max(st, t0)
+            left = max(0.0, total - (begin - t0) * rate)
+            o.update({'from': f'{int(left // 60)}:{int(round(left % 60)) % 60:02d}' if round(left % 60) < 60 else f'{int(left // 60) + 1}:00',
+                      'tick': round(rate, 3), 'corner': corner, 'keep': sh['id'] != last})
+            if st < t0:
+                o['at'] = round(t0 - st, 3)
+            else:
+                o['persist'] = True
+
+
+def clean(o):
+    """Drop None values recursively (e.g. glow=None)."""
+    if isinstance(o, dict):
+        return {k: clean(v) for k, v in o.items() if v is not None}
+    if isinstance(o, list):
+        return [clean(v) for v in o]
+    return o
+
+
+def write(slug, ep, drop_none=True):
+    """Write public/episodes/<slug>/episode.json and print a one-line summary."""
+    out = os.path.join(ROOT, 'public', 'episodes', slug, 'episode.json')
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    with open(out, 'w', encoding='utf-8') as f:
+        json.dump(clean(ep) if drop_none else ep, f, ensure_ascii=False, indent=1)
+    words = sum(len(s.get('vo', '').split()) for s in ep['shots'])
+    print(f'{len(ep["shots"])} shots, {words} words -> {os.path.normpath(out)}')
+@@@@ END
+@@@@ FILE tools/episodes/quem_tem_crush.py | text-crlf | 54224 | a3588a953c0c3b599d21e4660d57118cc42cc9ae513105b4946a05024d5dce82
+# Source of public/episodes/quem-tem-crush/episode.json — edit HERE, then run:
+#   .venv/Scripts/python -I tools/episodes/quem_tem_crush.py
+# (episode.json is regenerated from this file; hand edits to the JSON get overwritten.)
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # python -I drops the script dir
+from kit import *  # noqa: E402,F401,F403  (A, S, C, cam, crush, TALK, episode, load_timing, write, …)
+
+SLUG = 'quem-tem-crush'
+PINK = '#ff4f9a'
+
+
+BENCH2 = 'bench+-0.42,0,-0.42'  # next seat along the plaza bench (tangent to the ring at 135°)
+RIVAL = 'bench+1.1,0,-0.5'    # standing in front of the bench, facing it (rot -45)
+RULES = ['O BRILHO ATRAVESSA TUDO', 'O NÚMERO MUDA NA HORA', 'SUA VOZ FAZ O NÚMERO SUBIR']
+
+# ---------------------------------------------------------------- 1. abertura fria (sala de aula)
+S('c1', 'classroom', 'Você precisa de uma dupla pra feira de ciências. E ninguém olha pra você.',
+  props=[{'type': 'sign', 'pos': [-4.3, 0.95, 2.2], 'rot': 90, 'w': 0.62, 'h': 0.3, 'text': 'FEIRA DE CIÊNCIAS: DUPLAS', 'bg': '#f6f2e8', 'fg': '#1d2333'}],
+  camera={'pos': [-3.1, 1.15, 2.3], 'look': [-4.3, 0.95, 2.2], 'fov': 30, 'move': 'pushIn'})
+S('c2', 'classroom', 'Você olha em volta. Todo mundo já tem alguém.',
+  actors=[A('hero', 'seat1', -90, 'sit', 'worried'), A('bestie', 'seat3', -90, 'sit', 'happy')],
+  camera=cam('close', 'hero', 20, move='drift'))
+S('c3', 'classroom', 'Aí você vê: a menina da fileira de trás está brilhando. Rosa. Setenta e três por cento.',
+  actors=[A('lia', 'seat2', -90, 'sit', 'smile', glow=PINK)],
+  camera=cam('medium', 'lia', 35, move='pushIn'),
+  overlays=[crush('lia', 73, 0, at='@rosa')], sfx=[{'t': '@rosa', 'name': 'glint'}])
+S('c4', 'classroom', 'Você levanta e vai direto até ela.',
+  actors=[A('lia', 'seat2', -90, 'sit', 'smile', glow=PINK),
+      A('hero', 'seat1', -90, 'stand', 'determined', path=[{'t': 0.2, 'pos': 'seat1+0,0,0.7'}, {'t': 1.6, 'pos': 'seat2+-0.75,0,0.7', 'gait': 'walk'}])],
+  camera=cam('full', 'hero', 40, move='track'))
+S('c5', 'classroom', 'Ela diz sim antes de você terminar a pergunta. O estojo dela vai pro chão.',
+  actors=[A('lia', 'seat2', -90, 'sit', 'grin', glow=PINK, faces=[{'t': 0.4, 'face': {'mouth': 1, 'open': 0.4, 'eyes': 0.8, 'blush': True}}]),
+      A('hero', 'seat2+-0.75,0,0.7', 60, 'relaxed', 'smile', look='lia')],
+  props=[{'type': 'book', 'pos': [1.5, 0.8, 1.45], 'color': '#ff7a3d', 'path': [{'t': '@estojo', 'pos': [1.5, 0.8, 1.45]}, {'t': '@chão', 'pos': [1.15, 0.03, 1.2]}]}],
+  camera=cam('medium', ['lia', 'hero'], -20),
+  overlays=[crush('lia', 80, 73, at='@sim')], sfx=[{'t': '@chão', 'name': 'thud'}])
+S('c6', 'classroom', 'Como você sabia que ela ia topar?', who='male',
+  actors=[A('bestie', 'seat3', 60, 'sit', 'confused', talk=TALK)],
+  camera=cam('close', 'bestie', 0))
+S('c7', 'classroom', 'Intuição.', hold=0.4,
+  actors=[A('hero', 'seat2+-0.75,0,0.7', -60, 'confident', 'smug', talk=[[0.05, 0.7]])],
+  camera=cam('close', 'hero', -10))
+S('c8', 'classroom', 'E através da parede, na sala ao lado, mais um brilho rosa. De alguém que você nunca viu.',
+  actors=[A('extraA', [5.82, 0, -2.0], -90, 'relaxed', 'neutral', ghost=True, glow=PINK)],
+  camera={'pos': [4.3, 1.5, -0.4], 'look': [6, 1.4, -2.0], 'fov': 40, 'move': 'pushIn'},
+  overlays=[crush('extraA', 52, 0, at='@brilho')], sfx=[{'t': '@brilho', 'name': 'glint'}])
+
+# ---------------------------------------------------------------- 2. pergunta do título
+S('t1', 'suburb', 'E se você pudesse ver quem tem crush em você? Vamos ver o que isso realmente muda.',
+  actors=[A('hero', 'sidewalk', 10, 'confident', 'smirk')],
+  camera=cam('wide', 'hero', 35, height=8, move='pushIn'),
+  overlays=[{'type': 'title', 'small': 'E SE VOCÊ PUDESSE VER', 'big': 'QUEM TEM CRUSH EM VOCÊ?', 'at': 0.2}])
+
+# ---------------------------------------------------------------- 3. mecanismo + limite
+C('m1', 'icon', 'Funciona assim: quem tem crush em você brilha. Um brilho rosa, bem no peito.',
+  icon='heart', caption='QUEM TEM CRUSH EM VOCÊ', sub='BRILHA ROSA')
+S('m2', 'void', 'E em cima da cabeça aparece um número, de zero a cem. O quanto a pessoa gosta de você. Agora.',
+  actors=[A('lia', 'left', 30, 'relaxed', 'smile', glow=PINK), A('hero', 'right', -40, 'relaxed', 'surprised', look='lia')],
+  camera=cam('medium', ['lia', 'hero'], 0, move='drift'),
+  overlays=[crush('lia', 73, 0, at='@número')])
+S('m3', 'void', 'Isso é tudo que muda. O resto continua igual.',
+  actors=[A('hero', 'center', 0, 'explain', 'focused')], camera=cam('medium', 'hero', 15))
+C('m4', 'icon', 'Você só vê o que as pessoas sentem por você. De mais ninguém. Nem o que você mesmo sente.',
+  icon='eye', caption='SÓ O QUE SENTEM POR VOCÊ', sub='NEM O QUE VOCÊ SENTE')
+S('m5', 'void', 'Anota isso. Você vai precisar.',
+  actors=[A('hero', 'center', 0, 'point', 'determined')], camera=cam('xclose', 'hero', -10, move='pushIn'))
+
+# ---------------------------------------------------------------- 4. escada de números + ciência
+C('s1', 'icon', 'Agora, a parte estranha: seu corpo já tenta fazer isso sozinho.',
+  icon='brain', caption='SEU CORPO JÁ TENTA')
+C('s2', 'stat', 'Seu cérebro julga um rosto em um décimo de segundo.',
+  value=100, unit='MILISSEGUNDOS', label='PRA JULGAR UM ROSTO', icon='brain')
+C('s3', 'icon', 'E nos anos sessenta, o psicólogo Eckhard Hess mediu outra coisa: a pupila aumenta quando você olha pra algo que te interessa.',
+  icon='eye', caption='A PUPILA AUMENTA', sub='QUANDO ALGO TE INTERESSA')
+C('s4', 'distance', 'Só que, pra ver uma pupila mudar, você precisa estar a um palmo do rosto da pessoa.',
+  value=20, unit='CENTÍMETROS', count=1, pose='stand', target='eye')
+C('s5', 'distance', 'Pra ver alguém ficar vermelho, uns dois metros.',
+  value=2, unit='METROS', count=1, pose='stand', target='heart')
+C('s6', 'compare', 'Você: do outro lado do pátio, atravessando parede, com número exato. Duzentas e cinquenta vezes mais longe que uma pupila.',
+  title='DE ONDE DÁ PRA SABER', left={'label': 'PUPILA', 'value': 0.2, 'display': '20 CM', 'icon': 'eye'},
+  middle={'label': 'RUBOR', 'value': 2, 'display': '2 M', 'icon': 'heart'}, right={'label': 'VOCÊ', 'value': 50, 'display': '50 M', 'icon': 'stand'}, ratioLabel='MAIS LONGE', at='@pátio')
+S('s7', 'home', 'E não, não é amor. É crush. Sua mãe, sua avó, seus professores: zero. Ainda bem.',
+  actors=[A('mom', 'kitchen', 20, 'relaxed', 'happy'), A('hero', 'table', -150, 'relaxed', 'smirk', look='mom')],
+  camera=cam('medium', ['mom', 'hero'], 20),
+  overlays=[crush('mom', 0, at='@mãe')])
+
+# ---------------------------------------------------------------- 5. teste de prova (educação física)
+SCREEN = {'type': 'screen', 'pos': 'sideline+0,1.4,-3.2', 'w': 3.2, 'h': 1.4, 'text': 'BATIMENTOS', 'fg': '#ff6fa8'}
+S('p1', 'stadium', variant=1, vo='Na educação física, todo mundo usa uma faixa no peito que mede o coração.',
+  props=[SCREEN],
+  actors=[A('coach', 'sideline+2,0,-1', -90, 'armsCrossed', 'suspicious'), A('hero', 'sideline+-1,0,-1.5', 0, 'relaxed', 'happy'),
+      A('bestie', 'sideline+-2,0,-1.2', 20, 'relaxed', 'smile'), A('duda', 'sideline+3.2,0,-1.8', -10, 'stretch', 'happy')],
+  camera=cam('wide', 'hero', 25, height=6, move='drift'))
+S('p2', 'stadium', variant=1, vo='Os batimentos de cada um aparecem no telão.',
+  props=[dict(SCREEN, text='DUDA: 92 BPM')], camera={'pos': [-6, 1.9, 26.5], 'look': [-6, 1.6, 22.8], 'fov': 34})
+S('p3', 'stadium', variant=1, vo='Prova.', who='male',
+  actors=[A('bestie', 'sideline+-2,0,-1.2', 60, 'armsCrossed', 'suspicious', look='hero', talk=[[0.05, 0.8]])],
+  camera=cam('close', 'bestie', 10))
+S('p4', 'stadium', variant=1, vo='Você passa do lado da Duda. Oitenta e um por cento.',
+  actors=[A('duda', 'sideline+0.4,0,-2', 10, 'relaxed', 'happy', glow=PINK),
+      A('hero', 'sideline+-1.5,0,-1', 90, 'relaxed', 'smirk', path=[{'t': 0.1, 'pos': 'sideline+-1.5,0,-1'}, {'t': 2.0, 'pos': 'sideline+1.6,0,-1', 'gait': 'walk'}])],
+  camera=cam('full', 'duda', -15, move='drift'), overlays=[crush('duda', 81, 0, at='@duda')])
+C('p5', 'stat', 'No telão, o coração dela pula de noventa e dois pra cento e vinte e oito.',
+  value=128, **{'from': 92}, unit='BPM', label='O CORAÇÃO DA DUDA', icon='heart')
+S('p6', 'stadium', variant=1, vo='Passa de novo.', who='adulto',
+  actors=[A('coach', 'sideline+2,0,-1', -90, 'armsCrossed', 'suspicious', talk=[[0.05, 0.9]])], camera=cam('close', 'coach', 10))
+S('p7', 'stadium', variant=1, vo='Você passa de novo. Cento e trinta.',
+  actors=[A('duda', 'sideline+0.4,0,-2', 10, 'relaxed', 'embarrassed', glow=PINK),
+      A('hero', 'sideline+1.6,0,-1', -90, 'relaxed', 'smirk', path=[{'t': 0.1, 'pos': 'sideline+1.6,0,-1'}, {'t': 1.8, 'pos': 'sideline+-1.5,0,-1', 'gait': 'walk'}])],
+  camera=cam('full', 'duda', 20), overlays=[crush('duda', 81, at=0), {'type': 'label', 'text': '130 BPM', 'at': '@cento', 'corner': 'tr'}])
+S('p8', 'stadium', variant=1, vo='O professor Ramos olha o telão. Olha pra você. Olha o telão de novo.',
+  actors=[A('coach', 'sideline+2,0,-1', -90, 'thinking', 'suspicious',
+        poses=[{'t': 0.0, 'pose': {'spine': [4, 0, 0], 'armR': [55, 10, -40, 140], 'armL': [30, 20, -60, 115], 'head': [0, -50, 0]}}, {'t': '@você', 'pose': {'spine': [4, 0, 0], 'armR': [55, 10, -40, 140], 'armL': [30, 20, -60, 115], 'head': [0, 30, 0]}}, {'t': '@novo', 'pose': {'spine': [4, 0, 0], 'armR': [55, 10, -40, 140], 'armL': [30, 20, -60, 115], 'head': [0, -50, 0]}}])],
+  camera=cam('xclose', 'coach', 0))
+S('p9', 'stadium', variant=1, vo='Hidratação. Todo mundo bebe água.', who='adulto',
+  actors=[A('coach', 'sideline+2,0,-1', -90, 'point', 'focused', talk=TALK)], camera=cam('medium', 'coach', 20))
+S('p10', 'stadium', variant=1, vo='Aí você passa do lado do Caio. Zero.',
+  actors=[A('bestie', 'sideline+-2,0,-1.2', 20, 'confident', 'smug'), A('hero', 'sideline+-1,0,-1.5', -20, 'relaxed', 'neutral', look='bestie')],
+  camera=cam('medium', ['bestie', 'hero'], 15), overlays=[crush('bestie', 0, at='@zero')])
+S('p11', 'stadium', variant=1, vo='Nem um pouquinho?', who='male',
+  actors=[A('bestie', 'sideline+-2,0,-1.2', 20, 'shrug', 'sad', look='hero', talk=[[0.05, 1.2]])], camera=cam('close', 'bestie', 10))
+S('p12', 'stadium', variant=1, vo='Zero.',
+  actors=[A('hero', 'sideline+-1,0,-1.5', -20, 'relaxed', 'smirk', talk=[[0.05, 0.6]])], camera=cam('close', 'hero', -15))
+
+# ---------------------------------------------------------------- 6. regras
+C('r1', 'rules', 'Em uma semana, você descobre as regras.', title='AS REGRAS', prefix='REGRA', rules=RULES, current=0)
+C('r2', 'rules', 'Regra um: o brilho atravessa tudo. Parede, porta, ônibus.', title='AS REGRAS', prefix='REGRA', rules=RULES, current=1)
+S('r3', 'classroom', 'Aquele brilho da sala ao lado continua lá, todo dia. Você cola o ouvido na parede pra descobrir quem é.', variant=1,
+  actors=[A('extraA', [5.82, 0, -2.0], -90, 'relaxed', 'neutral', ghost=True, glow=PINK), A('hero', [5.45, 0, -1.4], 90, 'lean', 'focused', poses=[{'t': 0, 'pose': {'spine': [6, 0, 0], 'head': [0, 0, 25], 'armR': [70, 40, 0, 120]}}])],
+  camera={'pos': [2.6, 1.6, 0.8], 'look': [5.5, 1.25, -1.5], 'fov': 40})
+S('r4', 'classroom', 'Algum problema com a parede?', who='adulta', variant=1,
+  actors=[A('teacher', [3.6, 0, -0.2], 123, 'armsCrossed', 'suspicious', talk=TALK), A('hero', [5.45, 0, -1.4], -57, 'shocked', 'embarrassed', look='teacher')],
+  camera={'shot': 'medium', 'target': 'teacher', 'over': 'hero'})
+C('r5', 'rules', 'Regra dois: o número muda na hora.', title='AS REGRAS', prefix='REGRA', rules=RULES, current=2)
+S('r6', 'classroom', 'Você tropeça na frente da turma inteira. O da Lia cai de setenta e três pra sessenta e nove.',
+  actors=[A('lia', 'seat2', -90, 'sit', 'surprised', glow=PINK),
+      A('hero', 'front+0.6,0,0.6', 90, 'stand', 'shocked', poses=[{'t': 0.3, 'pose': 'fall', 'blend': 0.2}, {'t': 0.75, 'pose': 'kneel', 'blend': 0.3}])],
+  camera={'pos': [-5.0, 2.4, 2.6], 'look': [0.2, 0.6, 0.8], 'fov': 50}, overlays=[crush('lia', 69, 73, at='@lia')], sfx=[{'t': 0.5, 'name': 'thud'}])
+S('r7', 'classroom', 'Aí você faz piada do próprio tombo. Setenta e quatro.',
+  actors=[A('lia', 'seat2', -90, 'sit', 'grin', glow=PINK), A('hero', 'front+0.6,0,0.6', 90, 'shrug', 'grin', look='lia')],
+  camera={'pos': [-5.0, 2.4, 2.6], 'look': [0.2, 0.7, 0.8], 'fov': 44}, overlays=[crush('lia', 74, 69, at='@setenta')])
+C('r8', 'rules', 'Regra três: quando a pessoa ouve a sua voz, o número pula.', title='AS REGRAS', prefix='REGRA', rules=RULES, current=3)
+S('r9', 'cafeteria', 'Você dá oi pra Duda no refeitório. Noventa.', variant=1,
+  actors=[A('duda', 'seat1', 0, 'sit', 'happy', glow=PINK), A('hero', [2.25, 0, 2.75], 180, {'armR': [40, 60, 0, 90], 'handR': 'open'}, 'smile')],
+  camera={'shot': 'medium', 'target': 'duda', 'over': 'hero'}, overlays=[crush('duda', 90, 81, at='@oi')])
+S('r10', 'cafeteria', 'Você para de dar oi pras pessoas. Por segurança.', variant=1,
+  actors=[A('hero', 'aisle', 90, 'stand', 'worried', path=[{'t': 0.2, 'pos': 'aisle'}, {'t': 2.2, 'pos': 'aisle+3,0,0', 'gait': 'sneak'}])],
+  camera=cam('full', 'hero', 30, move='track'))
+
+# ---------------------------------------------------------------- 7. montagem de vantagens
+S('k1', 'cafeteria', 'E aí começa a parte boa. No refeitório, você nunca mais senta no lugar errado.', variant=0,
+  actors=[A('hero', 'seat3', 0, 'sit', 'happy'), A('lia', 'seat1', 0, 'sit', 'smile', glow=PINK)],
+  camera=cam('wide', 'hero', 10, move='drift'))
+PIC = 'picnic'
+GROUP = [A('hero', 'picnic+0,0,0.6', 180, 'kneel', 'smug'), A('bestie', 'picnic+0.9,0,0', -90, 'kneel', 'happy'),
+     A('extraA', 'picnic+0,0,-0.7', 0, 'kneel', 'surprised'), A('extraC', 'picnic+-0.9,0,0', 90, 'kneel', 'grin')]
+S('k2', 'park', 'No verdade ou desafio, alguém pergunta quem gosta de você. Você acerta todas.',
+  actors=GROUP, camera=cam('medium', 'hero', 160, height=20, move='drift'))
+S('k3', 'park', 'Você é banido do verdade ou desafio. Pra sempre.',
+  actors=[A('hero', 'picnic+0,0,0.6', 180, 'shrug', 'embarrassed'), A('bestie', 'picnic+0.9,0,0', -90, 'point', 'grin', look='hero'),
+      A('extraA', 'picnic+0,0,-0.7', 0, 'kneel', 'smug'), A('extraC', 'picnic+-0.9,0,0', 90, 'kneel', 'grin')],
+  camera=cam('medium', 'hero', -150, height=15), sfx=[{'t': '@banido', 'name': 'pop'}])
+S('k4', 'park', 'Você tenta abrir um negócio: cinco reais pra dizer se o crush de alguém gosta dele.',
+  actors=[A('hero', 'bench', 135, 'sit', 'smug'), A('rival', RIVAL, -45, 'holdOut', 'happy', look='hero')],
+  camera=cam('medium', ['hero', 'rival'], 20))
+S('k5', 'park', 'Primeiro cliente: o Rafa. Ele aponta a menina. Ela não brilha. Não pra você.',
+  actors=[A('rival', RIVAL, 160, 'point', 'happy'), A('extraB', 'fountain+1.2,0,0.6', -20, 'relaxed', 'neutral')],
+  camera=cam('medium', 'extraB', 0), overlays=[crush('extraB', 0, at='@brilha')])
+S('k6', 'park', 'Você não faz ideia do que ela sente por ele. Reembolso total.',
+  actors=[A('hero', 'bench', 135, 'sit', 'embarrassed'), A('rival', RIVAL, -45, 'armsCrossed', 'angry', look='hero')],
+  camera=cam('medium', ['hero', 'rival'], 70), sfx=[{'t': '@reembolso', 'name': 'click'}])
+S('k7', 'cafeteria', 'Uma tarde, o número da Duda despenca: de oitenta e um pra quarenta. Você tinha esquecido de responder uma mensagem dela.', variant=1,
+  actors=[A('duda', 'seat2', 0, 'sit', 'sad', glow=PINK, hold={'R': 'phone'})],
+  camera=cam('medium', 'duda', 15, move='pushIn'), overlays=[crush('duda', 40, 81, at='@despenca', countDur=1.4)])
+S('k8', 'cafeteria', 'Você não gosta dela desse jeito. Mas você vai até lá e conta a verdade, com cuidado.', variant=1,
+  actors=[A('duda', 'seat2', 0, 'sit', 'sad', glow=PINK),
+      A('hero', [0.4, 0, 2.75], -90, 'relaxed', 'worried', path=[{'t': 0.2, 'pos': [0.4, 0, 2.75]}, {'t': 2.6, 'pos': [-3.0, 0, 2.75], 'gait': 'walk', 'rot': 180}])],
+  camera={'pos': [-0.6, 1.6, 5.6], 'look': [-2.8, 1.0, 1.6], 'fov': 45})
+S('k9', 'cafeteria', 'Obrigada por falar primeiro.', who='female', variant=1,
+  actors=[A('duda', 'seat2', 0, 'sit', 'smile', glow=PINK, talk=TALK), A('hero', [-3.0, 0, 2.75], 180, 'relaxed', 'worried')],
+  camera={'shot': 'medium', 'target': 'duda', 'over': 'hero'})
+S('k10', 'cafeteria', 'O número dela cai. Ela sorri mesmo assim. É a melhor coisa que você faz com esse poder.', variant=1,
+  actors=[A('duda', 'seat2', 0, 'sit', 'smile', glow=PINK), A('hero', [-3.0, 0, 2.75], 180, 'relaxed', 'smile')],
+  camera={'pos': [-0.6, 1.6, 5.6], 'look': [-2.8, 1.0, 1.6], 'fov': 45}, overlays=[crush('duda', 30, 40, at='@cai')])
+S('k11', 'park', 'Até que você se gaba pro Caio: cinco pessoas gostam de você só essa semana.',
+  actors=[A('hero', 'path', 30, 'confident', 'smug', talk=TALK), A('bestie', 'path+1.2,0,0', -30, 'armsCrossed', 'bored', look='hero')],
+  camera=cam('medium', ['hero', 'bestie'], 0))
+S('k12', 'park', 'A Lia escuta. Setenta e quatro. Sessenta e cinco. Se exibir derruba o número.',
+  actors=[A('hero', 'path', 30, 'facepalm', 'embarrassed'), A('bestie', 'path+1.2,0,0', -30, 'armsCrossed', 'smug', look='hero'), A('lia', 'path+0.6,0,-2.6', 0, 'relaxed', 'sad', glow=PINK)],
+  camera=cam('full', ['hero', 'bestie', 'lia'], 0, height=8), overlays=[crush('lia', 65, 74, at='@sessenta')])
+
+# ---------------------------------------------------------------- 8. "mas" + problemas
+S('q1', 'void', 'Essa é a versão divertida. Aqui vem a conta.',
+  actors=[A('hero', 'center', 0, {'spine': [28, 0, 0], 'head': [-12, 0, 0], 'hipY': -0.05, 'armL': [-4, 2, 0, 0], 'armR': [-4, 2, 0, 0], 'legL': [10, 4, 18], 'legR': [10, 4, 18]}, 'worried')], camera=cam('medium', 'hero', 0, height=-18, move='pullOut'))
+FANS = [('lia', [2.0, 0, 1.7], 58), ('duda', [2.0, 0, 0.0], 81), ('extraA', [0.2, 0, -1.7], 36), ('extraB', [2.0, 0, -1.7], 49), ('extraC', [3.8, 0, 0.0], 62)]
+S('q2', 'classroom', 'Problema um: você não consegue desligar. Na aula de matemática, cinco corações piscando em volta de você.', variant=1,
+  actors=[A('hero', [0.2, 0, 0.0], -90, 'sit', 'tired')] + [A(i, p, -90, 'sit', 'happy', glow=PINK) for i, p, _ in FANS],
+  camera={'pos': [0.8, 2.3, 7.5], 'look': [1.2, 0.9, 0.0], 'fov': 40, 'move': 'drift'},
+  overlays=[crush(i, v, 0, at=0.4 + 0.35 * k) for k, (i, _, v) in enumerate(FANS)])
+S('q3', 'classroom', 'Cinco números mudando o tempo inteiro. Você não escuta uma palavra da professora.', variant=1,
+  actors=[A('hero', [0.2, 0, 0.0], -90, 'sit', 'tired', faces=[{'t': 1.0, 'face': 'sleepy'}])],
+  camera=cam('close', 'hero', 15), sfx=[{'t': 0.3, 'name': 'ticks'}])
+C('q4', 'stat', 'Sua nota cai de oito e meio pra seis.', value='8,5 → 6', label='SUA NOTA DE MATEMÁTICA', icon='check')
+S('q5', 'classroom', 'Solução: sentar na primeira fileira, de frente pro quadro, onde ninguém entra no seu campo de visão.', variant=1,
+  actors=[A('hero', [-1.6, 0, 0.0], -90, 'sit', 'focused')], camera={'pos': [-4.6, 1.7, -0.2], 'look': [-1.6, 0.95, 0.0], 'fov': 34})
+S('q6', 'classroom', 'Primeira fileira? Você?', who='adulta', variant=1,
+  actors=[A('teacher', 'board+0.6,0,1.2', 70, 'armsCrossed', 'surprised', talk=TALK), A('hero', [-1.6, 0, 0.0], -90, 'sit', 'smile')],
+  camera=cam('medium', ['teacher', 'hero'], -30))
+S('q7', 'bedroom', 'Problema dois: você começa a anotar.',
+  actors=[A('hero', 'desk', 180, 'typing', 'focused')], camera=cam('medium', 'hero', -150, move='pushIn'))
+C('q8', 'stat', 'Uma planilha. Trinta e quatro nomes, trinta e quatro números, atualizada todo dia.', value=34, unit='NOMES', label='A PLANILHA', icon='check')
+S('q9', 'bedroom', 'Você confere umas quarenta vezes por dia. E sem perceber, fica mais legal com quem tem oitenta do que com quem tem dez.',
+  actors=[A('hero', 'desk', 180, 'typing', 'smug')], camera=cam('close', 'hero', -160),
+  overlays=[{'type': 'label', 'text': '40× POR DIA', 'at': '@quarenta', 'corner': 'tr'}])
+S('q10', 'bedroom', 'Sua irmã caçula acha a planilha.',
+  actors=[A('sister', 'desk+0.6,0,1.2', -157, 'reach', 'surprised', look=[2.75, 1.05, -3.4]), A('hero', 'rug+1,0,-0.4', 60, 'relaxed', 'worried', look='sister')],
+  camera={'pos': [1.0, 1.5, 3.0], 'look': [2.7, 1.0, -1.4], 'fov': 40})
+S('q11', 'bedroom', 'Por que a Duda tem uma setinha pra baixo?', who='female',
+  actors=[A('sister', 'desk+0.6,0,1.2', -120, 'point', 'confused', look='hero', talk=TALK), A('hero', 'rug+1,0,-0.4', 60, 'scared', 'embarrassed', look='sister')],
+  camera={'pos': [1.2, 1.5, 3.2], 'look': [2.4, 1.0, -1.2], 'fov': 42})
+S('q12', 'bedroom', 'É trabalho de geografia.',
+  actors=[A('hero', 'rug+1,0,-0.4', 60, 'shrug', 'embarrassed', talk=[[0.05, 1.2]])], camera=cam('close', 'hero', 10))
+S('q13', 'bedroom', 'Desde quando você faz planilha?', who='adulta',
+  actors=[A('mom', 'door', -90, 'armsCrossed', 'suspicious', talk=TALK), A('hero', 'rug+1,0,-0.4', 80, 'relaxed', 'embarrassed', look='mom')],
+  camera=cam('medium', 'mom', 15))
+S('q14', 'cafeteria', 'Problema três, o pior: você para de arriscar.', variant=0,
+  actors=[A('hero', 'aisle', 0, 'stand', 'worried')], camera=cam('full', 'hero', 10, move='pullOut'))
+S('q15', 'cafeteria', 'Pra que convidar alguém, se você já sabe a resposta? Pra que perguntar, se dá pra só olhar?', variant=1,
+  actors=[A('lia', 'seat1', 0, 'sit', 'smile', glow=PINK), A('hero', 'aisle+0.6,0,-0.4', 150, 'relaxed', 'neutral', look='lia')],
+  camera=cam('medium', ['lia', 'hero'], -20), overlays=[crush('lia', 74, at=0.3)])
+C('q16', 'stat', 'Em um mês inteiro, você não começa uma única conversa.', value=0, unit='CONVERSAS', label='QUE VOCÊ COMEÇOU NUM MÊS', icon='question')
+S('q17', 'cafeteria', 'Você sabe o que todo mundo sente. E ninguém sabe nada sobre você.', variant=1,
+  actors=[A('hero', 'seat4', 180, 'sit', 'sad')], camera=cam('close', 'hero', 20, move='pushIn'))
+
+# ---------------------------------------------------------------- 9. problema real
+S('x1', 'void', 'Esses são chatos. Esse aqui é perigoso.',
+  actors=[A('hero', 'center', 0, 'stand', 'worried')], camera=cam('close', 'hero', 0, move='pushIn'), sfx=[{'t': '@perigoso', 'name': 'subdrop'}])
+S('x2', 'park', 'Num sábado, no parque, o Caio fica quieto do nada.',
+  actors=[A('hero', 'bench', 135, 'sit', 'smile'), A('bestie', BENCH2, 135, 'sit', 'worried')],
+  camera=cam('medium', ['hero', 'bestie'], 0, move='drift'))
+S('x3', 'park', 'Posso te contar uma coisa?', who='male',
+  actors=[A('bestie', BENCH2, 135, 'sit', 'worried', look='hero', talk=TALK)], camera=cam('close', 'bestie', -10))
+S('x4', 'park', 'Eu gosto da Lia. Desde o quinto ano.', who='male',
+  actors=[A('bestie', BENCH2, 135, 'sit', 'embarrassed', talk=TALK)], camera=cam('xclose', 'bestie', 0))
+S('x5', 'park', 'Três anos. E você sabe uma coisa que ele não sabe.',
+  actors=[A('hero', 'bench', 135, 'sit', 'worried')], camera=cam('xclose', 'hero', 10, move='pushIn'))
+C('x6', 'stat', 'O número da Lia. Noventa e quatro. Por você.', value=94, unit='%', label='A LIA, POR VOCÊ', icon='heart')
+C('x7', 'icon', 'Lembra? Você só vê o que sentem por você. Nunca viu o que o Caio sente. Nem o que você sente.',
+  icon='eye', caption='SÓ O QUE SENTEM POR VOCÊ', sub='NEM O QUE VOCÊ SENTE')
+S('x8', 'park', 'Aí o Caio pede seu celular emprestado, pra mandar mensagem pra ela.',
+  actors=[A('hero', 'bench', 135, 'sit', 'worried', hold={'R': 'phone'}), A('bestie', BENCH2, 135, 'sit', 'happy', look='hero', poses=[{'t': 0.3, 'pose': {'hipY': -0.46, 'spine': [-2, 0, 0], 'legL': [88, 6, 92], 'legR': [88, 6, 92], 'armL': [30, 10, 0, 60], 'armR': [60, 10, 0, 20], 'handR': 'open'}}])],
+  camera=cam('medium', ['hero', 'bestie'], 20))
+C('x9', 'stat', 'A planilha está aberta na tela. Lia, noventa e quatro, com uma setinha pra cima. A um dedo do Caio.', value=94, unit='%', label='LIA, NA PLANILHA ABERTA', icon='phone')
+C('x10', 'stat', 'E o celular desliga. Um por cento de bateria. Salvo por sorte.', value=1, unit='%', label='DE BATERIA', icon='phone')
+S('x11', 'park', 'Da próxima vez, não vai ter sorte.',
+  actors=[A('hero', 'bench', 135, 'sit', {'mouth': -0.3, 'brow': 0.8, 'eyes': 1.1, 'sweat': True})], camera=cam('close', 'hero', 0))
+
+# ---------------------------------------------------------------- 10. maestria + regra tema
+C('y1', 'chain', 'Então você estuda quem resolve isso há milhões de anos: o morcego.',
+  title='O MORCEGO NO ESCURO', nodes=[{'icon': 'lightning', 'label': 'GRITA'}, {'icon': 'arrow', 'label': 'ESCUTA'}, {'icon': 'check', 'label': 'ACHA'}])
+S('y2', 'void', 'No escuro, o morcego não espera pra enxergar. Ele grita primeiro, e escuta o que volta.',
+  actors=[A('hero', 'center', 0, 'focus', 'closed')], camera=cam('medium', 'hero', 20, move='orbitL'), fx={'grade': 'night'})
+C('y3', 'stat', 'Alguns gritam mais alto que um show de rock, mais de cento e dez decibéis, numa frequência que a gente nem escuta.',
+  value=110, unit='DECIBÉIS', label='O GRITO DE UM MORCEGO', icon='lightning')
+C('y4', 'stat', 'E quando estão chegando perto, até duzentos gritos por segundo.', value=200, unit='GRITOS POR SEGUNDO', label='CHEGANDO PERTO', icon='stopwatch')
+S('y5', 'park', 'Você treina com o Caio: de olhos fechados, puxar assunto com três pessoas sem ver número nenhum.',
+  actors=[A('hero', 'center', 0, 'relaxed', 'closed'), A('bestie', 'center+1.2,0,0.4', -60, 'relaxed', 'happy', hold={'R': 'stopwatch'})],
+  camera=cam('medium', ['hero', 'bestie'], 15))
+S('y6', 'park', 'Primeira: você fala do tempo. Falha.',
+  actors=[A('hero', 'center', 30, 'explain', 'closed', talk=TALK), A('extraA', 'center+0.9,0,1.1', -150, 'armsCrossed', 'bored')],
+  camera=cam('medium', ['hero', 'extraA'], 85), sfx=[{'t': '@falha', 'name': 'pop'}])
+S('y7', 'park', 'Segunda: você fala do tempo de novo. Falha pior.',
+  actors=[A('hero', 'center', -30, 'explain', 'closed', talk=TALK), A('extraB', 'center+-0.9,0,1.1', 150, 'relaxed', 'bored',
+      path=[{'t': '@falha', 'pos': 'center+-0.9,0,1.1'}, {'t': '@pior+0.6', 'pos': 'center+-4,0,4', 'gait': 'walk'}])],
+  camera=cam('medium', ['hero', 'extraB'], -85), sfx=[{'t': '@pior', 'name': 'pop'}])
+S('y8', 'park', 'Terceira: você pergunta uma coisa de verdade, e escuta a resposta.',
+  actors=[A('hero', 'center', 0, 'relaxed', 'smile'), A('extraC', 'center+0,0,1.2', 180, 'explain', 'happy', talk=[[1.5, 4.0]])],
+  camera=cam('medium', ['hero', 'extraC'], 85))
+C('y9', 'rules', 'Sua regra: fala primeiro. Olha depois.', title='A SUA REGRA', prefix='REGRA', rules=['FALA PRIMEIRO.', 'OLHA DEPOIS.'], current=0)
+S('y10', 'bedroom', 'Você tira a planilha da tela inicial.',
+  actors=[A('hero', 'desk', 180, 'typing', 'determined')], camera=cam('close', 'hero', -160))
+
+# ---------------------------------------------------------------- 11. crise (incêndio)
+S('z1', 'suburb', 'Por duas semanas, você fala primeiro. Nada de ruim acontece.',
+  actors=[A('hero', 'sidewalk+-4,0,0', 90, 'relaxed', 'happy', path=[{'t': 0.2, 'pos': 'sidewalk+-4,0,0'}, {'t': 3.5, 'pos': 'sidewalk+3,0,0', 'gait': 'walk'}]),
+      A('bestie', 'sidewalk+-2.8,0,0.6', 90, 'relaxed', 'happy', path=[{'t': 0.2, 'pos': 'sidewalk+-2.8,0,0.6'}, {'t': 3.5, 'pos': 'sidewalk+4.2,0,0.6', 'gait': 'walk'}])],
+  camera=cam('wide', 'hero', 20, move='track'))
+S('z2', 'apartments', 'Até um sábado à tarde, na rua da Lia.',
+  actors=[A('extraA', 'crowd+-3,0,0', 90, 'relaxed', 'happy', path=[{'t': 0.2, 'pos': 'crowd+-3,0,0'}, {'t': 4, 'pos': 'crowd+2,0,0', 'gait': 'walk'}])],
+  camera={'pos': [14, 1.6, 4], 'look': [-6, 2.0, -1], 'fov': 45, 'move': 'drift'})
+S('z3', 'apartments', 'O Caio finalmente criou coragem. Comprou uma flor pra ela.',
+  actors=[A('bestie', 'crowd+-1,0,0', 180, 'holdOut', 'embarrassed', hold={'R': 'flower'})],
+  camera=cam('close', 'bestie', 20, focus='handR', dist=1.1))
+S('z4', 'apartments', 'Aí vocês sentem o cheiro. Fumaça. Saindo do quarto andar. Do prédio dela.',
+  camera={'pos': [3, 1.4, 6], 'look': [0, 8.5, -9], 'fov': 46, 'move': 'pushIn'}, sfx=[{'t': '@fumaça', 'name': 'crackle'}])
+S('z5', 'apartments', 'Cadê a Lia? Ela estava em casa!', who='adulta',
+  actors=[A('maeLia', 'crowd+1.2,0,-0.6', 180, 'scared', 'cry', talk=TALK), A('extraA', 'crowd+-1,0,0.8', 180, 'scared', 'worried'), A('extraB', 'crowd+2.4,0,0.6', 180, 'shocked', 'scared')],
+  camera=cam('medium', 'maeLia', 10, move='handheld'))
+S('z6', 'apartments', 'Os bombeiros procuram no segundo andar, onde a avó dela mora. E a fumaça cobre a fachada inteira.',
+  props=[{'type': 'firetruck', 'pos': 'truck', 'stowed': True}, {'type': 'smoke', 'pos': [0, 9.15, -8.2], 'h': 9, 'size': 1.2}],
+  actors=[A('bombeiro', 'street+3,0,1.2', 180, 'point', 'focused', poses=[{'t': 0, 'pose': {'armR': [120, 10, 0, 0], 'handR': 'point'}}])],
+  camera={'pos': [6, 1.5, 5], 'look': [0, 6.5, -9], 'fov': 55})
+LIA_BAL = A('lia', 'balcony+0,0,-0.3', 0, 'lie', 'sleepy', glow=PINK)
+S('z7', 'apartments', 'Mas você vê. No quarto andar, atrás da fumaça, um brilho rosa.',
+  actors=[LIA_BAL, A('bombeiro', 'street+3,0,1.2', 180, 'point', 'focused', poses=[{'t': 0, 'pose': {'armR': [120, 10, 0, 0], 'handR': 'point'}}]), A('hero', 'crowd+0,0,0.3', 180, 'stand', 'surprised', look=[0, 9.5, -8.7])],
+  props=[{'type': 'firetruck', 'pos': 'truck', 'stowed': True}, {'type': 'smoke', 'pos': [0, 9.15, -8.2], 'h': 9, 'size': 1.2},
+     {'type': 'glow', 'pos': 'balcony+0,0,-0.3', 'y': 0.45, 'size': 0.6, 'color': PINK}],
+  camera={'pos': [0.9, 1.0, 9.8], 'look': [0.1, 8.6, -8.6], 'fov': 52, 'move': 'pushIn'}, sfx=[{'t': '@brilho', 'name': 'glint'}])
+S('z8', 'apartments', 'Quarenta e um por cento. Caindo.',
+  actors=[LIA_BAL],
+  camera={'pos': [-2.2, 10.8, -5.4], 'look': [0.1, 9.35, -8.6], 'fov': 34},
+  overlays=[crush('lia', 41, 48, at=0.2, countDur=2.5)], sfx=[{'t': 0.2, 'name': 'heartbeat'}])
+S('z9', 'apartments', 'Um ponto a cada dois segundos. Um minuto e vinte e dois até o zero.',
+  actors=[A('hero', 'crowd+0,0,0.3', 180, 'scared', 'scared', look=[0, 9.5, -8.7])],
+  camera=cam('xclose', 'hero', 10, height=-10),
+  overlays=[{'type': 'stopwatch', 'from': '1:22', 'at': '@minuto'}])
+
+# ---------------------------------------------------------------- 12. dilema
+SW = lambda v: {'type': 'stopwatch', 'from': v, 'persist': True}
+S('d1', 'apartments', 'O bombeiro só vai subir pro quarto andar se você disser como sabe.',
+  actors=[A('hero', 'crowd+0,0,0.3', 180, 'stand', 'worried'), A('bombeiro', 'truck+-3,0,-1.5', 160, 'point', 'focused')],
+  camera={'pos': [-1.5, 1.7, 9.8], 'look': [3.0, 1.4, -2.5], 'fov': 45}, overlays=[SW('1:10')])
+S('d2', 'apartments', 'Na frente da rua inteira. Da mãe dela. Do Caio, segurando a flor.',
+  actors=[A('maeLia', 'crowd+1.2,0,-0.6', 180, 'scared', 'cry'), A('bestie', 'crowd+-1,0,0', 180, 'holdOut', 'worried', hold={'R': 'flower'}),
+      A('extraA', 'crowd+-0.2,0,1.0', 180, 'stand', 'worried'), A('extraC', 'crowd+2.4,0,0.4', 180, 'phone', 'worried', hold={'R': 'phone'}),
+      A('extraB', 'crowd+3.4,0,1.1', 180, 'shocked', 'scared'), A('rival', 'crowd+-2.2,0,0.9', 180, 'stand', 'worried')],
+  camera={'pos': [-0.4, 1.7, 2.2], 'look': [0.6, 1.3, 7.8], 'fov': 46}, overlays=[SW('1:04')])
+S('d3', 'apartments', 'Se você falar, o segredo dela vira de todo mundo. Se você ficar quieto...',
+  actors=[A('hero', 'crowd+0,0,0.3', 180, 'stand', 'worried')], camera=cam('xclose', 'hero', 5), overlays=[SW('0:58')])
+S('d4', 'apartments', 'O segredo dela... ou ela.', hold=2.0,
+  actors=[A('hero', 'crowd+0,0,0.3', 180, 'stand', 'determined')], camera=cam('xclose', 'hero', 0, move='pushIn'),
+  overlays=[SW('0:52')], fx={'vignette': 0.35})
+
+# ---------------------------------------------------------------- 13. clímax
+S('e1', 'apartments', 'Você fala primeiro.',
+  actors=[A('hero', 'crowd+0,0,0.3', 180, 'determined', 'determined')], camera=cam('close', 'hero', 150), overlays=[SW('0:48')])
+S('e2', 'apartments', '[shouting] Quarto andar! Ela está na sacada!',
+  actors=[A('hero', 'crowd+0,0,0.3', 180, 'point', 'furious', talk=TALK, poses=[{'t': 0, 'pose': {'armR': [130, 10, 0, 0], 'handR': 'point', 'head': [-15, 0, 0]}}]),
+],
+  camera=cam('medium', 'hero', 15, height=-8), overlays=[SW('0:46')], sfx=[{'t': 0.05, 'name': 'whoosh'}])
+S('e3', 'apartments', 'Como você sabe?', who='adulto',
+  actors=[A('bombeiro', 'truck+-3,0,-1.5', 30, 'stand', 'suspicious', look='hero', talk=TALK)], camera=cam('close', 'bombeiro', 10), overlays=[SW('0:42')])
+S('e4', 'apartments', 'E você diz. Alto. Na frente de todo mundo.',
+  actors=[A('hero', 'crowd+0,0,0.3', 180, 'stand', 'determined'), A('bestie', 'crowd+-1,0,0', 120, 'stand', 'worried', hold={'R': 'flower'}, look='hero')],
+  camera=cam('medium', ['hero', 'bestie'], 20), overlays=[SW('0:40')])
+S('e5', 'apartments', '[shouting] Porque ela gosta de mim!',
+  actors=[A('hero', 'crowd+0,0,0.3', 180, 'fistPump', 'furious', talk=TALK)], camera=cam('close', 'hero', -5, move='crashIn'),
+  overlays=[SW('0:37')], sfx=[{'t': 0.1, 'name': 'boom'}])
+S('e6', 'apartments', 'O Caio olha pra você. Um segundo inteiro.', hold=0.6,
+  actors=[A('bestie', 'crowd+-1,0,0', 120, 'stand', 'shocked', hold={'R': 'flower'}, look='hero')], camera=cam('xclose', 'bestie', 0), overlays=[SW('0:34')])
+S('e7', 'apartments', '[shouting] Ele não erra! Confia nele!', who='male',
+  actors=[A('bestie', 'crowd+-1,0,0', 180, 'point', 'determined', hold={'R': 'flower'}, talk=TALK, poses=[{'t': 0, 'pose': {'armR': [120, 10, 0, 0], 'handR': 'point'}}])],
+  camera=cam('medium', 'bestie', 15), overlays=[SW('0:30')])
+PIV = [11.6, 2.75, -2.4]
+RIDE_UP = [{'t': 0.1, 'pos': [10.6, 2.85, -2.4]}, {'t': 3.2, 'pos': [1.5, 9.25, -7.3], 'gait': 'carried'}]
+S('e8', 'apartments', 'A escada gira. O cesto sobe até o quarto andar.',
+  props=[{'type': 'firetruck', 'pos': 'truck'}, {'type': 'basket', 'follow': 'bombeiro', 'from': PIV}],
+  actors=[A('bombeiro', [10.6, 2.85, -2.4], -150, 'crouch', 'determined', path=RIDE_UP, gait='carried', contact=True)],
+  camera={'pos': [12, 2.0, 3.2], 'look': [3, 6.2, -7], 'fov': 54}, overlays=[SW('0:26')], sfx=[{'t': 0.2, 'name': 'riser'}])
+HOVER = [1.5, 9.25, -7.3]
+BAL_CAM = {'pos': [-2.6, 10.7, -4.9], 'look': [0.6, 9.55, -8.1], 'fov': 40}
+BASKET = {'type': 'basket', 'follow': 'bombeiro', 'from': PIV}
+S('e9', 'apartments', 'Mas a fumaça engole a sacada. O bombeiro não enxerga nada. Doze por cento.',
+  props=[{'type': 'firetruck', 'pos': 'truck'}, BASKET, {'type': 'smoke', 'pos': [0.9, 9.15, -7.85], 'h': 2.6, 'size': 0.27, 'n': 60, 'wind': [0.45, 0.1]}],
+  actors=[A('bombeiro', HOVER, -131, 'reach', 'worried', gait='carried', contact=True), A('lia', 'balcony+0,0,-0.3', 0, 'lie', 'closed', glow=PINK)],
+  camera=BAL_CAM, overlays=[SW('0:24'), crush('lia', 12, 15, at='@doze')])
+S('e10', 'apartments', 'Regra três: a sua voz faz o número subir.',
+  actors=[A('hero', 'crowd+0,0,0.3', 180, 'stand', 'determined')], camera=cam('close', 'hero', 150), overlays=[SW('0:21')])
+S('e11', 'apartments', '[shouting] Lia!',
+  actors=[A('hero', 'crowd+0,0,0.3', 180, 'cheer', 'furious', talk=[[0.05, 0.8]])], camera=cam('full', 'hero', 150, height=-12),
+  overlays=[SW('0:19')], sfx=[{'t': 0.05, 'name': 'heartbeat'}])
+S('e12', 'apartments', 'Vinte e cinco. Ela levanta a cabeça.',
+  props=[{'type': 'firetruck', 'pos': 'truck'}, BASKET, {'type': 'smoke', 'pos': [0.9, 9.15, -7.85], 'h': 2.6, 'size': 0.23, 'n': 60, 'wind': [0.45, 0.1]}],
+  actors=[A('bombeiro', HOVER, -131, 'reach', 'worried', gait='carried', contact=True),
+      A('lia', 'balcony+0,0,-0.3', 0, 'lie', 'sleepy', glow=PINK, poses=[{'t': 0.4, 'pose': {'hipY': -0.82, 'body': [-90, 0, 0], 'head': [35, 0, 0], 'armL': [0, 12, 0, 6], 'armR': [30, 25, 0, 40]}, 'blend': 0.8}])],
+  camera=BAL_CAM, overlays=[SW('0:17'), crush('lia', 25, 12, at=0.1)], sfx=[{'t': 0.1, 'name': 'chime'}])
+S('e13', 'apartments', '[shouting] Lia!',
+  actors=[A('hero', 'crowd+0,0,0.3', 180, 'cheer', 'furious', talk=[[0.05, 0.8]])], camera=cam('close', 'hero', 20, height=-10),
+  overlays=[SW('0:15')], sfx=[{'t': 0.05, 'name': 'heartbeat'}])
+S('e14', 'apartments', 'Quarenta. Ela se arrasta até a grade.',
+  props=[{'type': 'firetruck', 'pos': 'truck'}, BASKET, {'type': 'smoke', 'pos': [0.9, 9.15, -7.85], 'h': 2.6, 'size': 0.19, 'n': 60, 'wind': [0.45, 0.1]}],
+  actors=[A('bombeiro', HOVER, -131, 'reach', 'determined', gait='carried', contact=True),
+      A('lia', 'balcony+0,0,-0.3', 52, 'crouch', 'scared', glow=PINK, path=[{'t': 0.3, 'pos': 'balcony+0,0,-0.3'}, {'t': 2.2, 'pos': 'balcony+0.3,0,0.35', 'gait': 'carried'}])],
+  camera=BAL_CAM, overlays=[SW('0:13'), crush('lia', 40, 25, at=0.1)], sfx=[{'t': 0.1, 'name': 'chime'}])
+S('e15', 'apartments', '[shouting] Lia!',
+  actors=[A('hero', 'crowd+0,0,0.3', 180, 'cheer', 'furious', talk=[[0.05, 0.8]])], camera=cam('medium', 'hero', 150, height=-12, move='crashIn'),
+  overlays=[SW('0:11')], sfx=[{'t': 0.05, 'name': 'heartbeat'}])
+S('e16', 'apartments', 'Cinquenta e oito. A mão dela atravessa a fumaça.',
+  props=[{'type': 'firetruck', 'pos': 'truck'}, BASKET, {'type': 'smoke', 'pos': [0.9, 9.15, -7.85], 'h': 2.6, 'size': 0.14, 'n': 60, 'wind': [0.45, 0.1]}],
+  actors=[A('bombeiro', HOVER, -131, 'reach', 'determined', gait='carried', contact=True),
+      A('lia', 'balcony+0.3,0,0.35', 52, {'reachR': {'to': [0, 1.25, 0.8]}, 'spine': [15, 0, 0]}, 'scared', glow=PINK, contact=True)],
+  camera=BAL_CAM, overlays=[SW('0:09'), crush('lia', 58, 40, at=0.1)], sfx=[{'t': 0.1, 'name': 'chime'}])
+S('e17', 'apartments', 'O bombeiro segura.',
+  props=[{'type': 'firetruck', 'pos': 'truck'}, BASKET],
+  actors=[A('bombeiro', HOVER, -131, {'reachR': {'to': [0, 1.2, 0.75]}, 'spine': [20, 0, 0]}, 'determined', gait='carried', contact=True),
+      A('lia', 'balcony+0.3,0,0.35', 52, {'reachR': {'to': [0, 1.25, 0.8]}, 'spine': [15, 0, 0]}, 'surprised', glow=PINK, contact=True)],
+  camera={'pos': [-1.8, 10.3, -5.0], 'look': [0.9, 9.8, -7.9], 'fov': 34}, overlays=[SW('0:07')], sfx=[{'t': 0.1, 'name': 'thud'}, {'t': 0.2, 'name': 'swell'}])
+RIDE_DOWN = [{'t': 0.3, 'pos': HOVER}, {'t': 3.5, 'pos': [10.6, 2.85, -2.4], 'gait': 'carried'}]
+S('e18', 'apartments', 'O cesto desce. Ela está tossindo. Viva.', hold=1.2,
+  props=[{'type': 'firetruck', 'pos': 'truck'}, BASKET],
+  actors=[A('bombeiro', HOVER, -150, 'carry', 'focused', path=RIDE_DOWN, gait='carried', contact=True),
+      A('lia', [1.1, 9.25, -7.2], -150, {'reachR': {'to': 'mouth'}, 'spine': [15, 0, 0]}, {'eyes': 0.35, 'open': 0.55, 'mouth': -0.3, 'brow': 0.8}, gait='carried', contact=True,
+        path=[{'t': 0.3, 'pos': [1.1, 9.25, -7.2]}, {'t': 3.5, 'pos': [10.2, 2.85, -2.3], 'gait': 'carried'}])],
+  camera={'pos': [12, 2.0, 3.2], 'look': [3, 6.2, -7], 'fov': 54}, overlays=[{'type': 'stopwatch', 'from': '0:05', 'to': 'SALVA', 'persist': True, 'switchAt': '@viva'}])
+S('e19', 'apartments', 'Você tenta dizer alguma coisa. Não sai nada. Sua voz acabou.',
+  actors=[A('hero', 'crowd+0,0,0.3', 180, {'spine': [14, 0, 0], 'head': [12, 0, 0], 'reachR': {'to': 'chin'}}, 'tired')], camera=cam('close', 'hero', 15))
+
+# ---------------------------------------------------------------- 14. consequência
+CRATES = [{'type': 'crate', 'pos': 'crowd+0,0,0.72', 'w': 0.5, 'h': 0.45, 'd': 0.45, 'color': '#9a6b45'},
+      {'type': 'crate', 'pos': 'crowd+-0.9,0,0.72', 'w': 0.5, 'h': 0.45, 'd': 0.45, 'color': '#9a6b45'}]
+S('f1', 'apartments', 'Rouco por três dias, diz o paramédico.', props=CRATES,
+  actors=[A('hero', 'crowd+0,0,0.6', 180, 'sit', 'tired'), A('bestie', 'crowd+-0.9,0,0.6', 180, 'sit', 'sad', hold={'R': 'flower'})],
+  camera=cam('medium', ['hero', 'bestie'], 0, height=10))
+S('f2', 'apartments', 'Três anos, cara.', props=CRATES, who='male',
+  actors=[A('bestie', 'crowd+-0.9,0,0.6', 180, 'sit', 'sad', hold={'R': 'flower'}, look='hero', talk=TALK)], camera=cam('close', 'bestie', -15))
+S('f3', 'apartments', '[whispering] Desculpa.', props=CRATES,
+  actors=[A('hero', 'crowd+0,0,0.6', 180, 'sit', 'sad', look='bestie', talk=[[0.05, 0.7]])], camera=cam('close', 'hero', 15))
+S('f4', 'apartments', 'Não. Você falou primeiro. Eu nunca falei.', props=CRATES, who='male',
+  actors=[A('bestie', 'crowd+-0.9,0,0.6', 180, 'sit', 'smile', hold={'R': 'flower'}, look='hero', talk=TALK)], camera=cam('close', 'bestie', -20))
+S('f5', 'apartments', 'E eu? Quanto eu tô?', props=CRATES, who='male',
+  actors=[A('bestie', 'crowd+-0.9,0,0.6', 180, 'sit', 'smug', hold={'R': 'flower'}, look='hero', talk=TALK), A('hero', 'crowd+0,0,0.6', 180, 'sit', 'tired')],
+  camera=cam('close', 'bestie', 35), overlays=[crush('bestie', 0, at=0.6)])
+S('f6', 'apartments', 'Você faz um zero com a mão.', props=CRATES,
+  actors=[A('hero', 'crowd+0,0,0.6', 180, 'sit', 'smirk', poses=[{'t': 0.2, 'pose': {'hipY': -0.46, 'spine': [-2, 0, 0], 'legL': [88, 6, 92], 'legR': [88, 6, 92], 'armL': [30, 10, 0, 60], 'armR': [70, 10, -40, 70], 'handR': 'fist'}}])],
+  camera=cam('close', 'hero', 20))
+S('f7', 'apartments', '[chuckling] Grosso.', props=CRATES, who='male',
+  actors=[A('bestie', 'crowd+-0.9,0,0.6', 180, 'sit', 'grin', hold={'R': 'flower'}, talk=[[0.05, 0.9]])], camera=cam('close', 'bestie', -10))
+NEWS = 'O GAROTO MAIS QUIETO DA ESCOLA GRITOU MAIS ALTO QUE A SIRENE'
+S('f8', 'home', 'Até o jantar, o vídeo de um vizinho está em todo lugar.',
+  actors=[A('mom', 'seat', 0, 'sit', 'surprised', hold={'R': 'phone'})], camera=cam('close', 'mom', 15),
+  overlays=[{'type': 'news', 'headline': NEWS, 'tag': 'VIRAL', 'at': 0.4}])
+S('f9', 'home', 'O título: o garoto mais quieto da escola gritou mais alto que a sirene.',
+  actors=[A('mom', 'seat', 0, 'sit', 'happy', hold={'R': 'phone'})],
+  camera=cam('medium', 'mom', -20))
+S('f10', 'home', 'Chá com mel. E nada de planilha hoje.', who='adulta',
+  actors=[A('mom', 'table+-0.5,0,0.9', 60, 'holdOut', 'love', hold={'R': 'cup'}, talk=TALK), A('hero', 'table+0.9,0,0.9', -100, 'relaxed', 'smile', look='mom')],
+  camera=cam('medium', ['mom', 'hero'], 0))
+S('f11', 'bedroom', 'Você abre a planilha. E apaga. Trinta e quatro nomes. Trinta e quatro números.', time='interiorNight',
+  actors=[A('hero', 'desk', 180, 'typing', 'determined')], camera=cam('close', 'hero', -150, move='pushIn'),
+  sfx=[{'t': '@apaga', 'name': 'click'}])
+S('f12', 'home', 'No domingo, a Lia aparece na sua porta.',
+  actors=[A('lia', 'door+-0.6,0,0.6', -120, 'relaxed', 'smile', glow=PINK), A('hero', 'door+-1.8,0,1.2', 60, 'relaxed', 'surprised', look='lia')],
+  camera=cam('medium', ['lia', 'hero'], 20))
+S('f13', 'home', 'Você gritou meu nome três vezes.', who='female',
+  actors=[A('lia', 'door+-0.6,0,0.6', -120, 'relaxed', 'smile', glow=PINK, talk=TALK, look='hero')], camera=cam('close', 'lia', 0))
+S('f14', 'home', '[whispering] Eu sei.',
+  actors=[A('hero', 'door+-1.8,0,1.2', 60, 'relaxed', 'smile', talk=[[0.05, 0.7]], look='lia')], camera=cam('close', 'hero', 0))
+S('f15', 'home', 'Eu ouvi todas.', who='female',
+  actors=[A('lia', 'door+-0.6,0,0.6', -120, 'relaxed', 'love', glow=PINK, talk=TALK, look='hero')], camera=cam('close', 'lia', 10))
+S('f16', 'home', 'E pela primeira vez, você não olha o número dela.',
+  actors=[A('lia', 'door+-0.6,0,0.6', -120, 'relaxed', 'happy', glow=PINK), A('hero', 'door+-1.8,0,1.2', 60, 'relaxed', 'happy', look='lia')],
+  camera=cam('medium', ['lia', 'hero'], -30, move='pullOut'))
+
+# ---------------------------------------------------------------- 15. mundo maior
+S('g1', 'apartments', 'Mas o vídeo do vizinho mostra uma coisa que ninguém comentou.',
+  props=[{'type': 'firetruck', 'pos': 'truck'}],
+  camera={'pos': [3, 1.4, 6], 'look': [0, 8.5, -9], 'fov': 50}, fx={'grade': 'flashback'})
+S('g2', 'apartments', 'Do outro lado da rua, um homem de capa de chuva amarela. Num dia de sol.',
+  actors=[A('estranho', 'crowd+4.5,0,1.2', 180, 'stand', 'neutral'), A('extraA', 'crowd+1.4,0,0.5', 180, 'phone', 'worried', hold={'R': 'phone'}),
+      A('extraB', 'crowd+2.6,0,0.2', 180, 'shocked', 'scared')],
+  camera=cam('full', 'estranho', 20))
+S('g3', 'apartments', 'Todo mundo olha pro fogo. Ele olha pra você.',
+  actors=[A('estranho', 'crowd+4.5,0,1.2', -100, 'stand', {'eyes': 1.1, 'mouth': -0.05, 'brow': -0.2, 'lid': 0.3})], camera=cam('close', 'estranho', 0, move='pushIn'))
+S('g4', 'bedroom', 'Naquela noite, você não consegue dormir. Lá fora, debaixo do poste...', time='interiorNight',
+  actors=[A('hero', 'window', 180, 'stand', 'worried')], camera=cam('medium', 'hero', 150))
+STREET_NIGHT = [{'type': 'lamp', 'pos': 'farSidewalk+1,0,1', 'on': True}]
+S('g5', 'suburb', 'O homem da capa amarela. Parado. Olhando pra sua janela.', time='night',
+  props=STREET_NIGHT, actors=[A('estranho', 'farSidewalk+1,0,0.4', 180, 'stand', 'neutral')], camera=cam('full', 'estranho', -20, move='pushIn'))
+S('g6', 'suburb', 'Ele atravessa a rua, deixa um envelope na sua caixa de correio, e vai embora devagar.', time='night',
+  props=STREET_NIGHT, actors=[A('estranho', 'farSidewalk+1,0,0.4', 180, 'stand', 'neutral',
+                            path=[{'t': 0.3, 'pos': 'farSidewalk+1,0,0.4'}, {'t': 3.0, 'pos': 'mailbox+0,0,1', 'gait': 'walk'}, {'t': 4.6, 'pos': 'mailbox+0,0,1'},
+                                  {'t': 6.5, 'pos': 'mailbox+6,0,2', 'gait': 'walk'}])],
+  camera=cam('wide', 'estranho', 30, move='track'))
+S('g7', 'suburb', 'Você desce sem fazer barulho. Não que você conseguisse fazer barulho.', time='night',
+  actors=[A('hero', 'mailbox+0,0,0.8', 180, 'reach', 'worried')], camera=cam('medium', 'hero', 30))
+S('g8', 'bedroom', 'Dentro, três fotos de crianças que você nunca viu.', time='interiorNight',
+  actors=[A('hero', 'center', 0, 'holdOut', 'confused', hold={'R': 'book'})], camera=cam('close', 'hero', 10))
+S('g9', 'void', 'Uma menina cercada de cópias transparentes dela mesma.',
+  actors=[A('fotoA', 'center', 0, 'relaxed', 'neutral')] + [A(f'echo{k}', p, r, 'relaxed', 'neutral', ghost=True, glow='#7fd6ff') for k, (p, r) in enumerate([('left', 20), ('right', -20), ('back', 0)], 1)],
+  camera=cam('wide', 'fotoA', 0), fx={'grade': 'flashback'})
+S('g10', 'void', 'Um menino no meio de um salto, metade numa sala de aula, metade num telhado.',
+  actors=[A('fotoB', 'center', 90, 'jump', 'determined', glow='#8fc2ff')], camera=cam('wide', 'fotoB', 20), fx={'grade': 'flashback', 'speedLines': 'fotoB'})
+S('g11', 'void', 'E uma criança equilibrando cinco laranjas, depois de olhar um malabarista uma única vez.',
+  actors=[A('fotoC', 'center', 0, {'armL': [70, 20, 0, 60], 'armR': [70, 20, 0, 60], 'head': [-25, 0, 0], 'handL': 'open', 'handR': 'open'}, 'grin')],
+  props=[{'type': 'ball', 'pos': q, 'color': '#ff8c1a', 'scale': 0.6} for q in ['center+-0.28,0.95,0.35', 'center+-0.12,1.25,0.35', 'center+0.05,1.4,0.35', 'center+0.2,1.22,0.35', 'center+0.32,0.98,0.35']],
+  camera=cam('full', 'fotoC', 10), fx={'grade': 'flashback'})
+C('g12', 'icon', 'No verso, escrito à mão: vão precisar de alguém que vê o que as pessoas sentem.',
+  icon='eye', caption='VÃO PRECISAR DE ALGUÉM', sub='QUE VÊ O QUE AS PESSOAS SENTEM')
+S('g13', 'home', 'Tem mais chá no fogão!', who='adulta', time='interiorNight',
+  actors=[A('mom', 'stove+0.4,0,0.8', 10, 'wave', 'happy', talk=TALK)], camera=cam('medium', 'mom', 10))
+S('g14', 'bedroom', 'Você bate duas vezes no chão. Quer dizer obrigado.', time='interiorNight',
+  actors=[A('hero', 'rug', 0, 'crouch', 'smile')], camera=cam('medium', 'hero', 20), sfx=[{'t': '@bate', 'name': 'thud'}, {'t': '@bate+0.35', 'name': 'thud'}])
+
+# ---------------------------------------------------------------- 16. gancho final
+S('h1', 'bedroom', 'No fundo do envelope, tem mais uma folha.', time='interiorNight',
+  actors=[A('hero', 'center', 0, 'holdOut', 'confused', hold={'R': 'book'})], camera=cam('close', 'hero', 10))
+C('h2', 'rules', 'É a sua planilha. A que você apagou hoje à tarde. Lia, noventa e quatro. Duda, oitenta e um. Caio, zero. Todas certas.',
+  title='A SUA PLANILHA', prefix='LINHA', rules=['LIA — 94%', 'DUDA — 81%', 'CAIO — 0%'], current=0)
+S('h3', 'bedroom', 'E uma linha a mais, que você nunca escreveu.', time='interiorNight',
+  actors=[A('hero', 'center', 0, 'holdOut', 'scared', hold={'R': 'book'})], camera=cam('xclose', 'hero', 10), sfx=[{'t': 0.4, 'name': 'subdrop'}])
+C('h4', 'rules', 'O seu nome. Oitenta e sete.', title='A SUA PLANILHA', prefix='LINHA', rules=['LIA — 94%', 'DUDA — 81%', 'CAIO — 0%', 'VOCÊ — 87%'], current=4)
+S('h5', 'bedroom', 'Você nunca viu o seu próprio número. Ninguém consegue.', time='interiorNight',
+  actors=[A('hero', 'center', 0, 'holdOut', 'scared', hold={'R': 'book'})], camera=cam('xclose', 'hero', 10, move='pushIn'))
+S('h6', 'bedroom', 'Alguém consegue.', hold=1.2, time='interiorNight',
+  actors=[A('hero', 'center', 0, 'holdOut', 'scared', hold={'R': 'book'})], camera=cam('xclose', 'hero', 10), overlays=[crush('hero', 87, 0, at='@alguém', countDur=1.2)],
+  fx={'vignette': 0.5}, sfx=[{'t': 0.2, 'name': 'subdrop'}])
+
+# ---------------------------------------------------------------- 17. CTA
+S('i1', 'suburb', 'Então: quem você olharia primeiro, se pudesse ver o número? E aquele oitenta e sete... é por quem? Conta pra gente nos comentários. Todo poder tem um preço. Até a próxima.',
+  time='night', props=STREET_NIGHT, actors=[A('hero', 'sidewalk', 10, 'confident', 'smirk')],
+  camera=cam('wide', 'hero', 30, height=5, move='pullOut'),
+  overlays=[{'type': 'title', 'small': 'QUEM VOCÊ OLHARIA PRIMEIRO?', 'big': 'E O 87... É POR QUEM?', 'at': '@oitenta'}])
+
+# ---------------------------------------------------------------- episode
+idx = shot_index()
+ep = episode(
+    SLUG, 'E Se Você Pudesse Ver Quem Tem Crush em Você?',
+    cast={
+    'bestie': {'name': 'Caio'},
+    'extraB': {'topColor': '#d0533f'},
+    'sister': {'name': 'Bia'},
+    'rival': {'name': 'Rafa'},
+    'teacher': {'name': 'Professora Sônia'},
+    'coach': {'name': 'Professor Ramos'},
+    'mom': {'name': 'Mãe'},
+    'lia': {'name': 'Lia', 'top': 'hoodie', 'topColor': '#7a5cc8', 'accent': '#e9ddff', 'bottom': 'pants', 'bottomColor': '#2c3e63', 'shoes': '#ffffff', 'hair': 'curly'},
+    'duda': {'name': 'Duda', 'top': 'tee', 'topColor': '#2fa6a0', 'bottom': 'skirt', 'bottomColor': '#3b4a6b', 'shoes': '#ffffff', 'hair': 'ponytail'},
+    'maeLia': {'name': 'Mãe da Lia', 'top': 'jacket', 'topColor': '#b8476a', 'accent': '#ffe1ea', 'bottom': 'skirt', 'bottomColor': '#2d3550', 'shoes': '#5a3e33', 'hair': 'bun'},
+    'bombeiro': {'name': 'Bombeiro', 'top': 'coat', 'topColor': '#c8302a', 'accent': '#f2c53c', 'bottom': 'pants', 'bottomColor': '#1f2433', 'shoes': '#1b1b20', 'hat': 'helmet', 'hatColor': '#f2c53c'},
+    'estranho': {'name': 'Homem da capa amarela', 'top': 'coat', 'topColor': '#ffd21f', 'accent': '#fff3d6', 'bottom': 'pants', 'bottomColor': '#1d2333', 'shoes': '#2b2622'},
+    'fotoA': {'top': 'tee', 'topColor': '#4bb37a', 'bottom': 'shorts', 'bottomColor': '#2c3e63', 'shoes': '#ffffff', 'hair': 'bun', 'height': 0.85},
+    'fotoB': {'top': 'hoodie', 'topColor': '#e8a23a', 'accent': '#fff3d6', 'bottom': 'pants', 'bottomColor': '#2b2f3a', 'shoes': '#ffffff', 'hair': 'spiky', 'height': 0.85},
+    'fotoC': {'top': 'tee', 'topColor': '#c94b8a', 'bottom': 'shorts', 'bottomColor': '#3d6fb6', 'shoes': '#ffffff', 'hair': 'afro', 'height': 0.7},
+    **{f'echo{k}': {'top': 'tee', 'topColor': '#4bb37a', 'bottom': 'shorts', 'bottomColor': '#2c3e63', 'shoes': '#ffffff', 'hair': 'bun', 'height': 0.85} for k in (1, 2, 3)},
+    },
+    music=[('c1', 'curious'), ('x1', 'tension'), ('y1', 'wonder'), ('z2', 'tension'), ('e1', 'action'),
+       ('f1', 'sad'), ('f12', 'wonder'), ('g1', 'tension'), ('h6', 'none'), ('i1', 'curious')],
+)
+
+# ---------------------------------------------------------------- fire countdown, from the real voice timing
+# One point every two seconds: the clock reads 2 x Lia's number. It ticks live while her number falls,
+# and jumps up with each shout when it rises. Needs timing.json (after `align`); the draft keeps the static values.
+tm = load_timing(SLUG)
+if tm:
+    st, wt, fmt = tm.start, tm.word, tm.fmt
+    t0 = tm.at('z9', 'minuto')  # the clock shows 1:22 here
+    T = 58 / (st('e9') + wt('e9', 'doze') - t0)  # story seconds per real second: 1:22 -> 0:24 exactly on "doze"
+    rem = lambda sid: 82 - T * (st(sid) - t0)
+    def put(sid, sw):
+        sh = shots[idx[sid]]
+        sh['overlays'] = [o for o in sh.get('overlays', []) if o['type'] != 'stopwatch'] + [sw]
+    put('z9', {'type': 'stopwatch', 'from': '1:22', 'tick': round(T, 3), 'keep': True, 'at': '@minuto'})
+    for sid in ['d1', 'd2', 'd3', 'd4', 'e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'e7', 'e8', 'e9', 'e10', 'e11']:
+        put(sid, {'type': 'stopwatch', 'from': fmt(rem(sid)), 'tick': round(T, 3), 'persist': True, 'keep': True})
+    put('e12', {'type': 'stopwatch', 'from': fmt(rem('e12')), 'to': '0:50', 'switchAt': '@vinte', 'persist': True, 'keep': True})
+    put('e13', {'type': 'stopwatch', 'from': '0:50', 'tick': round(T, 3), 'persist': True, 'keep': True})
+    put('e14', {'type': 'stopwatch', 'from': fmt(50 - T * (st('e14') - st('e13'))), 'to': '1:20', 'switchAt': '@quarenta', 'persist': True, 'keep': True})
+    put('e15', {'type': 'stopwatch', 'from': '1:20', 'tick': round(T, 3), 'persist': True, 'keep': True})
+    put('e16', {'type': 'stopwatch', 'from': fmt(80 - T * (st('e16') - st('e15'))), 'to': '1:56', 'switchAt': '@cinquenta', 'persist': True, 'keep': True})
+    put('e17', {'type': 'stopwatch', 'from': '1:56', 'to': 'SALVA', 'switchAt': '@segura', 'persist': True, 'keep': True})
+    put('e18', {'type': 'stopwatch', 'from': 'SALVA', 'persist': True})
+    print(f'clock: x{T:.2f} story time; e9 starts at {fmt(rem("e9"))}, reads 0:24 on "doze"; e12 starts at {fmt(rem("e12"))}')
+
+write(SLUG, ep, drop_none=False)
 @@@@ END
 @@@@ FILE tools/ideas/novelty.py | text-crlf | 16828 | 2c1141529e53b2de12d35ad5f90fa1c0f5c83edfb2516bed35b405c1e79c9b9f
 """Novelty checker for "What If" episode ideas.
@@ -30250,7 +32316,7 @@ This copy of the project was set up from `project instructions.md` without the F
 - If the thumbnail mode is `chatgpt`, this memory doesn't block anything — leave it until the user switches modes or asks.
 - Related: [[project-thumbnails-gpt-image]].
 @@@@ END
-@@@@ FILE tools/pack/fresh/stickman.md | text | 3871 | b28e0ce4f0fb01d09874bf13c827e14b5e052a3d93f4dfb88cc7bbce513d1a1a
+@@@@ FILE tools/pack/fresh/stickman.md | text | 4003 | 97ccf6c703694ba529fdc80459dc191e907299a248e78b250bafbd28ef4b3e61
 ---
 description: Make a full "What If" stickman episode from a topic, then generate its 3 thumbnails
 argument-hint: <video topic, e.g. What If You Could Swap Places With Anyone>
@@ -30274,8 +32340,8 @@ Make one complete narrated episode about this topic with the saved hero, then ge
 
 ## Run
 
-1. **Script** (`docs/story/STORY_BLUEPRINT.md`): beat sheet, script, plant ledger, fact check and score in `script_notes.md`.
-2. **Shot list:** `episode.json`, then `node tools/episode.mjs draft <slug>`, `npm test`, `node tools/qa.cjs audit <slug>` and `node tools/episode.mjs check <slug>` (vo text: tags, SSML, raw numbers — CLAUDE.md Voice step 5.0). Fix every error, then self-certify STORY_BLUEPRINT.md §9's "Tags de áudio e fala" group by eye — `check` is mechanical and won't catch a misplaced or mismatched tag.
+1. **Script** (`docs/story/COLA_ROTEIRO.md`; open `STORY_BLUEPRINT.md` only at the § it names): beat sheet, script, plant ledger, fact check and score in `script_notes.md`.
+2. **Shot list:** `episode.json`, generated from `tools/episodes/<slug>.py` (copy `_modelo.py`; helpers in `kit.py`), then `node tools/episode.mjs draft <slug>`, `npm test`, `node tools/qa.cjs audit <slug>` and `node tools/episode.mjs check <slug>` (vo text: tags, SSML, raw numbers — CLAUDE.md Voice step 5.0). Fix every error, then self-certify STORY_BLUEPRINT.md §9's "Tags de áudio e fala" group by eye — `check` is mechanical and won't catch a misplaced or mismatched tag.
 3. **One checkpoint before spending credits.** Check the ElevenLabs credit balance (`GET /v1/user/subscription`; if the API key lacks `user_read`, ask the user to check elevenlabs.io/app/subscription or widen the key) and show the user, in one message:
    - the title and a short synopsis;
    - the script score and the path to `script.md`;
@@ -30297,7 +32363,7 @@ Keep the final message short:
 2. send the 3 thumbnails with SendUserFile in one call, captioned A / B / C with their text;
 3. one or two lines: title, length, and any warning you accepted. Ask which thumbnail to pick (`node tools/thumb-prompt.mjs <slug> --pick <id>`).
 @@@@ END
-@@@@ FILE tools/pack/header.md | text | 24519 | 3432b7b3291a4c492f435dbeb122e1ac218782cd311b9dea4d31db66f0a9e2b8
+@@@@ FILE tools/pack/header.md | text | 24538 | 2bd9080b33f9e34964c7fadd17ddd8068a223444b1124d50b183730842cde64f
 # Project instructions: 3D Stickman Long
 
 **Claude: read only lines 1–{{HEADER_END}} of this file.** Everything after that is the packed project ({{SIZE_MB}} MB). If the user typed **start**, follow "For Claude: what start means" below.
@@ -30371,7 +32437,7 @@ Ask all four in **one** AskUserQuestion call. If the tool isn't available, ask i
 2. Header "Language". Question: "What language should scripts, narration, overlays and thumbnails be written in?"
    - **English (Recommended)**: "The language the engine's docs and example scripts are written in."
    - **Portuguese (PT-BR)**: "Scripts, VO text, overlays and thumbnail text in Portuguese. Code, docs and comments stay in English."
-   - The automatic "Other" option lets the user name any other language; the story docs (`STORY_BLUEPRINT.md`, `IDEA_ENGINE.md`, `script_analysis.md`) get translated the same way.
+   - The automatic "Other" option lets the user name any other language; the story docs (`STORY_BLUEPRINT.md`, `COLA_ROTEIRO.md`, `IDEA_ENGINE.md`, `script_analysis.md`) get translated the same way.
 3. Header "Narrator". Question: "Which narrator voice should ElevenLabs use once it's connected?"
    - **Default for the chosen language (Recommended)**: "Claude picks a calm, warm narrator in that language from ElevenLabs' public voice library once connected, and confirms it with you by ear before locking it in."
    - **Audition first**: "When ElevenLabs is connected, Claude plays you free samples of 3–4 narrators in that language and you pick."
@@ -30630,7 +32696,7 @@ Left out on purpose:
 
 To repack after changing the project, run `node tools/pack/pack.mjs`. It rewrites this file from the current project.
 @@@@ END
-@@@@ FILE tools/pack/pack.mjs | text | 11197 | 8b7d1a7ea0d925533c145d95af2d49ccb49dba01c60dd7d30223510f7eea77e5
+@@@@ FILE tools/pack/pack.mjs | text | 11436 | dd65bd40764c809c0ec368bf52660fb3d5f69a1fb4b65a62fd84d36b4c12006e
 // Packs the production system into "project instructions.md": one file that rebuilds it in an empty folder
 // when the user types "start" in a fresh Claude Code chat. It holds the start procedure (tools/pack/header.md),
 // the extractor (tools/pack/extract.mjs) and every source, doc and data file plus Claude's project memory,
@@ -30695,6 +32761,8 @@ const EXTRA = [
   ['@memory/project-fish-pending.md', path.join(HERE, 'fresh', 'project-fish-pending.md')],
   // the /stickman command; .claude/ itself is skipped, so the local copy (which adds a demo shortcut) never ships
   ['.claude/commands/stickman.md', path.join(HERE, 'fresh', 'stickman.md')],
+  // the round-2+ review subagent, pinned to a smaller model (CLAUDE.md step 7.4)
+  ['.claude/agents/revisor-verificacao.md', path.join(ROOT, '.claude', 'agents', 'revisor-verificacao.md')],
 ];
 const MEMORY_LINES = [
   '- [ElevenLabs pending](project-elevenlabs-pending.md) — no working ELEVENLABS_API_KEY at setup; run docs/ELEVENLABS_SETUP.md once one is added to .env\n',
@@ -30771,7 +32839,7 @@ const WHAT = {
   'public/': `the \`${FIXTURE_EPISODE}\` fixture episode (JSON only), empty \`music/\` and \`sfx/\``,
   'thumbnails/': 'config, the prompt template, the 3 reference images, an example brief',
   'final/': 'its README (finished videos land here)',
-  '.claude/': 'the `/stickman <topic>` command',
+  '.claude/': 'the `/stickman <topic>` command and the `revisor-verificacao` subagent (sonnet)',
   '@memory/': "Claude's memory for this project (extracted into the new project's memory folder)",
 };
 const contents = ['| Path | Files | Size | What |', '|---|---|---|---|',
@@ -30847,7 +32915,7 @@ ${res.length - failed}/${res.length} passed`);
   process.exit(code);
 })();
 @@@@ END
-@@@@ FILE tools/review.mjs | text-crlf | 8389 | b19896095d02d0ed4335e9d7b5bd64cc88e7d26959388cd075b0b1b7b819cbce
+@@@@ FILE tools/review.mjs | text-crlf | 11917 | 5ef93720966d476cdc463adc0483a2ec8b9c4a9e8e34175d468a279161fce4a6
 // Review frames: event-anchored, labelled stills for the visual review and the independent reviewer.
 //   node tools/review.mjs <slug>
 // 1. runs the scene audit (out/<slug>/audit.json) for the event list
@@ -30856,19 +32924,52 @@ ${res.length - failed}/${res.length} passed`);
 //    - every shot: first frame after the cut + early / late / end frames, as a strip per shot (and overview sheets)
 //    - flags near-uniform (blank) frames, e.g. a camera inside a wall
 // 3. writes out/<slug>/review/manifest.json: each image with its shot, narration and what must be true
+//
+// Incremental rounds (after fixes):  node tools/review.mjs <slug> --only c8,r6,...
+//   re-renders only those shots (ids, or plain shot indexes) plus the events that touch them, and keeps
+//   every other image and manifest entry from the last full run. manifest.only lists what changed, so a
+//   round-2 reviewer looks at just those. Refuses (asks for a full run) if the shot list or timing changed.
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
-const slug = process.argv[2];
-if (!slug) {
-  console.error('usage: node tools/review.mjs <slug>');
+const args = process.argv.slice(2);
+const slug = args.find(a => !a.startsWith('--') && args[args.indexOf(a) - 1] !== '--only');
+const onlyArg = args.includes('--only') ? args[args.indexOf('--only') + 1] : null;
+if (!slug || (args.includes('--only') && !onlyArg)) {
+  console.error('usage: node tools/review.mjs <slug> [--only <shotId,shotId,...>]');
   process.exit(1);
 }
 const D = path.join(ROOT, 'public', 'episodes', slug);
 const OUT = path.join(ROOT, 'out', slug, 'review');
+const ep = JSON.parse(fs.readFileSync(path.join(D, 'episode.json'), 'utf8'));
+const tmRaw = fs.readFileSync(path.join(D, 'timing.json'), 'utf8');
+const tm = JSON.parse(tmRaw);
+const fps = tm.fps || 30;
+const timingHash = crypto.createHash('sha1').update(tmRaw).digest('hex').slice(0, 12);
+const shotIds = ep.shots.map(s => s.id);
+
+// --only: resolve shot ids to indexes and check the previous full run is still valid
+let only = null, prev = null;
+if (onlyArg) {
+  const manifestPath = path.join(OUT, 'manifest.json');
+  if (!fs.existsSync(manifestPath)) { console.error('--only needs a previous full run (no manifest.json). Run without --only first.'); process.exit(1); }
+  prev = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+  if (prev.timingHash !== timingHash || JSON.stringify(prev.shotIds) !== JSON.stringify(shotIds)) {
+    console.error('timing.json or the shot list changed since the last full run (shot times/indexes moved). Run without --only.');
+    process.exit(1);
+  }
+  only = new Set();
+  for (const tok of onlyArg.split(',').map(s => s.trim()).filter(Boolean)) {
+    const i = /^\d+$/.test(tok) ? +tok : shotIds.indexOf(tok);
+    if (i < 0 || i >= shotIds.length) { console.error(`unknown shot "${tok}"`); process.exit(1); }
+    only.add(i);
+  }
+}
+
 // keep earlier reviewer reports: out/<slug>/review_history/reviewer_report_<time>.md
 const prevReport = path.join(OUT, 'reviewer_report.md');
 if (fs.existsSync(prevReport)) {
@@ -30876,11 +32977,8 @@ if (fs.existsSync(prevReport)) {
   fs.mkdirSync(hist, { recursive: true });
   fs.copyFileSync(prevReport, path.join(hist, `reviewer_report_${fs.statSync(prevReport).mtime.toISOString().replace(/[:.]/g, '-')}.md`));
 }
-fs.rmSync(OUT, { recursive: true, force: true });
+if (!only) fs.rmSync(OUT, { recursive: true, force: true });
 fs.mkdirSync(path.join(OUT, 'raw'), { recursive: true });
-const ep = JSON.parse(fs.readFileSync(path.join(D, 'episode.json'), 'utf8'));
-const tm = JSON.parse(fs.readFileSync(path.join(D, 'timing.json'), 'utf8'));
-const fps = tm.fps || 30;
 
 // 1. audit (for events); errors are reported but don't stop the review frames
 spawnSync('node', [path.join(ROOT, 'tools', 'qa.cjs'), 'audit', slug], { stdio: 'inherit', cwd: ROOT });
@@ -30894,13 +32992,17 @@ const frameAt = (shot, t) => {
 const vo = i => (ep.shots[i].vo || '').replace(/\[[^\]]*\]/g, '').trim();
 
 const jobs = [], items = [];
+let render = true; // false while listing files of shots --only skips (paths only, no render job)
 const job = (name, frame) => {
-  jobs.push({ out: `../${slug}/review/raw/${name}`, id: 'Episode', props: { slug, review: true }, frame });
+  if (render) jobs.push({ out: `../${slug}/review/raw/${name}`, id: 'Episode', props: { slug, review: true }, frame });
   return path.join(OUT, 'raw', name + '.jpg');
 };
+// an event touches its shot, and a flow also the shot it comes from
+const touches = e => !only || only.has(e.shot) || (e.kind === 'flow' && only.has(e.shot - 1));
 
 // 2a. events
 audit.events.forEach((e, k) => {
+  if (!touches(e)) return;
   const label = `${String(k).padStart(2, '0')}_${e.kind}_s${e.shot}`;
   let times, expect;
   if (e.kind === 'swap') {
@@ -30925,10 +33027,17 @@ audit.events.forEach((e, k) => {
 //     setups and late payoffs are all visible
 const STRIP = [0, 0.3, 0.65, 0.93];
 const stripT = s => STRIP.map(k => (k === 0 ? Math.min(0.04, s.dur / 2) : s.dur * k));
-const strips = tm.shots.map((s, i) => stripT(s).map((t, j) => job(`shot_${String(i).padStart(3, '0')}_${'abcd'[j]}`, frameAt(i, t))));
+const strips = tm.shots.map((s, i) => {
+  render = !only || only.has(i);
+  return stripT(s).map((t, j) => job(`shot_${String(i).padStart(3, '0')}_${'abcd'[j]}`, frameAt(i, t)));
+});
+render = true;
 const mids = strips.map(st => st[2]);
+const rendered = new Set(jobs.map(j => path.join(OUT, 'raw', path.basename(j.out) + '.jpg')));
+const isNew = f => rendered.has(f);
 
 fs.writeFileSync(path.join(OUT, 'jobs.json'), JSON.stringify(jobs));
+if (only) console.log(`--only: ${only.size} shots, ${items.length} events → ${jobs.length} frames`);
 const r = spawnSync('node', [path.join(ROOT, 'tools', 'stills.cjs'), path.join(OUT, 'jobs.json')], { encoding: 'utf8', cwd: ROOT });
 const fails = (r.stdout || '').split('\n').filter(l => l.startsWith('FAIL'));
 if (fails.length) console.log(fails.join('\n'));
@@ -30942,12 +33051,13 @@ for (const it of items) {
 }
 const shotImgs = strips.map((st, i) => {
   const out = path.join(OUT, `shot_${String(i).padStart(3, '0')}.jpg`);
-  ff([...st.flatMap(f => ['-i', f]), '-filter_complex', `${st.map((_, j) => `[${j}]scale=480:-2[v${j}]`).join(';')};${st.map((_, j) => `[v${j}]`).join('')}hstack=inputs=${st.length}`, out]);
+  if (!only || only.has(i)) ff([...st.flatMap(f => ['-i', f]), '-filter_complex', `${st.map((_, j) => `[${j}]scale=480:-2[v${j}]`).join(';')};${st.map((_, j) => `[v${j}]`).join('')}hstack=inputs=${st.length}`, out]);
   return path.relative(ROOT, out).replace(/\\/g, '/');
 });
 const per = 12;
 for (let p = 0; p * per < mids.length; p++) {
   const chunk = mids.slice(p * per, (p + 1) * per);
+  if (only && !chunk.some(isNew)) continue; // overview sheet unchanged
   const out = path.join(OUT, `shots_${p + 1}.jpg`);
   const cols = 3;
   const rows = Math.ceil(chunk.length / cols);
@@ -30958,8 +33068,10 @@ for (let p = 0; p * per < mids.length; p++) {
 }
 // 2c. blank-frame check: a near-uniform picture (camera inside a wall or a prop, a missing set)
 //     shows up as a tiny pixel spread after shrinking the frame to 32×18 greyscale
-const blank = [];
+// --only: keep the old blank flags of images not re-rendered, re-check the new ones
+const blank = only ? (prev.blank || []).filter(b => !rendered.has(path.join(ROOT, b.image))) : [];
 for (const f of [...strips.flat(), ...items.flatMap(it => it.files)]) {
+  if (only && !isNew(f)) continue;
   const r = spawnSync('ffmpeg', ['-v', 'error', '-i', f, '-vf', 'scale=32:18,format=gray', '-f', 'rawvideo', '-'], { maxBuffer: 1 << 20 });
   const px = r.stdout && r.stdout.length ? [...r.stdout] : null;
   if (!px) continue;
@@ -30969,11 +33081,21 @@ for (const f of [...strips.flat(), ...items.flatMap(it => it.files)]) {
 }
 if (blank.length) console.log(`BLANK FRAMES (near-uniform picture — camera inside geometry?):\n${blank.map(b => `  ${b.image} (spread ${b.sd})`).join('\n')}`);
 
+// --only: events of untouched shots come from the last run; the re-rendered ones replace theirs
+const keptEvents = only ? prev.events.filter(e => !touches(e)) : [];
+const events = [...keptEvents, ...items.map(({ files, ...rest }) => rest)]
+  .sort((a, b) => a.shot - b.shot || a.label.localeCompare(b.label));
 const manifest = {
   slug, generated: new Date().toISOString(),
+  timingHash, shotIds,
+  ...(only ? {
+    only: [...only].sort((a, b) => a - b).map(i => ({ shot: i, id: shotIds[i] })),
+    onlyNote: 'Incremental run: only the shots in "only" (and their events) were re-rendered. Everything else is unchanged from the last full run.',
+    fullRun: prev.fullRun || prev.generated,
+  } : { fullRun: new Date().toISOString() }),
   audit: { errors: audit.findings.filter(f => f.sev === 'error'), warnings: audit.findings.filter(f => f.sev === 'warn') },
   blank,
-  events: items.map(({ files, ...rest }) => rest),
+  events,
   shots: ep.shots.map((s, i) => ({
     shot: i, id: s.id, kind: s.kind === 'card' ? `card:${s.card}` : s.set, vo: vo(i), words: tm.shots[i].words,
     strip: shotImgs[i], times: stripT(tm.shots[i]).map(t => +t.toFixed(2)),
@@ -30982,9 +33104,11 @@ const manifest = {
   overview: fs.readdirSync(OUT).filter(f => f.startsWith('shots_')).map(f => `out/${slug}/review/${f}`),
 };
 fs.writeFileSync(path.join(OUT, 'manifest.json'), JSON.stringify(manifest, null, 1));
-console.log(`review frames: ${items.length} events, ${mids.length} shots → out/${slug}/review/ (manifest.json)`);
+console.log(only
+  ? `review frames (--only): ${only.size} shots, ${items.length} events re-rendered → out/${slug}/review/ (manifest.json, "only" lists them)`
+  : `review frames: ${items.length} events, ${mids.length} shots → out/${slug}/review/ (manifest.json)`);
 @@@@ END
-@@@@ FILE tools/sfx/episode_audio.py | text-crlf | 10077 | bde756c9d9b555c0ad81ef22bac1346d59e97496aafa585536570697ed6a31d7
+@@@@ FILE tools/sfx/episode_audio.py | text-crlf | 10320 | 1344c42a9bf0bb90b4e41b645cd04d7e7d6d156f3785c2eb0332b44dc12adf4d
 """Full episode soundtrack: narration + music (ducked under the voice) + per-set ambience +
 automatic and scripted sound effects → public/episodes/<slug>/mix.wav (stems in out/audio/<slug>/).
 
@@ -31065,7 +33189,7 @@ def cue(spec, words, fallback=0.0):
         return fallback
     if isinstance(spec, (int, float)):
         return float(spec)
-    m = re.match(r"^@([a-z0-9']+)(?:#(\d+))?([+-][\d.]+)?$", str(spec).strip(), re.I)
+    m = re.match(r"^@((?:[^\W_]|')+)(?:#(\d+))?([+-][\d.]+)?$", str(spec).strip(), re.I)
     if not m:
         return fallback
     hits = [t for w, t in (words or []) if w == m.group(1).lower()]
@@ -31132,6 +33256,11 @@ LIB = {
     'chime': lambda d: S.chime(0.45),
     'glint': lambda d: S.glint(0.4),
     'ticks': lambda d: S.ticks(d or 0.4, 26, 12, 0.18),
+    'ring': lambda d: S.ringtone(d or 1.6),
+    'bell': lambda d: S.school_bell(d or 2.5),
+    'whistle': lambda d: S.whistle(d or 0.7),
+    'groan': lambda d: S.groan(d or 1.4),
+    'groanLow': lambda d: S.groan(d or 1.8, 0.3, 82.0),
 }
 DEFAULT_DB = {'whoosh': -9, 'swoosh': -12, 'whooshUp': -9, 'boom': -4, 'farBoom': -8, 'gulp': -2, 'chime': -8, 'ticks': -12, 'glint': -10,
               'wind': -8, 'riser': -10, 'crackle': -12, 'heartbeat': -4, 'subdrop': -8, 'click': -10, 'pop': -6, 'cloth': -10, 'footsteps': -10}
@@ -31508,7 +33637,7 @@ S.write_wav(os.path.join(ROOT, 'public', 'audio', 'pill_sprint_mix.wav'), mix)
 rms = 20 * np.log10(np.sqrt(np.mean(mix ** 2)) + 1e-9)
 print(f'wrote mix ({DUR}s, rms {rms:.1f} dBFS, peak {20*np.log10(np.max(np.abs(mix))):.1f} dBFS)')
 @@@@ END
-@@@@ FILE tools/sfx/sfxlib.py | text-crlf | 19140 | a1ab5fb51767841df5905929d440df08c4784381318cca0d12685038137c3d13
+@@@@ FILE tools/sfx/sfxlib.py | text-crlf | 21358 | 2b2b87d563d0642427f3b0367a487498209e8039f3a7d18736bfafee8eb3a5aa
 """Procedural sound-effects library (numpy/scipy, no samples, no downloads).
 
 Every generator returns a float32 stereo array of shape (n, 2) at SR. Sounds are built from
@@ -31979,14 +34108,134 @@ class Mix:
         return fade(x, 0.002, 0.04).astype(np.float32)
 
 
+
+def ringtone(dur: float = 1.6, level: float = 0.35) -> np.ndarray:
+    """Cheerful phone ringtone: little 4-note marimba-ish motif, repeated."""
+    notes = [1318.5, 1567.98, 1975.53, 1567.98]
+    out = np.zeros(int(dur * SR))
+    step = 0.13
+    k = 0
+    t0 = 0.0
+    while t0 < dur - 0.05:
+        f = notes[k % 4]
+        n = osc(f, 0.12) * env_exp(0.12, 0.05) + 0.3 * osc(f * 2, 0.12) * env_exp(0.12, 0.03)
+        i = int(t0 * SR)
+        out[i:i + len(n)] += n[:max(0, len(out) - i)]
+        k += 1
+        t0 += step if k % 4 else step + 0.25
+    return stereo(fade(out * level, 0.005, 0.05), 0.0, 0.2)
+
+
+def school_bell(dur: float = 2.5, level: float = 0.45) -> np.ndarray:
+    """Electric school bell: hammer striking a gong ~25×/s, metallic partials, slight room."""
+    t = t_axis(dur)
+    gong = sum(a * osc(f, dur) for f, a in ((1180, 1.0), (2830, 0.5), (4120, 0.3), (590, 0.25)))
+    strike = 0.55 + 0.45 * (np.sin(2 * np.pi * 24 * t) > 0)
+    x = saturate(gong * strike * 0.6, 1.6)
+    x = x * env_adsr(dur, 0.01, 0.1, 0.9, 0.25)
+    return reverb(stereo(fade(x * level, 0.005, 0.2), 0.0, 0.3), 0.7, 0.3)
+
+
+def whistle(dur: float = 0.7, level: float = 0.5) -> np.ndarray:
+    """Pea whistle: ~3.1 kHz tone with fast pea warble + breath noise."""
+    t = t_axis(dur)
+    f = 3100 + 60 * np.sin(2 * np.pi * 38 * t)
+    ph = 2 * np.pi * np.cumsum(f) / SR
+    tone = np.sin(ph) * (0.75 + 0.25 * np.sin(2 * np.pi * 38 * t))
+    breath = bp(white(dur), 2500, 5000) * 0.25
+    x = (tone + breath) * env_adsr(dur, 0.015, 0.05, 0.9, 0.08)
+    return reverb(stereo(fade(x * level, 0.005, 0.05), 0.0, 0.1), 0.5, 0.2)
+
+
+def groan(dur: float = 1.4, level: float = 0.3, f0: float = 110.0) -> np.ndarray:
+    """Zombie moan: breathy low vowel gliding down, wobbling."""
+    t = t_axis(dur)
+    f = glide(f0 * 1.15, f0 * 0.8, dur) * (1 + 0.03 * np.sin(2 * np.pi * 5.5 * t))
+    ph = 2 * np.pi * np.cumsum(f) / SR
+    buzz = sum(np.sin(ph * h) / h for h in range(1, 9))
+    voice = bp(buzz, 250, 1400) + bp(pink(dur), 300, 1200) * 0.4
+    x = voice * env_adsr(dur, 0.18, 0.2, 0.8, 0.4)
+    return reverb(stereo(fade(norm(x) * level, 0.02, 0.2), 0.0, 0.3), 0.6, 0.25)
+
 def write_wav(path: str, x: np.ndarray):
     from scipy.io import wavfile
     wavfile.write(path, SR, (np.clip(x, -1, 1) * 32767).astype(np.int16))
 @@@@ END
-@@@@ FILE tools/stills.cjs | text | 1711 | cab9bbe9a3030cebd62e0b0d4790652e6b5f48443fc92270c4625f344fd2243b
-// Bundle once, render many stills (~1 s each instead of ~15 s per CLI call).
-// Usage: node tools/stills.cjs jobs.json   → out/lab/<out>.jpg
+@@@@ FILE tools/sheet.mjs | text | 3859 | de2f0af9eb8316680d6ce10c760f9732c8f8b20bb64909e171099fce0c9518b6
+// Cheap pre-check before review.mjs: one labelled still per chosen shot, tiled 4 across.
+//   node tools/sheet.mjs <slug>                 → auto-picks key shots (opening, each new set, the last shots)
+//   node tools/sheet.mjs <slug> c8,r6,12        → those shots (ids or indexes)
+//   options: --at 0.7 (fraction of the shot), --max 16 (auto mode)
+// Output: out/lab/<slug>_sheet.jpg (each tile 480 px wide, with the review banner showing the shot number).
+import fs from 'node:fs';
+import path from 'node:path';
+import { spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+
+const ROOT = fileURLToPath(new URL('..', import.meta.url));
+const args = process.argv.slice(2);
+const opt = (k, d) => (args.includes(k) ? args[args.indexOf(k) + 1] : d);
+const pos = args.filter((a, i) => !a.startsWith('--') && !['--at', '--max'].includes(args[i - 1]));
+const [slug, list] = pos;
+if (!slug) {
+  console.error('usage: node tools/sheet.mjs <slug> [id,id,...] [--at 0.7] [--max 16]');
+  process.exit(1);
+}
+const at = +opt('--at', 0.7), max = +opt('--max', 16);
+const D = path.join(ROOT, 'public', 'episodes', slug);
+const ep = JSON.parse(fs.readFileSync(path.join(D, 'episode.json'), 'utf8'));
+const tm = JSON.parse(fs.readFileSync(path.join(D, 'timing.json'), 'utf8'));
+const fps = tm.fps || 30;
+const ids = ep.shots.map(s => s.id);
+
+let pick;
+if (list) {
+  pick = list.split(',').map(s => s.trim()).filter(Boolean).map(tok => {
+    const i = /^\d+$/.test(tok) ? +tok : ids.indexOf(tok);
+    if (i < 0 || i >= ids.length) { console.error(`unknown shot "${tok}"`); process.exit(1); }
+    return i;
+  });
+} else {
+  // opening, the first shot of every new set, and the last two 3D shots (hook); thinned evenly to --max
+  const s3d = ep.shots.map((s, i) => i).filter(i => ep.shots[i].kind !== 'card');
+  const key = new Set([0]);
+  let prevSet = null;
+  for (const i of s3d) { if (ep.shots[i].set !== prevSet) key.add(i); prevSet = ep.shots[i].set; }
+  s3d.slice(-2).forEach(i => key.add(i));
+  pick = [...key].sort((a, b) => a - b);
+  if (pick.length > max) pick = Array.from({ length: max }, (_, k) => pick[Math.round(k * (pick.length - 1) / (max - 1))]);
+  pick = [...new Set(pick)];
+}
+
+const name = i => `sheet_${slug}_${String(i).padStart(3, '0')}`;
+const jobs = pick.map(i => {
+  const s = tm.shots[i];
+  const f0 = Math.round(s.start * fps), f1 = Math.round((s.start + s.dur) * fps) - 1;
+  return { out: `sheet/${name(i)}`, id: 'Episode', props: { slug, review: true }, frame: Math.min(f1, f0 + Math.round(s.dur * at * fps)) };
+});
+const LAB = path.join(ROOT, 'out', 'lab');
+fs.mkdirSync(path.join(LAB, 'sheet'), { recursive: true });
+const jobsFile = path.join(LAB, 'sheet', `${slug}_jobs.json`);
+fs.writeFileSync(jobsFile, JSON.stringify(jobs));
+console.log(`sheet: ${pick.length} shots → ${pick.map(i => ids[i] ?? i).join(', ')}`);
+const r = spawnSync('node', [path.join(ROOT, 'tools', 'stills.cjs'), jobsFile], { encoding: 'utf8', cwd: ROOT });
+const fails = (r.stdout || '').split('\n').filter(l => l.startsWith('FAIL'));
+if (fails.length) console.log(fails.join('\n'));
+
+const files = pick.map(i => path.join(LAB, 'sheet', name(i) + '.jpg')).filter(f => fs.existsSync(f));
+const cols = Math.min(4, files.length), rows = Math.ceil(files.length / cols);
+const all = [...files, ...Array(rows * cols - files.length).fill(files[files.length - 1])];
+const out = path.join(LAB, `${slug}_sheet.jpg`);
+spawnSync('ffmpeg', ['-v', 'error', '-y', ...all.flatMap(f => ['-i', f]), '-filter_complex',
+  `${all.map((_, j) => `[${j}]scale=480:270[v${j}]`).join(';')};${all.map((_, j) => `[v${j}]`).join('')}xstack=inputs=${all.length}:layout=${all.map((_, j) => `${(j % cols) * 480}_${Math.floor(j / cols) * 270}`).join('|')}`,
+  '-q:v', '3', out], { stdio: 'inherit' });
+console.log(`→ ${path.relative(ROOT, out).replace(/\\/g, '/')}`);
+@@@@ END
+@@@@ FILE tools/stills.cjs | text | 2649 | f893e5334652a1e0a1205d03ac7128da44b312fa98441c20aa42910f3efa0389
+// Bundle once, render many stills (~1 s each instead of ~15 s per CLI call), several at a time.
+// Usage: node tools/stills.cjs jobs.json [--parallel N]   → out/lab/<out>.jpg
 // jobs.json: [{ "out": "city_1", "id": "SetLab", "props": {...}, "frame": 0 }]  (id defaults to SetLab)
+// --parallel: stills rendered at once in one browser (default 4; 1 = the old one-by-one behaviour).
 const path = require('path');
 const fs = require('fs');
 const ROOT = path.resolve(__dirname, '..');
@@ -31996,23 +34245,40 @@ const { bundle } = req('@remotion/bundler');
 const { selectComposition, renderStill, openBrowser } = req('@remotion/renderer');
 
 (async () => {
-  const jobs = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
+  const args = process.argv.slice(2);
+  const parallel = Math.max(1, +(args.includes('--parallel') ? args[args.indexOf('--parallel') + 1] : 4) || 4);
+  const jobs = JSON.parse(fs.readFileSync(args[0], 'utf8'));
   const t0 = Date.now();
   const serveUrl = await bundle({ entryPoint: path.join(ROOT, 'src/index.ts'), publicDir: path.join(ROOT, 'public') });
   console.log('bundled in', ((Date.now() - t0) / 1000).toFixed(1), 's');
-  const browser = await openBrowser('chrome', { chromiumOptions: { gl: 'angle' } });
-  for (const j of jobs) {
-    const t1 = Date.now();
-    try {
-      const comp = await selectComposition({ serveUrl, id: j.id || 'SetLab', inputProps: j.props, puppeteerInstance: browser, chromiumOptions: { gl: 'angle' } });
-      const out = path.join(ROOT, 'out/lab', j.out + '.jpg');
-      await renderStill({ composition: comp, serveUrl, output: out, inputProps: j.props, frame: j.frame || 0, imageFormat: 'jpeg', jpegQuality: 88, puppeteerInstance: browser, chromiumOptions: { gl: 'angle' }, overwrite: true });
-      console.log('ok', j.out, ((Date.now() - t1) / 1000).toFixed(1), 's');
-    } catch (e) {
-      console.log('FAIL', j.out, String(e && e.message).slice(0, 600));
+  const chromiumOptions = { gl: 'angle' };
+  const browser = await openBrowser('chrome', { chromiumOptions });
+  // one composition lookup per (id, props): Episode's metadata step fetches and resolves the whole episode
+  const comps = new Map();
+  const compFor = j => {
+    const key = (j.id || 'SetLab') + JSON.stringify(j.props || {});
+    if (!comps.has(key)) comps.set(key, selectComposition({ serveUrl, id: j.id || 'SetLab', inputProps: j.props, puppeteerInstance: browser, chromiumOptions }));
+    return comps.get(key);
+  };
+  let next = 0, fails = 0;
+  const worker = async () => {
+    while (next < jobs.length) {
+      const j = jobs[next++];
+      const t1 = Date.now();
+      try {
+        const composition = await compFor(j);
+        const out = path.join(ROOT, 'out/lab', j.out + '.jpg');
+        await renderStill({ composition, serveUrl, output: out, inputProps: j.props, frame: j.frame || 0, imageFormat: 'jpeg', jpegQuality: 88, puppeteerInstance: browser, chromiumOptions, overwrite: true });
+        console.log('ok', j.out, ((Date.now() - t1) / 1000).toFixed(1), 's');
+      } catch (e) {
+        fails++;
+        console.log('FAIL', j.out, String(e && e.message).slice(0, 600));
+      }
     }
-  }
+  };
+  await Promise.all(Array.from({ length: Math.min(parallel, jobs.length) }, worker));
   await browser.close({ silent: true });
+  console.log(`${jobs.length - fails}/${jobs.length} stills in ${((Date.now() - t0) / 1000).toFixed(1)} s (parallel ${parallel})`);
 })();
 @@@@ END
 @@@@ FILE tools/thumb-prompt.mjs | text-crlf | 9895 | 25b937dca2ca096e8e67164e3b51ad1772e8ac0988e91ebcc8ef951a1624e167
