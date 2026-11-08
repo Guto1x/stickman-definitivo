@@ -151,7 +151,7 @@ All files live in `public/episodes/<slug>/`.
 8. **Build:** `node tools/build-episode.mjs <slug>` makes the soundtrack, renders and muxes. A full build refuses to start while the scene audit has errors.
    - The soundtrack has narration, music ducked under the voice, per-set ambience, automatic sound effects, and the scripted `sfx`.
    - Output is `final/<Episode title>.mp4` at −14 LUFS, plus `out/<slug>/sheet_N.png` (one frame per shot). All finished videos sit together in `final/`. A full build moves the previous cut to `final/archive/<slug>_<date>.mp4`. Thumbnails go in `final/thumbnails/`, and `final/README.md` lists every episode.
-   - It renders about 2.5× real time: roughly 25 min for a 10-min episode.
+   - Defaults: concurrency = CPU cores − 4 (8 here) and CRF 18. Both were measured: 21% faster than 4/14, the file is ~40% of the size, and there's no visible difference. Override with `--concurrency N` / `--crf N`. A 10-min episode took ~25 min at the old 4/14, so expect ~20 min now.
 9. **Check the build**, per the loop above:
    - Look at every sheet: framing, occluders, the empty side of sets, overlays. Check loudness and that every swap strip still reads.
    - Listen for a leaked audio tag: ElevenLabs occasionally speaks a `[tag]`'s text instead of performing it (STORY_BLUEPRINT.md §6.9). If you hear one, rewrite that tag and re-voice just that section.
