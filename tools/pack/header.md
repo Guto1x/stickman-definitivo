@@ -71,7 +71,7 @@ Ask all four in **one** AskUserQuestion call. If the tool isn't available, ask i
 2. Header "Language". Question: "What language should scripts, narration, overlays and thumbnails be written in?"
    - **English (Recommended)**: "The language the engine's docs and example scripts are written in."
    - **Portuguese (PT-BR)**: "Scripts, VO text, overlays and thumbnail text in Portuguese. Code, docs and comments stay in English."
-   - The automatic "Other" option lets the user name any other language; the story docs (`STORY_BLUEPRINT.md`, `IDEA_ENGINE.md`, `script_analysis.md`) get translated the same way.
+   - The automatic "Other" option lets the user name any other language; the story docs (`STORY_BLUEPRINT.md`, `COLA_ROTEIRO.md`, `IDEA_ENGINE.md`, `script_analysis.md`) get translated the same way.
 3. Header "Narrator". Question: "Which narrator voice should ElevenLabs use once it's connected?"
    - **Default for the chosen language (Recommended)**: "Claude picks a calm, warm narrator in that language from ElevenLabs' public voice library once connected, and confirms it with you by ear before locking it in."
    - **Audition first**: "When ElevenLabs is connected, Claude plays you free samples of 3–4 narrators in that language and you pick."

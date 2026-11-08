@@ -21,7 +21,7 @@ Make one complete narrated episode about this topic with the saved hero, then ge
 
 ## Run
 
-1. **Script** (`docs/story/STORY_BLUEPRINT.md`): beat sheet, script, plant ledger, fact check and score in `script_notes.md`.
+1. **Script** (`docs/story/COLA_ROTEIRO.md`; open `STORY_BLUEPRINT.md` only at the § it names): beat sheet, script, plant ledger, fact check and score in `script_notes.md`.
 2. **Shot list:** `episode.json`, then `node tools/episode.mjs draft <slug>`, `npm test`, `node tools/qa.cjs audit <slug>` and `node tools/episode.mjs check <slug>` (vo text: tags, SSML, raw numbers — CLAUDE.md Voice step 5.0). Fix every error, then self-certify STORY_BLUEPRINT.md §9's "Tags de áudio e fala" group by eye — `check` is mechanical and won't catch a misplaced or mismatched tag.
 3. **One checkpoint before spending credits.** Check the ElevenLabs credit balance (`GET /v1/user/subscription`; if the API key lacks `user_read`, ask the user to check elevenlabs.io/app/subscription or widen the key) and show the user, in one message:
    - the title and a short synopsis;

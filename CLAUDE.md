@@ -8,7 +8,7 @@ This project makes IFOLOGY-style 3D stickman videos: our gray-jacket hero in a l
 - Built with **Remotion 4 + Three.js** (`@remotion/three`, React Three Fiber). Everything is drawn, animated and changed in code.
 - Sound effects are synthesized in **Python** (`.venv`, numpy/scipy).
 - Voice uses the **ElevenLabs API**, called directly (no MCP) with a key in `.env` (`ELEVENLABS_API_KEY`, gitignored). Thumbnail image generation can still use the Fish Audio MCP in `fish` mode (see step 10) — that's a separate capability from voice and is unaffected by this.
-- Read `docs/STYLE.md` before any visual work and `docs/research/script_analysis.md` before writing a script.
+- Read `docs/STYLE.md` before any visual work and `docs/story/COLA_ROTEIRO.md` before writing a script. Don't read `docs/story/STORY_BLUEPRINT.md` (~50k tokens) or `docs/research/script_analysis.md` (~15k) whole: the cola condenses both and points to the § to open when you need detail or examples.
 
 ## `/stickman <topic>`: one command, whole episode
 
@@ -86,7 +86,7 @@ These are bugs we already hit. Don't reintroduce them.
 All files live in `public/episodes/<slug>/`.
 
 1. **Idea:** follow `docs/story/IDEA_ENGINE.md`. Generate candidates, check them with `python -I tools/ideas/novelty.py "<title>"`, score them, and pitch the top 3 to the user. Wait for their pick.
-2. **Script:** follow `docs/story/STORY_BLUEPRINT.md` (beat sheet, voice rules, checklist, scoring). Show the user the script, with its score, before spending voice credits. Once the shot list exists, `node tools/episode.mjs script <slug>` writes a readable `script.md` (speakers and timestamps). Keep the plant ledger, fact check and score in `script_notes.md`.
+2. **Script:** follow `docs/story/COLA_ROTEIRO.md` (beat sheet, voice rules, checklist, scoring, condensed from `STORY_BLUEPRINT.md`); open the blueprint only at the § the cola names. Show the user the script, with its score, before spending voice credits. Once the shot list exists, `node tools/episode.mjs script <slug>` writes a readable `script.md` (speakers and timestamps). Keep the plant ledger, fact check and score in `script_notes.md`.
 3. **Shot list:** write `episode.json` (schema in `src/types.ts`: `Episode`, `Shot3D`, `CardShot`). Rules:
    - one shot per 2.5–5 s of narration;
    - the `vo` text, read in order across shots, IS the script;
