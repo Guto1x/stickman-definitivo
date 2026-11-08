@@ -82,7 +82,7 @@ export type ActorInShot = {
   strafe?: boolean; // keep facing `rot` while moving along the path (rolling backwards, side-steps)
   look?: string | Vec3 | 'camera'; // head looks at actor id / point
   talk?: [number, number][]; // mouth flaps during these intervals
-  hold?: { L?: string; R?: string }; // props in hands
+  hold?: { L?: string; R?: string; scaleL?: number; scaleR?: number }; // props in hands; scaleX enlarges one about the palm (a prop the narration points at)
   scale?: number;
   ghost?: boolean; // translucent copy (afterimages, visions)
   glow?: string; // aura colour

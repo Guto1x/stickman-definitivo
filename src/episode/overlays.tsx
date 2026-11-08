@@ -13,7 +13,7 @@ import type { Overlay } from '../types';
 
 export type Projector = (actorId: string) => { x: number; y: number; visible: boolean; scale: number } | null;
 
-const fmt = (v: number, decimals = 0) => v.toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+const fmt = (v: number, decimals = 0) => v.toLocaleString('pt-BR', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
 
 export const OverlayLayer: React.FC<{ overlays: Overlay[]; t: number; dur: number; project: Projector }> = ({ overlays, t, dur, project }) => (
   <>

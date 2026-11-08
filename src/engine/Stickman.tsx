@@ -435,6 +435,7 @@ const StickmanBody: React.FC<{ s: ActorState; shadowBlob?: boolean; faceGlow?: s
     const up = side === 'L' ? b.upperArmL : b.upperArmR, fo = side === 'L' ? b.forearmL : b.forearmR, ha = side === 'L' ? b.handL : b.handR;
     const kind = side === 'L' ? s.pose.handL : s.pose.handR;
     const held = s.spec.hold?.[side];
+    const heldScale = s.spec.hold?.[side === 'L' ? 'scaleL' : 'scaleR'] ?? 1;
     return (
       <group key={side}>
         <Bone m={up}>
@@ -454,7 +455,7 @@ const StickmanBody: React.FC<{ s: ActorState; shadowBlob?: boolean; faceGlow?: s
         </Bone>
         <Bone m={ha}>
           <Mitten kind={held ? 'fist' : kind} ink={ink} side={side === 'L' ? 1 : -1} />
-          {held && !ghostMat && <HandProp type={held} />}
+          {held && !ghostMat && (heldScale === 1 ? <HandProp type={held} /> : <group scale={heldScale}><HandProp type={held} /></group>)}
         </Bone>
       </group>
     );

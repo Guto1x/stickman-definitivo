@@ -47,7 +47,7 @@ Preview interactively with `npm run studio`. Render a look-dev still with `npx r
   - **IK:** `reachR: { to: 'mouth' | 'face' | 'chin' | 'chest' | 'heart' | 'temple' | 'hip' | 'pocket' | [x, y, z] }` puts the wrist on a landmark. Root-local points ignore head tilt, so keep head nods small while reaching the face.
 - **Keyframes:** `poses: [{ t, pose, blend }]` and `faces: [{ t, face, blend }]`, in the same time base you pass to `evalActor`. Locomotion uses `path: [{ t, pos, gait }]`; gaits are walk, jog, run, sprint, `dash` (athletic sprint), sneak and float. For fake-speed shots, drive `gaitPose('dash', phase)` directly.
 - **Faces:** `FACES` in rig.ts (`happy`, `shocked`, `determined`, …), or `Face` objects with `eyes` (0–1.45), `pupils`, `look`, `brow` (−1 angry … 1 worried), `mouth` (−1 … 1), `open`, `width`, `tears`, `sweat`, `blush`. Blinks are automatic.
-- **Props in hand:** `hold: { R: 'pill' | 'phone' | 'cup' | 'book' | 'ball' | … }` (`src/sets/props.tsx`).
+- **Props in hand:** `hold: { R: 'pill' | 'phone' | 'cup' | 'book' | 'ball' | … }` (`src/sets/props.tsx`). `scaleR`/`scaleL` enlarges one about the palm (`hold: { R: 'flower', scaleR: 2 }`) when the narration points at it.
 - **Cameras** (`src/engine/cam.ts`):
   - `camAt(keys, T)` with eases `inOut`, `out`, `snap`, `linear`;
   - `shake(cam, T, amp, freq, seed)` combined with `impulse(T, t0, tau)` for hits;
@@ -79,6 +79,15 @@ These are bugs we already hit. Don't reintroduce them.
   - Or film through the gap between two bars (bars every 0.214 m), under the top rail.
 - **Hand props follow the wrist.** A tray or letter can end up edge-on, like a sign. Check them in a still, or swap to a clearer prop or pose.
 - **No more ASR alignment (obsolete bug class, kept for history).** Voice used to be transcribed with Whisper after the fact, which split compounds ("dodge balls") and mis-heard numbers, pushing words out of alignment. Since 2026-11-08, `align` reads ElevenLabs' own per-character timestamps for the exact text we sent — there's nothing to transcribe or fuzzy-match, so this bug class can't recur. If `align` ever prints a word-count mismatch, that means the model actually said something different from the script (mispronunciation), not an alignment bug — fix the script text, not the alignment code.
+- **Staging traps from `quem-tem-crush`** (each cost a reviewer round):
+  - **A partial pose resets the rest to standing.** On a seated actor, give the full seated pose, not just the changed arm.
+  - **`sitFloor` sinks the feet ~0.4 m.** For the floor or a kerb, use `sit` on a `crate` (h 0.45) or `kneel`.
+  - **A `smoke` prop near the lens reads as a rock.** Keep it far from the sight line; use small puffs (`size` ~0.25, `n` 60, `wind`).
+  - **Additive glow vanishes in daylight, whatever its colour.** Use a solid `glow` or the `crush` badge.
+  - **A flow needs the same props and actors in both shots.** Otherwise they vanish mid-move.
+  - **`insert` on a hand fails the audit.** Use `close` with `focus: 'handR'` and a short `dist`.
+  - **Two far-apart actors in one automatic framing give an empty frame.** Split the shot, or use an explicit camera.
+  - **A speaker must face the camera.** `over: '<listener>'` fixes most dialogue shots.
 - **Gray belongs to the hero.** Keep gray tops off cast, extras, crowds and team colours, including set palettes (`stadium.tsx`, the `kit.tsx` crowd, classroom shirts).
 
 ## Making a narrated episode (the long-form pipeline)

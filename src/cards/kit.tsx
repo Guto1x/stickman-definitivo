@@ -83,7 +83,7 @@ export const decimalsOf = (v: unknown): number => {
   return i < 0 ? 0 : s.length - i - 1;
 };
 export const fmtNum = (v: number, decimals = 0) =>
-  v.toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+  v.toLocaleString('pt-BR', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
 /** Count-up value text: eases from `from` to `to` over [start, start+dur]. */
 export const countText = (t: number, from: number, to: number, start: number, dur: number, decimals = 0) => {
   const k = seg(t, start, start + dur);
