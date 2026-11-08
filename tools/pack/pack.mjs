@@ -62,6 +62,8 @@ const EXTRA = [
   ['@memory/project-fish-pending.md', path.join(HERE, 'fresh', 'project-fish-pending.md')],
   // the /stickman command; .claude/ itself is skipped, so the local copy (which adds a demo shortcut) never ships
   ['.claude/commands/stickman.md', path.join(HERE, 'fresh', 'stickman.md')],
+  // the round-2+ review subagent, pinned to a smaller model (CLAUDE.md step 7.4)
+  ['.claude/agents/revisor-verificacao.md', path.join(ROOT, '.claude', 'agents', 'revisor-verificacao.md')],
 ];
 const MEMORY_LINES = [
   '- [ElevenLabs pending](project-elevenlabs-pending.md) — no working ELEVENLABS_API_KEY at setup; run docs/ELEVENLABS_SETUP.md once one is added to .env\n',
@@ -138,7 +140,7 @@ const WHAT = {
   'public/': `the \`${FIXTURE_EPISODE}\` fixture episode (JSON only), empty \`music/\` and \`sfx/\``,
   'thumbnails/': 'config, the prompt template, the 3 reference images, an example brief',
   'final/': 'its README (finished videos land here)',
-  '.claude/': 'the `/stickman <topic>` command',
+  '.claude/': 'the `/stickman <topic>` command and the `revisor-verificacao` subagent (sonnet)',
   '@memory/': "Claude's memory for this project (extracted into the new project's memory folder)",
 };
 const contents = ['| Path | Files | Size | What |', '|---|---|---|---|',
