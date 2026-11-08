@@ -3,7 +3,8 @@
 import * as THREE from 'three';
 import { at, type ActorState } from '../engine/actor';
 import { project, type CamState } from '../engine/cam';
-import type { CastMember, Episode, Shot3D, Timing } from '../types';
+import { POSES } from '../engine/rig';
+import type { CastMember, Episode, Pose, Shot3D, Timing } from '../types';
 import { castOf } from './resolve';
 import { evalShot, flowInfo, framingDelta, type ShotCtx } from './scene';
 
@@ -119,7 +120,26 @@ export function auditEpisode(ep: Episode, timing: Timing): AuditReport {
           const dr = Math.abs(((s.rot - p.rot + 540) % 360) - 180);
           if (dr > 35) add({ sev: 'warn', shot: i, id: sid, t: 0, check: 'continuity', msg: `${s.spec.id} turns ${dr.toFixed(0)}° across the continuous move (it will blend, but check it reads naturally)` });
         }
+        // a flow blends one camera move across both shots: anything present in only one of them pops in or out mid-move
+        const ids = (st: ActorState[]) => new Set(st.filter(s => !s.spec.ghost).map(s => s.spec.id));
+        const ia = ids(a.states), ib = ids(b.states);
+        const gone = [...ia].filter(x => !ib.has(x)), added = [...ib].filter(x => !ia.has(x));
+        if (gone.length || added.length) add({ sev: 'warn', shot: i, id: sid, t: 0, check: 'continuity', msg: `flow from shot ${i - 1}, but the cast changes (${[...gone.map(x => `-${x}`), ...added.map(x => `+${x}`)].join(', ')}): they pop in/out during the continuous move — keep the same actors in both shots, or make it a real cut (new angle)` });
+        const propKeys = (sh: Shot3D) => (sh.props || []).map(p => `${p.type}@${JSON.stringify(p.pos)}`);
+        const pa = propKeys(prev.shot), pb = propKeys(s3);
+        const pGone = pa.filter(x => !pb.includes(x)), pAdded = pb.filter(x => !pa.includes(x));
+        if (pGone.length || pAdded.length) add({ sev: 'warn', shot: i, id: sid, t: 0, check: 'continuity', msg: `flow from shot ${i - 1}, but the props differ (${[...pGone.map(x => `-${x.split('@')[0]}`), ...pAdded.map(x => `+${x.split('@')[0]}`)].join(', ')}): they pop in/out during the continuous move — copy the same props into both shots` });
       }
+    }
+
+    // --- a partial inline pose after a seated/kneeling one: its missing fields fall back to standing -----
+    for (const a of s3.actors || []) {
+      const seq = [a.pose, ...(a.poses || []).map(k => k.pose)];
+      const low = (p: unknown) => ((typeof p === 'string' ? POSES[p] : (p as Pose | undefined))?.hipY ?? 0) < -0.3;
+      const partial = (p: unknown) => !!p && typeof p === 'object' && (p as Pose).hipY === undefined && !(p as Pose).legL && !(p as Pose).legR;
+      const firstLow = seq.findIndex(low);
+      if (firstLow >= 0 && seq.slice(firstLow + 1).some(partial))
+        add({ sev: 'warn', shot: i, id: sid, check: 'pose', msg: `${a.id} sits/kneels, then gets a partial inline pose (no hipY/legs): the missing fields reset to standing, so they stand up — give the full seated pose plus the change` });
     }
 
     // --- effects should be tied to the narration, or a re-voice silently de-syncs them ---------

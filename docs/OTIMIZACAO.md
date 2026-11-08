@@ -70,7 +70,7 @@ Máquina: 12 núcleos de CPU, NVIDIA RTX 3060. Ferramentas fora do PATH do termi
   - **Números em cards formatam em inglês** até a tarefa 3.2.
 - [x] **3.2 Números em PT-BR.** *Feito:* conferido no still: `stat` 0,1 → "0,1"; `compare` 5000 → "5.000", selo "1.000×". Episódios antigos re-renderizados também mudam. `src/cards/kit.tsx:86` e `src/episode/overlays.tsx:16` usam `toLocaleString('en-US')`. Trocar para `'pt-BR'` (todo o conteúdo do canal é PT-BR desde 2026-11-08). *Verificar:* `npx remotion still CardLab` de um `stat` com 0,1 e de um `compare` com 5000 mostra "0,1" e "5.000". Avisar o usuário: muda também os episódios antigos se forem re-renderizados.
 - [x] **3.3 Tamanho de objeto na mão.** *Feito:* `hold: { R: 'flower', scaleR: 2 }` (também `scaleL`), escala pela palma. Conferido num still lado a lado (normal × 2). `HandProp` (`src/sets/props.tsx:12`, usado em `src/engine/Stickman.tsx:457`) só recebe `type`. Aceitar `hold: { R: 'flower', scaleR: 2 }` ou `holdScale`, para objetos que a narração destaca. *Verificar:* still do Caio com a flor em `scale` 2.
-- [ ] **3.4 Avisos novos no audit** (opcional, `src/episode/audit.ts`):
+- [x] **3.4 Avisos novos no audit** (opcional, `src/episode/audit.ts`). *Feito:* `pose` (pose parcial depois de sentar ou ajoelhar) e dois de `continuity` no flow (elenco diferente; props diferentes). Testados num episódio sintético: os três disparam. No `quem-tem-crush` não acusam nada novo (7 avisos antes e depois).
   - **Pose parcial num ator sentado:** avisar quando ela faria o ator levantar.
   - **Props diferentes num flow:** avisar quando os props mudam entre dois planos unidos por flow.
 
