@@ -1,0 +1,49 @@
+{
+  "topic": "What If You Could Swap Places With Anyone?",
+  "context": "A 9-minute 'What If' cartoon episode. The power: look at anyone you can see, blink twice, and you instantly trade places with them (same bodies, just swapped positions). The spot you leave is never empty: somebody always lands exactly where you were. It starts as fun (cutting to the front of the school pizza line, never being late, first in line for a new phone) and builds to a rescue: a kid trapped on a burning fourth-floor apartment balcony at night, where every swap puts somebody else in danger. The swap is shown as a quick double blink with glowing violet-cyan afterimage silhouettes left in both spots.",
+  "variants": [
+    {
+      "id": "A",
+      "text": [
+        {
+          "text": "MINE",
+          "color": "white"
+        },
+        {
+          "text": "NOW.",
+          "color": "yellow"
+        }
+      ],
+      "scene": "School cafeteria at dusk, warm golden ceiling lights against purple shadows. The gray-jacket mascot stands at the very FRONT of a long lunch line, big in the right half of the frame, smugly holding up the last slice of pizza (cheese stretching) with a confident half-lidded smirk toward the viewer. A glowing violet-cyan afterimage silhouette of him lingers at the far back of the line, where a confused empty-handed kid (round black head like the mascot, green hoodie, wide shocked eyes, a small question mark floating above his head) now stands, mid-swap. The line of other round-black-head kids in different coloured hoodies recedes in dramatic perspective. Text block bottom-left: MINE (white) over NOW. (yellow, larger)."
+    },
+    {
+      "id": "B",
+      "text": [
+        {
+          "text": "SWAPPED.",
+          "color": "yellow"
+        }
+      ],
+      "scene": "Same framing language as reference 1: an extreme close-up of the gray-jacket mascot's head and shoulders filling the right two-thirds of the frame, smug half-lidded eyes and a sly smirk. One black hand reaches toward the viewer, fingertip pressing a glowing glass circular button that shows a white two-arrow swap icon (two curved arrows chasing each other). Faint violet-cyan ghost outline of his head offset to one side, as if he just traded places. Night city with warm windows softly blurred behind. Text bottom-left: one giant yellow word SWAPPED."
+    },
+    {
+      "id": "C",
+      "text": [
+        {
+          "text": "BLINK.",
+          "color": "white"
+        },
+        {
+          "text": "BLINK.",
+          "color": "yellow"
+        }
+      ],
+      "scene": "Night, Maple Street apartment building: a fourth-floor balcony with orange flames and billowing toon smoke pouring out of the doorway behind it. The gray-jacket mascot crouches low on the balcony in the right half of the frame, lit warm orange by the fire on one side and violet by the night on the other, eyes wide and determined, mid double-blink. Just below, a fire-truck ladder basket rises with a helmeted firefighter in it, and a glowing violet-cyan afterimage silhouette of the mascot hangs in the basket, showing the swap about to happen. Embers drift through the purple night sky. Text block upper-left: BLINK. (white) over BLINK. (yellow, larger)."
+    }
+  ],
+  "chosen": {
+    "id": "B",
+    "file": "thumbnails/swap-pilot/out/B_2k_medium.png",
+    "at": "2026-10-28"
+  }
+}

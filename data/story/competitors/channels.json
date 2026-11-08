@@ -1,0 +1,191 @@
+{
+ "note": "Channels whose titles novelty.py compares against. Refresh with: python -I tools/ideas/novelty.py refresh. Add one with --add <handle>. Find new ones with: novelty.py search \"what if you could\".",
+ "channels": [
+  {
+   "handle": "ApexEra-g8u",
+   "note": "The Spiral Card (Clone Yourself).",
+   "videos": 9,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "dayonefilmsofficial",
+   "note": "Motivational lane (not What-If).",
+   "videos": 15,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "FunNotSoFun",
+   "note": "What-if (Nothing Could Hurt You 160K).",
+   "videos": 7,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "Hypothetically2026",
+   "note": "What-if copycat.",
+   "videos": 6,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "IfCatch",
+   "note": "What-if copycat (10x Luck, Hear 10x Better).",
+   "videos": 5,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "Ifcinema-1",
+   "note": "What-if copycat (Healed 10x Faster).",
+   "videos": 15,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "ifictional-m9c",
+   "note": "What-if copycat.",
+   "videos": 9,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "IFinity_What",
+   "note": "What-if copycat (Turn Invisible at Will 454K).",
+   "videos": 11,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "IFOLOGYFILMS",
+   "note": "Reference channel. 3D stickman, 2nd person, shared universe (Project IF).",
+   "videos": 26,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "IFshiftTales",
+   "note": "What-if copycat (Emotion 10x).",
+   "videos": 7,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "IfverseTales",
+   "note": "Format leader. Clipped cinematic voice, 3-part arcs, number titles.",
+   "videos": 12,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "InfiniteIfss",
+   "note": "What-if copycat (body swap).",
+   "videos": 10,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "JeremyBearimyTheory",
+   "note": "What-if (See 10 Seconds Into the Future 298K).",
+   "videos": 19,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "lastlifeofficial1",
+   "note": "'Iflogy' name-alike copycat.",
+   "videos": 11,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "lastsoulorigin",
+   "note": "Motivational lane (not What-If).",
+   "videos": 5,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "LooseInk-n9s",
+   "note": "Price of If (Control Fire, Teleport).",
+   "videos": 12,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "LowPoly-Whatifs",
+   "note": "What-if copycat.",
+   "videos": 2,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "ManifestingWhatIF",
+   "note": "What-if stickman copycat (IQ 10x Higher 866K).",
+   "videos": 6,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "maybeverse68",
+   "note": "What-if copycat.",
+   "videos": 9,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "MonkModeFilms",
+   "note": "Motivational lane (not What-If); kept for completeness.",
+   "videos": 14,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "NewmorrowTV",
+   "note": "What-if copycat.",
+   "videos": 3,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "onetweak",
+   "note": "What-if copycat (10x Heavier).",
+   "videos": 8,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "Papi_Bobo",
+   "note": "What-if copycat.",
+   "videos": 19,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "possibly06",
+   "note": "What-if copycat.",
+   "videos": 3,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "sporefacts",
+   "note": "What-if shorts.",
+   "videos": 4,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "watIFAnimations",
+   "note": "What-if copycat.",
+   "videos": 5,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "whatdaily0",
+   "note": "What-if copycat.",
+   "videos": 6,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "whatifhour",
+   "note": "What-if copycat.",
+   "videos": 2,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "WhatIfLabTales",
+   "note": "What-if copycat.",
+   "videos": 8,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "whatifscienceshow",
+   "note": "Large legacy science what-if channel (non-stickman); broad premise coverage.",
+   "videos": 958,
+   "refreshed": "2026-10-26"
+  },
+  {
+   "handle": "YourWishwTheCatch",
+   "note": "THE CATCH (wish + catch format).",
+   "videos": 11,
+   "refreshed": "2026-10-26"
+  }
+ ]
+}

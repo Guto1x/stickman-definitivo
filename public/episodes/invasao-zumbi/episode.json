@@ -1,0 +1,10569 @@
+{
+ "slug": "invasao-zumbi",
+ "title": "E Se Você Salvasse Sua Escola de Uma Invasão Zumbi?",
+ "voice": {
+  "id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4"
+ },
+ "voices": {
+  "adulto": "u4sbCzXyUVxIAihOtCss",
+  "adulta": "dxIMMSJYSsbUSMhioLNb"
+ },
+ "cast": {
+  "bestie": {
+   "name": "Davi"
+  },
+  "sister": {
+   "name": "Nina"
+  },
+  "rafa": {
+   "name": "Rafa",
+   "top": "jacket",
+   "topColor": "#6b4a35",
+   "accent": "#1b1b20",
+   "bottom": "pants",
+   "bottomColor": "#1b1b20",
+   "shoes": "#e8e4da",
+   "hair": "spiky"
+  },
+  "helena": {
+   "name": "Professora Helena",
+   "top": "coat",
+   "topColor": "#f3f1ea",
+   "accent": "#d9e6f2",
+   "bottom": "pants",
+   "bottomColor": "#3a4256",
+   "shoes": "#2b2622",
+   "glasses": true,
+   "glassesColor": "#7fc3f0",
+   "hair": "curly"
+  },
+  "jorge": {
+   "name": "Seu Jorge",
+   "top": "jacket",
+   "topColor": "#2b3a5c",
+   "accent": "#ffffff",
+   "bottom": "pants",
+   "bottomColor": "#1f2433",
+   "shoes": "#ffffff",
+   "hat": "cap",
+   "hatColor": "#1f2433"
+  },
+  "celia": {
+   "name": "Dona Célia",
+   "top": "suit",
+   "topColor": "#6b5a48",
+   "accent": "#a3242c",
+   "bottom": "skirt",
+   "bottomColor": "#3a3430",
+   "shoes": "#2b2622",
+   "glasses": true,
+   "glassesColor": "#9fd3f2",
+   "hair": "bun"
+  },
+  "kid": {
+   "name": "Menino do primeiro ano"
+  },
+  "mom": {
+   "name": "Mãe"
+  },
+  "estranho": {
+   "name": "Homem da capa amarela",
+   "top": "coat",
+   "topColor": "#f2c53c",
+   "accent": "#fff3d6",
+   "bottom": "pants",
+   "bottomColor": "#1d2333",
+   "shoes": "#2b2622"
+  },
+  "zA": {
+   "top": "hoodie",
+   "topColor": "#3d6fb6",
+   "accent": "#f4ead6",
+   "bottom": "pants",
+   "bottomColor": "#2c3e63",
+   "shoes": "#ffffff"
+  },
+  "zB": {
+   "top": "jacket",
+   "topColor": "#e2b23f",
+   "accent": "#f4ead6",
+   "bottom": "pants",
+   "bottomColor": "#2c3e63",
+   "shoes": "#ffffff",
+   "hair": "bun"
+  },
+  "zC": {
+   "top": "tee",
+   "topColor": "#d77fc0",
+   "accent": "#f4ead6",
+   "bottom": "pants",
+   "bottomColor": "#2c3e63",
+   "shoes": "#ffffff",
+   "hair": "ponytail"
+  },
+  "zD": {
+   "top": "tee",
+   "topColor": "#2fa6a0",
+   "accent": "#f4ead6",
+   "bottom": "pants",
+   "bottomColor": "#2c3e63",
+   "shoes": "#ffffff",
+   "hair": "curly"
+  },
+  "zE": {
+   "top": "hoodie",
+   "topColor": "#e8735a",
+   "accent": "#f4ead6",
+   "bottom": "pants",
+   "bottomColor": "#2c3e63",
+   "shoes": "#ffffff"
+  },
+  "zF": {
+   "top": "jacket",
+   "topColor": "#7a5cc8",
+   "accent": "#f4ead6",
+   "bottom": "pants",
+   "bottomColor": "#2c3e63",
+   "shoes": "#ffffff",
+   "hair": "spiky"
+  },
+  "rafa2": {
+   "top": "tee",
+   "topColor": "#c8402f",
+   "accent": "#f4ead6",
+   "bottom": "pants",
+   "bottomColor": "#2c3e63",
+   "shoes": "#ffffff",
+   "hair": "bob"
+  },
+  "x01": {
+   "top": "jacket",
+   "topColor": "#e2b23f",
+   "bottom": "pants",
+   "bottomColor": "#3a3430",
+   "shoes": "#ffffff",
+   "hair": "ponytail"
+  },
+  "x02": {
+   "top": "tee",
+   "topColor": "#d77fc0",
+   "bottom": "pants",
+   "bottomColor": "#1d2333",
+   "shoes": "#ffffff"
+  },
+  "x03": {
+   "top": "hoodie",
+   "topColor": "#2fa6a0",
+   "bottom": "pants",
+   "bottomColor": "#2c3e63",
+   "shoes": "#ffffff",
+   "hair": "spiky"
+  },
+  "x04": {
+   "top": "jacket",
+   "topColor": "#e8735a",
+   "bottom": "pants",
+   "bottomColor": "#3a3430",
+   "shoes": "#ffffff"
+  },
+  "x05": {
+   "top": "tee",
+   "topColor": "#7a5cc8",
+   "bottom": "pants",
+   "bottomColor": "#1d2333",
+   "shoes": "#ffffff",
+   "hair": "bun"
+  },
+  "x06": {
+   "top": "hoodie",
+   "topColor": "#c8402f",
+   "bottom": "pants",
+   "bottomColor": "#2c3e63",
+   "shoes": "#ffffff"
+  },
+  "x07": {
+   "top": "jacket",
+   "topColor": "#6b4a35",
+   "bottom": "pants",
+   "bottomColor": "#3a3430",
+   "shoes": "#ffffff",
+   "hair": "curly"
+  },
+  "x08": {
+   "top": "tee",
+   "topColor": "#4a9fd8",
+   "bottom": "pants",
+   "bottomColor": "#1d2333",
+   "shoes": "#ffffff"
+  },
+  "x09": {
+   "top": "hoodie",
+   "topColor": "#d9a441",
+   "bottom": "pants",
+   "bottomColor": "#2c3e63",
+   "shoes": "#ffffff",
+   "hair": "bob"
+  },
+  "x10": {
+   "top": "jacket",
+   "topColor": "#3d6fb6",
+   "bottom": "pants",
+   "bottomColor": "#3a3430",
+   "shoes": "#ffffff"
+  },
+  "x11": {
+   "top": "tee",
+   "topColor": "#e2b23f",
+   "bottom": "pants",
+   "bottomColor": "#1d2333",
+   "shoes": "#ffffff",
+   "hair": "ponytail"
+  },
+  "x12": {
+   "top": "hoodie",
+   "topColor": "#d77fc0",
+   "bottom": "pants",
+   "bottomColor": "#2c3e63",
+   "shoes": "#ffffff"
+  },
+  "x13": {
+   "top": "jacket",
+   "topColor": "#2fa6a0",
+   "bottom": "pants",
+   "bottomColor": "#3a3430",
+   "shoes": "#ffffff",
+   "hair": "spiky"
+  },
+  "x14": {
+   "top": "tee",
+   "topColor": "#e8735a",
+   "bottom": "pants",
+   "bottomColor": "#1d2333",
+   "shoes": "#ffffff"
+  },
+  "x15": {
+   "top": "hoodie",
+   "topColor": "#7a5cc8",
+   "bottom": "pants",
+   "bottomColor": "#2c3e63",
+   "shoes": "#ffffff",
+   "hair": "bun"
+  },
+  "x16": {
+   "top": "jacket",
+   "topColor": "#c8402f",
+   "bottom": "pants",
+   "bottomColor": "#3a3430",
+   "shoes": "#ffffff"
+  },
+  "x17": {
+   "top": "tee",
+   "topColor": "#6b4a35",
+   "bottom": "pants",
+   "bottomColor": "#1d2333",
+   "shoes": "#ffffff",
+   "hair": "curly"
+  },
+  "x18": {
+   "top": "hoodie",
+   "topColor": "#4a9fd8",
+   "bottom": "pants",
+   "bottomColor": "#2c3e63",
+   "shoes": "#ffffff"
+  },
+  "x19": {
+   "top": "jacket",
+   "topColor": "#d9a441",
+   "bottom": "pants",
+   "bottomColor": "#3a3430",
+   "shoes": "#ffffff",
+   "hair": "bob"
+  },
+  "x20": {
+   "top": "tee",
+   "topColor": "#3d6fb6",
+   "bottom": "pants",
+   "bottomColor": "#1d2333",
+   "shoes": "#ffffff"
+  },
+  "x21": {
+   "top": "hoodie",
+   "topColor": "#e2b23f",
+   "bottom": "pants",
+   "bottomColor": "#2c3e63",
+   "shoes": "#ffffff",
+   "hair": "ponytail"
+  },
+  "x22": {
+   "top": "jacket",
+   "topColor": "#d77fc0",
+   "bottom": "pants",
+   "bottomColor": "#3a3430",
+   "shoes": "#ffffff"
+  },
+  "x23": {
+   "top": "tee",
+   "topColor": "#2fa6a0",
+   "bottom": "pants",
+   "bottomColor": "#1d2333",
+   "shoes": "#ffffff",
+   "hair": "spiky"
+  },
+  "x24": {
+   "top": "hoodie",
+   "topColor": "#e8735a",
+   "bottom": "pants",
+   "bottomColor": "#2c3e63",
+   "shoes": "#ffffff"
+  },
+  "x25": {
+   "top": "jacket",
+   "topColor": "#7a5cc8",
+   "bottom": "pants",
+   "bottomColor": "#3a3430",
+   "shoes": "#ffffff",
+   "hair": "bun"
+  },
+  "x26": {
+   "top": "tee",
+   "topColor": "#c8402f",
+   "bottom": "pants",
+   "bottomColor": "#1d2333",
+   "shoes": "#ffffff"
+  },
+  "x27": {
+   "top": "hoodie",
+   "topColor": "#6b4a35",
+   "bottom": "pants",
+   "bottomColor": "#2c3e63",
+   "shoes": "#ffffff",
+   "hair": "curly"
+  },
+  "x28": {
+   "top": "jacket",
+   "topColor": "#4a9fd8",
+   "bottom": "pants",
+   "bottomColor": "#3a3430",
+   "shoes": "#ffffff"
+  },
+  "x29": {
+   "top": "tee",
+   "topColor": "#d9a441",
+   "bottom": "pants",
+   "bottomColor": "#1d2333",
+   "shoes": "#ffffff",
+   "hair": "bob"
+  },
+  "x30": {
+   "top": "hoodie",
+   "topColor": "#3d6fb6",
+   "bottom": "pants",
+   "bottomColor": "#2c3e63",
+   "shoes": "#ffffff"
+  },
+  "x31": {
+   "top": "jacket",
+   "topColor": "#e2b23f",
+   "bottom": "pants",
+   "bottomColor": "#3a3430",
+   "shoes": "#ffffff",
+   "hair": "ponytail"
+  },
+  "x32": {
+   "top": "tee",
+   "topColor": "#d77fc0",
+   "bottom": "pants",
+   "bottomColor": "#1d2333",
+   "shoes": "#ffffff"
+  },
+  "x33": {
+   "top": "hoodie",
+   "topColor": "#2fa6a0",
+   "bottom": "pants",
+   "bottomColor": "#2c3e63",
+   "shoes": "#ffffff",
+   "hair": "spiky"
+  },
+  "x34": {
+   "top": "jacket",
+   "topColor": "#e8735a",
+   "bottom": "pants",
+   "bottomColor": "#3a3430",
+   "shoes": "#ffffff"
+  },
+  "x35": {
+   "top": "tee",
+   "topColor": "#7a5cc8",
+   "bottom": "pants",
+   "bottomColor": "#1d2333",
+   "shoes": "#ffffff",
+   "hair": "bun"
+  },
+  "x36": {
+   "top": "hoodie",
+   "topColor": "#c8402f",
+   "bottom": "pants",
+   "bottomColor": "#2c3e63",
+   "shoes": "#ffffff"
+  },
+  "x37": {
+   "top": "jacket",
+   "topColor": "#6b4a35",
+   "bottom": "pants",
+   "bottomColor": "#3a3430",
+   "shoes": "#ffffff",
+   "hair": "curly"
+  },
+  "x38": {
+   "top": "tee",
+   "topColor": "#4a9fd8",
+   "bottom": "pants",
+   "bottomColor": "#1d2333",
+   "shoes": "#ffffff"
+  },
+  "x39": {
+   "top": "hoodie",
+   "topColor": "#d9a441",
+   "bottom": "pants",
+   "bottomColor": "#2c3e63",
+   "shoes": "#ffffff",
+   "hair": "bob"
+  },
+  "x40": {
+   "top": "jacket",
+   "topColor": "#3d6fb6",
+   "bottom": "pants",
+   "bottomColor": "#3a3430",
+   "shoes": "#ffffff"
+  },
+  "w1": {
+   "top": "tee",
+   "topColor": "#3d6fb6",
+   "bottom": "pants",
+   "bottomColor": "#2c3e63",
+   "shoes": "#ffffff"
+  },
+  "w2": {
+   "top": "tee",
+   "topColor": "#e2b23f",
+   "bottom": "pants",
+   "bottomColor": "#2c3e63",
+   "shoes": "#ffffff"
+  },
+  "w3": {
+   "top": "tee",
+   "topColor": "#d77fc0",
+   "bottom": "pants",
+   "bottomColor": "#2c3e63",
+   "shoes": "#ffffff"
+  },
+  "w4": {
+   "top": "tee",
+   "topColor": "#2fa6a0",
+   "bottom": "pants",
+   "bottomColor": "#2c3e63",
+   "shoes": "#ffffff"
+  }
+ },
+ "music": [
+  {
+   "shot": 0,
+   "mood": "curious"
+  },
+  {
+   "shot": 9,
+   "mood": "tension"
+  },
+  {
+   "shot": 13,
+   "mood": "curious"
+  },
+  {
+   "shot": 44,
+   "mood": "curious"
+  },
+  {
+   "shot": 67,
+   "mood": "tension"
+  },
+  {
+   "shot": 76,
+   "mood": "wonder"
+  },
+  {
+   "shot": 90,
+   "mood": "tension"
+  },
+  {
+   "shot": 101,
+   "mood": "action"
+  },
+  {
+   "shot": 112,
+   "mood": "wonder"
+  },
+  {
+   "shot": 117,
+   "mood": "curious"
+  },
+  {
+   "shot": 123,
+   "mood": "tension"
+  },
+  {
+   "shot": 134,
+   "mood": "none"
+  },
+  {
+   "shot": 135,
+   "mood": "curious"
+  }
+ ],
+ "shots": [
+  {
+   "id": "c1",
+   "set": "classroom",
+   "vo": "Seu celular toca. No meio da prova.",
+   "camera": {
+    "pos": [
+     0.75,
+     1.1,
+     2.35
+    ],
+    "look": [
+     1.38,
+     0.8,
+     1.75
+    ],
+    "fov": 30,
+    "move": "pushIn"
+   },
+   "props": [
+    {
+     "type": "phone",
+     "pos": [
+      1.38,
+      0.79,
+      1.75
+     ],
+     "rot": [
+      -1.57,
+      0,
+      0.3
+     ],
+     "path": [
+      {
+       "t": 0.1,
+       "pos": [
+        1.372,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 0.17,
+       "pos": [
+        1.388,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 0.24,
+       "pos": [
+        1.372,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 0.31,
+       "pos": [
+        1.388,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 0.38,
+       "pos": [
+        1.372,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 0.45,
+       "pos": [
+        1.388,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 0.52,
+       "pos": [
+        1.372,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 0.59,
+       "pos": [
+        1.388,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 0.66,
+       "pos": [
+        1.372,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 0.73,
+       "pos": [
+        1.388,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 0.8,
+       "pos": [
+        1.372,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 0.87,
+       "pos": [
+        1.388,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 0.94,
+       "pos": [
+        1.372,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 1.01,
+       "pos": [
+        1.388,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 1.08,
+       "pos": [
+        1.372,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 1.15,
+       "pos": [
+        1.388,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 1.22,
+       "pos": [
+        1.372,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 1.29,
+       "pos": [
+        1.388,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 1.36,
+       "pos": [
+        1.372,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 1.43,
+       "pos": [
+        1.388,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 1.5,
+       "pos": [
+        1.372,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 1.57,
+       "pos": [
+        1.388,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 1.64,
+       "pos": [
+        1.372,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 1.71,
+       "pos": [
+        1.388,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 1.78,
+       "pos": [
+        1.372,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 1.85,
+       "pos": [
+        1.388,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 1.92,
+       "pos": [
+        1.372,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 1.99,
+       "pos": [
+        1.388,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 2.06,
+       "pos": [
+        1.372,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": 2.13,
+       "pos": [
+        1.388,
+        0.79,
+        1.75
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "ring",
+     "dur": 2.2
+    }
+   ]
+  },
+  {
+   "id": "c2",
+   "set": "classroom",
+   "vo": "A turma inteira vira pra você. Menos o Rafa.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "seat2",
+     "rot": -90,
+     "pose": "sit",
+     "face": "embarrassed"
+    },
+    {
+     "id": "rafa",
+     "pos": "seat3",
+     "rot": -90,
+     "pose": "sit",
+     "face": "sleepy"
+    }
+   ],
+   "camera": {
+    "pos": [
+     -1.7,
+     1.5,
+     3.0
+    ],
+    "look": [
+     1.2,
+     0.85,
+     1.0
+    ],
+    "fov": 44,
+    "move": "drift"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "ring",
+     "dur": 1.6
+    }
+   ]
+  },
+  {
+   "id": "c3",
+   "set": "classroom",
+   "vo": "O Rafa levanta. Devagar. Braços pra frente. Olhos quase fechados.",
+   "actors": [
+    {
+     "id": "rafa",
+     "pos": "seat3",
+     "rot": -90,
+     "pose": "sit",
+     "face": "sleepy",
+     "poses": [
+      {
+       "t": "@levanta",
+       "pose": "stand",
+       "blend": 0.9
+      },
+      {
+       "t": "@braços",
+       "pose": {
+        "hipY": -0.01,
+        "spine": [
+         10,
+         0,
+         0
+        ],
+        "head": [
+         14,
+         0,
+         16
+        ],
+        "armL": [
+         88,
+         0,
+         0,
+         6
+        ],
+        "armR": [
+         86,
+         0,
+         0,
+         8
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.6
+      }
+     ],
+     "faces": [
+      {
+       "t": "@olhos",
+       "face": "zombie",
+       "blend": 0.4
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "rafa",
+    "angle": 15,
+    "move": "pushIn"
+   },
+   "sfx": [
+    {
+     "t": "@devagar",
+     "name": "groan"
+    }
+   ]
+  },
+  {
+   "id": "c4",
+   "set": "classroom",
+   "vo": "E brilhando. Um verde fraquinho, tipo pulseira de festa.",
+   "actors": [
+    {
+     "id": "rafa",
+     "pos": "seat3",
+     "rot": -90,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "rafa",
+    "angle": -10,
+    "move": "pushIn"
+   },
+   "sfx": [
+    {
+     "t": "@brilhando",
+     "name": "glint"
+    }
+   ]
+  },
+  {
+   "id": "c5",
+   "set": "classroom",
+   "vo": "Ele anda direto pro seu celular.",
+   "actors": [
+    {
+     "id": "rafa",
+     "pos": "seat3",
+     "rot": -90,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.2,
+       "pos": "seat3"
+      },
+      {
+       "t": 2.6,
+       "pos": "aisle+0.2,0,0.1",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "hero",
+     "pos": "seat2",
+     "rot": -90,
+     "pose": "sit",
+     "face": "scared",
+     "look": "rafa"
+    }
+   ],
+   "camera": {
+    "pos": [
+     0.0,
+     2.7,
+     4.8
+    ],
+    "look": [
+     1.3,
+     0.8,
+     1.0
+    ],
+    "fov": 42
+   },
+   "props": [
+    {
+     "type": "phone",
+     "pos": [
+      1.38,
+      0.79,
+      1.75
+     ],
+     "rot": [
+      -1.57,
+      0,
+      0.3
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "ring",
+     "dur": 2.4
+    }
+   ]
+  },
+  {
+   "id": "c6",
+   "set": "classroom",
+   "vo": "Você joga o celular pro fundo da sala.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "seat2",
+     "rot": -90,
+     "pose": "sit",
+     "face": "determined",
+     "poses": [
+      {
+       "t": "@joga",
+       "pose": {
+        "hipY": -0.46,
+        "legL": [
+         88,
+         6,
+         92
+        ],
+        "legR": [
+         88,
+         6,
+         92
+        ],
+        "spine": [
+         -4,
+         0,
+         -25
+        ],
+        "armR": [
+         140,
+         30,
+         0,
+         10
+        ],
+        "handR": "open"
+       },
+       "blend": 0.2
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 140,
+    "height": 8
+   },
+   "props": [
+    {
+     "type": "phone",
+     "pos": [
+      1.38,
+      0.79,
+      1.75
+     ],
+     "rot": [
+      -1.57,
+      0,
+      0.3
+     ],
+     "path": [
+      {
+       "t": "@joga",
+       "pos": [
+        1.38,
+        0.79,
+        1.75
+       ]
+      },
+      {
+       "t": "@fundo",
+       "pos": [
+        3.6,
+        1.7,
+        2.6
+       ]
+      },
+      {
+       "t": "@sala",
+       "pos": [
+        5.4,
+        0.02,
+        3.0
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@joga",
+     "name": "whoosh"
+    },
+    {
+     "t": "@sala",
+     "name": "thud"
+    },
+    {
+     "t": "@sala+0.1",
+     "name": "ring",
+     "dur": 2.0
+    }
+   ]
+  },
+  {
+   "id": "c7",
+   "set": "classroom",
+   "vo": "O Rafa muda de direção na hora. E segue o som.",
+   "actors": [
+    {
+     "id": "rafa",
+     "pos": "aisle+0.2,0,0.1",
+     "rot": 90,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.3,
+       "pos": "aisle+0.2,0,0.1"
+      },
+      {
+       "t": 2.6,
+       "pos": [
+        3.0,
+        0,
+        0.9
+       ],
+       "gait": "shamble"
+      },
+      {
+       "t": 4.6,
+       "pos": [
+        4.7,
+        0,
+        2.3
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "hero",
+     "pos": "seat2",
+     "rot": -90,
+     "pose": "sit",
+     "face": "shocked"
+    }
+   ],
+   "camera": {
+    "pos": [
+     1.2,
+     1.9,
+     6.6
+    ],
+    "look": [
+     3.2,
+     0.9,
+     1.4
+    ],
+    "fov": 46
+   },
+   "props": [
+    {
+     "type": "phone",
+     "pos": [
+      5.4,
+      0.02,
+      3.0
+     ],
+     "rot": [
+      -1.57,
+      0,
+      0.3
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "ring",
+     "dur": 2.6
+    }
+   ]
+  },
+  {
+   "id": "c8",
+   "set": "classroom",
+   "vo": "O Rafa sempre andou assim?",
+   "actors": [
+    {
+     "id": "bestie",
+     "pos": "seat1",
+     "rot": 90,
+     "pose": "sit",
+     "face": "confused",
+     "look": "hero",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    },
+    {
+     "id": "hero",
+     "pos": "seat2",
+     "rot": -90,
+     "pose": "sit",
+     "face": "worried"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "bestie",
+    "angle": 15
+   },
+   "who": "male"
+  },
+  {
+   "id": "c9",
+   "set": "classroom",
+   "vo": "Só às segundas.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "seat2",
+     "rot": -90,
+     "pose": "sit",
+     "face": "smirk",
+     "look": "bestie",
+     "talk": [
+      [
+       0.05,
+       0.9
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": -25
+   },
+   "hold": 0.3
+  },
+  {
+   "id": "c10",
+   "set": "cafeteria",
+   "vo": "E no refeitório, mais doze alunos andando igual. Todos brilhando.",
+   "actors": [
+    {
+     "id": "zA",
+     "pos": [
+      -0.4,
+      0,
+      -3.6
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -0.4,
+        0,
+        -3.6
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        -0.3,
+        0,
+        0.4
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zB",
+     "pos": [
+      0.6,
+      0,
+      -2.2
+     ],
+     "rot": 10,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        0.6,
+        0,
+        -2.2
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        0.7,
+        0,
+        1.6
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zC",
+     "pos": [
+      2.4,
+      0,
+      2.6
+     ],
+     "rot": -80,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        2.4,
+        0,
+        2.6
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        0.9,
+        0,
+        3.0
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zD",
+     "pos": [
+      -2.6,
+      0,
+      2.7
+     ],
+     "rot": 80,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -2.6,
+        0,
+        2.7
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        -1.0,
+        0,
+        3.4
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x01",
+     "pos": [
+      -4.0,
+      0,
+      -2.0
+     ],
+     "rot": 27,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x02",
+     "pos": [
+      -2.0,
+      0,
+      -2.0
+     ],
+     "rot": 14,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x03",
+     "pos": [
+      2.0,
+      0,
+      -2.0
+     ],
+     "rot": -14,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x04",
+     "pos": [
+      4.0,
+      0,
+      -2.0
+     ],
+     "rot": -27,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x05",
+     "pos": [
+      -4.4,
+      0,
+      4.6
+     ],
+     "rot": 72,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x06",
+     "pos": [
+      4.2,
+      0,
+      4.4
+     ],
+     "rot": -69,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x07",
+     "pos": [
+      3.0,
+      0,
+      5.4
+     ],
+     "rot": -79,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x08",
+     "pos": [
+      -3.4,
+      0,
+      5.5
+     ],
+     "rot": 82,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "pos": [
+     0.3,
+     1.5,
+     7.6
+    ],
+    "look": [
+     0,
+     1.0,
+     -0.5
+    ],
+    "fov": 42,
+    "move": "pushIn"
+   },
+   "variant": 1,
+   "sfx": [
+    {
+     "t": 0.5,
+     "name": "groanLow"
+    }
+   ]
+  },
+  {
+   "id": "t1",
+   "set": "cafeteria",
+   "vo": "E se você salvasse sua escola de uma invasão zumbi? Vamos destrinchar isso.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -3.4,
+      0,
+      3.9
+     ],
+     "rot": 60,
+     "pose": "hide",
+     "face": "scared",
+     "look": "zB"
+    },
+    {
+     "id": "zA",
+     "pos": [
+      -0.3,
+      0,
+      0.4
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -0.3,
+        0,
+        0.4
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        -0.2,
+        0,
+        2.6
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zB",
+     "pos": [
+      0.7,
+      0,
+      1.6
+     ],
+     "rot": 20,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        0.7,
+        0,
+        1.6
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        1.6,
+        0,
+        3.6
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zC",
+     "pos": [
+      0.9,
+      0,
+      3.0
+     ],
+     "rot": -90,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        0.9,
+        0,
+        3.0
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        3.0,
+        0,
+        3.4
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "pos": [
+     -5.4,
+     2.6,
+     7.4
+    ],
+    "look": [
+     0.4,
+     0.9,
+     1.2
+    ],
+    "fov": 42,
+    "move": "pushIn"
+   },
+   "variant": 1,
+   "overlays": [
+    {
+     "type": "title",
+     "small": "E SE VOCÊ SALVASSE SUA ESCOLA",
+     "big": "DE UMA INVASÃO ZUMBI?",
+     "at": 0.2
+    }
+   ]
+  },
+  {
+   "id": "m1",
+   "set": "classroom",
+   "vo": "Tudo começou no laboratório de ciências. A professora Helena trouxe de uma viagem um fungo raro, num pote fechado.",
+   "actors": [
+    {
+     "id": "helena",
+     "pos": "teacher+0.3,0,0.9",
+     "rot": 70,
+     "pose": "explain",
+     "face": "happy",
+     "look": [
+      -4.3,
+      0.9,
+      2.6
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     -1.6,
+     1.6,
+     4.6
+    ],
+    "look": [
+     -4.4,
+     1.15,
+     2.7
+    ],
+    "fov": 40,
+    "move": "drift"
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "jar",
+     "pos": [
+      -4.3,
+      0.78,
+      2.6
+     ]
+    },
+    {
+     "type": "glow",
+     "pos": [
+      -4.3,
+      0.78,
+      2.6
+     ],
+     "y": 0.12,
+     "size": 0.05,
+     "color": "#8dff6a"
+    },
+    {
+     "type": "sign",
+     "pos": [
+      -5.92,
+      1.95,
+      3.6
+     ],
+     "rot": 90,
+     "w": 1.1,
+     "h": 0.32,
+     "text": "LAB. DE CIÊNCIAS",
+     "bg": "#f6f2e8",
+     "fg": "#1d2333"
+    }
+   ]
+  },
+  {
+   "id": "m2",
+   "set": "classroom",
+   "vo": "Hoje cedo, alguém derrubou o pote.",
+   "camera": {
+    "pos": [
+     -2.5,
+     1.0,
+     4.4
+    ],
+    "look": [
+     -4.1,
+     0.5,
+     2.7
+    ],
+    "fov": 34
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "jar",
+     "pos": [
+      -4.3,
+      0.78,
+      2.6
+     ],
+     "path": [
+      {
+       "t": "@derrubou",
+       "pos": [
+        -4.3,
+        0.78,
+        2.6
+       ],
+       "rot": [
+        0,
+        0,
+        0
+       ]
+      },
+      {
+       "t": "@pote",
+       "pos": [
+        -3.8,
+        0.1,
+        2.9
+       ],
+       "rot": [
+        0,
+        0.4,
+        1.57
+       ]
+      }
+     ]
+    },
+    {
+     "type": "sign",
+     "pos": [
+      -5.92,
+      1.95,
+      3.6
+     ],
+     "rot": 90,
+     "w": 1.1,
+     "h": 0.32,
+     "text": "LAB. DE CIÊNCIAS",
+     "bg": "#f6f2e8",
+     "fg": "#1d2333"
+    }
+   ],
+   "fx": {
+    "particles": "dust"
+   },
+   "sfx": [
+    {
+     "t": "@pote",
+     "name": "thud"
+    },
+    {
+     "t": "@pote+0.1",
+     "name": "debris"
+    }
+   ]
+  },
+  {
+   "id": "m3",
+   "kind": "card",
+   "card": "icon",
+   "vo": "O fungo solta esporos: um pó invisível, que voa pelo ar. Quem respira, em dez minutos, vira zumbi.",
+   "icon": "warning",
+   "caption": "ESPOROS NO AR",
+   "sub": "ZUMBI EM 10 MINUTOS"
+  },
+  {
+   "id": "m4",
+   "set": "void",
+   "vo": "Mas não do tipo de filme. Ninguém morde. Ninguém se machuca. Eles só andam devagar, gemem, e brilham verde.",
+   "actors": [
+    {
+     "id": "zA",
+     "pos": "left",
+     "rot": 20,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.2,
+       "pos": "left"
+      },
+      {
+       "t": 6,
+       "pos": "left+0.8,0,1.4",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zC",
+     "pos": "right",
+     "rot": -20,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.2,
+       "pos": "right"
+      },
+      {
+       "t": 6,
+       "pos": "right+-0.8,0,1.4",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "shot": "wide",
+    "target": [
+     "zA",
+     "zC"
+    ],
+    "angle": 0,
+    "move": "pushIn"
+   },
+   "sfx": [
+    {
+     "t": "@gemem",
+     "name": "groan"
+    }
+   ]
+  },
+  {
+   "id": "m5",
+   "set": "void",
+   "vo": "E querem encostar em você. Porque um toque passa o fungo adiante, em dez segundos.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 0,
+     "pose": "stand",
+     "face": "worried",
+     "path": [
+      {
+       "t": 0.4,
+       "pos": "center"
+      },
+      {
+       "t": 2.6,
+       "pos": "front",
+       "gait": "walk"
+      }
+     ],
+     "strafe": true
+    },
+    {
+     "id": "zB",
+     "pos": "back",
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.2,
+       "pos": "back"
+      },
+      {
+       "t": 5,
+       "pos": "center+0,0,-0.9",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 20,
+    "move": "pullOut"
+   }
+  },
+  {
+   "id": "m6",
+   "kind": "card",
+   "card": "icon",
+   "vo": "O resto continua igual. Menos uma coisa: eles quase não enxergam. Eles seguem o som. Sempre o som mais alto.",
+   "icon": "eye",
+   "caption": "ELES QUASE NÃO ENXERGAM",
+   "sub": "SEGUEM O SOM MAIS ALTO"
+  },
+  {
+   "id": "m7",
+   "set": "void",
+   "vo": "Guarda isso.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 0,
+     "pose": "point",
+     "face": "determined"
+    }
+   ],
+   "camera": {
+    "shot": "xclose",
+    "target": "hero",
+    "angle": -10,
+    "move": "pushIn"
+   }
+  },
+  {
+   "id": "s1",
+   "kind": "card",
+   "card": "icon",
+   "vo": "Agora, a parte estranha: esse fungo existe de verdade.",
+   "icon": "globe",
+   "caption": "ESSE FUNGO EXISTE"
+  },
+  {
+   "id": "s2",
+   "kind": "card",
+   "card": "chain",
+   "vo": "Na Mata Atlântica, aqui no Brasil, vive um fungo que invade formigas. Ele entra no corpo e decide pra onde ela anda.",
+   "title": "O FUNGO DAS FORMIGAS",
+   "nodes": [
+    {
+     "icon": "globe",
+     "label": "MATA ATLÂNTICA"
+    },
+    {
+     "icon": "brain",
+     "label": "FUNGO NO CORPO"
+    },
+    {
+     "icon": "walk",
+     "label": "FORMIGA ZUMBI"
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "kind": "card",
+   "card": "stat",
+   "vo": "A formiga infectada sai do ninho, sobe numa planta, e morde uma folha a uns vinte e cinco centímetros do chão.",
+   "value": 25,
+   "unit": "CENTÍMETROS",
+   "label": "DO CHÃO, PRESA NUMA FOLHA",
+   "icon": "flag"
+  },
+  {
+   "id": "s4",
+   "kind": "card",
+   "card": "clock",
+   "vo": "E quase sempre perto do meio-dia. Uma atrás da outra, na mesma hora.",
+   "mode": "tick",
+   "label": "MEIO-DIA",
+   "value": "12:00",
+   "time": "12:00"
+  },
+  {
+   "id": "s5",
+   "set": "void",
+   "vo": "Esse é o zumbi de verdade. E sim: fungo é mais parente seu do que de uma alface.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 15,
+     "pose": "shrug",
+     "face": "smirk"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 15,
+    "move": "drift"
+   }
+  },
+  {
+   "id": "s6",
+   "kind": "card",
+   "card": "stat",
+   "vo": "Agora, a conta. Cada zumbi encosta em alguém a cada cinco minutos. Então o número dobra.",
+   "value": 5,
+   "unit": "MINUTOS",
+   "label": "PRA DOBRAR",
+   "icon": "clock"
+  },
+  {
+   "id": "s7",
+   "kind": "card",
+   "card": "chain",
+   "vo": "Um. Dois. Quatro. Oito. Dezesseis.",
+   "title": "ZUMBIS",
+   "nodes": [
+    {
+     "icon": "stand",
+     "label": "1"
+    },
+    {
+     "icon": "stand",
+     "label": "2"
+    },
+    {
+     "icon": "stand",
+     "label": "4"
+    },
+    {
+     "icon": "stand",
+     "label": "8"
+    },
+    {
+     "icon": "stand",
+     "label": "16"
+    }
+   ],
+   "step": 0.6
+  },
+  {
+   "id": "s8",
+   "kind": "card",
+   "card": "stat",
+   "vo": "Em cinquenta minutos, mais de seiscentos. A escola inteira.",
+   "value": 600,
+   "unit": "ALUNOS",
+   "label": "EM 50 MINUTOS",
+   "icon": "house"
+  },
+  {
+   "id": "s9",
+   "set": "classroom",
+   "vo": "Cinquenta minutos. O tempo de uma aula. É isso que a sua escola tem.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 20,
+     "pose": "stand",
+     "face": "worried"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": 10,
+    "move": "pushIn"
+   },
+   "variant": 1,
+   "sfx": [
+    {
+     "t": 0.2,
+     "name": "ticks",
+     "dur": 1.2
+    }
+   ]
+  },
+  {
+   "id": "p1",
+   "set": "cafeteria",
+   "vo": "No refeitório, o inspetor Seu Jorge acha que é tudo brincadeira.",
+   "actors": [
+    {
+     "id": "jorge",
+     "pos": "center",
+     "rot": 135,
+     "pose": "armsCrossed",
+     "face": "suspicious"
+    },
+    {
+     "id": "zA",
+     "pos": [
+      -1.2,
+      0,
+      1.0
+     ],
+     "rot": 10,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zB",
+     "pos": [
+      -0.2,
+      0,
+      0.4
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zC",
+     "pos": [
+      0.9,
+      0,
+      0.6
+     ],
+     "rot": -15,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "hero",
+     "pos": [
+      -4.6,
+      0,
+      4.6
+     ],
+     "rot": 120,
+     "pose": "hide",
+     "face": "worried",
+     "look": "jorge"
+    },
+    {
+     "id": "bestie",
+     "pos": [
+      -5.3,
+      0,
+      4.1
+     ],
+     "rot": 120,
+     "pose": "hide",
+     "face": "scared",
+     "look": "jorge"
+    }
+   ],
+   "camera": {
+    "pos": [
+     3.2,
+     1.7,
+     1.2
+    ],
+    "look": [
+     -0.8,
+     1.0,
+     3.4
+    ],
+    "fov": 46,
+    "move": "drift"
+   },
+   "variant": 1
+  },
+  {
+   "id": "p2",
+   "set": "cafeteria",
+   "vo": "[shouting] Todo mundo sentado. Agora!",
+   "actors": [
+    {
+     "id": "jorge",
+     "pos": "center",
+     "rot": 180,
+     "pose": "point",
+     "face": "angry",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "jorge",
+    "angle": 0
+   },
+   "who": "adulto",
+   "variant": 1
+  },
+  {
+   "id": "p3",
+   "set": "cafeteria",
+   "vo": "E apita. Bem alto.",
+   "actors": [
+    {
+     "id": "jorge",
+     "pos": "center",
+     "rot": 180,
+     "pose": {
+      "reachR": {
+       "to": "mouth"
+      },
+      "head": [
+       -6,
+       0,
+       0
+      ],
+      "armL": [
+       10,
+       14,
+       0,
+       20
+      ]
+     },
+     "face": "angry",
+     "hold": {
+      "R": "whistle"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "jorge",
+    "angle": 30
+   },
+   "variant": 1,
+   "sfx": [
+    {
+     "t": "@apita",
+     "name": "whistle",
+     "dur": 0.9
+    }
+   ]
+  },
+  {
+   "id": "p4",
+   "set": "cafeteria",
+   "vo": "Os zumbis param. Viram a cabeça pra ele. E andam na direção do apito.",
+   "actors": [
+    {
+     "id": "zA",
+     "pos": [
+      -1.2,
+      0,
+      1.0
+     ],
+     "rot": 10,
+     "pose": "zombie",
+     "face": "zombie",
+     "look": "jorge",
+     "path": [
+      {
+       "t": "@andam",
+       "pos": [
+        -1.2,
+        0,
+        1.0
+       ]
+      },
+      {
+       "t": "@apito+1.6",
+       "pos": [
+        -0.8,
+        0,
+        2.6
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zB",
+     "pos": [
+      -0.2,
+      0,
+      0.4
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "look": "jorge",
+     "path": [
+      {
+       "t": "@andam",
+       "pos": [
+        -0.2,
+        0,
+        0.4
+       ]
+      },
+      {
+       "t": "@apito+1.6",
+       "pos": [
+        0.05,
+        0,
+        2.3
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zC",
+     "pos": [
+      0.9,
+      0,
+      0.6
+     ],
+     "rot": -15,
+     "pose": "zombie",
+     "face": "zombie",
+     "look": "jorge",
+     "path": [
+      {
+       "t": "@andam",
+       "pos": [
+        0.9,
+        0,
+        0.6
+       ]
+      },
+      {
+       "t": "@apito+1.6",
+       "pos": [
+        0.9,
+        0,
+        2.6
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "jorge",
+     "pos": "center",
+     "rot": 180,
+     "pose": "stand",
+     "face": "surprised",
+     "hold": {
+      "R": "whistle"
+     }
+    }
+   ],
+   "camera": {
+    "pos": [
+     -0.3,
+     1.7,
+     6.4
+    ],
+    "look": [
+     -0.1,
+     1.1,
+     1.4
+    ],
+    "fov": 42
+   },
+   "variant": 1,
+   "sfx": [
+    {
+     "t": "@param",
+     "name": "groan"
+    }
+   ]
+  },
+  {
+   "id": "p5",
+   "set": "cafeteria",
+   "vo": "Eu falei... sentado.",
+   "actors": [
+    {
+     "id": "jorge",
+     "pos": "center",
+     "rot": 180,
+     "pose": "stand",
+     "face": "scared",
+     "hold": {
+      "R": "whistle"
+     },
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "jorge",
+    "angle": -20
+   },
+   "who": "adulto",
+   "variant": 1
+  },
+  {
+   "id": "p6",
+   "set": "cafeteria",
+   "vo": "Um toque no ombro.",
+   "actors": [
+    {
+     "id": "jorge",
+     "pos": "center",
+     "rot": 180,
+     "pose": "stand",
+     "face": "shocked",
+     "hold": {
+      "R": "whistle"
+     },
+     "contact": true
+    },
+    {
+     "id": "zB",
+     "pos": "center+-0.78,0,0.32",
+     "rot": 119,
+     "pose": {
+      "hipY": -0.01,
+      "spine": [
+       8,
+       0,
+       0
+      ],
+      "head": [
+       12,
+       0,
+       14
+      ],
+      "armL": [
+       55,
+       8,
+       0,
+       14
+      ],
+      "armR": [
+       92,
+       -4,
+       0,
+       6
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "zombie",
+     "contact": true,
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "pos": [
+     -1.0,
+     1.55,
+     1.5
+    ],
+    "look": [
+     -0.35,
+     1.35,
+     3.9
+    ],
+    "fov": 36
+   },
+   "variant": 1
+  },
+  {
+   "id": "p7",
+   "set": "cafeteria",
+   "vo": "Dez segundos depois, o Seu Jorge está gemendo junto.",
+   "actors": [
+    {
+     "id": "jorge",
+     "pos": "center",
+     "rot": 180,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zA",
+     "pos": "center+-0.8,0,-0.6",
+     "rot": 20,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zB",
+     "pos": "center+0.6,0,-0.7",
+     "rot": -10,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "jorge",
+    "angle": -10,
+    "move": "pushIn"
+   },
+   "variant": 1,
+   "sfx": [
+    {
+     "t": "@gemendo",
+     "name": "groanLow"
+    }
+   ]
+  },
+  {
+   "id": "p8",
+   "set": "cafeteria",
+   "vo": "O apito cai no chão. Você pega, e guarda no bolso. Ainda não sabe por quê.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -4.6,
+      0,
+      4.6
+     ],
+     "rot": 120,
+     "pose": "crouch",
+     "face": "focused",
+     "poses": [
+      {
+       "t": "@guarda",
+       "pose": "stand",
+       "blend": 0.6
+      }
+     ],
+     "hold": {
+      "R": "whistle"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 20
+   },
+   "variant": 1,
+   "sfx": [
+    {
+     "t": "@cai",
+     "name": "click"
+    }
+   ]
+  },
+  {
+   "id": "r1",
+   "kind": "card",
+   "card": "rules",
+   "vo": "Em vinte minutos escondido, você aprende as regras.",
+   "title": "AS REGRAS",
+   "prefix": "REGRA",
+   "rules": [
+    "O SOM MAIS ALTO GANHA",
+    "ELES FOGEM DO SOL",
+    "ONDE UM VAI, O BANDO VAI"
+   ],
+   "current": 0
+  },
+  {
+   "id": "r2",
+   "kind": "card",
+   "card": "rules",
+   "vo": "Regra um: o som mais alto ganha.",
+   "title": "AS REGRAS",
+   "prefix": "REGRA",
+   "rules": [
+    "O SOM MAIS ALTO GANHA",
+    "ELES FOGEM DO SOL",
+    "ONDE UM VAI, O BANDO VAI"
+   ],
+   "current": 1
+  },
+  {
+   "id": "r3",
+   "set": "cafeteria",
+   "vo": "Você testa. Seu celular tocando de um lado. Um livro batendo no chão do outro.",
+   "actors": [
+    {
+     "id": "zA",
+     "pos": [
+      -1.6,
+      0,
+      3.2
+     ],
+     "rot": 40,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zC",
+     "pos": [
+      -0.2,
+      0,
+      3.7
+     ],
+     "rot": 40,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zD",
+     "pos": [
+      1.0,
+      0,
+      3.0
+     ],
+     "rot": 40,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "hero",
+     "pos": [
+      -2.4,
+      0,
+      4.6
+     ],
+     "rot": 120,
+     "pose": "crouch",
+     "face": "focused"
+    }
+   ],
+   "camera": {
+    "pos": [
+     0.0,
+     2.6,
+     9.4
+    ],
+    "look": [
+     0.4,
+     0.8,
+     2.6
+    ],
+    "fov": 46
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "phone",
+     "pos": [
+      -3.4,
+      0.78,
+      1.6
+     ],
+     "rot": [
+      -1.57,
+      0,
+      0
+     ]
+    },
+    {
+     "type": "book",
+     "pos": [
+      3.8,
+      0.03,
+      4.4
+     ],
+     "color": "#c8402f"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@celular",
+     "name": "ring",
+     "dur": 2.4
+    },
+    {
+     "t": "@livro+0.4",
+     "name": "thud"
+    },
+    {
+     "t": "@outro",
+     "name": "thud"
+    }
+   ]
+  },
+  {
+   "id": "r4",
+   "set": "cafeteria",
+   "vo": "Eles vão pro livro. O toque do seu celular é educado demais.",
+   "actors": [
+    {
+     "id": "zA",
+     "pos": [
+      -1.6,
+      0,
+      3.2
+     ],
+     "rot": 40,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.2,
+       "pos": [
+        -1.6,
+        0,
+        3.2
+       ]
+      },
+      {
+       "t": 4.5,
+       "pos": [
+        2.0,
+        0,
+        3.6
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zC",
+     "pos": [
+      -0.2,
+      0,
+      3.7
+     ],
+     "rot": 40,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.2,
+       "pos": [
+        -0.2,
+        0,
+        3.7
+       ]
+      },
+      {
+       "t": 4.5,
+       "pos": [
+        2.9,
+        0,
+        4.7
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zD",
+     "pos": [
+      1.0,
+      0,
+      3.0
+     ],
+     "rot": 40,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.2,
+       "pos": [
+        1.0,
+        0,
+        3.0
+       ]
+      },
+      {
+       "t": 4.5,
+       "pos": [
+        3.2,
+        0,
+        3.4
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "hero",
+     "pos": [
+      -2.4,
+      0,
+      4.6
+     ],
+     "rot": 120,
+     "pose": "crouch",
+     "face": "smirk"
+    }
+   ],
+   "camera": {
+    "pos": [
+     0.0,
+     2.6,
+     9.4
+    ],
+    "look": [
+     1.0,
+     0.8,
+     2.8
+    ],
+    "fov": 46
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "phone",
+     "pos": [
+      -3.4,
+      0.78,
+      1.6
+     ],
+     "rot": [
+      -1.57,
+      0,
+      0
+     ]
+    },
+    {
+     "type": "book",
+     "pos": [
+      3.8,
+      0.03,
+      4.4
+     ],
+     "color": "#c8402f"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 0.2,
+     "name": "ring",
+     "dur": 2.0,
+     "vol": -8
+    }
+   ]
+  },
+  {
+   "id": "r5",
+   "kind": "card",
+   "card": "rules",
+   "vo": "Regra dois: eles fogem do sol.",
+   "title": "AS REGRAS",
+   "prefix": "REGRA",
+   "rules": [
+    "O SOM MAIS ALTO GANHA",
+    "ELES FOGEM DO SOL",
+    "ONDE UM VAI, O BANDO VAI"
+   ],
+   "current": 2
+  },
+  {
+   "id": "r6",
+   "set": "classroom",
+   "vo": "Um zumbi chega perto da janela. Pisa numa faixa de sol. E recua, como quem pisa em água gelada.",
+   "actors": [
+    {
+     "id": "zE",
+     "pos": [
+      0.4,
+      0,
+      -1.4
+     ],
+     "rot": 180,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.2,
+       "pos": [
+        0.4,
+        0,
+        -1.4
+       ]
+      },
+      {
+       "t": "@pisa",
+       "pos": [
+        0.4,
+        0,
+        -3.0
+       ],
+       "gait": "shamble"
+      },
+      {
+       "t": "@recua",
+       "pos": [
+        0.4,
+        0,
+        -3.0
+       ]
+      },
+      {
+       "t": "@gelada",
+       "pos": [
+        0.4,
+        0,
+        -2.0
+       ],
+       "gait": "sneak"
+      }
+     ],
+     "strafe": true,
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "pos": [
+     3.4,
+     1.5,
+     0.6
+    ],
+    "look": [
+     0.3,
+     0.9,
+     -2.6
+    ],
+    "fov": 40
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "rug",
+     "pos": [
+      0.4,
+      0.005,
+      -3.6
+     ],
+     "w": 2.4,
+     "d": 1.3,
+     "color": "#fff0b0"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@recua",
+     "name": "groan"
+    }
+   ]
+  },
+  {
+   "id": "r7",
+   "kind": "card",
+   "card": "rules",
+   "vo": "Regra três: onde um vai, o bando vai atrás.",
+   "title": "AS REGRAS",
+   "prefix": "REGRA",
+   "rules": [
+    "O SOM MAIS ALTO GANHA",
+    "ELES FOGEM DO SOL",
+    "ONDE UM VAI, O BANDO VAI"
+   ],
+   "current": 3
+  },
+  {
+   "id": "r8",
+   "set": "cafeteria",
+   "vo": "O Davi tropeça numa bandeja. Um zumbi vira. Depois outro. Depois o bando inteiro.",
+   "actors": [
+    {
+     "id": "bestie",
+     "pos": [
+      -3.6,
+      0,
+      3.8
+     ],
+     "rot": 90,
+     "pose": "stand",
+     "face": "shocked",
+     "poses": [
+      {
+       "t": "@tropeça",
+       "pose": "fall",
+       "blend": 0.25
+      },
+      {
+       "t": "@tropeça+0.45",
+       "pose": {
+        "hipY": -0.71,
+        "spine": [
+         8,
+         0,
+         0
+        ],
+        "legL": [
+         88,
+         8,
+         8
+        ],
+        "legR": [
+         86,
+         8,
+         14
+        ],
+        "armL": [
+         -25,
+         20,
+         0,
+         10
+        ],
+        "armR": [
+         -25,
+         20,
+         0,
+         10
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.35
+      }
+     ]
+    },
+    {
+     "id": "zA",
+     "pos": [
+      0.2,
+      0,
+      -1.6
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": "@um",
+       "pos": [
+        0.2,
+        0,
+        -1.6
+       ]
+      },
+      {
+       "t": "@um+3",
+       "pos": [
+        -0.8,
+        0,
+        0.4
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zC",
+     "pos": [
+      0.8,
+      0,
+      0.0
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": "@outro",
+       "pos": [
+        0.8,
+        0,
+        0.0
+       ]
+      },
+      {
+       "t": "@outro+3",
+       "pos": [
+        -0.4,
+        0,
+        1.8
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zD",
+     "pos": [
+      -0.2,
+      0,
+      -3.0
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": "@bando",
+       "pos": [
+        -0.2,
+        0,
+        -3.0
+       ]
+      },
+      {
+       "t": "@bando+3",
+       "pos": [
+        -1.0,
+        0,
+        -1.2
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zE",
+     "pos": [
+      2.2,
+      0,
+      3.0
+     ],
+     "rot": -90,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": "@bando",
+       "pos": [
+        2.2,
+        0,
+        3.0
+       ]
+      },
+      {
+       "t": "@bando+3",
+       "pos": [
+        0.8,
+        0,
+        3.4
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "pos": [
+     -5.3,
+     2.0,
+     7.8
+    ],
+    "look": [
+     -0.8,
+     0.9,
+     1.0
+    ],
+    "fov": 44
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "box",
+     "pos": [
+      -2.9,
+      0,
+      3.6
+     ],
+     "w": 0.36,
+     "h": 0.02,
+     "d": 0.25,
+     "color": "#3d6fb6"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@tropeça",
+     "name": "thud"
+    },
+    {
+     "t": "@bando",
+     "name": "groanLow"
+    }
+   ]
+  },
+  {
+   "id": "r9",
+   "set": "cafeteria",
+   "vo": "Foi mal! Foi mal!",
+   "actors": [
+    {
+     "id": "bestie",
+     "pos": [
+      -3.6,
+      0,
+      3.8
+     ],
+     "rot": 90,
+     "pose": "scared",
+     "face": "scared",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "bestie",
+    "angle": 10
+   },
+   "who": "male",
+   "variant": 1
+  },
+  {
+   "id": "k1",
+   "set": "cafeteria",
+   "vo": "E aí vem a parte boa: a escola é sua.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 0,
+     "pose": "power",
+     "face": "grin"
+    }
+   ],
+   "camera": {
+    "pos": [
+     0.2,
+     1.5,
+     6.2
+    ],
+    "look": [
+     0,
+     1.2,
+     2.0
+    ],
+    "fov": 40,
+    "to": {
+     "pos": [
+      0.3,
+      2.0,
+      9.2
+     ],
+     "look": [
+      0,
+      1.1,
+      1.5
+     ]
+    }
+   },
+   "variant": 1
+  },
+  {
+   "id": "k2",
+   "set": "cafeteria",
+   "vo": "Almoço sem fila. Sobremesa? Três.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "seat1",
+     "rot": 0,
+     "pose": "sit",
+     "face": "bliss",
+     "hold": {
+      "R": "cup"
+     }
+    },
+    {
+     "id": "bestie",
+     "pos": "seat1+1.2,0,0",
+     "rot": 0,
+     "pose": "sit",
+     "face": "happy",
+     "hold": {
+      "R": "cup"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": [
+     "hero",
+     "bestie"
+    ],
+    "angle": 0
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "pizza",
+     "pos": "seat1+0,0.78,0.62"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@três",
+     "name": "pop"
+    }
+   ]
+  },
+  {
+   "id": "k3",
+   "set": "cafeteria",
+   "vo": "Pra atravessar um corredor cheio de zumbi, você só deixa uma música tocando do outro lado.",
+   "actors": [
+    {
+     "id": "zA",
+     "pos": [
+      -0.4,
+      0,
+      0.0
+     ],
+     "rot": 90,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.3,
+       "pos": [
+        -0.4,
+        0,
+        0.0
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        2.2,
+        0,
+        0.3
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zC",
+     "pos": [
+      -0.6,
+      0,
+      2.6
+     ],
+     "rot": 90,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.3,
+       "pos": [
+        -0.6,
+        0,
+        2.6
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        2.2,
+        0,
+        2.9
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "hero",
+     "pos": [
+      -3.4,
+      0,
+      4.4
+     ],
+     "rot": 90,
+     "pose": "stand",
+     "face": "smug",
+     "path": [
+      {
+       "t": 1.2,
+       "pos": [
+        -3.4,
+        0,
+        4.4
+       ]
+      },
+      {
+       "t": 4.8,
+       "pos": [
+        -5.0,
+        0,
+        4.4
+       ],
+       "gait": "sneak"
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     0.2,
+     2.4,
+     9.6
+    ],
+    "look": [
+     -0.6,
+     0.9,
+     1.4
+    ],
+    "fov": 42
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "phone",
+     "pos": [
+      4.6,
+      0.78,
+      1.6
+     ],
+     "rot": [
+      -1.57,
+      0,
+      0
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "t": 0.2,
+     "name": "ring",
+     "dur": 3.0,
+     "vol": -6
+    }
+   ]
+  },
+  {
+   "id": "k4",
+   "set": "classroom",
+   "vo": "Você tenta guiar eles batendo palma.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -3.4,
+      0,
+      4.6
+     ],
+     "rot": 30,
+     "pose": {
+      "armL": [
+       75,
+       28,
+       0,
+       40
+      ],
+      "armR": [
+       75,
+       28,
+       0,
+       40
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "smug",
+     "poses": [
+      {
+       "t": 0.45,
+       "pose": {
+        "armL": [
+         75,
+         -4,
+         0,
+         40
+        ],
+        "armR": [
+         75,
+         -4,
+         0,
+         40
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.12
+      },
+      {
+       "t": 0.7,
+       "pose": {
+        "armL": [
+         75,
+         28,
+         0,
+         40
+        ],
+        "armR": [
+         75,
+         28,
+         0,
+         40
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.12
+      },
+      {
+       "t": 0.95,
+       "pose": {
+        "armL": [
+         75,
+         -4,
+         0,
+         40
+        ],
+        "armR": [
+         75,
+         -4,
+         0,
+         40
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.12
+      },
+      {
+       "t": 1.2,
+       "pose": {
+        "armL": [
+         75,
+         28,
+         0,
+         40
+        ],
+        "armR": [
+         75,
+         28,
+         0,
+         40
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.12
+      },
+      {
+       "t": 1.45,
+       "pose": {
+        "armL": [
+         75,
+         -4,
+         0,
+         40
+        ],
+        "armR": [
+         75,
+         -4,
+         0,
+         40
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.12
+      },
+      {
+       "t": 1.7,
+       "pose": {
+        "armL": [
+         75,
+         28,
+         0,
+         40
+        ],
+        "armR": [
+         75,
+         28,
+         0,
+         40
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.12
+      },
+      {
+       "t": 1.95,
+       "pose": {
+        "armL": [
+         75,
+         -4,
+         0,
+         40
+        ],
+        "armR": [
+         75,
+         -4,
+         0,
+         40
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.12
+      },
+      {
+       "t": 2.2,
+       "pose": {
+        "armL": [
+         75,
+         28,
+         0,
+         40
+        ],
+        "armR": [
+         75,
+         28,
+         0,
+         40
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.12
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 10
+   },
+   "variant": 1,
+   "sfx": [
+    {
+     "t": 0.57,
+     "name": "click"
+    },
+    {
+     "t": 1.07,
+     "name": "click"
+    },
+    {
+     "t": 1.57,
+     "name": "click"
+    },
+    {
+     "t": 2.07,
+     "name": "click"
+    }
+   ]
+  },
+  {
+   "id": "k5",
+   "set": "classroom",
+   "vo": "Eles vêm em você. Todos.",
+   "actors": [
+    {
+     "id": "zA",
+     "pos": [
+      0.9,
+      0,
+      4.4
+     ],
+     "rot": -90,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        0.9,
+        0,
+        4.4
+       ]
+      },
+      {
+       "t": 4,
+       "pos": [
+        -1.6,
+        0,
+        4.5
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zB",
+     "pos": [
+      2.2,
+      0,
+      3.8
+     ],
+     "rot": -90,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        2.2,
+        0,
+        3.8
+       ]
+      },
+      {
+       "t": 4,
+       "pos": [
+        -0.6,
+        0,
+        3.9
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zC",
+     "pos": [
+      2.4,
+      0,
+      4.9
+     ],
+     "rot": -90,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        2.4,
+        0,
+        4.9
+       ]
+      },
+      {
+       "t": 4,
+       "pos": [
+        0.6,
+        0,
+        5.0
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "hero",
+     "pos": [
+      -3.4,
+      0,
+      4.6
+     ],
+     "rot": 90,
+     "pose": "shocked",
+     "face": "shocked",
+     "path": [
+      {
+       "t": "@todos",
+       "pos": [
+        -3.4,
+        0,
+        4.6
+       ]
+      },
+      {
+       "t": "@todos+1.4",
+       "pos": [
+        -5.2,
+        0,
+        4.4
+       ],
+       "gait": "run"
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     -0.6,
+     1.7,
+     9.0
+    ],
+    "look": [
+     -1.0,
+     0.9,
+     4.4
+    ],
+    "fov": 46
+   },
+   "variant": 1,
+   "sfx": [
+    {
+     "t": "@todos",
+     "name": "groanLow"
+    }
+   ]
+  },
+  {
+   "id": "k6",
+   "set": "classroom",
+   "vo": "Na sala do primeiro ano, um menino se esconde embaixo da mesa. Três zumbis em volta.",
+   "actors": [
+    {
+     "id": "kid",
+     "pos": [
+      -3.4,
+      0,
+      3.4
+     ],
+     "rot": 60,
+     "pose": "hide",
+     "face": "scared"
+    },
+    {
+     "id": "zD",
+     "pos": [
+      -2.3,
+      0,
+      2.7
+     ],
+     "rot": -58,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zE",
+     "pos": [
+      -3.1,
+      0,
+      4.6
+     ],
+     "rot": -166,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zF",
+     "pos": [
+      -4.4,
+      0,
+      4.2
+     ],
+     "rot": 129,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "pos": [
+     -0.6,
+     1.0,
+     4.4
+    ],
+    "look": [
+     -3.2,
+     0.55,
+     3.4
+    ],
+    "fov": 38,
+    "move": "pushIn"
+   },
+   "variant": 1,
+   "sfx": [
+    {
+     "t": 0.4,
+     "name": "groan"
+    }
+   ]
+  },
+  {
+   "id": "k7",
+   "set": "classroom",
+   "vo": "Você deixa o celular tocando lá no fundo. Os três vão atrás do som.",
+   "actors": [
+    {
+     "id": "kid",
+     "pos": [
+      -3.4,
+      0,
+      3.4
+     ],
+     "rot": 60,
+     "pose": "hide",
+     "face": "worried"
+    },
+    {
+     "id": "zD",
+     "pos": [
+      -2.3,
+      0,
+      2.7
+     ],
+     "rot": 90,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.4,
+       "pos": [
+        -2.3,
+        0,
+        2.7
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        1.6,
+        0,
+        4.4
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zE",
+     "pos": [
+      -3.1,
+      0,
+      4.6
+     ],
+     "rot": 90,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.6,
+       "pos": [
+        -3.1,
+        0,
+        4.6
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        0.4,
+        0,
+        5.2
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zF",
+     "pos": [
+      -4.4,
+      0,
+      4.2
+     ],
+     "rot": 90,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.8,
+       "pos": [
+        -4.4,
+        0,
+        4.2
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        -0.8,
+        0,
+        4.5
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "pos": [
+     -0.8,
+     1.7,
+     8.6
+    ],
+    "look": [
+     -0.6,
+     0.8,
+     4.0
+    ],
+    "fov": 50
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "phone",
+     "pos": [
+      5.0,
+      0.02,
+      5.0
+     ],
+     "rot": [
+      -1.57,
+      0,
+      0
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "t": 0.2,
+     "name": "ring",
+     "dur": 3.4,
+     "vol": -6
+    }
+   ]
+  },
+  {
+   "id": "k8",
+   "set": "classroom",
+   "vo": "Você é tipo um super-herói?",
+   "actors": [
+    {
+     "id": "kid",
+     "pos": "center+-3.8,0,-1.5",
+     "rot": 49,
+     "pose": "relaxed",
+     "face": "awe",
+     "look": "hero",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    },
+    {
+     "id": "hero",
+     "pos": "center+-3.0,0,-0.8",
+     "rot": -131,
+     "pose": "crouch",
+     "face": "smile",
+     "look": "kid"
+    }
+   ],
+   "camera": {
+    "pos": [
+     -3.05,
+     1.0,
+     4.9
+    ],
+    "look": [
+     -3.4,
+     0.85,
+     3.4
+    ],
+    "fov": 34
+   },
+   "who": "female",
+   "variant": 1
+  },
+  {
+   "id": "k9",
+   "set": "classroom",
+   "vo": "Sou tipo um despertador.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center+-3.0,0,-0.8",
+     "rot": -131,
+     "pose": "crouch",
+     "face": "smirk",
+     "look": "kid",
+     "talk": [
+      [
+       0.05,
+       1.2
+      ]
+     ]
+    },
+    {
+     "id": "kid",
+     "pos": "center+-3.8,0,-1.5",
+     "rot": 49,
+     "pose": "relaxed",
+     "face": "happy"
+    }
+   ],
+   "camera": {
+    "pos": [
+     -3.0,
+     1.2,
+     2.6
+    ],
+    "look": [
+     -2.9,
+     0.9,
+     3.8
+    ],
+    "fov": 40
+   },
+   "variant": 1
+  },
+  {
+   "id": "k10",
+   "set": "classroom",
+   "vo": "É a melhor coisa que você faz o dia inteiro.",
+   "actors": [
+    {
+     "id": "kid",
+     "pos": "center+-3.8,0,-1.5",
+     "rot": 49,
+     "pose": "hug",
+     "face": "bliss",
+     "contact": true
+    },
+    {
+     "id": "hero",
+     "pos": "center+-3.45,0,-1.2",
+     "rot": -131,
+     "pose": "hug",
+     "face": "smile",
+     "contact": true
+    }
+   ],
+   "camera": {
+    "pos": [
+     -1.4,
+     1.35,
+     1.9
+    ],
+    "look": [
+     -3.2,
+     0.95,
+     3.5
+    ],
+    "fov": 40,
+    "move": "pullOut"
+   },
+   "variant": 1
+  },
+  {
+   "id": "q1",
+   "set": "void",
+   "vo": "Depois os problemas aparecem. Um de cada vez.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 0,
+     "pose": "sad",
+     "face": "worried"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 0,
+    "move": "pullOut"
+   }
+  },
+  {
+   "id": "q2",
+   "kind": "card",
+   "card": "stat",
+   "vo": "Problema um: o seu celular é a sua única isca. E está com dezoito por cento.",
+   "value": 18,
+   "unit": "%",
+   "label": "DE BATERIA",
+   "icon": "phone"
+  },
+  {
+   "id": "q3",
+   "set": "classroom",
+   "vo": "Cada isca gasta uns três por cento. Seis iscas, e acabou.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -3.4,
+      0,
+      4.6
+     ],
+     "rot": 20,
+     "pose": "phone",
+     "face": "worried",
+     "hold": {
+      "R": "phone"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": 25
+   },
+   "variant": 1,
+   "overlays": [
+    {
+     "type": "label",
+     "text": "6 ISCAS",
+     "at": "@seis",
+     "corner": "tl"
+    }
+   ]
+  },
+  {
+   "id": "q4",
+   "set": "cafeteria",
+   "vo": "Solução: você pega emprestado o celular do Seu Jorge. Ele não reclama.",
+   "actors": [
+    {
+     "id": "jorge",
+     "pos": "center",
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "hero",
+     "pos": "center+0.75,0,-0.2",
+     "rot": -80,
+     "pose": "reach",
+     "face": "focused",
+     "look": "jorge",
+     "contact": true
+    }
+   ],
+   "camera": {
+    "pos": [
+     2.8,
+     1.5,
+     5.4
+    ],
+    "look": [
+     0.4,
+     1.1,
+     3.6
+    ],
+    "fov": 40
+   },
+   "variant": 1,
+   "sfx": [
+    {
+     "t": "@reclama",
+     "name": "groan"
+    }
+   ]
+  },
+  {
+   "id": "q5",
+   "set": "cafeteria",
+   "vo": "Isso é roubo.",
+   "actors": [
+    {
+     "id": "bestie",
+     "pos": [
+      -3.3,
+      0,
+      4.4
+     ],
+     "rot": 60,
+     "pose": "armsCrossed",
+     "face": "suspicious",
+     "look": [
+      0.4,
+      1.4,
+      3.8
+     ],
+     "talk": [
+      [
+       0.05,
+       1.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "bestie",
+    "angle": 15
+   },
+   "who": "male",
+   "variant": 1
+  },
+  {
+   "id": "q6",
+   "set": "cafeteria",
+   "vo": "[whispering] É empréstimo.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -2.6,
+      0,
+      4.0
+     ],
+     "rot": -120,
+     "pose": "phone",
+     "face": "smug",
+     "hold": {
+      "R": "phone"
+     },
+     "look": "bestie",
+     "talk": [
+      [
+       0.05,
+       1.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": -15
+   },
+   "variant": 1
+  },
+  {
+   "id": "q7",
+   "set": "classroom",
+   "vo": "Problema dois: a sala onde os sobreviventes se escondem. Quarenta alunos e a diretora, em silêncio total. Por horas.",
+   "actors": [
+    {
+     "id": "celia",
+     "pos": "front+0.4,0,0.6",
+     "rot": 90,
+     "pose": "armsCrossed",
+     "face": "focused"
+    },
+    {
+     "id": "sister",
+     "pos": "seat1",
+     "rot": -90,
+     "pose": "sit",
+     "face": "worried"
+    },
+    {
+     "id": "hero",
+     "pos": "aisle",
+     "rot": -90,
+     "pose": "stand",
+     "face": "worried"
+    }
+   ],
+   "camera": {
+    "pos": [
+     0.8,
+     2.3,
+     10.5
+    ],
+    "look": [
+     -0.2,
+     1,
+     -0.5
+    ],
+    "fov": 40,
+    "move": "pushIn"
+   },
+   "variant": 0
+  },
+  {
+   "id": "q8",
+   "set": "classroom",
+   "vo": "Aí alguém espirra. E na porta, um gemido.",
+   "actors": [
+    {
+     "id": "sister",
+     "pos": "seat1",
+     "rot": -90,
+     "pose": "sit",
+     "face": "scared",
+     "look": "celia"
+    },
+    {
+     "id": "hero",
+     "pos": "aisle",
+     "rot": -150,
+     "pose": "stand",
+     "face": "scared",
+     "look": [
+      -5.4,
+      1.2,
+      4.2
+     ]
+    },
+    {
+     "id": "celia",
+     "pos": "front+0.4,0,0.6",
+     "rot": 150,
+     "pose": "scared",
+     "face": "shocked",
+     "look": [
+      -5.4,
+      1.2,
+      4.2
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": [
+     "hero",
+     "sister"
+    ],
+    "angle": 40
+   },
+   "variant": 0,
+   "sfx": [
+    {
+     "t": "@espirra",
+     "name": "pop"
+    },
+    {
+     "t": "@gemido",
+     "name": "groanLow"
+    }
+   ]
+  },
+  {
+   "id": "q9",
+   "set": "classroom",
+   "vo": "Solução: chiclete pra todo mundo. Boca mastigando não conversa.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "aisle",
+     "rot": -90,
+     "pose": "holdOut",
+     "face": "smug",
+     "hold": {
+      "R": "paper"
+     }
+    },
+    {
+     "id": "sister",
+     "pos": "seat1",
+     "rot": 90,
+     "pose": "sit",
+     "face": "happy",
+     "look": "hero"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": [
+     "hero",
+     "sister"
+    ],
+    "angle": -40
+   },
+   "variant": 0
+  },
+  {
+   "id": "q10",
+   "set": "classroom",
+   "vo": "Chiclete? Na minha escola?",
+   "actors": [
+    {
+     "id": "celia",
+     "pos": "front+0.4,0,0.6",
+     "rot": 90,
+     "pose": "armsCrossed",
+     "face": "angry",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "celia",
+    "angle": 10
+   },
+   "who": "adulta",
+   "variant": 0
+  },
+  {
+   "id": "q11",
+   "set": "cafeteria",
+   "vo": "Problema três: o banheiro fica do outro lado do refeitório. Com oito zumbis no caminho.",
+   "actors": [
+    {
+     "id": "zA",
+     "pos": [
+      -0.3,
+      0,
+      -2.0
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zB",
+     "pos": [
+      0.5,
+      0,
+      -0.4
+     ],
+     "rot": 20,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zC",
+     "pos": [
+      -0.5,
+      0,
+      1.0
+     ],
+     "rot": -10,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zD",
+     "pos": [
+      0.4,
+      0,
+      2.6
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x01",
+     "pos": [
+      -0.4,
+      0,
+      -4.2
+     ],
+     "rot": -19,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x02",
+     "pos": [
+      0.5,
+      0,
+      1.6
+     ],
+     "rot": -46,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x03",
+     "pos": [
+      2.6,
+      0,
+      3.4
+     ],
+     "rot": -68,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x04",
+     "pos": [
+      -0.6,
+      0,
+      -0.9
+     ],
+     "rot": -26,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "pos": [
+     -4.2,
+     1.7,
+     6.8
+    ],
+    "look": [
+     1.0,
+     1.0,
+     0.4
+    ],
+    "fov": 44,
+    "move": "drift"
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "sign",
+     "pos": [
+      5.92,
+      1.9,
+      2.4
+     ],
+     "rot": -90,
+     "w": 0.9,
+     "h": 0.3,
+     "text": "BANHEIRO →",
+     "bg": "#f6f2e8",
+     "fg": "#1d2333"
+    }
+   ]
+  },
+  {
+   "id": "q12",
+   "set": "cafeteria",
+   "vo": "Solução: revezamento. Alguém faz barulho numa ponta, e o resto atravessa na outra.",
+   "actors": [
+    {
+     "id": "bestie",
+     "pos": [
+      -4.4,
+      0,
+      -2.0
+     ],
+     "rot": 90,
+     "pose": "cheer",
+     "face": "determined",
+     "hold": {
+      "R": "tray"
+     }
+    },
+    {
+     "id": "zA",
+     "pos": [
+      -0.3,
+      0,
+      -2.0
+     ],
+     "rot": -90,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.3,
+       "pos": [
+        -0.3,
+        0,
+        -2.0
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        -2.3,
+        0,
+        -2.0
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zB",
+     "pos": [
+      0.5,
+      0,
+      -0.4
+     ],
+     "rot": -100,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.3,
+       "pos": [
+        0.5,
+        0,
+        -0.4
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        -1.6,
+        0,
+        -1.6
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "sister",
+     "pos": [
+      0.8,
+      0,
+      4.6
+     ],
+     "rot": 90,
+     "pose": "stand",
+     "face": "determined",
+     "path": [
+      {
+       "t": 1.6,
+       "pos": [
+        0.8,
+        0,
+        4.6
+       ]
+      },
+      {
+       "t": 4.4,
+       "pos": [
+        4.6,
+        0,
+        4.4
+       ],
+       "gait": "sneak"
+      }
+     ]
+    },
+    {
+     "id": "kid",
+     "pos": [
+      -0.2,
+      0,
+      5.0
+     ],
+     "rot": 90,
+     "pose": "stand",
+     "face": "scared",
+     "path": [
+      {
+       "t": 2.0,
+       "pos": [
+        -0.2,
+        0,
+        5.0
+       ]
+      },
+      {
+       "t": 4.8,
+       "pos": [
+        3.6,
+        0,
+        5.0
+       ],
+       "gait": "sneak"
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     0.6,
+     2.8,
+     11.5
+    ],
+    "look": [
+     0.0,
+     0.9,
+     1.0
+    ],
+    "fov": 44
+   },
+   "variant": 1,
+   "sfx": [
+    {
+     "t": 0.4,
+     "name": "thud"
+    },
+    {
+     "t": 0.8,
+     "name": "thud"
+    },
+    {
+     "t": 1.2,
+     "name": "thud"
+    }
+   ]
+  },
+  {
+   "id": "q13",
+   "set": "cafeteria",
+   "vo": "[whispering] Eu não vou fazer xixi com zumbi escutando.",
+   "actors": [
+    {
+     "id": "sister",
+     "pos": [
+      4.6,
+      0,
+      4.4
+     ],
+     "rot": -150,
+     "pose": "armsCrossed",
+     "face": "angry",
+     "look": "camera",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "sister",
+    "angle": 0
+   },
+   "who": "female",
+   "variant": 1
+  },
+  {
+   "id": "x1",
+   "set": "void",
+   "vo": "Nada disso é o que te dá medo de verdade.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 0,
+     "pose": "stand",
+     "face": "worried"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": 0,
+    "move": "pushIn"
+   },
+   "sfx": [
+    {
+     "t": "@verdade",
+     "name": "subdrop"
+    }
+   ]
+  },
+  {
+   "id": "x2",
+   "kind": "card",
+   "card": "icon",
+   "vo": "Lembra? Eles seguem o som mais alto. E qual é o som mais alto de uma escola?",
+   "icon": "question",
+   "caption": "O SOM MAIS ALTO",
+   "sub": "DA ESCOLA"
+  },
+  {
+   "id": "x3",
+   "set": "cafeteria",
+   "vo": "O sinal.",
+   "camera": {
+    "pos": [
+     1.6,
+     1.9,
+     -2.6
+    ],
+    "look": [
+     2.6,
+     2.5,
+     -4.85
+    ],
+    "fov": 30
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "box",
+     "pos": [
+      2.6,
+      2.55,
+      -4.85
+     ],
+     "w": 0.5,
+     "h": 0.32,
+     "d": 0.18,
+     "color": "#c8402f"
+    },
+    {
+     "type": "sign",
+     "pos": [
+      2.6,
+      2.22,
+      -4.9
+     ],
+     "w": 0.6,
+     "h": 0.2,
+     "text": "SINAL",
+     "bg": "#f6f2e8",
+     "fg": "#1d2333"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "bell",
+     "dur": 1.2,
+     "vol": -4
+    }
+   ]
+  },
+  {
+   "id": "x4",
+   "kind": "card",
+   "card": "clock",
+   "vo": "Ele toca sozinho, a cada cinquenta minutos. E o painel que desliga fica na diretoria. Lotada de zumbi.",
+   "mode": "tick",
+   "label": "A CADA 50 MINUTOS",
+   "value": "10:50",
+   "time": "10:50"
+  },
+  {
+   "id": "x5",
+   "set": "cafeteria",
+   "vo": "Às dez e cinquenta, você está atravessando o refeitório. Bem embaixo da caixa de som.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -1.4,
+      0,
+      -4.1
+     ],
+     "rot": 90,
+     "pose": "stand",
+     "face": "focused",
+     "path": [
+      {
+       "t": 0.4,
+       "pos": [
+        -1.4,
+        0,
+        -4.1
+       ]
+      },
+      {
+       "t": 4.0,
+       "pos": [
+        2.4,
+        0,
+        -4.1
+       ],
+       "gait": "sneak"
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     0.4,
+     1.6,
+     2.4
+    ],
+    "look": [
+     1.4,
+     1.4,
+     -4.4
+    ],
+    "fov": 40
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "box",
+     "pos": [
+      2.6,
+      2.55,
+      -4.85
+     ],
+     "w": 0.5,
+     "h": 0.32,
+     "d": 0.18,
+     "color": "#c8402f"
+    }
+   ]
+  },
+  {
+   "id": "x6",
+   "set": "cafeteria",
+   "vo": "Ele toca.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      2.4,
+      0,
+      -4.1
+     ],
+     "rot": 90,
+     "pose": "shocked",
+     "face": "shocked",
+     "look": [
+      2.6,
+      2.55,
+      -4.85
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": 30,
+    "height": -12,
+    "move": "crashIn"
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "box",
+     "pos": [
+      2.6,
+      2.55,
+      -4.85
+     ],
+     "w": 0.5,
+     "h": 0.32,
+     "d": 0.18,
+     "color": "#c8402f"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 0.05,
+     "name": "bell",
+     "dur": 3.0
+    }
+   ]
+  },
+  {
+   "id": "x7",
+   "set": "cafeteria",
+   "vo": "Cento e cinquenta zumbis, de todas as salas, vindo ao mesmo tempo.",
+   "actors": [
+    {
+     "id": "x01",
+     "pos": [
+      -1.69,
+      0,
+      -1.22
+     ],
+     "rot": 130,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -1.69,
+        0,
+        -1.22
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        -0.54,
+        0,
+        -2.12
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x02",
+     "pos": [
+      1.45,
+      0,
+      -1.83
+     ],
+     "rot": 159,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        1.45,
+        0,
+        -1.83
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        1.5,
+        0,
+        -2.52
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x03",
+     "pos": [
+      0.34,
+      0,
+      0.45
+     ],
+     "rot": 157,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        0.34,
+        0,
+        0.45
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        0.78,
+        0,
+        -1.04
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x04",
+     "pos": [
+      -4.24,
+      0,
+      1.56
+     ],
+     "rot": 133,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -4.24,
+        0,
+        1.56
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        -2.2,
+        0,
+        -0.32
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x05",
+     "pos": [
+      -4.13,
+      0,
+      -1.69
+     ],
+     "rot": 115,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -4.13,
+        0,
+        -1.69
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        -2.12,
+        0,
+        -2.43
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x06",
+     "pos": [
+      -0.72,
+      0,
+      4.05
+     ],
+     "rot": 160,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -0.72,
+        0,
+        4.05
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        0.09,
+        0,
+        1.3
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x07",
+     "pos": [
+      1.22,
+      0,
+      4.99
+     ],
+     "rot": 172,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        1.22,
+        0,
+        4.99
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        1.35,
+        0,
+        1.91
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x08",
+     "pos": [
+      4.57,
+      0,
+      -2.04
+     ],
+     "rot": -145,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        4.57,
+        0,
+        -2.04
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        3.53,
+        0,
+        -2.66
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x09",
+     "pos": [
+      -1.84,
+      0,
+      3.97
+     ],
+     "rot": 153,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -1.84,
+        0,
+        3.97
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        -0.64,
+        0,
+        1.25
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x10",
+     "pos": [
+      1.73,
+      0,
+      0.94
+     ],
+     "rot": 171,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        1.73,
+        0,
+        0.94
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        1.68,
+        0,
+        -0.72
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x11",
+     "pos": [
+      -1.78,
+      0,
+      2.17
+     ],
+     "rot": 148,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -1.78,
+        0,
+        2.17
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        -0.6,
+        0,
+        0.08
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x12",
+     "pos": [
+      2.83,
+      0,
+      3.05
+     ],
+     "rot": -178,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        2.83,
+        0,
+        3.05
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        2.4,
+        0,
+        0.65
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x13",
+     "pos": [
+      0.24,
+      0,
+      4.43
+     ],
+     "rot": 166,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        0.24,
+        0,
+        4.43
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        0.72,
+        0,
+        1.55
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x14",
+     "pos": [
+      2.2,
+      0,
+      -0.15
+     ],
+     "rot": 175,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        2.2,
+        0,
+        -0.15
+       ]
+      },
+      {
+       "t": 6,
+       "pos": [
+        1.99,
+        0,
+        -1.43
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "pos": [
+     2.2,
+     2.6,
+     -4.2
+    ],
+    "look": [
+     -0.6,
+     0.6,
+     3.0
+    ],
+    "fov": 52,
+    "move": "shake"
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "box",
+     "pos": [
+      2.6,
+      2.55,
+      -4.85
+     ],
+     "w": 0.5,
+     "h": 0.32,
+     "d": 0.18,
+     "color": "#c8402f"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "bell",
+     "dur": 2.5,
+     "vol": -6
+    },
+    {
+     "t": 0.6,
+     "name": "groanLow"
+    }
+   ]
+  },
+  {
+   "id": "x8",
+   "set": "cafeteria",
+   "vo": "Você se joga atrás da lixeira. Eles passam a um palmo do seu tênis.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      2.4,
+      0,
+      5.3
+     ],
+     "rot": 180,
+     "pose": "hide",
+     "face": "scared"
+    },
+    {
+     "id": "zE",
+     "pos": [
+      -0.4,
+      0,
+      3.7
+     ],
+     "rot": 90,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.4,
+       "pos": [
+        -0.4,
+        0,
+        3.7
+       ]
+      },
+      {
+       "t": 7,
+       "pos": [
+        5.2,
+        0,
+        3.8
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zB",
+     "pos": [
+      -1.4,
+      0,
+      3.2
+     ],
+     "rot": 90,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.6,
+       "pos": [
+        -1.4,
+        0,
+        3.2
+       ]
+      },
+      {
+       "t": 7,
+       "pos": [
+        4.2,
+        0,
+        3.1
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "pos": [
+     5.4,
+     0.95,
+     5.85
+    ],
+    "look": [
+     2.0,
+     0.6,
+     4.3
+    ],
+    "fov": 44
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "crate",
+     "pos": [
+      2.4,
+      0,
+      4.6
+     ],
+     "w": 0.55,
+     "h": 0.85,
+     "d": 0.55,
+     "color": "#3f8a4a"
+    },
+    {
+     "type": "sign",
+     "pos": [
+      2.4,
+      0.55,
+      4.88
+     ],
+     "w": 0.4,
+     "h": 0.12,
+     "text": "LIXO",
+     "bg": "#f6f2e8",
+     "fg": "#1d2333"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 0.3,
+     "name": "thud"
+    }
+   ]
+  },
+  {
+   "id": "x9",
+   "set": "cafeteria",
+   "vo": "Salvo por sorte. E daqui a cinquenta minutos, o sinal toca de novo.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      2.4,
+      0,
+      5.3
+     ],
+     "rot": 120,
+     "pose": "hide",
+     "face": {
+      "mouth": -0.3,
+      "brow": 0.8,
+      "eyes": 1.1,
+      "sweat": true
+     }
+    }
+   ],
+   "camera": {
+    "pos": [
+     3.45,
+     0.9,
+     4.8
+    ],
+    "look": [
+     2.4,
+     0.72,
+     5.3
+    ],
+    "fov": 34,
+    "move": "pushIn"
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "crate",
+     "pos": [
+      2.4,
+      0,
+      4.6
+     ],
+     "w": 0.55,
+     "h": 0.85,
+     "d": 0.55,
+     "color": "#3f8a4a"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@sinal",
+     "name": "heartbeat"
+    }
+   ]
+  },
+  {
+   "id": "y1",
+   "kind": "card",
+   "card": "icon",
+   "vo": "Então você volta pra origem de tudo: as formigas. Cientistas estudaram como elas se defendem.",
+   "icon": "brain",
+   "caption": "COMO AS FORMIGAS",
+   "sub": "SE DEFENDEM"
+  },
+  {
+   "id": "y2",
+   "kind": "card",
+   "card": "chain",
+   "vo": "Elas não lutam contra a doença dentro do ninho. Elas levam tudo que está contaminado pra fora.",
+   "title": "A DEFESA DAS FORMIGAS",
+   "nodes": [
+    {
+     "icon": "house",
+     "label": "NINHO"
+    },
+    {
+     "icon": "arrow",
+     "label": "LEVA"
+    },
+    {
+     "icon": "flag",
+     "label": "PRA FORA"
+    }
+   ]
+  },
+  {
+   "id": "y3",
+   "kind": "card",
+   "card": "icon",
+   "vo": "E fungo que ataca inseto odeia sol: a luz ultravioleta destrói os esporos.",
+   "icon": "sun",
+   "caption": "LUZ DO SOL",
+   "sub": "DESTRÓI OS ESPOROS"
+  },
+  {
+   "id": "y4",
+   "set": "stadium",
+   "vo": "Aí você vê o Rafa. Ele seguiu um alarme de carro até o campo. E ficou parado no sol.",
+   "actors": [
+    {
+     "id": "rafa",
+     "pos": "midfield",
+     "rot": 30,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "shot": "wide",
+    "target": "rafa",
+    "angle": 20,
+    "height": 10,
+    "move": "pushIn"
+   },
+   "variant": 1,
+   "sfx": [
+    {
+     "t": "@alarme",
+     "name": "ticks",
+     "dur": 1.0
+    }
+   ]
+  },
+  {
+   "id": "y5",
+   "set": "stadium",
+   "vo": "Trinta segundos depois, ele pisca.",
+   "actors": [
+    {
+     "id": "rafa",
+     "pos": "midfield",
+     "rot": 30,
+     "pose": "stand",
+     "face": "sleepy",
+     "faces": [
+      {
+       "t": "@pisca",
+       "face": "confused",
+       "blend": 0.3
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "rafa",
+    "angle": 10
+   },
+   "variant": 1,
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "from": "0:30",
+     "at": 0.1
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@pisca",
+     "name": "chime"
+    }
+   ]
+  },
+  {
+   "id": "y6",
+   "set": "stadium",
+   "vo": "Eu perdi a prova?",
+   "actors": [
+    {
+     "id": "rafa",
+     "pos": "midfield",
+     "rot": 30,
+     "pose": "shrug",
+     "face": "confused",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "rafa",
+    "angle": -20
+   },
+   "who": "male",
+   "variant": 1
+  },
+  {
+   "id": "y7",
+   "set": "stadium",
+   "vo": "Trinta segundos de sol. É a cura.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "midfield+-3,0,3",
+     "rot": 150,
+     "pose": "stand",
+     "face": "awe"
+    }
+   ],
+   "camera": {
+    "shot": "xclose",
+    "target": "hero",
+    "angle": 0,
+    "height": -8,
+    "move": "pushIn"
+   },
+   "variant": 1,
+   "sfx": [
+    {
+     "t": "@cura",
+     "name": "swell"
+    }
+   ]
+  },
+  {
+   "id": "y8",
+   "set": "cafeteria",
+   "vo": "Você e o Davi treinam: levar grupos pequenos pro sol, usando o som.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -1.6,
+      0,
+      4.4
+     ],
+     "rot": 120,
+     "pose": "holdOut",
+     "face": "determined",
+     "hold": {
+      "R": "phone"
+     }
+    },
+    {
+     "id": "bestie",
+     "pos": [
+      -2.6,
+      0,
+      4.0
+     ],
+     "rot": 110,
+     "pose": "thinking",
+     "face": "focused",
+     "look": "hero"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": [
+     "hero",
+     "bestie"
+    ],
+    "angle": 0
+   },
+   "variant": 1
+  },
+  {
+   "id": "y9",
+   "set": "cafeteria",
+   "vo": "Primeira vez: o celular toca baixo demais. Eles param no bebedouro.",
+   "actors": [
+    {
+     "id": "zA",
+     "pos": [
+      0.4,
+      0,
+      0.0
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.2,
+       "pos": [
+        0.4,
+        0,
+        0.0
+       ]
+      },
+      {
+       "t": 2.4,
+       "pos": [
+        0.4,
+        0,
+        1.2
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zC",
+     "pos": [
+      -0.4,
+      0,
+      -0.4
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.2,
+       "pos": [
+        -0.4,
+        0,
+        -0.4
+       ]
+      },
+      {
+       "t": 2.4,
+       "pos": [
+        -0.5,
+        0,
+        0.8
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "hero",
+     "pos": [
+      0.0,
+      0,
+      4.4
+     ],
+     "rot": 180,
+     "pose": "holdOut",
+     "face": "confused",
+     "hold": {
+      "R": "phone"
+     }
+    }
+   ],
+   "camera": {
+    "pos": [
+     3.4,
+     1.6,
+     6.4
+    ],
+    "look": [
+     0.0,
+     1.0,
+     1.4
+    ],
+    "fov": 42
+   },
+   "variant": 1,
+   "sfx": [
+    {
+     "t": "@baixo",
+     "name": "ring",
+     "dur": 1.2,
+     "vol": -14
+    },
+    {
+     "t": "@bebedouro",
+     "name": "pop"
+    }
+   ]
+  },
+  {
+   "id": "y10",
+   "set": "stadium",
+   "vo": "Segunda: você anda rápido demais, e eles perdem o som.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "midfield+-6,0,8",
+     "rot": 150,
+     "pose": "stand",
+     "face": "determined",
+     "hold": {
+      "R": "phone"
+     },
+     "path": [
+      {
+       "t": 0.3,
+       "pos": "midfield+-6,0,8"
+      },
+      {
+       "t": 2.2,
+       "pos": "midfield+-2,0,2",
+       "gait": "jog"
+      }
+     ]
+    },
+    {
+     "id": "zA",
+     "pos": "midfield+-7.6,0,11",
+     "rot": 150,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.2,
+       "pos": "midfield+-7.6,0,11"
+      },
+      {
+       "t": 2.2,
+       "pos": "midfield+-6.9,0,9.8",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zC",
+     "pos": "midfield+-8.6,0,10.2",
+     "rot": 150,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.2,
+       "pos": "midfield+-8.6,0,10.2"
+      },
+      {
+       "t": 2.2,
+       "pos": "midfield+-8.0,0,9.2",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "shot": "wide",
+    "target": "hero",
+    "angle": 60,
+    "height": 10
+   },
+   "variant": 1,
+   "sfx": [
+    {
+     "t": "@perdem",
+     "name": "pop"
+    }
+   ]
+  },
+  {
+   "id": "y11",
+   "set": "stadium",
+   "vo": "Terceira: devagar. Sempre um passo na frente deles. Até o sol.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "midfield+-4,0,6",
+     "rot": -30,
+     "pose": "holdOut",
+     "face": "focused",
+     "hold": {
+      "R": "phone"
+     },
+     "strafe": true,
+     "path": [
+      {
+       "t": 0.2,
+       "pos": "midfield+-4,0,6"
+      },
+      {
+       "t": 5.5,
+       "pos": "midfield+-1.6,0,2.2",
+       "gait": "walk"
+      }
+     ]
+    },
+    {
+     "id": "zA",
+     "pos": "midfield+-5.2,0,7.6",
+     "rot": 150,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.2,
+       "pos": "midfield+-5.2,0,7.6"
+      },
+      {
+       "t": 5.5,
+       "pos": "midfield+-2.8,0,3.8",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zC",
+     "pos": "midfield+-4.2,0,8.4",
+     "rot": 150,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.2,
+       "pos": "midfield+-4.2,0,8.4"
+      },
+      {
+       "t": 5.5,
+       "pos": "midfield+-1.8,0,4.6",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "shot": "wide",
+    "target": "hero",
+    "angle": 90,
+    "height": 12,
+    "move": "track"
+   },
+   "variant": 1,
+   "sfx": [
+    {
+     "t": 0.2,
+     "name": "ring",
+     "dur": 3.0,
+     "vol": -8
+    }
+   ]
+  },
+  {
+   "id": "y12",
+   "kind": "card",
+   "card": "chain",
+   "vo": "Cinco acordados. Depois doze. Depois vinte e três.",
+   "title": "ACORDADOS",
+   "nodes": [
+    {
+     "icon": "check",
+     "label": "5"
+    },
+    {
+     "icon": "check",
+     "label": "12"
+    },
+    {
+     "icon": "check",
+     "label": "23"
+    }
+   ],
+   "step": 1.75
+  },
+  {
+   "id": "y13",
+   "kind": "card",
+   "card": "rules",
+   "vo": "Sua regra: não lute. Leve pra fora.",
+   "title": "A SUA REGRA",
+   "prefix": "REGRA",
+   "rules": [
+    "NÃO LUTE.",
+    "LEVE PRA FORA."
+   ],
+   "current": 0
+  },
+  {
+   "id": "z1",
+   "set": "stadium",
+   "vo": "Por uma hora, funciona.",
+   "actors": [
+    {
+     "id": "w1",
+     "pos": "midfield+-2,0,2",
+     "rot": 20,
+     "pose": {
+      "hipY": -0.71,
+      "spine": [
+       8,
+       0,
+       0
+      ],
+      "legL": [
+       88,
+       8,
+       8
+      ],
+      "legR": [
+       86,
+       8,
+       14
+      ],
+      "armL": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "armR": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "confused"
+    },
+    {
+     "id": "w2",
+     "pos": "midfield+1,0,1",
+     "rot": -30,
+     "pose": {
+      "hipY": -0.71,
+      "spine": [
+       8,
+       0,
+       0
+      ],
+      "legL": [
+       88,
+       8,
+       8
+      ],
+      "legR": [
+       86,
+       8,
+       14
+      ],
+      "armL": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "armR": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "tired"
+    },
+    {
+     "id": "w3",
+     "pos": "midfield+-0.5,0,-1.5",
+     "rot": 160,
+     "pose": {
+      "hipY": -0.71,
+      "spine": [
+       8,
+       0,
+       0
+      ],
+      "legL": [
+       88,
+       8,
+       8
+      ],
+      "legR": [
+       86,
+       8,
+       14
+      ],
+      "armL": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "armR": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "happy"
+    },
+    {
+     "id": "w4",
+     "pos": "midfield+2.4,0,-0.6",
+     "rot": -100,
+     "pose": {
+      "hipY": -0.71,
+      "spine": [
+       8,
+       0,
+       0
+      ],
+      "legL": [
+       88,
+       8,
+       8
+      ],
+      "legR": [
+       86,
+       8,
+       14
+      ],
+      "armL": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "armR": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "confused"
+    },
+    {
+     "id": "hero",
+     "pos": "midfield+0.2,0,3.4",
+     "rot": 170,
+     "pose": "confident",
+     "face": "smile"
+    }
+   ],
+   "camera": {
+    "shot": "wide",
+    "target": "hero",
+    "angle": 10,
+    "height": 14,
+    "move": "craneUp"
+   },
+   "variant": 1
+  },
+  {
+   "id": "z2",
+   "set": "classroom",
+   "vo": "Até você olhar o relógio da parede. Onze e cinquenta e seis.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "aisle",
+     "rot": -90,
+     "pose": "stand",
+     "face": "shocked"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": 40,
+    "height": -6
+   },
+   "variant": 0,
+   "overlays": [
+    {
+     "type": "label",
+     "text": "11:56",
+     "at": "@onze",
+     "corner": "tr"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@onze",
+     "name": "ticks",
+     "dur": 1.4
+    }
+   ]
+  },
+  {
+   "id": "z3",
+   "set": "classroom",
+   "vo": "O sinal do meio-dia é o mais longo do dia. E a caixa de som dele fica na parede desta sala.",
+   "camera": {
+    "pos": [
+     -0.6,
+     1.6,
+     0.6
+    ],
+    "look": [
+     -2.4,
+     2.4,
+     -4.85
+    ],
+    "fov": 36,
+    "move": "pushIn"
+   },
+   "variant": 0,
+   "props": [
+    {
+     "type": "box",
+     "pos": [
+      -2.4,
+      2.6,
+      -4.85
+     ],
+     "w": 0.5,
+     "h": 0.32,
+     "d": 0.18,
+     "color": "#c8402f"
+    }
+   ]
+  },
+  {
+   "id": "z4",
+   "set": "classroom",
+   "vo": "Onde estão quarenta alunos. A diretora. E a sua irmã.",
+   "actors": [
+    {
+     "id": "sister",
+     "pos": "seat1",
+     "rot": -90,
+     "pose": "sit",
+     "face": "scared"
+    },
+    {
+     "id": "celia",
+     "pos": "front+0.4,0,0.6",
+     "rot": 90,
+     "pose": "armsCrossed",
+     "face": "worried"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "sister",
+    "angle": -20,
+    "move": "pushIn"
+   },
+   "variant": 0
+  },
+  {
+   "id": "z5",
+   "set": "cafeteria",
+   "vo": "No refeitório ao lado, quase quatrocentos zumbis. Parados. Esperando um som.",
+   "actors": [
+    {
+     "id": "zA",
+     "pos": [
+      -0.4,
+      0,
+      -2.6
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zB",
+     "pos": [
+      0.6,
+      0,
+      -1.6
+     ],
+     "rot": 10,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zC",
+     "pos": [
+      -0.5,
+      0,
+      -0.4
+     ],
+     "rot": -5,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zD",
+     "pos": [
+      0.5,
+      0,
+      0.8
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zE",
+     "pos": [
+      -0.6,
+      0,
+      2.0
+     ],
+     "rot": 15,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zF",
+     "pos": [
+      0.7,
+      0,
+      3.0
+     ],
+     "rot": -10,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "jorge",
+     "pos": [
+      2.2,
+      0,
+      3.4
+     ],
+     "rot": -20,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "rafa2",
+     "pos": [
+      -2.2,
+      0,
+      3.3
+     ],
+     "rot": 20,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x01",
+     "pos": [
+      -0.48,
+      0,
+      0.55
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x02",
+     "pos": [
+      -4.06,
+      0,
+      -1.81
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x03",
+     "pos": [
+      -4.09,
+      0,
+      2.85
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x04",
+     "pos": [
+      1.93,
+      0,
+      -4.21
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x05",
+     "pos": [
+      4.82,
+      0,
+      4.28
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x06",
+     "pos": [
+      -3.43,
+      0,
+      -4.46
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x07",
+     "pos": [
+      0.28,
+      0,
+      -4.05
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x08",
+     "pos": [
+      -0.59,
+      0,
+      3.15
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x09",
+     "pos": [
+      4.58,
+      0,
+      3.2
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x10",
+     "pos": [
+      -4.99,
+      0,
+      -2.67
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x11",
+     "pos": [
+      2.79,
+      0,
+      -2.12
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x12",
+     "pos": [
+      -2.87,
+      0,
+      -2.12
+     ],
+     "rot": 0,
+     "pose": "zombie",
+     "face": "zombie",
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "pos": [
+     0.1,
+     1.4,
+     8.4
+    ],
+    "look": [
+     0,
+     1.1,
+     -1
+    ],
+    "fov": 34,
+    "move": "pushIn"
+   },
+   "variant": 1,
+   "sfx": [
+    {
+     "t": 0.3,
+     "name": "groanLow"
+    }
+   ]
+  },
+  {
+   "id": "z6",
+   "set": "classroom",
+   "vo": "Quatro minutos até o sinal.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "aisle",
+     "rot": -90,
+     "pose": "stand",
+     "face": "scared"
+    }
+   ],
+   "camera": {
+    "shot": "xclose",
+    "target": "hero",
+    "angle": 15,
+    "height": -8
+   },
+   "variant": 0,
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "from": "4:00",
+     "tick": 4.652,
+     "corner": "tr",
+     "keep": true,
+     "at": 0.112
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@quatro",
+     "name": "heartbeat"
+    }
+   ]
+  },
+  {
+   "id": "d1",
+   "set": "classroom",
+   "vo": "Pra tirar quatrocentos zumbis do prédio, você precisa de um som mais alto que o sinal. Lá fora. No sol.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "aisle",
+     "rot": -60,
+     "pose": "thinking",
+     "face": "focused"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": -30
+   },
+   "variant": 0,
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "from": "3:53",
+     "tick": 4.652,
+     "corner": "tr",
+     "keep": true,
+     "persist": true
+    }
+   ]
+  },
+  {
+   "id": "d2",
+   "kind": "card",
+   "card": "compare",
+   "vo": "Um sinal de escola faz uns noventa e cinco decibéis. Um apito de juiz, cento e quinze.",
+   "title": "O SOM MAIS ALTO",
+   "unit": "DB",
+   "left": {
+    "label": "SINAL",
+    "value": 95,
+    "icon": "clock"
+   },
+   "right": {
+    "label": "APITO",
+    "value": 115,
+    "icon": "lightning"
+   },
+   "ratio": false,
+   "at": "@apito",
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "from": "3:25",
+     "tick": 4.652,
+     "corner": "tr",
+     "keep": true,
+     "persist": true
+    }
+   ]
+  },
+  {
+   "id": "d3",
+   "kind": "card",
+   "card": "stat",
+   "vo": "E cada dez decibéis a mais é dez vezes mais energia. Vinte a mais: cem vezes.",
+   "value": 100,
+   "unit": "×",
+   "label": "MAIS ENERGIA QUE O SINAL",
+   "icon": "lightning",
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "from": "3:03",
+     "tick": 4.652,
+     "corner": "tr",
+     "keep": true,
+     "persist": true
+    }
+   ]
+  },
+  {
+   "id": "d4",
+   "set": "classroom",
+   "vo": "O apito está no seu bolso. Só que o som mais alto do campo vai ser você. Quatrocentos zumbis vindo na sua direção. E basta um encostar.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "aisle",
+     "rot": -60,
+     "pose": "holdOut",
+     "face": "worried",
+     "hold": {
+      "R": "whistle"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": 20,
+    "move": "pushIn"
+   },
+   "variant": 0,
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "from": "2:37",
+     "tick": 4.652,
+     "corner": "tr",
+     "keep": true,
+     "persist": true
+    }
+   ]
+  },
+  {
+   "id": "d5",
+   "set": "classroom",
+   "vo": "Você vai apitar pra quatrocentos zumbis?",
+   "actors": [
+    {
+     "id": "bestie",
+     "pos": "seat3",
+     "rot": 90,
+     "pose": "sit",
+     "face": "scared",
+     "look": "hero",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "bestie",
+    "angle": 10
+   },
+   "who": "male",
+   "variant": 0,
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "from": "1:55",
+     "tick": 4.652,
+     "corner": "tr",
+     "keep": true,
+     "persist": true
+    }
+   ]
+  },
+  {
+   "id": "d6",
+   "set": "classroom",
+   "vo": "A sua escola... ou você.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "aisle",
+     "rot": -60,
+     "pose": "stand",
+     "face": "determined",
+     "hold": {
+      "R": "whistle"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "xclose",
+    "target": "hero",
+    "angle": 0,
+    "move": "pushIn"
+   },
+   "hold": 2.0,
+   "variant": 0,
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "from": "1:40",
+     "tick": 4.652,
+     "corner": "tr",
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "fx": {
+    "vignette": 0.35
+   }
+  },
+  {
+   "id": "e1",
+   "set": "classroom",
+   "vo": "Você não luta. Você leva pra fora.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "aisle",
+     "rot": -60,
+     "pose": "determined",
+     "face": "determined",
+     "hold": {
+      "R": "whistle"
+     },
+     "path": [
+      {
+       "t": "@leva",
+       "pos": "aisle"
+      },
+      {
+       "t": "@fora+0.8",
+       "pos": "aisle+0,0,3.4",
+       "gait": "run"
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": -40
+   },
+   "variant": 0,
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "from": "1:20",
+     "tick": 4.652,
+     "corner": "tr",
+     "keep": true,
+     "persist": true
+    }
+   ]
+  },
+  {
+   "id": "e2",
+   "set": "stadium",
+   "vo": "Você corre pro meio do campo. Meio-dia. Sol a pino. A mesma hora das formigas.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "midfield+-10,0,12",
+     "rot": -20,
+     "pose": "stand",
+     "face": "determined",
+     "hold": {
+      "R": "whistle"
+     },
+     "path": [
+      {
+       "t": 0.1,
+       "pos": "midfield+-10,0,12"
+      },
+      {
+       "t": 4.0,
+       "pos": "midfield",
+       "gait": "run"
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "wide",
+    "target": "hero",
+    "angle": 70,
+    "height": 14,
+    "move": "track"
+   },
+   "variant": 1,
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "from": "1:08",
+     "tick": 4.652,
+     "corner": "tr",
+     "keep": true,
+     "persist": true
+    }
+   ]
+  },
+  {
+   "id": "e3",
+   "set": "stadium",
+   "vo": "Você apita. Uma vez.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "midfield",
+     "rot": -20,
+     "pose": {
+      "reachR": {
+       "to": "mouth"
+      },
+      "head": [
+       -6,
+       0,
+       0
+      ],
+      "armL": [
+       10,
+       14,
+       0,
+       20
+      ]
+     },
+     "face": "determined",
+     "hold": {
+      "R": "whistle"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": 0,
+    "height": -12
+   },
+   "variant": 1,
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "from": "0:43",
+     "tick": 4.652,
+     "corner": "tr",
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@vez",
+     "name": "whistle",
+     "dur": 1.0
+    }
+   ]
+  },
+  {
+   "id": "e4",
+   "set": "stadium",
+   "vo": "Os primeiros zumbis aparecem na beira do campo.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "midfield",
+     "rot": -20,
+     "pose": {
+      "reachR": {
+       "to": "mouth"
+      },
+      "head": [
+       -6,
+       0,
+       0
+      ],
+      "armL": [
+       10,
+       14,
+       0,
+       20
+      ]
+     },
+     "face": "determined",
+     "hold": {
+      "R": "whistle"
+     }
+    },
+    {
+     "id": "zA",
+     "pos": "midfield+-9,0,20",
+     "rot": 160,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": "midfield+-9,0,20"
+      },
+      {
+       "t": 5,
+       "pos": "midfield+-7.2,0,15",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zB",
+     "pos": "midfield+-6,0,21",
+     "rot": 160,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": "midfield+-6,0,21"
+      },
+      {
+       "t": 5,
+       "pos": "midfield+-4.8,0,16",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zC",
+     "pos": "midfield+-12,0,19",
+     "rot": 160,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": "midfield+-12,0,19"
+      },
+      {
+       "t": 5,
+       "pos": "midfield+-9.6,0,14.6",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "pos": [
+     2.6,
+     1.5,
+     -2.6
+    ],
+    "look": [
+     -6.5,
+     1.2,
+     15
+    ],
+    "fov": 26
+   },
+   "variant": 1,
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "from": "0:34",
+     "tick": 4.652,
+     "corner": "tr",
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "sfx": [
+    {
+     "t": 0.5,
+     "name": "groanLow"
+    }
+   ]
+  },
+  {
+   "id": "e5",
+   "set": "stadium",
+   "vo": "Duas vezes. O bando vai atrás dos primeiros.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "midfield",
+     "rot": -20,
+     "pose": {
+      "reachR": {
+       "to": "mouth"
+      },
+      "head": [
+       -6,
+       0,
+       0
+      ],
+      "armL": [
+       10,
+       14,
+       0,
+       20
+      ]
+     },
+     "face": "determined",
+     "hold": {
+      "R": "whistle"
+     }
+    },
+    {
+     "id": "x20",
+     "pos": [
+      -10.7,
+      0,
+      20.52
+     ],
+     "rot": 152,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -10.7,
+        0,
+        20.52
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -8.56,
+        0,
+        16.42
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x21",
+     "pos": [
+      -1.3,
+      0,
+      18.83
+     ],
+     "rot": 176,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -1.3,
+        0,
+        18.83
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -1.04,
+        0,
+        15.06
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x22",
+     "pos": [
+      2.16,
+      0,
+      19.1
+     ],
+     "rot": -174,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        2.16,
+        0,
+        19.1
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        1.73,
+        0,
+        15.28
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x23",
+     "pos": [
+      -3.9,
+      0,
+      16.89
+     ],
+     "rot": 167,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -3.9,
+        0,
+        16.89
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -3.12,
+        0,
+        13.51
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x24",
+     "pos": [
+      -13.94,
+      0,
+      17.97
+     ],
+     "rot": 142,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -13.94,
+        0,
+        17.97
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -11.15,
+        0,
+        14.38
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x25",
+     "pos": [
+      -2.29,
+      0,
+      15.55
+     ],
+     "rot": 172,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -2.29,
+        0,
+        15.55
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -1.83,
+        0,
+        12.44
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x26",
+     "pos": [
+      1.88,
+      0,
+      16.86
+     ],
+     "rot": -174,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        1.88,
+        0,
+        16.86
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        1.5,
+        0,
+        13.49
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x27",
+     "pos": [
+      -9.35,
+      0,
+      15.34
+     ],
+     "rot": 149,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -9.35,
+        0,
+        15.34
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -7.48,
+        0,
+        12.27
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x28",
+     "pos": [
+      5.95,
+      0,
+      20.91
+     ],
+     "rot": -164,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        5.95,
+        0,
+        20.91
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        4.76,
+        0,
+        16.73
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x29",
+     "pos": [
+      3.5,
+      0,
+      19.93
+     ],
+     "rot": -170,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        3.5,
+        0,
+        19.93
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        2.8,
+        0,
+        15.94
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zA",
+     "pos": "midfield+-7.2,0,10.4",
+     "rot": 150,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": "midfield+-7.2,0,10.4"
+      },
+      {
+       "t": 5,
+       "pos": "midfield+-5.4,0,7.800000000000001",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zB",
+     "pos": "midfield+-4.8,0,13.6",
+     "rot": 150,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": "midfield+-4.8,0,13.6"
+      },
+      {
+       "t": 5,
+       "pos": "midfield+-3.5999999999999996,0,10.2",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zC",
+     "pos": "midfield+-9.6,0,13",
+     "rot": 150,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": "midfield+-9.6,0,13"
+      },
+      {
+       "t": 5,
+       "pos": "midfield+-7.199999999999999,0,9.75",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zD",
+     "pos": "midfield+-3,0,17",
+     "rot": 150,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": "midfield+-3,0,17"
+      },
+      {
+       "t": 5,
+       "pos": "midfield+-2.25,0,12.75",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zE",
+     "pos": "midfield+-11,0,17",
+     "rot": 150,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": "midfield+-11,0,17"
+      },
+      {
+       "t": 5,
+       "pos": "midfield+-8.25,0,12.75",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zF",
+     "pos": "midfield+-7,0,18",
+     "rot": 150,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": "midfield+-7,0,18"
+      },
+      {
+       "t": 5,
+       "pos": "midfield+-5.25,0,13.5",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "pos": [
+     3.0,
+     3.2,
+     -6.0
+    ],
+    "look": [
+     -3.5,
+     0.8,
+     9.0
+    ],
+    "fov": 44
+   },
+   "variant": 1,
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "from": "0:23",
+     "tick": 4.652,
+     "corner": "tr",
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@vezes",
+     "name": "whistle",
+     "dur": 1.0
+    },
+    {
+     "t": "@bando",
+     "name": "groanLow"
+    }
+   ]
+  },
+  {
+   "id": "e6",
+   "set": "stadium",
+   "vo": "Três vezes. Lá dentro, o sinal toca. Ninguém volta. O seu apito é mais alto.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "midfield",
+     "rot": -20,
+     "pose": {
+      "reachR": {
+       "to": "mouth"
+      },
+      "head": [
+       -6,
+       0,
+       0
+      ],
+      "armL": [
+       10,
+       14,
+       0,
+       20
+      ]
+     },
+     "face": "furious",
+     "hold": {
+      "R": "whistle"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": -20,
+    "height": -10,
+    "move": "crashIn"
+   },
+   "variant": 1,
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "from": "0:10",
+     "tick": 4.652,
+     "corner": "tr",
+     "keep": false,
+     "persist": true
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@vezes",
+     "name": "whistle",
+     "dur": 1.2,
+     "vol": -3
+    },
+    {
+     "t": "@toca",
+     "name": "bell",
+     "dur": 2.5,
+     "vol": -14
+    }
+   ]
+  },
+  {
+   "id": "e7",
+   "set": "stadium",
+   "vo": "Quatrocentos zumbis no sol. Agora, trinta segundos.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "midfield",
+     "rot": -20,
+     "pose": {
+      "reachR": {
+       "to": "mouth"
+      },
+      "head": [
+       -6,
+       0,
+       0
+      ],
+      "armL": [
+       10,
+       14,
+       0,
+       20
+      ]
+     },
+     "face": "determined",
+     "hold": {
+      "R": "whistle"
+     }
+    },
+    {
+     "id": "zA",
+     "pos": "midfield+-4.16,0,6.720000000000001",
+     "rot": 150,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": "midfield+-4.16,0,6.720000000000001"
+      },
+      {
+       "t": 5,
+       "pos": "midfield+-3.25,0,5.25",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zB",
+     "pos": "midfield+-0.6400000000000001,0,7.359999999999999",
+     "rot": 150,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": "midfield+-0.6400000000000001,0,7.359999999999999"
+      },
+      {
+       "t": 5,
+       "pos": "midfield+-0.5,0,5.75",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zC",
+     "pos": "midfield+-7.040000000000001,0,3.84",
+     "rot": 150,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": "midfield+-7.040000000000001,0,3.84"
+      },
+      {
+       "t": 5,
+       "pos": "midfield+-5.5,0,3.0",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zD",
+     "pos": "midfield+2.5600000000000005,0,6.08",
+     "rot": 150,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": "midfield+2.5600000000000005,0,6.08"
+      },
+      {
+       "t": 5,
+       "pos": "midfield+2.0,0,4.75",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zE",
+     "pos": "midfield+-5.760000000000001,0,8.959999999999999",
+     "rot": 150,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": "midfield+-5.760000000000001,0,8.959999999999999"
+      },
+      {
+       "t": 5,
+       "pos": "midfield+-4.5,0,7.0",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zF",
+     "pos": "midfield+1.2800000000000002,0,9.920000000000002",
+     "rot": 150,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": "midfield+1.2800000000000002,0,9.920000000000002"
+      },
+      {
+       "t": 5,
+       "pos": "midfield+1.0,0,7.75",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "jorge",
+     "pos": "midfield+-2.5600000000000005,0,10.88",
+     "rot": 150,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": "midfield+-2.5600000000000005,0,10.88"
+      },
+      {
+       "t": 5,
+       "pos": "midfield+-2.0,0,8.5",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "rafa2",
+     "pos": "midfield+4.800000000000001,0,8.64",
+     "rot": 150,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": "midfield+4.800000000000001,0,8.64"
+      },
+      {
+       "t": 5,
+       "pos": "midfield+3.75,0,6.75",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x01",
+     "pos": [
+      -15.68,
+      0,
+      8.02
+     ],
+     "rot": 117,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -15.68,
+        0,
+        8.02
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -13.8,
+        0,
+        7.06
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x02",
+     "pos": [
+      -5.79,
+      0,
+      18.31
+     ],
+     "rot": 162,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -5.79,
+        0,
+        18.31
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -5.1,
+        0,
+        16.11
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x03",
+     "pos": [
+      -12.39,
+      0,
+      8.02
+     ],
+     "rot": 123,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -12.39,
+        0,
+        8.02
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -10.9,
+        0,
+        7.06
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x04",
+     "pos": [
+      -9.97,
+      0,
+      19.64
+     ],
+     "rot": 153,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -9.97,
+        0,
+        19.64
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -8.77,
+        0,
+        17.28
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x05",
+     "pos": [
+      -12.17,
+      0,
+      19.33
+     ],
+     "rot": 148,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -12.17,
+        0,
+        19.33
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -10.71,
+        0,
+        17.01
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x06",
+     "pos": [
+      1.22,
+      0,
+      8.46
+     ],
+     "rot": -172,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        1.22,
+        0,
+        8.46
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        1.07,
+        0,
+        7.44
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x07",
+     "pos": [
+      -2.07,
+      0,
+      14.06
+     ],
+     "rot": 172,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -2.07,
+        0,
+        14.06
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -1.82,
+        0,
+        12.37
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x08",
+     "pos": [
+      -5.27,
+      0,
+      23.93
+     ],
+     "rot": 168,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -5.27,
+        0,
+        23.93
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -4.64,
+        0,
+        21.06
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x09",
+     "pos": [
+      -13.58,
+      0,
+      6.37
+     ],
+     "rot": 115,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -13.58,
+        0,
+        6.37
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -11.95,
+        0,
+        5.61
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x10",
+     "pos": [
+      8.43,
+      0,
+      13.25
+     ],
+     "rot": -148,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        8.43,
+        0,
+        13.25
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        7.42,
+        0,
+        11.66
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x11",
+     "pos": [
+      -10.84,
+      0,
+      11.95
+     ],
+     "rot": 138,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -10.84,
+        0,
+        11.95
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -9.54,
+        0,
+        10.52
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x12",
+     "pos": [
+      -6.51,
+      0,
+      23.19
+     ],
+     "rot": 164,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -6.51,
+        0,
+        23.19
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -5.73,
+        0,
+        20.41
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x13",
+     "pos": [
+      -10.53,
+      0,
+      9.9
+     ],
+     "rot": 133,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -10.53,
+        0,
+        9.9
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -9.27,
+        0,
+        8.71
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x14",
+     "pos": [
+      -0.79,
+      0,
+      15.85
+     ],
+     "rot": 177,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -0.79,
+        0,
+        15.85
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -0.7,
+        0,
+        13.95
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x15",
+     "pos": [
+      8.8,
+      0,
+      21.1
+     ],
+     "rot": -157,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        8.8,
+        0,
+        21.1
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        7.74,
+        0,
+        18.57
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x16",
+     "pos": [
+      5.75,
+      0,
+      23.8
+     ],
+     "rot": -166,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        5.75,
+        0,
+        23.8
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        5.06,
+        0,
+        20.94
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x17",
+     "pos": [
+      -15.21,
+      0,
+      19.23
+     ],
+     "rot": 142,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -15.21,
+        0,
+        19.23
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -13.38,
+        0,
+        16.92
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x18",
+     "pos": [
+      6.58,
+      0,
+      17.72
+     ],
+     "rot": -160,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        6.58,
+        0,
+        17.72
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        5.79,
+        0,
+        15.59
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x19",
+     "pos": [
+      2.98,
+      0,
+      9.49
+     ],
+     "rot": -163,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        2.98,
+        0,
+        9.49
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        2.62,
+        0,
+        8.35
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x20",
+     "pos": [
+      -14.92,
+      0,
+      12.05
+     ],
+     "rot": 129,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -14.92,
+        0,
+        12.05
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -13.13,
+        0,
+        10.6
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x21",
+     "pos": [
+      -7.31,
+      0,
+      13.13
+     ],
+     "rot": 151,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -7.31,
+        0,
+        13.13
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -6.43,
+        0,
+        11.55
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x22",
+     "pos": [
+      0.82,
+      0,
+      21.05
+     ],
+     "rot": -178,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        0.82,
+        0,
+        21.05
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        0.72,
+        0,
+        18.52
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x23",
+     "pos": [
+      8.99,
+      0,
+      23.58
+     ],
+     "rot": -159,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        8.99,
+        0,
+        23.58
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        7.91,
+        0,
+        20.75
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x24",
+     "pos": [
+      9.83,
+      0,
+      20.22
+     ],
+     "rot": -154,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        9.83,
+        0,
+        20.22
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        8.65,
+        0,
+        17.79
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x25",
+     "pos": [
+      -8.04,
+      0,
+      9.17
+     ],
+     "rot": 139,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -8.04,
+        0,
+        9.17
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -7.08,
+        0,
+        8.07
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x26",
+     "pos": [
+      -10.99,
+      0,
+      22.58
+     ],
+     "rot": 154,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -10.99,
+        0,
+        22.58
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -9.67,
+        0,
+        19.87
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x27",
+     "pos": [
+      -0.36,
+      0,
+      18.52
+     ],
+     "rot": 179,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -0.36,
+        0,
+        18.52
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -0.32,
+        0,
+        16.3
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x28",
+     "pos": [
+      -13.51,
+      0,
+      13.19
+     ],
+     "rot": 134,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -13.51,
+        0,
+        13.19
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -11.89,
+        0,
+        11.61
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x29",
+     "pos": [
+      9.78,
+      0,
+      9.54
+     ],
+     "rot": -134,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        9.78,
+        0,
+        9.54
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        8.61,
+        0,
+        8.4
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "x30",
+     "pos": [
+      -4.18,
+      0,
+      20.41
+     ],
+     "rot": 168,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": [
+        -4.18,
+        0,
+        20.41
+       ]
+      },
+      {
+       "t": 5.0,
+       "pos": [
+        -3.68,
+        0,
+        17.96
+       ],
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "pos": [
+     -15,
+     10,
+     -9
+    ],
+    "look": [
+     -2,
+     0.8,
+     7
+    ],
+    "fov": 40,
+    "move": "drift"
+   },
+   "variant": 1,
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "from": "0:30",
+     "tick": 2.451,
+     "corner": "tl",
+     "keep": true,
+     "at": 2.361
+    }
+   ],
+   "sfx": [
+    {
+     "t": 0.3,
+     "name": "groanLow"
+    }
+   ]
+  },
+  {
+   "id": "e8",
+   "set": "stadium",
+   "vo": "Mas eles continuam vindo. Dez metros. Cinco.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "midfield",
+     "rot": -20,
+     "pose": {
+      "reachR": {
+       "to": "mouth"
+      },
+      "head": [
+       -6,
+       0,
+       0
+      ],
+      "armL": [
+       10,
+       14,
+       0,
+       20
+      ]
+     },
+     "face": "scared",
+     "hold": {
+      "R": "whistle"
+     }
+    },
+    {
+     "id": "zA",
+     "pos": "midfield+-5.720000000000001,0,9.240000000000002",
+     "rot": 150,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": "midfield+-5.720000000000001,0,9.240000000000002"
+      },
+      {
+       "t": 3.4,
+       "pos": "midfield+-1.3,0,2.1",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zB",
+     "pos": "midfield+-0.8800000000000001,0,10.12",
+     "rot": 150,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": "midfield+-0.8800000000000001,0,10.12"
+      },
+      {
+       "t": 3.4,
+       "pos": "midfield+-0.2,0,2.3",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zC",
+     "pos": "midfield+-9.680000000000001,0,5.28",
+     "rot": 150,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": "midfield+-9.680000000000001,0,5.28"
+      },
+      {
+       "t": 3.4,
+       "pos": "midfield+-2.2,0,1.2",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zD",
+     "pos": "midfield+3.5200000000000005,0,8.36",
+     "rot": 150,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": "midfield+3.5200000000000005,0,8.36"
+      },
+      {
+       "t": 3.4,
+       "pos": "midfield+0.8,0,1.9",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zE",
+     "pos": "midfield+-7.920000000000001,0,12.32",
+     "rot": 150,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": "midfield+-7.920000000000001,0,12.32"
+      },
+      {
+       "t": 3.4,
+       "pos": "midfield+-1.8,0,2.8",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    },
+    {
+     "id": "zF",
+     "pos": "midfield+1.7600000000000002,0,13.640000000000002",
+     "rot": 150,
+     "pose": "zombie",
+     "face": "zombie",
+     "path": [
+      {
+       "t": 0.0,
+       "pos": "midfield+1.7600000000000002,0,13.640000000000002"
+      },
+      {
+       "t": 3.4,
+       "pos": "midfield+0.4,0,3.1",
+       "gait": "shamble"
+      }
+     ],
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "over": "hero",
+    "shot": "medium",
+    "target": "zB",
+    "dist": 1.7
+   },
+   "variant": 1,
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "from": "0:28",
+     "tick": 2.451,
+     "corner": "tl",
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@cinco",
+     "name": "heartbeat"
+    }
+   ]
+  },
+  {
+   "id": "e9",
+   "set": "stadium",
+   "vo": "Um dedo encosta no seu ombro.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "midfield",
+     "rot": -20,
+     "pose": {
+      "reachR": {
+       "to": "mouth"
+      },
+      "head": [
+       -6,
+       0,
+       0
+      ],
+      "armL": [
+       10,
+       14,
+       0,
+       20
+      ]
+     },
+     "face": "shocked",
+     "hold": {
+      "R": "whistle"
+     },
+     "contact": true
+    },
+    {
+     "id": "zB",
+     "pos": "midfield+0.12,0,0.66",
+     "rot": 175,
+     "pose": {
+      "hipY": -0.01,
+      "spine": [
+       8,
+       0,
+       0
+      ],
+      "head": [
+       12,
+       0,
+       14
+      ],
+      "armL": [
+       55,
+       8,
+       0,
+       14
+      ],
+      "armR": [
+       88,
+       -6,
+       0,
+       8
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "zombie",
+     "contact": true,
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 85
+   },
+   "variant": 1,
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "from": "0:20",
+     "tick": 2.451,
+     "corner": "tl",
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@ombro",
+     "name": "subdrop"
+    }
+   ]
+  },
+  {
+   "id": "e10",
+   "set": "stadium",
+   "vo": "E o verde sobe pelo seu braço. Dez segundos.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "midfield",
+     "rot": -20,
+     "pose": {
+      "reachR": {
+       "to": "mouth"
+      },
+      "head": [
+       -6,
+       0,
+       0
+      ],
+      "armL": [
+       10,
+       14,
+       0,
+       20
+      ]
+     },
+     "face": "tired",
+     "hold": {
+      "R": "whistle"
+     },
+     "glow": "#8dff6a",
+     "contact": true
+    },
+    {
+     "id": "zB",
+     "pos": "midfield+0.12,0,0.66",
+     "rot": 175,
+     "pose": {
+      "hipY": -0.01,
+      "spine": [
+       8,
+       0,
+       0
+      ],
+      "head": [
+       12,
+       0,
+       14
+      ],
+      "armL": [
+       55,
+       8,
+       0,
+       14
+      ],
+      "armR": [
+       88,
+       -6,
+       0,
+       8
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "zombie",
+     "contact": true,
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": -40,
+    "move": "pushIn"
+   },
+   "variant": 1,
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "from": "0:16",
+     "tick": 2.451,
+     "corner": "tl",
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@verde",
+     "name": "glint"
+    }
+   ]
+  },
+  {
+   "id": "e11",
+   "set": "stadium",
+   "vo": "Você continua apitando. Até esquecer por quê.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "midfield",
+     "rot": -20,
+     "pose": {
+      "reachR": {
+       "to": "mouth"
+      },
+      "head": [
+       -6,
+       0,
+       0
+      ],
+      "armL": [
+       10,
+       14,
+       0,
+       20
+      ]
+     },
+     "face": "zombie",
+     "hold": {
+      "R": "whistle"
+     },
+     "glow": "#8dff6a"
+    }
+   ],
+   "camera": {
+    "shot": "xclose",
+    "target": "hero",
+    "angle": 0,
+    "height": -6,
+    "move": "pushIn"
+   },
+   "hold": 1.0,
+   "variant": 1,
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "from": "0:09",
+     "tick": 2.451,
+     "corner": "tl",
+     "keep": false,
+     "persist": true
+    }
+   ],
+   "sfx": [
+    {
+     "t": 0.2,
+     "name": "whistle",
+     "dur": 1.0,
+     "vol": -4
+    },
+    {
+     "t": "@esquecer",
+     "name": "whistle",
+     "dur": 0.6,
+     "vol": -12
+    }
+   ],
+   "fx": {
+    "vignette": 0.45
+   }
+  },
+  {
+   "id": "e12",
+   "set": "stadium",
+   "vo": "Você acorda na grama. Sol na cara. Quatrocentos alunos piscando, confusos.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "midfield",
+     "rot": -20,
+     "pose": "lie",
+     "face": "closed",
+     "faces": [
+      {
+       "t": "@acorda",
+       "face": "confused",
+       "blend": 0.3
+      }
+     ],
+     "poses": [
+      {
+       "t": "@sol",
+       "pose": {
+        "hipY": -0.71,
+        "spine": [
+         8,
+         0,
+         0
+        ],
+        "legL": [
+         88,
+         8,
+         8
+        ],
+        "legR": [
+         86,
+         8,
+         14
+        ],
+        "armL": [
+         -25,
+         20,
+         0,
+         10
+        ],
+        "armR": [
+         -25,
+         20,
+         0,
+         10
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.8
+      }
+     ]
+    },
+    {
+     "id": "x01",
+     "pos": [
+      -2.43,
+      0,
+      3.31
+     ],
+     "rot": 144,
+     "pose": "stand",
+     "face": "confused"
+    },
+    {
+     "id": "x02",
+     "pos": [
+      -5.01,
+      0,
+      8.36
+     ],
+     "rot": 149,
+     "pose": "stand",
+     "face": "confused"
+    },
+    {
+     "id": "x03",
+     "pos": [
+      -0.06,
+      0,
+      6.71
+     ],
+     "rot": 179,
+     "pose": "stand",
+     "face": "confused"
+    },
+    {
+     "id": "x04",
+     "pos": [
+      -0.36,
+      0,
+      4.44
+     ],
+     "rot": 175,
+     "pose": "stand",
+     "face": "confused"
+    },
+    {
+     "id": "x05",
+     "pos": [
+      1.78,
+      0,
+      5.87
+     ],
+     "rot": -163,
+     "pose": "stand",
+     "face": "confused"
+    },
+    {
+     "id": "x06",
+     "pos": [
+      3.07,
+      0,
+      4.85
+     ],
+     "rot": -148,
+     "pose": "stand",
+     "face": "confused"
+    },
+    {
+     "id": "x07",
+     "pos": [
+      -5.14,
+      0,
+      2.71
+     ],
+     "rot": 118,
+     "pose": "stand",
+     "face": "confused"
+    },
+    {
+     "id": "x08",
+     "pos": [
+      1.68,
+      0,
+      2.84
+     ],
+     "rot": -149,
+     "pose": "stand",
+     "face": "confused"
+    },
+    {
+     "id": "x09",
+     "pos": [
+      -6.29,
+      0,
+      7.4
+     ],
+     "rot": 140,
+     "pose": "stand",
+     "face": "confused"
+    },
+    {
+     "id": "x10",
+     "pos": [
+      3.09,
+      0,
+      3.2
+     ],
+     "rot": -136,
+     "pose": "stand",
+     "face": "confused"
+    },
+    {
+     "id": "x11",
+     "pos": [
+      1.71,
+      0,
+      7.02
+     ],
+     "rot": -166,
+     "pose": "stand",
+     "face": "confused"
+    },
+    {
+     "id": "x12",
+     "pos": [
+      -5.5,
+      0,
+      6.56
+     ],
+     "rot": 140,
+     "pose": "stand",
+     "face": "confused"
+    },
+    {
+     "id": "x13",
+     "pos": [
+      1.27,
+      0,
+      8.85
+     ],
+     "rot": -172,
+     "pose": "stand",
+     "face": "confused"
+    },
+    {
+     "id": "x14",
+     "pos": [
+      -6.36,
+      0,
+      3.95
+     ],
+     "rot": 122,
+     "pose": "stand",
+     "face": "confused"
+    },
+    {
+     "id": "x15",
+     "pos": [
+      -2.11,
+      0,
+      6.51
+     ],
+     "rot": 162,
+     "pose": "stand",
+     "face": "confused"
+    },
+    {
+     "id": "x16",
+     "pos": [
+      -6.74,
+      0,
+      2.6
+     ],
+     "rot": 111,
+     "pose": "stand",
+     "face": "confused"
+    }
+   ],
+   "camera": {
+    "pos": [
+     3.4,
+     4.2,
+     -5.2
+    ],
+    "look": [
+     -0.8,
+     0.5,
+     2.4
+    ],
+    "fov": 42,
+    "move": "craneUp"
+   },
+   "variant": 1,
+   "cut": "dip",
+   "sfx": [
+    {
+     "t": "@acorda",
+     "name": "swell"
+    }
+   ]
+  },
+  {
+   "id": "e13",
+   "set": "stadium",
+   "vo": "Seu celular está no chão. Pisado por oitocentos pés.",
+   "camera": {
+    "pos": [
+     1.0,
+     0.55,
+     2.0
+    ],
+    "look": [
+     1.4,
+     0.0,
+     1.2
+    ],
+    "fov": 30
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "phone",
+     "pos": "midfield+1.4,0.01,1.2",
+     "rot": [
+      -1.57,
+      0,
+      0.8
+     ],
+     "broken": true
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@pisado",
+     "name": "debris"
+    }
+   ]
+  },
+  {
+   "id": "f1",
+   "set": "stadium",
+   "vo": "Você tá com cheiro de cogumelo.",
+   "actors": [
+    {
+     "id": "sister",
+     "pos": "midfield+0.6,0,1.0",
+     "rot": -150,
+     "pose": "armsCrossed",
+     "face": "suspicious",
+     "look": "hero",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    },
+    {
+     "id": "hero",
+     "pos": "midfield",
+     "rot": -20,
+     "pose": {
+      "hipY": -0.71,
+      "spine": [
+       8,
+       0,
+       0
+      ],
+      "legL": [
+       88,
+       8,
+       8
+      ],
+      "legR": [
+       86,
+       8,
+       14
+      ],
+      "armL": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "armR": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "tired",
+     "look": "sister"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "sister",
+    "angle": 10
+   },
+   "who": "female",
+   "variant": 1
+  },
+  {
+   "id": "f2",
+   "set": "stadium",
+   "vo": "Quem estava apitando no recreio?",
+   "actors": [
+    {
+     "id": "jorge",
+     "pos": "midfield+-1.1,0,1.2",
+     "rot": 140,
+     "pose": "armsCrossed",
+     "face": "angry",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ],
+     "look": "hero"
+    },
+    {
+     "id": "hero",
+     "pos": "midfield",
+     "rot": -20,
+     "pose": {
+      "hipY": -0.71,
+      "spine": [
+       8,
+       0,
+       0
+      ],
+      "legL": [
+       88,
+       8,
+       8
+      ],
+      "legR": [
+       86,
+       8,
+       14
+      ],
+      "armL": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "armR": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "embarrassed",
+     "look": "jorge"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "jorge",
+    "angle": 20
+   },
+   "who": "adulto",
+   "variant": 1
+  },
+  {
+   "id": "f3",
+   "set": "stadium",
+   "vo": "Você devolve o apito.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "midfield",
+     "rot": -20,
+     "pose": {
+      "hipY": -0.71,
+      "spine": [
+       8,
+       0,
+       0
+      ],
+      "legL": [
+       88,
+       8,
+       8
+      ],
+      "legR": [
+       86,
+       8,
+       14
+      ],
+      "armL": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "armR": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "embarrassed",
+     "hold": {
+      "R": "whistle"
+     },
+     "look": "jorge",
+     "poses": [
+      {
+       "t": "@devolve",
+       "pose": {
+        "hipY": -0.71,
+        "spine": [
+         8,
+         0,
+         0
+        ],
+        "legL": [
+         88,
+         8,
+         8
+        ],
+        "legR": [
+         86,
+         8,
+         14
+        ],
+        "armL": [
+         -25,
+         20,
+         0,
+         10
+        ],
+        "armR": [
+         70,
+         10,
+         0,
+         10
+        ],
+        "handL": "open",
+        "handR": "fist"
+       }
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": -30
+   },
+   "variant": 1
+  },
+  {
+   "id": "f4",
+   "set": "home",
+   "vo": "No jornal da noite, a escola fecha por um dia. Motivo oficial: mofo.",
+   "actors": [
+    {
+     "id": "mom",
+     "pos": "couch",
+     "rot": 90,
+     "pose": "sit",
+     "face": "surprised"
+    },
+    {
+     "id": "hero",
+     "pos": "couch+0,0,0.9",
+     "rot": 90,
+     "pose": "sit",
+     "face": "tired"
+    }
+   ],
+   "camera": {
+    "pos": [
+     4.0,
+     1.35,
+     1.3
+    ],
+    "look": [
+     1.75,
+     1.0,
+     0.05
+    ],
+    "fov": 40
+   },
+   "time": "interiorNight",
+   "overlays": [
+    {
+     "type": "news",
+     "headline": "ESCOLA FECHA POR UM DIA. MOTIVO OFICIAL: MOFO",
+     "tag": "URGENTE",
+     "at": 0.4
+    }
+   ]
+  },
+  {
+   "id": "f5",
+   "set": "home",
+   "vo": "E o vídeo de um aluno viraliza. O título: aluno leva suspensão por apitar no recreio.",
+   "actors": [
+    {
+     "id": "mom",
+     "pos": "couch",
+     "rot": 90,
+     "pose": "sit",
+     "face": "suspicious",
+     "look": "hero"
+    },
+    {
+     "id": "hero",
+     "pos": "couch+0,0,0.9",
+     "rot": 90,
+     "pose": "sit",
+     "face": "embarrassed"
+    }
+   ],
+   "camera": {
+    "pos": [
+     3.7,
+     1.3,
+     0.2
+    ],
+    "look": [
+     1.75,
+     1.0,
+     0.25
+    ],
+    "fov": 38,
+    "move": "pushIn"
+   },
+   "time": "interiorNight",
+   "overlays": [
+    {
+     "type": "news",
+     "headline": "ALUNO LEVA SUSPENSÃO POR APITAR NO RECREIO",
+     "tag": "VIRAL",
+     "at": "@viraliza"
+    }
+   ]
+  },
+  {
+   "id": "f6",
+   "set": "home",
+   "vo": "Suspenso? Por apitar?",
+   "actors": [
+    {
+     "id": "mom",
+     "pos": "couch",
+     "rot": 90,
+     "pose": "sit",
+     "face": "confused",
+     "look": "hero",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     3.0,
+     1.15,
+     -0.9
+    ],
+    "look": [
+     1.75,
+     1.05,
+     -0.4
+    ],
+    "fov": 34
+   },
+   "who": "adulta",
+   "time": "interiorNight"
+  },
+  {
+   "id": "f7",
+   "set": "home",
+   "vo": "É uma longa história.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "couch+0,0,0.9",
+     "rot": 90,
+     "pose": "sit",
+     "face": "tired",
+     "look": "mom",
+     "talk": [
+      [
+       0.05,
+       1.2
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     3.0,
+     1.15,
+     1.2
+    ],
+    "look": [
+     1.75,
+     1.05,
+     0.5
+    ],
+    "fov": 34
+   },
+   "time": "interiorNight"
+  },
+  {
+   "id": "f8",
+   "set": "home",
+   "vo": "Vai tomar banho. Você tá com cheiro de cogumelo.",
+   "actors": [
+    {
+     "id": "mom",
+     "pos": "couch",
+     "rot": 90,
+     "pose": "sit",
+     "face": "smile",
+     "look": "hero",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    },
+    {
+     "id": "hero",
+     "pos": "couch+0,0,0.9",
+     "rot": 90,
+     "pose": "sit",
+     "face": "embarrassed"
+    }
+   ],
+   "camera": {
+    "pos": [
+     4.0,
+     1.35,
+     1.3
+    ],
+    "look": [
+     1.75,
+     1.0,
+     0.05
+    ],
+    "fov": 40
+   },
+   "who": "adulta",
+   "time": "interiorNight"
+  },
+  {
+   "id": "f9",
+   "set": "bedroom",
+   "vo": "De manhã, você jogou o celular longe pra fugir de um zumbi. De tarde, você chamou quatrocentos pra perto.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "window",
+     "rot": 180,
+     "pose": "stand",
+     "face": "smile"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 150,
+    "move": "pushIn"
+   },
+   "time": "interiorNight"
+  },
+  {
+   "id": "g1",
+   "set": "home",
+   "vo": "Mas naquela noite, você assiste o vídeo de novo. Quadro por quadro.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "couch+0,0,0.9",
+     "rot": 90,
+     "pose": "sit",
+     "face": "focused",
+     "hold": {
+      "R": "phone"
+     }
+    }
+   ],
+   "camera": {
+    "pos": [
+     3.0,
+     1.2,
+     1.4
+    ],
+    "look": [
+     1.75,
+     1.0,
+     0.5
+    ],
+    "fov": 36,
+    "move": "pushIn"
+   },
+   "time": "interiorNight"
+  },
+  {
+   "id": "g2",
+   "set": "stadium",
+   "vo": "No fundo da imagem, do lado de fora do campo, tem um homem de capa de chuva amarela. Num dia de sol.",
+   "actors": [
+    {
+     "id": "estranho",
+     "pos": "midfield+-10,0,20",
+     "rot": 170,
+     "pose": "stand",
+     "face": "neutral",
+     "hold": {
+      "R": "jar"
+     }
+    },
+    {
+     "id": "zA",
+     "pos": "midfield+-3.4,0,4.6",
+     "rot": 160,
+     "pose": "stand",
+     "face": "confused"
+    },
+    {
+     "id": "zC",
+     "pos": "midfield+-4.6,0,2",
+     "rot": 120,
+     "pose": "stand",
+     "face": "confused"
+    },
+    {
+     "id": "zD",
+     "pos": "midfield+1.5,0,3.6",
+     "rot": 200,
+     "pose": "stand",
+     "face": "confused"
+    }
+   ],
+   "camera": {
+    "pos": [
+     2,
+     1.6,
+     -4
+    ],
+    "look": [
+     -8,
+     1.4,
+     18
+    ],
+    "fov": 34
+   },
+   "variant": 1,
+   "fx": {
+    "grade": "flashback"
+   }
+  },
+  {
+   "id": "g3",
+   "set": "stadium",
+   "vo": "Todo mundo olha pros zumbis. Ele olha pra você.",
+   "actors": [
+    {
+     "id": "estranho",
+     "pos": "midfield+-10,0,20",
+     "rot": 170,
+     "pose": "stand",
+     "face": "neutral",
+     "hold": {
+      "R": "jar"
+     },
+     "look": [
+      0,
+      1.0,
+      0
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "estranho",
+    "angle": 10,
+    "move": "pushIn"
+   },
+   "variant": 1,
+   "fx": {
+    "grade": "flashback"
+   }
+  },
+  {
+   "id": "g4",
+   "set": "stadium",
+   "vo": "E na mão dele, um pote. O pote da professora Helena. Vazio.",
+   "actors": [
+    {
+     "id": "estranho",
+     "pos": "midfield+-10,0,20",
+     "rot": 170,
+     "pose": {
+      "armR": [
+       55,
+       8,
+       0,
+       60
+      ],
+      "handR": "fist"
+     },
+     "face": "neutral",
+     "hold": {
+      "R": "jar"
+     },
+     "look": [
+      0,
+      1.0,
+      0
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "estranho",
+    "angle": -20,
+    "focus": "handR"
+   },
+   "variant": 1,
+   "fx": {
+    "grade": "flashback"
+   },
+   "sfx": [
+    {
+     "t": "@vazio",
+     "name": "subdrop"
+    }
+   ]
+  },
+  {
+   "id": "g5",
+   "set": "classroom",
+   "vo": "Alguém viu o meu pote?",
+   "actors": [
+    {
+     "id": "helena",
+     "pos": "teacher+0.3,0,0.9",
+     "rot": 100,
+     "pose": "shrug",
+     "face": "worried",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     -2.4,
+     1.6,
+     4.0
+    ],
+    "look": [
+     -4.6,
+     1.3,
+     3.0
+    ],
+    "fov": 34
+   },
+   "who": "adulta",
+   "variant": 1,
+   "props": [
+    {
+     "type": "sign",
+     "pos": [
+      -5.92,
+      1.95,
+      3.6
+     ],
+     "rot": 90,
+     "w": 1.1,
+     "h": 0.32,
+     "text": "LAB. DE CIÊNCIAS",
+     "bg": "#f6f2e8",
+     "fg": "#1d2333"
+    }
+   ]
+  },
+  {
+   "id": "g6",
+   "kind": "card",
+   "card": "icon",
+   "vo": "No armário dela, sobrou só a etiqueta. Amostra dois de cinco.",
+   "icon": "warning",
+   "caption": "AMOSTRA 2 DE 5",
+   "sub": "FUNGO DAS FORMIGAS"
+  },
+  {
+   "id": "g7",
+   "set": "bedroom",
+   "vo": "Dois de cinco. Então existem mais três. Em algum lugar.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "window",
+     "rot": 0,
+     "pose": "stand",
+     "face": "worried"
+    }
+   ],
+   "camera": {
+    "shot": "xclose",
+    "target": "hero",
+    "angle": 10,
+    "move": "pushIn"
+   },
+   "time": "interiorNight"
+  },
+  {
+   "id": "h1",
+   "set": "suburb",
+   "vo": "Na saída da escola, você vê ele de novo. Do outro lado da rua. No sol do meio-dia.",
+   "actors": [
+    {
+     "id": "estranho",
+     "pos": "farSidewalk+1,0,0.4",
+     "rot": 180,
+     "pose": "stand",
+     "face": "neutral"
+    },
+    {
+     "id": "hero",
+     "pos": "sidewalk",
+     "rot": 0,
+     "pose": "stand",
+     "face": "worried",
+     "look": "estranho"
+    }
+   ],
+   "camera": {
+    "over": "hero",
+    "shot": "medium",
+    "target": "estranho",
+    "dist": 1.7
+   }
+  },
+  {
+   "id": "h2",
+   "set": "suburb",
+   "vo": "Ele levanta o rosto. E brilha. Verde.",
+   "actors": [
+    {
+     "id": "estranho",
+     "pos": "farSidewalk+1,0,0.4",
+     "rot": 180,
+     "pose": "stand",
+     "face": "neutral",
+     "glow": "#8dff6a",
+     "look": "hero"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "estranho",
+    "angle": 0,
+    "move": "pushIn"
+   },
+   "sfx": [
+    {
+     "t": "@verde",
+     "name": "subdrop"
+    }
+   ]
+  },
+  {
+   "id": "h3",
+   "set": "suburb",
+   "vo": "Ele está no sol faz muito mais que trinta segundos. E não cura. Não geme. Anda normal.",
+   "actors": [
+    {
+     "id": "estranho",
+     "pos": "farSidewalk+1,0,0.4",
+     "rot": 90,
+     "pose": "stand",
+     "face": "neutral",
+     "glow": "#8dff6a",
+     "path": [
+      {
+       "t": "@anda",
+       "pos": "farSidewalk+1,0,0.4"
+      },
+      {
+       "t": "@normal+2",
+       "pos": "farSidewalk+4,0,0.4",
+       "gait": "walk"
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "full",
+    "target": "estranho",
+    "angle": 40,
+    "move": "track"
+   }
+  },
+  {
+   "id": "h4",
+   "set": "suburb",
+   "vo": "Trinta segundos. Bom saber.",
+   "actors": [
+    {
+     "id": "estranho",
+     "pos": "farSidewalk+4,0,0.4",
+     "rot": 180,
+     "pose": "stand",
+     "face": "smirk",
+     "glow": "#8dff6a",
+     "look": "camera",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "xclose",
+    "target": "estranho",
+    "angle": 0
+   },
+   "who": "adulto"
+  },
+  {
+   "id": "h5",
+   "set": "suburb",
+   "vo": "Um zumbi que pensa. E agora, ele conhece as suas regras.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "sidewalk",
+     "rot": 0,
+     "pose": "stand",
+     "face": "scared"
+    }
+   ],
+   "camera": {
+    "shot": "xclose",
+    "target": "hero",
+    "angle": 10,
+    "move": "pushIn"
+   },
+   "hold": 1.2,
+   "fx": {
+    "vignette": 0.5
+   },
+   "sfx": [
+    {
+     "t": "@regras",
+     "name": "subdrop"
+    }
+   ]
+  },
+  {
+   "id": "i1",
+   "set": "suburb",
+   "vo": "Então: o que você faria primeiro numa escola só sua? E o homem da capa amarela: ele trouxe o fungo... ou está fugindo dele? Conta pra gente nos comentários. Todo poder tem um preço. Até a próxima.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "sidewalk",
+     "rot": 10,
+     "pose": "confident",
+     "face": "smirk",
+     "hold": {
+      "R": "whistle"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "wide",
+    "target": "hero",
+    "angle": 30,
+    "height": 5,
+    "move": "pullOut"
+   },
+   "time": "golden",
+   "overlays": [
+    {
+     "type": "title",
+     "small": "O QUE VOCÊ FARIA PRIMEIRO?",
+     "big": "ELE TROUXE O FUNGO?",
+     "at": "@capa"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1426 @@
+{
+ "id": "YznR5NmI3bc",
+ "title": "What IF You Could Stop Time?",
+ "channel": "IFOLOGY FILMS",
+ "takeaways": [
+  "Corruption variant: perks slide into cheating, revenge, theft and then a heist where you choose not to save a crashing car.",
+  "Act turns: physics 'but' at 1:24 (14%), the ageing cost at 5:04 (50%), the moral slide at 5:40 (56%), heist dilemma at 7:37 (75%), bigger world at 8:35 (84%).",
+  "Lowest number density (0.6/min) but strongest rules scaffold (3 rules, each with a test scene). The title question comes late (0:35) after a 35 s cold open.",
+  "24 character lines (one every 25 s); the best friend works as a conscience across 3 beats (6:49, 7:04, 8:28).",
+  "Spectacle: the frozen highway heist (5/5) and the frozen-world tone shift (birds hanging, lying in the mall). Fastest cutting is in the comedy/misuse beats (34-38 cuts/min).",
+  "Perspective flip: the previous episode's unreadable villain is revealed to be you, so the episodes chain."
+ ],
+ "note": "Hand-annotated beats (summaries are paraphrases, not quotes). words/wpm/dialogue from deduplicated ASR sentences (data/story/transcripts); cuts from shot detection (research/sheets/report.json). spectacle = 1-5 judged from the 24-frame contact sheets + cut density + what the narration stages. Acts are analytic, not the creator's.",
+ "fields": {
+  "stakes": "1 comic/inconvenient .. 5 life/death or identity",
+  "quip": "beat contains a short character line or punchline",
+  "new_info": "beat introduces a new fact, rule, problem or plot information",
+  "escalation": "beat raises scale or stakes vs the previous one"
+ },
+ "stats": {
+  "duration_s": 610.0,
+  "duration": "10:10",
+  "views": 592326,
+  "words": 1837,
+  "wpm_runtime": 180.7,
+  "dialogue_words": 152,
+  "dialogue_pct": 8.3,
+  "dialogue_lines": 24,
+  "dialogue_lines_per_min": 2.36,
+  "seconds_per_dialogue_line": 25.4,
+  "sentences": 226,
+  "avg_sentence_words": 8.1,
+  "questions": 16,
+  "questions_per_min": 1.57,
+  "number_tokens": 6,
+  "number_tokens_per_min": 0.59,
+  "remember_count": 0,
+  "but_sentences": 4,
+  "title_question_s": 35.2,
+  "first_number_s": 59.2,
+  "first_but_turn_s": 84,
+  "beats": 27,
+  "beat_mean_s": 22.6,
+  "beat_median_s": 21,
+  "beat_types": {
+   "rule_planted": {
+    "count": 3,
+    "total_s": 72.0,
+    "pct_runtime": 11.8
+   },
+   "perk": {
+    "count": 3,
+    "total_s": 70.0,
+    "pct_runtime": 11.5
+   },
+   "escalation": {
+    "count": 1,
+    "total_s": 54.0,
+    "pct_runtime": 8.9
+   },
+   "universe_hook": {
+    "count": 1,
+    "total_s": 46.0,
+    "pct_runtime": 7.5
+   },
+   "science_anchor": {
+    "count": 3,
+    "total_s": 44.0,
+    "pct_runtime": 7.2
+   },
+   "cost": {
+    "count": 1,
+    "total_s": 36.0,
+    "pct_runtime": 5.9
+   },
+   "cold_open": {
+    "count": 2,
+    "total_s": 35.0,
+    "pct_runtime": 5.7
+   },
+   "but_turn": {
+    "count": 1,
+    "total_s": 34.0,
+    "pct_runtime": 5.6
+   },
+   "aftermath": {
+    "count": 2,
+    "total_s": 32.0,
+    "pct_runtime": 5.2
+   },
+   "tone_shift": {
+    "count": 1,
+    "total_s": 31.0,
+    "pct_runtime": 5.1
+   },
+   "misuse": {
+    "count": 1,
+    "total_s": 30.0,
+    "pct_runtime": 4.9
+   },
+   "set_piece": {
+    "count": 1,
+    "total_s": 25.0,
+    "pct_runtime": 4.1
+   },
+   "climax": {
+    "count": 1,
+    "total_s": 21.0,
+    "pct_runtime": 3.4
+   },
+   "power_flex": {
+    "count": 1,
+    "total_s": 18.0,
+    "pct_runtime": 3.0
+   },
+   "cta": {
+    "count": 1,
+    "total_s": 16.0,
+    "pct_runtime": 2.6
+   },
+   "cliffhanger": {
+    "count": 1,
+    "total_s": 15.0,
+    "pct_runtime": 2.5
+   },
+   "proof_test": {
+    "count": 1,
+    "total_s": 13.0,
+    "pct_runtime": 2.1
+   },
+   "dilemma": {
+    "count": 1,
+    "total_s": 13.0,
+    "pct_runtime": 2.1
+   },
+   "title_question": {
+    "count": 1,
+    "total_s": 5.0,
+    "pct_runtime": 0.8
+   }
+  },
+  "acts": [
+   {
+    "act": 1,
+    "name": "Promise: freeze, science, problems, rules",
+    "t": "0:00-3:23",
+    "start_pct": 0.0,
+    "end_pct": 33.3,
+    "dur_s": 203,
+    "beats": 11,
+    "words": 609,
+    "cuts_per_min": 16.8
+   },
+   {
+    "act": 2,
+    "name": "Fun and its quiet price (loneliness, ageing)",
+    "t": "3:23-5:40",
+    "start_pct": 33.3,
+    "end_pct": 55.7,
+    "dur_s": 137,
+    "beats": 5,
+    "words": 423,
+    "cuts_per_min": 21.9
+   },
+   {
+    "act": 3,
+    "name": "The slide: revenge, theft, heist, the choice not to save",
+    "t": "5:40-8:35",
+    "start_pct": 55.7,
+    "end_pct": 84.4,
+    "dur_s": 175,
+    "beats": 8,
+    "words": 681,
+    "cuts_per_min": 24.0
+   },
+   {
+    "act": 4,
+    "name": "Bigger world: you are last episode's villain; cliffhanger; CTA",
+    "t": "8:35-10:10",
+    "start_pct": 84.4,
+    "end_pct": 100.0,
+    "dur_s": 95,
+    "beats": 3,
+    "words": 124,
+    "cuts_per_min": 22.1
+   }
+  ],
+  "new_info_cadence": {
+   "count": 16,
+   "mean_gap_s": 38.6,
+   "median_gap_s": 31,
+   "max_gap_s": 116
+  },
+  "escalation_cadence": {
+   "count": 13,
+   "mean_gap_s": 41.2,
+   "median_gap_s": 27.5,
+   "max_gap_s": 119
+  },
+  "turn_cadence": {
+   "count": 5,
+   "mean_gap_s": 123.8,
+   "median_gap_s": 119.5,
+   "max_gap_s": 189
+  },
+  "quip_beats": 9,
+  "quip_beats_per_min": 0.89,
+  "comic_beats": 9,
+  "comic_beat_every_s": 67.8,
+  "cuts_total": 212,
+  "cuts_per_min": 20.9,
+  "avg_shot_s": 2.86,
+  "words_per_shot": 8.6,
+  "top_cut_density_beats": [
+   {
+    "t": "5:40-6:10",
+    "beat": "misuse",
+    "cuts_per_min": 38.0,
+    "summary": "Public humiliation by a bully; for the first time you use the power for payback: tied lace"
+   },
+   {
+    "t": "3:10-3:23",
+    "beat": "proof_test",
+    "cuts_per_min": 36.9,
+    "summary": "Demo for the best friend: you appear across the room. He names the anime power he thinks i"
+   },
+   {
+    "t": "3:23-3:48",
+    "beat": "perk",
+    "cuts_per_min": 33.6,
+    "summary": "Perk montage that slides into cheating: queue-skipping, a gross sneeze aside, copying test"
+   },
+   {
+    "t": "0:26-0:35",
+    "beat": "cold_open",
+    "cuts_per_min": 33.3,
+    "summary": "Time resumes; your friend finishes his story and is confused that the spill never happened"
+   },
+   {
+    "t": "9:21-9:39",
+    "beat": "power_flex",
+    "cuts_per_min": 33.3,
+    "summary": "You freeze them all, stroll between them, flick the floating can. Nobody can stop you."
+   },
+   {
+    "t": "4:22-4:33",
+    "beat": "perk",
+    "cuts_per_min": 32.7,
+    "summary": "Prank: mom's coffee mug turns up somewhere absurd every morning."
+   }
+  ],
+  "top_spectacle_beats": [
+   {
+    "t": "7:12-7:37",
+    "beat": "set_piece",
+    "spectacle": 5,
+    "cuts_per_min": 16.8,
+    "visual": [
+     "3D highway overpass night",
+     "armored truck",
+     "floating tyre"
+    ]
+   },
+   {
+    "t": "9:21-9:39",
+    "beat": "power_flex",
+    "spectacle": 4,
+    "cuts_per_min": 33.3,
+    "visual": [
+     "3D frozen ensemble walk-through",
+     "glowing can"
+    ]
+   },
+   {
+    "t": "7:37-7:50",
+    "beat": "dilemma",
+    "spectacle": 4,
+    "cuts_per_min": 27.7,
+    "visual": [
+     "3D frozen crash close-up"
+    ]
+   },
+   {
+    "t": "8:35-9:21",
+    "beat": "universe_hook",
+    "spectacle": 4,
+    "cuts_per_min": 26.1,
+    "visual": [
+     "3D street ensemble lineup",
+     "phone 'Slowest Rescue' clip"
+    ]
+   },
+   {
+    "t": "7:50-8:11",
+    "beat": "climax",
+    "spectacle": 4,
+    "cuts_per_min": 25.7,
+    "visual": [
+     "3D truck back doors",
+     "CCTV hooded figure"
+    ]
+   },
+   {
+    "t": "4:33-5:04",
+    "beat": "tone_shift",
+    "spectacle": 4,
+    "cuts_per_min": 23.2,
+    "visual": [
+     "3D top-down mall floor",
+     "birds frozen in sky",
+     "highway"
+    ]
+   }
+  ],
+  "stakes_curve": [
+   [
+    "0:00-0:26",
+    1
+   ],
+   [
+    "0:26-0:35",
+    1
+   ],
+   [
+    "0:35-0:40",
+    1
+   ],
+   [
+    "0:40-1:00",
+    1
+   ],
+   [
+    "1:00-1:14",
+    1
+   ],
+   [
+    "1:14-1:24",
+    1
+   ],
+   [
+    "1:24-1:58",
+    2
+   ],
+   [
+    "1:58-2:08",
+    1
+   ],
+   [
+    "2:08-2:37",
+    1
+   ],
+   [
+    "2:37-3:10",
+    1
+   ],
+   [
+    "3:10-3:23",
+    1
+   ],
+   [
+    "3:23-3:48",
+    1
+   ],
+   [
+    "3:48-4:22",
+    1
+   ],
+   [
+    "4:22-4:33",
+    1
+   ],
+   [
+    "4:33-5:04",
+    2
+   ],
+   [
+    "5:04-5:40",
+    3
+   ],
+   [
+    "5:40-6:10",
+    2
+   ],
+   [
+    "6:10-7:04",
+    3
+   ],
+   [
+    "7:04-7:12",
+    2
+   ],
+   [
+    "7:12-7:37",
+    4
+   ],
+   [
+    "7:37-7:50",
+    5
+   ],
+   [
+    "7:50-8:11",
+    5
+   ],
+   [
+    "8:11-8:35",
+    3
+   ],
+   [
+    "8:35-9:21",
+    4
+   ],
+   [
+    "9:21-9:39",
+    4
+   ],
+   [
+    "9:39-9:54",
+    5
+   ],
+   [
+    "9:54-10:10",
+    1
+   ]
+  ],
+  "open_loops": [
+   {
+    "planted": "2:37",
+    "paid": "5:04",
+    "what": "Rule 3 (your frozen minutes are real) -> you age an extra ~2 weeks a year; mom notices you look tired"
+   },
+   {
+    "planted": "3:23",
+    "paid": "6:10",
+    "what": "Narrator wink that nobody promised you were a hero -> full villain slide"
+   },
+   {
+    "planted": "4:02",
+    "paid": "7:37",
+    "what": "Saving a kid's ice cream ('best thing you ever did') -> not saving a whole crashing car"
+   },
+   {
+    "planted": "5:21",
+    "paid": "9:39",
+    "what": "Fear of being alone in frozen time forever -> someone else is moving in frozen time"
+   },
+   {
+    "planted": "7:04",
+    "paid": "8:28",
+    "what": "Best friend's doubt -> he asks if it was you on the news; you lie; he stops texting"
+   },
+   {
+    "planted": "prev episode 9:31",
+    "paid": "9:02",
+    "what": "Previous episode's unreadable villain on a stopped highway -> it was you; the speedster from ep 1 is in the lineup"
+   },
+   {
+    "planted": "9:47",
+    "paid": "next episode",
+    "what": "Gray-coat woman is not frozen -> who is she? (Shapeshift episode pays it off)"
+   }
+  ]
+ },
+ "beats": [
+  {
+   "start": 0,
+   "end": 26,
+   "act": 1,
+   "beat": "cold_open",
+   "summary": "Mid-laugh at lunch you knock over your drink and it hangs in the air; the whole cafeteria is frozen except you. You poke it, scoop it back into the cup.",
+   "devices": [
+    "show_dont_tell",
+    "in_medias_res",
+    "sensory_detail",
+    "everyday_stakes"
+   ],
+   "stakes": 1,
+   "emotion": "wonder",
+   "quip": false,
+   "numbers": [],
+   "new_info": true,
+   "escalation": false,
+   "visual": [
+    "3D cafeteria crowd frozen",
+    "juice arc mid-air"
+   ],
+   "spectacle": 4,
+   "dur": 26,
+   "words": 73,
+   "wpm": 168,
+   "dialogue_words": 1,
+   "dialogue_lines": 1,
+   "cuts": 8,
+   "cuts_per_min": 18.5,
+   "t": "0:00-0:26",
+   "pct": [
+    0.0,
+    4.3
+   ]
+  },
+  {
+   "start": 26,
+   "end": 35,
+   "act": 1,
+   "beat": "cold_open",
+   "summary": "Time resumes; your friend finishes his story and is confused that the spill never happened.",
+   "devices": [
+    "comic_beat",
+    "dramatic_irony"
+   ],
+   "stakes": 1,
+   "emotion": "funny",
+   "quip": true,
+   "numbers": [],
+   "new_info": false,
+   "escalation": false,
+   "visual": [
+    "3D cafeteria two-shot"
+   ],
+   "spectacle": 2,
+   "dur": 9,
+   "words": 23,
+   "wpm": 153,
+   "dialogue_words": 12,
+   "dialogue_lines": 2,
+   "cuts": 5,
+   "cuts_per_min": 33.3,
+   "t": "0:26-0:35",
+   "pct": [
+    4.3,
+    5.7
+   ]
+  },
+  {
+   "start": 35,
+   "end": 40,
+   "act": 1,
+   "beat": "title_question",
+   "summary": "Title question verbatim + 'here's how it works'.",
+   "devices": [
+    "title_echo"
+   ],
+   "stakes": 1,
+   "emotion": "curious",
+   "quip": false,
+   "numbers": [],
+   "new_info": false,
+   "escalation": false,
+   "visual": [
+    "title card over in-world wall clock"
+   ],
+   "spectacle": 2,
+   "dur": 5,
+   "words": 14,
+   "wpm": 168,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 2,
+   "cuts_per_min": 24.0,
+   "t": "0:35-0:40",
+   "pct": [
+    5.7,
+    6.6
+   ]
+  },
+  {
+   "start": 40,
+   "end": 60,
+   "act": 1,
+   "beat": "science_anchor",
+   "summary": "Teaser ('something weird first'): the brain already stretches time when your eyes jump to a clock; a named, tested illusion.",
+   "devices": [
+    "teaser",
+    "real_stat",
+    "relatable_experience"
+   ],
+   "stakes": 1,
+   "emotion": "curious",
+   "quip": false,
+   "numbers": [],
+   "new_info": true,
+   "escalation": false,
+   "visual": [
+    "navy card eye + clock"
+   ],
+   "spectacle": 2,
+   "dur": 20,
+   "words": 82,
+   "wpm": 246,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 1,
+   "cuts_per_min": 3.0,
+   "t": "0:40-1:00",
+   "pct": [
+    6.6,
+    9.8
+   ]
+  },
+  {
+   "start": 60,
+   "end": 74,
+   "act": 1,
+   "beat": "science_anchor",
+   "summary": "Satellite clocks drift by microseconds per day; uncorrected, your phone map would be off by kilometres daily. Big consequence from a tiny number.",
+   "devices": [
+    "real_stat",
+    "tiny_number_big_consequence"
+   ],
+   "stakes": 1,
+   "emotion": "awe",
+   "quip": false,
+   "numbers": [
+    "38 µs/day",
+    "10 km/day"
+   ],
+   "new_info": true,
+   "escalation": false,
+   "visual": [
+    "navy card 38 MICROSECONDS satellite vs house clocks"
+   ],
+   "spectacle": 2,
+   "dur": 14,
+   "words": 29,
+   "wpm": 124,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 3,
+   "cuts_per_min": 12.9,
+   "t": "1:00-1:14",
+   "pct": [
+    9.8,
+    12.1
+   ]
+  },
+  {
+   "start": 74,
+   "end": 84,
+   "act": 1,
+   "beat": "science_anchor",
+   "summary": "Animals perceive time differently: a fly sees flicker several times faster, so your swatting hand is slow motion to it.",
+   "devices": [
+    "real_stat",
+    "perspective_flip"
+   ],
+   "stakes": 1,
+   "emotion": "curious",
+   "quip": false,
+   "numbers": [
+    "4x"
+   ],
+   "new_info": true,
+   "escalation": false,
+   "visual": [
+    "navy card / fly"
+   ],
+   "spectacle": 2,
+   "dur": 10,
+   "words": 36,
+   "wpm": 216,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 4,
+   "cuts_per_min": 24.0,
+   "t": "1:14-1:24",
+   "pct": [
+    12.1,
+    13.8
+   ]
+  },
+  {
+   "start": 84,
+   "end": 118,
+   "act": 1,
+   "beat": "but_turn",
+   "summary": "But a true stop would break you three ways: no light reaches your eyes, no sound moves, and frozen air traps you like a wall.",
+   "devices": [
+    "but_therefore",
+    "rule_of_three",
+    "logic_chain",
+    "myth_bust"
+   ],
+   "stakes": 2,
+   "emotion": "uh-oh",
+   "quip": false,
+   "numbers": [
+    "3 problems"
+   ],
+   "new_info": true,
+   "escalation": true,
+   "visual": [
+    "3D frozen rainy street",
+    "navy cards"
+   ],
+   "spectacle": 3,
+   "dur": 34,
+   "words": 95,
+   "wpm": 168,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 7,
+   "cuts_per_min": 12.4,
+   "t": "1:24-1:58",
+   "pct": [
+    13.8,
+    19.3
+   ]
+  },
+  {
+   "start": 118,
+   "end": 128,
+   "act": 1,
+   "beat": "rule_planted",
+   "summary": "Rule 1: a small bubble of normal air and light travels with you.",
+   "devices": [
+    "enumeration",
+    "rule_solves_problem"
+   ],
+   "stakes": 1,
+   "emotion": "relief",
+   "quip": false,
+   "numbers": [],
+   "new_info": true,
+   "escalation": false,
+   "visual": [
+    "3D close-up with bubble glow"
+   ],
+   "spectacle": 3,
+   "dur": 10,
+   "words": 32,
+   "wpm": 192,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 2,
+   "cuts_per_min": 12.0,
+   "t": "1:58-2:08",
+   "pct": [
+    19.3,
+    21.0
+   ]
+  },
+  {
+   "start": 128,
+   "end": 157,
+   "act": 1,
+   "beat": "rule_planted",
+   "summary": "Rule 2: what you hold moves, what you let go of freezes. Basketball left hanging over the hoop; walking home through frozen rain soaks you; mom is baffled.",
+   "devices": [
+    "rule_demo",
+    "comic_beat",
+    "try_fail"
+   ],
+   "stakes": 1,
+   "emotion": "funny",
+   "quip": true,
+   "numbers": [
+    "1 second"
+   ],
+   "new_info": true,
+   "escalation": false,
+   "visual": [
+    "3D court ball hanging",
+    "3D rain street",
+    "3D home mom"
+   ],
+   "spectacle": 4,
+   "dur": 29,
+   "words": 96,
+   "wpm": 199,
+   "dialogue_words": 10,
+   "dialogue_lines": 1,
+   "cuts": 9,
+   "cuts_per_min": 18.6,
+   "t": "2:08-2:37",
+   "pct": [
+    21.0,
+    25.7
+   ]
+  },
+  {
+   "start": 157,
+   "end": 190,
+   "act": 1,
+   "beat": "rule_planted",
+   "summary": "Rule 3: frozen minutes are real minutes of your life. You test it with a book, a pizza and a nap; the clock hasn't moved but your body has. You decide to just not overdo it.",
+   "devices": [
+    "rule_demo",
+    "setup_payoff",
+    "dramatic_irony",
+    "rule_of_three"
+   ],
+   "stakes": 1,
+   "emotion": "light",
+   "quip": true,
+   "numbers": [],
+   "new_info": true,
+   "escalation": false,
+   "visual": [
+    "3D wristwatch close-up",
+    "3D couch"
+   ],
+   "spectacle": 2,
+   "dur": 33,
+   "words": 102,
+   "wpm": 185,
+   "dialogue_words": 15,
+   "dialogue_lines": 2,
+   "cuts": 8,
+   "cuts_per_min": 14.5,
+   "t": "2:37-3:10",
+   "pct": [
+    25.7,
+    31.1
+   ]
+  },
+  {
+   "start": 190,
+   "end": 203,
+   "act": 1,
+   "beat": "proof_test",
+   "summary": "Demo for the best friend: you appear across the room. He names the anime power he thinks it is.",
+   "devices": [
+    "pop_culture_ref",
+    "comic_beat",
+    "witness"
+   ],
+   "stakes": 1,
+   "emotion": "funny",
+   "quip": true,
+   "numbers": [],
+   "new_info": false,
+   "escalation": false,
+   "visual": [
+    "3D bedroom two-shot"
+   ],
+   "spectacle": 2,
+   "dur": 13,
+   "words": 27,
+   "wpm": 125,
+   "dialogue_words": 11,
+   "dialogue_lines": 3,
+   "cuts": 8,
+   "cuts_per_min": 36.9,
+   "t": "3:10-3:23",
+   "pct": [
+    31.1,
+    33.3
+   ]
+  },
+  {
+   "start": 203,
+   "end": 228,
+   "act": 2,
+   "beat": "perk",
+   "summary": "Perk montage that slides into cheating: queue-skipping, a gross sneeze aside, copying test answers. Narrator winks that you were never promised to be the hero. The teacher becomes suspicious.",
+   "devices": [
+    "montage_list",
+    "moral_wink",
+    "skeptic",
+    "foreshadow",
+    "comic_beat"
+   ],
+   "stakes": 1,
+   "emotion": "mischief",
+   "quip": true,
+   "numbers": [],
+   "new_info": false,
+   "escalation": true,
+   "visual": [
+    "3D classroom test walk",
+    "teacher close-up"
+   ],
+   "spectacle": 3,
+   "dur": 25,
+   "words": 80,
+   "wpm": 192,
+   "dialogue_words": 5,
+   "dialogue_lines": 2,
+   "cuts": 14,
+   "cuts_per_min": 33.6,
+   "t": "3:23-3:48",
+   "pct": [
+    33.3,
+    37.4
+   ]
+  },
+  {
+   "start": 228,
+   "end": 262,
+   "act": 2,
+   "beat": "perk",
+   "summary": "Extra sleep every morning; nudging the goalie a step before a penalty; secretly saving a little kid's ice cream, flagged as the best use of the power.",
+   "devices": [
+    "comic_beat",
+    "setup_payoff",
+    "kindness_benchmark"
+   ],
+   "stakes": 1,
+   "emotion": "warm",
+   "quip": false,
+   "numbers": [
+    "5 min",
+    "1 hour"
+   ],
+   "new_info": false,
+   "escalation": true,
+   "visual": [
+    "3D soccer goal",
+    "3D park kid"
+   ],
+   "spectacle": 3,
+   "dur": 34,
+   "words": 111,
+   "wpm": 196,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 11,
+   "cuts_per_min": 19.4,
+   "t": "3:48-4:22",
+   "pct": [
+    37.4,
+    43.0
+   ]
+  },
+  {
+   "start": 262,
+   "end": 273,
+   "act": 2,
+   "beat": "perk",
+   "summary": "Prank: mom's coffee mug turns up somewhere absurd every morning.",
+   "devices": [
+    "rule_of_three",
+    "comic_beat",
+    "running_gag"
+   ],
+   "stakes": 1,
+   "emotion": "funny",
+   "quip": true,
+   "numbers": [],
+   "new_info": false,
+   "escalation": false,
+   "visual": [
+    "3D kitchen mug on ceiling fan"
+   ],
+   "spectacle": 2,
+   "dur": 11,
+   "words": 30,
+   "wpm": 164,
+   "dialogue_words": 6,
+   "dialogue_lines": 1,
+   "cuts": 6,
+   "cuts_per_min": 32.7,
+   "t": "4:22-4:33",
+   "pct": [
+    43.0,
+    44.8
+   ]
+  },
+  {
+   "start": 273,
+   "end": 304,
+   "act": 2,
+   "beat": "tone_shift",
+   "summary": "The frozen world described as a place: no wind, birds hung on strings, lying down on a highway and in a mall; the quietest, loneliest place there is.",
+   "devices": [
+    "sensory_detail",
+    "tone_shift",
+    "visual_poetry"
+   ],
+   "stakes": 2,
+   "emotion": "eerie wonder",
+   "quip": false,
+   "numbers": [],
+   "new_info": true,
+   "escalation": false,
+   "visual": [
+    "3D top-down mall floor",
+    "birds frozen in sky",
+    "highway"
+   ],
+   "spectacle": 4,
+   "dur": 31,
+   "words": 92,
+   "wpm": 178,
+   "dialogue_words": 5,
+   "dialogue_lines": 1,
+   "cuts": 12,
+   "cuts_per_min": 23.2,
+   "t": "4:33-5:04",
+   "pct": [
+    44.8,
+    49.8
+   ]
+  },
+  {
+   "start": 304,
+   "end": 340,
+   "act": 2,
+   "beat": "cost",
+   "summary": "Rule 3 adds up: an hour a day equals about two extra weeks a year that only you lived. Mom says you look tired. At night: what if time never restarts?",
+   "devices": [
+    "callback",
+    "worked_math",
+    "open_loop",
+    "dread"
+   ],
+   "stakes": 3,
+   "emotion": "unease",
+   "quip": true,
+   "numbers": [
+    "1 h/day",
+    "~2 weeks/year"
+   ],
+   "new_info": true,
+   "escalation": true,
+   "visual": [
+    "3D home mom",
+    "3D bed at night"
+   ],
+   "spectacle": 2,
+   "dur": 36,
+   "words": 110,
+   "wpm": 183,
+   "dialogue_words": 17,
+   "dialogue_lines": 2,
+   "cuts": 7,
+   "cuts_per_min": 11.7,
+   "t": "5:04-5:40",
+   "pct": [
+    49.8,
+    55.7
+   ]
+  },
+  {
+   "start": 340,
+   "end": 370,
+   "act": 3,
+   "beat": "misuse",
+   "summary": "Public humiliation by a bully; for the first time you use the power for payback: tied laces, phone in the fish tank. It feels great, because nobody can ever know.",
+   "devices": [
+    "revenge_fantasy",
+    "comic_beat",
+    "moral_slide",
+    "turning_point"
+   ],
+   "stakes": 2,
+   "emotion": "satisfaction",
+   "quip": false,
+   "numbers": [],
+   "new_info": true,
+   "escalation": true,
+   "visual": [
+    "3D school lockers",
+    "bully fall"
+   ],
+   "spectacle": 3,
+   "dur": 30,
+   "words": 96,
+   "wpm": 192,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 19,
+   "cuts_per_min": 38.0,
+   "t": "5:40-6:10",
+   "pct": [
+    55.7,
+    60.7
+   ]
+  },
+  {
+   "start": 370,
+   "end": 424,
+   "act": 3,
+   "beat": "escalation",
+   "summary": "Theft ladder: snack, then shoes, then a phone from a locked case. You keep a list of what you could take. Frozen cameras make footage skip. Hood up. Your best friend asks if it's bad stuff; you deflect.",
+   "devices": [
+    "escalation_ladder",
+    "rule_of_three",
+    "logic_twist",
+    "friend_as_conscience",
+    "costume_change"
+   ],
+   "stakes": 3,
+   "emotion": "dark thrill",
+   "quip": true,
+   "numbers": [
+    "100 rewinds"
+   ],
+   "new_info": true,
+   "escalation": true,
+   "visual": [
+    "3D store glass case",
+    "CCTV frame skip",
+    "hood up"
+   ],
+   "spectacle": 3,
+   "dur": 54,
+   "words": 161,
+   "wpm": 179,
+   "dialogue_words": 22,
+   "dialogue_lines": 4,
+   "cuts": 18,
+   "cuts_per_min": 20.0,
+   "t": "6:10-7:04",
+   "pct": [
+    60.7,
+    69.5
+   ]
+  },
+  {
+   "start": 424,
+   "end": 432,
+   "act": 3,
+   "beat": "aftermath",
+   "summary": "Friend looks a beat too long, laughs it off, never asks to see the trick again.",
+   "devices": [
+    "subtext",
+    "relationship_cost"
+   ],
+   "stakes": 2,
+   "emotion": "uneasy",
+   "quip": false,
+   "numbers": [],
+   "new_info": false,
+   "escalation": false,
+   "visual": [
+    "3D friend close-up"
+   ],
+   "spectacle": 2,
+   "dur": 8,
+   "words": 31,
+   "wpm": 232,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 1,
+   "cuts_per_min": 7.5,
+   "t": "7:04-7:12",
+   "pct": [
+    69.5,
+    70.8
+   ]
+  },
+  {
+   "start": 432,
+   "end": 457,
+   "act": 3,
+   "beat": "set_piece",
+   "summary": "The heist: weekly cash truck, you on the overpass in your hood, freeze. A neighbouring car is mid-crash with its tyre in the air and a terrified driver.",
+   "devices": [
+    "heist_setup",
+    "reveal",
+    "frozen_tableau"
+   ],
+   "stakes": 4,
+   "emotion": "tense",
+   "quip": false,
+   "numbers": [
+    "every Friday"
+   ],
+   "new_info": true,
+   "escalation": true,
+   "visual": [
+    "3D highway overpass night",
+    "armored truck",
+    "floating tyre"
+   ],
+   "spectacle": 5,
+   "dur": 25,
+   "words": 84,
+   "wpm": 202,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 7,
+   "cuts_per_min": 16.8,
+   "t": "7:12-7:37",
+   "pct": [
+    70.8,
+    74.9
+   ]
+  },
+  {
+   "start": 457,
+   "end": 470,
+   "act": 3,
+   "beat": "dilemma",
+   "summary": "You could fix the crash in minutes, but you came for the truck. Direct callback to the ice cream you once saved.",
+   "devices": [
+    "dilemma",
+    "callback",
+    "contrast"
+   ],
+   "stakes": 5,
+   "emotion": "conflicted",
+   "quip": false,
+   "numbers": [
+    "5 minutes"
+   ],
+   "new_info": false,
+   "escalation": true,
+   "visual": [
+    "3D frozen crash close-up"
+   ],
+   "spectacle": 4,
+   "dur": 13,
+   "words": 45,
+   "wpm": 208,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 6,
+   "cuts_per_min": 27.7,
+   "t": "7:37-7:50",
+   "pct": [
+    74.9,
+    77.0
+   ]
+  },
+  {
+   "start": 470,
+   "end": 491,
+   "act": 3,
+   "beat": "climax",
+   "summary": "You choose the money, let time go, hear the crash behind you. Nobody badly hurt; all the camera shows is a faceless hooded figure.",
+   "devices": [
+    "dark_choice",
+    "consequence",
+    "reversal"
+   ],
+   "stakes": 5,
+   "emotion": "cold",
+   "quip": false,
+   "numbers": [],
+   "new_info": false,
+   "escalation": true,
+   "visual": [
+    "3D truck back doors",
+    "CCTV hooded figure"
+   ],
+   "spectacle": 4,
+   "dur": 21,
+   "words": 64,
+   "wpm": 183,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 9,
+   "cuts_per_min": 25.7,
+   "t": "7:50-8:11",
+   "pct": [
+    77.0,
+    80.5
+   ]
+  },
+  {
+   "start": 491,
+   "end": 515,
+   "act": 3,
+   "beat": "aftermath",
+   "summary": "In bed you rewatch the footage, feel untouchable rather than guilty. Best friend texts asking if it was you; you type 'no'; he goes silent. Someone else is watching the same footage.",
+   "devices": [
+    "moral_cost",
+    "relationship_cost",
+    "subtext",
+    "cutaway_to_watcher"
+   ],
+   "stakes": 3,
+   "emotion": "guilt",
+   "quip": false,
+   "numbers": [],
+   "new_info": true,
+   "escalation": true,
+   "visual": [
+    "3D phone footage in bed",
+    "black van interior"
+   ],
+   "spectacle": 3,
+   "dur": 24,
+   "words": 64,
+   "wpm": 160,
+   "dialogue_words": 7,
+   "dialogue_lines": 1,
+   "cuts": 10,
+   "cuts_per_min": 25.0,
+   "t": "8:11-8:35",
+   "pct": [
+    80.5,
+    84.4
+   ]
+  },
+  {
+   "start": 515,
+   "end": 561,
+   "act": 3,
+   "beat": "universe_hook",
+   "summary": "Next morning the team waits outside. Roll call of costumes, including the speedster from the last episode. The mind-reader can't read you, which explains the previous cliffhanger. Nervous banter.",
+   "devices": [
+    "crossover_cameo",
+    "perspective_flip",
+    "callback_prev_episode",
+    "comic_beat"
+   ],
+   "stakes": 4,
+   "emotion": "standoff",
+   "quip": true,
+   "numbers": [],
+   "new_info": true,
+   "escalation": true,
+   "visual": [
+    "3D street ensemble lineup",
+    "phone 'Slowest Rescue' clip"
+   ],
+   "spectacle": 4,
+   "dur": 46,
+   "words": 136,
+   "wpm": 177,
+   "dialogue_words": 28,
+   "dialogue_lines": 3,
+   "cuts": 20,
+   "cuts_per_min": 26.1,
+   "t": "8:35-9:21",
+   "pct": [
+    84.4,
+    92.0
+   ]
+  },
+  {
+   "start": 561,
+   "end": 579,
+   "act": 4,
+   "beat": "power_flex",
+   "summary": "You freeze them all, stroll between them, flick the floating can. Nobody can stop you.",
+   "devices": [
+    "power_flex",
+    "comic_beat",
+    "hubris"
+   ],
+   "stakes": 4,
+   "emotion": "smug",
+   "quip": false,
+   "numbers": [],
+   "new_info": false,
+   "escalation": true,
+   "visual": [
+    "3D frozen ensemble walk-through",
+    "glowing can"
+   ],
+   "spectacle": 4,
+   "dur": 18,
+   "words": 53,
+   "wpm": 177,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 10,
+   "cuts_per_min": 33.3,
+   "t": "9:21-9:39",
+   "pct": [
+    92.0,
+    94.9
+   ]
+  },
+  {
+   "start": 579,
+   "end": 594,
+   "act": 4,
+   "beat": "cliffhanger",
+   "summary": "In a world where nothing moves, someone says your name: the gray-coat woman, standing behind you, not frozen.",
+   "devices": [
+    "reversal",
+    "cliffhanger",
+    "rule_broken"
+   ],
+   "stakes": 5,
+   "emotion": "shock",
+   "quip": false,
+   "numbers": [],
+   "new_info": true,
+   "escalation": true,
+   "visual": [
+    "3D two-shot over shoulder"
+   ],
+   "spectacle": 3,
+   "dur": 15,
+   "words": 41,
+   "wpm": 164,
+   "dialogue_words": 13,
+   "dialogue_lines": 2,
+   "cuts": 4,
+   "cuts_per_min": 16.0,
+   "t": "9:39-9:54",
+   "pct": [
+    94.9,
+    97.4
+   ]
+  },
+  {
+   "start": 594,
+   "end": 610,
+   "act": 4,
+   "beat": "cta",
+   "summary": "What would you do + join the organisation or fight them; series sign-off.",
+   "devices": [
+    "two_question_cta",
+    "tagline"
+   ],
+   "stakes": 1,
+   "emotion": "open",
+   "quip": false,
+   "numbers": [],
+   "new_info": false,
+   "escalation": false,
+   "visual": [
+    "WHAT WOULD YOU DO? card over team lineup"
+   ],
+   "spectacle": 2,
+   "dur": 16,
+   "words": 30,
+   "wpm": 112,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 1,
+   "cuts_per_min": 3.8,
+   "t": "9:54-10:10",
+   "pct": [
+    97.4,
+    100.0
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1495 @@
+{
+ "id": "y300HjYnHPw",
+ "title": "What IF You Were 10x Faster?",
+ "channel": "IFOLOGY FILMS",
+ "takeaways": [
+  "Densest and most-viewed: 186 wpm, 3.8 numbers/min, new information every 25 s (median), a story turn every 79 s.",
+  "Act turns: costs at 2:41 (26%), real problem at 4:24 (43%), crisis at 6:31 (63%), climax at 7:07 (69%), bigger world at 7:52 (76%), CTA at 10:03 (97%).",
+  "Single flagged limit (senses stay normal) planted at 0:22 and paid 4 minutes later; the climax cashes 4 plants (300 m braking, spikes, slow-down rule, ball gag).",
+  "32 character lines (one every 19 s), almost all 8 words or fewer; a comic beat about every 48 s until the crisis.",
+  "Spectacle: the climax braking rescue (5/5) and the cold open (43.6 cuts/min). The explainer stretch 4:24-6:31 is the slowest-cut (9-14 cuts/min, navy cards).",
+  "Stakes stay at 1 for the first 26%, then climb in steps (2 -> 3 -> 5)."
+ ],
+ "note": "Hand-annotated beats (summaries are paraphrases, not quotes). words/wpm/dialogue from deduplicated ASR sentences (data/story/transcripts); cuts from shot detection (research/sheets/report.json). spectacle = 1-5 judged from the 24-frame contact sheets + cut density + what the narration stages. Acts are analytic, not the creator's.",
+ "fields": {
+  "stakes": "1 comic/inconvenient .. 5 life/death or identity",
+  "quip": "beat contains a short character line or punchline",
+  "new_info": "beat introduces a new fact, rule, problem or plot information",
+  "escalation": "beat raises scale or stakes vs the previous one"
+ },
+ "stats": {
+  "duration_s": 619.0,
+  "duration": "10:19",
+  "views": 813030,
+  "words": 1919,
+  "wpm_runtime": 186.0,
+  "dialogue_words": 222,
+  "dialogue_pct": 11.6,
+  "dialogue_lines": 32,
+  "dialogue_lines_per_min": 3.1,
+  "seconds_per_dialogue_line": 19.3,
+  "sentences": 215,
+  "avg_sentence_words": 8.9,
+  "questions": 13,
+  "questions_per_min": 1.26,
+  "number_tokens": 39,
+  "number_tokens_per_min": 3.78,
+  "remember_count": 2,
+  "but_sentences": 4,
+  "title_question_s": 11.2,
+  "first_number_s": 1.3,
+  "first_but_turn_s": 161,
+  "beats": 27,
+  "beat_mean_s": 22.9,
+  "beat_median_s": 18,
+  "beat_types": {
+   "universe_hook": {
+    "count": 2,
+    "total_s": 90.0,
+    "pct_runtime": 14.5
+   },
+   "real_problem": {
+    "count": 2,
+    "total_s": 78.0,
+    "pct_runtime": 12.6
+   },
+   "cost": {
+    "count": 3,
+    "total_s": 76.0,
+    "pct_runtime": 12.3
+   },
+   "mastery": {
+    "count": 1,
+    "total_s": 49.0,
+    "pct_runtime": 7.9
+   },
+   "perk": {
+    "count": 2,
+    "total_s": 34.0,
+    "pct_runtime": 5.5
+   },
+   "science_anchor": {
+    "count": 1,
+    "total_s": 32.0,
+    "pct_runtime": 5.2
+   },
+   "cliffhanger": {
+    "count": 1,
+    "total_s": 32.0,
+    "pct_runtime": 5.2
+   },
+   "number_ladder": {
+    "count": 1,
+    "total_s": 29.0,
+    "pct_runtime": 4.7
+   },
+   "climax": {
+    "count": 1,
+    "total_s": 28.0,
+    "pct_runtime": 4.5
+   },
+   "aftermath": {
+    "count": 2,
+    "total_s": 26.0,
+    "pct_runtime": 4.2
+   },
+   "fix": {
+    "count": 1,
+    "total_s": 22.0,
+    "pct_runtime": 3.6
+   },
+   "proof_test": {
+    "count": 1,
+    "total_s": 20.0,
+    "pct_runtime": 3.2
+   },
+   "inciting_crisis": {
+    "count": 1,
+    "total_s": 18.0,
+    "pct_runtime": 2.9
+   },
+   "dilemma": {
+    "count": 1,
+    "total_s": 18.0,
+    "pct_runtime": 2.9
+   },
+   "comic_limit": {
+    "count": 1,
+    "total_s": 17.0,
+    "pct_runtime": 2.7
+   },
+   "cta": {
+    "count": 1,
+    "total_s": 16.0,
+    "pct_runtime": 2.6
+   },
+   "cold_open": {
+    "count": 1,
+    "total_s": 11.0,
+    "pct_runtime": 1.8
+   },
+   "mechanism": {
+    "count": 1,
+    "total_s": 8.0,
+    "pct_runtime": 1.3
+   },
+   "rule_planted": {
+    "count": 1,
+    "total_s": 7.0,
+    "pct_runtime": 1.1
+   },
+   "but_turn": {
+    "count": 1,
+    "total_s": 5.0,
+    "pct_runtime": 0.8
+   },
+   "title_question": {
+    "count": 1,
+    "total_s": 3.0,
+    "pct_runtime": 0.5
+   }
+  },
+  "acts": [
+   {
+    "act": 1,
+    "name": "Promise: show, explain, enjoy",
+    "t": "0:00-2:41",
+    "start_pct": 0.0,
+    "end_pct": 26.0,
+    "dur_s": 161,
+    "beats": 10,
+    "words": 500,
+    "cuts_per_min": 23.1
+   },
+   {
+    "act": 2,
+    "name": "Price: costs, the real problem, mastery",
+    "t": "2:41-6:31",
+    "start_pct": 26.0,
+    "end_pct": 63.2,
+    "dur_s": 230,
+    "beats": 8,
+    "words": 725,
+    "cuts_per_min": 14.9
+   },
+   {
+    "act": 3,
+    "name": "Proof under pressure: crisis, climax, aftermath",
+    "t": "6:31-7:52",
+    "start_pct": 63.2,
+    "end_pct": 76.3,
+    "dur_s": 81,
+    "beats": 4,
+    "words": 233,
+    "cuts_per_min": 19.3
+   },
+   {
+    "act": 4,
+    "name": "Bigger world: recruitment, cliffhanger, CTA",
+    "t": "7:52-10:19",
+    "start_pct": 76.3,
+    "end_pct": 100.0,
+    "dur_s": 147,
+    "beats": 5,
+    "words": 461,
+    "cuts_per_min": 20.4
+   }
+  ],
+  "new_info_cadence": {
+   "count": 19,
+   "mean_gap_s": 31.7,
+   "median_gap_s": 25.0,
+   "max_gap_s": 81
+  },
+  "escalation_cadence": {
+   "count": 13,
+   "mean_gap_s": 45.2,
+   "median_gap_s": 44.0,
+   "max_gap_s": 98
+  },
+  "turn_cadence": {
+   "count": 6,
+   "mean_gap_s": 82,
+   "median_gap_s": 79,
+   "max_gap_s": 162
+  },
+  "quip_beats": 11,
+  "quip_beats_per_min": 1.07,
+  "comic_beats": 13,
+  "comic_beat_every_s": 47.6,
+  "cuts_total": 195,
+  "cuts_per_min": 18.9,
+  "avg_shot_s": 3.16,
+  "words_per_shot": 9.8,
+  "top_cut_density_beats": [
+   {
+    "t": "0:00-0:11",
+    "beat": "cold_open",
+    "cuts_per_min": 43.6,
+    "summary": "Late for school with one minute left; you leave home and are seated before the bell. A cla"
+   },
+   {
+    "t": "7:35-7:52",
+    "beat": "aftermath",
+    "cuts_per_min": 31.8,
+    "summary": "Cost on the body (melted spikes, shaking legs), a crying grateful mother, and a viral clip"
+   },
+   {
+    "t": "0:14-0:22",
+    "beat": "mechanism",
+    "cuts_per_min": 30.0,
+    "summary": "Exactly what changes: the legs, every stride ten times quicker; nothing else looks differe"
+   },
+   {
+    "t": "1:50-2:16",
+    "beat": "perk",
+    "cuts_per_min": 27.7,
+    "summary": "Chore speed-run before the ad break ends, then a pizza-delivery job where you beat the kit"
+   },
+   {
+    "t": "2:46-3:11",
+    "beat": "cost",
+    "cuts_per_min": 26.4,
+    "summary": "Problem 1, air: hurricane-strength wind; drag grows with the square of speed, so ten times"
+   },
+   {
+    "t": "9:31-10:03",
+    "beat": "cliffhanger",
+    "cuts_per_min": 26.2,
+    "summary": "Every phone alarms; the mind-reader is scared because the new threat has no readable thoug"
+   }
+  ],
+  "top_spectacle_beats": [
+   {
+    "t": "7:07-7:35",
+    "beat": "climax",
+    "spectacle": 5,
+    "cuts_per_min": 12.9,
+    "visual": [
+     "3D braking with sparks/smoke",
+     "truck passes",
+     "ball crushed"
+    ]
+   },
+   {
+    "t": "9:31-10:03",
+    "beat": "cliffhanger",
+    "spectacle": 4,
+    "cuts_per_min": 26.2,
+    "visual": [
+     "3D van interior tablet",
+     "highway feed with floating cars",
+     "figure staring"
+    ]
+   },
+   {
+    "t": "6:31-6:49",
+    "beat": "inciting_crisis",
+    "spectacle": 4,
+    "cuts_per_min": 23.3,
+    "visual": [
+     "3D suburb hill by park",
+     "kid + ball",
+     "truck"
+    ]
+   },
+   {
+    "t": "8:10-9:22",
+    "beat": "universe_hook",
+    "spectacle": 4,
+    "cuts_per_min": 22.5,
+    "visual": [
+     "3D street + black van ensemble",
+     "floating can",
+     "hover girl"
+    ]
+   },
+   {
+    "t": "0:29-0:58",
+    "beat": "number_ladder",
+    "spectacle": 4,
+    "cuts_per_min": 18.6,
+    "visual": [
+     "3D track with speedometer HUD 25 -> 250 km/h",
+     "3D car interior",
+     "race car pass",
+     "44 KM/H text"
+    ]
+   },
+   {
+    "t": "5:12-5:42",
+    "beat": "real_problem",
+    "spectacle": 4,
+    "cuts_per_min": 14.0,
+    "visual": [
+     "navy card map grid with corners",
+     "3D hedge crash into pool"
+    ]
+   }
+  ],
+  "stakes_curve": [
+   [
+    "0:00-0:11",
+    1
+   ],
+   [
+    "0:11-0:14",
+    1
+   ],
+   [
+    "0:14-0:22",
+    1
+   ],
+   [
+    "0:22-0:29",
+    1
+   ],
+   [
+    "0:29-0:58",
+    1
+   ],
+   [
+    "0:58-1:18",
+    1
+   ],
+   [
+    "1:18-1:50",
+    1
+   ],
+   [
+    "1:50-2:16",
+    1
+   ],
+   [
+    "2:16-2:33",
+    1
+   ],
+   [
+    "2:33-2:41",
+    1
+   ],
+   [
+    "2:41-2:46",
+    2
+   ],
+   [
+    "2:46-3:11",
+    2
+   ],
+   [
+    "3:11-3:33",
+    1
+   ],
+   [
+    "3:33-3:49",
+    1
+   ],
+   [
+    "3:49-4:24",
+    1
+   ],
+   [
+    "4:24-5:12",
+    3
+   ],
+   [
+    "5:12-5:42",
+    2
+   ],
+   [
+    "5:42-6:31",
+    2
+   ],
+   [
+    "6:31-6:49",
+    5
+   ],
+   [
+    "6:49-7:07",
+    5
+   ],
+   [
+    "7:07-7:35",
+    5
+   ],
+   [
+    "7:35-7:52",
+    2
+   ],
+   [
+    "7:52-8:10",
+    3
+   ],
+   [
+    "8:10-9:22",
+    3
+   ],
+   [
+    "9:22-9:31",
+    2
+   ],
+   [
+    "9:31-10:03",
+    5
+   ],
+   [
+    "10:03-10:19",
+    1
+   ]
+  ],
+  "open_loops": [
+   {
+    "planted": "0:22",
+    "paid": "4:24",
+    "what": "Eyes/brain/reflexes stay normal ('remember that') -> tunnel vision and 14 m reaction distance become the real problem"
+   },
+   {
+    "planted": "2:16",
+    "paid": "7:30",
+    "what": "Ball left behind at soccer -> the kid's ball is the one thing not saved in the rescue"
+   },
+   {
+    "planted": "5:12",
+    "paid": "7:07",
+    "what": "300 m braking distance -> you start braking exactly 300 m out in the climax"
+   },
+   {
+    "planted": "5:42",
+    "paid": "7:15",
+    "what": "Track spikes bought for grip -> spikes dig in, sparks, melted flat"
+   },
+   {
+    "planted": "6:23",
+    "paid": "7:07",
+    "what": "Rule 'slow down before you need to' -> the rescue is literally a slow arrival"
+   },
+   {
+    "planted": "4:14",
+    "paid": "9:22",
+    "what": "Mom's giant cereal -> mom with a cereal spoon gives the blessing"
+   },
+   {
+    "planted": "9:31",
+    "paid": "next episode",
+    "what": "Villain the mind-reader can't read + stopped highway -> Stop Time episode"
+   }
+  ]
+ },
+ "beats": [
+  {
+   "start": 0,
+   "end": 11,
+   "act": 1,
+   "beat": "cold_open",
+   "summary": "Late for school with one minute left; you leave home and are seated before the bell. A classmate can't process it.",
+   "devices": [
+    "show_dont_tell",
+    "in_medias_res",
+    "comic_beat",
+    "everyday_stakes"
+   ],
+   "stakes": 1,
+   "emotion": "playful",
+   "quip": true,
+   "numbers": [
+    "1 minute"
+   ],
+   "new_info": true,
+   "escalation": false,
+   "visual": [
+    "3D bedroom alarm clock 7:59",
+    "3D suburb street blur",
+    "3D classroom"
+   ],
+   "spectacle": 3,
+   "dur": 11,
+   "words": 36,
+   "wpm": 196,
+   "dialogue_words": 7,
+   "dialogue_lines": 2,
+   "cuts": 8,
+   "cuts_per_min": 43.6,
+   "t": "0:00-0:11",
+   "pct": [
+    0.0,
+    1.8
+   ]
+  },
+  {
+   "start": 11,
+   "end": 14,
+   "act": 1,
+   "beat": "title_question",
+   "summary": "The title question spoken word for word, followed by the 'here is how it works' pivot.",
+   "devices": [
+    "title_echo"
+   ],
+   "stakes": 1,
+   "emotion": "curious",
+   "quip": false,
+   "numbers": [
+    "10x"
+   ],
+   "new_info": false,
+   "escalation": false,
+   "visual": [
+    "title card over aerial suburb establishing shot"
+   ],
+   "spectacle": 2,
+   "dur": 3,
+   "words": 12,
+   "wpm": 240,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 1,
+   "cuts_per_min": 20.0,
+   "t": "0:11-0:14",
+   "pct": [
+    1.8,
+    2.3
+   ]
+  },
+  {
+   "start": 14,
+   "end": 22,
+   "act": 1,
+   "beat": "mechanism",
+   "summary": "Exactly what changes: the legs, every stride ten times quicker; nothing else looks different.",
+   "devices": [
+    "plain_mechanism",
+    "repetition"
+   ],
+   "stakes": 1,
+   "emotion": "curious",
+   "quip": false,
+   "numbers": [
+    "10x"
+   ],
+   "new_info": true,
+   "escalation": false,
+   "visual": [
+    "3D sprint with 10X overlay",
+    "speed blur"
+   ],
+   "spectacle": 3,
+   "dur": 8,
+   "words": 34,
+   "wpm": 255,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 4,
+   "cuts_per_min": 30.0,
+   "t": "0:14-0:22",
+   "pct": [
+    2.3,
+    3.6
+   ]
+  },
+  {
+   "start": 22,
+   "end": 29,
+   "act": 1,
+   "beat": "rule_planted",
+   "summary": "The limit is planted early: senses and reaction speed stay human, and the narrator flags it as important for later.",
+   "devices": [
+    "open_loop",
+    "setup_payoff",
+    "explicit_flag"
+   ],
+   "stakes": 1,
+   "emotion": "intrigued",
+   "quip": false,
+   "numbers": [],
+   "new_info": true,
+   "escalation": false,
+   "visual": [
+    "navy card: stick figure with brain, eye and reflex icons"
+   ],
+   "spectacle": 2,
+   "dur": 7,
+   "words": 5,
+   "wpm": 43,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 1,
+   "cuts_per_min": 8.6,
+   "t": "0:22-0:29",
+   "pct": [
+    3.6,
+    4.7
+   ]
+  },
+  {
+   "start": 29,
+   "end": 58,
+   "act": 1,
+   "beat": "number_ladder",
+   "summary": "Normal teen sprint to new top speed, then three comparisons that climb: highway car, race car, the world's fastest sprinter, and a 100 m time vs the world record.",
+   "devices": [
+    "real_stat",
+    "comparison_ladder",
+    "normal_vs_you"
+   ],
+   "stakes": 1,
+   "emotion": "awe",
+   "quip": false,
+   "numbers": [
+    "25 km/h",
+    "250 km/h",
+    "44 km/h",
+    "100 m",
+    "<1.5 s",
+    "9.58 s",
+    "2009"
+   ],
+   "new_info": true,
+   "escalation": true,
+   "visual": [
+    "3D track with speedometer HUD 25 -> 250 km/h",
+    "3D car interior",
+    "race car pass",
+    "44 KM/H text"
+   ],
+   "spectacle": 4,
+   "dur": 29,
+   "words": 84,
+   "wpm": 174,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 9,
+   "cuts_per_min": 18.6,
+   "t": "0:29-0:58",
+   "pct": [
+    4.7,
+    9.4
+   ]
+  },
+  {
+   "start": 58,
+   "end": 78,
+   "act": 1,
+   "beat": "proof_test",
+   "summary": "Track trials: the coach blows the whistle, looks at the stopwatch, looks up, and you are already holding his water bottle. He demands a rerun you already did.",
+   "devices": [
+    "skeptic",
+    "comic_beat",
+    "rule_of_three",
+    "double_take"
+   ],
+   "stakes": 1,
+   "emotion": "funny",
+   "quip": true,
+   "numbers": [
+    "3-2-1"
+   ],
+   "new_info": false,
+   "escalation": false,
+   "visual": [
+    "3D stadium/track",
+    "coach close-up"
+   ],
+   "spectacle": 3,
+   "dur": 20,
+   "words": 54,
+   "wpm": 162,
+   "dialogue_words": 19,
+   "dialogue_lines": 3,
+   "cuts": 7,
+   "cuts_per_min": 21.0,
+   "t": "0:58-1:18",
+   "pct": [
+    9.4,
+    12.6
+   ]
+  },
+  {
+   "start": 78,
+   "end": 110,
+   "act": 1,
+   "beat": "science_anchor",
+   "summary": "Real research: what limits sprinters is how fast muscles fire, measured as foot-ground contact time; yours is ten times shorter, so your steps sound like a drum roll.",
+   "devices": [
+    "real_stat",
+    "contrast",
+    "sound_image"
+   ],
+   "stakes": 1,
+   "emotion": "curious",
+   "quip": false,
+   "numbers": [
+    "<0.1 s",
+    "~0.01 s"
+   ],
+   "new_info": true,
+   "escalation": false,
+   "visual": [
+    "navy card: stride diagram with timer"
+   ],
+   "spectacle": 2,
+   "dur": 32,
+   "words": 118,
+   "wpm": 221,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 10,
+   "cuts_per_min": 18.8,
+   "t": "1:18-1:50",
+   "pct": [
+    12.6,
+    17.8
+   ]
+  },
+  {
+   "start": 110,
+   "end": 136,
+   "act": 1,
+   "beat": "perk",
+   "summary": "Chore speed-run before the ad break ends, then a pizza-delivery job where you beat the kitchen; customers react.",
+   "devices": [
+    "montage_list",
+    "rule_of_three",
+    "comic_beat"
+   ],
+   "stakes": 1,
+   "emotion": "fun",
+   "quip": true,
+   "numbers": [
+    "$14.99"
+   ],
+   "new_info": false,
+   "escalation": true,
+   "visual": [
+    "3D living room couch + TV",
+    "3D doorstep delivery"
+   ],
+   "spectacle": 3,
+   "dur": 26,
+   "words": 68,
+   "wpm": 157,
+   "dialogue_words": 17,
+   "dialogue_lines": 3,
+   "cuts": 12,
+   "cuts_per_min": 27.7,
+   "t": "1:50-2:16",
+   "pct": [
+    17.8,
+    22.0
+   ]
+  },
+  {
+   "start": 136,
+   "end": 153,
+   "act": 1,
+   "beat": "comic_limit",
+   "summary": "First soccer game: you outrun everyone to the goal and leave the ball at midfield. Small, funny preview of the power's limits.",
+   "devices": [
+    "comic_beat",
+    "reversal",
+    "foreshadow"
+   ],
+   "stakes": 1,
+   "emotion": "funny",
+   "quip": true,
+   "numbers": [],
+   "new_info": true,
+   "escalation": false,
+   "visual": [
+    "3D soccer field, ball behind"
+   ],
+   "spectacle": 3,
+   "dur": 17,
+   "words": 58,
+   "wpm": 205,
+   "dialogue_words": 7,
+   "dialogue_lines": 2,
+   "cuts": 7,
+   "cuts_per_min": 24.7,
+   "t": "2:16-2:33",
+   "pct": [
+    22.0,
+    24.7
+   ]
+  },
+  {
+   "start": 153,
+   "end": 161,
+   "act": 1,
+   "beat": "perk",
+   "summary": "Weekend lunch in a city 100 km away and back before a delivery would arrive. Scale jumps from town to region.",
+   "devices": [
+    "real_stat",
+    "scale_jump"
+   ],
+   "stakes": 1,
+   "emotion": "fun",
+   "quip": false,
+   "numbers": [
+    "100 km",
+    "<30 min"
+   ],
+   "new_info": false,
+   "escalation": true,
+   "visual": [
+    "3D road run"
+   ],
+   "spectacle": 3,
+   "dur": 8,
+   "words": 31,
+   "wpm": 232,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 3,
+   "cuts_per_min": 22.5,
+   "t": "2:33-2:41",
+   "pct": [
+    24.7,
+    26.0
+   ]
+  },
+  {
+   "start": 161,
+   "end": 166,
+   "act": 2,
+   "beat": "but_turn",
+   "summary": "'But then' the problems start; the first one is the air.",
+   "devices": [
+    "but_therefore",
+    "enumeration"
+   ],
+   "stakes": 2,
+   "emotion": "uh-oh",
+   "quip": false,
+   "numbers": [],
+   "new_info": true,
+   "escalation": true,
+   "visual": [
+    "navy card: running figure with wind lines 250 KM/H"
+   ],
+   "spectacle": 2,
+   "dur": 5,
+   "words": 14,
+   "wpm": 168,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 1,
+   "cuts_per_min": 12.0,
+   "t": "2:41-2:46",
+   "pct": [
+    26.0,
+    26.8
+   ]
+  },
+  {
+   "start": 166,
+   "end": 191,
+   "act": 2,
+   "beat": "cost",
+   "summary": "Problem 1, air: hurricane-strength wind; drag grows with the square of speed, so ten times faster means a hundred times the push. Four quick body gags.",
+   "devices": [
+    "real_stat",
+    "square_law",
+    "comic_list"
+   ],
+   "stakes": 2,
+   "emotion": "funny-uncomfortable",
+   "quip": false,
+   "numbers": [
+    "250 km/h",
+    "category 5",
+    "10x -> 100x"
+   ],
+   "new_info": true,
+   "escalation": true,
+   "visual": [
+    "navy card wind lines",
+    "3D face with hoodie flapping"
+   ],
+   "spectacle": 3,
+   "dur": 25,
+   "words": 81,
+   "wpm": 194,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 11,
+   "cuts_per_min": 26.4,
+   "t": "2:46-3:11",
+   "pct": [
+    26.8,
+    30.9
+   ]
+  },
+  {
+   "start": 191,
+   "end": 213,
+   "act": 2,
+   "beat": "fix",
+   "summary": "Cheap workaround: swim goggles, arms tucked, leaning like a bullet; it looks silly and it works. Aside that answers the obvious viewer question (no sonic boom; you would need 50x).",
+   "devices": [
+    "deadpan_two_beat",
+    "anticipated_question",
+    "myth_bust",
+    "comic_beat"
+   ],
+   "stakes": 1,
+   "emotion": "funny",
+   "quip": false,
+   "numbers": [
+    "1,235 km/h",
+    "50x"
+   ],
+   "new_info": true,
+   "escalation": false,
+   "visual": [
+    "3D goggles pose",
+    "pigeons"
+   ],
+   "spectacle": 3,
+   "dur": 22,
+   "words": 65,
+   "wpm": 177,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 5,
+   "cuts_per_min": 13.6,
+   "t": "3:11-3:33",
+   "pct": [
+    30.9,
+    34.4
+   ]
+  },
+  {
+   "start": 213,
+   "end": 229,
+   "act": 2,
+   "beat": "cost",
+   "summary": "Problem 2, shoes: soles gone within a week; mom counts the pairs.",
+   "devices": [
+    "comic_beat",
+    "family_reaction"
+   ],
+   "stakes": 1,
+   "emotion": "funny",
+   "quip": true,
+   "numbers": [
+    "1 week",
+    "4th pair"
+   ],
+   "new_info": true,
+   "escalation": false,
+   "visual": [
+    "3D shoe sole close-up sliding"
+   ],
+   "spectacle": 2,
+   "dur": 16,
+   "words": 45,
+   "wpm": 169,
+   "dialogue_words": 12,
+   "dialogue_lines": 2,
+   "cuts": 6,
+   "cuts_per_min": 22.5,
+   "t": "3:33-3:49",
+   "pct": [
+    34.4,
+    37.0
+   ]
+  },
+  {
+   "start": 229,
+   "end": 264,
+   "act": 2,
+   "beat": "cost",
+   "summary": "Problem 3, food: a worked calorie sum (weight x distance) gives seven normal days of food per day; triple breakfast; mom buys cereal boxes the size of an appliance.",
+   "devices": [
+    "worked_math",
+    "real_stat",
+    "rule_of_three",
+    "comic_beat",
+    "setup_payoff"
+   ],
+   "stakes": 1,
+   "emotion": "funny",
+   "quip": false,
+   "numbers": [
+    "1 kcal/kg/km",
+    "70 kg",
+    "200 km",
+    "14,000 kcal",
+    "2,000 kcal"
+   ],
+   "new_info": true,
+   "escalation": false,
+   "visual": [
+    "navy card 14,000 CALORIES stacked plates",
+    "3D kitchen giant cereal"
+   ],
+   "spectacle": 2,
+   "dur": 35,
+   "words": 103,
+   "wpm": 177,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 9,
+   "cuts_per_min": 15.4,
+   "t": "3:49-4:24",
+   "pct": [
+    37.0,
+    42.6
+   ]
+  },
+  {
+   "start": 264,
+   "end": 312,
+   "act": 2,
+   "beat": "real_problem",
+   "summary": "Turn inside the turn: none of those costs matter, stopping does. Callback to the planted limit: tunnel vision plus a fifth-of-a-second reaction means 14 m travelled blind. A dog near-miss you survive by luck.",
+   "devices": [
+    "callback",
+    "reveal",
+    "real_stat",
+    "near_miss",
+    "stakes_raise"
+   ],
+   "stakes": 3,
+   "emotion": "tense",
+   "quip": false,
+   "numbers": [
+    "0.2 s",
+    "250 km/h",
+    "14 m"
+   ],
+   "new_info": true,
+   "escalation": true,
+   "visual": [
+    "3D street tunnel-vision blur",
+    "navy card 14 METERS figure sequence",
+    "3D dog jump"
+   ],
+   "spectacle": 4,
+   "dur": 48,
+   "words": 157,
+   "wpm": 196,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 7,
+   "cuts_per_min": 8.8,
+   "t": "4:24-5:12",
+   "pct": [
+    42.6,
+    50.4
+   ]
+  },
+  {
+   "start": 312,
+   "end": 342,
+   "act": 2,
+   "beat": "real_problem",
+   "summary": "Braking takes 300 m; a full-speed turn needs a kilometre-wide curve. Try-fail: you miss your own street and end up in a neighbour's inflatable pool.",
+   "devices": [
+    "real_stat",
+    "try_fail",
+    "comic_beat",
+    "visual_comparison"
+   ],
+   "stakes": 2,
+   "emotion": "funny-tense",
+   "quip": true,
+   "numbers": [
+    "300 m",
+    "3 football fields",
+    ">1 km curve"
+   ],
+   "new_info": true,
+   "escalation": true,
+   "visual": [
+    "navy card map grid with corners",
+    "3D hedge crash into pool"
+   ],
+   "spectacle": 4,
+   "dur": 30,
+   "words": 94,
+   "wpm": 188,
+   "dialogue_words": 7,
+   "dialogue_lines": 2,
+   "cuts": 7,
+   "cuts_per_min": 14.0,
+   "t": "5:12-5:42",
+   "pct": [
+    50.4,
+    55.3
+   ]
+  },
+  {
+   "start": 342,
+   "end": 391,
+   "act": 2,
+   "beat": "mastery",
+   "summary": "Learn from nature: the cheetah grips like cleats and steers with its tail. You buy spikes, practise leaning, and friends build a red danger-corner map. Theme rule stated: slow down long before you need to.",
+   "devices": [
+    "real_stat",
+    "analogy",
+    "training_montage",
+    "theme_line",
+    "friend_help",
+    "setup_payoff"
+   ],
+   "stakes": 2,
+   "emotion": "determined",
+   "quip": true,
+   "numbers": [
+    "100 km/h"
+   ],
+   "new_info": true,
+   "escalation": false,
+   "visual": [
+    "3D savanna cheetah",
+    "3D parking lot cones leaning turn",
+    "navy map card red corners"
+   ],
+   "spectacle": 4,
+   "dur": 49,
+   "words": 166,
+   "wpm": 203,
+   "dialogue_words": 10,
+   "dialogue_lines": 1,
+   "cuts": 11,
+   "cuts_per_min": 13.5,
+   "t": "5:42-6:31",
+   "pct": [
+    55.3,
+    63.2
+   ]
+  },
+  {
+   "start": 391,
+   "end": 409,
+   "act": 3,
+   "beat": "inciting_crisis",
+   "summary": "'For a while it works' bridge, then a Saturday: a kid chases a ball into the road while a distracted truck driver rounds the corner.",
+   "devices": [
+    "for_a_while_then",
+    "ticking_clock",
+    "callback"
+   ],
+   "stakes": 5,
+   "emotion": "dread",
+   "quip": false,
+   "numbers": [],
+   "new_info": true,
+   "escalation": true,
+   "visual": [
+    "3D suburb hill by park",
+    "kid + ball",
+    "truck"
+   ],
+   "spectacle": 4,
+   "dur": 18,
+   "words": 53,
+   "wpm": 177,
+   "dialogue_words": 2,
+   "dialogue_lines": 1,
+   "cuts": 7,
+   "cuts_per_min": 23.3,
+   "t": "6:31-6:49",
+   "pct": [
+    63.2,
+    66.1
+   ]
+  },
+  {
+   "start": 409,
+   "end": 427,
+   "act": 3,
+   "beat": "dilemma",
+   "summary": "The maths of the problem: you can be there in seconds, but arriving at full speed means you either overshoot or become the impact that hurts him.",
+   "devices": [
+    "ticking_clock",
+    "worked_math",
+    "reversal",
+    "power_as_threat"
+   ],
+   "stakes": 5,
+   "emotion": "tense",
+   "quip": false,
+   "numbers": [
+    "400 m",
+    "6 s",
+    "250 km/h"
+   ],
+   "new_info": true,
+   "escalation": true,
+   "visual": [
+    "3D worried close-up",
+    "distance overlay"
+   ],
+   "spectacle": 3,
+   "dur": 18,
+   "words": 60,
+   "wpm": 200,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 4,
+   "cuts_per_min": 13.3,
+   "t": "6:49-7:07",
+   "pct": [
+    66.1,
+    69.0
+   ]
+  },
+  {
+   "start": 427,
+   "end": 455,
+   "act": 3,
+   "beat": "climax",
+   "summary": "You execute the learned rule: straight line, start braking at exactly the planted distance, sparks and smoke, arrive at walking pace. Kid safe, ball flattened.",
+   "devices": [
+    "payoff",
+    "callback",
+    "rule_of_three",
+    "comic_beat",
+    "slow_motion_language"
+   ],
+   "stakes": 5,
+   "emotion": "triumph",
+   "quip": true,
+   "numbers": [
+    "300 m"
+   ],
+   "new_info": false,
+   "escalation": true,
+   "visual": [
+    "3D braking with sparks/smoke",
+    "truck passes",
+    "ball crushed"
+   ],
+   "spectacle": 5,
+   "dur": 28,
+   "words": 80,
+   "wpm": 171,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 6,
+   "cuts_per_min": 12.9,
+   "t": "7:07-7:35",
+   "pct": [
+    69.0,
+    73.5
+   ]
+  },
+  {
+   "start": 455,
+   "end": 472,
+   "act": 3,
+   "beat": "aftermath",
+   "summary": "Cost on the body (melted spikes, shaking legs), a crying grateful mother, and a viral clip whose name turns the theme into an ironic headline.",
+   "devices": [
+    "ironic_reframe",
+    "theme_line",
+    "social_proof",
+    "physical_cost"
+   ],
+   "stakes": 2,
+   "emotion": "warm",
+   "quip": false,
+   "numbers": [],
+   "new_info": false,
+   "escalation": false,
+   "visual": [
+    "3D spikes close-up",
+    "phone video title"
+   ],
+   "spectacle": 3,
+   "dur": 17,
+   "words": 40,
+   "wpm": 141,
+   "dialogue_words": 5,
+   "dialogue_lines": 2,
+   "cuts": 9,
+   "cuts_per_min": 31.8,
+   "t": "7:35-7:52",
+   "pct": [
+    73.5,
+    76.3
+   ]
+  },
+  {
+   "start": 472,
+   "end": 490,
+   "act": 4,
+   "beat": "universe_hook",
+   "summary": "Night knock; you open before the second knock. A stranger in a gray coat has watched your clip many times and has been keeping tabs on 'all of you'.",
+   "devices": [
+    "mysterious_stranger",
+    "comic_callback",
+    "open_loop"
+   ],
+   "stakes": 3,
+   "emotion": "intrigue",
+   "quip": true,
+   "numbers": [
+    "11 times"
+   ],
+   "new_info": true,
+   "escalation": true,
+   "visual": [
+    "3D front door at night"
+   ],
+   "spectacle": 3,
+   "dur": 18,
+   "words": 54,
+   "wpm": 180,
+   "dialogue_words": 23,
+   "dialogue_lines": 3,
+   "cuts": 5,
+   "cuts_per_min": 16.7,
+   "t": "7:52-8:10",
+   "pct": [
+    76.3,
+    79.2
+   ]
+  },
+  {
+   "start": 490,
+   "end": 562,
+   "act": 4,
+   "beat": "universe_hook",
+   "summary": "Team reveal at the van: telekinetic kid, flyer, mind-reader, home-made beetle armour guy, super-strong red cap. Each gets one quick gag. The organisation is named and the pitch is a three-part list ending in what you add.",
+   "devices": [
+    "crossover_cameo",
+    "rule_of_three",
+    "comic_beat",
+    "character_tags"
+   ],
+   "stakes": 3,
+   "emotion": "excited",
+   "quip": true,
+   "numbers": [
+    "10 m"
+   ],
+   "new_info": true,
+   "escalation": true,
+   "visual": [
+    "3D street + black van ensemble",
+    "floating can",
+    "hover girl"
+   ],
+   "spectacle": 4,
+   "dur": 72,
+   "words": 225,
+   "wpm": 188,
+   "dialogue_words": 92,
+   "dialogue_lines": 8,
+   "cuts": 27,
+   "cuts_per_min": 22.5,
+   "t": "8:10-9:22",
+   "pct": [
+    79.2,
+    90.8
+   ]
+  },
+  {
+   "start": 562,
+   "end": 571,
+   "act": 4,
+   "beat": "aftermath",
+   "summary": "You look at the van, your melted spikes, and mom with a cereal spoon, who gives a one-line blessing.",
+   "devices": [
+    "callback",
+    "rule_of_three",
+    "family_blessing",
+    "comic_beat"
+   ],
+   "stakes": 2,
+   "emotion": "warm-funny",
+   "quip": true,
+   "numbers": [],
+   "new_info": false,
+   "escalation": false,
+   "visual": [
+    "3D doorway mom"
+   ],
+   "spectacle": 2,
+   "dur": 9,
+   "words": 34,
+   "wpm": 227,
+   "dialogue_words": 4,
+   "dialogue_lines": 1,
+   "cuts": 3,
+   "cuts_per_min": 20.0,
+   "t": "9:22-9:31",
+   "pct": [
+    90.8,
+    92.2
+   ]
+  },
+  {
+   "start": 571,
+   "end": 603,
+   "act": 4,
+   "beat": "cliffhanger",
+   "summary": "Every phone alarms; the mind-reader is scared because the new threat has no readable thoughts. Live feed: highway cars stopped in mid-air and one figure staring into the camera.",
+   "devices": [
+    "cliffhanger",
+    "escalation",
+    "sequel_hook",
+    "fear_in_the_strong"
+   ],
+   "stakes": 5,
+   "emotion": "dread",
+   "quip": false,
+   "numbers": [],
+   "new_info": true,
+   "escalation": true,
+   "visual": [
+    "3D van interior tablet",
+    "highway feed with floating cars",
+    "figure staring"
+   ],
+   "spectacle": 4,
+   "dur": 32,
+   "words": 122,
+   "wpm": 229,
+   "dialogue_words": 17,
+   "dialogue_lines": 2,
+   "cuts": 14,
+   "cuts_per_min": 26.2,
+   "t": "9:31-10:03",
+   "pct": [
+    92.2,
+    97.4
+   ]
+  },
+  {
+   "start": 603,
+   "end": 619,
+   "act": 4,
+   "beat": "cta",
+   "summary": "Two questions (what would you do first; who is the villain), subscribe, series tagline.",
+   "devices": [
+    "two_question_cta",
+    "tagline"
+   ],
+   "stakes": 1,
+   "emotion": "open",
+   "quip": false,
+   "numbers": [],
+   "new_info": false,
+   "escalation": false,
+   "visual": [
+    "team lineup end card"
+   ],
+   "spectacle": 2,
+   "dur": 16,
+   "words": 26,
+   "wpm": 98,
+   "dialogue_words": 0,
+   "dialogue_lines": 0,
+   "cuts": 1,
+   "cuts_per_min": 3.8,
+   "t": "10:03-10:19",
+   "pct": [
+    97.4,
+    100.0
+   ]
+  }
+ ]
+}

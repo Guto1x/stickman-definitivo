@@ -1,0 +1,28 @@
+{
+  "slug": "pipetest",
+  "title": "Pipeline test",
+  "voice": { "id": "u7N1p4OIOc6Fl7y72WE7", "model": "eleven_v4" },
+  "music": [{ "shot": 0, "mood": "curious" }, { "shot": 4, "mood": "tension" }],
+  "shots": [
+    { "set": "suburb", "vo": "This is you. A totally normal kid, on a totally normal street.",
+      "actors": [{ "id": "hero", "pos": "sidewalk+-3,0,0", "path": [{ "t": 0.2, "pos": "sidewalk+-3,0,0" }, { "t": 4, "pos": "sidewalk+1.5,0,0", "gait": "walk" }], "face": "smile" }],
+      "camera": { "shot": "wide", "target": "hero", "angle": 35, "move": "track" } },
+    { "set": "suburb", "vo": "You wake up. You brush your teeth. You walk to school.",
+      "actors": [{ "id": "hero", "pos": "sidewalk", "rot": 10, "pose": "relaxed", "face": "happy", "look": "camera" }],
+      "camera": { "shot": "close", "target": "hero", "angle": 15, "move": "pushIn" } },
+    { "kind": "card", "card": "stat", "vo": "Three hundred and sixty five days a year.", "value": 365, "label": "DAYS A YEAR" },
+    { "set": "suburb", "vo": "But today, something is different.",
+      "actors": [{ "id": "hero", "pos": "sidewalk", "rot": 10, "pose": "phone", "face": "confused", "hold": { "R": "phone" } }],
+      "camera": { "shot": "medium", "target": "hero", "angle": -25, "move": "drift" },
+      "overlays": [{ "type": "label", "text": "DAY 1", "at": 0.2 }] },
+    { "set": "suburb", "hold": 1.2,
+      "actors": [{ "id": "hero", "pos": "sidewalk", "rot": 10, "pose": "shocked", "face": "shocked" }],
+      "camera": { "shot": "xclose", "target": "hero", "angle": 5, "height": -8, "move": "crashIn" },
+      "sfx": [{ "t": 0.0, "name": "heartbeat" }] },
+    { "set": "suburb", "vo": "Today, you can stop time.", "cut": "flash",
+      "actors": [{ "id": "hero", "pos": "sidewalk", "rot": 90, "pose": "power", "face": "determined", "glow": "#a56cff" }],
+      "camera": { "shot": "full", "target": "hero", "angle": -30, "height": -10, "move": "pullOut" },
+      "fx": { "freeze": 0.0 },
+      "overlays": [{ "type": "stat", "value": 0, "unit": "s", "label": "TIME PASSED", "at": 0.3, "pos": "right" }] }
+  ]
+}

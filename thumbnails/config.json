@@ -1,0 +1,9 @@
+{
+  "note": "Thumbnail settings. mode 'fish' = Claude generates through the Fish MCP; 'chatgpt' = Claude writes the prompts and the user pastes them into ChatGPT with the reference images. Generate only once a video is finished, or ~90% sure to be finalized.",
+  "mode": "chatgpt",
+  "variants": 3,
+  "fish": {
+    "model_id": "gpt-image-2.5-flare",
+    "parameters": { "aspect_ratio": "16:9", "resolution": "2K", "quality": "medium" }
+  }
+}

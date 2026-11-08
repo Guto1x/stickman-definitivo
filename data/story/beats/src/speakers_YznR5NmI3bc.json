@@ -1,0 +1,18 @@
+{"dialogue": {
+ "Hello?@15": "You", "fell off the bike.": "Friend", "Wait, didn't you just spill that?": "Friend", "Spill what?": "You",
+ "Why are you soaked?": "Mom", "You were outside for 1 second.": "Mom", "It's a long story": "You",
+ "So, I just don't stay too long.": "You", "Easy.@165": "You",
+ "Bro. That's literally Za Warudo.": "Best friend", "Bro.@195": "Best friend", "That's literally Za Warudo.": "Best friend", "Za what?": "You", "You never watched JoJo?": "Best friend", "Unbelievable.": "Best friend",
+ "Perfect score.": "Teacher", "Again.@226": "Teacher", "Interesting.": "Teacher",
+ "Okay.@270": "Mom", "Who keeps moving my coffee?": "Mom", "Maybe the house is haunted.": "You",
+ "You look tired, sweetie.": "Mom", "Are you sleeping okay?": "Mom", "Honestly, I get like an extra hour": "You",
+ "Bro, where'd you get all this stuff?": "Best friend", "Saved up.": "You", "You're not using it for": "Best friend",
+ "Relax.": "You", "It's me.": "You",
+ "Bro, was that you on the news?": "Best friend (text)",
+ "That's him.": "Mind-reader", "I can't read him.": "Mind-reader", "It's like his thoughts happen": "Mind-reader",
+ "Easy, everyone.": "Beetle-suit guy", "Nobody do anything stupid.": "Beetle-suit guy", "Says the guy in the beetle suit.": "Team member",
+ "Hello.@584": "Woman in gray coat", "I've been wondering when we'd meet.": "Woman in gray coat", "You and I need to talk.": "Woman in gray coat"
+},
+"narration": ["And then you just", "Then you blink", "He looks at you for a second too long."],
+"fix": {"Nobody can ever it was you.": "Nobody can ever [know] it was you."}
+}

@@ -1,0 +1,10 @@
+.env
+node_modules/
+.venv/
+out/
+final/
+public/episodes/*/vo/
+public/episodes/*/raw/
+public/episodes/*/mix.wav
+__pycache__/
+*.pyc

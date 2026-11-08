@@ -1,0 +1,25 @@
+[
+ {
+  "id": "s01",
+  "shots": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] This is you. A totally normal kid, on a totally normal street. You wake up. You brush your teeth. You walk to school. Three hundred and sixty five days a year. But today, something is different.",
+  "file": null
+ },
+ {
+  "id": "s02",
+  "shots": [
+   5
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] Today, you can stop time.",
+  "file": null
+ }
+]

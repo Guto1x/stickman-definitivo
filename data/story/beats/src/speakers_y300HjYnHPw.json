@@ -1,0 +1,27 @@
+{"dialogue": {
+ "Did you just leave?": "Classmate", "I'm already here.": "You",
+ "Okay.@62": "Coach", "On my whistle": "Coach", "3 2 1": "Coach",
+ "Run that again": "Coach", "Coach, I already ran it twice.": "You",
+ "Bro, I literally just hung up": "Customer", "That'll be $14.99.": "You",
+ "Bro, you're doing the Naruto run.": "Customer", "It actually works though.": "You",
+ "Maybe try defense.": "Coach",
+ "That's the fourth pair this month.": "Mom", "The ground is really rough": "You",
+ "Was that the any percent route?": "Friend", "Don't.@342": "You",
+ "Red means slow down": "Friend",
+ "My ball!": "Kid", "Woah, my ball!": "Kid", "You're welcome.": "You",
+ "The slowest rescue ever recorded.": "Woman in gray coat", "I've watched it 11 times.": "Woman in gray coat",
+ "Who are you?": "You", "Someone who's been keeping an eye": "Woman in gray coat", "All of you?": "You",
+ "Nice goggles.": "Flying girl", "Swim team?": "Flying girl",
+ "He's thinking, is that guy wearing a beetle?": "Mind-reader",
+ "It's a rhinoceros beetle.": "Beetle-suit guy", "There's a difference.": "Beetle-suit guy",
+ "Don't shake his hand": "Team member", "Trust me.": "Team member",
+ "You might have seen some of them before.": "Woman in gray coat", "One moves things with his mind.": "Woman in gray coat",
+ "One flies.": "Woman in gray coat", "One reads minds.": "Woman in gray coat", "Two of them are a lot stronger": "Woman in gray coat",
+ "We call it Project IF.": "Woman in gray coat", "And you want me?": "You",
+ "We have strength.": "Woman in gray coat", "We have the sky.": "Woman in gray coat", "We have the mind.": "Woman in gray coat",
+ "What we don't have": "Woman in gray coat", "Be home for dinner.": "Mom",
+ "I can't read him.": "Mind-reader", "Whoever this is": "Mind-reader", "That's not a drill.": "Woman in gray coat"
+},
+"narration": ["And the pizza shows up", "He blows the whistle.", "He is.", "Now, here's why", "Your spikes are melted", "And then, the woman's tablet", "And that's the most important rule", "You're 400 m away.", "Sitting on the hood", "Next to the van", "And leaning on the back door", "You look at the van.", "On the screen", "So, you do the math", "and down", "The casts are finally off.", "On weekends", "You join the soccer team."],
+"fix": {"you start break.": "you start braking.", "like other people go through sock.": "like other people go through socks.", "a villain just made": "a villain just made [their move]."}
+}

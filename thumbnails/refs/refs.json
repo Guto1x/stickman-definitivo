@@ -1,0 +1,24 @@
+{
+  "note": "Style references sent with every thumbnail prompt, in this order, as Fish 'ref' inputs. object_key is the Fish upload (re-upload with create_media_upload if Fish reports it missing).",
+  "refs": [
+    {
+      "file": "ref1_paused.webp",
+      "label": "PAUSED. close-up",
+      "about": "PAUSED. — extreme close-up of the mascot's smug half-lidded face, finger pressing a glowing pause button toward the viewer. Reference for face design, rim light, close-up framing and the single giant yellow word.",
+      "object_key": "media_gen_ref/2026-10-28/47834e97398d4ee39c096e83acd176a1/f645d706086b47f0a56dc67d66a3b248/ref1_paused.webp"
+    },
+    {
+      "file": "ref2_split_face.webp",
+      "label": "split face, mascot half only",
+      "about": "Split face — left half is the mascot, right half is a human. Use ONLY the mascot half: head shading, glossy highlights, violet rim, eye and grin shapes, hoodie folds. Do not copy the human half or put a human face in the thumbnail unless the scene asks for one. No text in this reference.",
+      "object_key": "media_gen_ref/2026-10-28/47834e97398d4ee39c096e83acd176a1/f5535ce919e64cf3b678d26c18f73415/ref2_split_face.webp"
+    },
+    {
+      "file": "ref3_too_slow.webp",
+      "label": "TOO SLOW. action shot",
+      "about": "TOO SLOW. — full-body action shot: the mascot sprinting past a car on a night street with afterimages and speed streaks. Reference for full-body proportions, action posing, motion effects, background depth and the two-line white-over-yellow lettering.",
+      "object_key": "media_gen_ref/2026-10-28/47834e97398d4ee39c096e83acd176a1/073298e5245343e0a4e24de5fcff5c76/ref3_too_slow.webp"
+    }
+  ],
+  "uploaded": "2026-10-28"
+}

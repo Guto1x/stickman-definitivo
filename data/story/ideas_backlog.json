@@ -1,0 +1,2181 @@
+{
+ "version": "1.0",
+ "updated": "2026-10-26",
+ "how_to_use": "Scored ORIGINAL premises for the What-If channel. Rubric and procedure: docs/story/IDEA_ENGINE.md. Score keys sum to score.total (weights: number_hook 10, visual_demo 15, everyday_use 10, perk_breadth 5, cost_depth 15, dilemma 15, sequel 10, feasibility 10, novelty 10). novelty_check is written by: python -I tools/ideas/novelty.py batch data/story/ideas_backlog.json --write. novelty_note records manual semantic adjustments (the tool is lexical). Numbers listed are real-world anchors; re-verify before scripting. status: candidate | chosen | scripted | released.",
+ "ideas": [
+  {
+   "id": "past10",
+   "title": "What If You Could See 10 Minutes Into the Past?",
+   "alt_titles": [
+    "What If You Could Rewatch Real Life?",
+    "What If You Saw Everything That Happened 10 Minutes Ago?"
+   ],
+   "family": "time_perception",
+   "move": "flip_direction (future -> past)",
+   "premise": "Wherever you look, see-through 'echoes' replay the last 10 minutes over the present: bright when fresh, faint when old, gone at exactly 10:00. You can't hear or touch them.",
+   "cold_open": "Phone missing; you squint and watch a ghost of yourself put it in the fridge six minutes ago.",
+   "numbers": [
+    "brain shows the world ~0.1 s late",
+    "moonlight 1.3 s old, sunlight ~8 min 20 s old",
+    "600 s vs 0.1 s = 6,000x",
+    "20/20 cup game = 1 in 3.5 billion by luck",
+    "brain 2% of body mass, ~20% of energy",
+    "only ~30-40% of speech is visible on lips"
+   ],
+   "perks": [
+    "never lose anything",
+    "settle 'who ate it' with proof",
+    "lost-and-found job champion",
+    "unbeatable hide-and-seek",
+    "return a kid's lost toy"
+   ],
+   "costs": [
+    "crowds stack into a blizzard of ghosts",
+    "you see private moments",
+    "brain fuel: constant hunger and headaches"
+   ],
+   "real_problem": "The evidence deletes itself at 10:00 and it is silent: a witness nobody can believe.",
+   "dilemma": "Little sister lost at a fair, 6 minutes until her echo fades: run back to tell Mom (lose the trail) or follow alone (lose the truth).",
+   "climax": "Get ahead of the echo instead of chasing it; her echo fades early; the puppy's newer, brighter echo finishes the trail. Phone falls 30 m.",
+   "theme_rule": "Don't chase the echo. Get to where it's going.",
+   "sequel_hook": "An echo of a stranger with a yellow umbrella turns and looks at where you stand now.",
+   "part2_title": "What If You Could See 10 Years Into the Past?",
+   "team_role": "intel",
+   "counter_power": "foresight (sees the future)",
+   "thumbnail": "Smirking hero, one eye glowing cyan, faded ghost of himself behind; text 'ALREADY HAPPENED.'; badge '10 MIN'.",
+   "sets": [
+    "home",
+    "bedroom",
+    "suburb",
+    "cafeteria",
+    "classroom",
+    "park",
+    "stadium"
+   ],
+   "cards": [
+    "icon",
+    "clock",
+    "compare",
+    "stat",
+    "rules",
+    "chain"
+   ],
+   "engine_needs": "none (ghost actors exist); nice-to-have ghost opacity-over-time helper",
+   "score": {
+    "number_hook": 7,
+    "visual_demo": 13,
+    "everyday_use": 9,
+    "perk_breadth": 5,
+    "cost_depth": 13,
+    "dilemma": 14,
+    "sequel": 9,
+    "feasibility": 10,
+    "novelty": 10,
+    "total": 90
+   },
+   "novelty_note": "No lexical or semantic match found. Worked example in STORY_BLUEPRINT.md section 11.",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 10,
+    "verdict": "NOVEL",
+    "closest": []
+   },
+   "rank": 1
+  },
+  {
+   "id": "swap",
+   "title": "What If You Could Swap Places With Anyone?",
+   "alt_titles": [
+    "What If You Could Swap Places With Anyone You See?"
+   ],
+   "family": "space_position",
+   "move": "change_target (teleport -> swap with a person)",
+   "premise": "Look at any person and you instantly trade places with them. You each keep your own momentum, and you need 10 seconds to recharge between swaps.",
+   "cold_open": "Late for class, you swap with your friend already seated in the classroom; he appears on your porch in socks.",
+   "numbers": [
+    "on flat ground you can see ~4.7 km to the horizon; from a 100 m roof ~36 km",
+    "a person falling for 2 s moves ~20 m/s (70 km/h)",
+    "10-second recharge (story rule)"
+   ],
+   "perks": [
+    "never late",
+    "front of every line",
+    "escape detention",
+    "swap onto the stage to see the concert",
+    "rooftop range boost"
+   ],
+   "costs": [
+    "every swap dumps someone into your spot",
+    "momentum stays with the body (swap from a moving bus = you hit the seat at 50 km/h)",
+    "10-second recharge"
+   ],
+   "real_problem": "You can never remove danger, only move it onto someone.",
+   "dilemma": "A kid trapped on a burning balcony: swapping puts you in the fire with a 10-second recharge before you can swap out. Who takes your place next?",
+   "climax": "Move the harm to someone built for it: swap the kid out, hold your breath 10 s, then swap with a firefighter in full gear on the ladder.",
+   "theme_rule": "Never swap into a place you can't get out of.",
+   "sequel_hook": "Someone swaps with you, and you wake up in a place you've never seen.",
+   "part2_title": "What If You Could Swap Places With Anyone on Earth?",
+   "team_role": "transport",
+   "counter_power": "someone who can't be seen (no line of sight)",
+   "thumbnail": "Hero half-dissolved into a friend's silhouette, smug; text 'YOUR TURN.'",
+   "sets": [
+    "classroom",
+    "suburb",
+    "city",
+    "rooftop",
+    "stadium"
+   ],
+   "cards": [
+    "distance",
+    "compare",
+    "clock",
+    "chain"
+   ],
+   "engine_needs": "swap flash FX (reuse Flash + DustBurst)",
+   "score": {
+    "number_hook": 3,
+    "visual_demo": 14,
+    "everyday_use": 10,
+    "perk_breadth": 5,
+    "cost_depth": 13,
+    "dilemma": 15,
+    "sequel": 9,
+    "feasibility": 10,
+    "novelty": 10,
+    "total": 89
+   },
+   "novelty_note": "Semantically near 'teleport' (saturated) and body swap (InfiniteIfss 50K), but swapping positions with a person is a distinct premise with its own dilemma.",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 10,
+    "verdict": "NOVEL",
+    "closest": []
+   },
+   "rank": 2
+  },
+  {
+   "id": "skill10",
+   "title": "What If You Could Learn Any Skill in 10 Seconds?",
+   "alt_titles": [
+    "What If You Could Learn Anything by Watching Once?"
+   ],
+   "family": "mind_skill",
+   "move": "adjacent (IQ cluster -> skill acquisition) + add_inventory_limit",
+   "premise": "Watch someone do something for 10 seconds and your brain has their technique, but not their body. You can hold 3 borrowed skills; a 4th pushes out the oldest.",
+   "cold_open": "You watch a street juggler for 10 seconds, then juggle five oranges at the checkout.",
+   "numbers": [
+    "~10,000 hours of practice for experts (Ericsson's violinist study)",
+    "10,000 h vs 10 s = 3.6 million times faster",
+    "mirror neurons found in monkeys in the 1990s",
+    "CPR: 100-120 compressions a minute, 5-6 cm deep"
+   ],
+   "perks": [
+    "instant kickflip",
+    "cook like a chef",
+    "ace the PE test",
+    "play a song at grandma's party",
+    "chess club upset"
+   ],
+   "costs": [
+    "technique without the body: your ankles can't take the kickflip",
+    "only 3 slots",
+    "you copy flaws too (an out-of-tune guitarist)"
+   ],
+   "real_problem": "Learning something new means losing something you love.",
+   "dilemma": "Someone collapses; learning CPR from the lifeguard means dropping grandma's piano song, the slot you swore to keep.",
+   "climax": "Drop the song, do CPR to a remembered rhythm, keep going until the ambulance.",
+   "theme_rule": "Borrow skills. Earn the ones you love.",
+   "sequel_hook": "A kid watches YOU for 10 seconds, and now has all three of your skills.",
+   "part2_title": "What If You Could Learn Any Skill in 1 Second?",
+   "team_role": "support",
+   "counter_power": "a copier who learns from you / skill eraser",
+   "thumbnail": "Hero casually juggling five things including a flaming torch, half-lidded; text 'TOO EASY.'; badge '10 SEC'.",
+   "sets": [
+    "city",
+    "park",
+    "home",
+    "classroom",
+    "stadium"
+   ],
+   "cards": [
+    "compare",
+    "stat",
+    "rules",
+    "icon"
+   ],
+   "engine_needs": "none (skills are poses + props)",
+   "score": {
+    "number_hook": 10,
+    "visual_demo": 12,
+    "everyday_use": 10,
+    "perk_breadth": 5,
+    "cost_depth": 13,
+    "dilemma": 13,
+    "sequel": 9,
+    "feasibility": 9,
+    "novelty": 8,
+    "total": 89
+   },
+   "novelty_note": "Lexical RELATED only via '10 seconds'. Nearest semantic neighbours: IQ/genius titles (crowded) and 'Knew Everything in the World' (82K); the skill-slot mechanic differs.",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 8,
+    "verdict": "RELATED",
+    "closest": [
+     {
+      "title": "What If You Could Rewind 10 Seconds?",
+      "channel": "ifictional-m9c",
+      "views": 11000,
+      "score": 0.368
+     },
+     {
+      "title": "What IF You Could Rewind 10 Seconds ?",
+      "channel": "LooseInk-n9s",
+      "views": 10000,
+      "score": 0.368
+     },
+     {
+      "title": "What If You Could Rewind Time by 10 Seconds?",
+      "channel": "sporefacts",
+      "views": 434,
+      "score": 0.368
+     }
+    ]
+   },
+   "rank": 3
+  },
+  {
+   "id": "voice100",
+   "title": "What If Your Voice Was 100x Louder?",
+   "alt_titles": [
+    "What If Your Whisper Was a Scream?"
+   ],
+   "family": "sound_senses",
+   "move": "adjacent (body multiplier applied to voice)",
+   "premise": "Your voice comes out about 100 times louder (+66 dB). Normal talking lands past the pain threshold, and a whisper sounds like a lawnmower. Your hearing stays normal.",
+   "cold_open": "You whisper 'pass the salt' and every glass on the table rings; the dog leaves the room.",
+   "numbers": [
+    "every +10 dB sounds about twice as loud",
+    "talking ~60 dB -> ~126 dB; pain threshold ~120-130 dB",
+    "long exposure above 85 dB risks hearing damage",
+    "a singer shattered a glass at ~105 dB on TV",
+    "shouts don't trigger avalanches (myth)",
+    "~70 million deaf people use sign languages"
+   ],
+   "perks": [
+    "wake the house instantly",
+    "call the dog from three blocks away",
+    "win every cheer contest",
+    "nobody says 'speak up' again",
+    "stop a fight with one word"
+   ],
+   "costs": [
+    "you hurt the ears of everyone near you",
+    "phones and video calls distort",
+    "glass shatters when you hum the wrong note"
+   ],
+   "real_problem": "You can't talk to the people you love without hurting them, so you stop talking.",
+   "dilemma": "Night fire in an apartment block, alarms dead, firefighters 6 minutes away: one shout wakes 40 people but could damage your little brother's ears. 'Their ears... or their lives.'",
+   "climax": "Learned control: run to the courtyard, cup your hands upward away from family, one word. A planted resonance hum shatters a stuck window.",
+   "theme_rule": "Say less. Mean it more.",
+   "sequel_hook": "Someone answers your shout from across the city, even louder.",
+   "part2_title": "What If Your Voice Was 1,000x Louder?",
+   "team_role": "alarm / sonic control",
+   "counter_power": "someone who can mute anything",
+   "thumbnail": "Hero mid-shout, shockwave rings, windows cracking; text 'SHHH.'; badge '100x'.",
+   "sets": [
+    "home",
+    "classroom",
+    "cafeteria",
+    "city",
+    "stadium"
+   ],
+   "cards": [
+    "stat",
+    "compare",
+    "chain",
+    "icon"
+   ],
+   "engine_needs": "none (Shockwave + glass crack decal)",
+   "score": {
+    "number_hook": 10,
+    "visual_demo": 12,
+    "everyday_use": 9,
+    "perk_breadth": 4,
+    "cost_depth": 14,
+    "dilemma": 13,
+    "sequel": 8,
+    "feasibility": 9,
+    "novelty": 8,
+    "total": 87
+   },
+   "novelty_note": "Related: IFshiftTales 'Got Louder and Couldn't Stop' (39K). Ours is a fixed multiplier with sign-language and resonance arcs.",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 8,
+    "verdict": "RELATED",
+    "closest": [
+     {
+      "title": "What If You Got Louder and Couldn't Stop?",
+      "channel": "IFshiftTales",
+      "views": 39000,
+      "score": 0.352
+     },
+     {
+      "title": "What Your Voice Sounds Like on Different Planets",
+      "channel": "whatifscienceshow",
+      "views": 613000,
+      "score": 0.344
+     },
+     {
+      "title": "What if you had 100x vision?",
+      "channel": "JeremyBearimyTheory",
+      "views": 16000,
+      "score": 0.312
+     }
+    ]
+   },
+   "rank": 4
+  },
+  {
+   "id": "stats",
+   "title": "What If You Could See Everyone's Stats?",
+   "alt_titles": [
+    "What If Real Life Had a HUD?"
+   ],
+   "family": "information_hud",
+   "move": "pure_novelty (game HUD in real life)",
+   "premise": "Game-style bars float over everyone: energy, mood, strength, honesty. You can't see your own.",
+   "cold_open": "Choosing gym teams, you read STRENGTH 91 over the quiet kid nobody picks. You pick him. You win.",
+   "numbers": [
+    "resting heart rate 60-100 bpm",
+    "polygraphs aren't reliable enough for most courts",
+    "feeling thirsty means you're already ~1-2% low on water"
+   ],
+   "perks": [
+    "perfect team picks",
+    "ask the teacher for an extension when MOOD is high",
+    "spot your friend's low ENERGY",
+    "find a bully's weak stat",
+    "gaming the job interview"
+   ],
+   "costs": [
+    "HUD clutter in crowds",
+    "you see what people hide (Mom's HAPPINESS behind a smile)",
+    "friends feel scanned"
+   ],
+   "real_problem": "You see a friend's HEALTH bar dropping, and nobody else can.",
+   "dilemma": "Tell him how you know and expose yourself, or watch him collapse at the game.",
+   "climax": "Get him to the nurse with the truth; the bar stops falling.",
+   "theme_rule": "People aren't numbers. Numbers are where you start.",
+   "sequel_hook": "A stranger walks past with every stat reading '???'.",
+   "part2_title": "What If You Could Change Everyone's Stats?",
+   "team_role": "analyst / intel",
+   "counter_power": "someone with hidden stats",
+   "thumbnail": "Hero smirking at a big bully with bars 'STRENGTH 99 / BRAIN 3'; text 'WEAK SPOT.'",
+   "sets": [
+    "classroom",
+    "stadium",
+    "cafeteria",
+    "home"
+   ],
+   "cards": [
+    "stat",
+    "compare",
+    "icon"
+   ],
+   "engine_needs": "HUD bar overlay (extend Energy/Label overlays)",
+   "score": {
+    "number_hook": 6,
+    "visual_demo": 14,
+    "everyday_use": 10,
+    "perk_breadth": 5,
+    "cost_depth": 12,
+    "dilemma": 13,
+    "sequel": 9,
+    "feasibility": 10,
+    "novelty": 8,
+    "total": 87
+   },
+   "novelty_note": "Tool RELATED to vision titles only via 'see'; the concept (a game HUD over people) has no competitor.",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 8,
+    "verdict": "RELATED",
+    "closest": [
+     {
+      "title": "What If You Had X-Ray Vision?",
+      "channel": "whatifscienceshow",
+      "views": 343000,
+      "score": 0.375
+     },
+     {
+      "title": "What if you had 100x vision?",
+      "channel": "JeremyBearimyTheory",
+      "views": 16000,
+      "score": 0.375
+     },
+     {
+      "title": "What If You Had Three Eyes?",
+      "channel": "whatifscienceshow",
+      "views": 151000,
+      "score": 0.373
+     }
+    ]
+   },
+   "rank": 5
+  },
+  {
+   "id": "bigger10",
+   "title": "What If You Could Make Anything 10x Bigger?",
+   "alt_titles": [
+    "What If Everything You Touched Grew 10x?"
+   ],
+   "family": "object_rules",
+   "move": "change_target (grow yourself -> grow objects)",
+   "premise": "Touch an object and it grows 10x in every direction until you touch it again. It also gets 1,000x heavier but only 100x stronger.",
+   "cold_open": "Last cookie; one tap and it's the size of a bike wheel, crashing off the plate.",
+   "numbers": [
+    "square-cube law (Galileo, 1638): 10x size = 100x strength, 1,000x weight",
+    "a 200 g phone becomes 200 kg",
+    "a 10x ant would suffocate: insects breathe through tiny tubes"
+   ],
+   "perks": [
+    "infinite snacks",
+    "giant pool float",
+    "10x umbrella for the whole team",
+    "a ladder to any roof",
+    "science-fair win"
+   ],
+   "costs": [
+    "1,000x weight crushes tables and floors",
+    "big things break under their own weight",
+    "living things can't be enlarged"
+   ],
+   "real_problem": "You must touch it to shrink it back, and a giant thing rolling away can't be touched.",
+   "dilemma": "People trapped on a flooding underpass: enlarge the small inflatable boat, but at 10x it's too heavy to carry to the water. Grow it where it is, or not at all.",
+   "climax": "Carry the small thing to the right place first, then grow it (theme rule); the rope you enlarged earlier is 100x stronger.",
+   "theme_rule": "Bigger isn't stronger. Put it in place, then grow it.",
+   "sequel_hook": "Something enormous is growing on the edge of town, and you didn't touch it.",
+   "part2_title": "What If You Could Make Anything 100x Bigger?",
+   "team_role": "builder",
+   "counter_power": "a shrinker",
+   "thumbnail": "Hero holding a normal phone next to a 10x phone crushing a car; text 'HEAVY.'; badge '10x'.",
+   "sets": [
+    "home",
+    "suburb",
+    "park",
+    "city",
+    "classroom"
+   ],
+   "cards": [
+    "compare",
+    "stat",
+    "chain",
+    "icon"
+   ],
+   "engine_needs": "per-prop scale animation (simple)",
+   "score": {
+    "number_hook": 10,
+    "visual_demo": 14,
+    "everyday_use": 9,
+    "perk_breadth": 5,
+    "cost_depth": 14,
+    "dilemma": 11,
+    "sequel": 8,
+    "feasibility": 9,
+    "novelty": 6,
+    "total": 86
+   },
+   "novelty_note": "Tool: CLOSE to 'Woke Up 10x Bigger' (Hypothetically2026, 1K views) and RELATED to '10x Bigger or 10x Smaller' (9.8K). Manual 6: growing OBJECTS with square-cube costs is a different premise, but the title reads similar, so differentiate in the thumbnail (a giant object, not a giant hero).",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 4,
+    "verdict": "CLOSE",
+    "closest": [
+     {
+      "title": "What If You Woke Up 10x Bigger?",
+      "channel": "Hypothetically2026",
+      "views": 1000,
+      "score": 0.7
+     },
+     {
+      "title": "What If You Were 10x Bigger or 10x Smaller?",
+      "channel": "Ifcinema-1",
+      "views": 9800,
+      "score": 0.483
+     },
+     {
+      "title": "What If You Were 10x Stronger?",
+      "channel": "IFOLOGYFILMS",
+      "views": 156000,
+      "score": 0.255
+     }
+    ]
+   },
+   "rank": 6
+  },
+  {
+   "id": "jump100",
+   "title": "What If You Could Jump 100x Higher?",
+   "alt_titles": [
+    "What If You Could Jump Over Buildings?"
+   ],
+   "family": "body_multiplier",
+   "move": "adjacent (strength/speed -> jump)",
+   "premise": "Your legs push 100x harder: a normal 0.5 m jump becomes 50 m, about 16 floors. Your bones and skin stay normal, so going up is free and coming down isn't.",
+   "cold_open": "Cat stuck in a tree: one hop, grab it, and then the long, worrying fall begins.",
+   "numbers": [
+    "50 m jump: ~3.2 s up, ~6.4 s in the air",
+    "landing at ~31 m/s (113 km/h)",
+    "a flea jumps about 100x its body length",
+    "ski jumpers survive because the landing slope matches their fall"
+   ],
+   "perks": [
+    "skip every staircase",
+    "fastest route to school over the rooftops",
+    "dunks",
+    "rescue frisbees from roofs",
+    "best view in town"
+   ],
+   "costs": [
+    "every landing is a 16-storey fall",
+    "indoors, ceilings",
+    "6 seconds of wind drift",
+    "shoes and knees"
+   ],
+   "real_problem": "There's always a way up. There isn't always a way down.",
+   "dilemma": "A kid trapped on a 12th-floor balcony: you can reach him, but you can't land carrying him.",
+   "climax": "Aim the fall at the curved stadium roof and slide down it like a ski jumper.",
+   "theme_rule": "Never jump higher than your way down.",
+   "sequel_hook": "Mid-jump, you see someone standing on the clouds, waiting.",
+   "part2_title": "What If You Could Jump 1,000x Higher?",
+   "team_role": "aerial transport / scout",
+   "counter_power": "someone who controls the wind",
+   "thumbnail": "Hero mid-air above suburb rooftops, smug, looking down; text 'NOW WHAT.'; badge '100x'.",
+   "sets": [
+    "suburb",
+    "rooftop",
+    "stadium",
+    "park",
+    "city"
+   ],
+   "cards": [
+    "distance",
+    "speed",
+    "stat",
+    "compare"
+   ],
+   "engine_needs": "none (path + camera crane)",
+   "score": {
+    "number_hook": 10,
+    "visual_demo": 15,
+    "everyday_use": 9,
+    "perk_breadth": 5,
+    "cost_depth": 14,
+    "dilemma": 12,
+    "sequel": 8,
+    "feasibility": 9,
+    "novelty": 4,
+    "total": 86
+   },
+   "novelty_note": "CLOSE to Ifcinema-1 'Jump 10x Higher?' (886 views): taken, but weakly; no big-channel version.",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 4,
+    "verdict": "CLOSE",
+    "closest": [
+     {
+      "title": "What If You Could Jump 10x Higher?",
+      "channel": "Ifcinema-1",
+      "views": 886,
+      "score": 0.694
+     },
+     {
+      "title": "What If You Jumped Into a Geyser?",
+      "channel": "whatifscienceshow",
+      "views": 225000,
+      "score": 0.419
+     },
+     {
+      "title": "What Happens If You Jump On Every Planet?",
+      "channel": "whatifscienceshow",
+      "views": 165000,
+      "score": 0.389
+     }
+    ]
+   },
+   "rank": 7
+  },
+  {
+   "id": "copytouch",
+   "title": "What If You Could Copy Anything You Touch?",
+   "alt_titles": [
+    "What If Everything You Touched Had a Twin?"
+   ],
+   "family": "matter_energy",
+   "move": "add_conservation_rule",
+   "premise": "Touch an object and a perfect copy pops out beside it. The copy's mass comes out of your body.",
+   "cold_open": "Last slice of pizza, two hands reach; you tap it, there are two, and your jeans feel looser.",
+   "numbers": [
+    "1 kg of body fat ~ 7,700 kcal",
+    "copied banknotes share serial numbers (how fakes are caught)",
+    "carriers block phones with duplicate IMEI numbers",
+    "a small fire extinguisher weighs about 5 kg"
+   ],
+   "perks": [
+    "infinite snacks (net zero)",
+    "chargers and shoes",
+    "a copy of the house key for everyone",
+    "help the food bank",
+    "science fair"
+   ],
+   "costs": [
+    "every copy costs you its weight",
+    "copied money and phones are illegal or blocked",
+    "copies include flaws"
+   ],
+   "real_problem": "You can only give away so much of yourself.",
+   "dilemma": "A wildfire reaches your street: 8 houses, one extinguisher. Each copy costs 5 kg of you, and you can afford 3.",
+   "climax": "Copy the small thing that does the big job: the 200 g hydrant wrench and hose couplings, not the extinguishers.",
+   "theme_rule": "Copy the small thing that does the big job.",
+   "sequel_hook": "You find a perfect copy of your house key that you never made.",
+   "part2_title": "What If You Could Copy Anything... Even Yourself?",
+   "team_role": "supply",
+   "counter_power": "someone who deletes objects",
+   "thumbnail": "Hero holding two identical pizzas, belt notch sliding; text 'WORTH IT?'",
+   "sets": [
+    "home",
+    "suburb",
+    "city",
+    "classroom"
+   ],
+   "cards": [
+    "stat",
+    "compare",
+    "chain",
+    "icon"
+   ],
+   "engine_needs": "prop duplicate pop FX (DustBurst)",
+   "score": {
+    "number_hook": 3,
+    "visual_demo": 13,
+    "everyday_use": 10,
+    "perk_breadth": 5,
+    "cost_depth": 14,
+    "dilemma": 14,
+    "sequel": 8,
+    "feasibility": 10,
+    "novelty": 9,
+    "total": 86
+   },
+   "novelty_note": "NOVEL. Distinct from 'clone yourself' (objects, plus a mass cost).",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 9,
+    "verdict": "NOVEL",
+    "closest": [
+     {
+      "title": "What If You Touched the Sun?",
+      "channel": "whatifscienceshow",
+      "views": 464000,
+      "score": 0.314
+     },
+     {
+      "title": "What If You Were Too Strong to Touch?",
+      "channel": "onetweak",
+      "views": 279,
+      "score": 0.275
+     },
+     {
+      "title": "What If Everything You Touched Turned Into Gold?",
+      "channel": "whatifscienceshow",
+      "views": 212000,
+      "score": 0.255
+     }
+    ]
+   },
+   "rank": 8
+  },
+  {
+   "id": "eyes10",
+   "title": "What If Your Eyes Were 10x Faster?",
+   "alt_titles": [
+    "What If You Saw Everything in Slow Motion?"
+   ],
+   "family": "time_perception",
+   "move": "swap_body_part (reaction time -> eyes)",
+   "premise": "Your eyes and visual brain take in 10x more frames per second, so the world looks 10x slower, but your body moves at normal speed.",
+   "cold_open": "A glass slides off the table; you watch it fall forever, still can't move fast enough, and slide your foot under it.",
+   "numbers": [
+    "humans see flicker up to ~60 Hz; flies ~250 Hz",
+    "movies are 24 frames a second: at 10x, a slideshow",
+    "LED and fluorescent lights flicker at 100-120 Hz",
+    "a 10 m fall takes 1.4 s, which feels like 14 s"
+   ],
+   "perks": [
+    "dodgeball god",
+    "read every pitch",
+    "pick the fastest checkout line",
+    "watch hummingbirds",
+    "gaming"
+   ],
+   "costs": [
+    "lights and screens strobe (headaches)",
+    "movies become slideshows",
+    "a 1-hour class feels like 10"
+   ],
+   "real_problem": "You see disaster coming in slow motion, and you're no faster than anyone else.",
+   "dilemma": "Scaffolding tips over a kid: 1.4 real seconds. Run (too slow) or think: find the one small move that changes everything.",
+   "climax": "Kick the wheel lock on the rolling cart so it slides under the falling frame.",
+   "theme_rule": "When you can't be faster, be earlier.",
+   "sequel_hook": "One person moves so fast that even you see them as a blur.",
+   "part2_title": "What If Your Eyes Were 100x Faster?",
+   "team_role": "scout",
+   "counter_power": "someone faster than your eyes",
+   "thumbnail": "A ball frozen inches from the hero's calm, bored face; text 'BORING.'; badge '10x'.",
+   "sets": [
+    "home",
+    "classroom",
+    "stadium",
+    "suburb",
+    "city"
+   ],
+   "cards": [
+    "compare",
+    "clock",
+    "stat",
+    "chain"
+   ],
+   "engine_needs": "none (time-remapped shots)",
+   "score": {
+    "number_hook": 10,
+    "visual_demo": 13,
+    "everyday_use": 10,
+    "perk_breadth": 5,
+    "cost_depth": 13,
+    "dilemma": 13,
+    "sequel": 8,
+    "feasibility": 9,
+    "novelty": 5,
+    "total": 86
+   },
+   "novelty_note": "Tool novelty 3 (false lexical match to '10x Faster'). Manual 5: an adjacent move on Reaction Time 10x (4.5M) and Reflexes 100x (351K). Proven demand, but differentiate hard with the strobe and slideshow costs.",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 3,
+    "verdict": "CLOSE",
+    "closest": [
+     {
+      "title": "What IF You Were 10x Faster?",
+      "channel": "IFOLOGYFILMS",
+      "views": 813000,
+      "score": 0.686
+     },
+     {
+      "title": "What If You Were 10x Faster.",
+      "channel": "lastlifeofficial1",
+      "views": 384,
+      "score": 0.686
+     },
+     {
+      "title": "What If Your Body Was 10x Faster?",
+      "channel": "Papi_Bobo",
+      "views": 53000,
+      "score": 0.558
+     }
+    ]
+   },
+   "rank": 9
+  },
+  {
+   "id": "stretch10",
+   "title": "What If You Could Stretch 10x Longer?",
+   "alt_titles": [
+    "What If Your Body Was Made of Rubber?"
+   ],
+   "family": "body_multiplier",
+   "move": "pure_novelty (elastic body with volume conservation)",
+   "premise": "Your body stretches like rubber up to 10x its length, but your volume stays the same: the longer you get, the thinner and weaker you are.",
+   "cold_open": "Remote across the room; your arm unspools along the floor while the dog chases your hand.",
+   "numbers": [
+    "10x longer = 1/10 the thickness = ~1/10 the strength",
+    "surface area x3.2, so you lose heat ~3x faster",
+    "an octopus can squeeze through any hole bigger than its beak"
+   ],
+   "perks": [
+    "top shelf",
+    "clean the gutters from the lawn",
+    "catch the bus doors",
+    "basketball",
+    "hug the whole family at once"
+   ],
+   "costs": [
+    "weak when long",
+    "cold when long",
+    "painful snap-back",
+    "knots"
+   ],
+   "real_problem": "The longer you get, the weaker you are, exactly when you need to be strong.",
+   "dilemma": "Kids stranded across a 15 m gap in a collapsed footbridge: become the bridge at your weakest, or leave them.",
+   "climax": "Be the rope, not the bridge: anchor both ends at partial stretch and carry one kid at a time.",
+   "theme_rule": "Only stretch as far as you need.",
+   "sequel_hook": "Someone pulls you from the other end.",
+   "part2_title": "What If You Could Stretch 100x Longer?",
+   "team_role": "rescue / grapple",
+   "counter_power": "someone who freezes things solid",
+   "thumbnail": "Hero lounging on the couch, arm snaking through the house to the fridge; text 'LAZY.'; badge '10x'.",
+   "sets": [
+    "home",
+    "suburb",
+    "park",
+    "city"
+   ],
+   "cards": [
+    "compare",
+    "stat",
+    "icon"
+   ],
+   "engine_needs": "rig limb-length scaling (new; moderate)",
+   "score": {
+    "number_hook": 10,
+    "visual_demo": 14,
+    "everyday_use": 9,
+    "perk_breadth": 5,
+    "cost_depth": 13,
+    "dilemma": 13,
+    "sequel": 8,
+    "feasibility": 5,
+    "novelty": 9,
+    "total": 86
+   },
+   "novelty_note": "NOVEL. Feasibility is the risk: needs stretchable limbs in the rig.",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 9,
+    "verdict": "NOVEL",
+    "closest": [
+     {
+      "title": "What If You Were 10x Luckier Than Everyone?",
+      "channel": "IfCatch",
+      "views": 28000,
+      "score": 0.272
+     },
+     {
+      "title": "What IF You Were 10x Faster?",
+      "channel": "IFOLOGYFILMS",
+      "views": 813000,
+      "score": 0.234
+     },
+     {
+      "title": "What If You Were 10x Faster.",
+      "channel": "lastlifeofficial1",
+      "views": 384,
+      "score": 0.234
+     }
+    ]
+   },
+   "rank": 10
+  },
+  {
+   "id": "slowgaze",
+   "title": "What If You Could Slow Down Anything You Look At?",
+   "alt_titles": [
+    "What If Your Eyes Could Slow Time?"
+   ],
+   "family": "time_perception",
+   "move": "flip_direction (stop all time -> slow only the centre of your gaze)",
+   "premise": "Whatever is in the sharp centre of your vision moves 10x slower; everything else stays at full speed. Blinking resets it.",
+   "cold_open": "Toast pops; you stare, it floats; you pluck it from the air while Dad's coffee splashes at normal speed.",
+   "numbers": [
+    "the sharp centre of vision is ~2 degrees, about your thumbnail at arm's length",
+    "you blink 15-20 times a minute",
+    "the fovea is ~1% of the retina but uses about half the visual cortex"
+   ],
+   "perks": [
+    "catch anything",
+    "penalty saves",
+    "dodgeball",
+    "stare down the slowest school clock hand (you're late now)",
+    "watch a hummingbird"
+   ],
+   "costs": [
+    "blinks reset it",
+    "only one thing at a time",
+    "what you don't look at is full speed",
+    "eye strain"
+   ],
+   "real_problem": "You can only protect what you're looking at, and danger is always somewhere else.",
+   "dilemma": "A toddler heading for the pool and a falling flowerpot, two directions: which do you look at?",
+   "climax": "Move until both are in one gaze (line them up using the patio window's reflection) and hold without blinking.",
+   "theme_rule": "Change where you stand, not just where you look.",
+   "sequel_hook": "A figure you can't look at directly: your eyes slide off it.",
+   "part2_title": "What If You Could Stop Anything You Look At?",
+   "team_role": "control",
+   "counter_power": "someone who can't be looked at",
+   "thumbnail": "Hero staring calmly at a baseball hanging inches from his face, frozen streaks; text 'LOOK.'; badge '10x'.",
+   "sets": [
+    "home",
+    "stadium",
+    "park",
+    "suburb"
+   ],
+   "cards": [
+    "icon",
+    "stat",
+    "clock",
+    "chain"
+   ],
+   "engine_needs": "per-object time remap (moderate)",
+   "score": {
+    "number_hook": 6,
+    "visual_demo": 13,
+    "everyday_use": 9,
+    "perk_breadth": 4,
+    "cost_depth": 13,
+    "dilemma": 14,
+    "sequel": 8,
+    "feasibility": 9,
+    "novelty": 9,
+    "total": 85
+   },
+   "novelty_note": "NOVEL lexically; semantic cousin of stop/freeze time (saturated). The gaze-only rule makes the dilemma new.",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 9,
+    "verdict": "NOVEL",
+    "closest": [
+     {
+      "title": "What If You Saw the World in Slow Motion? (1 Day = 1 Year)",
+      "channel": "WhatIfLabTales",
+      "views": 17,
+      "score": 0.298
+     },
+     {
+      "title": "What If Your Own Trash Slowly Crushed Your House?",
+      "channel": "FunNotSoFun",
+      "views": 954,
+      "score": 0.292
+     },
+     {
+      "title": "What if Your Reaction Time was 10x Slower?",
+      "channel": "JeremyBearimyTheory",
+      "views": 70000,
+      "score": 0.223
+     }
+    ]
+   },
+   "rank": 11
+  },
+  {
+   "id": "magnetic",
+   "title": "What If You Were Magnetic?",
+   "alt_titles": [
+    "What If You Were as Magnetic as an MRI?"
+   ],
+   "family": "matter_energy",
+   "move": "pure_novelty (body as MRI-strength magnet)",
+   "premise": "Flex and your body puts out an MRI-strength field (~3 tesla). You can't aim it: it pulls all steel around you, and at half the distance it pulls eight times harder.",
+   "cold_open": "Late, keys lost; hold out a hand and the keys, four spoons and every fridge magnet fly to you.",
+   "numbers": [
+    "Earth's field ~50 millionths of a tesla; fridge magnet ~0.005 T; MRI 1.5-3 T",
+    "half the distance = 8x the pull",
+    "MRI scanners have yanked oxygen tanks across rooms",
+    "pacemakers: keep magnets ~15 cm away",
+    "aluminium cans ignore magnets"
+   ],
+   "perks": [
+    "never lose keys",
+    "junkyard sorting job in minutes",
+    "climb steel beams",
+    "fish keys out of drains",
+    "magnet tricks"
+   ],
+   "costs": [
+    "wipes bank cards and key cards",
+    "breaks phones, compasses and speakers",
+    "braces and car doors",
+    "stuck to the fridge"
+   ],
+   "real_problem": "You can't aim it, and some people carry steel inside their bodies (pacemakers).",
+   "dilemma": "A driverless van rolling toward a market; full power would stop it but could throw a neighbour's pacemaker out of rhythm. 'The van... or the man.'",
+   "climax": "Run closer to the van and away from him, then pulse (don't pull) three times.",
+   "theme_rule": "Pulse, don't pull.",
+   "sequel_hook": "Every magnet on the fridge drops at once: someone repels metal.",
+   "part2_title": "What If You Were 1,000x More Magnetic?",
+   "team_role": "shield / tank",
+   "counter_power": "a repeller",
+   "thumbnail": "Hero covered in cutlery and keys, smug; text 'STUCK.'; badge '3 TESLA'.",
+   "sets": [
+    "home",
+    "suburb",
+    "city",
+    "classroom"
+   ],
+   "cards": [
+    "compare",
+    "stat",
+    "chain",
+    "distance"
+   ],
+   "engine_needs": "props flying to a target (path keys)",
+   "score": {
+    "number_hook": 4,
+    "visual_demo": 14,
+    "everyday_use": 8,
+    "perk_breadth": 4,
+    "cost_depth": 14,
+    "dilemma": 14,
+    "sequel": 8,
+    "feasibility": 9,
+    "novelty": 9,
+    "total": 84
+   },
+   "novelty_note": "Only science-show magnet titles nearby (non-personal). Used as the demo premise for the examples in STORY_BLUEPRINT.md section 5.",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 9,
+    "verdict": "NOVEL",
+    "closest": [
+     {
+      "title": "What If You Swallowed the World's Most Powerful Magnet?",
+      "channel": "whatifscienceshow",
+      "views": 185000,
+      "score": 0.339
+     },
+     {
+      "title": "What If You Did a Bungee Jump with Magnets?",
+      "channel": "whatifscienceshow",
+      "views": 154000,
+      "score": 0.323
+     },
+     {
+      "title": "What If Earth�s Magnetic Poles Flipped?",
+      "channel": "whatifscienceshow",
+      "views": 288000,
+      "score": 0.309
+     }
+    ]
+   },
+   "rank": 12
+  },
+  {
+   "id": "heal",
+   "title": "What If You Could Heal Anyone You Touch?",
+   "alt_titles": [
+    "What If You Could Take Anyone's Pain?"
+   ],
+   "family": "biology",
+   "move": "change_owner (heal yourself -> heal others by taking the injury)",
+   "premise": "Touch someone hurt and their injury moves into your body; then you heal 10x faster than normal. Injuries only, not illness.",
+   "cold_open": "Little brother skins his knee; you touch it; the scrape slides onto your knee and he runs off laughing.",
+   "numbers": [
+    "a broken bone takes ~6-8 weeks to heal; at 10x, about 5 days",
+    "a deep cut ~1-2 weeks; at 10x, about a day"
+   ],
+   "perks": [
+    "team's sprained ankles",
+    "the dog's paw",
+    "Dad's burnt hand",
+    "paper cuts for the whole class",
+    "the playground medic"
+   ],
+   "costs": [
+    "you feel all of it",
+    "injuries stack",
+    "can't fix illness (grandpa's flu)",
+    "teachers notice the bruises"
+   ],
+   "real_problem": "Your body can only hold so much at once.",
+   "dilemma": "After a crash: a driver with a broken leg and a cyclist with a head injury. You can take one before you pass out.",
+   "climax": "Take the head injury, keep the driver stable with the first aid you trained for, then black out.",
+   "theme_rule": "Heal what you can. Help with the rest.",
+   "sequel_hook": "Someone has been hurting people on purpose, to make you come.",
+   "part2_title": "What If You Could Heal 100 People at Once?",
+   "team_role": "medic",
+   "counter_power": "someone who causes injuries / steals healing",
+   "thumbnail": "Hero in a cast, smiling, little brother sprinting away free; text 'MY TURN.'",
+   "sets": [
+    "home",
+    "park",
+    "suburb",
+    "stadium",
+    "classroom"
+   ],
+   "cards": [
+    "compare",
+    "stat",
+    "chain",
+    "icon"
+   ],
+   "engine_needs": "bandage/cast prop; glow transfer (Glow)",
+   "score": {
+    "number_hook": 3,
+    "visual_demo": 12,
+    "everyday_use": 9,
+    "perk_breadth": 4,
+    "cost_depth": 15,
+    "dilemma": 15,
+    "sequel": 9,
+    "feasibility": 9,
+    "novelty": 8,
+    "total": 84
+   },
+   "novelty_note": "Related: 'Healed 10x/100x Faster' (4 small channels, saturated). The owner swap (you take their injury) changes the whole dilemma.",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 8,
+    "verdict": "RELATED",
+    "closest": [
+     {
+      "title": "What If You Healed 10x Faster?",
+      "channel": "Ifcinema-1",
+      "views": 16000,
+      "score": 0.425
+     },
+     {
+      "title": "What If You Healed 100x Faster?",
+      "channel": "YourWishwTheCatch",
+      "views": 16000,
+      "score": 0.422
+     },
+     {
+      "title": "What If You Healed 100x Faster?",
+      "channel": "maybeverse68",
+      "views": 7700,
+      "score": 0.422
+     }
+    ]
+   },
+   "rank": 13
+  },
+  {
+   "id": "twice",
+   "title": "What If You Lived Every Day Twice?",
+   "alt_titles": [
+    "What If Every Day Had a Practice Run?"
+   ],
+   "family": "time_perception",
+   "move": "life_mechanic (practice run + real run)",
+   "premise": "Every midnight the day rewinds once. The first run is practice, the second counts, and only you remember both.",
+   "cold_open": "You drop your tray in the cafeteria; on run two you step around the spot and catch someone else's.",
+   "numbers": [
+    "about two-thirds of people report deja vu",
+    "17-19 hours awake impairs you like a 0.05% blood alcohol level",
+    "sleep is when the brain files memories"
+   ],
+   "perks": [
+    "see the test questions on run one",
+    "rehearse talking to your crush",
+    "never lose a board game",
+    "know which lunch is bad",
+    "perfect comebacks"
+   ],
+   "costs": [
+    "double days mean double mental tiredness",
+    "people say things on run one they never say on run two",
+    "you stop trying on run one"
+   ],
+   "real_problem": "You've started treating half your life as if it doesn't count.",
+   "dilemma": "An accident happens on run one; preventing it on run two costs you the final you rehearsed all day.",
+   "climax": "Skip the final, prevent the accident, and live run two like it's the only one.",
+   "theme_rule": "Live the first run like it counts.",
+   "sequel_hook": "One night, the day doesn't rewind.",
+   "part2_title": "What If You Lived Every Day Three Times?",
+   "team_role": "planner",
+   "counter_power": "someone who remembers both runs too",
+   "thumbnail": "Hero split down the middle: night and tired on the left, same scene at morning on the right; text 'AGAIN.'",
+   "sets": [
+    "cafeteria",
+    "classroom",
+    "home",
+    "stadium",
+    "suburb"
+   ],
+   "cards": [
+    "clock",
+    "stat",
+    "rules",
+    "compare"
+   ],
+   "engine_needs": "rewind FX (reverse playback + flash)",
+   "score": {
+    "number_hook": 6,
+    "visual_demo": 10,
+    "everyday_use": 10,
+    "perk_breadth": 5,
+    "cost_depth": 12,
+    "dilemma": 13,
+    "sequel": 9,
+    "feasibility": 9,
+    "novelty": 9,
+    "total": 83
+   },
+   "novelty_note": "Semantic neighbour: time loop (Ifverse 156K) and restart-your-life (47K). The practice-run framing differs.",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 9,
+    "verdict": "NOVEL",
+    "closest": [
+     {
+      "title": "What If You Lived in the Matrix?",
+      "channel": "whatifscienceshow",
+      "views": 134000,
+      "score": 0.335
+     },
+     {
+      "title": "What If You Lived on an Asteroid?",
+      "channel": "whatifscienceshow",
+      "views": 354000,
+      "score": 0.323
+     },
+     {
+      "title": "What If You Lived on Uranus?",
+      "channel": "whatifscienceshow",
+      "views": 364000,
+      "score": 0.297
+     }
+    ]
+   },
+   "rank": 14
+  },
+  {
+   "id": "bouncy",
+   "title": "What If Everything You Touched Became Bouncy?",
+   "alt_titles": [
+    "What If Nothing You Touched Could Break?"
+   ],
+   "family": "object_rules",
+   "move": "pure_novelty",
+   "premise": "Anything you touch becomes super-bouncy for 10 minutes, keeping about 90% of its energy on every bounce, like a super ball.",
+   "cold_open": "A plate slips off the counter, hits the floor and bounces back into your hand; Mom's egg bounces too.",
+   "numbers": [
+    "a super ball keeps ~90% of its bounce height; a tennis ball ~75%",
+    "a phone dropped from 1.5 m hits at ~5.4 m/s"
+   ],
+   "perks": [
+    "unbreakable dishes",
+    "the phone never cracks",
+    "a trampoline bedroom floor",
+    "unbeatable goalkeeper",
+    "fall-proof skateboarding"
+   ],
+   "costs": [
+    "energy keeps going, so things ricochet dangerously",
+    "walking turns into trampolining",
+    "hugs launch people",
+    "everything you hold escapes"
+   ],
+   "real_problem": "Bouncy makes falls safe, but sends everything straight back at the same speed.",
+   "dilemma": "A window cleaner falls toward a street: make the pavement bouncy and he rebounds into traffic; don't, and he hits it.",
+   "climax": "Bounce angle in = angle out: make the slanted awning bouncy and aim him into the hedge.",
+   "theme_rule": "What goes down comes back. Aim it.",
+   "sequel_hook": "Something lands on your roof from very, very high, and bounces.",
+   "part2_title": "What If Everything You Touched Became 100x Bouncier?",
+   "team_role": "defense / cushion",
+   "counter_power": "someone who makes things sticky",
+   "thumbnail": "Hero mid-bounce, plates and a phone bouncing around him, smug; text 'BOING.'",
+   "sets": [
+    "home",
+    "suburb",
+    "city",
+    "park"
+   ],
+   "cards": [
+    "stat",
+    "compare",
+    "chain"
+   ],
+   "engine_needs": "none (bounce paths)",
+   "score": {
+    "number_hook": 4,
+    "visual_demo": 15,
+    "everyday_use": 9,
+    "perk_breadth": 5,
+    "cost_depth": 12,
+    "dilemma": 13,
+    "sequel": 7,
+    "feasibility": 9,
+    "novelty": 9,
+    "total": 83
+   },
+   "novelty_note": "NOVEL.",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 9,
+    "verdict": "NOVEL",
+    "closest": [
+     {
+      "title": "What If You Became Famous?",
+      "channel": "JeremyBearimyTheory",
+      "views": 18000,
+      "score": 0.291
+     },
+     {
+      "title": "What If You Touched the Sun?",
+      "channel": "whatifscienceshow",
+      "views": 464000,
+      "score": 0.289
+     },
+     {
+      "title": "What IF Everything You Drew Became Real ?",
+      "channel": "LooseInk-n9s",
+      "views": null,
+      "score": 0.268
+     }
+    ]
+   },
+   "rank": 15
+  },
+  {
+   "id": "walls",
+   "title": "What If You Could Walk on Walls?",
+   "alt_titles": [
+    "What If You Could Stick to Anything?"
+   ],
+   "family": "body_multiplier",
+   "move": "pure_novelty (gecko adhesion)",
+   "premise": "Your bare hands and feet grip any dry surface like a gecko's. Wet, dusty or oily surfaces, and shoes, break the grip.",
+   "cold_open": "Chased in the schoolyard, you walk straight up the gym wall and eat your sandwich on the roof edge.",
+   "numbers": [
+    "a gecko foot has nearly 500,000 microscopic hairs",
+    "all of them gripping could hold ~130 kg",
+    "geckos lose grip on wet glass"
+   ],
+   "perks": [
+    "top shelf",
+    "ceiling naps",
+    "shortcut over fences",
+    "balls back from gutters",
+    "phone signal on the roof"
+   ],
+   "costs": [
+    "barefoot only (cold feet, dress code)",
+    "rain, dust and oil mean no grip",
+    "blood rushes to your head upside down",
+    "panic clench: you can't peel off"
+   ],
+   "real_problem": "Rain. The one thing you can't control turns your power off.",
+   "dilemma": "A kid stuck on a glass tower's cleaning platform in a storm; the glass is wet.",
+   "climax": "Climb the dry side: under ledges and on the sheltered face, away from the wind.",
+   "theme_rule": "Grip what's dry.",
+   "sequel_hook": "Wet footprints walk up the outside of your house.",
+   "part2_title": "What If You Could Walk on Any Surface... Even Water?",
+   "team_role": "climber / infiltration",
+   "counter_power": "someone who makes surfaces slick",
+   "thumbnail": "Hero standing sideways on a wall eating cereal; text 'DOWN HERE?'",
+   "sets": [
+    "classroom",
+    "rooftop",
+    "city",
+    "home"
+   ],
+   "cards": [
+    "stat",
+    "icon",
+    "compare"
+   ],
+   "engine_needs": "actor orientation on walls + camera roll",
+   "score": {
+    "number_hook": 2,
+    "visual_demo": 15,
+    "everyday_use": 9,
+    "perk_breadth": 5,
+    "cost_depth": 12,
+    "dilemma": 12,
+    "sequel": 8,
+    "feasibility": 8,
+    "novelty": 10,
+    "total": 81
+   },
+   "novelty_note": "NOVEL (walk THROUGH walls exists: IFOLOGY 70K, LooseInk 67K).",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 10,
+    "verdict": "NOVEL",
+    "closest": []
+   },
+   "rank": 16
+  },
+  {
+   "id": "mute",
+   "title": "What If You Could Mute Anything?",
+   "alt_titles": [
+    "What If You Could Turn Off Any Sound?"
+   ],
+   "family": "sound_senses",
+   "move": "pure_novelty (pairs with voice100)",
+   "premise": "Point at anything and its sound disappears, cancelled like noise-cancelling headphones, until you unmute it.",
+   "cold_open": "Your brother's 7 a.m. drum practice; you point; silence; he keeps drumming, confused.",
+   "numbers": [
+    "noise-cancelling works by playing the sound's mirror image",
+    "smoke alarms must reach ~85 dB at 3 m",
+    "sound travels 343 m/s"
+   ],
+   "perks": [
+    "sleep through snoring",
+    "silent classroom",
+    "sneak downstairs",
+    "mute the yappy dog",
+    "study anywhere"
+   ],
+   "costs": [
+    "muted things can't warn you (car horns)",
+    "you can't unmute what you can't see",
+    "silence bubbles creep people out",
+    "headaches"
+   ],
+   "real_problem": "Warnings exist for a reason, and the alarm you muted as a prank is still muted.",
+   "dilemma": "Fire at a packed concert: the alarm is drowned out. Mute the band in front of 3,000 fans and get exposed, or let the alarm go unheard. 'The music... or the message.'",
+   "climax": "Mute the concert, unmute the alarm you silenced weeks ago, and guide the crowd in silence.",
+   "theme_rule": "Silence is a tool, not a hiding place.",
+   "sequel_hook": "A voice gets through your mute anyway.",
+   "part2_title": "What If You Could Mute a Whole City?",
+   "team_role": "stealth",
+   "counter_power": "the 100x-louder voice",
+   "thumbnail": "Hero with a finger to his lips, mute icon over a screaming crowd; text 'QUIET.'",
+   "sets": [
+    "home",
+    "classroom",
+    "stadium",
+    "suburb"
+   ],
+   "cards": [
+    "icon",
+    "stat",
+    "chain"
+   ],
+   "engine_needs": "mute icon overlay; sound-design driven",
+   "score": {
+    "number_hook": 2,
+    "visual_demo": 11,
+    "everyday_use": 10,
+    "perk_breadth": 5,
+    "cost_depth": 13,
+    "dilemma": 13,
+    "sequel": 8,
+    "feasibility": 9,
+    "novelty": 10,
+    "total": 81
+   },
+   "novelty_note": "NOVEL.",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 10,
+    "verdict": "NOVEL",
+    "closest": []
+   },
+   "rank": 17
+  },
+  {
+   "id": "temperature",
+   "title": "What If You Could Control Temperature?",
+   "alt_titles": [
+    "What If You Could Move Heat With Your Hands?"
+   ],
+   "family": "matter_energy",
+   "move": "add_conservation_rule (heat must go somewhere)",
+   "premise": "You can pull heat out of things or push it in, but you don't create it: cooling a drink heats your hands.",
+   "cold_open": "Cocoa too hot; you hold it and it's perfect in a second, and steam rises off your fingers.",
+   "numbers": [
+    "a fridge doesn't make cold, it moves heat out the back",
+    "heat stroke risk ~40 C; hypothermia below 35 C",
+    "melting 1 kg of ice takes 334 kJ"
+   ],
+   "perks": [
+    "instant cold drinks",
+    "a driveway ice rink",
+    "warm seats in winter",
+    "dry wet clothes",
+    "ice cream from milk"
+   ],
+   "costs": [
+    "heat goes into you (fever)",
+    "you need a place to dump it (lake, snow)",
+    "frost-nipped fingers",
+    "phones die in the cold"
+   ],
+   "real_problem": "Big jobs could cook you from the inside.",
+   "dilemma": "A shed fire spreading to houses: pulling the heat will overheat you, unless you're standing in the creek 50 m away.",
+   "climax": "Stand in the creek and pull through a soaked hose line, dumping heat into the water.",
+   "theme_rule": "Always know where the heat goes.",
+   "sequel_hook": "Snow starts falling in July, only on your street.",
+   "part2_title": "What If You Could Control Temperature... of a Whole City?",
+   "team_role": "environmental",
+   "counter_power": "an energy absorber",
+   "thumbnail": "Hero with one frosted hand and one steaming hand; text 'TOO HOT.'",
+   "sets": [
+    "home",
+    "suburb",
+    "park"
+   ],
+   "cards": [
+    "stat",
+    "chain",
+    "compare",
+    "icon"
+   ],
+   "engine_needs": "frost and steam FX (new, small)",
+   "score": {
+    "number_hook": 4,
+    "visual_demo": 12,
+    "everyday_use": 10,
+    "perk_breadth": 5,
+    "cost_depth": 14,
+    "dilemma": 13,
+    "sequel": 8,
+    "feasibility": 7,
+    "novelty": 7,
+    "total": 80
+   },
+   "novelty_note": "RELATED: elemental control titles (Control Fire/Ice/Air on ApexEra-g8u, Control Water on JeremyBearimy). The heat-pump rule is the differentiator.",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 8,
+    "verdict": "RELATED",
+    "closest": [
+     {
+      "title": "What If You Could Control Anyone?",
+      "channel": "maybeverse68",
+      "views": 3200,
+      "score": 0.383
+     },
+     {
+      "title": "What IF You Could Control Water?",
+      "channel": "JeremyBearimyTheory",
+      "views": 8600,
+      "score": 0.346
+     },
+     {
+      "title": "What If You Could Control Your Dreams?",
+      "channel": "IfCatch",
+      "views": 19000,
+      "score": 0.333
+     }
+    ]
+   },
+   "rank": 18
+  },
+  {
+   "id": "heavier",
+   "title": "What If You Could Make Yourself 10x Heavier?",
+   "alt_titles": [
+    "What If Nobody Could Move You?"
+   ],
+   "family": "body_multiplier",
+   "move": "adjacent (strength -> mass on demand)",
+   "premise": "At will, your body becomes 10x heavier (50 kg to 500 kg) without feeling any heavier to you.",
+   "cold_open": "Your brother tries to shove you off the couch; you click it on; he bounces off; the couch groans.",
+   "numbers": [
+    "home floors are built for roughly 150-200 kg per square metre",
+    "a small lift is rated ~630 kg",
+    "a grand piano weighs ~500 kg"
+   ],
+   "perks": [
+    "unpushable defender",
+    "anchor in tug-of-war",
+    "never blown over",
+    "hold the door in a storm",
+    "sink to the bottom of the pool"
+   ],
+   "costs": [
+    "floors crack",
+    "beds and chairs break",
+    "lift alarms",
+    "can't swim"
+   ],
+   "real_problem": "You forget to switch off over something weak.",
+   "dilemma": "A friend dangling off a roof edge in a storm; the roof can't hold you at 500 kg.",
+   "climax": "Find the concrete beam (what's holding you up), anchor there, and haul.",
+   "theme_rule": "Know what's holding you up.",
+   "sequel_hook": "Your scale reads zero.",
+   "part2_title": "What If You Could Make Yourself 100x Heavier?",
+   "team_role": "tank / anchor",
+   "counter_power": "someone who makes things weightless",
+   "thumbnail": "Hero sitting calmly on a cracked floor while a big kid bounces off him; text 'NOPE.'; badge '10x'.",
+   "sets": [
+    "home",
+    "classroom",
+    "rooftop",
+    "stadium"
+   ],
+   "cards": [
+    "compare",
+    "stat",
+    "chain"
+   ],
+   "engine_needs": "floor crack decal",
+   "score": {
+    "number_hook": 10,
+    "visual_demo": 12,
+    "everyday_use": 8,
+    "perk_breadth": 4,
+    "cost_depth": 13,
+    "dilemma": 12,
+    "sequel": 7,
+    "feasibility": 9,
+    "novelty": 5,
+    "total": 80
+   },
+   "novelty_note": "CLOSE to onetweak 'Were 10x Heavier? (1,990 lbs)' (391 views), taken weakly. On-demand weight is a different premise.",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 5,
+    "verdict": "CLOSE",
+    "closest": [
+     {
+      "title": "What If You Were 10x Heavier? (1,990 lbs)",
+      "channel": "onetweak",
+      "views": 391,
+      "score": 0.637
+     },
+     {
+      "title": "What If You Could Make Yourself Invisible?",
+      "channel": "whatifscienceshow",
+      "views": 1300000,
+      "score": 0.39
+     },
+     {
+      "title": "What IF You Were 10x Faster?",
+      "channel": "IFOLOGYFILMS",
+      "views": 813000,
+      "score": 0.218
+     }
+    ]
+   },
+   "rank": 19
+  },
+  {
+   "id": "sleep10",
+   "title": "What If You Could Sleep 10x Faster?",
+   "alt_titles": [
+    "What If 8 Hours of Sleep Took 48 Minutes?"
+   ],
+   "family": "biology",
+   "move": "swap_body_part (speed multiplier -> sleep)",
+   "premise": "A full night's sleep takes 48 minutes and your body repairs as if it were 8 hours, but sleep now hits the instant you close your eyes.",
+   "cold_open": "Alarm at 6:59; you lay down at 6:11; your brother says you literally just lay down.",
+   "numbers": [
+    "teens need 8-10 hours",
+    "a 90-minute sleep cycle becomes 9 minutes",
+    "~7 extra hours a day = ~2,600 hours a year",
+    "dolphins sleep with half their brain at a time"
+   ],
+   "perks": [
+    "homework and gaming time",
+    "a night job",
+    "learn guitar",
+    "watch every sunrise",
+    "power naps between classes"
+   ],
+   "costs": [
+    "dreams 10x as intense",
+    "close your eyes too long and you're out (on a bike!)",
+    "the night is lonely"
+   ],
+   "real_problem": "Instant sleep can hit at the worst possible moment.",
+   "dilemma": "Babysitting a feverish sister overnight while fighting sleep attacks: do you trust yourself or call for help (and reveal the attacks)?",
+   "climax": "Use dolphin-style half-sleep training (planted) to stay alert enough to act.",
+   "theme_rule": "Rest is a tool. Use it on purpose.",
+   "sequel_hook": "In a 9-minute dream you meet someone who says they're awake.",
+   "part2_title": "What If You Never Had to Sleep Again?",
+   "team_role": "night watch",
+   "counter_power": "a dream-walker",
+   "thumbnail": "Hero asleep upright with a bright morning clock behind; text 'DONE.'; badge '10x'.",
+   "sets": [
+    "bedroom",
+    "home",
+    "classroom",
+    "suburb"
+   ],
+   "cards": [
+    "clock",
+    "compare",
+    "stat"
+   ],
+   "engine_needs": "none",
+   "score": {
+    "number_hook": 10,
+    "visual_demo": 9,
+    "everyday_use": 10,
+    "perk_breadth": 5,
+    "cost_depth": 12,
+    "dilemma": 11,
+    "sequel": 7,
+    "feasibility": 9,
+    "novelty": 6,
+    "total": 79
+   },
+   "novelty_note": "Tool says CLOSE to '10x Faster' (lexical: shares '10x' + 'faster'). Manual 6: semantically near 'Never Get Tired' (59K) and 'Didn't Need Sleep' (9.4K), a different premise from speed.",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 3,
+    "verdict": "CLOSE",
+    "closest": [
+     {
+      "title": "What IF You Were 10x Faster?",
+      "channel": "IFOLOGYFILMS",
+      "views": 813000,
+      "score": 0.7
+     },
+     {
+      "title": "What If Your Body Was 10x Faster?",
+      "channel": "Papi_Bobo",
+      "views": 53000,
+      "score": 0.7
+     },
+     {
+      "title": "What If Your Body Was 10x Faster?",
+      "channel": "ManifestingWhatIF",
+      "views": 30000,
+      "score": 0.7
+     }
+    ]
+   },
+   "rank": 20
+  },
+  {
+   "id": "machines",
+   "title": "What If You Could Talk to Machines?",
+   "alt_titles": [
+    "What If Every Machine Could Hear You?"
+   ],
+   "family": "information_hud",
+   "move": "adjacent (talk to animals -> machines)",
+   "premise": "Anything with a chip can hear you and talk back, with its own personality.",
+   "cold_open": "The vending machine eats your coin; you ask nicely; it gives you two sodas and a compliment.",
+   "numbers": [
+    "a modern car runs ~100 million lines of code",
+    "there are more connected devices (~15 billion) than people"
+   ],
+   "perks": [
+    "green lights all the way",
+    "the calculator does your homework",
+    "the bell rings early",
+    "the console lets you win",
+    "the GPS gossips"
+   ],
+   "costs": [
+    "they never shut up (an anxious smoke detector)",
+    "machines lie and sulk",
+    "they report what humans do",
+    "tricking them is still stealing"
+   ],
+   "real_problem": "The big machines have opinions too.",
+   "dilemma": "The city traffic system panics in a storm blackout; calming it means trading away your fridge friend's memory.",
+   "climax": "Talk the system through it light by light; the fridge forgives you.",
+   "theme_rule": "Everything listens. Be kind on purpose.",
+   "sequel_hook": "Every screen in town shows the same message: 'We heard you.'",
+   "part2_title": "What If Machines Could Talk to You?",
+   "team_role": "tech / hacker",
+   "counter_power": "a machine that controls people",
+   "thumbnail": "Hero chatting with a winking vending machine; text 'DEAL.'",
+   "sets": [
+    "city",
+    "home",
+    "classroom",
+    "suburb"
+   ],
+   "cards": [
+    "icon",
+    "chain",
+    "stat"
+   ],
+   "engine_needs": "machine 'face' decals (simple)",
+   "score": {
+    "number_hook": 2,
+    "visual_demo": 11,
+    "everyday_use": 10,
+    "perk_breadth": 5,
+    "cost_depth": 11,
+    "dilemma": 12,
+    "sequel": 9,
+    "feasibility": 9,
+    "novelty": 9,
+    "total": 78
+   },
+   "novelty_note": "NOVEL (talk to animals exists: 35K).",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 9,
+    "verdict": "NOVEL",
+    "closest": [
+     {
+      "title": "What If You Could Talk to Animals?",
+      "channel": "maybeverse68",
+      "views": 35000,
+      "score": 0.336
+     },
+     {
+      "title": "What IF you could talk to ANIMALS",
+      "channel": "ifictional-m9c",
+      "views": 2900,
+      "score": 0.336
+     },
+     {
+      "title": "What If Machines Took Over?",
+      "channel": "whatifscienceshow",
+      "views": 294000,
+      "score": 0.211
+     }
+    ]
+   },
+   "rank": 21
+  },
+  {
+   "id": "seesound",
+   "title": "What If You Could See Sound?",
+   "alt_titles": [
+    "What If Every Sound Had a Color?"
+   ],
+   "family": "sound_senses",
+   "move": "pure_novelty (sound made visible)",
+   "premise": "Sound waves appear as coloured ripples in the air: loud is bright, high is blue, low is red.",
+   "cold_open": "Phone lost; your friend calls it; a ripple blooms from under a couch cushion.",
+   "numbers": [
+    "sound travels 343 m/s",
+    "you hear 20-20,000 Hz",
+    "elephants talk below 20 Hz",
+    "some blind people echolocate with tongue clicks"
+   ],
+   "perks": [
+    "find anything that beeps",
+    "concerts become fireworks",
+    "see through walls by echo",
+    "spot whispering",
+    "tune a guitar by eye"
+   ],
+   "costs": [
+    "loud places become a blinding blizzard",
+    "headaches",
+    "you see private conversations"
+   ],
+   "real_problem": "In noise you're blind to danger.",
+   "dilemma": "A collapsed building: a trapped kid is tapping, but sirens drown it. Ask rescuers to silence everything (and explain why), or keep searching blind.",
+   "climax": "One minute of silence; follow the faint tapping ripples.",
+   "theme_rule": "Find the quiet signal.",
+   "sequel_hook": "A sound with no source and no colour you've ever seen.",
+   "part2_title": "What If You Could Touch Sound?",
+   "team_role": "sensor / scout",
+   "counter_power": "someone who mutes",
+   "thumbnail": "Hero with music ripples blasting around him at a concert; text 'LOUD.'",
+   "sets": [
+    "home",
+    "cafeteria",
+    "stadium",
+    "city"
+   ],
+   "cards": [
+    "stat",
+    "compare",
+    "icon"
+   ],
+   "engine_needs": "coloured ripple FX (Shockwave variant)",
+   "score": {
+    "number_hook": 3,
+    "visual_demo": 14,
+    "everyday_use": 8,
+    "perk_breadth": 4,
+    "cost_depth": 12,
+    "dilemma": 13,
+    "sequel": 7,
+    "feasibility": 8,
+    "novelty": 8,
+    "total": 77
+   },
+   "novelty_note": "RELATED only lexically to vision titles.",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 8,
+    "verdict": "RELATED",
+    "closest": [
+     {
+      "title": "What If You Had X-Ray Vision?",
+      "channel": "whatifscienceshow",
+      "views": 343000,
+      "score": 0.438
+     },
+     {
+      "title": "What if you had 100x vision?",
+      "channel": "JeremyBearimyTheory",
+      "views": 16000,
+      "score": 0.438
+     },
+     {
+      "title": "What If You Had Three Eyes?",
+      "channel": "whatifscienceshow",
+      "views": 151000,
+      "score": 0.433
+     }
+    ]
+   },
+   "rank": 22
+  },
+  {
+   "id": "photo",
+   "title": "What If You Could Step Into Any Photo?",
+   "alt_titles": [
+    "What If Photos Were Doors?"
+   ],
+   "family": "object_rules",
+   "move": "pure_novelty",
+   "premise": "Touch a photo and step into the moment it was taken, a 10-second loop. Anything you take out vanishes from the photo.",
+   "cold_open": "Your lost cap is in yesterday's picnic photo; you step in, grab it, step out, and the photo has a cap-shaped gap.",
+   "numbers": [
+    "the oldest surviving photo was taken around 1826",
+    "people now take ~1.8 trillion photos a year"
+   ],
+   "perks": [
+    "retrieve lost things",
+    "see Grandpa as a kid",
+    "revisit holidays",
+    "settle arguments about what happened",
+    "explore old cities"
+   ],
+   "costs": [
+    "what you take ruins the photo",
+    "if the photo is damaged while you're inside, you're stuck",
+    "people in the loop can't see you"
+   ],
+   "real_problem": "Every photo you use, you destroy a little.",
+   "dilemma": "The only photo of Grandma's childhood home holds the key to a lockbox she needs; taking it erases her favourite memory picture.",
+   "climax": "Take the key; give her a new photo of today.",
+   "theme_rule": "Memories are for keeping, not using.",
+   "sequel_hook": "A photo of your room shows someone standing in it.",
+   "part2_title": "What If You Could Step Into Any Video?",
+   "team_role": "recovery",
+   "counter_power": "someone who edits photos",
+   "thumbnail": "Hero stepping out of a sepia photo frame into colour; text 'GOT IT.'",
+   "sets": [
+    "home",
+    "park",
+    "void",
+    "suburb"
+   ],
+   "cards": [
+    "stat",
+    "icon"
+   ],
+   "engine_needs": "sepia grade switch",
+   "score": {
+    "number_hook": 2,
+    "visual_demo": 13,
+    "everyday_use": 8,
+    "perk_breadth": 4,
+    "cost_depth": 11,
+    "dilemma": 13,
+    "sequel": 8,
+    "feasibility": 8,
+    "novelty": 9,
+    "total": 76
+   },
+   "novelty_note": "NOVEL.",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 9,
+    "verdict": "NOVEL",
+    "closest": [
+     {
+      "title": "What If You Got $1 Every Step You Took?",
+      "channel": "YourWishwTheCatch",
+      "views": 345,
+      "score": 0.267
+     }
+    ]
+   },
+   "rank": 23
+  },
+  {
+   "id": "wifi",
+   "title": "What If You Could See Wi-Fi?",
+   "alt_titles": [
+    "What If You Could See Every Signal?"
+   ],
+   "family": "information_hud",
+   "move": "pure_novelty (radio made visible)",
+   "premise": "You see radio waves (Wi-Fi, phone signals, Bluetooth) as glowing ripples and beams.",
+   "cold_open": "A video buffering; you see the weak ripple, step two metres left into a bright patch, and it plays.",
+   "numbers": [
+    "Wi-Fi waves are about 12.5 cm long (2.4 GHz)",
+    "microwave ovens use the same band (~2.45 GHz)",
+    "~15 billion connected devices"
+   ],
+   "perks": [
+    "best signal anywhere",
+    "find lost phones",
+    "see who's calling",
+    "spot the leaky microwave",
+    "find the school's hidden network"
+   ],
+   "costs": [
+    "the city at night is blinding",
+    "microwaves flare",
+    "can't sleep near the router",
+    "privacy temptation"
+   ],
+   "real_problem": "Too much signal and you can't see anything.",
+   "dilemma": "A collapsed garage: someone trapped with a phone at 4%; follow the fading signal before it dies, alone, or wait for help.",
+   "climax": "Follow the glow as it dims; the battery percent is the clock.",
+   "theme_rule": "Follow the signal, not the noise.",
+   "sequel_hook": "A signal coming from inside the ground.",
+   "part2_title": "What If You Could See Every Signal on Earth?",
+   "team_role": "comms / intel",
+   "counter_power": "a jammer",
+   "thumbnail": "Hero in a room of glowing rings, router blazing; text 'FULL BARS.'",
+   "sets": [
+    "home",
+    "city",
+    "suburb"
+   ],
+   "cards": [
+    "stat",
+    "compare",
+    "icon"
+   ],
+   "engine_needs": "glow rings (Glow + Shockwave)",
+   "score": {
+    "number_hook": 4,
+    "visual_demo": 13,
+    "everyday_use": 9,
+    "perk_breadth": 4,
+    "cost_depth": 11,
+    "dilemma": 11,
+    "sequel": 7,
+    "feasibility": 9,
+    "novelty": 8,
+    "total": 76
+   },
+   "novelty_note": "RELATED only lexically to vision titles.",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 8,
+    "verdict": "RELATED",
+    "closest": [
+     {
+      "title": "What If You Had X-Ray Vision?",
+      "channel": "whatifscienceshow",
+      "views": 343000,
+      "score": 0.442
+     },
+     {
+      "title": "What if you had 100x vision?",
+      "channel": "JeremyBearimyTheory",
+      "views": 16000,
+      "score": 0.442
+     },
+     {
+      "title": "What If You Had Three Eyes?",
+      "channel": "whatifscienceshow",
+      "views": 151000,
+      "score": 0.438
+     }
+    ]
+   },
+   "rank": 24
+  },
+  {
+   "id": "shadow",
+   "title": "What If Your Shadow Came Alive?",
+   "alt_titles": [
+    "What If Your Shadow Did What You Secretly Want?"
+   ],
+   "family": "object_rules",
+   "move": "pure_novelty (psychological)",
+   "premise": "Your shadow moves on its own and does what you secretly want, but only where there's light.",
+   "cold_open": "Your shadow finishes washing the dishes on the wall while you stand still.",
+   "numbers": [
+    "shadows are longest at sunrise and sunset, shortest at noon",
+    "no light, no shadow"
+   ],
+   "perks": [
+    "chores",
+    "pranks",
+    "a lookout",
+    "practice partner",
+    "never alone"
+   ],
+   "costs": [
+    "it vanishes in the dark",
+    "tiny at noon",
+    "it acts on hidden wishes (trips the bully)"
+   ],
+   "real_problem": "It's getting stronger at sunset, and it wants your life.",
+   "dilemma": "Let it win the thing you want (and lose yourself) or turn off the lights.",
+   "climax": "Choose darkness at the big moment.",
+   "theme_rule": "Know what you want before something else does.",
+   "sequel_hook": "Your shadow is still there when the lights go out.",
+   "part2_title": "What If Everyone's Shadow Came Alive?",
+   "team_role": "stealth",
+   "counter_power": "a light-bender",
+   "thumbnail": "Hero waving, his shadow on the wall doing something else; text 'NOT ME.'",
+   "sets": [
+    "home",
+    "suburb",
+    "classroom"
+   ],
+   "cards": [
+    "icon",
+    "clock"
+   ],
+   "engine_needs": "projected shadow actor on walls (moderate)",
+   "score": {
+    "number_hook": 1,
+    "visual_demo": 12,
+    "everyday_use": 8,
+    "perk_breadth": 4,
+    "cost_depth": 11,
+    "dilemma": 13,
+    "sequel": 8,
+    "feasibility": 8,
+    "novelty": 8,
+    "total": 73
+   },
+   "novelty_note": "RELATED: ApexEra-g8u 'Control Shadows'. Weak science anchors, so a wildcard.",
+   "status": "candidate",
+   "novelty_check": {
+    "date": "2026-10-26",
+    "novelty": 8,
+    "verdict": "RELATED",
+    "closest": [
+     {
+      "title": "What IF You Could Control Shadows ?",
+      "channel": "ApexEra-g8u",
+      "views": null,
+      "score": 0.377
+     },
+     {
+      "title": "What If Styxosaurus Was Alive?",
+      "channel": "whatifscienceshow",
+      "views": 816000,
+      "score": 0.208
+     }
+    ]
+   },
+   "rank": 25
+  }
+ ]
+}

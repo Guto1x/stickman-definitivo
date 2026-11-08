@@ -1,0 +1,30 @@
+{
+  "topic": "E Se Você Pudesse Ver Quem Tem Crush em Você?",
+  "context": "A 10-minute Brazilian-Portuguese 'What If' cartoon episode. The power: anyone who has a crush on you glows soft pink in the chest, and a small pink pill-shaped badge with a heart icon and a percentage (0 to 100) floats above their head, showing how much they like you right now. Only you can see it. You start keeping a spreadsheet of everyone's numbers and stop taking risks. It builds to a rescue: an apartment fire where only you can see a classmate's pink glow through the smoke on the fourth-floor balcony, her number dropping, and you must shout out loud, in front of everyone, how you know. The ending: someone else has a list with YOUR number on it — 87% — and you never knew. Kid-friendly, innocent school crush, no romance beyond that.",
+  "variants": [
+    {
+      "id": "A",
+      "text": [
+        { "text": "ELA", "color": "white" },
+        { "text": "GOSTA.", "color": "yellow" }
+      ],
+      "scene": "Bright school classroom in warm afternoon light. Extreme close-up of the gray-jacket mascot filling the right half of the frame, smug half-lidded eyes and a sly smirk, glancing sideways at the viewer. Behind him, softly out of focus, a girl with a round black head, curly hair and a purple hoodie sits at a desk, glowing soft pink from her chest, with a small pink pill-shaped badge floating above her head: a white heart icon and the number 94%. Text block bottom-left: ELA (white) over GOSTA. (yellow, larger)."
+    },
+    {
+      "id": "B",
+      "text": [
+        { "text": "87%", "color": "white" },
+        { "text": "POR QUEM?", "color": "yellow" }
+      ],
+      "scene": "Night bedroom lit by a cold blue window and a warm desk lamp. The gray-jacket mascot, big in the right two-thirds of the frame, holds a folded sheet of paper and stares at it wide-eyed and worried, a single sweat drop on his head. Directly above HIS OWN head floats a large glowing pink pill-shaped badge with a white heart icon and the number 87% — he cannot see it, but the viewer can. Through the dark window behind him, a tiny figure in a bright yellow raincoat stands under a streetlight. Text block upper-left: 87% (white) over POR QUEM? (yellow, larger)."
+    },
+    {
+      "id": "C",
+      "text": [
+        { "text": "SÓ VOCÊ", "color": "white" },
+        { "text": "VÊ.", "color": "yellow" }
+      ],
+      "scene": "Golden-hour apartment street. A sand-coloured apartment block with orange flames in a fourth-floor balcony doorway and thick billowing toon smoke covering the facade. Through the smoke on that balcony, a soft pink glow in the shape of a lying figure, with a small pink badge reading 12% above it. In the foreground right, big, the gray-jacket mascot looks up at the balcony, eyes wide and determined, mouth open mid-shout, one arm pointing up. A red fire-truck ladder basket is rising toward the balcony. Text block bottom-left: SÓ VOCÊ (white) over VÊ. (yellow, larger)."
+    }
+  ]
+}

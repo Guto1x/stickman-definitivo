@@ -1,0 +1,634 @@
+[
+ {
+  "id": "s01",
+  "shots": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] Você precisa de uma dupla pra feira de ciências. E ninguém olha pra você. Você olha em volta. Todo mundo já tem alguém. Aí você vê: a menina da fileira de trás está brilhando. Rosa. Setenta e três por cento. Você levanta e vai direto até ela. Ela diz sim antes de você terminar a pergunta. O estojo dela vai pro chão.",
+  "file": "vo/s01.wav",
+  "tempo": 0.968
+ },
+ {
+  "id": "s02",
+  "shots": [
+   5
+  ],
+  "voice_id": "H2bV051FngNxkuTNROyc",
+  "model": "eleven_v4",
+  "text": "Como você sabia que ela ia topar?",
+  "file": "vo/s02.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s03",
+  "shots": [
+   6
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] Intuição.",
+  "file": "vo/s03.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s04",
+  "shots": [
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] E através da parede, na sala ao lado, mais um brilho rosa. De alguém que você nunca viu. E se você pudesse ver quem tem crush em você? Vamos ver o que isso realmente muda. Funciona assim: quem tem crush em você brilha. Um brilho rosa, bem no peito. E em cima da cabeça aparece um número, de zero a cem. O quanto a pessoa gosta de você. Agora. Isso é tudo que muda. O resto continua igual. Você só vê o que as pessoas sentem por você. De mais ninguém. Nem o que você mesmo sente. Anota isso. Você vai precisar. Agora, a parte estranha: seu corpo já tenta fazer isso sozinho. Seu cérebro julga um rosto em um décimo de segundo. E nos anos sessenta, o psicólogo Eckhard Hess mediu outra coisa: a pupila aumenta quando você olha pra algo que te interessa. Só que, pra ver uma pupila mudar, você precisa estar a um palmo do rosto da pessoa. Pra ver alguém ficar vermelho, uns dois metros. Você: do outro lado do pátio, atravessando parede, com número exato. Duzentas e cinquenta vezes mais longe que uma pupila. E não, não é amor. É crush. Sua mãe, sua avó, seus professores: zero. Ainda bem. Na educação física, todo mundo usa uma faixa no peito que mede o coração. Os batimentos de cada um aparecem no telão.",
+  "file": "vo/s04.wav",
+  "tempo": 0.973
+ },
+ {
+  "id": "s05",
+  "shots": [
+   23
+  ],
+  "voice_id": "H2bV051FngNxkuTNROyc",
+  "model": "eleven_v4",
+  "text": "Prova.",
+  "file": "vo/s05.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s06",
+  "shots": [
+   24,
+   25
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] Você passa do lado da Duda. Oitenta e um por cento. No telão, o coração dela pula de noventa e dois pra cento e vinte e oito.",
+  "file": "vo/s06.wav",
+  "tempo": 0.9
+ },
+ {
+  "id": "s07",
+  "shots": [
+   26
+  ],
+  "voice_id": "u4sbCzXyUVxIAihOtCss",
+  "model": "eleven_v4",
+  "text": "Passa de novo.",
+  "file": "vo/s07.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s08",
+  "shots": [
+   27,
+   28
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] Você passa de novo. Cento e trinta. O professor Ramos olha o telão. Olha pra você. Olha o telão de novo.",
+  "file": "vo/s08.wav",
+  "tempo": 1.06
+ },
+ {
+  "id": "s09",
+  "shots": [
+   29
+  ],
+  "voice_id": "u4sbCzXyUVxIAihOtCss",
+  "model": "eleven_v4",
+  "text": "Hidratação. Todo mundo bebe água.",
+  "file": "vo/s09.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s10",
+  "shots": [
+   30
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] Aí você passa do lado do Caio. Zero.",
+  "file": "vo/s10.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s11",
+  "shots": [
+   31
+  ],
+  "voice_id": "H2bV051FngNxkuTNROyc",
+  "model": "eleven_v4",
+  "text": "Nem um pouquinho?",
+  "file": "vo/s11.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s12",
+  "shots": [
+   32,
+   33,
+   34,
+   35
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] Zero. Em uma semana, você descobre as regras. Regra um: o brilho atravessa tudo. Parede, porta, ônibus. Aquele brilho da sala ao lado continua lá, todo dia. Você cola o ouvido na parede pra descobrir quem é.",
+  "file": "vo/s12.wav",
+  "tempo": 1.1
+ },
+ {
+  "id": "s13",
+  "shots": [
+   36
+  ],
+  "voice_id": "dxIMMSJYSsbUSMhioLNb",
+  "model": "eleven_v4",
+  "text": "Algum problema com a parede?",
+  "file": "vo/s13.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s14",
+  "shots": [
+   37,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48,
+   49,
+   50
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] Regra dois: o número muda na hora. Você tropeça na frente da turma inteira. O da Lia cai de setenta e três pra sessenta e nove. Aí você faz piada do próprio tombo. Setenta e quatro. Regra três: quando a pessoa ouve a sua voz, o número pula. Você dá oi pra Duda no refeitório. Noventa. Você para de dar oi pras pessoas. Por segurança. E aí começa a parte boa. No refeitório, você nunca mais senta no lugar errado. No verdade ou desafio, alguém pergunta quem gosta de você. Você acerta todas. Você é banido do verdade ou desafio. Pra sempre. Você tenta abrir um negócio: cinco reais pra dizer se o crush de alguém gosta dele. Primeiro cliente: o Rafa. Ele aponta a menina. Ela não brilha. Não pra você. Você não faz ideia do que ela sente por ele. Reembolso total. Uma tarde, o número da Duda despenca: de oitenta e um pra quarenta. Você tinha esquecido de responder uma mensagem dela. Você não gosta dela desse jeito. Mas você vai até lá e conta a verdade, com cuidado.",
+  "file": "vo/s14.wav",
+  "tempo": 0.957
+ },
+ {
+  "id": "s15",
+  "shots": [
+   51
+  ],
+  "voice_id": "n2a9VtkZLl8j1FSXHsL7",
+  "model": "eleven_v4",
+  "text": "Obrigada por falar primeiro.",
+  "file": "vo/s15.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s16",
+  "shots": [
+   52,
+   53,
+   54,
+   55,
+   56,
+   57,
+   58,
+   59
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] O número dela cai. Ela sorri mesmo assim. É a melhor coisa que você faz com esse poder. Até que você se gaba pro Caio: cinco pessoas gostam de você só essa semana. A Lia escuta. Setenta e quatro. Sessenta e cinco. Se exibir derruba o número. Essa é a versão divertida. Aqui vem a conta. Problema um: você não consegue desligar. Na aula de matemática, cinco corações piscando em volta de você. Cinco números mudando o tempo inteiro. Você não escuta uma palavra da professora. Sua nota cai de oito e meio pra seis. Solução: sentar na primeira fileira, de frente pro quadro, onde ninguém entra no seu campo de visão.",
+  "file": "vo/s16.wav",
+  "tempo": 1.032
+ },
+ {
+  "id": "s17",
+  "shots": [
+   60
+  ],
+  "voice_id": "dxIMMSJYSsbUSMhioLNb",
+  "model": "eleven_v4",
+  "text": "Primeira fileira? Você?",
+  "file": "vo/s17.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s18",
+  "shots": [
+   61,
+   62,
+   63,
+   64
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] Problema dois: você começa a anotar. Uma planilha. Trinta e quatro nomes, trinta e quatro números, atualizada todo dia. Você confere umas quarenta vezes por dia. E sem perceber, fica mais legal com quem tem oitenta do que com quem tem dez. Sua irmã caçula acha a planilha.",
+  "file": "vo/s18.wav",
+  "tempo": 1.072
+ },
+ {
+  "id": "s19",
+  "shots": [
+   65
+  ],
+  "voice_id": "n2a9VtkZLl8j1FSXHsL7",
+  "model": "eleven_v4",
+  "text": "Por que a Duda tem uma setinha pra baixo?",
+  "file": "vo/s19.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s20",
+  "shots": [
+   66
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] É trabalho de geografia.",
+  "file": "vo/s20.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s21",
+  "shots": [
+   67
+  ],
+  "voice_id": "dxIMMSJYSsbUSMhioLNb",
+  "model": "eleven_v4",
+  "text": "Desde quando você faz planilha?",
+  "file": "vo/s21.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s22",
+  "shots": [
+   68,
+   69,
+   70,
+   71,
+   72,
+   73
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] Problema três, o pior: você para de arriscar. Pra que convidar alguém, se você já sabe a resposta? Pra que perguntar, se dá pra só olhar? Em um mês inteiro, você não começa uma única conversa. Você sabe o que todo mundo sente. E ninguém sabe nada sobre você. Esses são chatos. Esse aqui é perigoso. Num sábado, no parque, o Caio fica quieto do nada.",
+  "file": "vo/s22.wav",
+  "tempo": 1.089
+ },
+ {
+  "id": "s23",
+  "shots": [
+   74,
+   75
+  ],
+  "voice_id": "H2bV051FngNxkuTNROyc",
+  "model": "eleven_v4",
+  "text": "Posso te contar uma coisa? Eu gosto da Lia. Desde o quinto ano.",
+  "file": "vo/s23.wav",
+  "tempo": 0.978
+ },
+ {
+  "id": "s24",
+  "shots": [
+   76,
+   77,
+   78,
+   79,
+   80,
+   81,
+   82,
+   83,
+   84,
+   85,
+   86,
+   87,
+   88,
+   89,
+   90,
+   91,
+   92,
+   93,
+   94,
+   95,
+   96
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] Três anos. E você sabe uma coisa que ele não sabe. O número da Lia. Noventa e quatro. Por você. Lembra? Você só vê o que sentem por você. Nunca viu o que o Caio sente. Nem o que você sente. Aí o Caio pede seu celular emprestado, pra mandar mensagem pra ela. A planilha está aberta na tela. Lia, noventa e quatro, com uma setinha pra cima. A um dedo do Caio. E o celular desliga. Um por cento de bateria. Salvo por sorte. Da próxima vez, não vai ter sorte. Então você estuda quem resolve isso há milhões de anos: o morcego. No escuro, o morcego não espera pra enxergar. Ele grita primeiro, e escuta o que volta. Alguns gritam mais alto que um show de rock, mais de cento e dez decibéis, numa frequência que a gente nem escuta. E quando estão chegando perto, até duzentos gritos por segundo. Você treina com o Caio: de olhos fechados, puxar assunto com três pessoas sem ver número nenhum. Primeira: você fala do tempo. Falha. Segunda: você fala do tempo de novo. Falha pior. Terceira: você pergunta uma coisa de verdade, e escuta a resposta. Sua regra: fala primeiro. Olha depois. Você tira a planilha da tela inicial. Por duas semanas, você fala primeiro. Nada de ruim acontece. Até um sábado à tarde, na rua da Lia. O Caio finalmente criou coragem. Comprou uma flor pra ela. Aí vocês sentem o cheiro. Fumaça. Saindo do quarto andar. Do prédio dela.",
+  "file": "vo/s24.wav",
+  "tempo": 0.938
+ },
+ {
+  "id": "s25",
+  "shots": [
+   97
+  ],
+  "voice_id": "dxIMMSJYSsbUSMhioLNb",
+  "model": "eleven_v4",
+  "text": "Cadê a Lia? Ela estava em casa!",
+  "file": "vo/s25.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s26",
+  "shots": [
+   98,
+   99,
+   100,
+   101,
+   102,
+   103,
+   104,
+   105
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] Os bombeiros procuram no segundo andar, onde a avó dela mora. E a fumaça cobre a fachada inteira. Mas você vê. No quarto andar, atrás da fumaça, um brilho rosa. Quarenta e um por cento. Caindo. Um ponto a cada dois segundos. Um minuto e vinte e dois até o zero. O bombeiro só vai subir pro quarto andar se você disser como sabe. Na frente da rua inteira. Da mãe dela. Do Caio, segurando a flor. Se você falar, o segredo dela vira de todo mundo. Se você ficar quieto... O segredo dela... ou ela.",
+  "file": "vo/s26.wav",
+  "tempo": 0.996
+ },
+ {
+  "id": "s27",
+  "shots": [
+   106,
+   107
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] Você fala primeiro. [shouting] Quarto andar! Ela está na sacada!",
+  "file": "vo/s27.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s28",
+  "shots": [
+   108
+  ],
+  "voice_id": "u4sbCzXyUVxIAihOtCss",
+  "model": "eleven_v4",
+  "text": "Como você sabe?",
+  "file": "vo/s28.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s29",
+  "shots": [
+   109,
+   110,
+   111
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] E você diz. Alto. Na frente de todo mundo. [shouting] Porque ela gosta de mim! O Caio olha pra você. Um segundo inteiro.",
+  "file": "vo/s29.wav",
+  "tempo": 1.1
+ },
+ {
+  "id": "s30",
+  "shots": [
+   112
+  ],
+  "voice_id": "H2bV051FngNxkuTNROyc",
+  "model": "eleven_v4",
+  "text": "[shouting] Ele não erra! Confia nele!",
+  "file": "vo/s30.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s31",
+  "shots": [
+   113,
+   114,
+   115,
+   116,
+   117,
+   118,
+   119,
+   120,
+   121,
+   122,
+   123
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] A escada gira. O cesto sobe até o quarto andar. Mas a fumaça engole a sacada. O bombeiro não enxerga nada. Doze por cento. Regra três: a sua voz faz o número subir. [shouting] Lia! Vinte e cinco. Ela levanta a cabeça. [shouting] Lia! Quarenta. Ela se arrasta até a grade. [shouting] Lia! Cinquenta e oito. A mão dela atravessa a fumaça. O bombeiro segura. O cesto desce. Ela está tossindo. Viva.",
+  "file": "vo/s31.wav",
+  "tempo": 1.1
+ },
+ {
+  "id": "s32",
+  "shots": [
+   124,
+   125
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] Você tenta dizer alguma coisa. Não sai nada. Sua voz acabou. Rouco por três dias, diz o paramédico.",
+  "file": "vo/s32.wav",
+  "tempo": 1.1
+ },
+ {
+  "id": "s33",
+  "shots": [
+   126
+  ],
+  "voice_id": "H2bV051FngNxkuTNROyc",
+  "model": "eleven_v4",
+  "text": "Três anos, cara.",
+  "file": "vo/s33.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s34",
+  "shots": [
+   127
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[whispering] Desculpa.",
+  "file": "vo/s34.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s35",
+  "shots": [
+   128,
+   129
+  ],
+  "voice_id": "H2bV051FngNxkuTNROyc",
+  "model": "eleven_v4",
+  "text": "Não. Você falou primeiro. Eu nunca falei. E eu? Quanto eu tô?",
+  "file": "vo/s35.wav",
+  "tempo": 1.1
+ },
+ {
+  "id": "s36",
+  "shots": [
+   130
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] Você faz um zero com a mão.",
+  "file": "vo/s36.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s37",
+  "shots": [
+   131
+  ],
+  "voice_id": "H2bV051FngNxkuTNROyc",
+  "model": "eleven_v4",
+  "text": "[chuckling] Grosso.",
+  "file": "vo/s37.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s38",
+  "shots": [
+   132,
+   133
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] Até o jantar, o vídeo de um vizinho está em todo lugar. O título: o garoto mais quieto da escola gritou mais alto que a sirene.",
+  "file": "vo/s38.wav",
+  "tempo": 0.9
+ },
+ {
+  "id": "s39",
+  "shots": [
+   134
+  ],
+  "voice_id": "dxIMMSJYSsbUSMhioLNb",
+  "model": "eleven_v4",
+  "text": "Chá com mel. E nada de planilha hoje.",
+  "file": "vo/s39.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s40",
+  "shots": [
+   135,
+   136
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] Você abre a planilha. E apaga. Trinta e quatro nomes. Trinta e quatro números. No domingo, a Lia aparece na sua porta.",
+  "file": "vo/s40.wav",
+  "tempo": 1.1
+ },
+ {
+  "id": "s41",
+  "shots": [
+   137
+  ],
+  "voice_id": "n2a9VtkZLl8j1FSXHsL7",
+  "model": "eleven_v4",
+  "text": "Você gritou meu nome três vezes.",
+  "file": "vo/s41.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s42",
+  "shots": [
+   138
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[whispering] Eu sei.",
+  "file": "vo/s42.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s43",
+  "shots": [
+   139
+  ],
+  "voice_id": "n2a9VtkZLl8j1FSXHsL7",
+  "model": "eleven_v4",
+  "text": "Eu ouvi todas.",
+  "file": "vo/s43.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s44",
+  "shots": [
+   140,
+   141,
+   142,
+   143,
+   144,
+   145,
+   146,
+   147,
+   148,
+   149,
+   150,
+   151,
+   152
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] E pela primeira vez, você não olha o número dela. Mas o vídeo do vizinho mostra uma coisa que ninguém comentou. Do outro lado da rua, um homem de capa de chuva amarela. Num dia de sol. Todo mundo olha pro fogo. Ele olha pra você. Naquela noite, você não consegue dormir. Lá fora, debaixo do poste... O homem da capa amarela. Parado. Olhando pra sua janela. Ele atravessa a rua, deixa um envelope na sua caixa de correio, e vai embora devagar. Você desce sem fazer barulho. Não que você conseguisse fazer barulho. Dentro, três fotos de crianças que você nunca viu. Uma menina cercada de cópias transparentes dela mesma. Um menino no meio de um salto, metade numa sala de aula, metade num telhado. E uma criança equilibrando cinco laranjas, depois de olhar um malabarista uma única vez. No verso, escrito à mão: vão precisar de alguém que vê o que as pessoas sentem.",
+  "file": "vo/s44.wav",
+  "tempo": 0.992
+ },
+ {
+  "id": "s45",
+  "shots": [
+   153
+  ],
+  "voice_id": "dxIMMSJYSsbUSMhioLNb",
+  "model": "eleven_v4",
+  "text": "Tem mais chá no fogão!",
+  "file": "vo/s45.wav",
+  "tempo": 1
+ },
+ {
+  "id": "s46",
+  "shots": [
+   154,
+   155,
+   156,
+   157,
+   158,
+   159,
+   160
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] Você bate duas vezes no chão. Quer dizer obrigado. No fundo do envelope, tem mais uma folha. É a sua planilha. A que você apagou hoje à tarde. Lia, noventa e quatro. Duda, oitenta e um. Caio, zero. Todas certas. E uma linha a mais, que você nunca escreveu. O seu nome. Oitenta e sete. Você nunca viu o seu próprio número. Ninguém consegue. Alguém consegue.",
+  "file": "vo/s46.wav",
+  "tempo": 1.1
+ },
+ {
+  "id": "s47",
+  "shots": [
+   161
+  ],
+  "voice_id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4",
+  "text": "[calm] Então: quem você olharia primeiro, se pudesse ver o número? E aquele oitenta e sete... é por quem? Conta pra gente nos comentários. Todo poder tem um preço. Até a próxima.",
+  "file": "vo/s47.wav",
+  "tempo": 1.025
+ }
+]
