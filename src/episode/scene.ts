@@ -113,11 +113,14 @@ export function beatsOf(ctx: ShotCtx): Beat[] {
   const hit = beatCache.get(shot);
   if (hit && hit.length && Math.abs(hit[hit.length - 1].t1 - dur) < 1e-6) return hit;
   const c = shot.camera || {};
-  const auto = !(c.pos || c.path || c.over);
+  // automatic cameras re-frame per beat; explicit ones (pos/path) punch in / orbit their own view (beatView)
+  const expl = isExplicit(c);
+  const auto = !(c.pos || c.path || c.over) || expl;
   let cuts: number[] = [];
   if (auto && c.beats?.length) cuts = c.beats.map(b => cue(b, words, -1)).filter(x => x > 0.3 && x < dur - 0.3);
   else if (auto && shot.coverage && shot.coverage !== 'off') {
-    const [target, min] = shot.coverage === 'fast' ? [1.6, 1.1] : [2.6, 1.8];
+    // explicit cameras usually frame an action tableau: cut them less often, so the action still reads
+    const [target, min] = shot.coverage === 'fast' ? (expl ? [2.2, 1.4] : [1.6, 1.1]) : (expl ? [3.0, 2.0] : [2.6, 1.8]);
     // cut just before a word starts, so the new framing lands on the word
     const starts = (words || []).map(w => w[1] - 0.08).filter(x => x > 0);
     const cands = starts.length ? starts : Array.from({ length: Math.floor(dur / 0.4) }, (_, i) => i * 0.4);
@@ -132,9 +135,29 @@ export function beatsOf(ctx: ShotCtx): Beat[] {
   return out;
 }
 
+/** An explicit camera (pos/look or path, not over-the-shoulder): its sub-cuts transform the solved view (beatView). */
+export const isExplicit = (c: CameraSpec | undefined) => !!c && !!(c.pos || c.path) && !c.over;
+
+/**
+ * Sub-cut of an explicit camera, applied to the view solved on the shot's own clock (so moveAt / path
+ * timing is untouched): odd beats punch in on the look point (a size change, ~1.55x; only from ≥ 3.2 m,
+ * closer they orbit too), even beats orbit ~28° around it at the same distance (a real angle change, never
+ * a few-pixel snap). u = 0..1 in the beat.
+ */
+export function beatView(cam: CamState, k: number, u: number): CamState {
+  if (!k) return cam;
+  // a camera already close to its subject (< 3.2 m) would punch into a giant head: orbit the other way instead
+  const near = cam.pos.distanceTo(cam.look) < 3.2;
+  if (k % 2 && !near) return { ...cam, fov: cam.fov * (0.64 - 0.035 * u) };
+  const side = k % 2 ? -1 : k % 4 === 2 ? 1 : -1;
+  const a = side * (28 + 3 * u) * (Math.PI / 180);
+  const off = cam.pos.clone().sub(cam.look).applyAxisAngle(new THREE.Vector3(0, 1, 0), a);
+  return { ...cam, pos: cam.look.clone().add(off), fov: cam.fov * 0.9 };
+}
+
 /** The camera spec for beat k: 0 = as written; odd = one size tighter, nudged; even = a new angle. */
 export function beatCam(c: CameraSpec | undefined, k: number): CameraSpec | undefined {
-  if (!k || !c) return c;
+  if (!k || !c || isExplicit(c)) return c;
   const base = c.angle ?? 20, sign = base >= 0 ? -1 : 1;
   if (k % 2) return { ...c, shot: TIGHTER[c.shot || 'medium'], angle: base + sign * 10, move: 'pushIn', amount: 0.6, dist: c.dist && c.dist * 0.72 };
   return { ...c, angle: base + sign * (k % 4 === 2 ? 38 : -30), height: (c.height ?? 6) + 6, move: k % 4 === 2 ? 'orbitR' : 'orbitL', amount: 0.5 };
@@ -232,7 +255,9 @@ export function evalShot(ctx: ShotCtx, t: number, cast: Record<string, CastMembe
   // sub-cuts: solve the camera for the current beat, on the beat's own clock
   const beats = beatsOf(ctx);
   const beat = beats.find(b => t < b.t1) || beats[beats.length - 1];
-  let cam = solveCamera(beatCam(camSpec, beat.k), t - beat.t0, beat.t1 - beat.t0, first, fallback, rotAtStart(ctx, cast, first, t));
+  let cam = isExplicit(camSpec)
+    ? beatView(solveCamera(camSpec, t, ctx.dur, first, fallback), beat.k, (t - beat.t0) / Math.max(1e-6, beat.t1 - beat.t0))
+    : solveCamera(beatCam(camSpec, beat.k), t - beat.t0, beat.t1 - beat.t0, first, fallback, rotAtStart(ctx, cast, first, t));
   const camOut = def.room ? keepInRoom(cam, def.room) : 0;
   if (shot.fx?.shake) cam = shake(cam, t, 0.03 * shot.fx.shake, 18, 4);
   // continuity with the previous shot (same set, near-identical framing): one flowing move

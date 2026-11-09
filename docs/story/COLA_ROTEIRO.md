@@ -26,6 +26,8 @@ CTA         P1 fantasia pessoal + P2 debate só de quem viu
 ```
 Testes: dá pra dizer numa respirada · abertura mostra em 1 plano de 3 s · o limite (não a sorte) cria o clímax · 1 número repetível · dilema rende comentário · engine monta com o que existe.
 
+**Duração mínima: 10:00 de narração** (regra do usuário, 2026-11-09). Escreva ~1.600–1.700 palavras em PT-BR (leitura ritmada a ~175 ppm); o audit avisa abaixo de 10:00, inclusive no rascunho. Episódios de 8 min (§4.2) não se usam mais; para passar de 10, use §4.3.
+
 ## Batidas do 10:00 (palavras = ref. a 175 wpm em inglês; os **tempos** valem, as palavras recalibre com `episode.mjs pace`)
 | # | Tempo | Batida | Pal. | Deve conter |
 |---|---|---|---|---|
@@ -48,6 +50,33 @@ Testes: dá pra dizer numa respirada · abertura mostra em 1 plano de 3 s · o l
 | 17 | 9:40–10:00 | CTA | 50 | P1 + P2 → "Conta pra gente nos comentários." → `[ASSINATURA]` |
 
 8 min e 12 min: §4.2 / §4.3. Variante de corrupção (poderes indetectáveis, máx. 1 a cada 4 episódios): §4.
+
+## Primeiros 10 s (regra do usuário, 2026-11-09; só episódios novos)
+Os 10 primeiros segundos decidem se a pessoa fica. **Combine ≥ 2 tipos de gancho** e use todas as técnicas de câmera, corte e som abaixo.
+
+**Tipos de gancho (a situação):**
+- **Poder resolvendo algo trivial** (padrão B1): o título pago em miniatura em ≤ 5 s. "Você está atrasado. Você pisca. Já está na carteira."
+- **Desastre em andamento:** começa no meio do caos, sem contexto.
+- **Imagem impossível:** algo que não devia existir, sem explicação (o suco parado no ar).
+- **Número absurdo** dito no 1º segundo: "Quatrocentos zumbis. E você tem um apito."
+- **Flash-forward:** 3 s do clímax e depois "Seis horas antes…". No máximo 1 a cada 3 episódios, pra não virar fórmula.
+- **Pergunta-armadilha:** "Por que a sua mãe está vendendo camiseta com a sua cara?"
+- **Testemunha chocada:** a reação antes da causa (close de boca aberta, depois corta pro que ela vê).
+- **Estranheza não explicada:** um detalhe que só se paga depois.
+- **Aposta pessoal:** algo seu em risco, com relógio. "Você tem cinquenta minutos."
+
+**Câmera e corte:**
+- Plano 1 em **close de objeto**.
+- **≥ 6 cortes em 10 s** (planos de 1–1,5 s), contando os sub-cortes de `coverage`/`camera.beats`. Varie o tamanho: close → aberto → close.
+- **≥ 1 movimento forte** no primeiro uso do poder: `move: 'crashIn'`, `cut: 'smash'`/`'whip'`, `fx.freeze` (0,5 s no auge) ou `speedLines`.
+- Ângulo baixo no poder, alto na reação. Tudo na faixa central: a abertura é o trecho mais reaproveitado nos shorts.
+
+**Som e texto:**
+- **Fala no 1º segundo** (sem intro, logo ou música sozinha) e **SFX forte em ≤ 2 s** (toque, whoosh, impacto).
+- 0,3 s de silêncio antes da revelação.
+- Palavra-destaque (`word`) no número ou na palavra-chave. O título só entra depois do poder (~0:20–0:30).
+
+O audit avisa `[hook]` quando faltar o mínimo de cortes, o SFX cedo ou o movimento forte. Episódios anteriores à regra têm `hookCheck: False`. "Poder visível até 0:08" é conferido por quem lê, no checklist.
 
 ## Estrutura (o que o checklist cobra)
 - **Mas/portanto** entre batidas; "e então" só na montagem de vantagens.
@@ -106,6 +135,7 @@ O usuário corta à mão, do 16:9, shorts de **~90 s** para YouTube Shorts, Reel
 - [ ] Plantios ≥ 5 / ≥ 3 no clímax / piada recorrente / loop aberto
 - [ ] Mas/portanto; curva de risco; lacunas N ≤ 40 s e ↻ ≤ 90 s
 - [ ] Plano 1 close de objeto; poder ≤ 0:08; testemunha + impassível; título ≤ 0:40
+- [ ] Primeiros 10 s: ≥ 2 tipos de gancho, ≥ 6 cortes, movimento forte no poder, fala no 1º s, SFX ≤ 2 s (audit `[hook]` limpo)
 - [ ] ≥ 15 números pareados e verificados; 2–3 contas; teasers
 - [ ] Viradas nas janelas; relógio vindo de regra; dilema binário; regra tema vence; custo pago; objeto perdido; frase de mudança
 - [ ] 25–32 falas curtas; piada ≤ 60 s; estatística de frase; sem banidos

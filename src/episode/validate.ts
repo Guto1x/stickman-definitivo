@@ -16,7 +16,7 @@ const PROPS = ['table', 'roundTable', 'chair', 'bed', 'desk', 'deskLamp', 'door'
   'fire', 'smoke', 'firetruck', 'basket', 'binoculars', 'trafficlight', 'pizza', 'jar'];
 const SHOTS = ['establishing', 'wide', 'full', 'medium', 'close', 'xclose', 'insert'];
 const MOVES = ['static', 'drift', 'pushIn', 'pullOut', 'orbitL', 'orbitR', 'craneUp', 'craneDown', 'truckL', 'truckR', 'track', 'crashIn', 'shake', 'handheld'];
-const OVERLAYS = ['label', 'title', 'stopwatch', 'stat', 'bubble', 'thought', 'crush', 'caption', 'flash', 'counter', 'news', 'hudList'];
+const OVERLAYS = ['label', 'title', 'stopwatch', 'stat', 'bubble', 'thought', 'crush', 'caption', 'flash', 'counter', 'news', 'hudList', 'word'];
 
 export function validate(ep: Episode): string[] {
   const out: string[] = [];

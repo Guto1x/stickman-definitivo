@@ -16,7 +16,7 @@ Make one complete narrated episode about this topic with the saved hero, then ge
 - **Hero:** the saved character, the `hero` entry in `src/cast.ts`, exactly as it is. Don't change the outfit, and keep its signature colour off everyone else (CLAUDE.md, "… belongs to the hero").
 - **Idea:** the topic replaces the idea step. Skip candidate generation and pitching. Shape it into a "What If" title (keep the user's wording when it already is one), run `python -I tools/ideas/novelty.py "<title>"`, and mention any close competitor title in the summary.
 - **Slug:** short kebab-case from the title, not already used in `public/episodes/`.
-- **Length:** 8–10 minutes unless the user's topic says otherwise.
+- **Length:** at least 10:00 of voiced narration (user rule, 2026-11-09); the audit warns below that. Write ~1,600–1,700 PT-BR words, since the paced read runs ~175 wpm.
 - **Voice, music, look:** the house defaults in `CLAUDE.md` and memory.
 - **Tone:** acid, bold and still monetizable, never the cute family tone: a narrator who is calm but sometimes malicious or sarcastic (`STORY_BLUEPRINT.md` §6.10, summarised in the cola's "Tom" section).
 - **Pacing:** the generator calls `episode(..., ritmo='rapido')`, as `_modelo.py` does. That gives automatic sub-cuts plus whip/zoom on set changes. Use `coverage='calm'` in the dilemma and `cut='smash'` by hand on reveals. Keep the subject and key text in the 9:16 centre column (audit `vertical`).

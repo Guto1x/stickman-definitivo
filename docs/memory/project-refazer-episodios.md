@@ -1,27 +1,14 @@
 ---
 name: project-refazer-episodios
-description: NEXT TASK (agreed 2026-11-08) — redo invasao-zumbi then quem-tem-crush in the new style: free visual pass first, then a targeted acid-tone rewrite shown before any voice credits
+description: Remake of old episodes is CLOSED (2026-11-09) — zumbi redone in the new style; quem-tem-crush discarded as a test; repo cleaned to zumbi only
 metadata:
   type: project
 ---
 
-On 2026-11-08 the user agreed to remake both finished episodes in the new style. They asked to start in a fresh session (after /clear).
+On 2026-11-08 the user agreed to remake both finished episodes in the new style. On 2026-11-09 zumbi was finished: visual pass (`apply_ritmo`, clips, 9:16-safe; 2 review rounds), then tone pass (14 lines rewritten, ~1.7k credits, 10 sections re-voiced; 9:14), then the final build.
 
-**Order:** invasao-zumbi first (shorter, 7.9k chars, its stakes already suit the acid tone), then quem-tem-crush (9.1k chars, the cutest story, so it needs more rewriting).
+Then the user **discarded quem-tem-crush** ("foi um bom teste pra nós") and asked to clean out every leftover from other videos. Deleted: the crush and teste-ritmo episodes, generators, thumbnails, renders, the old zumbi cut in `final/archive/`, and `out/lab`. Kept as engine infrastructure: `pipetest` (the compositions' default fixture, shipped by the packer), the `swap-pilot` thumbnail brief (example format), and `PillSprint` (reference composition).
 
-**Per episode:**
-1. **Visual pass (0 credits, keeps the current voice).** In `tools/episodes/<slug>.py`:
-   - add `ritmo='rapido'` (coverage sub-cuts + whip/zoom on set changes; `coverage='calm'` in the dilemma; `cut='smash'` by hand on reveals);
-   - mark ≥ 4 self-contained ~90 s `clips` ([[feedback-cortes-shorts]]);
-   - move key overlays and subjects into the 9:16 centre column (audit `vertical`).
+**Why:** start the next episodes from a clean repo where zumbi is the only real example.
 
-   Then regenerate, `qa.cjs audit`, `review.mjs`, reviewer, build. The build writes `.srt` and `- cortes.txt`.
-2. **Tone pass ([[feedback-tom-acido]]).** Rewrite only the lines that need it: narrator jabs, self-interested family, no hug or moral at the end. Show the user the script and the credit estimate before `voice`. Only changed sections are billed.
-
-**Not built yet (do it during the zumbi):**
-- a "palavra-destaque" overlay (the key word pops in on its `@word` cue, centre column);
-- an audit warning when an important overlay (stopwatch/stat/label corner) sits outside the 9:16 centre column.
-
-**Keep:** `/stickman` must still stop once before spending voice credits — the user said "não tire isso".
-
-**Tags:** the user approved all 5 sarcastic tags on Yuri (2026-11-08); nothing pending there.
+**How to apply:** don't suggest remaking crush. Lesson to keep: a voice section spans many shots, so one changed line re-voices all of it. Show the user a full option and a lean credit option. Still deferred: card layouts are 16:9-wide (a 9:16 crop loses half); the user was offered a narrow card layout. `/stickman` must still stop once before spending voice credits (the user said "não tire isso").

@@ -70,6 +70,7 @@ export const TitleCard: React.FC<CardProps> = ({ t, dur, spec, W, H }) => {
         big={big}
         small={small || undefined}
         dur={out ? dur : undefined}
+        compact={0}
         pos={bg ? (icon ? H * 0.43 : 'center') : sStr(spec, 'pos', 'top') === 'center' ? 'center' : 'top'}
         size={sNum(spec, 'size', bg ? 170 : 150)}
         W={W}

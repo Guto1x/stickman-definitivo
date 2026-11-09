@@ -3,6 +3,10 @@
 # (episode.json is regenerated from this file; hand edits to the JSON get overwritten.)
 import json
 import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # python -I drops the script dir
+from kit import apply_ritmo  # noqa: E402  (house pacing; the rest of this older generator keeps its own helpers)
 
 SLUG = 'invasao-zumbi'
 GREEN = '#8dff6a'
@@ -119,7 +123,7 @@ S('c4', 'classroom', 'E brilhando. Um verde fraquinho, tipo pulseira de festa.',
 S('c5', 'classroom', 'Ele anda direto pro seu celular.',
   actors=[Z('rafa', 'seat3', -90, path=walk('seat3', 'aisle+0.2,0,0.1', 0.2, 2.6)), A('hero', 'seat2', -90, 'sit', 'scared', look='rafa')],
   props=[{'type': 'phone', 'pos': PHONE_DESK, 'rot': [-1.57, 0, 0.3]}],
-  camera={'pos': [0.0, 2.7, 4.8], 'look': [1.3, 0.8, 1.0], 'fov': 42}, sfx=[{'t': 0.1, 'name': 'ring', 'dur': 2.4}])
+  camera={'pos': [0.0, 2.7, 4.8], 'look': [0.9, 0.9, 0.7], 'fov': 36}, sfx=[{'t': 0.1, 'name': 'ring', 'dur': 2.4}])
 S('c6', 'classroom', 'Você joga o celular pro fundo da sala.',
   actors=[A('hero', 'seat2', -90, 'sit', 'determined',
             poses=[{'t': '@joga', 'pose': {'hipY': -0.46, 'legL': [88, 6, 92], 'legR': [88, 6, 92], 'spine': [-4, 0, -25], 'armR': [140, 30, 0, 10], 'handR': 'open'}, 'blend': 0.2}])],
@@ -130,7 +134,8 @@ S('c7', 'classroom', 'O Rafa muda de direção na hora. E segue o som.',
   actors=[Z('rafa', 'aisle+0.2,0,0.1', 90, path=[{'t': 0.3, 'pos': 'aisle+0.2,0,0.1'}, {'t': 2.6, 'pos': [3.0, 0, 0.9], 'gait': 'shamble'}, {'t': 4.6, 'pos': [4.7, 0, 2.3], 'gait': 'shamble'}]),
           A('hero', 'seat2', -90, 'sit', 'shocked')],
   props=[{'type': 'phone', 'pos': [5.4, 0.02, 3.0], 'rot': [-1.57, 0, 0.3]}],
-  camera={'pos': [1.2, 1.9, 6.6], 'look': [3.2, 0.9, 1.4], 'fov': 46}, sfx=[{'t': 0.1, 'name': 'ring', 'dur': 2.6}])
+  camera={'pos': [1.2, 1.9, 6.6], 'look': [1.6, 1.0, 0.9], 'to': {'pos': [1.8, 1.9, 6.6], 'look': [4.3, 0.9, 2.2]}, 'moveAt': [0.3, 4.6], 'ease': 'cruise', 'fov': 40},
+  sfx=[{'t': 0.1, 'name': 'ring', 'dur': 2.6}])
 S('c8', 'classroom', 'O Rafa sempre andou assim?', who='male',
   actors=[A('bestie', 'seat1', 90, 'sit', 'confused', look='hero', talk=TALK), A('hero', 'seat2', -90, 'sit', 'worried')],
   camera=cam('close', 'bestie', 15))
@@ -145,7 +150,7 @@ S('c10', 'cafeteria', 'E no refeitório, mais doze alunos andando igual. Todos b
   camera={'pos': [0.3, 1.5, 7.6], 'look': [0, 1.0, -0.5], 'fov': 42, 'move': 'pushIn'}, sfx=[{'t': 0.5, 'name': 'groanLow'}])
 
 # ---------------------------------------------------------------- 2. pergunta do título
-S('t1', 'cafeteria', 'E se você salvasse sua escola de uma invasão zumbi? Vamos destrinchar isso.', variant=1,
+S('t1', 'cafeteria', 'E se você salvasse sua escola de uma invasão zumbi? [mischievously] Spoiler: vai custar caro. Pra você.', variant=1,
   actors=[A('hero', [-3.4, 0, 3.9], 60, 'hide', 'scared', look='zB'),
           Z('zA', [-0.3, 0, 0.4], 0, path=walk([-0.3, 0, 0.4], [-0.2, 0, 2.6], 0.0, 6)),
           Z('zB', [0.7, 0, 1.6], 20, path=walk([0.7, 0, 1.6], [1.6, 0, 3.6], 0.0, 6)),
@@ -157,7 +162,7 @@ S('t1', 'cafeteria', 'E se você salvasse sua escola de uma invasão zumbi? Vamo
 S('m1', 'classroom', 'Tudo começou no laboratório de ciências. A professora Helena trouxe de uma viagem um fungo raro, num pote fechado.', variant=1,
   props=LAB, actors=[A('helena', 'teacher+0.3,0,0.9', 70, 'explain', 'happy', look=[-4.3, 0.9, 2.6])],
   camera={'pos': [-1.6, 1.6, 4.6], 'look': [-4.4, 1.15, 2.7], 'fov': 40, 'move': 'drift'})
-S('m2', 'classroom', 'Hoje cedo, alguém derrubou o pote.', variant=1,
+S('m2', 'classroom', 'Hoje cedo, alguém derrubou o pote. [deadpan] E não contou pra ninguém.', variant=1,
   props=[{'type': 'jar', 'pos': [-4.3, 0.78, 2.6],
           'path': [{'t': '@derrubou', 'pos': [-4.3, 0.78, 2.6], 'rot': [0, 0, 0]}, {'t': '@pote', 'pos': [-3.8, 0.1, 2.9], 'rot': [0, 0.4, 1.57]}]},
          LAB[2]],
@@ -165,8 +170,8 @@ S('m2', 'classroom', 'Hoje cedo, alguém derrubou o pote.', variant=1,
   sfx=[{'t': '@pote', 'name': 'thud'}, {'t': '@pote+0.1', 'name': 'debris'}])
 C('m3', 'icon', 'O fungo solta esporos: um pó invisível, que voa pelo ar. Quem respira, em dez minutos, vira zumbi.',
   icon='warning', caption='ESPOROS NO AR', sub='ZUMBI EM 10 MINUTOS')
-S('m4', 'void', 'Mas não do tipo de filme. Ninguém morde. Ninguém se machuca. Eles só andam devagar, gemem, e brilham verde.',
-  actors=[Z('zA', 'left', 20, path=walk('left', 'left+0.8,0,1.4', 0.2, 6)), Z('zC', 'right', -20, path=walk('right', 'right+-0.8,0,1.4', 0.2, 6))],
+S('m4', 'void', 'Mas não do tipo de filme. Ninguém morde. Eles só andam devagar, gemem, e brilham verde. [deadpan] Igual você numa segunda.',
+  actors=[Z('zA', 'left+1.5,0,0', 20, path=walk('left+1.5,0,0', 'left+1.7,0,1.4', 0.2, 6)), Z('zC', 'right+-1.5,0,0', -20, path=walk('right+-1.5,0,0', 'right+-1.7,0,1.4', 0.2, 6))],
   camera=cam('wide', ['zA', 'zC'], 0, move='pushIn'), sfx=[{'t': '@gemem', 'name': 'groan'}])
 S('m5', 'void', 'E querem encostar em você. Porque um toque passa o fungo adiante, em dez segundos.',
   actors=[A('hero', 'center', 0, 'stand', 'worried', path=[{'t': 0.4, 'pos': 'center'}, {'t': 2.6, 'pos': 'front', 'gait': 'walk'}], strafe=True),
@@ -193,7 +198,7 @@ C('s7', 'chain', 'Um. Dois. Quatro. Oito. Dezesseis.',
   title='ZUMBIS', nodes=[{'icon': 'stand', 'label': '1'}, {'icon': 'stand', 'label': '2'}, {'icon': 'stand', 'label': '4'}, {'icon': 'stand', 'label': '8'}, {'icon': 'stand', 'label': '16'}], step=0.6)
 C('s8', 'stat', 'Em cinquenta minutos, mais de seiscentos. A escola inteira.',
   value=600, unit='ALUNOS', label='EM 50 MINUTOS', icon='house')
-S('s9', 'classroom', 'Cinquenta minutos. O tempo de uma aula. É isso que a sua escola tem.', variant=1,
+S('s9', 'classroom', 'Cinquenta minutos. O tempo de uma aula. Depois disso, a escola vira quarentena. [darkly amused] Com você trancado do lado de dentro.', variant=1,
   actors=[A('hero', 'center', 20, 'stand', 'worried')], camera=cam('close', 'hero', 10, move='pushIn'), sfx=[{'t': 0.2, 'name': 'ticks', 'dur': 1.2}])
 
 # ---------------------------------------------------------------- 5. teste de prova (refeitório)
@@ -219,20 +224,23 @@ S('p6', 'cafeteria', 'Um toque no ombro.', variant=1,
   actors=[A('jorge', 'center', 180, 'stand', 'shocked', hold={'R': 'whistle'}, contact=True),
           Z('zB', 'center+-0.78,0,0.32', 119, contact=True, pose={'hipY': -0.01, 'spine': [8, 0, 0], 'head': [12, 0, 14], 'armL': [55, 8, 0, 14], 'armR': [92, -4, 0, 6], 'handL': 'open', 'handR': 'open'})],
   camera={'pos': [-1.0, 1.55, 1.5], 'look': [-0.35, 1.35, 3.9], 'fov': 36})
-S('p7', 'cafeteria', 'Dez segundos depois, o Seu Jorge está gemendo junto.', variant=1,
+S('p7', 'cafeteria', 'Dez segundos depois, o Seu Jorge está gemendo junto. [darkly amused] Afinadíssimo.', variant=1,
   actors=[Z('jorge', 'center', 180), Z('zA', 'center+-0.8,0,-0.6', 20), Z('zB', 'center+0.6,0,-0.7', -10)],
   camera=cam('medium', 'jorge', -10, move='pushIn'), sfx=[{'t': '@gemendo', 'name': 'groanLow'}])
 S('p8', 'cafeteria', 'O apito cai no chão. Você pega, e guarda no bolso. Ainda não sabe por quê.', variant=1,
   actors=[A('hero', [-4.6, 0, 4.6], 120, 'crouch', 'focused',
-            poses=[{'t': '@guarda', 'pose': 'stand', 'blend': 0.6}], hold={'R': 'whistle'})],
-  camera=cam('medium', 'hero', 20), sfx=[{'t': '@cai', 'name': 'click'}])
+            poses=[{'t': 0, 'pose': {'hipY': -0.42, 'spine': [38, 0, 0], 'head': [20, 0, 0], 'legL': [80, 6, 100], 'legR': [60, 6, 110], 'armR': [70, 6, 0, 10], 'armL': [20, 10, 0, 30], 'handR': 'fist'}},
+                   {'t': '@pega', 'pose': 'crouch', 'blend': 0.4},
+                   {'t': '@guarda', 'pose': {'hipY': 0, 'legL': [0, 0, 0], 'legR': [0, 0, 0], 'spine': [4, 0, 0], 'reachR': {'to': 'pocket'}, 'head': [10, 0, 0]}, 'blend': 0.6}], hold={'R': 'whistle'})],
+  camera=cam('full', 'hero', 20), sfx=[{'t': '@cai', 'name': 'click'}])
 
 # ---------------------------------------------------------------- 6. regras
 C('r1', 'rules', 'Em vinte minutos escondido, você aprende as regras.', title='AS REGRAS', prefix='REGRA', rules=RULES, current=0)
 C('r2', 'rules', 'Regra um: o som mais alto ganha.', title='AS REGRAS', prefix='REGRA', rules=RULES, current=1)
 CAF_Z = [('zA', [-1.6, 0, 3.2]), ('zC', [-0.2, 0, 3.7]), ('zD', [1.0, 0, 3.0])]
 S('r3', 'cafeteria', 'Você testa. Seu celular tocando de um lado. Um livro batendo no chão do outro.', variant=1,
-  props=[{'type': 'phone', 'pos': [-3.4, 0.78, 1.6], 'rot': [-1.57, 0, 0]}, {'type': 'book', 'pos': [3.8, 0.03, 4.4], 'color': '#c8402f'}],
+  props=[{'type': 'phone', 'pos': [-3.4, 0.78, 1.6], 'rot': [-1.57, 0, 0]}, {'type': 'book', 'pos': [3.8, 0.03, 4.4], 'color': '#c8402f',
+          'path': [{'t': '@livro', 'pos': [3.8, 0.95, 4.4]}, {'t': '@batendo', 'pos': [3.8, 0.03, 4.4]}]}],
   actors=[Z(i, p, 40) for i, p in CAF_Z] + [A('hero', [-2.4, 0, 4.6], 120, 'crouch', 'focused')],
   camera={'pos': [0.0, 2.6, 9.4], 'look': [0.4, 0.8, 2.6], 'fov': 46},
   sfx=[{'t': '@celular', 'name': 'ring', 'dur': 2.4}, {'t': '@livro+0.4', 'name': 'thud'}, {'t': '@outro', 'name': 'thud'}])
@@ -265,7 +273,7 @@ S('k1', 'cafeteria', 'E aí vem a parte boa: a escola é sua.', variant=1,
 S('k2', 'cafeteria', 'Almoço sem fila. Sobremesa? Três.', variant=1,
   actors=[A('hero', 'seat1', 0, 'sit', 'bliss', hold={'R': 'cup'}), A('bestie', 'seat1+1.2,0,0', 0, 'sit', 'happy', hold={'R': 'cup'})],
   props=[{'type': 'pizza', 'pos': 'seat1+0,0.78,0.62'}],
-  camera=cam('medium', ['hero', 'bestie'], 0), sfx=[{'t': '@três', 'name': 'pop'}])
+  camera=cam('medium', 'hero', 20), sfx=[{'t': '@três', 'name': 'pop'}])
 S('k3', 'cafeteria', 'Pra atravessar um corredor cheio de zumbi, você só deixa uma música tocando do outro lado.', variant=1,
   props=[{'type': 'phone', 'pos': [4.6, 0.78, 1.6], 'rot': [-1.57, 0, 0]}],
   actors=[Z('zA', [-0.4, 0, 0.0], 90, path=walk([-0.4, 0, 0.0], [2.2, 0, 0.3], 0.3, 6)),
@@ -281,11 +289,12 @@ S('k5', 'classroom', 'Eles vêm em você. Todos.', variant=1,
           Z('zB', [2.2, 0, 3.8], -90, path=walk([2.2, 0, 3.8], [-0.6, 0, 3.9], 0.0, 4)),
           Z('zC', [2.4, 0, 4.9], -90, path=walk([2.4, 0, 4.9], [0.6, 0, 5.0], 0.0, 4)),
           A('hero', [-3.4, 0, 4.6], 90, 'shocked', 'shocked', path=[{'t': '@todos', 'pos': [-3.4, 0, 4.6]}, {'t': '@todos+1.4', 'pos': [-5.2, 0, 4.4], 'gait': 'run'}])],
-  camera={'pos': [-0.6, 1.7, 9.0], 'look': [-1.0, 0.9, 4.4], 'fov': 46}, sfx=[{'t': '@todos', 'name': 'groanLow'}])
+  camera={'pos': [-1.4, 1.7, 9.0], 'look': [-2.1, 0.9, 4.4], 'fov': 46}, sfx=[{'t': '@todos', 'name': 'groanLow'}])
 S('k6', 'classroom', 'Na sala do primeiro ano, um menino se esconde embaixo da mesa. Três zumbis em volta.', variant=1,
   actors=[A('kid', [-3.4, 0, 3.4], 60, 'hide', 'scared'),
           Z('zD', [-2.3, 0, 2.7], -58), Z('zE', [-3.1, 0, 4.6], -166), Z('zF', [-4.4, 0, 4.2], 129)],
-  camera={'pos': [-0.6, 1.0, 4.4], 'look': [-3.2, 0.55, 3.4], 'fov': 38, 'move': 'pushIn'}, sfx=[{'t': 0.4, 'name': 'groan'}])
+  props=[{'type': 'desk', 'pos': [-3.4, 0, 3.4], 'rot': 60}],
+  camera={'pos': [-0.4, 1.3, 4.6], 'look': [-3.2, 0.85, 3.5], 'fov': 44, 'move': 'pushIn'}, sfx=[{'t': 0.4, 'name': 'groan'}])
 S('k7', 'classroom', 'Você deixa o celular tocando lá no fundo. Os três vão atrás do som.', variant=1,
   props=[{'type': 'phone', 'pos': [5.0, 0.02, 5.0], 'rot': [-1.57, 0, 0]}],
   actors=[A('kid', [-3.4, 0, 3.4], 60, 'hide', 'worried'),
@@ -299,16 +308,15 @@ S('k8', 'classroom', 'Você é tipo um super-herói?', who='female', variant=1,
 S('k9', 'classroom', 'Sou tipo um despertador.', variant=1,
   actors=[A('hero', 'center+-3.0,0,-0.8', -131, 'crouch', 'smirk', look='kid', talk=[[0.05, 1.2]]), A('kid', 'center+-3.8,0,-1.5', 49, 'relaxed', 'happy')],
   camera={'pos': [-3.0, 1.2, 2.6], 'look': [-2.9, 0.9, 3.8], 'fov': 40})
-S('k10', 'classroom', 'É a melhor coisa que você faz o dia inteiro.', variant=1,
+S('k10', 'classroom', '[deadpan] Ele te abraça. E limpa o nariz na sua blusa.', variant=1,
   actors=[A('kid', 'center+-3.8,0,-1.5', 49, 'hug', 'bliss', contact=True), A('hero', 'center+-3.45,0,-1.2', -131, 'hug', 'smile', contact=True)],
-  camera={'pos': [-1.4, 1.35, 1.9], 'look': [-3.2, 0.95, 3.5], 'fov': 40, 'move': 'pullOut'})
+  camera={'pos': [-1.4, 1.5, 1.9], 'look': [-3.2, 1.15, 3.5], 'fov': 42, 'move': 'pullOut'})
 # ---------------------------------------------------------------- 8. "mas" + problemas
-S('q1', 'void', 'Depois os problemas aparecem. Um de cada vez.',
+S('q1', 'void', '[darkly amused] Aí a escola cobra o aluguel. Em três problemas.',
   actors=[A('hero', 'center', 0, 'sad', 'worried')], camera=cam('medium', 'hero', 0, move='pullOut'))
 C('q2', 'stat', 'Problema um: o seu celular é a sua única isca. E está com dezoito por cento.', value=18, unit='%', label='DE BATERIA', icon='phone')
 S('q3', 'classroom', 'Cada isca gasta uns três por cento. Seis iscas, e acabou.', variant=1,
-  actors=[A('hero', [-3.4, 0, 4.6], 20, 'phone', 'worried', hold={'R': 'phone'})], camera=cam('close', 'hero', 25),
-  overlays=[{'type': 'label', 'text': '6 ISCAS', 'at': '@seis', 'corner': 'tl'}])
+  actors=[A('hero', [-3.4, 0, 4.6], 20, 'phone', 'worried', hold={'R': 'phone'})], camera=cam('close', 'hero', 25))
 S('q4', 'cafeteria', 'Solução: você pega emprestado o celular do Seu Jorge. Ele não reclama.', variant=1,
   actors=[Z('jorge', 'center', 0), A('hero', 'center+0.75,0,-0.2', -80, 'reach', 'focused', look='jorge', contact=True)],
   camera={'pos': [2.8, 1.5, 5.4], 'look': [0.4, 1.1, 3.6], 'fov': 40}, sfx=[{'t': '@reclama', 'name': 'groan'}])
@@ -322,10 +330,10 @@ S('q7', 'classroom', 'Problema dois: a sala onde os sobreviventes se escondem. Q
 S('q8', 'classroom', 'Aí alguém espirra. E na porta, um gemido.', variant=0,
   actors=[A('sister', 'seat1', -90, 'sit', 'scared', look='celia'), A('hero', 'aisle', -150, 'stand', 'scared', look=[-5.4, 1.2, 4.2]),
           A('celia', 'front+0.4,0,0.6', 150, 'scared', 'shocked', look=[-5.4, 1.2, 4.2])],
-  camera=cam('medium', ['hero', 'sister'], 40), sfx=[{'t': '@espirra', 'name': 'pop'}, {'t': '@gemido', 'name': 'groanLow'}])
+  camera={'pos': [-1.7, 1.35, 2.1], 'look': [0.2, 0.85, 1.6], 'fov': 42}, sfx=[{'t': '@espirra', 'name': 'pop'}, {'t': '@gemido', 'name': 'groanLow'}])
 S('q9', 'classroom', 'Solução: chiclete pra todo mundo. Boca mastigando não conversa.', variant=0,
   actors=[A('hero', 'aisle', -90, 'holdOut', 'smug', hold={'R': 'paper'}), A('sister', 'seat1', 90, 'sit', 'happy', look='hero')],
-  camera=cam('medium', ['hero', 'sister'], -40))
+  camera=cam('medium', 'hero', -40))
 S('q10', 'classroom', 'Chiclete? Na minha escola?', who='adulta', variant=0,
   actors=[A('celia', 'front+0.4,0,0.6', 90, 'armsCrossed', 'angry', talk=TALK)], camera=cam('close', 'celia', 10))
 S('q11', 'cafeteria', 'Problema três: o banheiro fica do outro lado do refeitório. Com oito zumbis no caminho.', variant=1,
@@ -381,14 +389,14 @@ S('y4', 'stadium', 'Aí você vê o Rafa. Ele seguiu um alarme de carro até o c
   actors=[Z('rafa', 'midfield', 30)], camera=cam('wide', 'rafa', 20, height=10, move='pushIn'), sfx=[{'t': '@alarme', 'name': 'ticks', 'dur': 1.0}])
 S('y5', 'stadium', 'Trinta segundos depois, ele pisca.', variant=1,
   actors=[A('rafa', 'midfield', 30, 'stand', 'sleepy', faces=[{'t': '@pisca', 'face': 'confused', 'blend': 0.3}])],
-  camera=cam('close', 'rafa', 10), overlays=[{'type': 'stopwatch', 'from': '0:30', 'at': 0.1}], sfx=[{'t': '@pisca', 'name': 'chime'}])
+  camera=cam('close', 'rafa', 10), overlays=[{'type': 'stopwatch', 'from': '0:30', 'at': 0.1, 'corner': 'bc'}], sfx=[{'t': '@pisca', 'name': 'chime'}])
 S('y6', 'stadium', 'Eu perdi a prova?', who='male', variant=1,
   actors=[A('rafa', 'midfield', 30, 'shrug', 'confused', talk=TALK)], camera=cam('medium', 'rafa', -20))
 S('y7', 'stadium', 'Trinta segundos de sol. É a cura.', variant=1,
   actors=[A('hero', 'midfield+-3,0,3', 150, 'stand', 'awe')], camera=cam('xclose', 'hero', 0, height=-8, move='pushIn'), sfx=[{'t': '@cura', 'name': 'swell'}])
-S('y8', 'cafeteria', 'Você e o Davi treinam: levar grupos pequenos pro sol, usando o som.', variant=1,
+S('y8', 'cafeteria', 'Você e o Davi treinam: levar grupos pequenos pro sol, usando o som. [deadpan] O Davi já cobra cinco reais por zumbi curado.', variant=1,
   actors=[A('hero', [-1.6, 0, 4.4], 120, 'holdOut', 'determined', hold={'R': 'phone'}), A('bestie', [-2.6, 0, 4.0], 110, 'thinking', 'focused', look='hero')],
-  camera=cam('medium', ['hero', 'bestie'], 0))
+  camera=cam('medium', 'hero', -15))
 S('y9', 'cafeteria', 'Primeira vez: o celular toca baixo demais. Eles param no bebedouro.', variant=1,
   actors=[Z('zA', [0.4, 0, 0.0], 0, path=walk([0.4, 0, 0.0], [0.4, 0, 1.2], 0.2, 2.4)), Z('zC', [-0.4, 0, -0.4], 0, path=walk([-0.4, 0, -0.4], [-0.5, 0, 0.8], 0.2, 2.4)),
           A('hero', [0.0, 0, 4.4], 180, 'holdOut', 'confused', hold={'R': 'phone'})],
@@ -413,8 +421,7 @@ WOKEN = [A(f'w{k}', p, r, FLOORSIT, f) for k, (p, r, f) in enumerate([('midfield
 S('z1', 'stadium', 'Por uma hora, funciona.', variant=1,
   actors=WOKEN + [A('hero', 'midfield+0.2,0,3.4', 170, 'confident', 'smile')], camera=cam('wide', 'hero', 10, height=14, move='craneUp'))
 S('z2', 'classroom', 'Até você olhar o relógio da parede. Onze e cinquenta e seis.', variant=0,
-  actors=[A('hero', 'aisle', -90, 'stand', 'shocked')], camera=cam('close', 'hero', 40, height=-6),
-  overlays=[{'type': 'label', 'text': '11:56', 'at': '@onze', 'corner': 'tr'}], sfx=[{'t': '@onze', 'name': 'ticks', 'dur': 1.4}])
+  actors=[A('hero', 'aisle', -90, 'stand', 'shocked')], camera=cam('close', 'hero', 40, height=-6), sfx=[{'t': '@onze', 'name': 'ticks', 'dur': 1.4}])
 S('z3', 'classroom', 'O sinal do meio-dia é o mais longo do dia. E a caixa de som dele fica na parede desta sala.', variant=0, props=[BELL_CLS],
   camera={'pos': [-0.6, 1.6, 0.6], 'look': [-2.4, 2.4, -4.85], 'fov': 36, 'move': 'pushIn'})
 S('z4', 'classroom', 'Onde estão quarenta alunos. A diretora. E a sua irmã.', variant=0,
@@ -448,7 +455,7 @@ S('d6', 'classroom', 'A sua escola... ou você.', hold=2.0, variant=0,
 # ---------------------------------------------------------------- 13. clímax
 S('e1', 'classroom', 'Você não luta. Você leva pra fora.', variant=0,
   actors=[A('hero', 'aisle', -60, 'determined', 'determined', hold={'R': 'whistle'}, path=[{'t': '@leva', 'pos': 'aisle'}, {'t': '@fora+0.8', 'pos': 'aisle+0,0,3.4', 'gait': 'run'}])],
-  camera=cam('medium', 'hero', -40), overlays=[dict(CD)])
+  camera=cam('medium', 'hero', 5, height=14), overlays=[dict(CD)])
 S('e2', 'stadium', 'Você corre pro meio do campo. Meio-dia. Sol a pino. A mesma hora das formigas.', variant=1,
   actors=[A('hero', 'midfield+-10,0,12', -20, 'stand', 'determined', hold={'R': 'whistle'}, path=[{'t': 0.1, 'pos': 'midfield+-10,0,12'}, {'t': 4.0, 'pos': 'midfield', 'gait': 'run'}])],
   camera=cam('wide', 'hero', 70, height=14, move='track'), overlays=[dict(CD)])
@@ -459,7 +466,7 @@ HORDE1 = [('zA', 'midfield+-9,0,20', -9.6), ('zB', 'midfield+-6,0,21', -7.4), ('
 S('e4', 'stadium', 'Os primeiros zumbis aparecem na beira do campo.', variant=1,
   actors=[A('hero', 'midfield', -20, WHISTLE, 'determined', hold={'R': 'whistle'})] + [Z(i, p, 160, path=walk(p, q, 0.0, 5)) for i, p, q in
           [('zA', 'midfield+-9,0,20', 'midfield+-7.2,0,15'), ('zB', 'midfield+-6,0,21', 'midfield+-4.8,0,16'), ('zC', 'midfield+-12,0,19', 'midfield+-9.6,0,14.6')]],
-  camera={'pos': [2.6, 1.5, -2.6], 'look': [-6.5, 1.2, 15], 'fov': 26}, overlays=[dict(CD)], sfx=[{'t': 0.5, 'name': 'groanLow'}])
+  camera={'pos': [2.6, 1.5, -2.6], 'look': [-6.5, 1.2, 15], 'fov': 19}, overlays=[dict(CD)], sfx=[{'t': 0.5, 'name': 'groanLow'}])
 S('e5', 'stadium', 'Duas vezes. O bando vai atrás dos primeiros.', variant=1,
   actors=[A('hero', 'midfield', -20, WHISTLE, 'determined', hold={'R': 'whistle'})] +
          horde(crowd(10, -14, 6, 15, 23, seed=21, gap=1.4), rot=face_to(0, 0), to=(0, 0, 0.2), first=20) +
@@ -507,27 +514,28 @@ S('f1', 'stadium', 'Você tá com cheiro de cogumelo.', who='female', variant=1,
 S('f2', 'stadium', 'Quem estava apitando no recreio?', who='adulto', variant=1,
   actors=[A('jorge', 'midfield+-1.1,0,1.2', 140, 'armsCrossed', 'angry', talk=TALK, look='hero'), A('hero', 'midfield', -20, FLOORSIT, 'embarrassed', look='jorge')],
   camera=cam('medium', 'jorge', 20))
-S('f3', 'stadium', 'Você devolve o apito.', variant=1,
-  actors=[A('hero', 'midfield', -20, FLOORSIT, 'embarrassed', hold={'R': 'whistle'}, look='jorge',
-            poses=[{'t': '@devolve', 'pose': dict(FLOORSIT, armR=[70, 10, 0, 10], handR='fist')}])],
-  camera=cam('close', 'hero', -30))
+S('f3', 'stadium', 'Você devolve o apito. [deadpan] Ele te devolve uma advertência.', variant=1,
+  actors=[A('hero', 'midfield', -20, FLOORSIT, 'embarrassed', hold={'R': 'whistle'}, look='jorge', contact=True,
+            poses=[{'t': '@devolve', 'pose': dict(FLOORSIT, armR=[70, 10, 0, 10], handR='fist')}]),
+          A('jorge', 'midfield+-0.35,0,1.05', 160, {'spine': [22, 0, 0], 'head': [18, 0, 0], 'armR': [55, -8, 0, 20], 'handR': 'open'}, 'suspicious', look='hero', contact=True)],
+  camera=cam('full', ['hero', 'jorge'], -100, height=8))
 NEWS1 = 'ESCOLA FECHA POR UM DIA. MOTIVO OFICIAL: MOFO'
 NEWS2 = 'ALUNO LEVA SUSPENSÃO POR APITAR NO RECREIO'
 S('f4', 'home', 'No jornal da noite, a escola fecha por um dia. Motivo oficial: mofo.', time='interiorNight',
   actors=[A('mom', 'couch', 90, 'sit', 'surprised'), A('hero', 'couch+0,0,0.9', 90, 'sit', 'tired')],
-  camera={'pos': [4.0, 1.35, 1.3], 'look': [1.75, 1.0, 0.05], 'fov': 40}, overlays=[{'type': 'news', 'headline': NEWS1, 'tag': 'URGENTE', 'at': 0.4}])
+  camera={'pos': [4.0, 1.35, 1.3], 'look': [1.75, 1.0, 0.05], 'fov': 40}, overlays=[{'type': 'news', 'headline': NEWS1, 'tag': 'URGENTE', 'at': 0.4, 'safe': True}])
 S('f5', 'home', 'E o vídeo de um aluno viraliza. O título: aluno leva suspensão por apitar no recreio.', time='interiorNight',
   actors=[A('mom', 'couch', 90, 'sit', 'suspicious', look='hero'), A('hero', 'couch+0,0,0.9', 90, 'sit', 'embarrassed')],
-  camera={'pos': [3.7, 1.3, 0.2], 'look': [1.75, 1.0, 0.25], 'fov': 38, 'move': 'pushIn'}, overlays=[{'type': 'news', 'headline': NEWS2, 'tag': 'VIRAL', 'at': '@viraliza'}])
-S('f6', 'home', 'Suspenso? Por apitar?', who='adulta', time='interiorNight',
-  actors=[A('mom', 'couch', 90, 'sit', 'confused', look='hero', talk=TALK)], camera={'pos': [3.0, 1.15, -0.9], 'look': [1.75, 1.05, -0.4], 'fov': 34})
-S('f7', 'home', 'É uma longa história.', time='interiorNight',
+  camera={'pos': [3.7, 1.3, 0.2], 'look': [1.75, 1.0, 0.25], 'fov': 38, 'move': 'pushIn'}, overlays=[{'type': 'news', 'headline': NEWS2, 'tag': 'VIRAL', 'at': '@viraliza', 'safe': True}])
+S('f6', 'home', 'Suspenso? [pause] E o vídeo tem quantas visualizações?', who='adulta', time='interiorNight',
+  actors=[A('mom', 'couch', 90, 'sit', 'confused', look='hero', talk=[[0.05, 4.0]], faces=[{'t': '@vídeo', 'face': 'smug', 'blend': 0.3}])], camera={'pos': [3.0, 1.15, -0.9], 'look': [1.75, 1.05, -0.4], 'fov': 34})
+S('f7', 'home', 'Dois milhões.', time='interiorNight',
   actors=[A('hero', 'couch+0,0,0.9', 90, 'sit', 'tired', look='mom', talk=[[0.05, 1.2]])], camera={'pos': [3.0, 1.15, 1.2], 'look': [1.75, 1.05, 0.5], 'fov': 34})
-S('f8', 'home', 'Vai tomar banho. Você tá com cheiro de cogumelo.', who='adulta', time='interiorNight',
-  actors=[A('mom', 'couch', 90, 'sit', 'smile', look='hero', talk=TALK), A('hero', 'couch+0,0,0.9', 90, 'sit', 'embarrassed')],
+S('f8', 'home', 'Ótimo. Amanhã a gente vende camiseta. Agora vai tomar banho, você tá com cheiro de cogumelo.', who='adulta', time='interiorNight',
+  actors=[A('mom', 'couch', 90, 'sit', 'smug', look='hero', talk=[[0.05, 6.0]]), A('hero', 'couch+0,0,0.9', 90, 'sit', 'embarrassed')],
   camera={'pos': [4.0, 1.35, 1.3], 'look': [1.75, 1.0, 0.05], 'fov': 40})
 S('f9', 'bedroom', 'De manhã, você jogou o celular longe pra fugir de um zumbi. De tarde, você chamou quatrocentos pra perto.', time='interiorNight',
-  actors=[A('hero', 'window', 180, 'stand', 'smile')], camera=cam('medium', 'hero', 150, move='pushIn'))
+  actors=[A('hero', 'window+0,0,0.6', 0, 'stand', 'smile')], camera=cam('medium', 'hero', 15, move='pushIn'))  # back to the night window, facing us
 
 # ---------------------------------------------------------------- 15. mundo maior
 S('g1', 'home', 'Mas naquela noite, você assiste o vídeo de novo. Quadro por quadro.', time='interiorNight',
@@ -560,9 +568,9 @@ S('h2', 'suburb', 'Ele levanta o rosto. E brilha. Verde.',
 S('h3', 'suburb', 'Ele está no sol faz muito mais que trinta segundos. E não cura. Não geme. Anda normal.',
   actors=[A('estranho', STRANGER_DAY, 90, 'stand', 'neutral', glow=GREEN, path=[{'t': '@anda', 'pos': STRANGER_DAY}, {'t': '@normal+2', 'pos': 'farSidewalk+4,0,0.4', 'gait': 'walk'}])],
   camera=cam('full', 'estranho', 40, move='track'))
-S('h4', 'suburb', 'Trinta segundos. Bom saber.', who='adulto',
+S('h4', 'suburb', '[menacing] Trinta segundos. Bom saber.', who='adulto',
   actors=[A('estranho', 'farSidewalk+4,0,0.4', 180, 'stand', 'smirk', glow=GREEN, look='camera', talk=TALK)], camera=cam('xclose', 'estranho', 0))
-S('h5', 'suburb', 'Um zumbi que pensa. E agora, ele conhece as suas regras.', hold=1.2,
+S('h5', 'suburb', '[menacing] Um zumbi que pensa. E agora, ele conhece as suas regras.', hold=1.2,
   actors=[A('hero', 'sidewalk', 0, 'stand', 'scared')], camera=cam('xclose', 'hero', 10, move='pushIn'),
   fx={'vignette': 0.5}, sfx=[{'t': '@regras', 'name': 'subdrop'}])
 
@@ -571,6 +579,36 @@ S('i1', 'suburb', 'Então: o que você faria primeiro numa escola só sua? E o h
   time='golden', actors=[A('hero', 'sidewalk', 10, 'confident', 'smirk', hold={'R': 'whistle'})],
   camera=cam('wide', 'hero', 30, height=5, move='pullOut'),
   overlays=[{'type': 'title', 'small': 'O QUE VOCÊ FARIA PRIMEIRO?', 'big': 'ELE TROUXE O FUNGO?', 'at': '@capa'}])
+
+# ---------------------------------------------------------------- estilo novo (2026-11-08): ritmo, destaques, cortes
+# Same voice as before (no vo text changes here): only cuts, sub-cuts and 2D overlays.
+by_id = {s['id']: s for s in shots}
+# smash cuts on reveals / punchlines (set by hand; apply_ritmo leaves explicit cuts alone)
+for sid in ('x6', 'e9', 'h2', 'k9'):
+    by_id[sid]['cut'] = 'smash'
+# the dilemma breathes: calm sub-cuts; the held decision and the fade-out stay one take
+for sid in ('d1', 'd4', 'd5'):
+    by_id[sid]['coverage'] = 'calm'
+for sid in ('d6', 'e11', 'h5', 'x9', 'x5', 'g1', 'p4', 'm5', 'p8', 'r3', 'r4', 'r6', 'k3', 'k6', 'c4', 'f9', 'i1', 'q3', 'f3'):  # x9: tight hiding close; x5: framed on the speaker box; g1: orbit shows his nape; p4: punch-in centres Jorge's back
+    by_id[sid]['coverage'] = 'off'
+# palavra-destaque: the key word pops in on its cue, inside the 9:16 centre column
+WORDS = {
+    'c4': [('VERDE', '@verde')],
+    's9': [('50 MINUTOS', '@cinquenta')],
+    'p7': [('10 SEGUNDOS', '@dez')],
+    'r4': [('EDUCADO DEMAIS', '@educado', {'color': 'white'})],
+    'k2': [('3 SOBREMESAS', '@três')],
+    'q3': [('6 ISCAS', '@seis')],
+    'x7': [('150 ZUMBIS', '@cento')],
+    'z2': [('11:56', '@onze', {'color': 'red'})],
+    'z5': [('400 ZUMBIS', '@quatrocentos')],
+    'e7': [('30 SEGUNDOS', '@trinta', {'y': 'top'})],  # the sun clock sits bottom-centre
+    'h5': [('QUE PENSA', '@pensa')],
+}
+for sid, ws in WORDS.items():
+    for w in ws:
+        by_id[sid].setdefault('overlays', []).append({'type': 'word', 'text': w[0], 'at': w[1], **(w[2] if len(w) > 2 else {})})
+apply_ritmo(shots)
 
 # ---------------------------------------------------------------- episode
 idx = {s['id']: i for i, s in enumerate(shots)}
@@ -594,6 +632,7 @@ cast = {
 }
 ep = {
     'slug': SLUG,
+    'hookCheck': False,  # made before the first-10-s hook rule (2026-11-09); the user chose not to apply it here
     'title': 'E Se Você Salvasse Sua Escola de Uma Invasão Zumbi?',
     'voice': {'id': 'u7N1p4OIOc6Fl7y72WE7', 'model': 'eleven_v4'},
     'voices': {'adulto': 'u4sbCzXyUVxIAihOtCss', 'adulta': 'dxIMMSJYSsbUSMhioLNb'},
@@ -614,6 +653,15 @@ ep = {
         {'shot': idx['i1'], 'mood': 'curious'},
     ],
     'shots': shots,
+    # ≥ 4 self-contained ~90 s shorts the user cuts by hand (cold hook in, punch/cliffhanger out)
+    'clips': [{'title': t, 'from': a, 'to': b} for t, a, b in [
+        ('Meu colega virou zumbi no meio da prova', 'c1', 'm7'),
+        ('Esse fungo zumbi existe de verdade', 's1', 'p8'),
+        ('As 3 regras pra sobreviver aos zumbis', 'r1', 'k10'),
+        ('O som mais alto da escola', 'q1', 'x9'),
+        ('400 zumbis e um apito', 'z1', 'e12'),
+        ('O homem da capa amarela', 'f4', 'h5'),
+    ]],
 }
 
 
@@ -632,8 +680,12 @@ def resolve_countdowns():
         sh = tm['shots'][idx[sid]]
         return sh['start'] + next(t for w, t in sh['words'] if w == word)
 
-    clocks = {'bell': (wt('z6', 'quatro'), wt('e6', 'toca'), 240, 'tr', 'e6'),
-              'sun': (wt('e7', 'trinta'), tm['shots'][idx['e11']]['start'] + tm['shots'][idx['e11']]['dur'], 30, 'tl', 'e11')}
+    # both clocks sit bottom-centre (9:16 column, off the faces); they never overlap in time
+    # y5: 0:30 runs down to 0:00 on "pisca"
+    y5 = shots[idx['y5']]['overlays'][0]
+    y5['tick'] = round(30 / max(0.5, wt('y5', 'pisca') - tm['shots'][idx['y5']]['start'] - 0.1), 3)
+    clocks = {'bell': (wt('z6', 'quatro'), wt('e6', 'toca'), 240, 'bc', 'e6'),
+              'sun': (wt('e7', 'trinta'), tm['shots'][idx['e11']]['start'] + tm['shots'][idx['e11']]['dur'], 30, 'bc', 'e11')}
     for i, sh in enumerate(shots):
         for o in sh.get('overlays', []):
             kind = o.pop('cd', None)

@@ -7,7 +7,7 @@
 //   from        first value text, e.g. "0.25 s"
 //   to          optional second value text, e.g. "0.025 s"
 //   switchAt    seconds (since appear) when `from` changes to `to` (default 1.2)
-//   corner      'tr' (default) | 'tl' | 'br' | 'bl'
+//   corner      'tr' (default) | 'tl' | 'br' | 'bl' | 'tc' / 'bc' (top / bottom centre: inside the 9:16 column; bc keeps it off faces in close-ups)
 //   size        icon size in px (default 112); the value text scales with it
 //   speed       hand revolutions per second (default 1)
 //   speedAfter  revolutions per second after the switch (default speed / 10)
@@ -20,7 +20,7 @@ import { Icon } from '../cards/icons';
 import { C, COND, backOut, clamp01, easeIn, easeOut, seg } from '../cards/kit';
 
 export const Stopwatch: React.FC<{
-  t: number; from: string; to?: string; switchAt?: number; corner?: 'tl' | 'tr' | 'bl' | 'br'; size?: number; speed?: number; speedAfter?: number;
+  t: number; from: string; to?: string; switchAt?: number; corner?: 'tl' | 'tr' | 'bl' | 'br' | 'tc' | 'bc'; size?: number; speed?: number; speedAfter?: number;
   dur?: number; persist?: boolean; tick?: number; keep?: boolean; W?: number; H?: number;
 }> = ({ t, from: from0, to, switchAt = 1.2, corner = 'tr', size = 112, speed = 1, speedAfter, dur, persist, tick, keep, W = 1920, H = 1080 }) => {
   if (t < 0) return null;
@@ -35,13 +35,13 @@ export const Stopwatch: React.FC<{
   const outK = dur != null && !keep ? easeIn(seg(t, dur - 0.3, dur)) : 0;
   if (outK >= 1) return null;
   const right = corner === 'tr' || corner === 'br';
-  const bottom = corner === 'bl' || corner === 'br';
+  const bottom = corner === 'bl' || corner === 'br' || corner === 'bc';
   const sa = speedAfter ?? speed / 10;
   const hasSwitch = !!to;
   const sw = hasSwitch ? switchAt : Infinity;
   const turns = t <= sw ? speed * t : speed * sw + sa * (t - sw);
   const pad = 70;
-  const cx = right ? W - pad - size / 2 : pad + size / 2;
+  const cx = corner === 'tc' || corner === 'bc' ? W / 2 : right ? W - pad - size / 2 : pad + size / 2;
   const cy = bottom ? H - pad - size * 1.2 : pad + size / 2;
   const draw = persist ? 1 : seg(t, 0, 0.4);
   const ds = t >= sw ? t - sw : -1;

@@ -1,5 +1,6 @@
 {
  "slug": "invasao-zumbi",
+ "hookCheck": false,
  "title": "E Se Você Salvasse Sua Escola de Uma Invasão Zumbi?",
  "voice": {
   "id": "u7N1p4OIOc6Fl7y72WE7",
@@ -802,7 +803,8 @@
      "name": "ring",
      "dur": 2.2
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "c2",
@@ -844,7 +846,8 @@
      "name": "ring",
      "dur": 1.6
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "c3",
@@ -915,7 +918,8 @@
      "t": "@devagar",
      "name": "groan"
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "c4",
@@ -941,6 +945,14 @@
     {
      "t": "@brilhando",
      "name": "glint"
+    }
+   ],
+   "coverage": "off",
+   "overlays": [
+    {
+     "type": "word",
+     "text": "VERDE",
+     "at": "@verde"
     }
    ]
   },
@@ -984,11 +996,11 @@
      4.8
     ],
     "look": [
-     1.3,
-     0.8,
-     1.0
+     0.9,
+     0.9,
+     0.7
     ],
-    "fov": 42
+    "fov": 36
    },
    "props": [
     {
@@ -1011,7 +1023,8 @@
      "name": "ring",
      "dur": 2.4
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "c6",
@@ -1118,7 +1131,8 @@
      "name": "ring",
      "dur": 2.0
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "c7",
@@ -1172,11 +1186,28 @@
      6.6
     ],
     "look": [
-     3.2,
-     0.9,
-     1.4
+     1.6,
+     1.0,
+     0.9
     ],
-    "fov": 46
+    "to": {
+     "pos": [
+      1.8,
+      1.9,
+      6.6
+     ],
+     "look": [
+      4.3,
+      0.9,
+      2.2
+     ]
+    },
+    "moveAt": [
+     0.3,
+     4.6
+    ],
+    "ease": "cruise",
+    "fov": 40
    },
    "props": [
     {
@@ -1199,7 +1230,8 @@
      "name": "ring",
      "dur": 2.6
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "c8",
@@ -1233,7 +1265,8 @@
     "target": "bestie",
     "angle": 15
    },
-   "who": "male"
+   "who": "male",
+   "coverage": "fast"
   },
   {
    "id": "c9",
@@ -1260,7 +1293,8 @@
     "target": "hero",
     "angle": -25
    },
-   "hold": 0.3
+   "hold": 0.3,
+   "coverage": "fast"
   },
   {
    "id": "c10",
@@ -1508,12 +1542,14 @@
      "t": 0.5,
      "name": "groanLow"
     }
-   ]
+   ],
+   "coverage": "fast",
+   "cut": "whip"
   },
   {
    "id": "t1",
    "set": "cafeteria",
-   "vo": "E se você salvasse sua escola de uma invasão zumbi? Vamos destrinchar isso.",
+   "vo": "E se você salvasse sua escola de uma invasão zumbi? [mischievously] Spoiler: vai custar caro. Pra você.",
    "actors": [
     {
      "id": "hero",
@@ -1643,7 +1679,8 @@
      "big": "DE UMA INVASÃO ZUMBI?",
      "at": 0.2
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "m1",
@@ -1712,12 +1749,14 @@
      "bg": "#f6f2e8",
      "fg": "#1d2333"
     }
-   ]
+   ],
+   "coverage": "fast",
+   "cut": "zoom"
   },
   {
    "id": "m2",
    "set": "classroom",
-   "vo": "Hoje cedo, alguém derrubou o pote.",
+   "vo": "Hoje cedo, alguém derrubou o pote. [deadpan] E não contou pra ninguém.",
    "camera": {
     "pos": [
      -2.5,
@@ -1796,7 +1835,8 @@
      "t": "@pote+0.1",
      "name": "debris"
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "m3",
@@ -1810,22 +1850,22 @@
   {
    "id": "m4",
    "set": "void",
-   "vo": "Mas não do tipo de filme. Ninguém morde. Ninguém se machuca. Eles só andam devagar, gemem, e brilham verde.",
+   "vo": "Mas não do tipo de filme. Ninguém morde. Eles só andam devagar, gemem, e brilham verde. [deadpan] Igual você numa segunda.",
    "actors": [
     {
      "id": "zA",
-     "pos": "left",
+     "pos": "left+1.5,0,0",
      "rot": 20,
      "pose": "zombie",
      "face": "zombie",
      "path": [
       {
        "t": 0.2,
-       "pos": "left"
+       "pos": "left+1.5,0,0"
       },
       {
        "t": 6,
-       "pos": "left+0.8,0,1.4",
+       "pos": "left+1.7,0,1.4",
        "gait": "shamble"
       }
      ],
@@ -1833,18 +1873,18 @@
     },
     {
      "id": "zC",
-     "pos": "right",
+     "pos": "right+-1.5,0,0",
      "rot": -20,
      "pose": "zombie",
      "face": "zombie",
      "path": [
       {
        "t": 0.2,
-       "pos": "right"
+       "pos": "right+-1.5,0,0"
       },
       {
        "t": 6,
-       "pos": "right+-0.8,0,1.4",
+       "pos": "right+-1.7,0,1.4",
        "gait": "shamble"
       }
      ],
@@ -1865,7 +1905,8 @@
      "t": "@gemem",
      "name": "groan"
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "m5",
@@ -1916,7 +1957,8 @@
     "target": "hero",
     "angle": 20,
     "move": "pullOut"
-   }
+   },
+   "coverage": "off"
   },
   {
    "id": "m6",
@@ -1945,7 +1987,8 @@
     "target": "hero",
     "angle": -10,
     "move": "pushIn"
-   }
+   },
+   "coverage": "fast"
   },
   {
    "id": "s1",
@@ -2014,7 +2057,8 @@
     "target": "hero",
     "angle": 15,
     "move": "drift"
-   }
+   },
+   "coverage": "fast"
   },
   {
    "id": "s6",
@@ -2069,7 +2113,7 @@
   {
    "id": "s9",
    "set": "classroom",
-   "vo": "Cinquenta minutos. O tempo de uma aula. É isso que a sua escola tem.",
+   "vo": "Cinquenta minutos. O tempo de uma aula. Depois disso, a escola vira quarentena. [darkly amused] Com você trancado do lado de dentro.",
    "actors": [
     {
      "id": "hero",
@@ -2092,7 +2136,15 @@
      "name": "ticks",
      "dur": 1.2
     }
-   ]
+   ],
+   "overlays": [
+    {
+     "type": "word",
+     "text": "50 MINUTOS",
+     "at": "@cinquenta"
+    }
+   ],
+   "coverage": "fast"
   },
   {
    "id": "p1",
@@ -2181,7 +2233,9 @@
     "fov": 46,
     "move": "drift"
    },
-   "variant": 1
+   "variant": 1,
+   "coverage": "fast",
+   "cut": "whip"
   },
   {
    "id": "p2",
@@ -2208,7 +2262,8 @@
     "angle": 0
    },
    "who": "adulto",
-   "variant": 1
+   "variant": 1,
+   "coverage": "fast"
   },
   {
    "id": "p3",
@@ -2253,7 +2308,8 @@
      "name": "whistle",
      "dur": 0.9
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "p4",
@@ -2386,7 +2442,8 @@
      "t": "@param",
      "name": "groan"
     }
-   ]
+   ],
+   "coverage": "off"
   },
   {
    "id": "p5",
@@ -2416,7 +2473,8 @@
     "angle": -20
    },
    "who": "adulto",
-   "variant": 1
+   "variant": 1,
+   "coverage": "fast"
   },
   {
    "id": "p6",
@@ -2483,12 +2541,13 @@
     ],
     "fov": 36
    },
-   "variant": 1
+   "variant": 1,
+   "coverage": "fast"
   },
   {
    "id": "p7",
    "set": "cafeteria",
-   "vo": "Dez segundos depois, o Seu Jorge está gemendo junto.",
+   "vo": "Dez segundos depois, o Seu Jorge está gemendo junto. [darkly amused] Afinadíssimo.",
    "actors": [
     {
      "id": "jorge",
@@ -2527,7 +2586,15 @@
      "t": "@gemendo",
      "name": "groanLow"
     }
-   ]
+   ],
+   "overlays": [
+    {
+     "type": "word",
+     "text": "10 SEGUNDOS",
+     "at": "@dez"
+    }
+   ],
+   "coverage": "fast"
   },
   {
    "id": "p8",
@@ -2546,8 +2613,77 @@
      "face": "focused",
      "poses": [
       {
+       "t": 0,
+       "pose": {
+        "hipY": -0.42,
+        "spine": [
+         38,
+         0,
+         0
+        ],
+        "head": [
+         20,
+         0,
+         0
+        ],
+        "legL": [
+         80,
+         6,
+         100
+        ],
+        "legR": [
+         60,
+         6,
+         110
+        ],
+        "armR": [
+         70,
+         6,
+         0,
+         10
+        ],
+        "armL": [
+         20,
+         10,
+         0,
+         30
+        ],
+        "handR": "fist"
+       }
+      },
+      {
+       "t": "@pega",
+       "pose": "crouch",
+       "blend": 0.4
+      },
+      {
        "t": "@guarda",
-       "pose": "stand",
+       "pose": {
+        "hipY": 0,
+        "legL": [
+         0,
+         0,
+         0
+        ],
+        "legR": [
+         0,
+         0,
+         0
+        ],
+        "spine": [
+         4,
+         0,
+         0
+        ],
+        "reachR": {
+         "to": "pocket"
+        },
+        "head": [
+         10,
+         0,
+         0
+        ]
+       },
        "blend": 0.6
       }
      ],
@@ -2557,7 +2693,7 @@
     }
    ],
    "camera": {
-    "shot": "medium",
+    "shot": "full",
     "target": "hero",
     "angle": 20
    },
@@ -2567,7 +2703,8 @@
      "t": "@cai",
      "name": "click"
     }
-   ]
+   ],
+   "coverage": "off"
   },
   {
    "id": "r1",
@@ -2685,7 +2822,25 @@
       0.03,
       4.4
      ],
-     "color": "#c8402f"
+     "color": "#c8402f",
+     "path": [
+      {
+       "t": "@livro",
+       "pos": [
+        3.8,
+        0.95,
+        4.4
+       ]
+      },
+      {
+       "t": "@batendo",
+       "pos": [
+        3.8,
+        0.03,
+        4.4
+       ]
+      }
+     ]
     }
    ],
    "sfx": [
@@ -2702,7 +2857,8 @@
      "t": "@outro",
      "name": "thud"
     }
-   ]
+   ],
+   "coverage": "off"
   },
   {
    "id": "r4",
@@ -2859,6 +3015,15 @@
      "dur": 2.0,
      "vol": -8
     }
+   ],
+   "coverage": "off",
+   "overlays": [
+    {
+     "type": "word",
+     "text": "EDUCADO DEMAIS",
+     "at": "@educado",
+     "color": "white"
+    }
    ]
   },
   {
@@ -2962,7 +3127,8 @@
      "t": "@recua",
      "name": "groan"
     }
-   ]
+   ],
+   "coverage": "off"
   },
   {
    "id": "r7",
@@ -3199,7 +3365,8 @@
      "t": "@bando",
      "name": "groanLow"
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "r9",
@@ -3230,7 +3397,8 @@
     "angle": 10
    },
    "who": "male",
-   "variant": 1
+   "variant": 1,
+   "coverage": "fast"
   },
   {
    "id": "k1",
@@ -3270,7 +3438,8 @@
      ]
     }
    },
-   "variant": 1
+   "variant": 1,
+   "coverage": "fast"
   },
   {
    "id": "k2",
@@ -3300,11 +3469,8 @@
    ],
    "camera": {
     "shot": "medium",
-    "target": [
-     "hero",
-     "bestie"
-    ],
-    "angle": 0
+    "target": "hero",
+    "angle": 20
    },
    "variant": 1,
    "props": [
@@ -3318,7 +3484,15 @@
      "t": "@três",
      "name": "pop"
     }
-   ]
+   ],
+   "overlays": [
+    {
+     "type": "word",
+     "text": "3 SOBREMESAS",
+     "at": "@três"
+    }
+   ],
+   "coverage": "fast"
   },
   {
    "id": "k3",
@@ -3454,7 +3628,8 @@
      "dur": 3.0,
      "vol": -6
     }
-   ]
+   ],
+   "coverage": "off"
   },
   {
    "id": "k4",
@@ -3673,7 +3848,9 @@
      "t": 2.07,
      "name": "click"
     }
-   ]
+   ],
+   "coverage": "fast",
+   "cut": "zoom"
   },
   {
    "id": "k5",
@@ -3806,12 +3983,12 @@
    ],
    "camera": {
     "pos": [
-     -0.6,
+     -1.4,
      1.7,
      9.0
     ],
     "look": [
-     -1.0,
+     -2.1,
      0.9,
      4.4
     ],
@@ -3823,7 +4000,8 @@
      "t": "@todos",
      "name": "groanLow"
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "k6",
@@ -3880,25 +4058,37 @@
    ],
    "camera": {
     "pos": [
-     -0.6,
-     1.0,
-     4.4
+     -0.4,
+     1.3,
+     4.6
     ],
     "look": [
      -3.2,
-     0.55,
-     3.4
+     0.85,
+     3.5
     ],
-    "fov": 38,
+    "fov": 44,
     "move": "pushIn"
    },
    "variant": 1,
+   "props": [
+    {
+     "type": "desk",
+     "pos": [
+      -3.4,
+      0,
+      3.4
+     ],
+     "rot": 60
+    }
+   ],
    "sfx": [
     {
      "t": 0.4,
      "name": "groan"
     }
-   ]
+   ],
+   "coverage": "off"
   },
   {
    "id": "k7",
@@ -4046,7 +4236,8 @@
      "dur": 3.4,
      "vol": -6
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "k8",
@@ -4090,7 +4281,8 @@
     "fov": 34
    },
    "who": "female",
-   "variant": 1
+   "variant": 1,
+   "coverage": "fast"
   },
   {
    "id": "k9",
@@ -4132,12 +4324,14 @@
     ],
     "fov": 40
    },
-   "variant": 1
+   "variant": 1,
+   "cut": "smash",
+   "coverage": "fast"
   },
   {
    "id": "k10",
    "set": "classroom",
-   "vo": "É a melhor coisa que você faz o dia inteiro.",
+   "vo": "[deadpan] Ele te abraça. E limpa o nariz na sua blusa.",
    "actors": [
     {
      "id": "kid",
@@ -4159,23 +4353,24 @@
    "camera": {
     "pos": [
      -1.4,
-     1.35,
+     1.5,
      1.9
     ],
     "look": [
      -3.2,
-     0.95,
+     1.15,
      3.5
     ],
-    "fov": 40,
+    "fov": 42,
     "move": "pullOut"
    },
-   "variant": 1
+   "variant": 1,
+   "coverage": "fast"
   },
   {
    "id": "q1",
    "set": "void",
-   "vo": "Depois os problemas aparecem. Um de cada vez.",
+   "vo": "[darkly amused] Aí a escola cobra o aluguel. Em três problemas.",
    "actors": [
     {
      "id": "hero",
@@ -4190,7 +4385,9 @@
     "target": "hero",
     "angle": 0,
     "move": "pullOut"
-   }
+   },
+   "coverage": "fast",
+   "cut": "whip"
   },
   {
    "id": "q2",
@@ -4228,12 +4425,12 @@
     "angle": 25
    },
    "variant": 1,
+   "coverage": "off",
    "overlays": [
     {
-     "type": "label",
+     "type": "word",
      "text": "6 ISCAS",
-     "at": "@seis",
-     "corner": "tl"
+     "at": "@seis"
     }
    ]
   },
@@ -4279,7 +4476,9 @@
      "t": "@reclama",
      "name": "groan"
     }
-   ]
+   ],
+   "coverage": "fast",
+   "cut": "zoom"
   },
   {
    "id": "q5",
@@ -4315,7 +4514,8 @@
     "angle": 15
    },
    "who": "male",
-   "variant": 1
+   "variant": 1,
+   "coverage": "fast"
   },
   {
    "id": "q6",
@@ -4349,7 +4549,8 @@
     "target": "hero",
     "angle": -15
    },
-   "variant": 1
+   "variant": 1,
+   "coverage": "fast"
   },
   {
    "id": "q7",
@@ -4392,7 +4593,9 @@
     "fov": 40,
     "move": "pushIn"
    },
-   "variant": 0
+   "variant": 0,
+   "coverage": "fast",
+   "cut": "whip"
   },
   {
    "id": "q8",
@@ -4433,12 +4636,17 @@
     }
    ],
    "camera": {
-    "shot": "medium",
-    "target": [
-     "hero",
-     "sister"
+    "pos": [
+     -1.7,
+     1.35,
+     2.1
     ],
-    "angle": 40
+    "look": [
+     0.2,
+     0.85,
+     1.6
+    ],
+    "fov": 42
    },
    "variant": 0,
    "sfx": [
@@ -4450,7 +4658,8 @@
      "t": "@gemido",
      "name": "groanLow"
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "q9",
@@ -4478,13 +4687,11 @@
    ],
    "camera": {
     "shot": "medium",
-    "target": [
-     "hero",
-     "sister"
-    ],
+    "target": "hero",
     "angle": -40
    },
-   "variant": 0
+   "variant": 0,
+   "coverage": "fast"
   },
   {
    "id": "q10",
@@ -4511,7 +4718,8 @@
     "angle": 10
    },
    "who": "adulta",
-   "variant": 0
+   "variant": 0,
+   "coverage": "fast"
   },
   {
    "id": "q11",
@@ -4645,7 +4853,9 @@
      "bg": "#f6f2e8",
      "fg": "#1d2333"
     }
-   ]
+   ],
+   "coverage": "fast",
+   "cut": "zoom"
   },
   {
    "id": "q12",
@@ -4816,7 +5026,8 @@
      "t": 1.2,
      "name": "thud"
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "q13",
@@ -4848,7 +5059,8 @@
     "angle": 0
    },
    "who": "female",
-   "variant": 1
+   "variant": 1,
+   "coverage": "fast"
   },
   {
    "id": "x1",
@@ -4874,7 +5086,9 @@
      "t": "@verdade",
      "name": "subdrop"
     }
-   ]
+   ],
+   "coverage": "fast",
+   "cut": "whip"
   },
   {
    "id": "x2",
@@ -4937,7 +5151,8 @@
      "dur": 1.2,
      "vol": -4
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "x4",
@@ -5012,7 +5227,8 @@
      "d": 0.18,
      "color": "#c8402f"
     }
-   ]
+   ],
+   "coverage": "off"
   },
   {
    "id": "x6",
@@ -5064,7 +5280,9 @@
      "name": "bell",
      "dur": 3.0
     }
-   ]
+   ],
+   "cut": "smash",
+   "coverage": "fast"
   },
   {
    "id": "x7",
@@ -5546,7 +5764,15 @@
      "t": 0.6,
      "name": "groanLow"
     }
-   ]
+   ],
+   "overlays": [
+    {
+     "type": "word",
+     "text": "150 ZUMBIS",
+     "at": "@cento"
+    }
+   ],
+   "coverage": "fast"
   },
   {
    "id": "x8",
@@ -5673,7 +5899,8 @@
      "t": 0.3,
      "name": "thud"
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "x9",
@@ -5731,7 +5958,8 @@
      "t": "@sinal",
      "name": "heartbeat"
     }
-   ]
+   ],
+   "coverage": "off"
   },
   {
    "id": "y1",
@@ -5800,7 +6028,8 @@
      "name": "ticks",
      "dur": 1.0
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "y5",
@@ -5832,7 +6061,9 @@
     {
      "type": "stopwatch",
      "from": "0:30",
-     "at": 0.1
+     "at": 0.1,
+     "corner": "bc",
+     "tick": 17.493
     }
    ],
    "sfx": [
@@ -5840,7 +6071,8 @@
      "t": "@pisca",
      "name": "chime"
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "y6",
@@ -5867,7 +6099,8 @@
     "angle": -20
    },
    "who": "male",
-   "variant": 1
+   "variant": 1,
+   "coverage": "fast"
   },
   {
    "id": "y7",
@@ -5895,12 +6128,13 @@
      "t": "@cura",
      "name": "swell"
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "y8",
    "set": "cafeteria",
-   "vo": "Você e o Davi treinam: levar grupos pequenos pro sol, usando o som.",
+   "vo": "Você e o Davi treinam: levar grupos pequenos pro sol, usando o som. [deadpan] O Davi já cobra cinco reais por zumbi curado.",
    "actors": [
     {
      "id": "hero",
@@ -5931,13 +6165,12 @@
    ],
    "camera": {
     "shot": "medium",
-    "target": [
-     "hero",
-     "bestie"
-    ],
-    "angle": 0
+    "target": "hero",
+    "angle": -15
    },
-   "variant": 1
+   "variant": 1,
+   "coverage": "fast",
+   "cut": "zoom"
   },
   {
    "id": "y9",
@@ -6046,7 +6279,8 @@
      "t": "@bebedouro",
      "name": "pop"
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "y10",
@@ -6125,7 +6359,9 @@
      "t": "@perdem",
      "name": "pop"
     }
-   ]
+   ],
+   "coverage": "fast",
+   "cut": "whip"
   },
   {
    "id": "y11",
@@ -6208,7 +6444,8 @@
      "dur": 3.0,
      "vol": -8
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "y12",
@@ -6417,7 +6654,8 @@
     "height": 14,
     "move": "craneUp"
    },
-   "variant": 1
+   "variant": 1,
+   "coverage": "fast"
   },
   {
    "id": "z2",
@@ -6439,21 +6677,23 @@
     "height": -6
    },
    "variant": 0,
-   "overlays": [
-    {
-     "type": "label",
-     "text": "11:56",
-     "at": "@onze",
-     "corner": "tr"
-    }
-   ],
    "sfx": [
     {
      "t": "@onze",
      "name": "ticks",
      "dur": 1.4
     }
-   ]
+   ],
+   "overlays": [
+    {
+     "type": "word",
+     "text": "11:56",
+     "at": "@onze",
+     "color": "red"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "zoom"
   },
   {
    "id": "z3",
@@ -6487,7 +6727,8 @@
      "d": 0.18,
      "color": "#c8402f"
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "z4",
@@ -6515,7 +6756,8 @@
     "angle": -20,
     "move": "pushIn"
    },
-   "variant": 0
+   "variant": 0,
+   "coverage": "fast"
   },
   {
    "id": "z5",
@@ -6783,7 +7025,16 @@
      "t": 0.3,
      "name": "groanLow"
     }
-   ]
+   ],
+   "overlays": [
+    {
+     "type": "word",
+     "text": "400 ZUMBIS",
+     "at": "@quatrocentos"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "whip"
   },
   {
    "id": "z6",
@@ -6809,10 +7060,10 @@
     {
      "type": "stopwatch",
      "from": "4:00",
-     "tick": 4.652,
-     "corner": "tr",
+     "tick": 4.629,
+     "corner": "bc",
      "keep": true,
-     "at": 0.112
+     "at": 0.105
     }
    ],
    "sfx": [
@@ -6820,7 +7071,9 @@
      "t": "@quatro",
      "name": "heartbeat"
     }
-   ]
+   ],
+   "coverage": "fast",
+   "cut": "zoom"
   },
   {
    "id": "d1",
@@ -6845,12 +7098,13 @@
     {
      "type": "stopwatch",
      "from": "3:53",
-     "tick": 4.652,
-     "corner": "tr",
+     "tick": 4.629,
+     "corner": "bc",
      "keep": true,
      "persist": true
     }
-   ]
+   ],
+   "coverage": "calm"
   },
   {
    "id": "d2",
@@ -6875,8 +7129,8 @@
     {
      "type": "stopwatch",
      "from": "3:25",
-     "tick": 4.652,
-     "corner": "tr",
+     "tick": 4.629,
+     "corner": "bc",
      "keep": true,
      "persist": true
     }
@@ -6894,9 +7148,9 @@
    "overlays": [
     {
      "type": "stopwatch",
-     "from": "3:03",
-     "tick": 4.652,
-     "corner": "tr",
+     "from": "3:02",
+     "tick": 4.629,
+     "corner": "bc",
      "keep": true,
      "persist": true
     }
@@ -6928,13 +7182,14 @@
    "overlays": [
     {
      "type": "stopwatch",
-     "from": "2:37",
-     "tick": 4.652,
-     "corner": "tr",
+     "from": "2:36",
+     "tick": 4.629,
+     "corner": "bc",
      "keep": true,
      "persist": true
     }
-   ]
+   ],
+   "coverage": "calm"
   },
   {
    "id": "d5",
@@ -6966,13 +7221,14 @@
    "overlays": [
     {
      "type": "stopwatch",
-     "from": "1:55",
-     "tick": 4.652,
-     "corner": "tr",
+     "from": "1:54",
+     "tick": 4.629,
+     "corner": "bc",
      "keep": true,
      "persist": true
     }
-   ]
+   ],
+   "coverage": "calm"
   },
   {
    "id": "d6",
@@ -7002,15 +7258,16 @@
     {
      "type": "stopwatch",
      "from": "1:40",
-     "tick": 4.652,
-     "corner": "tr",
+     "tick": 4.629,
+     "corner": "bc",
      "keep": true,
      "persist": true
     }
    ],
    "fx": {
     "vignette": 0.35
-   }
+   },
+   "coverage": "off"
   },
   {
    "id": "e1",
@@ -7042,19 +7299,21 @@
    "camera": {
     "shot": "medium",
     "target": "hero",
-    "angle": -40
+    "angle": 5,
+    "height": 14
    },
    "variant": 0,
    "overlays": [
     {
      "type": "stopwatch",
-     "from": "1:20",
-     "tick": 4.652,
-     "corner": "tr",
+     "from": "1:19",
+     "tick": 4.629,
+     "corner": "bc",
      "keep": true,
      "persist": true
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "e2",
@@ -7094,13 +7353,15 @@
    "overlays": [
     {
      "type": "stopwatch",
-     "from": "1:08",
-     "tick": 4.652,
-     "corner": "tr",
+     "from": "1:07",
+     "tick": 4.629,
+     "corner": "bc",
      "keep": true,
      "persist": true
     }
-   ]
+   ],
+   "coverage": "fast",
+   "cut": "whip"
   },
   {
    "id": "e3",
@@ -7144,8 +7405,8 @@
     {
      "type": "stopwatch",
      "from": "0:43",
-     "tick": 4.652,
-     "corner": "tr",
+     "tick": 4.629,
+     "corner": "bc",
      "keep": true,
      "persist": true
     }
@@ -7156,7 +7417,8 @@
      "name": "whistle",
      "dur": 1.0
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "e4",
@@ -7257,15 +7519,15 @@
      1.2,
      15
     ],
-    "fov": 26
+    "fov": 19
    },
    "variant": 1,
    "overlays": [
     {
      "type": "stopwatch",
      "from": "0:34",
-     "tick": 4.652,
-     "corner": "tr",
+     "tick": 4.629,
+     "corner": "bc",
      "keep": true,
      "persist": true
     }
@@ -7275,7 +7537,8 @@
      "t": 0.5,
      "name": "groanLow"
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "e5",
@@ -7750,8 +8013,8 @@
     {
      "type": "stopwatch",
      "from": "0:23",
-     "tick": 4.652,
-     "corner": "tr",
+     "tick": 4.629,
+     "corner": "bc",
      "keep": true,
      "persist": true
     }
@@ -7766,7 +8029,8 @@
      "t": "@bando",
      "name": "groanLow"
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "e6",
@@ -7811,8 +8075,8 @@
     {
      "type": "stopwatch",
      "from": "0:10",
-     "tick": 4.652,
-     "corner": "tr",
+     "tick": 4.629,
+     "corner": "bc",
      "keep": false,
      "persist": true
     }
@@ -7830,7 +8094,8 @@
      "dur": 2.5,
      "vol": -14
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "e7",
@@ -8964,10 +9229,16 @@
     {
      "type": "stopwatch",
      "from": "0:30",
-     "tick": 2.451,
-     "corner": "tl",
+     "tick": 2.455,
+     "corner": "bc",
      "keep": true,
-     "at": 2.361
+     "at": 2.381
+    },
+    {
+     "type": "word",
+     "text": "30 SEGUNDOS",
+     "at": "@trinta",
+     "y": "top"
     }
    ],
    "sfx": [
@@ -8975,7 +9246,8 @@
      "t": 0.3,
      "name": "groanLow"
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "e8",
@@ -9133,8 +9405,8 @@
     {
      "type": "stopwatch",
      "from": "0:28",
-     "tick": 2.451,
-     "corner": "tl",
+     "tick": 2.455,
+     "corner": "bc",
      "keep": true,
      "persist": true
     }
@@ -9223,8 +9495,8 @@
     {
      "type": "stopwatch",
      "from": "0:20",
-     "tick": 2.451,
-     "corner": "tl",
+     "tick": 2.455,
+     "corner": "bc",
      "keep": true,
      "persist": true
     }
@@ -9234,7 +9506,9 @@
      "t": "@ombro",
      "name": "subdrop"
     }
-   ]
+   ],
+   "cut": "smash",
+   "coverage": "fast"
   },
   {
    "id": "e10",
@@ -9315,8 +9589,8 @@
     {
      "type": "stopwatch",
      "from": "0:16",
-     "tick": 2.451,
-     "corner": "tl",
+     "tick": 2.455,
+     "corner": "bc",
      "keep": true,
      "persist": true
     }
@@ -9326,7 +9600,8 @@
      "t": "@verde",
      "name": "glint"
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "e11",
@@ -9373,8 +9648,8 @@
     {
      "type": "stopwatch",
      "from": "0:09",
-     "tick": 2.451,
-     "corner": "tl",
+     "tick": 2.455,
+     "corner": "bc",
      "keep": false,
      "persist": true
     }
@@ -9395,7 +9670,8 @@
    ],
    "fx": {
     "vignette": 0.45
-   }
+   },
+   "coverage": "off"
   },
   {
    "id": "e12",
@@ -9652,7 +9928,8 @@
      "t": "@acorda",
      "name": "swell"
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "e13",
@@ -9689,7 +9966,8 @@
      "t": "@pisado",
      "name": "debris"
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "f1",
@@ -9756,7 +10034,8 @@
     "angle": 10
    },
    "who": "female",
-   "variant": 1
+   "variant": 1,
+   "coverage": "fast"
   },
   {
    "id": "f2",
@@ -9823,12 +10102,13 @@
     "angle": 20
    },
    "who": "adulto",
-   "variant": 1
+   "variant": 1,
+   "coverage": "fast"
   },
   {
    "id": "f3",
    "set": "stadium",
-   "vo": "Você devolve o apito.",
+   "vo": "Você devolve o apito. [deadpan] Ele te devolve uma advertência.",
    "actors": [
     {
      "id": "hero",
@@ -9871,6 +10151,7 @@
       "R": "whistle"
      },
      "look": "jorge",
+     "contact": true,
      "poses": [
       {
        "t": "@devolve",
@@ -9908,14 +10189,46 @@
        }
       }
      ]
+    },
+    {
+     "id": "jorge",
+     "pos": "midfield+-0.35,0,1.05",
+     "rot": 160,
+     "pose": {
+      "spine": [
+       22,
+       0,
+       0
+      ],
+      "head": [
+       18,
+       0,
+       0
+      ],
+      "armR": [
+       55,
+       -8,
+       0,
+       20
+      ],
+      "handR": "open"
+     },
+     "face": "suspicious",
+     "look": "hero",
+     "contact": true
     }
    ],
    "camera": {
-    "shot": "close",
-    "target": "hero",
-    "angle": -30
+    "shot": "full",
+    "target": [
+     "hero",
+     "jorge"
+    ],
+    "angle": -100,
+    "height": 8
    },
-   "variant": 1
+   "variant": 1,
+   "coverage": "off"
   },
   {
    "id": "f4",
@@ -9956,9 +10269,12 @@
      "type": "news",
      "headline": "ESCOLA FECHA POR UM DIA. MOTIVO OFICIAL: MOFO",
      "tag": "URGENTE",
-     "at": 0.4
+     "at": 0.4,
+     "safe": true
     }
-   ]
+   ],
+   "coverage": "fast",
+   "cut": "zoom"
   },
   {
    "id": "f5",
@@ -10001,14 +10317,16 @@
      "type": "news",
      "headline": "ALUNO LEVA SUSPENSÃO POR APITAR NO RECREIO",
      "tag": "VIRAL",
-     "at": "@viraliza"
+     "at": "@viraliza",
+     "safe": true
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "f6",
    "set": "home",
-   "vo": "Suspenso? Por apitar?",
+   "vo": "Suspenso? [pause] E o vídeo tem quantas visualizações?",
    "actors": [
     {
      "id": "mom",
@@ -10020,8 +10338,15 @@
      "talk": [
       [
        0.05,
-       3.0
+       4.0
       ]
+     ],
+     "faces": [
+      {
+       "t": "@vídeo",
+       "face": "smug",
+       "blend": 0.3
+      }
      ]
     }
    ],
@@ -10039,12 +10364,13 @@
     "fov": 34
    },
    "who": "adulta",
-   "time": "interiorNight"
+   "time": "interiorNight",
+   "coverage": "fast"
   },
   {
    "id": "f7",
    "set": "home",
-   "vo": "É uma longa história.",
+   "vo": "Dois milhões.",
    "actors": [
     {
      "id": "hero",
@@ -10074,24 +10400,25 @@
     ],
     "fov": 34
    },
-   "time": "interiorNight"
+   "time": "interiorNight",
+   "coverage": "fast"
   },
   {
    "id": "f8",
    "set": "home",
-   "vo": "Vai tomar banho. Você tá com cheiro de cogumelo.",
+   "vo": "Ótimo. Amanhã a gente vende camiseta. Agora vai tomar banho, você tá com cheiro de cogumelo.",
    "actors": [
     {
      "id": "mom",
      "pos": "couch",
      "rot": 90,
      "pose": "sit",
-     "face": "smile",
+     "face": "smug",
      "look": "hero",
      "talk": [
       [
        0.05,
-       3.0
+       6.0
       ]
      ]
     },
@@ -10117,7 +10444,8 @@
     "fov": 40
    },
    "who": "adulta",
-   "time": "interiorNight"
+   "time": "interiorNight",
+   "coverage": "fast"
   },
   {
    "id": "f9",
@@ -10126,8 +10454,8 @@
    "actors": [
     {
      "id": "hero",
-     "pos": "window",
-     "rot": 180,
+     "pos": "window+0,0,0.6",
+     "rot": 0,
      "pose": "stand",
      "face": "smile"
     }
@@ -10135,10 +10463,12 @@
    "camera": {
     "shot": "medium",
     "target": "hero",
-    "angle": 150,
+    "angle": 15,
     "move": "pushIn"
    },
-   "time": "interiorNight"
+   "time": "interiorNight",
+   "coverage": "off",
+   "cut": "whip"
   },
   {
    "id": "g1",
@@ -10170,7 +10500,9 @@
     "fov": 36,
     "move": "pushIn"
    },
-   "time": "interiorNight"
+   "time": "interiorNight",
+   "coverage": "off",
+   "cut": "zoom"
   },
   {
    "id": "g2",
@@ -10225,7 +10557,9 @@
    "variant": 1,
    "fx": {
     "grade": "flashback"
-   }
+   },
+   "coverage": "fast",
+   "cut": "whip"
   },
   {
    "id": "g3",
@@ -10257,7 +10591,8 @@
    "variant": 1,
    "fx": {
     "grade": "flashback"
-   }
+   },
+   "coverage": "fast"
   },
   {
    "id": "g4",
@@ -10303,7 +10638,8 @@
      "t": "@vazio",
      "name": "subdrop"
     }
-   ]
+   ],
+   "coverage": "fast"
   },
   {
    "id": "g5",
@@ -10354,7 +10690,9 @@
      "bg": "#f6f2e8",
      "fg": "#1d2333"
     }
-   ]
+   ],
+   "coverage": "fast",
+   "cut": "zoom"
   },
   {
    "id": "g6",
@@ -10384,7 +10722,8 @@
     "angle": 10,
     "move": "pushIn"
    },
-   "time": "interiorNight"
+   "time": "interiorNight",
+   "coverage": "fast"
   },
   {
    "id": "h1",
@@ -10412,7 +10751,8 @@
     "shot": "medium",
     "target": "estranho",
     "dist": 1.7
-   }
+   },
+   "cut": "whip"
   },
   {
    "id": "h2",
@@ -10440,7 +10780,9 @@
      "t": "@verde",
      "name": "subdrop"
     }
-   ]
+   ],
+   "cut": "smash",
+   "coverage": "fast"
   },
   {
    "id": "h3",
@@ -10472,12 +10814,13 @@
     "target": "estranho",
     "angle": 40,
     "move": "track"
-   }
+   },
+   "coverage": "fast"
   },
   {
    "id": "h4",
    "set": "suburb",
-   "vo": "Trinta segundos. Bom saber.",
+   "vo": "[menacing] Trinta segundos. Bom saber.",
    "actors": [
     {
      "id": "estranho",
@@ -10500,12 +10843,13 @@
     "target": "estranho",
     "angle": 0
    },
-   "who": "adulto"
+   "who": "adulto",
+   "coverage": "fast"
   },
   {
    "id": "h5",
    "set": "suburb",
-   "vo": "Um zumbi que pensa. E agora, ele conhece as suas regras.",
+   "vo": "[menacing] Um zumbi que pensa. E agora, ele conhece as suas regras.",
    "actors": [
     {
      "id": "hero",
@@ -10529,6 +10873,14 @@
     {
      "t": "@regras",
      "name": "subdrop"
+    }
+   ],
+   "coverage": "off",
+   "overlays": [
+    {
+     "type": "word",
+     "text": "QUE PENSA",
+     "at": "@pensa"
     }
    ]
   },
@@ -10563,7 +10915,40 @@
      "big": "ELE TROUXE O FUNGO?",
      "at": "@capa"
     }
-   ]
+   ],
+   "coverage": "off"
+  }
+ ],
+ "clips": [
+  {
+   "title": "Meu colega virou zumbi no meio da prova",
+   "from": "c1",
+   "to": "m7"
+  },
+  {
+   "title": "Esse fungo zumbi existe de verdade",
+   "from": "s1",
+   "to": "p8"
+  },
+  {
+   "title": "As 3 regras pra sobreviver aos zumbis",
+   "from": "r1",
+   "to": "k10"
+  },
+  {
+   "title": "O som mais alto da escola",
+   "from": "q1",
+   "to": "x9"
+  },
+  {
+   "title": "400 zumbis e um apito",
+   "from": "z1",
+   "to": "e12"
+  },
+  {
+   "title": "O homem da capa amarela",
+   "from": "f4",
+   "to": "h5"
   }
  ]
 }

@@ -362,6 +362,17 @@ const Mitten: React.FC<{ kind?: string; ink: Mat; side: 1 | -1 }> = ({ kind, ink
   );
 };
 
+/** onBeforeRender: place a glow sprite `back` metres behind `at`, on the far side from the camera. */
+function glowBehind(at: THREE.Vector3, back: number) {
+  const w = new THREE.Vector3();
+  return function (this: unknown, _r: unknown, _s: unknown, cam: THREE.Camera) {
+    const o = this as unknown as THREE.Object3D;
+    w.copy(at).sub(cam.position).normalize().multiplyScalar(back).add(at);
+    o.position.copy(o.parent ? o.parent.worldToLocal(w.clone()) : w);
+    o.updateMatrixWorld();
+  } as unknown as THREE.Object3D['onBeforeRender'];
+}
+
 let glowTex: THREE.Texture | null = null;
 export function glowTexture() {
   if (glowTex) return glowTex;
@@ -512,7 +523,10 @@ const StickmanBody: React.FC<{ s: ActorState; shadowBlob?: boolean; faceGlow?: s
       {leg('L')}
       {leg('R')}
       {s.spec.glow && !isGhost && (
-        <sprite position={s.anchors.chest.toArray()} scale={[2.4 * s.scale, 2.8 * s.scale, 1]} renderOrder={5}>
+        // pushed behind the body, away from the lens, every frame: an additive sprite in front of the
+        // head's outline hull tinted it green in close-ups (hard-won rule "additive volumes tint ink")
+        <sprite position={s.anchors.chest.toArray()} scale={[2.4 * s.scale, 2.8 * s.scale, 1]} renderOrder={5}
+          onBeforeRender={glowBehind(s.anchors.chest, 0.45 * s.scale)}>
           <spriteMaterial map={glowTexture()} color={s.spec.glow} transparent opacity={0.5} depthWrite={false} blending={THREE.AdditiveBlending} toneMapped={false} />
         </sprite>
       )}

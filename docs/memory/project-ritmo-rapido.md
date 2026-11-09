@@ -5,10 +5,10 @@ metadata:
   type: project
 ---
 
-On 2026-11-08 the user asked for livelier camera work and transitions, faster cuts ("manter a dopamina"), and 16:9 framing that also works cut down to 9:16. The 10 s test `final/Teste de Ritmo.mp4` (generator `tools/episodes/teste_ritmo.py`) got "agradou muito" → it became house style.
+On 2026-11-08 the user asked for livelier camera work and transitions, faster cuts ("manter a dopamina"), and 16:9 framing that also works cut down to 9:16. The 10 s test `final/Teste de Ritmo.mp4` (generator `tools/episodes/teste_ritmo.py`) got "agradou muito" → it became house style. (That test and its generator were deleted in the 2026-11-09 cleanup; invasao_zumbi.py's `estilo novo` block is now the reference.)
 
 - Engine: `coverage: fast|calm|off` and `camera.beats` (sub-cuts on word starts, src/episode/scene.ts); `cut: whip|zoom|smash` play on both sides of the cut (ShotView.tsx) with automatic SFX; the audit's `vertical` warning flags a target outside the 9:16 centre column.
-- Generators opt in with `episode(..., ritmo='rapido')` (`_modelo.py` does). Old episodes (quem-tem-crush, invasao-zumbi) stay unchanged on purpose.
+- Generators opt in with `episode(..., ritmo='rapido')` (`_modelo.py` does). invasao-zumbi was remade with it (`apply_ritmo`) on 2026-11-09.
 
 **Why:** the episodes felt slow (~3.9 s/shot, mostly near-static `drift`, no transitions).
 

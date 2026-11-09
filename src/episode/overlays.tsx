@@ -9,6 +9,7 @@ import { Stopwatch } from '../overlays/Stopwatch';
 import { Bubble } from '../overlays/Bubble';
 import { CrushMeter } from '../overlays/CrushMeter';
 import { NewsBar } from '../overlays/NewsBar';
+import { KeyWord } from '../overlays/KeyWord';
 import type { Overlay } from '../types';
 
 export type Projector = (actorId: string) => { x: number; y: number; visible: boolean; scale: number } | null;
@@ -53,13 +54,15 @@ const OverlayExt: React.FC<{ o: Overlay; t: number; project: Projector }> = ({ o
   const dur = (o as { until?: number; at?: number }).until !== undefined ? (o as { until: number }).until - ((o as { at?: number }).at ?? 0) : undefined;
   switch (o.type) {
     case 'title':
-      return <TitleOverlay t={t} big={o.big} small={o.small} dur={dur} />;
+      return <TitleOverlay t={t} big={o.big} small={o.small} dur={dur} compact={o.compact} />;
     case 'label':
       return <Label t={t} text={o.text} corner={o.corner} dur={dur} />;
     case 'stopwatch':
-      return <Stopwatch t={t} from={o.from || '0.00 s'} to={o.to} switchAt={(o as { switchAt?: number }).switchAt} dur={dur} persist={(o as { persist?: boolean }).persist} tick={(o as { tick?: number }).tick} keep={(o as { keep?: boolean }).keep} corner={(o as { corner?: 'tl' | 'tr' | 'bl' | 'br' }).corner} />;
+      return <Stopwatch t={t} from={o.from || '0.00 s'} to={o.to} switchAt={(o as { switchAt?: number }).switchAt} dur={dur} persist={(o as { persist?: boolean }).persist} tick={(o as { tick?: number }).tick} keep={(o as { keep?: boolean }).keep} corner={(o as { corner?: 'tl' | 'tr' | 'bl' | 'br' | 'tc' | 'bc' }).corner} />;
     case 'news':
-      return <NewsBar t={t} headline={o.headline} ticker={o.ticker} tag={(o as { tag?: string }).tag} dur={dur} />;
+      return <NewsBar t={t} headline={o.headline} ticker={o.ticker} tag={(o as { tag?: string }).tag} dur={dur} safe={o.safe} />;
+    case 'word':
+      return <KeyWord t={t} text={o.text} color={o.color} y={o.y} dur={dur} />;
     case 'bubble':
     case 'thought': {
       const p = project(o.actor);

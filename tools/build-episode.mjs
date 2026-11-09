@@ -3,7 +3,7 @@
 //   node tools/build-episode.mjs <slug> [--from <sec> --to <sec>] [--no-audio] [--skip-audit] [--crf 18] [--concurrency N]
 // A full build refuses to start while the scene audit has errors (range previews skip the gate).
 // Output: final/<Episode title>.mp4 (the previous cut moves to final/archive/), or out/<slug>/preview_<from>-<to>.mp4 for a range.
-import { spawnSync } from 'node:child_process';
+import { spawn, spawnSync } from 'node:child_process';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -27,6 +27,13 @@ const run = (cmd, a) => {
   if (r.status !== 0) process.exit(r.status ?? 1);
 };
 const q = s => `"${s}"`;
+// live progress for `node tools/progress.mjs <slug>`: step, frames, % and Remotion's own time-remaining estimate
+const PROG = path.join(OUT, 'progress.json');
+const BUILD_T0 = Date.now();
+const progress = (step, extra = {}) => {
+  try { fs.writeFileSync(PROG, JSON.stringify({ slug, step, started: BUILD_T0, updated: Date.now(), range: from !== undefined ? [+from, +to] : null, ...extra })); } catch { /* best effort */ }
+};
+progress('audit');
 const timing = JSON.parse(fs.readFileSync(path.join(D, 'timing.json'), 'utf8'));
 const fps = timing.fps || 30;
 
@@ -46,15 +53,43 @@ if (!args.includes('--no-audio') && fs.existsSync(path.join(D, 'sections.json'))
     run('node', [q(path.join(ROOT, 'tools', 'episode.mjs')), 'pace', slug]);
 }
 
-if (!args.includes('--no-audio')) run(q(path.join(ROOT, '.venv', 'Scripts', 'python.exe')), ['-I', q(path.join(ROOT, 'tools', 'sfx', 'episode_audio.py')), slug]);
+if (!args.includes('--no-audio')) {
+  progress('audio');
+  run(q(path.join(ROOT, '.venv', 'Scripts', 'python.exe')), ['-I', q(path.join(ROOT, 'tools', 'sfx', 'episode_audio.py')), slug]);
+}
 
-const silent = path.join(OUT, 'video_silent.mp4');
+// a range preview gets its own file: sharing video_silent.mp4 let a preview clobber a full build running at the same time
+const silent = path.join(OUT, from !== undefined ? `video_silent_${from}-${to}.mp4` : 'video_silent.mp4');
 const frames = from !== undefined ? [`--frames=${Math.round(+from * fps)}-${Math.round(+to * fps) - 1}`] : [];
 // defaults measured on a 12-core RTX 3060 box (20 s range): concurrency 4 → 85 s, 6 → 74 s, 8 → 67 s, 10 → 66 s;
 // CRF 18 is 39% of CRF 14's size at SSIM 0.994 (no visible difference; YouTube re-encodes anyway)
 const concurrency = opt('--concurrency') ?? Math.max(2, os.cpus().length - 4), crf = opt('--crf') ?? 18;
 const t0 = Date.now();
-run('npx', ['remotion', 'render', 'Episode', q(silent), `--props=${q(JSON.stringify({ slug }).replace(/"/g, '\\"'))}`, '--muted', `--concurrency=${concurrency}`, `--crf=${crf}`, '--log=error', ...frames]);
+// Remotion prints "Rendered 46/60, time remaining: 2s" lines (and "Encoded N/T"): keep them out of the log,
+// write them to progress.json, and print one short line every 2 %
+await new Promise(resolve => {
+  const a = ['remotion', 'render', 'Episode', q(silent), `--props=${q(JSON.stringify({ slug }).replace(/"/g, '\\"'))}`, '--muted', `--concurrency=${concurrency}`, `--crf=${crf}`, ...frames];
+  console.log('> npx', a.join(' '));
+  progress('render', { done: 0, total: 0 });
+  const child = spawn('npx', a, { cwd: ROOT, shell: process.platform === 'win32' });
+  let lastPct = -1, buf = '';
+  const onData = chunk => {
+    buf += chunk.toString();
+    const lines = buf.split(/\r?\n|\r/);
+    buf = lines.pop();
+    for (const line of lines) {
+      const m = /(Rendered|Encoded) (\d+)\/(\d+)(?:, time remaining: (.+))?/.exec(line);
+      if (!m) { if (line.trim() && !/^\s*\+|Bundl|Copying|Getting|composition/i.test(line)) console.log(line); continue; }
+      const [, kind, done, total, eta] = m;
+      progress(kind === 'Rendered' ? 'render' : 'encode', { done: +done, total: +total, eta: eta || null });
+      const pct = Math.floor((100 * +done) / +total);
+      if (kind === 'Rendered' && (pct >= lastPct + 2 || +done === +total)) { lastPct = pct; console.log(`render ${pct}% (${done}/${total})${eta ? `, ~${eta} left` : ''}`); }
+    }
+  };
+  child.stdout.on('data', onData);
+  child.stderr.on('data', onData);
+  child.on('close', code => { if (code !== 0) { progress('failed', { code }); process.exit(code ?? 1); } resolve(); });
+});
 console.log(`render: ${((Date.now() - t0) / 1000).toFixed(0)} s (concurrency ${concurrency}, crf ${crf})`);
 
 // Every finished episode sits directly in final/, named by its title (e.g. "What If You Could Swap Places With Anyone.mp4"),
@@ -69,6 +104,7 @@ if (from === undefined && fs.existsSync(final)) {
   fs.mkdirSync(arch, { recursive: true });
   fs.renameSync(final, path.join(arch, `${slug}_${stamp}.mp4`));
 }
+progress('mux');
 const mix = path.join(D, 'mix.wav');
 const audioIn = fs.existsSync(mix) ? ['-ss', String(from ?? 0), '-i', q(mix)] : [];
 run('ffmpeg', ['-v', 'error', '-y', '-i', q(silent), ...audioIn, '-c:v', 'copy',
@@ -76,6 +112,7 @@ run('ffmpeg', ['-v', 'error', '-y', '-i', q(silent), ...audioIn, '-c:v', 'copy',
 
 // review sheet: one frame from the middle of every shot
 if (from === undefined) {
+  progress('sheets');
   const shotsDir = path.join(OUT, 'shots');
   fs.rmSync(shotsDir, { recursive: true, force: true });
   fs.mkdirSync(shotsDir, { recursive: true });
@@ -91,4 +128,5 @@ if (from === undefined) {
 }
 // subtitles + the marked shorts' timecodes for the user's own 9:16 edit (no-op on a range preview)
 if (from === undefined && !timing.draft) run('node', [q(path.join(ROOT, 'tools', 'episode.mjs')), 'srt', slug]);
+progress('done', { final });
 console.log('done:', final);

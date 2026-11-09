@@ -127,8 +127,8 @@ export type PropSpec = {
 
 export type Overlay =
   | { type: 'label'; text: string; at?: number; until?: number; corner?: 'tl' | 'tr' | 'bl' | 'br' }
-  | { type: 'title'; small?: string; big: string; at?: number; until?: number }
-  | { type: 'stopwatch'; from?: string; to?: string; switchAt?: number | string; at?: number; until?: number; persist?: boolean; tick?: number; keep?: boolean; corner?: 'tl' | 'tr' | 'bl' | 'br' } // tick: live countdown of an "M:SS" from (story s per s); keep: no fade-out at the cut // switchAt may be a word cue ("@two")
+  | { type: 'title'; small?: string; big: string; at?: number; until?: number; compact?: number } // compact: s held small for the 9:16 column before growing (default ≥ 1.6, 0 = full size)
+  | { type: 'stopwatch'; from?: string; to?: string; switchAt?: number | string; at?: number; until?: number; persist?: boolean; tick?: number; keep?: boolean; corner?: 'tl' | 'tr' | 'bl' | 'br' | 'tc' | 'bc' } // tc / bc = top / bottom centre, inside the 9:16 column (bc stays off faces). tick: live countdown of an "M:SS" from (story s per s); keep: no fade-out at the cut // switchAt may be a word cue ("@two")
   | { type: 'stat'; value: number | string; unit?: string; label?: string; at?: number; prefix?: string; decimals?: number; pos?: 'center' | 'top' | 'right' }
   | { type: 'bubble'; text: string; actor: string; at?: number; until?: number }
   | { type: 'thought'; text: string; actor: string; at?: number; until?: number }
@@ -136,7 +136,8 @@ export type Overlay =
   | { type: 'caption'; text: string; at?: number; until?: number }
   | { type: 'flash'; at?: number; color?: string }
   | { type: 'counter'; text: string; at?: number }
-  | { type: 'news'; headline: string; ticker?: string; tag?: string; at?: number; until?: number }
+  | { type: 'news'; headline: string; ticker?: string; tag?: string; at?: number; until?: number; safe?: boolean } // safe: centred and wrapped inside the 9:16 column
+  | { type: 'word'; text: string; at?: number; until?: number; color?: string; y?: 'low' | 'top' | 'mid' } // palavra-destaque: the key word pops in on its cue, centre column (default 1.5 s)
   | { type: 'hudList'; items: string[]; at?: number; checked?: number };
 
 export type ShotFx = {
@@ -181,7 +182,7 @@ export type Shot3D = {
   fx?: ShotFx;
   sfx?: SfxCue[];
   cut?: Cut; // default: flow when the framing barely changes in the same set, else cut
-  coverage?: 'off' | 'calm' | 'fast'; // automatic sub-cuts on word starts (automatic cameras only): fast ≈ every 1.6 s, calm ≈ 2.6 s
+  coverage?: 'off' | 'calm' | 'fast'; // automatic sub-cuts on word starts: fast ≈ every 1.6 s, calm ≈ 2.6 s (explicit pos/path cameras: 2.2 / 3.0 s, punch-in or orbit of their own view; `over` cameras: none)
 };
 
 // Transitions. whip / zoom / smash play on both sides of the cut (end of the outgoing shot + start of this one).
@@ -217,12 +218,14 @@ export type Episode = {
   // Shorts the user cuts by hand from the 16:9 (YouTube Shorts / Reels / TikTok): ≥ 4 per long episode,
   // each a self-contained ~90 s run of whole shots (from/to = shot ids, inclusive). The audit checks length.
   clips?: { title: string; from: string; to: string }[];
+  hookCheck?: boolean; // false = skip the audit's first-10-seconds retention check (episodes made before the rule, 2026-11-09)
   shots: Shot[];
 };
 
 export type Timing = {
   fps: number;
   total: number; // seconds
+  draft?: boolean; // estimated (episode.mjs draft), no voice yet
   shots: { start: number; dur: number; section: number | null; words?: [string, number][] }[];
   sections: { file: string; start: number; dur: number }[];
 };

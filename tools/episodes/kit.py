@@ -83,8 +83,9 @@ def shot_index():
 
 
 def apply_ritmo(shots_):
-    """House pacing (since 2026-11-08): automatic sub-cuts on 3D shots with an automatic camera
-    (coverage 'fast' unless the shot sets its own; use 'calm' in the dilemma, 'off' for a held tableau),
+    """House pacing (since 2026-11-08): automatic sub-cuts on 3D shots (coverage 'fast' unless the shot sets
+    its own; use 'calm' in the dilemma, 'off' for a held tableau). Automatic cameras re-frame per beat; explicit
+    pos/path cameras punch in / orbit their own view (scene.ts beatView); over-the-shoulder shots are left alone.
     and a whip / zoom transition, alternating, on every 3D→3D set change that has no explicit cut.
     Smash cuts stay hand-placed (reveals, punchlines)."""
     alt = ['whip', 'zoom']
@@ -93,7 +94,7 @@ def apply_ritmo(shots_):
         if sh.get('kind') == 'card':
             continue
         c = sh.get('camera') or {}
-        if 'coverage' not in sh and not (c.get('pos') or c.get('path') or c.get('over')):
+        if 'coverage' not in sh and not c.get('over'):
             sh['coverage'] = 'fast'
         prev = shots_[i - 1] if i else None
         if prev and prev.get('kind') != 'card' and 'cut' not in sh and prev.get('set') != sh.get('set'):

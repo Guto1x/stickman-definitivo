@@ -6,7 +6,8 @@ import { project, type CamState } from '../engine/cam';
 import { POSES } from '../engine/rig';
 import type { CastMember, Episode, Pose, Shot3D, Timing } from '../types';
 import { castOf } from './resolve';
-import { beatCam, evalShot, flowInfo, framingDelta, type ShotCtx } from './scene';
+import { cue } from './cue';
+import { beatCam, beatsOf, evalShot, flowInfo, framingDelta, type ShotCtx } from './scene';
 
 export type Finding = { sev: 'error' | 'warn'; shot: number; id?: string; t?: number; check: string; msg: string };
 export type AuditEvent = { shot: number; id?: string; t: number; kind: 'swap' | 'jump' | 'flow' | 'cut'; what: string };
@@ -271,6 +272,38 @@ export function auditEpisode(ep: Episode, timing: Timing): AuditReport {
   // shorts the user cuts by hand from the 16:9: at least 4 per long episode, each 60–95 s of whole shots
   const ids = ep.shots.map(s => s.id);
   const long = timing.total > 240;
+  // house rule (user, 2026-11-09): every long episode runs at least 10:00
+  if (long && !timing.draft && timing.total < 600) add({ sev: 'warn', shot: 0, check: 'length', msg: `episode runs ${Math.floor(timing.total / 60)}:${String(Math.round(timing.total % 60)).padStart(2, '0')} — the house minimum is 10:00 (add narration: an extra problem, rule test or world-bigger scene)` });
+  if (long && timing.draft && timing.total < 600) add({ sev: 'warn', shot: 0, check: 'length', msg: `draft estimate ${Math.floor(timing.total / 60)}:${String(Math.round(timing.total % 60)).padStart(2, '0')} — the house minimum is 10:00; write more before buying voice` });
+  // retention hook (user rule, 2026-11-09, new episodes only): the first 10 s need fast cutting, an early sound and a punchy move.
+  // That the power shows by 0:08 needs a reader: COLA "Primeiros 10 s".
+  if (long && ep.hookCheck !== false) {
+    let cuts = 0, sfxEarly = false, punch = false;
+    ep.shots.forEach((sh, i) => {
+      const tm = timing.shots[i];
+      if (!tm || tm.start >= 10) return;
+      if (i > 0) cuts++;
+      if (sh.kind !== 'card') {
+        const s3 = sh as Shot3D;
+        beatsOf(ctxOf(i)).forEach(b => { if (b.t0 > 0 && tm.start + b.t0 < 10) cuts++; });
+        const mv = s3.camera?.move;
+        if (mv === 'crashIn' || mv === 'shake' || ['smash', 'whip', 'zoom'].includes(s3.cut || '') || s3.fx?.freeze !== undefined || s3.fx?.speedLines || (s3.fx?.shake ?? 0) > 0) punch = true;
+      }
+      for (const c of sh.sfx || []) if (tm.start + cue(c.t as number | string, tm.words, 0) <= 2) sfxEarly = true;
+    });
+    if (cuts < 6) add({ sev: 'warn', shot: 0, check: 'hook', msg: `only ${cuts} cut(s) in the first 10 s — the house hook wants ≥ 6 (1–1.5 s shots: coverage 'fast', camera.beats, or shorter shots)` });
+    if (!sfxEarly) add({ sev: 'warn', shot: 0, check: 'hook', msg: 'no scripted sound effect in the first 2 s — open on a strong SFX (ring, whoosh, impact) under the first line' });
+    if (!punch) add({ sev: 'warn', shot: 0, check: 'hook', msg: "no punchy move in the first 10 s — use a crashIn, a smash/whip cut, a freeze or speed lines on the power's first use" });
+  }
+  // 9:16 safety for important 2D overlays on 3D shots: corner HUDs fall outside the centre column a vertical cut keeps
+  ep.shots.forEach((sh, i) => {
+    if (sh.kind === 'card') return;
+    for (const o of sh.overlays || []) {
+      const x = o as { type: string; corner?: string; pos?: string; safe?: boolean };
+      const out = (x.type === 'stopwatch' && x.corner !== 'tc' && x.corner !== 'bc') || x.type === 'label' || (x.type === 'stat' && x.pos !== 'center') || (x.type === 'news' && !x.safe);
+      if (out) add({ sev: 'warn', shot: i, id: sh.id, check: 'vertical', msg: `${x.type} overlay sits outside the 9:16 centre column — a vertical cut loses it (stopwatch corner "tc"/"bc", news safe:true, stat pos "center", or a "word" overlay)` }, `${i}|vov|${x.type}`);
+    }
+  });
   if (long && (ep.clips?.length ?? 0) < 4) add({ sev: 'warn', shot: 0, check: 'clips', msg: `${ep.clips?.length ?? 0} short clip(s) marked — a long episode needs ≥ 4 self-contained ~90 s clips (episode.clips)` });
   for (const c of ep.clips || []) {
     const a = ids.indexOf(c.from), b = ids.indexOf(c.to);

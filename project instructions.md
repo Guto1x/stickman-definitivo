@@ -1,6 +1,6 @@
 # Project instructions: 3D Stickman Long
 
-**Claude: read only lines 1–414 of this file.** Everything after that is the packed project (3.8 MB). If the user typed **start**, follow "For Claude: what start means" below.
+**Claude: read only lines 1–414 of this file.** Everything after that is the packed project (3.7 MB). If the user typed **start**, follow "For Claude: what start means" below.
 
 This one file rebuilds the 3D Stickman Long production system in an empty folder. That system makes IFOLOGY-style "What If" videos with a 3D stickman hero, built in code with Remotion 4 and Three.js, with Python sound effects and ElevenLabs narration. The file holds:
 - the engine, sets, cards and overlays;
@@ -10,7 +10,7 @@ This one file rebuilds the 3D Stickman Long production system in an empty folder
 - Claude's project memory;
 - the `/stickman <topic>` command (topic in, finished video and 3 thumbnails out).
 
-It holds 205 files in all, each with a checksum. It was packed on 2026-11-09. It holds no finished videos or episodes: you start with an empty channel.
+It holds 207 files in all, each with a checksum. It was packed on 2026-11-09. It holds no finished videos or episodes: you start with an empty channel.
 
 ## For the human
 
@@ -18,7 +18,7 @@ It holds 205 files in all, each with a checksum. It was packed on 2026-11-09. It
 2. Open a new Claude Code chat on that folder: the Code tab of the desktop app, or `claude` in a terminal there.
 3. Type **start**. (If Claude asks what to start, say "follow project instructions.md".)
 
-At 3.8 MB, the file is too big to paste into a chat, so it has to sit in the folder.
+At 3.7 MB, the file is too big to paste into a chat, so it has to sit in the folder.
 
 Claude asks four setup questions first:
 - what the main character wears (with ready-made looks if you don't want to describe one);
@@ -46,7 +46,7 @@ Everything else works before either is connected: ideas, scripts, shot lists, pr
 
 You are installing an existing project from this file. Every project file comes out of the payload, byte for byte, with its checksum verified. Never write a project file from memory or "improve" one while installing. The only edits you make are the ones the setup answers call for (step 7).
 
-Never read past line 414 with Read, cat or grep: the rest is 3.8 MB of payload. Keep a task list, and run the long installs in the background.
+Never read past line 414 with Read, cat or grep: the rest is 3.7 MB of payload. Keep a task list, and run the long installs in the background.
 
 **Shell.** Run every command in the Bash tool (Git Bash), with forward slashes, exactly as written here: `.venv/Scripts/python`, `--props='{"view":"close"}'`. If there is no Bash tool, use PowerShell:
 - write `.venv\Scripts\python`;
@@ -391,17 +391,17 @@ End with how to connect ElevenLabs (get a key, give it to Claude in a new chat) 
 | Path | Files | Size | What |
 |---|---|---|---|
 | `.claude/` | 2 | 5 KB | the `/stickman <topic>` command and the `revisor-verificacao` subagent (sonnet) |
-| `(root)` | 10 | 197 KB | `CLAUDE.md` (the project rules), `HOW_TO_USE.md`, `package.json`, `package-lock.json`, Remotion and TypeScript config |
+| `(root)` | 10 | 198 KB | `CLAUDE.md` (the project rules), `HOW_TO_USE.md`, `package.json`, `package-lock.json`, Remotion and TypeScript config |
 | `.vscode/` | 1 | 0 KB |  |
-| `@memory/` | 17 (1 binary) | 28 KB | Claude's memory for this project (extracted into the new project's memory folder) |
+| `@memory/` | 19 | 30 KB | Claude's memory for this project (extracted into the new project's memory folder) |
 | `data/` | 47 | 415 KB | idea-engine data: competitor titles, beat sheets, transcripts, patterns, ideas backlog |
-| `docs/` | 18 (8 binary) | 1313 KB | style bible, story blueprint, idea engine, reviewer brief, ElevenLabs and Fish first-connect checklists, channel research with reference frames |
+| `docs/` | 18 (8 binary) | 1315 KB | style bible, story blueprint, idea engine, reviewer brief, ElevenLabs and Fish first-connect checklists, channel research with reference frames |
 | `final/` | 1 | 1 KB | its README (finished videos land here) |
 | `projeto-2/` | 1 | 0 KB |  |
 | `public/` | 4 | 7 KB | the `pipetest` fixture episode (JSON only), empty `music/` and `sfx/` |
-| `src/` | 67 | 563 KB | the engine (rig, Stickman, actors, cameras, materials, effects), sets, cards, overlays, the episode pipeline and its self-tests |
+| `src/` | 68 | 579 KB | the engine (rig, Stickman, actors, cameras, materials, effects), sets, cards, overlays, the episode pipeline and its self-tests |
 | `thumbnails/` | 7 (3 binary) | 306 KB | config, the prompt template, the 3 reference images, an example brief |
-| `tools/` | 30 | 317 KB | build, episode, QA, review, stills, thumbnail and pack tools; Python sound design, music and idea tools |
+| `tools/` | 29 | 271 KB | build, episode, QA, review, stills, thumbnail and pack tools; Python sound design, music and idea tools |
 
 Left out on purpose:
 - finished videos, episodes, voice-overs and thumbnails (you start with an empty channel);
@@ -429,7 +429,7 @@ effort: medium
 ---
 Você é o revisor de verificação. Siga docs/review/REVIEWER_BRIEF.md, seção "Verification rounds".
 @@@@ END
-@@@@ FILE .claude/commands/stickman.md | text | 4856 | 806a7c6a8920f618b9133b9716354e0e7f814aa9475b75c54ef5adc17c49ede1
+@@@@ FILE .claude/commands/stickman.md | text | 4959 | 79b025c14bf6e392828989c26ce942eba1c3e9994711766b98407417448f7d0c
 ---
 description: Make a full "What If" stickman episode from a topic, then generate its 3 thumbnails
 argument-hint: <video topic, e.g. What If You Could Swap Places With Anyone>
@@ -448,7 +448,7 @@ Make one complete narrated episode about this topic with the saved hero, then ge
 - **Hero:** the saved character, the `hero` entry in `src/cast.ts`, exactly as it is. Don't change the outfit, and keep its signature colour off everyone else (CLAUDE.md, "… belongs to the hero").
 - **Idea:** the topic replaces the idea step. Skip candidate generation and pitching. Shape it into a "What If" title (keep the user's wording when it already is one), run `python -I tools/ideas/novelty.py "<title>"`, and mention any close competitor title in the summary.
 - **Slug:** short kebab-case from the title, not already used in `public/episodes/`.
-- **Length:** 8–10 minutes unless the user's topic says otherwise.
+- **Length:** at least 10:00 of voiced narration (user rule, 2026-11-09); the audit warns below that. Write ~1,600–1,700 PT-BR words, since the paced read runs ~175 wpm.
 - **Voice, music, look:** the house defaults in `CLAUDE.md` and memory.
 - **Tone:** acid, bold and still monetizable, never the cute family tone: a narrator who is calm but sometimes malicious or sarcastic (`STORY_BLUEPRINT.md` §6.10, summarised in the cola's "Tom" section).
 - **Pacing:** the generator calls `episode(..., ritmo='rapido')`, as `_modelo.py` does. That gives automatic sub-cuts plus whip/zoom on set changes. Use `coverage='calm'` in the dilemma and `cut='smash'` by hand on reveals. Keep the subject and key text in the 9:16 centre column (audit `vertical`).
@@ -500,58 +500,25 @@ __pycache__/
     "python.terminal.useEnvFile": true
 }
 @@@@ END
-@@@@ FILE @memory/MEMORY.md | base64 | 2868 | 87778d0d208b42f03f7a0732fd7dac7fd5a4b44ff31d217ec5ebe75c19a07872
-LSBbSUZPTE9HWS1zdHlsZSBjaGFubmVsXShwcm9qZWN0LWlmb2xvZ3ktc3R5bGUtY2hhbm5lbC5t
-ZCkg4oCUIElGT0xPR1ktbG9vayBoZXJvIGluIGEgR1JBWSBxdWFydGVyLXppcCBqYWNrZXQgKHNp
-bmNlIDIwMjYtMTEtMDgpLCBmbGF0IGZpbmFsLyBmb2xkZXIsIFJlbW90aW9uK1RocmVlIGVuZ2lu
-ZSwgUHl0aG9uIFNGWCwgRWxldmVuTGFicyB2b2ljZQ0KLSBbUmV2aWV3LWFuZC1maXggbG9vcF0o
-ZmVlZGJhY2stcmV2aWV3LWFuZC1maXgtbG9vcC5tZCkg4oCUIGF1ZGl0ICsgaW5kZXBlbmRlbnQg
-cmV2aWV3ZXIgQkVGT1JFIGZpbmFsIHJlbmRlciwgdGhlbiByZXZpZXcgdGhlIHJlbmRlcjsgZml4
-IGV2ZXJ5dGhpbmc7IDEwODBwIGZpbmFsDQotIFtObyBjYW1lcmEgc25hcHNdKGZlZWRiYWNrLW5v
-LWNhbWVyYS1zbmFwcy5tZCkg4oCUIG5ldmVyIGN1dCBiZXR3ZWVuIG5lYXItaWRlbnRpY2FsIGZy
-YW1pbmdzICgiYSBmZXcgcGl4ZWxzIG92ZXIiKTsgZmxvdyBpbnN0ZWFkOyByZWFsIGFuZ2xlIGNo
-YW5nZXMgYXJlIGZpbmUNCi0gW1ZvaWNlc10ocHJvamVjdC1uYXJyYXRvci12b2ljZS5tZCkg4oCU
-IEVsZXZlbkxhYnMgUFQtQlI6IG5hcnJhdG9yIFl1cmkgKGVsZXZlbl92NCkgd2l0aCBhIGNhbG0g
-YFtjYWxtXWAgZGlyZWN0aW9uOyBob3VzZSBtYWxlIEVkdWFyZG8gLyBmZW1hbGUgU29maWE7IH4w
-LjQgY3JlZGl0cy9jaGFyDQotIFtQVC1CUiBjb250ZW50IGFkYXB0YXRpb25dKHByb2plY3QtcHQt
-YnItYWRhcHRhdGlvbi5tZCkg4oCUIHNjcmlwdHMvVk8vb3ZlcmxheXMvdGh1bWJuYWlscyArIHN0
-b3J5IGRvY3MgYXJlIFBULUJSIHNpbmNlIDIwMjYtMTEtMDg7IGNvZGUvQ0xBVURFLm1kIHN0YXkg
-RW5nbGlzaA0KLSBbRWxldmVuTGFicyBBUEkga2V5XShyZWZlcmVuY2UtZWxldmVubGFicy1rZXku
-bWQpIOKAlCBpbiBEOlxzdGlja21hbi0yXC5lbnYsIGdpdGlnbm9yZWQ7IHNjb3BlZCAobm8gdXNl
-cl9yZWFkL21vZGVsc19yZWFkKSDigJQgY2hlY2sgYmFsYW5jZSBvbiB0aGUgZGFzaGJvYXJkDQot
-IFtUaHVtYm5haWxzIHZpYSBHUFQgSW1hZ2UgMi41XShwcm9qZWN0LXRodW1ibmFpbHMtZ3B0LWlt
-YWdlLm1kKSDigJQgMkQgR1BUIEltYWdlIHRodW1icywgZmlzaCBvciBjaGF0Z3B0IG1vZGUgKGNo
-YXRncHQgbm93KSwgbG9ja2VkIDMgdmFyaWFudHMgYXQgMksgbWVkaXVtLCBvbmx5IHdoZW4gYSB2
-aWRlbyBpcyB+ZmluaXNoZWQ7IGdyYXkgcXVhcnRlci16aXAgamFja2V0DQotIFtGaXNoIEF1ZGlv
-IHBlbmRpbmddKHByb2plY3QtZmlzaC1wZW5kaW5nLm1kKSDigJQgRmlzaCBNQ1AgTk9UIGNvbm5l
-Y3RlZDsgbm93IG9ubHkgbmVlZGVkIGZvciBmaXNoLW1vZGUgdGh1bWJuYWlscyAoY2hhdGdwdCBt
-b2RlIGlzIGN1cnJlbnQpLCBub3Qgdm9pY2UNCi0gW09wdGltaXphdGlvbiBhY3Rpb24gcGxhbl0o
-cHJvamVjdC1vdGltaXphY2FvLm1kKSDigJQgZG9jcy9PVElNSVpBQ0FPLm1kIGFsbCBkb25lIDIw
-MjYtMTEtMDg7IGNvbmZpcm0gcmVhbC1BUEkgcGFyYWxsZWwgdm9pY2UgKyBzb25uZXQgcm91bmQt
-MiBjb3N0IG9uIG5leHQgZXBpc29kZTsgMm5kIGFjY291bnQgb24gYSBzZXBhcmF0ZSBQQw0KLSBb
-UHJvamV0byAyOiBmdXR1cmUgc2VyaWVzIGlkZWFdKHByb2plY3QtMi1zZXJpZXMtZnV0dXJlLm1k
-KSDigJQgTk9UIHN0YXJ0ZWQ7IGNvbnRpbnVvdXMgIkRheSBOIiBzZXJpZXMgdm90ZWQgYnkgWW91
-VHViZSBjb21tZW50cywgcmV1c2luZyB0aGUgZW5naW5lIG5vdCB0aGUgV2hhdC1JZiBibHVlcHJp
-bnQ7IHNlZSBmdXR1cm8ubWQNCi0gW1RvbSDDoWNpZG9dKGZlZWRiYWNrLXRvbS1hY2lkby5tZCkg
-4oCUIG5vIGN1dGUvZmFtaWx5IHRvbmU6IG5hcnJhdG9yIGNhbG0gYnV0IHNvbWV0aW1lcyBtYWxp
-Y2lvdXMvc2FyY2FzdGljOyBib2xkIHN0YWtlcywgc3RpbGwgbW9uZXRpemFibGUgKDIwMjYtMTEt
-MDgpDQotIFtEb24ndCByZXN0cnVjdHVyZSBDTEFVREUubWRdKGZlZWRiYWNrLW5hby1yZWVzdHJ1
-dHVyYXItY2xhdWRlLW1kLm1kKSDigJQgdXNlciBkZWNsaW5lZCBzcGxpdHRpbmcgQ0xBVURFLm1k
-IC8gcmUtbW9kZWxpbmcgL3N0aWNrbWFuICsgcmV2aWV3ZXJzICgyMDI2LTExLTA4KTsgd2FpdCBv
-biBlYXJsaWVyIG9wdGltaXphdGlvbnMNCi0gW1JpdG1vIHLDoXBpZG9dKHByb2plY3Qtcml0bW8t
-cmFwaWRvLm1kKSDigJQgaG91c2UgcGFjaW5nIHNpbmNlIDIwMjYtMTEtMDg6IGNvdmVyYWdlIHN1
-Yi1jdXRzLCB3aGlwL3pvb20vc21hc2gsIDk6MTYtc2FmZTsgZ2VuZXJhdG9ycyB1c2Ugcml0bW89
-J3JhcGlkbyc7IE5PIG5hdGl2ZSB2ZXJ0aWNhbCByZW5kZXIg4oCUIHVzZXIgY3V0cyA5OjE2IGJ5
-IGhhbmQgZnJvbSB0aGUgMTY6OQ0KLSBbQ29ydGVzIHAvIHNob3J0c10oZmVlZGJhY2stY29ydGVz
-LXNob3J0cy5tZCkg4oCUIGV2ZXJ5IGxvbmcgZXBpc29kZSBuZWVkcyDiiaUgNCBzZWxmLWNvbnRh
-aW5lZCB+OTAgcyBzZWdtZW50cyAoZXBpc29kZSBjbGlwcyk7IGJ1aWxkIHdyaXRlcyAuc3J0ICsg
-Y29ydGVzLnR4dAotIFtORVhUOiByZWZhemVyIGVwaXPDs2Rpb3NdKHByb2plY3QtcmVmYXplci1l
-cGlzb2Rpb3MubWQpIOKAlCByZWRvIHp1bWJpIHRoZW4gY3J1c2g6IGZyZWUgdmlzdWFsIHBhc3Mg
-KHJpdG1vLCBjbGlwcywgY2VudHJlKSB0aGVuIHRhcmdldGVkIGFjaWQgcmV3cml0ZSBiZWZvcmUg
-dm9pY2U7IGtlZXAgL3N0aWNrbWFuIGNyZWRpdCBzdG9wDQotIFtFbGV2ZW5MYWJzIHBlbmRpbmdd
-KHByb2plY3QtZWxldmVubGFicy1wZW5kaW5nLm1kKSDigJQgbm8gd29ya2luZyBFTEVWRU5MQUJT
-X0FQSV9LRVkgYXQgc2V0dXA7IHJ1biBkb2NzL0VMRVZFTkxBQlNfU0VUVVAubWQgb25jZSBvbmUg
-aXMgYWRkZWQgdG8gLmVudg0K
+@@@@ FILE @memory/MEMORY.md | text | 3168 | 73e5bedf649fe62699744d79c91648edb803cf3008298ab59cc094c519e455a4
+- [IFOLOGY-style channel](project-ifology-style-channel.md) — IFOLOGY-look hero in a GRAY quarter-zip jacket (since 2026-11-08), flat final/ folder, Remotion+Three engine, Python SFX, ElevenLabs voice
+- [Review-and-fix loop](feedback-review-and-fix-loop.md) — audit + independent reviewer BEFORE final render, then review the render; fix everything; 1080p final
+- [No camera snaps](feedback-no-camera-snaps.md) — never cut between near-identical framings ("a few pixels over"); flow instead; real angle changes are fine
+- [Voices](project-narrator-voice.md) — ElevenLabs PT-BR: narrator Yuri (eleven_v4) with a calm `[calm]` direction; house male Eduardo / female Sofia; ~0.4 credits/char
+- [PT-BR content adaptation](project-pt-br-adaptation.md) — scripts/VO/overlays/thumbnails + story docs are PT-BR since 2026-11-08; code/CLAUDE.md stay English
+- [ElevenLabs API key](reference-elevenlabs-key.md) — in D:\stickman-2\.env, gitignored; scoped (no user_read/models_read) — check balance on the dashboard
+- [Thumbnails via GPT Image 2.5](project-thumbnails-gpt-image.md) — 2D GPT Image thumbs, fish or chatgpt mode (chatgpt now), locked 3 variants at 2K medium, only when a video is ~finished; gray quarter-zip jacket
+- [Fish Audio pending](project-fish-pending.md) — Fish MCP NOT connected; now only needed for fish-mode thumbnails (chatgpt mode is current), not voice
+- [Optimization action plan](project-otimizacao.md) — docs/OTIMIZACAO.md all done 2026-11-08; confirm real-API parallel voice + sonnet round-2 cost on next episode; 2nd account on a separate PC
+- [Projeto 2: future series idea](project-2-series-future.md) — NOT started; continuous "Day N" series voted by YouTube comments, reusing the engine not the What-If blueprint; see futuro.md
+- [Tom ácido](feedback-tom-acido.md) — no cute/family tone: narrator calm but sometimes malicious/sarcastic; bold stakes, still monetizable (2026-11-08)
+- [Don't restructure CLAUDE.md](feedback-nao-reestruturar-claude-md.md) — user declined splitting CLAUDE.md / re-modeling /stickman + reviewers (2026-11-08); wait on earlier optimizations
+- [Ritmo rápido](project-ritmo-rapido.md) — house pacing since 2026-11-08: coverage sub-cuts, whip/zoom/smash, 9:16-safe; generators use ritmo='rapido'; NO native vertical render — user cuts 9:16 by hand from the 16:9
+- [Cortes p/ shorts](feedback-cortes-shorts.md) — every long episode needs ≥ 4 self-contained ~90 s segments (episode clips); build writes .srt + cortes.txt
+- [Refazer episódios: encerrado](project-refazer-episodios.md) — zumbi redone 2026-11-09; crush DISCARDED as a test; repo cleaned to zumbi only; keep /stickman credit stop
+- [Duração ≥ 10 min](feedback-duracao-10min.md) — every long episode ≥ 10:00 voiced (~1,600–1,700 words); audit warns [length]; zumbi stays 9:14 (2026-11-09)
+- [Gancho nos 10 s](feedback-gancho-10s.md) — new episodes only: ≥ 2 hook types, ≥ 6 cuts, punchy move, SFX ≤ 2 s; audit [hook]; zumbi opted out (2026-11-09)
+- [ElevenLabs pending](project-elevenlabs-pending.md) — no working ELEVENLABS_API_KEY at setup; run docs/ELEVENLABS_SETUP.md once one is added to .env
 @@@@ END
 @@@@ FILE @memory/feedback-cortes-shorts.md | text | 1071 | 743a95b4f29187679ba8c2e35d2841ef00f6386ded9977613b6652b60a057e04
 ---
@@ -566,6 +533,47 @@ The user cuts shorts by hand from the 16:9 episode (no native vertical render, s
 **Why:** each long video should also feed Shorts, Reels and TikTok without extra production.
 
 **How to apply:** when writing the script and shot list, plan the 4 segments (COLA_ROTEIRO "Cortes para shorts"): each opens on a cold hook that needs no context, ends on a punch or cliffhanger, keeps subject and text in the centre column, and avoids two-column cards. Mark them in the generator with `episode(clips=[(title, first shot id, last shot id), ...])`; the audit warns under 4 clips or outside 60–95 s. The build writes `final/<title>.srt` (exact word times) and `final/<title> - cortes.txt` (timecodes) for the user's editor.
+@@@@ END
+@@@@ FILE @memory/feedback-duracao-10min.md | text | 1033 | 4b3760cc7ca4e0f1f8f71194fd37df1254e3a6543bd61cc8c66073420dcc92ff
+---
+name: feedback-duracao-10min
+description: "Every long episode must run at least 10:00 of voiced narration (user rule, 2026-11-09); zumbi stays at 9:14 by the user's choice"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: fa0e5970-a547-46b1-83da-614b5f4dbf53
+  modified: 2026-11-09T03:36:16.819Z
+---
+
+On 2026-11-09 the user said "coloque 10 minutos" and, asked what they meant, picked **a house rule: every episode ≥ 10 min** — not extending invasao-zumbi (it stays 9:14).
+
+**Why:** the user wants every long video at full length (10 min is the target format; 8 min variants are out).
+
+**How to apply:** write ~1,600–1,700 PT-BR words (paced read ~175 wpm) so the voiced cut lands ≥ 10:00; check the `draft` estimate before buying voice. The audit warns `[length]` under 10:00 (draft and voiced). Applies to new episodes ([[project-refazer-episodios]]); written into COLA_ROTEIRO "Duração mínima" and `/stickman` Length. Pairs with [[feedback-cortes-shorts]] (≥ 4 clips) and [[feedback-tom-acido]].
+@@@@ END
+@@@@ FILE @memory/feedback-gancho-10s.md | text | 1492 | e47f188d6086a95076f9ef3182ca8b28f11600cd0ee3c12c2d51f0f9943cd70c
+---
+name: feedback-gancho-10s
+description: "The first 10 s of every NEW long episode must use retention techniques (≥ 2 hook types, ≥ 6 cuts, a punchy move, speech at 1 s, SFX ≤ 2 s); zumbi and crush are exempt (user, 2026-11-09)"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: fa0e5970-a547-46b1-83da-614b5f4dbf53
+  modified: 2026-11-09T03:41:18.888Z
+---
+
+On 2026-11-09 the user asked that the first 10 seconds of long videos use retention techniques: a hook situation (showing the power, a situation), camera work and cutting speed. They then said **"não precisa aplicar no zumbi, apenas nos novos"**.
+
+**Why:** the opening decides whether the viewer stays. The zumbi opening had only 3 cuts in 10 s and no punchy move.
+
+**How to apply:** follow COLA_ROTEIRO "Primeiros 10 s":
+- combine ≥ 2 hook types (power solving something trivial, disaster in progress, impossible image, absurd number, flash-forward, trap question, shocked witness, unexplained oddity, personal stake);
+- ≥ 6 cuts in 10 s;
+- a crashIn, smash/whip cut, freeze or speed lines on the power's first use;
+- speech in the 1st second and an SFX ≤ 2 s;
+- power visible by 0:08.
+
+The audit warns `[hook]` on the mechanical parts. `hookCheck: False` opts out the episodes made before the rule (invasao-zumbi, quem-tem-crush). quem-tem-crush was discarded on 2026-11-09, so only zumbi carries the opt-out. Related: [[feedback-duracao-10min]], [[project-ritmo-rapido]], [[feedback-cortes-shorts]].
 @@@@ END
 @@@@ FILE @memory/feedback-nao-reestruturar-claude-md.md | text | 969 | ea2f51ba77dd7c8431841c2aa70b353bcdb42bf78b4e83dcfb846cb212c375b2
 ---
@@ -826,36 +834,23 @@ On 2026-11-08 the user asked to adapt the project to Portuguese. They chose the 
 - If the user asks for something to be in English (a one-off), that's a request for that piece only, not a scope change — check before assuming it's permanent.
 - Related: [[project-narrator-voice]] (the ElevenLabs voices are PT-BR too, picked for this reason).
 @@@@ END
-@@@@ FILE @memory/project-refazer-episodios.md | text | 1786 | 22fbf4253ca107197285af6d22c9253d8230e20d22d1817650115efc2022c8cc
+@@@@ FILE @memory/project-refazer-episodios.md | text | 1457 | c7ae17d96095f282a274ec982db0348eb755a9ba649a5ca5cbf4284e1ff7d919
 ---
 name: project-refazer-episodios
-description: NEXT TASK (agreed 2026-11-08) — redo invasao-zumbi then quem-tem-crush in the new style: free visual pass first, then a targeted acid-tone rewrite shown before any voice credits
+description: Remake of old episodes is CLOSED (2026-11-09) — zumbi redone in the new style; quem-tem-crush discarded as a test; repo cleaned to zumbi only
 metadata:
   type: project
 ---
 
-On 2026-11-08 the user agreed to remake both finished episodes in the new style. They asked to start in a fresh session (after /clear).
+On 2026-11-08 the user agreed to remake both finished episodes in the new style. On 2026-11-09 zumbi was finished: visual pass (`apply_ritmo`, clips, 9:16-safe; 2 review rounds), then tone pass (14 lines rewritten, ~1.7k credits, 10 sections re-voiced; 9:14), then the final build.
 
-**Order:** invasao-zumbi first (shorter, 7.9k chars, its stakes already suit the acid tone), then quem-tem-crush (9.1k chars, the cutest story, so it needs more rewriting).
+Then the user **discarded quem-tem-crush** ("foi um bom teste pra nós") and asked to clean out every leftover from other videos. Deleted: the crush and teste-ritmo episodes, generators, thumbnails, renders, the old zumbi cut in `final/archive/`, and `out/lab`. Kept as engine infrastructure: `pipetest` (the compositions' default fixture, shipped by the packer), the `swap-pilot` thumbnail brief (example format), and `PillSprint` (reference composition).
 
-**Per episode:**
-1. **Visual pass (0 credits, keeps the current voice).** In `tools/episodes/<slug>.py`:
-   - add `ritmo='rapido'` (coverage sub-cuts + whip/zoom on set changes; `coverage='calm'` in the dilemma; `cut='smash'` by hand on reveals);
-   - mark ≥ 4 self-contained ~90 s `clips` ([[feedback-cortes-shorts]]);
-   - move key overlays and subjects into the 9:16 centre column (audit `vertical`).
+**Why:** start the next episodes from a clean repo where zumbi is the only real example.
 
-   Then regenerate, `qa.cjs audit`, `review.mjs`, reviewer, build. The build writes `.srt` and `- cortes.txt`.
-2. **Tone pass ([[feedback-tom-acido]]).** Rewrite only the lines that need it: narrator jabs, self-interested family, no hug or moral at the end. Show the user the script and the credit estimate before `voice`. Only changed sections are billed.
-
-**Not built yet (do it during the zumbi):**
-- a "palavra-destaque" overlay (the key word pops in on its `@word` cue, centre column);
-- an audit warning when an important overlay (stopwatch/stat/label corner) sits outside the 9:16 centre column.
-
-**Keep:** `/stickman` must still stop once before spending voice credits — the user said "não tire isso".
-
-**Tags:** the user approved all 5 sarcastic tags on Yuri (2026-11-08); nothing pending there.
+**How to apply:** don't suggest remaking crush. Lesson to keep: a voice section spans many shots, so one changed line re-voices all of it. Show the user a full option and a lean credit option. Still deferred: card layouts are 16:9-wide (a 9:16 crop loses half); the user was offered a narrow card layout. `/stickman` must still stop once before spending voice credits (the user said "não tire isso").
 @@@@ END
-@@@@ FILE @memory/project-ritmo-rapido.md | text-crlf | 1677 | dc3cd2c462104aceb84fa236ffcbd5df7de3bdb1ca5ee808a6f1a5216eef710c
+@@@@ FILE @memory/project-ritmo-rapido.md | text | 1785 | fe899e7044d538dc79ad37f634ae2fb929b193e711796b4b8981b5e11f5d8f0f
 ---
 name: project-ritmo-rapido
 description: House pacing since 2026-11-08 — sub-cuts (coverage), two-sided whip/zoom/smash transitions, 9:16-safe framing; user loved the 10 s test (teste-ritmo)
@@ -863,10 +858,10 @@ metadata:
   type: project
 ---
 
-On 2026-11-08 the user asked for livelier camera work and transitions, faster cuts ("manter a dopamina"), and 16:9 framing that also works cut down to 9:16. The 10 s test `final/Teste de Ritmo.mp4` (generator `tools/episodes/teste_ritmo.py`) got "agradou muito" → it became house style.
+On 2026-11-08 the user asked for livelier camera work and transitions, faster cuts ("manter a dopamina"), and 16:9 framing that also works cut down to 9:16. The 10 s test `final/Teste de Ritmo.mp4` (generator `tools/episodes/teste_ritmo.py`) got "agradou muito" → it became house style. (That test and its generator were deleted in the 2026-11-09 cleanup; invasao_zumbi.py's `estilo novo` block is now the reference.)
 
 - Engine: `coverage: fast|calm|off` and `camera.beats` (sub-cuts on word starts, src/episode/scene.ts); `cut: whip|zoom|smash` play on both sides of the cut (ShotView.tsx) with automatic SFX; the audit's `vertical` warning flags a target outside the 9:16 centre column.
-- Generators opt in with `episode(..., ritmo='rapido')` (`_modelo.py` does). Old episodes (quem-tem-crush, invasao-zumbi) stay unchanged on purpose.
+- Generators opt in with `episode(..., ritmo='rapido')` (`_modelo.py` does). invasao-zumbi was remade with it (`apply_ritmo`) on 2026-11-09.
 
 **Why:** the episodes felt slow (~3.9 s/shot, mostly near-static `drift`, no transitions).
 
@@ -911,7 +906,7 @@ The ElevenLabs API key `tools/episode.mjs` uses lives in `D:\stickman-2\.env` as
 - To check the real remaining credit balance, ask the user to look at elevenlabs.io/app/subscription, or to create/widen a key with `user_read`.
 - To measure actual cost of a call, use `/v1/usage/character-stats?start_unix=<ms>&end_unix=<ms>&include_live_requests=true` and diff before/after — this works with the current key and is how the ~0.4 credits/char rate for eleven_v4 was measured (see [[project-narrator-voice]]).
 @@@@ END
-@@@@ FILE CLAUDE.md | text-crlf | 30629 | 2c9824489088f9a67a2627d65f4461b8617501f23cd5370f58605402f49e223c
+@@@@ FILE CLAUDE.md | text | 31549 | 42ae466a5797065adbdc651a64053dabc61232ac0a4cd053192ca8bc2870eea1
 # 3D Stickman Long: production system
 
 > **ElevenLabs is not connected yet.** This copy was set up from `project instructions.md` without a working `ELEVENLABS_API_KEY`. The first time one is added to `.env`, run `docs/ELEVENLABS_SETUP.md` before any voice work; its last step deletes this note. Until then, take episodes as far as the draft preview. (Fish Audio is separate and optional — only needed for `fish`-mode thumbnails; see `docs/FISH_SETUP.md`.)
@@ -996,7 +991,7 @@ These are bugs we already hit. Don't reintroduce them.
   - Or film through the gap between two bars (bars every 0.214 m), under the top rail.
 - **Hand props follow the wrist.** A tray or letter can end up edge-on, like a sign. Check them in a still, or swap to a clearer prop or pose.
 - **No more ASR alignment (obsolete bug class, kept for history).** Voice used to be transcribed with Whisper after the fact, which split compounds ("dodge balls") and mis-heard numbers, pushing words out of alignment. Since 2026-11-08, `align` reads ElevenLabs' own per-character timestamps for the exact text we sent — there's nothing to transcribe or fuzzy-match, so this bug class can't recur. If `align` ever prints a word-count mismatch, that means the model actually said something different from the script (mispronunciation), not an alignment bug — fix the script text, not the alignment code.
-- **Staging traps from `quem-tem-crush`** (each cost a reviewer round):
+- **Staging traps from `quem-tem-crush`** (a discarded test episode) (each cost a reviewer round):
   - **A partial pose resets the rest to standing.** On a seated actor, give the full seated pose, not just the changed arm.
   - **`sitFloor` sinks the feet ~0.4 m.** For the floor or a kerb, use `sit` on a `crate` (h 0.45) or `kneel`.
   - **A `smoke` prop near the lens reads as a rock.** Keep it far from the sight line; use small puffs (`size` ~0.25, `n` 60, `wind`).
@@ -1013,7 +1008,7 @@ All files live in `public/episodes/<slug>/`.
 
 1. **Idea:** follow `docs/story/IDEA_ENGINE.md`. Generate candidates, check them with `python -I tools/ideas/novelty.py "<title>"`, score them, and pitch the top 3 to the user. Wait for their pick.
 2. **Script:** follow `docs/story/COLA_ROTEIRO.md` (beat sheet, voice rules, checklist, scoring, condensed from `STORY_BLUEPRINT.md`); open the blueprint only at the § the cola names. Show the user the script, with its score, before spending voice credits. Once the shot list exists, `node tools/episode.mjs script <slug>` writes a readable `script.md` (speakers and timestamps). Keep the plant ledger, fact check and score in `script_notes.md`.
-3. **Shot list:** write `episode.json` (schema in `src/types.ts`: `Episode`, `Shot3D`, `CardShot`) through a Python generator: copy `tools/episodes/_modelo.py` (the 17 beats, with helpers from `tools/episodes/kit.py`: `A`, `S`, `C`, `cam`, `walk`, `crush`, `episode`, `load_timing`, `resolve_countdowns`, `write`) to `tools/episodes/<slug>.py` and run it with `.venv/Scripts/python -I`. Edit the .py, never the JSON. `quem_tem_crush.py` is a full example. Rules:
+3. **Shot list:** write `episode.json` (schema in `src/types.ts`: `Episode`, `Shot3D`, `CardShot`) through a Python generator: copy `tools/episodes/_modelo.py` (the 17 beats, with helpers from `tools/episodes/kit.py`: `A`, `S`, `C`, `cam`, `walk`, `crush`, `episode`, `load_timing`, `resolve_countdowns`, `write`) to `tools/episodes/<slug>.py` and run it with `.venv/Scripts/python -I`. Edit the .py, never the JSON. `invasao_zumbi.py` is the full example (an older generator with its own helpers; new ones should use the kit). Rules:
    - one shot per 2.5–5 s of narration;
    - the `vo` text, read in order across shots, IS the script;
    - silent beats use `hold`, with no `vo`.
@@ -1022,10 +1017,10 @@ All files live in `public/episodes/<slug>/`.
      - `camera` takes `{shot: xclose|close|medium|full|wide|establishing|insert, target, angle, height, move, over, dist}` (`dist` sets how far behind the `over` actor's shoulder the camera sits; default 0.85 m, so ~1.7 keeps the shoulder small);
      - explicit cameras: `{pos, look, fov, to?, moveAt?: [t0, t1], ease?}` runs one move inside a cued window; `{path: [{t, pos, look, fov?, ease?}]}` gives keyframes (pan with a mover, hold for the effect, follow again). `ease: "cruise"` is a steady pan with short ramps, the right choice for tracking someone;
      - `kind: "card"` shots use `src/cards` (`CARDS`; each entry's `description` and `example` show its fields). Any `"@word"` string inside a card spec is resolved to that word's time; `compare` takes an optional `middle` row, and each row has `at`;
-     - `overlays` are `label`, `title`, `stat`, `stopwatch`, `bubble`, `caption`, `flash` and `news` (a "TRENDING" lower-third: `headline`, `ticker`, `tag`). A countdown that continues across cuts uses one `stopwatch` per shot with `persist: true` (no draw-in). Its `switchAt` and any overlay's `until` take word cues (`"@two"`);
+     - `overlays` are `label`, `title`, `stat`, `stopwatch`, `bubble`, `caption`, `flash`, `news` (a "TRENDING" lower-third: `headline`, `ticker`, `tag`; `safe: true` centres it in the 9:16 column) and `word` (palavra-destaque: `text` pops in big on its `at: "@word"`, centre column; `color` yellow/white/red, `y` low/top/mid). The episode `title` opens compact (small line + big line in 2 rows, inside the 540 px centre column) and glides into the one-line 16:9 layout after ~1.6 s (`compact`: seconds held; 0 = start wide), so the opening works in a vertical short. Put countdowns at `corner: "bc"` (bottom centre: in the column and off faces; `tc` covers heads and card titles); the audit warns on corner HUDs a vertical cut would lose. A countdown that continues across cuts uses one `stopwatch` per shot with `persist: true` (no draw-in). Its `switchAt` and any overlay's `until` take word cues (`"@two"`);
      - `fx` takes `freeze`, `particles`, `grade`, `speedLines` and `shake`;
      - `cut` takes `flow`, `cut`, `flash`, `dip` and the two-sided transitions `whip`, `zoom` and `smash` (end of the outgoing shot + start of this one, with automatic sound);
-     - `coverage: fast | calm | off` splits one shot into automatic sub-cuts on word starts (punch-in, then new angles; automatic cameras only); `camera.beats` places them by hand. **House pacing:** pass `ritmo='rapido'` to `episode()` in the generator (`_modelo.py` does): coverage `fast` everywhere it applies and whip/zoom on set changes. Use `calm` in the dilemma, `smash` by hand on reveals. `teste_ritmo.py` is the reference;
+     - `coverage: fast | calm | off` splits one shot into automatic sub-cuts on word starts (punch-in, then new angles; explicit `pos`/`path` cameras punch in on their look point from ≥ 3.2 m and otherwise orbit ~28° around it; `over` cameras get none; set `coverage: 'off'` where a sub-cut crops the action or shows a nape); `camera.beats` places them by hand. **House pacing:** pass `ritmo='rapido'` to `episode()` in the generator (`_modelo.py` does): coverage `fast` everywhere it applies and whip/zoom on set changes. Use `calm` in the dilemma, `smash` by hand on reveals. the `estilo novo` block at the end of `invasao_zumbi.py` (`apply_ritmo`, hand-set `smash` cuts, `word` highlights, `clips`) is the reference;
      - `sfx` cues use the names in `tools/sfx/episode_audio.py` (LIB);
      - `music` holds mood cues per shot index: curious, wonder, tension, action, sad, none; or `{file}` for your own track.
    - **Word cues:** any effect time can be `"@word"`, `"@word#2"` or `"@word+0.2"` instead of seconds. That covers `fx.swap.t`, overlay `at`, `sfx[].t`, actor `poses[].t`, `faces[].t` and `path[].t`, prop `follow[].t` and `ignite`, `camera.moveAt` and `camera.path[].t`, and card spec values. Cues resolve against the aligned narration, so everything lands on the spoken word and survives re-voicing.
@@ -1079,7 +1074,7 @@ All files live in `public/episodes/<slug>/`.
       Look at every event image yourself.
    3. Spawn an **independent reviewer** subagent (fresh context, `general-purpose`) told to follow `docs/review/REVIEWER_BRIEF.md` for `<slug>`. It writes `out/<slug>/review/reviewer_report.md` with must-fix / should-fix / nit rows and a verdict. Fix every must-fix and should-fix, or tell the user which ones you deferred and why.
    4. After the fixes, re-run step 1 and `node tools/review.mjs <slug> --only <ids of the shots you changed>` (only those shots and their events are re-rendered; the manifest's `only` lists them). If the voice was redone or shots were added/removed, it refuses: run the full `review.mjs`. Then a round-2 reviewer verifies each earlier row and checks only the changed shots: spawn the `revisor-verificacao` subagent (`.claude/agents/`, pinned to sonnet / medium effort — verification doesn't need the main model; round 1 stays `general-purpose` on the session model), naming the slug and the previous report (brief section "Verification rounds"; `review.mjs` archives old reports in `out/<slug>/review_history/`). Build only on "ready for final render".
-8. **Build:** `node tools/build-episode.mjs <slug>` makes the soundtrack, renders and muxes. A full build refuses to start while the scene audit has errors.
+8. **Build:** `node tools/build-episode.mjs <slug>` makes the soundtrack, renders and muxes. A full build refuses to start while the scene audit has errors. Watch it with `node tools/progress.mjs <slug> --watch` (step, bar, frames, Remotion's time-left estimate; the build writes `out/<slug>/progress.json`).
    - The soundtrack has narration, music ducked under the voice, per-set ambience, automatic sound effects, and the scripted `sfx`.
    - Output is `final/<Episode title>.mp4` at −14 LUFS, plus `out/<slug>/sheet_N.png` (one frame per shot). All finished videos sit together in `final/`. A full build moves the previous cut to `final/archive/<slug>_<date>.mp4`. Thumbnails go in `final/thumbnails/`, and `final/README.md` lists every episode.
    - Defaults: concurrency = CPU cores − 4 (8 here) and CRF 18. Both were measured: 21% faster than 4/14, the file is ~40% of the size, and there's no visible difference. Override with `--concurrency N` / `--crf N`. A 10-min episode took ~25 min at the old 4/14, so expect ~20 min now.
@@ -11799,7 +11794,7 @@ End with:
 
 Reply with the counts and every must-fix row.
 @@@@ END
-@@@@ FILE docs/story/COLA_ROTEIRO.md | text | 12869 | 4a5a046385cb1aea5408e68ac63eac1a4dda877ce84fe2194414745e289d14ae
+@@@@ FILE docs/story/COLA_ROTEIRO.md | text | 15383 | b376a7d8802c7e60e48c58bd19e672a59dbcdbf558aef24bdb36dc0151a653ca
 # COLA DE ROTEIRO — episódio "E Se" de 10 min (2ª pessoa, PT-BR)
 
 Resumo de `STORY_BLUEPRINT.md`. **Leia só isto ao escrever.** Abra o blueprint apenas na seção indicada (§) quando precisar do detalhe ou de exemplos. Originalidade: copie estruturas, nunca falas, piadas, personagens ou bordões da IFOLOGY (§6.7).
@@ -11828,6 +11823,8 @@ CTA         P1 fantasia pessoal + P2 debate só de quem viu
 ```
 Testes: dá pra dizer numa respirada · abertura mostra em 1 plano de 3 s · o limite (não a sorte) cria o clímax · 1 número repetível · dilema rende comentário · engine monta com o que existe.
 
+**Duração mínima: 10:00 de narração** (regra do usuário, 2026-11-09). Escreva ~1.600–1.700 palavras em PT-BR (leitura ritmada a ~175 ppm); o audit avisa abaixo de 10:00, inclusive no rascunho. Episódios de 8 min (§4.2) não se usam mais; para passar de 10, use §4.3.
+
 ## Batidas do 10:00 (palavras = ref. a 175 wpm em inglês; os **tempos** valem, as palavras recalibre com `episode.mjs pace`)
 | # | Tempo | Batida | Pal. | Deve conter |
 |---|---|---|---|---|
@@ -11850,6 +11847,33 @@ Testes: dá pra dizer numa respirada · abertura mostra em 1 plano de 3 s · o l
 | 17 | 9:40–10:00 | CTA | 50 | P1 + P2 → "Conta pra gente nos comentários." → `[ASSINATURA]` |
 
 8 min e 12 min: §4.2 / §4.3. Variante de corrupção (poderes indetectáveis, máx. 1 a cada 4 episódios): §4.
+
+## Primeiros 10 s (regra do usuário, 2026-11-09; só episódios novos)
+Os 10 primeiros segundos decidem se a pessoa fica. **Combine ≥ 2 tipos de gancho** e use todas as técnicas de câmera, corte e som abaixo.
+
+**Tipos de gancho (a situação):**
+- **Poder resolvendo algo trivial** (padrão B1): o título pago em miniatura em ≤ 5 s. "Você está atrasado. Você pisca. Já está na carteira."
+- **Desastre em andamento:** começa no meio do caos, sem contexto.
+- **Imagem impossível:** algo que não devia existir, sem explicação (o suco parado no ar).
+- **Número absurdo** dito no 1º segundo: "Quatrocentos zumbis. E você tem um apito."
+- **Flash-forward:** 3 s do clímax e depois "Seis horas antes…". No máximo 1 a cada 3 episódios, pra não virar fórmula.
+- **Pergunta-armadilha:** "Por que a sua mãe está vendendo camiseta com a sua cara?"
+- **Testemunha chocada:** a reação antes da causa (close de boca aberta, depois corta pro que ela vê).
+- **Estranheza não explicada:** um detalhe que só se paga depois.
+- **Aposta pessoal:** algo seu em risco, com relógio. "Você tem cinquenta minutos."
+
+**Câmera e corte:**
+- Plano 1 em **close de objeto**.
+- **≥ 6 cortes em 10 s** (planos de 1–1,5 s), contando os sub-cortes de `coverage`/`camera.beats`. Varie o tamanho: close → aberto → close.
+- **≥ 1 movimento forte** no primeiro uso do poder: `move: 'crashIn'`, `cut: 'smash'`/`'whip'`, `fx.freeze` (0,5 s no auge) ou `speedLines`.
+- Ângulo baixo no poder, alto na reação. Tudo na faixa central: a abertura é o trecho mais reaproveitado nos shorts.
+
+**Som e texto:**
+- **Fala no 1º segundo** (sem intro, logo ou música sozinha) e **SFX forte em ≤ 2 s** (toque, whoosh, impacto).
+- 0,3 s de silêncio antes da revelação.
+- Palavra-destaque (`word`) no número ou na palavra-chave. O título só entra depois do poder (~0:20–0:30).
+
+O audit avisa `[hook]` quando faltar o mínimo de cortes, o SFX cedo ou o movimento forte. Episódios anteriores à regra têm `hookCheck: False`. "Poder visível até 0:08" é conferido por quem lê, no checklist.
 
 ## Estrutura (o que o checklist cobra)
 - **Mas/portanto** entre batidas; "e então" só na montagem de vantagens.
@@ -11908,6 +11932,7 @@ O usuário corta à mão, do 16:9, shorts de **~90 s** para YouTube Shorts, Reel
 - [ ] Plantios ≥ 5 / ≥ 3 no clímax / piada recorrente / loop aberto
 - [ ] Mas/portanto; curva de risco; lacunas N ≤ 40 s e ↻ ≤ 90 s
 - [ ] Plano 1 close de objeto; poder ≤ 0:08; testemunha + impassível; título ≤ 0:40
+- [ ] Primeiros 10 s: ≥ 2 tipos de gancho, ≥ 6 cortes, movimento forte no poder, fala no 1º s, SFX ≤ 2 s (audit `[hook]` limpo)
 - [ ] ≥ 15 números pareados e verificados; 2–3 contas; teasers
 - [ ] Viradas nas janelas; relógio vindo de regra; dilema binário; regra tema vence; custo pago; objeto perdido; frase de mudança
 - [ ] 25–32 falas curtas; piada ≤ 60 s; estatística de frase; sem banidos
@@ -18798,7 +18823,7 @@ export const DistanceCard: React.FC<CardProps> = ({ t, dur, spec, W, H }) => {
   );
 };
 @@@@ END
-@@@@ FILE src/cards/iconCard.tsx | text | 3470 | 2df569b1a4295e913657e841361b753a3870e511643a3f7606df033a9f7ebcb5
+@@@@ FILE src/cards/iconCard.tsx | text | 3490 | a923edbac3fa7c79edd5680efa58e01e7b12c1527c7fa85537d66f30f60a5d1d
 // `icon` card: one big line-art icon drawing itself on over a soft gold glow, with a caps caption
 // and an optional gold sub-line. Also the `title` card (IFOLOGY episode title on navy or clear).
 import React from 'react';
@@ -18871,6 +18896,7 @@ export const TitleCard: React.FC<CardProps> = ({ t, dur, spec, W, H }) => {
         big={big}
         small={small || undefined}
         dur={out ? dur : undefined}
+        compact={0}
         pos={bg ? (icon ? H * 0.43 : 'center') : sStr(spec, 'pos', 'top') === 'center' ? 'center' : 'top'}
         size={sNum(spec, 'size', bg ? 170 : 150)}
         W={W}
@@ -20444,7 +20470,7 @@ export const Stage: React.FC<{
   </ThreeCanvas>
 );
 @@@@ END
-@@@@ FILE src/engine/Stickman.tsx | text-crlf | 26550 | 67a6eb21ed88ef483908fb3583ff8c9355412aa1639f3717f7b88d53467d1c4a
+@@@@ FILE src/engine/Stickman.tsx | text-crlf | 27390 | c856314485352fd4316fb8f9b0afd599f4583782e7076afa392600a8df73bb9e
 // The stickman, modelled on the IFOLOGY look: matte black sphere head with a cream crescent,
 // tiny line-art face, puffy cel-shaded clothing with thin black contours, stick limbs, mitten hands.
 import React, { createContext, useContext, useEffect, useMemo } from 'react';
@@ -20809,6 +20835,17 @@ const Mitten: React.FC<{ kind?: string; ink: Mat; side: 1 | -1 }> = ({ kind, ink
   );
 };
 
+/** onBeforeRender: place a glow sprite `back` metres behind `at`, on the far side from the camera. */
+function glowBehind(at: THREE.Vector3, back: number) {
+  const w = new THREE.Vector3();
+  return function (this: unknown, _r: unknown, _s: unknown, cam: THREE.Camera) {
+    const o = this as unknown as THREE.Object3D;
+    w.copy(at).sub(cam.position).normalize().multiplyScalar(back).add(at);
+    o.position.copy(o.parent ? o.parent.worldToLocal(w.clone()) : w);
+    o.updateMatrixWorld();
+  } as unknown as THREE.Object3D['onBeforeRender'];
+}
+
 let glowTex: THREE.Texture | null = null;
 export function glowTexture() {
   if (glowTex) return glowTex;
@@ -20959,7 +20996,10 @@ const StickmanBody: React.FC<{ s: ActorState; shadowBlob?: boolean; faceGlow?: s
       {leg('L')}
       {leg('R')}
       {s.spec.glow && !isGhost && (
-        <sprite position={s.anchors.chest.toArray()} scale={[2.4 * s.scale, 2.8 * s.scale, 1]} renderOrder={5}>
+        // pushed behind the body, away from the lens, every frame: an additive sprite in front of the
+        // head's outline hull tinted it green in close-ups (hard-won rule "additive volumes tint ink")
+        <sprite position={s.anchors.chest.toArray()} scale={[2.4 * s.scale, 2.8 * s.scale, 1]} renderOrder={5}
+          onBeforeRender={glowBehind(s.anchors.chest, 0.45 * s.scale)}>
           <spriteMaterial map={glowTexture()} color={s.spec.glow} transparent opacity={0.5} depthWrite={false} blending={THREE.AdditiveBlending} toneMapped={false} />
         </sprite>
       )}
@@ -22385,7 +22425,7 @@ export const ShotView: React.FC<{
   );
 };
 @@@@ END
-@@@@ FILE src/episode/audit.ts | text-crlf | 22149 | 52f92ad03a40909e007626000138a9e2d151713785706cb050b7fc46c035dedc
+@@@@ FILE src/episode/audit.ts | text-crlf | 25197 | e53cc1bafe1c90beddaff9b1a96d0dc27370346a67766d9a8bbb5df5892c7c97
 // Pre-render scene audit: walks every frame of every 3D shot through evalShot (the same code the
 // renderer uses) and checks numbers, not pictures. Run: node tools/qa.cjs audit <slug>
 import * as THREE from 'three';
@@ -22394,7 +22434,8 @@ import { project, type CamState } from '../engine/cam';
 import { POSES } from '../engine/rig';
 import type { CastMember, Episode, Pose, Shot3D, Timing } from '../types';
 import { castOf } from './resolve';
-import { beatCam, evalShot, flowInfo, framingDelta, type ShotCtx } from './scene';
+import { cue } from './cue';
+import { beatCam, beatsOf, evalShot, flowInfo, framingDelta, type ShotCtx } from './scene';
 
 export type Finding = { sev: 'error' | 'warn'; shot: number; id?: string; t?: number; check: string; msg: string };
 export type AuditEvent = { shot: number; id?: string; t: number; kind: 'swap' | 'jump' | 'flow' | 'cut'; what: string };
@@ -22659,6 +22700,38 @@ export function auditEpisode(ep: Episode, timing: Timing): AuditReport {
   // shorts the user cuts by hand from the 16:9: at least 4 per long episode, each 60–95 s of whole shots
   const ids = ep.shots.map(s => s.id);
   const long = timing.total > 240;
+  // house rule (user, 2026-11-09): every long episode runs at least 10:00
+  if (long && !timing.draft && timing.total < 600) add({ sev: 'warn', shot: 0, check: 'length', msg: `episode runs ${Math.floor(timing.total / 60)}:${String(Math.round(timing.total % 60)).padStart(2, '0')} — the house minimum is 10:00 (add narration: an extra problem, rule test or world-bigger scene)` });
+  if (long && timing.draft && timing.total < 600) add({ sev: 'warn', shot: 0, check: 'length', msg: `draft estimate ${Math.floor(timing.total / 60)}:${String(Math.round(timing.total % 60)).padStart(2, '0')} — the house minimum is 10:00; write more before buying voice` });
+  // retention hook (user rule, 2026-11-09, new episodes only): the first 10 s need fast cutting, an early sound and a punchy move.
+  // That the power shows by 0:08 needs a reader: COLA "Primeiros 10 s".
+  if (long && ep.hookCheck !== false) {
+    let cuts = 0, sfxEarly = false, punch = false;
+    ep.shots.forEach((sh, i) => {
+      const tm = timing.shots[i];
+      if (!tm || tm.start >= 10) return;
+      if (i > 0) cuts++;
+      if (sh.kind !== 'card') {
+        const s3 = sh as Shot3D;
+        beatsOf(ctxOf(i)).forEach(b => { if (b.t0 > 0 && tm.start + b.t0 < 10) cuts++; });
+        const mv = s3.camera?.move;
+        if (mv === 'crashIn' || mv === 'shake' || ['smash', 'whip', 'zoom'].includes(s3.cut || '') || s3.fx?.freeze !== undefined || s3.fx?.speedLines || (s3.fx?.shake ?? 0) > 0) punch = true;
+      }
+      for (const c of sh.sfx || []) if (tm.start + cue(c.t as number | string, tm.words, 0) <= 2) sfxEarly = true;
+    });
+    if (cuts < 6) add({ sev: 'warn', shot: 0, check: 'hook', msg: `only ${cuts} cut(s) in the first 10 s — the house hook wants ≥ 6 (1–1.5 s shots: coverage 'fast', camera.beats, or shorter shots)` });
+    if (!sfxEarly) add({ sev: 'warn', shot: 0, check: 'hook', msg: 'no scripted sound effect in the first 2 s — open on a strong SFX (ring, whoosh, impact) under the first line' });
+    if (!punch) add({ sev: 'warn', shot: 0, check: 'hook', msg: "no punchy move in the first 10 s — use a crashIn, a smash/whip cut, a freeze or speed lines on the power's first use" });
+  }
+  // 9:16 safety for important 2D overlays on 3D shots: corner HUDs fall outside the centre column a vertical cut keeps
+  ep.shots.forEach((sh, i) => {
+    if (sh.kind === 'card') return;
+    for (const o of sh.overlays || []) {
+      const x = o as { type: string; corner?: string; pos?: string; safe?: boolean };
+      const out = (x.type === 'stopwatch' && x.corner !== 'tc' && x.corner !== 'bc') || x.type === 'label' || (x.type === 'stat' && x.pos !== 'center') || (x.type === 'news' && !x.safe);
+      if (out) add({ sev: 'warn', shot: i, id: sh.id, check: 'vertical', msg: `${x.type} overlay sits outside the 9:16 centre column — a vertical cut loses it (stopwatch corner "tc"/"bc", news safe:true, stat pos "center", or a "word" overlay)` }, `${i}|vov|${x.type}`);
+    }
+  });
   if (long && (ep.clips?.length ?? 0) < 4) add({ sev: 'warn', shot: 0, check: 'clips', msg: `${ep.clips?.length ?? 0} short clip(s) marked — a long episode needs ≥ 4 self-contained ~90 s clips (episode.clips)` });
   for (const c of ep.clips || []) {
     const a = ids.indexOf(c.from), b = ids.indexOf(c.to);
@@ -22830,7 +22903,7 @@ export function cue(spec: number | string | undefined, words: Words, fallback = 
   return hit ? hit[1] + off : fallback;
 }
 @@@@ END
-@@@@ FILE src/episode/overlays.tsx | text | 4067 | a505c69cd8452fc2b80160968e1b6af08b9236f0f3c073a9939a17985a9ffcff
+@@@@ FILE src/episode/overlays.tsx | text | 4259 | e2789c9998b55394375dae83d6ea47297d122100dda2ee413dd63167cc56e298
 // Dispatches episode overlay specs (labels, titles, stats, bubbles…) onto overlay components.
 import React from 'react';
 import { AbsoluteFill } from 'remotion';
@@ -22842,6 +22915,7 @@ import { Stopwatch } from '../overlays/Stopwatch';
 import { Bubble } from '../overlays/Bubble';
 import { CrushMeter } from '../overlays/CrushMeter';
 import { NewsBar } from '../overlays/NewsBar';
+import { KeyWord } from '../overlays/KeyWord';
 import type { Overlay } from '../types';
 
 export type Projector = (actorId: string) => { x: number; y: number; visible: boolean; scale: number } | null;
@@ -22886,13 +22960,15 @@ const OverlayExt: React.FC<{ o: Overlay; t: number; project: Projector }> = ({ o
   const dur = (o as { until?: number; at?: number }).until !== undefined ? (o as { until: number }).until - ((o as { at?: number }).at ?? 0) : undefined;
   switch (o.type) {
     case 'title':
-      return <TitleOverlay t={t} big={o.big} small={o.small} dur={dur} />;
+      return <TitleOverlay t={t} big={o.big} small={o.small} dur={dur} compact={o.compact} />;
     case 'label':
       return <Label t={t} text={o.text} corner={o.corner} dur={dur} />;
     case 'stopwatch':
-      return <Stopwatch t={t} from={o.from || '0.00 s'} to={o.to} switchAt={(o as { switchAt?: number }).switchAt} dur={dur} persist={(o as { persist?: boolean }).persist} tick={(o as { tick?: number }).tick} keep={(o as { keep?: boolean }).keep} corner={(o as { corner?: 'tl' | 'tr' | 'bl' | 'br' }).corner} />;
+      return <Stopwatch t={t} from={o.from || '0.00 s'} to={o.to} switchAt={(o as { switchAt?: number }).switchAt} dur={dur} persist={(o as { persist?: boolean }).persist} tick={(o as { tick?: number }).tick} keep={(o as { keep?: boolean }).keep} corner={(o as { corner?: 'tl' | 'tr' | 'bl' | 'br' | 'tc' | 'bc' }).corner} />;
     case 'news':
-      return <NewsBar t={t} headline={o.headline} ticker={o.ticker} tag={(o as { tag?: string }).tag} dur={dur} />;
+      return <NewsBar t={t} headline={o.headline} ticker={o.ticker} tag={(o as { tag?: string }).tag} dur={dur} safe={o.safe} />;
+    case 'word':
+      return <KeyWord t={t} text={o.text} color={o.color} y={o.y} dur={dur} />;
     case 'bubble':
     case 'thought': {
       const p = project(o.actor);
@@ -22948,7 +23024,7 @@ export function castOf(ep: Episode): Record<string, CastMember> {
   return out;
 }
 @@@@ END
-@@@@ FILE src/episode/scene.ts | text-crlf | 15436 | 376664425f1f70116fca3ae4f4eecac6c32ce659c074a038b9764a35dc8eede8
+@@@@ FILE src/episode/scene.ts | text-crlf | 17116 | 320f16bbfd5704744734415d0ce8f24396c59981569eb04c8d3591ac1144bd02
 // Single source of truth for "what is where" in an episode shot at time t: actors (marks, word
 // cues, swap power, continuity blending), camera (solver, shake, flow across near-identical cuts)
 // and props. The renderer (ShotView), the scene audit, the self-tests and the review overlay all
@@ -23064,11 +23140,14 @@ export function beatsOf(ctx: ShotCtx): Beat[] {
   const hit = beatCache.get(shot);
   if (hit && hit.length && Math.abs(hit[hit.length - 1].t1 - dur) < 1e-6) return hit;
   const c = shot.camera || {};
-  const auto = !(c.pos || c.path || c.over);
+  // automatic cameras re-frame per beat; explicit ones (pos/path) punch in / orbit their own view (beatView)
+  const expl = isExplicit(c);
+  const auto = !(c.pos || c.path || c.over) || expl;
   let cuts: number[] = [];
   if (auto && c.beats?.length) cuts = c.beats.map(b => cue(b, words, -1)).filter(x => x > 0.3 && x < dur - 0.3);
   else if (auto && shot.coverage && shot.coverage !== 'off') {
-    const [target, min] = shot.coverage === 'fast' ? [1.6, 1.1] : [2.6, 1.8];
+    // explicit cameras usually frame an action tableau: cut them less often, so the action still reads
+    const [target, min] = shot.coverage === 'fast' ? (expl ? [2.2, 1.4] : [1.6, 1.1]) : (expl ? [3.0, 2.0] : [2.6, 1.8]);
     // cut just before a word starts, so the new framing lands on the word
     const starts = (words || []).map(w => w[1] - 0.08).filter(x => x > 0);
     const cands = starts.length ? starts : Array.from({ length: Math.floor(dur / 0.4) }, (_, i) => i * 0.4);
@@ -23083,9 +23162,29 @@ export function beatsOf(ctx: ShotCtx): Beat[] {
   return out;
 }
 
+/** An explicit camera (pos/look or path, not over-the-shoulder): its sub-cuts transform the solved view (beatView). */
+export const isExplicit = (c: CameraSpec | undefined) => !!c && !!(c.pos || c.path) && !c.over;
+
+/**
+ * Sub-cut of an explicit camera, applied to the view solved on the shot's own clock (so moveAt / path
+ * timing is untouched): odd beats punch in on the look point (a size change, ~1.55x; only from ≥ 3.2 m,
+ * closer they orbit too), even beats orbit ~28° around it at the same distance (a real angle change, never
+ * a few-pixel snap). u = 0..1 in the beat.
+ */
+export function beatView(cam: CamState, k: number, u: number): CamState {
+  if (!k) return cam;
+  // a camera already close to its subject (< 3.2 m) would punch into a giant head: orbit the other way instead
+  const near = cam.pos.distanceTo(cam.look) < 3.2;
+  if (k % 2 && !near) return { ...cam, fov: cam.fov * (0.64 - 0.035 * u) };
+  const side = k % 2 ? -1 : k % 4 === 2 ? 1 : -1;
+  const a = side * (28 + 3 * u) * (Math.PI / 180);
+  const off = cam.pos.clone().sub(cam.look).applyAxisAngle(new THREE.Vector3(0, 1, 0), a);
+  return { ...cam, pos: cam.look.clone().add(off), fov: cam.fov * 0.9 };
+}
+
 /** The camera spec for beat k: 0 = as written; odd = one size tighter, nudged; even = a new angle. */
 export function beatCam(c: CameraSpec | undefined, k: number): CameraSpec | undefined {
-  if (!k || !c) return c;
+  if (!k || !c || isExplicit(c)) return c;
   const base = c.angle ?? 20, sign = base >= 0 ? -1 : 1;
   if (k % 2) return { ...c, shot: TIGHTER[c.shot || 'medium'], angle: base + sign * 10, move: 'pushIn', amount: 0.6, dist: c.dist && c.dist * 0.72 };
   return { ...c, angle: base + sign * (k % 4 === 2 ? 38 : -30), height: (c.height ?? 6) + 6, move: k % 4 === 2 ? 'orbitR' : 'orbitL', amount: 0.5 };
@@ -23183,7 +23282,9 @@ export function evalShot(ctx: ShotCtx, t: number, cast: Record<string, CastMembe
   // sub-cuts: solve the camera for the current beat, on the beat's own clock
   const beats = beatsOf(ctx);
   const beat = beats.find(b => t < b.t1) || beats[beats.length - 1];
-  let cam = solveCamera(beatCam(camSpec, beat.k), t - beat.t0, beat.t1 - beat.t0, first, fallback, rotAtStart(ctx, cast, first, t));
+  let cam = isExplicit(camSpec)
+    ? beatView(solveCamera(camSpec, t, ctx.dur, first, fallback), beat.k, (t - beat.t0) / Math.max(1e-6, beat.t1 - beat.t0))
+    : solveCamera(beatCam(camSpec, beat.k), t - beat.t0, beat.t1 - beat.t0, first, fallback, rotAtStart(ctx, cast, first, t));
   const camOut = def.room ? keepInRoom(cam, def.room) : 0;
   if (shot.fx?.shake) cam = shake(cam, t, 0.03 * shot.fx.shake, 18, 4);
   // continuity with the previous shot (same set, near-identical framing): one flowing move
@@ -23450,7 +23551,7 @@ export function runSelfTests(): TestResult[] {
   return out;
 }
 @@@@ END
-@@@@ FILE src/episode/validate.ts | text-crlf | 4598 | 47283124f66d34049b62cadc7bdd4e4f60b32188407f70341a430a4bbb38979f
+@@@@ FILE src/episode/validate.ts | text-crlf | 4606 | 3f072e70d4a6081cacd8519cf409045dc5fb86a7fa11087759f9558da269767b
 // Checks an episode spec against the registries so mistakes fail fast with a readable list.
 // Runs inside calculateMetadata; check from the CLI with:
 //   npx remotion compositions src/index.ts --props='{"slug":"<slug>"}'
@@ -23469,7 +23570,7 @@ const PROPS = ['table', 'roundTable', 'chair', 'bed', 'desk', 'deskLamp', 'door'
   'fire', 'smoke', 'firetruck', 'basket', 'binoculars', 'trafficlight', 'pizza', 'jar'];
 const SHOTS = ['establishing', 'wide', 'full', 'medium', 'close', 'xclose', 'insert'];
 const MOVES = ['static', 'drift', 'pushIn', 'pullOut', 'orbitL', 'orbitR', 'craneUp', 'craneDown', 'truckL', 'truckR', 'track', 'crashIn', 'shake', 'handheld'];
-const OVERLAYS = ['label', 'title', 'stopwatch', 'stat', 'bubble', 'thought', 'crush', 'caption', 'flash', 'counter', 'news', 'hudList'];
+const OVERLAYS = ['label', 'title', 'stopwatch', 'stat', 'bubble', 'thought', 'crush', 'caption', 'flash', 'counter', 'news', 'hudList', 'word'];
 
 export function validate(ep: Episode): string[] {
   const out: string[] = [];
@@ -23822,6 +23923,55 @@ export const Grade: React.FC<{ vignette?: number; grain?: number; tint?: string 
   );
 };
 @@@@ END
+@@@@ FILE src/overlays/KeyWord.tsx | text | 2520 | da61a726408e5c0dc760534a5bc29ee67e4accfc0c6fdc334fb06ae40e948093
+// "Palavra-destaque": the key word of a line pops in big on its spoken cue, centred, always inside the
+// 9:16 centre column (608 of 1920 px) so a hand-cut vertical short keeps it. Yellow by default (the
+// payoff colour), white for setup words. Long text shrinks and wraps to stay in the column.
+//
+// Props
+//   t      seconds since the word appears (nothing for t < 0)
+//   text   the word(s), shown in caps
+//   color  'yellow' (default) | 'white' | 'red' | any CSS colour
+//   y      'low' (default, under the faces) | 'top' | 'mid'
+//   dur    seconds on screen; shrinks away over the last 0.2 s (default 1.5)
+import React from 'react';
+import { AbsoluteFill } from 'remotion';
+import { C, COND, backOut, easeIn, seg } from '../cards/kit';
+
+const COLORS: Record<string, string> = { yellow: C.goldHi, white: '#ffffff', red: '#ff5a4a' };
+export const KEYWORD_COLUMN = 560; // px: text box width, inside the 608 px 9:16 column
+
+export const KeyWord: React.FC<{ t: number; text: string; color?: string; y?: 'low' | 'top' | 'mid'; dur?: number; W?: number; H?: number }> = ({
+  t, text, color = 'yellow', y = 'low', dur = 1.5, W = 1920, H = 1080,
+}) => {
+  if (t < 0) return null;
+  const outK = easeIn(seg(t, dur - 0.2, dur));
+  if (outK >= 1) return null;
+  const up = text.toUpperCase();
+  // condensed caps run ~0.5 em per glyph: size the longest line to the column, capped at 150 px
+  const longest = Math.max(...up.split(/\s+/).map(w => w.length), Math.min(up.length, 9));
+  const size = Math.round(Math.min(150, KEYWORD_COLUMN / (0.52 * longest)));
+  const popK = seg(t, 0, 0.22);
+  const scale = (0.35 + 0.65 * backOut(popK, 2.6)) * (1 - 0.35 * outK);
+  const cy = y === 'top' ? H * 0.2 : y === 'mid' ? H * 0.5 : H * 0.76;
+  const fill = COLORS[color] || color;
+  const ink = 'rgba(10,8,25,0.95)';
+  return (
+    <AbsoluteFill style={{ pointerEvents: 'none' }}>
+      <div
+        style={{
+          position: 'absolute', left: W / 2 - KEYWORD_COLUMN / 2, width: KEYWORD_COLUMN, top: cy, transform: `translateY(-50%) scale(${scale}) rotate(${-2.5 * (1 - popK)}deg)`,
+          opacity: Math.min(1, popK * 4) * (1 - outK), textAlign: 'center', fontFamily: COND, fontWeight: 800, fontSize: size, lineHeight: 0.98,
+          letterSpacing: '0.02em', color: fill, WebkitTextStroke: `${Math.max(4, size * 0.07)}px ${ink}`, paintOrder: 'stroke fill',
+          textShadow: `0 ${size * 0.06}px 0 ${ink}, 0 0 ${size * 0.25}px rgba(0,0,0,0.55)`,
+        }}
+      >
+        {up}
+      </div>
+    </AbsoluteFill>
+  );
+};
+@@@@ END
 @@@@ FILE src/overlays/Label.tsx | text | 4494 | d00a660f534ed6bde6eb3f24181d117d7a91aa1ef5fadc363c330ee173b8e9c5
 // Chapter tag in a corner over a 3D shot: small cream condensed caps with a gold tick, typed on
 // (typewriter with a gold cursor) or slid in. "RULE 3", "DAY 1", "EARTH. EARLIER THAT NIGHT."
@@ -23912,7 +24062,7 @@ const Cursor: React.FC<{ size: number; color: string }> = ({ size, color }) => (
   </span>
 );
 @@@@ END
-@@@@ FILE src/overlays/NewsBar.tsx | text | 2154 | 98d1c0440032597ead667e573757590af0ccd4500a210c9bf7eafb1eed44c3b2
+@@@@ FILE src/overlays/NewsBar.tsx | text | 3582 | 4b164d879d0af4f2dbc95490f90bf00b4263e831f263222a0a31522113ea7e75
 // Lower-third "viral video" bar over a 3D shot: a red tag ("TRENDING"), the headline in white caps
 // on a dark band, and a gold ticker line under it (view counts, channel). Slides in from the left.
 //
@@ -23922,17 +24072,33 @@ const Cursor: React.FC<{ size: number; color: string }> = ({ size, color }) => (
 //   ticker    small line under it, e.g. "2,000,000 VIEWS · FILMED BY THEO"
 //   tag       red tag text (default "TRENDING")
 //   dur       seconds on screen; slides out over the last 0.3 s (omit = stays)
+//   safe      centred and wrapped to the 9:16 centre column (a hand-cut vertical short keeps it); rises in instead
 import React from 'react';
 import { AbsoluteFill } from 'remotion';
 import { C, COND, easeIn, easeOut, seg } from '../cards/kit';
 
-export const NewsBar: React.FC<{ t: number; headline: string; ticker?: string; tag?: string; dur?: number }> = ({ t, headline, ticker, tag = 'TRENDING', dur }) => {
+export const NewsBar: React.FC<{ t: number; headline: string; ticker?: string; tag?: string; dur?: number; safe?: boolean }> = ({ t, headline, ticker, tag = 'TRENDING', dur, safe }) => {
   if (t < 0) return null;
   const outK = dur != null ? easeIn(seg(t, dur - 0.3, dur)) : 0;
   if (outK >= 1) return null;
   const inK = easeOut(seg(t, 0, 0.35));
   const tickK = easeOut(seg(t, 0.25, 0.55));
   const x = -900 * (1 - inK) - 900 * outK;
+  if (safe) {
+    // 9:16-safe: a centred card, 560 px wide, headline wrapped; rises in and drops out
+    const dy = 140 * (1 - inK) + 140 * outK;
+    return (
+      <AbsoluteFill style={{ pointerEvents: 'none' }}>
+        <div style={{ position: 'absolute', left: 960 - 280, width: 560, bottom: 110, transform: `translateY(${dy}px)`, opacity: Math.min(1, inK * 2) * (1 - outK), display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8 }}>
+          <div style={{ background: '#e03a2f', color: '#fff', fontFamily: COND, fontWeight: 800, fontSize: 34, letterSpacing: '0.06em', padding: '6px 18px', boxShadow: '0 6px 18px rgba(0,0,0,0.45)' }}>{tag.toUpperCase()}</div>
+          <div style={{ background: 'rgba(14,16,30,0.92)', color: '#fff', fontFamily: COND, fontWeight: 700, fontSize: 50, lineHeight: 1.08, letterSpacing: '0.02em', padding: '10px 24px', textAlign: 'center', boxShadow: '0 6px 18px rgba(0,0,0,0.45)' }}>{headline.toUpperCase()}</div>
+          {ticker && (
+            <div style={{ opacity: tickK, background: 'rgba(14,16,30,0.78)', color: C.goldHi, fontFamily: COND, fontWeight: 600, fontSize: 28, letterSpacing: '0.08em', padding: '6px 18px', textAlign: 'center' }}>{ticker.toUpperCase()}</div>
+          )}
+        </div>
+      </AbsoluteFill>
+    );
+  }
   return (
     <AbsoluteFill style={{ pointerEvents: 'none' }}>
       <div style={{ position: 'absolute', left: 90 + x, bottom: 120, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 8 }}>
@@ -24007,7 +24173,7 @@ export const StatCallout: React.FC<{
   );
 };
 @@@@ END
-@@@@ FILE src/overlays/Stopwatch.tsx | text-crlf | 5485 | 2b8d43e0906d39ca46c9209eebeb5e689d21c64e310279a408cbfa6a64a5a6f6
+@@@@ FILE src/overlays/Stopwatch.tsx | text-crlf | 5659 | 0693bd3be6da2a27188e71aeff27f0d8a9af8e75ee9cc8addc1c0e3d2a17a110
 // Corner HUD stopwatch (Ifverse "reaction time" look): a white line-art stopwatch whose gold hand
 // spins, with a value under it that can change, e.g. "0.25 s" → "0.025 s" (old value flips up and
 // away, the new one pops in gold with a ring flash, and the hand slows to match).
@@ -24017,7 +24183,7 @@ export const StatCallout: React.FC<{
 //   from        first value text, e.g. "0.25 s"
 //   to          optional second value text, e.g. "0.025 s"
 //   switchAt    seconds (since appear) when `from` changes to `to` (default 1.2)
-//   corner      'tr' (default) | 'tl' | 'br' | 'bl'
+//   corner      'tr' (default) | 'tl' | 'br' | 'bl' | 'tc' / 'bc' (top / bottom centre: inside the 9:16 column; bc keeps it off faces in close-ups)
 //   size        icon size in px (default 112); the value text scales with it
 //   speed       hand revolutions per second (default 1)
 //   speedAfter  revolutions per second after the switch (default speed / 10)
@@ -24030,7 +24196,7 @@ import { Icon } from '../cards/icons';
 import { C, COND, backOut, clamp01, easeIn, easeOut, seg } from '../cards/kit';
 
 export const Stopwatch: React.FC<{
-  t: number; from: string; to?: string; switchAt?: number; corner?: 'tl' | 'tr' | 'bl' | 'br'; size?: number; speed?: number; speedAfter?: number;
+  t: number; from: string; to?: string; switchAt?: number; corner?: 'tl' | 'tr' | 'bl' | 'br' | 'tc' | 'bc'; size?: number; speed?: number; speedAfter?: number;
   dur?: number; persist?: boolean; tick?: number; keep?: boolean; W?: number; H?: number;
 }> = ({ t, from: from0, to, switchAt = 1.2, corner = 'tr', size = 112, speed = 1, speedAfter, dur, persist, tick, keep, W = 1920, H = 1080 }) => {
   if (t < 0) return null;
@@ -24045,13 +24211,13 @@ export const Stopwatch: React.FC<{
   const outK = dur != null && !keep ? easeIn(seg(t, dur - 0.3, dur)) : 0;
   if (outK >= 1) return null;
   const right = corner === 'tr' || corner === 'br';
-  const bottom = corner === 'bl' || corner === 'br';
+  const bottom = corner === 'bl' || corner === 'br' || corner === 'bc';
   const sa = speedAfter ?? speed / 10;
   const hasSwitch = !!to;
   const sw = hasSwitch ? switchAt : Infinity;
   const turns = t <= sw ? speed * t : speed * sw + sa * (t - sw);
   const pad = 70;
-  const cx = right ? W - pad - size / 2 : pad + size / 2;
+  const cx = corner === 'tc' || corner === 'bc' ? W / 2 : right ? W - pad - size / 2 : pad + size / 2;
   const cy = bottom ? H - pad - size * 1.2 : pad + size / 2;
   const draw = persist ? 1 : seg(t, 0, 0.4);
   const ds = t >= sw ? t - sw : -1;
@@ -24103,10 +24269,15 @@ export const Stopwatch: React.FC<{
   );
 };
 @@@@ END
-@@@@ FILE src/overlays/TitleOverlay.tsx | text | 3098 | 8162e24c9570302beaa6b86bc3c252ce09f85269fd2954d89750c1105423b358
+@@@@ FILE src/overlays/TitleOverlay.tsx | text-crlf | 8301 | a699bf647feb72270ebae35a0691b86b0670cd0c3e8a0e4d1bf9739a813298e0
 // IFOLOGY episode title for laying over an establishing shot (or a navy card):
 //   small cream serif line   "WHAT IF YOU COULD"
 //   big gold gradient serif  "STOP TIME?"   (letters pop up in a quick stagger, then a shimmer)
+//
+// 9:16 opening: the title first appears COMPACT — the small line and the big line broken into two
+// balanced lines, everything inside a 540 px column at the centre — so a vertical short cut by hand from
+// the 16:9 video can use it. After `compact` seconds every word glides and resizes into the one-line
+// 16:9 layout (~1 s: sideways first, then the rows close). Words are measured with the real font (canvas measureText), so both layouts are exact.
 //
 // Props
 //   t       seconds since the title appears (nothing is drawn for t < 0)
@@ -24116,14 +24287,77 @@ export const Stopwatch: React.FC<{
 //   out     out-animation length (default 0.4)
 //   pos     'top' (default, IFOLOGY placement over 3D) | 'center' | number (top of block in px)
 //   size    big-line font size in px (default 150; long lines shrink to fit 84% of the width)
+//   compact seconds held in the 9:16 layout before growing (default: until the letters land, ≥ 1.6 s;
+//           0 = start in the 16:9 layout)
 //   W, H    frame size (default 1920×1080)
 import React from 'react';
 import { AbsoluteFill } from 'remotion';
 import { C, GoldText, SERIF, clamp01, easeIn, easeOut, seg } from '../cards/kit';
 
+const COLUMN = 540; // px: compact layout width, inside the 608 px 9:16 column
+const BIG_SP = 0.025; // GoldText letter spacing (em) used here
+const SMALL_SP = 0.06;
+const easeInOut = (x: number) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+
+// width of `text` at 100 px in the serif, plus per-glyph letter spacing (em); cached
+const cache = new Map<string, number>();
+let ctx: CanvasRenderingContext2D | null = null;
+function w100(text: string, spacing: number): number {
+  const key = `${text}|${spacing}`;
+  const hit = cache.get(key);
+  if (hit !== undefined) return hit;
+  ctx ||= document.createElement('canvas').getContext('2d');
+  let w = Array.from(text).length * 0.62 * 100; // fallback estimate
+  if (ctx) {
+    ctx.font = `100px ${SERIF}`;
+    w = ctx.measureText(text).width;
+  }
+  w += Array.from(text).length * spacing * 100;
+  // only cache once the web font is in (a fallback-font measure would stick)
+  if (typeof document === 'undefined' || !document.fonts || document.fonts.check(`100px ${SERIF}`)) cache.set(key, w);
+  return w;
+}
+
+type Box = { x: number; y: number; size: number }; // left/top of the word, font size
+type Word = { text: string; big: boolean; offset: number; wide: Box; tight: Box };
+
+function layout(big: string, small: string | undefined, bigSize: number, smallSize: number, top: number, W: number): Word[] {
+  const out: Word[] = [];
+  const bw = big.split(/\s+/).filter(Boolean);
+  const sw = (small || '').split(/\s+/).filter(Boolean);
+  const space = (sizePx: number, _sp: number) => 0.3 * sizePx; // fixed word gap: a measured ' ' came out narrower than the rendered one
+  const lineW = (ws: string[], sizePx: number, sp: number) => ws.reduce((a, x) => a + w100(x, sp) * (sizePx / 100), 0) + Math.max(0, ws.length - 1) * space(sizePx, sp);
+  const place = (ws: string[], sizePx: number, sp: number, y: number, into: Box[]) => {
+    let x = W / 2 - lineW(ws, sizePx, sp) / 2;
+    for (const word of ws) { into.push({ x, y, size: sizePx }); x += w100(word, sp) * (sizePx / 100) + space(sizePx, sp); }
+  };
+  // 16:9: small line over one big line
+  const wideS: Box[] = [], wideB: Box[] = [];
+  place(sw, smallSize, SMALL_SP, top, wideS);
+  const bigTop = sw.length ? top + smallSize * 1.18 : top;
+  place(bw, bigSize, BIG_SP, bigTop, wideB);
+  // 9:16: big line split in two balanced lines; both lines and the small line fit the column
+  let best = bw.length, bestW = Infinity;
+  for (let k = 1; k < bw.length; k++) {
+    const m = Math.max(lineW(bw.slice(0, k), 100, BIG_SP), lineW(bw.slice(k), 100, BIG_SP));
+    if (m < bestW) { bestW = m; best = k; }
+  }
+  const rows = bw.length > 1 ? [bw.slice(0, best), bw.slice(best)] : [bw];
+  const cBig = Math.min(bigSize, (COLUMN / Math.max(...rows.map(r => lineW(r, 100, BIG_SP)))) * 100);
+  const cSmall = Math.min(Math.max(smallSize * 0.9, cBig * 0.42), sw.length ? (COLUMN / lineW(sw, 100, SMALL_SP)) * 100 : smallSize);
+  const tightS: Box[] = [], tightB: Box[] = [];
+  place(sw, cSmall, SMALL_SP, top, tightS);
+  let y = sw.length ? top + cSmall * 1.18 : top;
+  for (const r of rows) { place(r, cBig, BIG_SP, y, tightB); y += cBig * 1.14; }
+  let off = 0;
+  sw.forEach((text, i) => out.push({ text, big: false, offset: 0, wide: wideS[i], tight: tightS[i] }));
+  bw.forEach((text, i) => { out.push({ text, big: true, offset: off, wide: wideB[i], tight: tightB[i] }); off += Array.from(text).length + 1; });
+  return out;
+}
+
 export const TitleOverlay: React.FC<{
-  t: number; big: string; small?: string; dur?: number; out?: number; pos?: 'top' | 'center' | number; size?: number; W?: number; H?: number;
-}> = ({ t, big, small, dur, out = 0.4, pos = 'top', size = 150, W = 1920, H = 1080 }) => {
+  t: number; big: string; small?: string; dur?: number; out?: number; pos?: 'top' | 'center' | number; size?: number; compact?: number; W?: number; H?: number;
+}> = ({ t, big, small, dur, out = 0.4, pos = 'top', size = 150, compact, W = 1920, H = 1080 }) => {
   if (t < 0) return null;
   const chars = Array.from(big).length;
   const bigSize = Math.min(size, (W * 0.84) / Math.max(1, chars * 0.62));
@@ -24139,27 +24373,37 @@ export const TitleOverlay: React.FC<{
   if (o <= 0.001) return null;
   const lift = dur != null ? -14 * easeIn(seg(t, dur - out, dur)) : 0;
   const top = pos === 'top' ? H * 0.085 : pos === 'center' ? H * 0.5 - (bigSize + smallSize * 1.4) / 2 : pos;
+  const hold = compact ?? Math.max(1.6, bigEnd + 0.5);
+  // 0 = 9:16 layout, 1 = 16:9 layout. Words slide sideways to their final x while the rows are still apart,
+  // then the rows close vertically, so a word never runs over the other row on the way.
+  const gx = hold > 0 ? easeInOut(seg(t, hold, hold + 0.6)) : 1;
+  const gy = hold > 0 ? easeInOut(seg(t, hold + 0.35, hold + 0.95)) : 1;
+  const gs = hold > 0 ? easeInOut(seg(t, hold, hold + 0.95)) : 1;
+  const words = layout(big, small, bigSize, smallSize, top, W);
+  const lerp = (a: number, b: number, g: number) => a + (b - a) * g;
+  const smallShadow = (s: number) => `0 ${Math.max(2, s * 0.07)}px 0 ${C.shadow}, 0 4px 14px rgba(0,0,0,0.55)`;
 
   return (
     <AbsoluteFill style={{ pointerEvents: 'none' }}>
-      <div
-        style={{
-          position: 'absolute', left: W / 2, top, transform: `translate(-50%, ${lift}px) scale(${drift})`, transformOrigin: 'center top',
-          display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: o,
-        }}
-      >
-        {small && (
-          <div
-            style={{
-              fontFamily: SERIF, fontSize: smallSize, lineHeight: 1, color: C.creamSoft, whiteSpace: 'nowrap',
-              letterSpacing: `${0.06 + 0.1 * (1 - smallIn)}em`, opacity: smallIn, transform: `translateY(${(1 - smallIn) * -14}px)`,
-              textShadow: `0 ${Math.max(2, smallSize * 0.07)}px 0 ${C.shadow}, 0 4px 14px rgba(0,0,0,0.55)`, marginBottom: smallSize * 0.18,
-            }}
-          >
-            {small}
-          </div>
-        )}
-        <GoldText text={big} size={bigSize} tabular={false} spacing={0.025} shimmer={shimmer} stagger={{ t, start: 0.1, step, dur: 0.32 }} />
+      <div style={{ position: 'absolute', inset: 0, transform: `translateY(${lift}px) scale(${drift})`, transformOrigin: `${W / 2}px ${top}px`, opacity: o }}>
+        {words.map((wd, i) => {
+          const x = lerp(wd.tight.x, wd.wide.x, gx), y = lerp(wd.tight.y, wd.wide.y, gy), s = lerp(wd.tight.size, wd.wide.size, gs);
+          if (!wd.big) {
+            return (
+              <div key={i} style={{
+                position: 'absolute', left: x, top: y, fontFamily: SERIF, fontSize: s, lineHeight: 1, color: C.creamSoft, whiteSpace: 'nowrap',
+                letterSpacing: `${SMALL_SP}em`, opacity: smallIn, transform: `translateY(${(1 - smallIn) * -14}px)`, textShadow: smallShadow(s),
+              }}>{wd.text}</div>
+            );
+          }
+          const nw = Array.from(wd.text).length;
+          const sh = shimmer == null ? null : (shimmer * Math.max(1, chars - 1) - wd.offset) / Math.max(1, nw - 1);
+          return (
+            <div key={i} style={{ position: 'absolute', left: x, top: y }}>
+              <GoldText text={wd.text} size={s} tabular={false} spacing={BIG_SP} shimmer={sh} stagger={{ t, start: 0.1 + wd.offset * step, step, dur: 0.32 }} />
+            </div>
+          );
+        })}
       </div>
     </AbsoluteFill>
   );
@@ -28763,7 +29007,7 @@ export const VOID_MARKS: Record<string, Vec3> = {
   farRight: [4.5, 0, -1.5],
 };
 @@@@ END
-@@@@ FILE src/types.ts | text-crlf | 11527 | a45e5905140762755fe371996da73b8cdd0297ad20998fa5bffb47131e86461a
+@@@@ FILE src/types.ts | text-crlf | 12259 | bc85dc195b0f11ed28899b0181ae71b1f19c5eb2b9ddba5dec01823137a56392
 // Episode spec: the JSON Claude writes for every video (public/episodes/<slug>/episode.json).
 // Everything in a shot is in seconds relative to the shot start; positions are metres,
 // y up, a character with rot 0 faces +z (towards the default camera).
@@ -28893,8 +29137,8 @@ export type PropSpec = {
 
 export type Overlay =
   | { type: 'label'; text: string; at?: number; until?: number; corner?: 'tl' | 'tr' | 'bl' | 'br' }
-  | { type: 'title'; small?: string; big: string; at?: number; until?: number }
-  | { type: 'stopwatch'; from?: string; to?: string; switchAt?: number | string; at?: number; until?: number; persist?: boolean; tick?: number; keep?: boolean; corner?: 'tl' | 'tr' | 'bl' | 'br' } // tick: live countdown of an "M:SS" from (story s per s); keep: no fade-out at the cut // switchAt may be a word cue ("@two")
+  | { type: 'title'; small?: string; big: string; at?: number; until?: number; compact?: number } // compact: s held small for the 9:16 column before growing (default ≥ 1.6, 0 = full size)
+  | { type: 'stopwatch'; from?: string; to?: string; switchAt?: number | string; at?: number; until?: number; persist?: boolean; tick?: number; keep?: boolean; corner?: 'tl' | 'tr' | 'bl' | 'br' | 'tc' | 'bc' } // tc / bc = top / bottom centre, inside the 9:16 column (bc stays off faces). tick: live countdown of an "M:SS" from (story s per s); keep: no fade-out at the cut // switchAt may be a word cue ("@two")
   | { type: 'stat'; value: number | string; unit?: string; label?: string; at?: number; prefix?: string; decimals?: number; pos?: 'center' | 'top' | 'right' }
   | { type: 'bubble'; text: string; actor: string; at?: number; until?: number }
   | { type: 'thought'; text: string; actor: string; at?: number; until?: number }
@@ -28902,7 +29146,8 @@ export type Overlay =
   | { type: 'caption'; text: string; at?: number; until?: number }
   | { type: 'flash'; at?: number; color?: string }
   | { type: 'counter'; text: string; at?: number }
-  | { type: 'news'; headline: string; ticker?: string; tag?: string; at?: number; until?: number }
+  | { type: 'news'; headline: string; ticker?: string; tag?: string; at?: number; until?: number; safe?: boolean } // safe: centred and wrapped inside the 9:16 column
+  | { type: 'word'; text: string; at?: number; until?: number; color?: string; y?: 'low' | 'top' | 'mid' } // palavra-destaque: the key word pops in on its cue, centre column (default 1.5 s)
   | { type: 'hudList'; items: string[]; at?: number; checked?: number };
 
 export type ShotFx = {
@@ -28947,7 +29192,7 @@ export type Shot3D = {
   fx?: ShotFx;
   sfx?: SfxCue[];
   cut?: Cut; // default: flow when the framing barely changes in the same set, else cut
-  coverage?: 'off' | 'calm' | 'fast'; // automatic sub-cuts on word starts (automatic cameras only): fast ≈ every 1.6 s, calm ≈ 2.6 s
+  coverage?: 'off' | 'calm' | 'fast'; // automatic sub-cuts on word starts: fast ≈ every 1.6 s, calm ≈ 2.6 s (explicit pos/path cameras: 2.2 / 3.0 s, punch-in or orbit of their own view; `over` cameras: none)
 };
 
 // Transitions. whip / zoom / smash play on both sides of the cut (end of the outgoing shot + start of this one).
@@ -28983,12 +29228,14 @@ export type Episode = {
   // Shorts the user cuts by hand from the 16:9 (YouTube Shorts / Reels / TikTok): ≥ 4 per long episode,
   // each a self-contained ~90 s run of whole shots (from/to = shot ids, inclusive). The audit checks length.
   clips?: { title: string; from: string; to: string }[];
+  hookCheck?: boolean; // false = skip the audit's first-10-seconds retention check (episodes made before the rule, 2026-11-09)
   shots: Shot[];
 };
 
 export type Timing = {
   fps: number;
   total: number; // seconds
+  draft?: boolean; // estimated (episode.mjs draft), no voice yet
   shots: { start: number; dur: number; section: number | null; words?: [string, number][] }[];
   sections: { file: string; start: number; dur: number }[];
 };
@@ -29701,13 +29948,13 @@ export type Timing = {
   }
 }
 @@@@ END
-@@@@ FILE tools/build-episode.mjs | text-crlf | 5887 | 1fae216ad90ece7006e4efff4e1e6f15bb7856b6ace0f8964e8a8c165ce96a80
+@@@@ FILE tools/build-episode.mjs | text-crlf | 7991 | f63dcd1264da0dcbe3257564691fcbffa9af56738b614a0e4bb7ec5a00b5c57d
 // Finish an episode: (re)build the soundtrack, render the Episode composition, mux with a
 // loudness-normalised mix (−14 LUFS, −1 dBTP), and write review sheets (one frame per shot).
 //   node tools/build-episode.mjs <slug> [--from <sec> --to <sec>] [--no-audio] [--skip-audit] [--crf 18] [--concurrency N]
 // A full build refuses to start while the scene audit has errors (range previews skip the gate).
 // Output: final/<Episode title>.mp4 (the previous cut moves to final/archive/), or out/<slug>/preview_<from>-<to>.mp4 for a range.
-import { spawnSync } from 'node:child_process';
+import { spawn, spawnSync } from 'node:child_process';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -29731,6 +29978,13 @@ const run = (cmd, a) => {
   if (r.status !== 0) process.exit(r.status ?? 1);
 };
 const q = s => `"${s}"`;
+// live progress for `node tools/progress.mjs <slug>`: step, frames, % and Remotion's own time-remaining estimate
+const PROG = path.join(OUT, 'progress.json');
+const BUILD_T0 = Date.now();
+const progress = (step, extra = {}) => {
+  try { fs.writeFileSync(PROG, JSON.stringify({ slug, step, started: BUILD_T0, updated: Date.now(), range: from !== undefined ? [+from, +to] : null, ...extra })); } catch { /* best effort */ }
+};
+progress('audit');
 const timing = JSON.parse(fs.readFileSync(path.join(D, 'timing.json'), 'utf8'));
 const fps = timing.fps || 30;
 
@@ -29750,15 +30004,43 @@ if (!args.includes('--no-audio') && fs.existsSync(path.join(D, 'sections.json'))
     run('node', [q(path.join(ROOT, 'tools', 'episode.mjs')), 'pace', slug]);
 }
 
-if (!args.includes('--no-audio')) run(q(path.join(ROOT, '.venv', 'Scripts', 'python.exe')), ['-I', q(path.join(ROOT, 'tools', 'sfx', 'episode_audio.py')), slug]);
+if (!args.includes('--no-audio')) {
+  progress('audio');
+  run(q(path.join(ROOT, '.venv', 'Scripts', 'python.exe')), ['-I', q(path.join(ROOT, 'tools', 'sfx', 'episode_audio.py')), slug]);
+}
 
-const silent = path.join(OUT, 'video_silent.mp4');
+// a range preview gets its own file: sharing video_silent.mp4 let a preview clobber a full build running at the same time
+const silent = path.join(OUT, from !== undefined ? `video_silent_${from}-${to}.mp4` : 'video_silent.mp4');
 const frames = from !== undefined ? [`--frames=${Math.round(+from * fps)}-${Math.round(+to * fps) - 1}`] : [];
 // defaults measured on a 12-core RTX 3060 box (20 s range): concurrency 4 → 85 s, 6 → 74 s, 8 → 67 s, 10 → 66 s;
 // CRF 18 is 39% of CRF 14's size at SSIM 0.994 (no visible difference; YouTube re-encodes anyway)
 const concurrency = opt('--concurrency') ?? Math.max(2, os.cpus().length - 4), crf = opt('--crf') ?? 18;
 const t0 = Date.now();
-run('npx', ['remotion', 'render', 'Episode', q(silent), `--props=${q(JSON.stringify({ slug }).replace(/"/g, '\\"'))}`, '--muted', `--concurrency=${concurrency}`, `--crf=${crf}`, '--log=error', ...frames]);
+// Remotion prints "Rendered 46/60, time remaining: 2s" lines (and "Encoded N/T"): keep them out of the log,
+// write them to progress.json, and print one short line every 2 %
+await new Promise(resolve => {
+  const a = ['remotion', 'render', 'Episode', q(silent), `--props=${q(JSON.stringify({ slug }).replace(/"/g, '\\"'))}`, '--muted', `--concurrency=${concurrency}`, `--crf=${crf}`, ...frames];
+  console.log('> npx', a.join(' '));
+  progress('render', { done: 0, total: 0 });
+  const child = spawn('npx', a, { cwd: ROOT, shell: process.platform === 'win32' });
+  let lastPct = -1, buf = '';
+  const onData = chunk => {
+    buf += chunk.toString();
+    const lines = buf.split(/\r?\n|\r/);
+    buf = lines.pop();
+    for (const line of lines) {
+      const m = /(Rendered|Encoded) (\d+)\/(\d+)(?:, time remaining: (.+))?/.exec(line);
+      if (!m) { if (line.trim() && !/^\s*\+|Bundl|Copying|Getting|composition/i.test(line)) console.log(line); continue; }
+      const [, kind, done, total, eta] = m;
+      progress(kind === 'Rendered' ? 'render' : 'encode', { done: +done, total: +total, eta: eta || null });
+      const pct = Math.floor((100 * +done) / +total);
+      if (kind === 'Rendered' && (pct >= lastPct + 2 || +done === +total)) { lastPct = pct; console.log(`render ${pct}% (${done}/${total})${eta ? `, ~${eta} left` : ''}`); }
+    }
+  };
+  child.stdout.on('data', onData);
+  child.stderr.on('data', onData);
+  child.on('close', code => { if (code !== 0) { progress('failed', { code }); process.exit(code ?? 1); } resolve(); });
+});
 console.log(`render: ${((Date.now() - t0) / 1000).toFixed(0)} s (concurrency ${concurrency}, crf ${crf})`);
 
 // Every finished episode sits directly in final/, named by its title (e.g. "What If You Could Swap Places With Anyone.mp4"),
@@ -29773,6 +30055,7 @@ if (from === undefined && fs.existsSync(final)) {
   fs.mkdirSync(arch, { recursive: true });
   fs.renameSync(final, path.join(arch, `${slug}_${stamp}.mp4`));
 }
+progress('mux');
 const mix = path.join(D, 'mix.wav');
 const audioIn = fs.existsSync(mix) ? ['-ss', String(from ?? 0), '-i', q(mix)] : [];
 run('ffmpeg', ['-v', 'error', '-y', '-i', q(silent), ...audioIn, '-c:v', 'copy',
@@ -29780,6 +30063,7 @@ run('ffmpeg', ['-v', 'error', '-y', '-i', q(silent), ...audioIn, '-c:v', 'copy',
 
 // review sheet: one frame from the middle of every shot
 if (from === undefined) {
+  progress('sheets');
   const shotsDir = path.join(OUT, 'shots');
   fs.rmSync(shotsDir, { recursive: true, force: true });
   fs.mkdirSync(shotsDir, { recursive: true });
@@ -29795,6 +30079,7 @@ if (from === undefined) {
 }
 // subtitles + the marked shorts' timecodes for the user's own 9:16 edit (no-op on a range preview)
 if (from === undefined && !timing.draft) run('node', [q(path.join(ROOT, 'tools', 'episode.mjs')), 'srt', slug]);
+progress('done', { final });
 console.log('done:', final);
 @@@@ END
 @@@@ FILE tools/build.mjs | text-crlf | 2467 | 957ed13fe5b3fc2fe6333323c2649021c53fa4da3a4f3beedff507ecf05e5362
@@ -30424,12 +30709,16 @@ tm = load_timing(SLUG)
 
 write(SLUG, ep)
 @@@@ END
-@@@@ FILE tools/episodes/invasao_zumbi.py | text-crlf | 59321 | b7f27668c1d7273657c97d430e1f86ec1464f99987b5e5bfd0bfead288a03f2f
+@@@@ FILE tools/episodes/invasao_zumbi.py | text-crlf | 63430 | 4dc0d0c79630aec1ffe77bf9f934f0738b2fda98a3fb5216c94e544f77b5669b
 # Source of public/episodes/invasao-zumbi/episode.json — edit HERE, then run:
 #   .venv/Scripts/python -I tools/episodes/invasao_zumbi.py
 # (episode.json is regenerated from this file; hand edits to the JSON get overwritten.)
 import json
 import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # python -I drops the script dir
+from kit import apply_ritmo  # noqa: E402  (house pacing; the rest of this older generator keeps its own helpers)
 
 SLUG = 'invasao-zumbi'
 GREEN = '#8dff6a'
@@ -30546,7 +30835,7 @@ S('c4', 'classroom', 'E brilhando. Um verde fraquinho, tipo pulseira de festa.',
 S('c5', 'classroom', 'Ele anda direto pro seu celular.',
   actors=[Z('rafa', 'seat3', -90, path=walk('seat3', 'aisle+0.2,0,0.1', 0.2, 2.6)), A('hero', 'seat2', -90, 'sit', 'scared', look='rafa')],
   props=[{'type': 'phone', 'pos': PHONE_DESK, 'rot': [-1.57, 0, 0.3]}],
-  camera={'pos': [0.0, 2.7, 4.8], 'look': [1.3, 0.8, 1.0], 'fov': 42}, sfx=[{'t': 0.1, 'name': 'ring', 'dur': 2.4}])
+  camera={'pos': [0.0, 2.7, 4.8], 'look': [0.9, 0.9, 0.7], 'fov': 36}, sfx=[{'t': 0.1, 'name': 'ring', 'dur': 2.4}])
 S('c6', 'classroom', 'Você joga o celular pro fundo da sala.',
   actors=[A('hero', 'seat2', -90, 'sit', 'determined',
             poses=[{'t': '@joga', 'pose': {'hipY': -0.46, 'legL': [88, 6, 92], 'legR': [88, 6, 92], 'spine': [-4, 0, -25], 'armR': [140, 30, 0, 10], 'handR': 'open'}, 'blend': 0.2}])],
@@ -30557,7 +30846,8 @@ S('c7', 'classroom', 'O Rafa muda de direção na hora. E segue o som.',
   actors=[Z('rafa', 'aisle+0.2,0,0.1', 90, path=[{'t': 0.3, 'pos': 'aisle+0.2,0,0.1'}, {'t': 2.6, 'pos': [3.0, 0, 0.9], 'gait': 'shamble'}, {'t': 4.6, 'pos': [4.7, 0, 2.3], 'gait': 'shamble'}]),
           A('hero', 'seat2', -90, 'sit', 'shocked')],
   props=[{'type': 'phone', 'pos': [5.4, 0.02, 3.0], 'rot': [-1.57, 0, 0.3]}],
-  camera={'pos': [1.2, 1.9, 6.6], 'look': [3.2, 0.9, 1.4], 'fov': 46}, sfx=[{'t': 0.1, 'name': 'ring', 'dur': 2.6}])
+  camera={'pos': [1.2, 1.9, 6.6], 'look': [1.6, 1.0, 0.9], 'to': {'pos': [1.8, 1.9, 6.6], 'look': [4.3, 0.9, 2.2]}, 'moveAt': [0.3, 4.6], 'ease': 'cruise', 'fov': 40},
+  sfx=[{'t': 0.1, 'name': 'ring', 'dur': 2.6}])
 S('c8', 'classroom', 'O Rafa sempre andou assim?', who='male',
   actors=[A('bestie', 'seat1', 90, 'sit', 'confused', look='hero', talk=TALK), A('hero', 'seat2', -90, 'sit', 'worried')],
   camera=cam('close', 'bestie', 15))
@@ -30572,7 +30862,7 @@ S('c10', 'cafeteria', 'E no refeitório, mais doze alunos andando igual. Todos b
   camera={'pos': [0.3, 1.5, 7.6], 'look': [0, 1.0, -0.5], 'fov': 42, 'move': 'pushIn'}, sfx=[{'t': 0.5, 'name': 'groanLow'}])
 
 # ---------------------------------------------------------------- 2. pergunta do título
-S('t1', 'cafeteria', 'E se você salvasse sua escola de uma invasão zumbi? Vamos destrinchar isso.', variant=1,
+S('t1', 'cafeteria', 'E se você salvasse sua escola de uma invasão zumbi? [mischievously] Spoiler: vai custar caro. Pra você.', variant=1,
   actors=[A('hero', [-3.4, 0, 3.9], 60, 'hide', 'scared', look='zB'),
           Z('zA', [-0.3, 0, 0.4], 0, path=walk([-0.3, 0, 0.4], [-0.2, 0, 2.6], 0.0, 6)),
           Z('zB', [0.7, 0, 1.6], 20, path=walk([0.7, 0, 1.6], [1.6, 0, 3.6], 0.0, 6)),
@@ -30584,7 +30874,7 @@ S('t1', 'cafeteria', 'E se você salvasse sua escola de uma invasão zumbi? Vamo
 S('m1', 'classroom', 'Tudo começou no laboratório de ciências. A professora Helena trouxe de uma viagem um fungo raro, num pote fechado.', variant=1,
   props=LAB, actors=[A('helena', 'teacher+0.3,0,0.9', 70, 'explain', 'happy', look=[-4.3, 0.9, 2.6])],
   camera={'pos': [-1.6, 1.6, 4.6], 'look': [-4.4, 1.15, 2.7], 'fov': 40, 'move': 'drift'})
-S('m2', 'classroom', 'Hoje cedo, alguém derrubou o pote.', variant=1,
+S('m2', 'classroom', 'Hoje cedo, alguém derrubou o pote. [deadpan] E não contou pra ninguém.', variant=1,
   props=[{'type': 'jar', 'pos': [-4.3, 0.78, 2.6],
           'path': [{'t': '@derrubou', 'pos': [-4.3, 0.78, 2.6], 'rot': [0, 0, 0]}, {'t': '@pote', 'pos': [-3.8, 0.1, 2.9], 'rot': [0, 0.4, 1.57]}]},
          LAB[2]],
@@ -30592,8 +30882,8 @@ S('m2', 'classroom', 'Hoje cedo, alguém derrubou o pote.', variant=1,
   sfx=[{'t': '@pote', 'name': 'thud'}, {'t': '@pote+0.1', 'name': 'debris'}])
 C('m3', 'icon', 'O fungo solta esporos: um pó invisível, que voa pelo ar. Quem respira, em dez minutos, vira zumbi.',
   icon='warning', caption='ESPOROS NO AR', sub='ZUMBI EM 10 MINUTOS')
-S('m4', 'void', 'Mas não do tipo de filme. Ninguém morde. Ninguém se machuca. Eles só andam devagar, gemem, e brilham verde.',
-  actors=[Z('zA', 'left', 20, path=walk('left', 'left+0.8,0,1.4', 0.2, 6)), Z('zC', 'right', -20, path=walk('right', 'right+-0.8,0,1.4', 0.2, 6))],
+S('m4', 'void', 'Mas não do tipo de filme. Ninguém morde. Eles só andam devagar, gemem, e brilham verde. [deadpan] Igual você numa segunda.',
+  actors=[Z('zA', 'left+1.5,0,0', 20, path=walk('left+1.5,0,0', 'left+1.7,0,1.4', 0.2, 6)), Z('zC', 'right+-1.5,0,0', -20, path=walk('right+-1.5,0,0', 'right+-1.7,0,1.4', 0.2, 6))],
   camera=cam('wide', ['zA', 'zC'], 0, move='pushIn'), sfx=[{'t': '@gemem', 'name': 'groan'}])
 S('m5', 'void', 'E querem encostar em você. Porque um toque passa o fungo adiante, em dez segundos.',
   actors=[A('hero', 'center', 0, 'stand', 'worried', path=[{'t': 0.4, 'pos': 'center'}, {'t': 2.6, 'pos': 'front', 'gait': 'walk'}], strafe=True),
@@ -30620,7 +30910,7 @@ C('s7', 'chain', 'Um. Dois. Quatro. Oito. Dezesseis.',
   title='ZUMBIS', nodes=[{'icon': 'stand', 'label': '1'}, {'icon': 'stand', 'label': '2'}, {'icon': 'stand', 'label': '4'}, {'icon': 'stand', 'label': '8'}, {'icon': 'stand', 'label': '16'}], step=0.6)
 C('s8', 'stat', 'Em cinquenta minutos, mais de seiscentos. A escola inteira.',
   value=600, unit='ALUNOS', label='EM 50 MINUTOS', icon='house')
-S('s9', 'classroom', 'Cinquenta minutos. O tempo de uma aula. É isso que a sua escola tem.', variant=1,
+S('s9', 'classroom', 'Cinquenta minutos. O tempo de uma aula. Depois disso, a escola vira quarentena. [darkly amused] Com você trancado do lado de dentro.', variant=1,
   actors=[A('hero', 'center', 20, 'stand', 'worried')], camera=cam('close', 'hero', 10, move='pushIn'), sfx=[{'t': 0.2, 'name': 'ticks', 'dur': 1.2}])
 
 # ---------------------------------------------------------------- 5. teste de prova (refeitório)
@@ -30646,20 +30936,23 @@ S('p6', 'cafeteria', 'Um toque no ombro.', variant=1,
   actors=[A('jorge', 'center', 180, 'stand', 'shocked', hold={'R': 'whistle'}, contact=True),
           Z('zB', 'center+-0.78,0,0.32', 119, contact=True, pose={'hipY': -0.01, 'spine': [8, 0, 0], 'head': [12, 0, 14], 'armL': [55, 8, 0, 14], 'armR': [92, -4, 0, 6], 'handL': 'open', 'handR': 'open'})],
   camera={'pos': [-1.0, 1.55, 1.5], 'look': [-0.35, 1.35, 3.9], 'fov': 36})
-S('p7', 'cafeteria', 'Dez segundos depois, o Seu Jorge está gemendo junto.', variant=1,
+S('p7', 'cafeteria', 'Dez segundos depois, o Seu Jorge está gemendo junto. [darkly amused] Afinadíssimo.', variant=1,
   actors=[Z('jorge', 'center', 180), Z('zA', 'center+-0.8,0,-0.6', 20), Z('zB', 'center+0.6,0,-0.7', -10)],
   camera=cam('medium', 'jorge', -10, move='pushIn'), sfx=[{'t': '@gemendo', 'name': 'groanLow'}])
 S('p8', 'cafeteria', 'O apito cai no chão. Você pega, e guarda no bolso. Ainda não sabe por quê.', variant=1,
   actors=[A('hero', [-4.6, 0, 4.6], 120, 'crouch', 'focused',
-            poses=[{'t': '@guarda', 'pose': 'stand', 'blend': 0.6}], hold={'R': 'whistle'})],
-  camera=cam('medium', 'hero', 20), sfx=[{'t': '@cai', 'name': 'click'}])
+            poses=[{'t': 0, 'pose': {'hipY': -0.42, 'spine': [38, 0, 0], 'head': [20, 0, 0], 'legL': [80, 6, 100], 'legR': [60, 6, 110], 'armR': [70, 6, 0, 10], 'armL': [20, 10, 0, 30], 'handR': 'fist'}},
+                   {'t': '@pega', 'pose': 'crouch', 'blend': 0.4},
+                   {'t': '@guarda', 'pose': {'hipY': 0, 'legL': [0, 0, 0], 'legR': [0, 0, 0], 'spine': [4, 0, 0], 'reachR': {'to': 'pocket'}, 'head': [10, 0, 0]}, 'blend': 0.6}], hold={'R': 'whistle'})],
+  camera=cam('full', 'hero', 20), sfx=[{'t': '@cai', 'name': 'click'}])
 
 # ---------------------------------------------------------------- 6. regras
 C('r1', 'rules', 'Em vinte minutos escondido, você aprende as regras.', title='AS REGRAS', prefix='REGRA', rules=RULES, current=0)
 C('r2', 'rules', 'Regra um: o som mais alto ganha.', title='AS REGRAS', prefix='REGRA', rules=RULES, current=1)
 CAF_Z = [('zA', [-1.6, 0, 3.2]), ('zC', [-0.2, 0, 3.7]), ('zD', [1.0, 0, 3.0])]
 S('r3', 'cafeteria', 'Você testa. Seu celular tocando de um lado. Um livro batendo no chão do outro.', variant=1,
-  props=[{'type': 'phone', 'pos': [-3.4, 0.78, 1.6], 'rot': [-1.57, 0, 0]}, {'type': 'book', 'pos': [3.8, 0.03, 4.4], 'color': '#c8402f'}],
+  props=[{'type': 'phone', 'pos': [-3.4, 0.78, 1.6], 'rot': [-1.57, 0, 0]}, {'type': 'book', 'pos': [3.8, 0.03, 4.4], 'color': '#c8402f',
+          'path': [{'t': '@livro', 'pos': [3.8, 0.95, 4.4]}, {'t': '@batendo', 'pos': [3.8, 0.03, 4.4]}]}],
   actors=[Z(i, p, 40) for i, p in CAF_Z] + [A('hero', [-2.4, 0, 4.6], 120, 'crouch', 'focused')],
   camera={'pos': [0.0, 2.6, 9.4], 'look': [0.4, 0.8, 2.6], 'fov': 46},
   sfx=[{'t': '@celular', 'name': 'ring', 'dur': 2.4}, {'t': '@livro+0.4', 'name': 'thud'}, {'t': '@outro', 'name': 'thud'}])
@@ -30692,7 +30985,7 @@ S('k1', 'cafeteria', 'E aí vem a parte boa: a escola é sua.', variant=1,
 S('k2', 'cafeteria', 'Almoço sem fila. Sobremesa? Três.', variant=1,
   actors=[A('hero', 'seat1', 0, 'sit', 'bliss', hold={'R': 'cup'}), A('bestie', 'seat1+1.2,0,0', 0, 'sit', 'happy', hold={'R': 'cup'})],
   props=[{'type': 'pizza', 'pos': 'seat1+0,0.78,0.62'}],
-  camera=cam('medium', ['hero', 'bestie'], 0), sfx=[{'t': '@três', 'name': 'pop'}])
+  camera=cam('medium', 'hero', 20), sfx=[{'t': '@três', 'name': 'pop'}])
 S('k3', 'cafeteria', 'Pra atravessar um corredor cheio de zumbi, você só deixa uma música tocando do outro lado.', variant=1,
   props=[{'type': 'phone', 'pos': [4.6, 0.78, 1.6], 'rot': [-1.57, 0, 0]}],
   actors=[Z('zA', [-0.4, 0, 0.0], 90, path=walk([-0.4, 0, 0.0], [2.2, 0, 0.3], 0.3, 6)),
@@ -30708,11 +31001,12 @@ S('k5', 'classroom', 'Eles vêm em você. Todos.', variant=1,
           Z('zB', [2.2, 0, 3.8], -90, path=walk([2.2, 0, 3.8], [-0.6, 0, 3.9], 0.0, 4)),
           Z('zC', [2.4, 0, 4.9], -90, path=walk([2.4, 0, 4.9], [0.6, 0, 5.0], 0.0, 4)),
           A('hero', [-3.4, 0, 4.6], 90, 'shocked', 'shocked', path=[{'t': '@todos', 'pos': [-3.4, 0, 4.6]}, {'t': '@todos+1.4', 'pos': [-5.2, 0, 4.4], 'gait': 'run'}])],
-  camera={'pos': [-0.6, 1.7, 9.0], 'look': [-1.0, 0.9, 4.4], 'fov': 46}, sfx=[{'t': '@todos', 'name': 'groanLow'}])
+  camera={'pos': [-1.4, 1.7, 9.0], 'look': [-2.1, 0.9, 4.4], 'fov': 46}, sfx=[{'t': '@todos', 'name': 'groanLow'}])
 S('k6', 'classroom', 'Na sala do primeiro ano, um menino se esconde embaixo da mesa. Três zumbis em volta.', variant=1,
   actors=[A('kid', [-3.4, 0, 3.4], 60, 'hide', 'scared'),
           Z('zD', [-2.3, 0, 2.7], -58), Z('zE', [-3.1, 0, 4.6], -166), Z('zF', [-4.4, 0, 4.2], 129)],
-  camera={'pos': [-0.6, 1.0, 4.4], 'look': [-3.2, 0.55, 3.4], 'fov': 38, 'move': 'pushIn'}, sfx=[{'t': 0.4, 'name': 'groan'}])
+  props=[{'type': 'desk', 'pos': [-3.4, 0, 3.4], 'rot': 60}],
+  camera={'pos': [-0.4, 1.3, 4.6], 'look': [-3.2, 0.85, 3.5], 'fov': 44, 'move': 'pushIn'}, sfx=[{'t': 0.4, 'name': 'groan'}])
 S('k7', 'classroom', 'Você deixa o celular tocando lá no fundo. Os três vão atrás do som.', variant=1,
   props=[{'type': 'phone', 'pos': [5.0, 0.02, 5.0], 'rot': [-1.57, 0, 0]}],
   actors=[A('kid', [-3.4, 0, 3.4], 60, 'hide', 'worried'),
@@ -30726,16 +31020,15 @@ S('k8', 'classroom', 'Você é tipo um super-herói?', who='female', variant=1,
 S('k9', 'classroom', 'Sou tipo um despertador.', variant=1,
   actors=[A('hero', 'center+-3.0,0,-0.8', -131, 'crouch', 'smirk', look='kid', talk=[[0.05, 1.2]]), A('kid', 'center+-3.8,0,-1.5', 49, 'relaxed', 'happy')],
   camera={'pos': [-3.0, 1.2, 2.6], 'look': [-2.9, 0.9, 3.8], 'fov': 40})
-S('k10', 'classroom', 'É a melhor coisa que você faz o dia inteiro.', variant=1,
+S('k10', 'classroom', '[deadpan] Ele te abraça. E limpa o nariz na sua blusa.', variant=1,
   actors=[A('kid', 'center+-3.8,0,-1.5', 49, 'hug', 'bliss', contact=True), A('hero', 'center+-3.45,0,-1.2', -131, 'hug', 'smile', contact=True)],
-  camera={'pos': [-1.4, 1.35, 1.9], 'look': [-3.2, 0.95, 3.5], 'fov': 40, 'move': 'pullOut'})
+  camera={'pos': [-1.4, 1.5, 1.9], 'look': [-3.2, 1.15, 3.5], 'fov': 42, 'move': 'pullOut'})
 # ---------------------------------------------------------------- 8. "mas" + problemas
-S('q1', 'void', 'Depois os problemas aparecem. Um de cada vez.',
+S('q1', 'void', '[darkly amused] Aí a escola cobra o aluguel. Em três problemas.',
   actors=[A('hero', 'center', 0, 'sad', 'worried')], camera=cam('medium', 'hero', 0, move='pullOut'))
 C('q2', 'stat', 'Problema um: o seu celular é a sua única isca. E está com dezoito por cento.', value=18, unit='%', label='DE BATERIA', icon='phone')
 S('q3', 'classroom', 'Cada isca gasta uns três por cento. Seis iscas, e acabou.', variant=1,
-  actors=[A('hero', [-3.4, 0, 4.6], 20, 'phone', 'worried', hold={'R': 'phone'})], camera=cam('close', 'hero', 25),
-  overlays=[{'type': 'label', 'text': '6 ISCAS', 'at': '@seis', 'corner': 'tl'}])
+  actors=[A('hero', [-3.4, 0, 4.6], 20, 'phone', 'worried', hold={'R': 'phone'})], camera=cam('close', 'hero', 25))
 S('q4', 'cafeteria', 'Solução: você pega emprestado o celular do Seu Jorge. Ele não reclama.', variant=1,
   actors=[Z('jorge', 'center', 0), A('hero', 'center+0.75,0,-0.2', -80, 'reach', 'focused', look='jorge', contact=True)],
   camera={'pos': [2.8, 1.5, 5.4], 'look': [0.4, 1.1, 3.6], 'fov': 40}, sfx=[{'t': '@reclama', 'name': 'groan'}])
@@ -30749,10 +31042,10 @@ S('q7', 'classroom', 'Problema dois: a sala onde os sobreviventes se escondem. Q
 S('q8', 'classroom', 'Aí alguém espirra. E na porta, um gemido.', variant=0,
   actors=[A('sister', 'seat1', -90, 'sit', 'scared', look='celia'), A('hero', 'aisle', -150, 'stand', 'scared', look=[-5.4, 1.2, 4.2]),
           A('celia', 'front+0.4,0,0.6', 150, 'scared', 'shocked', look=[-5.4, 1.2, 4.2])],
-  camera=cam('medium', ['hero', 'sister'], 40), sfx=[{'t': '@espirra', 'name': 'pop'}, {'t': '@gemido', 'name': 'groanLow'}])
+  camera={'pos': [-1.7, 1.35, 2.1], 'look': [0.2, 0.85, 1.6], 'fov': 42}, sfx=[{'t': '@espirra', 'name': 'pop'}, {'t': '@gemido', 'name': 'groanLow'}])
 S('q9', 'classroom', 'Solução: chiclete pra todo mundo. Boca mastigando não conversa.', variant=0,
   actors=[A('hero', 'aisle', -90, 'holdOut', 'smug', hold={'R': 'paper'}), A('sister', 'seat1', 90, 'sit', 'happy', look='hero')],
-  camera=cam('medium', ['hero', 'sister'], -40))
+  camera=cam('medium', 'hero', -40))
 S('q10', 'classroom', 'Chiclete? Na minha escola?', who='adulta', variant=0,
   actors=[A('celia', 'front+0.4,0,0.6', 90, 'armsCrossed', 'angry', talk=TALK)], camera=cam('close', 'celia', 10))
 S('q11', 'cafeteria', 'Problema três: o banheiro fica do outro lado do refeitório. Com oito zumbis no caminho.', variant=1,
@@ -30808,14 +31101,14 @@ S('y4', 'stadium', 'Aí você vê o Rafa. Ele seguiu um alarme de carro até o c
   actors=[Z('rafa', 'midfield', 30)], camera=cam('wide', 'rafa', 20, height=10, move='pushIn'), sfx=[{'t': '@alarme', 'name': 'ticks', 'dur': 1.0}])
 S('y5', 'stadium', 'Trinta segundos depois, ele pisca.', variant=1,
   actors=[A('rafa', 'midfield', 30, 'stand', 'sleepy', faces=[{'t': '@pisca', 'face': 'confused', 'blend': 0.3}])],
-  camera=cam('close', 'rafa', 10), overlays=[{'type': 'stopwatch', 'from': '0:30', 'at': 0.1}], sfx=[{'t': '@pisca', 'name': 'chime'}])
+  camera=cam('close', 'rafa', 10), overlays=[{'type': 'stopwatch', 'from': '0:30', 'at': 0.1, 'corner': 'bc'}], sfx=[{'t': '@pisca', 'name': 'chime'}])
 S('y6', 'stadium', 'Eu perdi a prova?', who='male', variant=1,
   actors=[A('rafa', 'midfield', 30, 'shrug', 'confused', talk=TALK)], camera=cam('medium', 'rafa', -20))
 S('y7', 'stadium', 'Trinta segundos de sol. É a cura.', variant=1,
   actors=[A('hero', 'midfield+-3,0,3', 150, 'stand', 'awe')], camera=cam('xclose', 'hero', 0, height=-8, move='pushIn'), sfx=[{'t': '@cura', 'name': 'swell'}])
-S('y8', 'cafeteria', 'Você e o Davi treinam: levar grupos pequenos pro sol, usando o som.', variant=1,
+S('y8', 'cafeteria', 'Você e o Davi treinam: levar grupos pequenos pro sol, usando o som. [deadpan] O Davi já cobra cinco reais por zumbi curado.', variant=1,
   actors=[A('hero', [-1.6, 0, 4.4], 120, 'holdOut', 'determined', hold={'R': 'phone'}), A('bestie', [-2.6, 0, 4.0], 110, 'thinking', 'focused', look='hero')],
-  camera=cam('medium', ['hero', 'bestie'], 0))
+  camera=cam('medium', 'hero', -15))
 S('y9', 'cafeteria', 'Primeira vez: o celular toca baixo demais. Eles param no bebedouro.', variant=1,
   actors=[Z('zA', [0.4, 0, 0.0], 0, path=walk([0.4, 0, 0.0], [0.4, 0, 1.2], 0.2, 2.4)), Z('zC', [-0.4, 0, -0.4], 0, path=walk([-0.4, 0, -0.4], [-0.5, 0, 0.8], 0.2, 2.4)),
           A('hero', [0.0, 0, 4.4], 180, 'holdOut', 'confused', hold={'R': 'phone'})],
@@ -30840,8 +31133,7 @@ WOKEN = [A(f'w{k}', p, r, FLOORSIT, f) for k, (p, r, f) in enumerate([('midfield
 S('z1', 'stadium', 'Por uma hora, funciona.', variant=1,
   actors=WOKEN + [A('hero', 'midfield+0.2,0,3.4', 170, 'confident', 'smile')], camera=cam('wide', 'hero', 10, height=14, move='craneUp'))
 S('z2', 'classroom', 'Até você olhar o relógio da parede. Onze e cinquenta e seis.', variant=0,
-  actors=[A('hero', 'aisle', -90, 'stand', 'shocked')], camera=cam('close', 'hero', 40, height=-6),
-  overlays=[{'type': 'label', 'text': '11:56', 'at': '@onze', 'corner': 'tr'}], sfx=[{'t': '@onze', 'name': 'ticks', 'dur': 1.4}])
+  actors=[A('hero', 'aisle', -90, 'stand', 'shocked')], camera=cam('close', 'hero', 40, height=-6), sfx=[{'t': '@onze', 'name': 'ticks', 'dur': 1.4}])
 S('z3', 'classroom', 'O sinal do meio-dia é o mais longo do dia. E a caixa de som dele fica na parede desta sala.', variant=0, props=[BELL_CLS],
   camera={'pos': [-0.6, 1.6, 0.6], 'look': [-2.4, 2.4, -4.85], 'fov': 36, 'move': 'pushIn'})
 S('z4', 'classroom', 'Onde estão quarenta alunos. A diretora. E a sua irmã.', variant=0,
@@ -30875,7 +31167,7 @@ S('d6', 'classroom', 'A sua escola... ou você.', hold=2.0, variant=0,
 # ---------------------------------------------------------------- 13. clímax
 S('e1', 'classroom', 'Você não luta. Você leva pra fora.', variant=0,
   actors=[A('hero', 'aisle', -60, 'determined', 'determined', hold={'R': 'whistle'}, path=[{'t': '@leva', 'pos': 'aisle'}, {'t': '@fora+0.8', 'pos': 'aisle+0,0,3.4', 'gait': 'run'}])],
-  camera=cam('medium', 'hero', -40), overlays=[dict(CD)])
+  camera=cam('medium', 'hero', 5, height=14), overlays=[dict(CD)])
 S('e2', 'stadium', 'Você corre pro meio do campo. Meio-dia. Sol a pino. A mesma hora das formigas.', variant=1,
   actors=[A('hero', 'midfield+-10,0,12', -20, 'stand', 'determined', hold={'R': 'whistle'}, path=[{'t': 0.1, 'pos': 'midfield+-10,0,12'}, {'t': 4.0, 'pos': 'midfield', 'gait': 'run'}])],
   camera=cam('wide', 'hero', 70, height=14, move='track'), overlays=[dict(CD)])
@@ -30886,7 +31178,7 @@ HORDE1 = [('zA', 'midfield+-9,0,20', -9.6), ('zB', 'midfield+-6,0,21', -7.4), ('
 S('e4', 'stadium', 'Os primeiros zumbis aparecem na beira do campo.', variant=1,
   actors=[A('hero', 'midfield', -20, WHISTLE, 'determined', hold={'R': 'whistle'})] + [Z(i, p, 160, path=walk(p, q, 0.0, 5)) for i, p, q in
           [('zA', 'midfield+-9,0,20', 'midfield+-7.2,0,15'), ('zB', 'midfield+-6,0,21', 'midfield+-4.8,0,16'), ('zC', 'midfield+-12,0,19', 'midfield+-9.6,0,14.6')]],
-  camera={'pos': [2.6, 1.5, -2.6], 'look': [-6.5, 1.2, 15], 'fov': 26}, overlays=[dict(CD)], sfx=[{'t': 0.5, 'name': 'groanLow'}])
+  camera={'pos': [2.6, 1.5, -2.6], 'look': [-6.5, 1.2, 15], 'fov': 19}, overlays=[dict(CD)], sfx=[{'t': 0.5, 'name': 'groanLow'}])
 S('e5', 'stadium', 'Duas vezes. O bando vai atrás dos primeiros.', variant=1,
   actors=[A('hero', 'midfield', -20, WHISTLE, 'determined', hold={'R': 'whistle'})] +
          horde(crowd(10, -14, 6, 15, 23, seed=21, gap=1.4), rot=face_to(0, 0), to=(0, 0, 0.2), first=20) +
@@ -30934,27 +31226,28 @@ S('f1', 'stadium', 'Você tá com cheiro de cogumelo.', who='female', variant=1,
 S('f2', 'stadium', 'Quem estava apitando no recreio?', who='adulto', variant=1,
   actors=[A('jorge', 'midfield+-1.1,0,1.2', 140, 'armsCrossed', 'angry', talk=TALK, look='hero'), A('hero', 'midfield', -20, FLOORSIT, 'embarrassed', look='jorge')],
   camera=cam('medium', 'jorge', 20))
-S('f3', 'stadium', 'Você devolve o apito.', variant=1,
-  actors=[A('hero', 'midfield', -20, FLOORSIT, 'embarrassed', hold={'R': 'whistle'}, look='jorge',
-            poses=[{'t': '@devolve', 'pose': dict(FLOORSIT, armR=[70, 10, 0, 10], handR='fist')}])],
-  camera=cam('close', 'hero', -30))
+S('f3', 'stadium', 'Você devolve o apito. [deadpan] Ele te devolve uma advertência.', variant=1,
+  actors=[A('hero', 'midfield', -20, FLOORSIT, 'embarrassed', hold={'R': 'whistle'}, look='jorge', contact=True,
+            poses=[{'t': '@devolve', 'pose': dict(FLOORSIT, armR=[70, 10, 0, 10], handR='fist')}]),
+          A('jorge', 'midfield+-0.35,0,1.05', 160, {'spine': [22, 0, 0], 'head': [18, 0, 0], 'armR': [55, -8, 0, 20], 'handR': 'open'}, 'suspicious', look='hero', contact=True)],
+  camera=cam('full', ['hero', 'jorge'], -100, height=8))
 NEWS1 = 'ESCOLA FECHA POR UM DIA. MOTIVO OFICIAL: MOFO'
 NEWS2 = 'ALUNO LEVA SUSPENSÃO POR APITAR NO RECREIO'
 S('f4', 'home', 'No jornal da noite, a escola fecha por um dia. Motivo oficial: mofo.', time='interiorNight',
   actors=[A('mom', 'couch', 90, 'sit', 'surprised'), A('hero', 'couch+0,0,0.9', 90, 'sit', 'tired')],
-  camera={'pos': [4.0, 1.35, 1.3], 'look': [1.75, 1.0, 0.05], 'fov': 40}, overlays=[{'type': 'news', 'headline': NEWS1, 'tag': 'URGENTE', 'at': 0.4}])
+  camera={'pos': [4.0, 1.35, 1.3], 'look': [1.75, 1.0, 0.05], 'fov': 40}, overlays=[{'type': 'news', 'headline': NEWS1, 'tag': 'URGENTE', 'at': 0.4, 'safe': True}])
 S('f5', 'home', 'E o vídeo de um aluno viraliza. O título: aluno leva suspensão por apitar no recreio.', time='interiorNight',
   actors=[A('mom', 'couch', 90, 'sit', 'suspicious', look='hero'), A('hero', 'couch+0,0,0.9', 90, 'sit', 'embarrassed')],
-  camera={'pos': [3.7, 1.3, 0.2], 'look': [1.75, 1.0, 0.25], 'fov': 38, 'move': 'pushIn'}, overlays=[{'type': 'news', 'headline': NEWS2, 'tag': 'VIRAL', 'at': '@viraliza'}])
-S('f6', 'home', 'Suspenso? Por apitar?', who='adulta', time='interiorNight',
-  actors=[A('mom', 'couch', 90, 'sit', 'confused', look='hero', talk=TALK)], camera={'pos': [3.0, 1.15, -0.9], 'look': [1.75, 1.05, -0.4], 'fov': 34})
-S('f7', 'home', 'É uma longa história.', time='interiorNight',
+  camera={'pos': [3.7, 1.3, 0.2], 'look': [1.75, 1.0, 0.25], 'fov': 38, 'move': 'pushIn'}, overlays=[{'type': 'news', 'headline': NEWS2, 'tag': 'VIRAL', 'at': '@viraliza', 'safe': True}])
+S('f6', 'home', 'Suspenso? [pause] E o vídeo tem quantas visualizações?', who='adulta', time='interiorNight',
+  actors=[A('mom', 'couch', 90, 'sit', 'confused', look='hero', talk=[[0.05, 4.0]], faces=[{'t': '@vídeo', 'face': 'smug', 'blend': 0.3}])], camera={'pos': [3.0, 1.15, -0.9], 'look': [1.75, 1.05, -0.4], 'fov': 34})
+S('f7', 'home', 'Dois milhões.', time='interiorNight',
   actors=[A('hero', 'couch+0,0,0.9', 90, 'sit', 'tired', look='mom', talk=[[0.05, 1.2]])], camera={'pos': [3.0, 1.15, 1.2], 'look': [1.75, 1.05, 0.5], 'fov': 34})
-S('f8', 'home', 'Vai tomar banho. Você tá com cheiro de cogumelo.', who='adulta', time='interiorNight',
-  actors=[A('mom', 'couch', 90, 'sit', 'smile', look='hero', talk=TALK), A('hero', 'couch+0,0,0.9', 90, 'sit', 'embarrassed')],
+S('f8', 'home', 'Ótimo. Amanhã a gente vende camiseta. Agora vai tomar banho, você tá com cheiro de cogumelo.', who='adulta', time='interiorNight',
+  actors=[A('mom', 'couch', 90, 'sit', 'smug', look='hero', talk=[[0.05, 6.0]]), A('hero', 'couch+0,0,0.9', 90, 'sit', 'embarrassed')],
   camera={'pos': [4.0, 1.35, 1.3], 'look': [1.75, 1.0, 0.05], 'fov': 40})
 S('f9', 'bedroom', 'De manhã, você jogou o celular longe pra fugir de um zumbi. De tarde, você chamou quatrocentos pra perto.', time='interiorNight',
-  actors=[A('hero', 'window', 180, 'stand', 'smile')], camera=cam('medium', 'hero', 150, move='pushIn'))
+  actors=[A('hero', 'window+0,0,0.6', 0, 'stand', 'smile')], camera=cam('medium', 'hero', 15, move='pushIn'))  # back to the night window, facing us
 
 # ---------------------------------------------------------------- 15. mundo maior
 S('g1', 'home', 'Mas naquela noite, você assiste o vídeo de novo. Quadro por quadro.', time='interiorNight',
@@ -30987,9 +31280,9 @@ S('h2', 'suburb', 'Ele levanta o rosto. E brilha. Verde.',
 S('h3', 'suburb', 'Ele está no sol faz muito mais que trinta segundos. E não cura. Não geme. Anda normal.',
   actors=[A('estranho', STRANGER_DAY, 90, 'stand', 'neutral', glow=GREEN, path=[{'t': '@anda', 'pos': STRANGER_DAY}, {'t': '@normal+2', 'pos': 'farSidewalk+4,0,0.4', 'gait': 'walk'}])],
   camera=cam('full', 'estranho', 40, move='track'))
-S('h4', 'suburb', 'Trinta segundos. Bom saber.', who='adulto',
+S('h4', 'suburb', '[menacing] Trinta segundos. Bom saber.', who='adulto',
   actors=[A('estranho', 'farSidewalk+4,0,0.4', 180, 'stand', 'smirk', glow=GREEN, look='camera', talk=TALK)], camera=cam('xclose', 'estranho', 0))
-S('h5', 'suburb', 'Um zumbi que pensa. E agora, ele conhece as suas regras.', hold=1.2,
+S('h5', 'suburb', '[menacing] Um zumbi que pensa. E agora, ele conhece as suas regras.', hold=1.2,
   actors=[A('hero', 'sidewalk', 0, 'stand', 'scared')], camera=cam('xclose', 'hero', 10, move='pushIn'),
   fx={'vignette': 0.5}, sfx=[{'t': '@regras', 'name': 'subdrop'}])
 
@@ -30998,6 +31291,36 @@ S('i1', 'suburb', 'Então: o que você faria primeiro numa escola só sua? E o h
   time='golden', actors=[A('hero', 'sidewalk', 10, 'confident', 'smirk', hold={'R': 'whistle'})],
   camera=cam('wide', 'hero', 30, height=5, move='pullOut'),
   overlays=[{'type': 'title', 'small': 'O QUE VOCÊ FARIA PRIMEIRO?', 'big': 'ELE TROUXE O FUNGO?', 'at': '@capa'}])
+
+# ---------------------------------------------------------------- estilo novo (2026-11-08): ritmo, destaques, cortes
+# Same voice as before (no vo text changes here): only cuts, sub-cuts and 2D overlays.
+by_id = {s['id']: s for s in shots}
+# smash cuts on reveals / punchlines (set by hand; apply_ritmo leaves explicit cuts alone)
+for sid in ('x6', 'e9', 'h2', 'k9'):
+    by_id[sid]['cut'] = 'smash'
+# the dilemma breathes: calm sub-cuts; the held decision and the fade-out stay one take
+for sid in ('d1', 'd4', 'd5'):
+    by_id[sid]['coverage'] = 'calm'
+for sid in ('d6', 'e11', 'h5', 'x9', 'x5', 'g1', 'p4', 'm5', 'p8', 'r3', 'r4', 'r6', 'k3', 'k6', 'c4', 'f9', 'i1', 'q3', 'f3'):  # x9: tight hiding close; x5: framed on the speaker box; g1: orbit shows his nape; p4: punch-in centres Jorge's back
+    by_id[sid]['coverage'] = 'off'
+# palavra-destaque: the key word pops in on its cue, inside the 9:16 centre column
+WORDS = {
+    'c4': [('VERDE', '@verde')],
+    's9': [('50 MINUTOS', '@cinquenta')],
+    'p7': [('10 SEGUNDOS', '@dez')],
+    'r4': [('EDUCADO DEMAIS', '@educado', {'color': 'white'})],
+    'k2': [('3 SOBREMESAS', '@três')],
+    'q3': [('6 ISCAS', '@seis')],
+    'x7': [('150 ZUMBIS', '@cento')],
+    'z2': [('11:56', '@onze', {'color': 'red'})],
+    'z5': [('400 ZUMBIS', '@quatrocentos')],
+    'e7': [('30 SEGUNDOS', '@trinta', {'y': 'top'})],  # the sun clock sits bottom-centre
+    'h5': [('QUE PENSA', '@pensa')],
+}
+for sid, ws in WORDS.items():
+    for w in ws:
+        by_id[sid].setdefault('overlays', []).append({'type': 'word', 'text': w[0], 'at': w[1], **(w[2] if len(w) > 2 else {})})
+apply_ritmo(shots)
 
 # ---------------------------------------------------------------- episode
 idx = {s['id']: i for i, s in enumerate(shots)}
@@ -31021,6 +31344,7 @@ cast = {
 }
 ep = {
     'slug': SLUG,
+    'hookCheck': False,  # made before the first-10-s hook rule (2026-11-09); the user chose not to apply it here
     'title': 'E Se Você Salvasse Sua Escola de Uma Invasão Zumbi?',
     'voice': {'id': 'u7N1p4OIOc6Fl7y72WE7', 'model': 'eleven_v4'},
     'voices': {'adulto': 'u4sbCzXyUVxIAihOtCss', 'adulta': 'dxIMMSJYSsbUSMhioLNb'},
@@ -31041,6 +31365,15 @@ ep = {
         {'shot': idx['i1'], 'mood': 'curious'},
     ],
     'shots': shots,
+    # ≥ 4 self-contained ~90 s shorts the user cuts by hand (cold hook in, punch/cliffhanger out)
+    'clips': [{'title': t, 'from': a, 'to': b} for t, a, b in [
+        ('Meu colega virou zumbi no meio da prova', 'c1', 'm7'),
+        ('Esse fungo zumbi existe de verdade', 's1', 'p8'),
+        ('As 3 regras pra sobreviver aos zumbis', 'r1', 'k10'),
+        ('O som mais alto da escola', 'q1', 'x9'),
+        ('400 zumbis e um apito', 'z1', 'e12'),
+        ('O homem da capa amarela', 'f4', 'h5'),
+    ]],
 }
 
 
@@ -31059,8 +31392,12 @@ def resolve_countdowns():
         sh = tm['shots'][idx[sid]]
         return sh['start'] + next(t for w, t in sh['words'] if w == word)
 
-    clocks = {'bell': (wt('z6', 'quatro'), wt('e6', 'toca'), 240, 'tr', 'e6'),
-              'sun': (wt('e7', 'trinta'), tm['shots'][idx['e11']]['start'] + tm['shots'][idx['e11']]['dur'], 30, 'tl', 'e11')}
+    # both clocks sit bottom-centre (9:16 column, off the faces); they never overlap in time
+    # y5: 0:30 runs down to 0:00 on "pisca"
+    y5 = shots[idx['y5']]['overlays'][0]
+    y5['tick'] = round(30 / max(0.5, wt('y5', 'pisca') - tm['shots'][idx['y5']]['start'] - 0.1), 3)
+    clocks = {'bell': (wt('z6', 'quatro'), wt('e6', 'toca'), 240, 'bc', 'e6'),
+              'sun': (wt('e7', 'trinta'), tm['shots'][idx['e11']]['start'] + tm['shots'][idx['e11']]['dur'], 30, 'bc', 'e11')}
     for i, sh in enumerate(shots):
         for o in sh.get('overlays', []):
             kind = o.pop('cd', None)
@@ -31098,7 +31435,7 @@ with open(out, 'w', encoding='utf-8') as f:
 words = sum(len(s.get('vo', '').split()) for s in shots)
 print(f'{len(shots)} shots, {words} words -> {os.path.normpath(out)}')
 @@@@ END
-@@@@ FILE tools/episodes/kit.py | text-crlf | 7993 | 33c759949b811fb5dc13da19224d64950af5333a251b171b127ae19b0a1ab598
+@@@@ FILE tools/episodes/kit.py | text-crlf | 8094 | 18f7859004a9e89ce292bf3a44a445676e5f10b16c7e3a36179ed2845f49b5d8
 """Shared helpers for episode generators (tools/episodes/<slug>.py -> public/episodes/<slug>/episode.json).
 
 Use from a generator:
@@ -31184,8 +31521,9 @@ def shot_index():
 
 
 def apply_ritmo(shots_):
-    """House pacing (since 2026-11-08): automatic sub-cuts on 3D shots with an automatic camera
-    (coverage 'fast' unless the shot sets its own; use 'calm' in the dilemma, 'off' for a held tableau),
+    """House pacing (since 2026-11-08): automatic sub-cuts on 3D shots (coverage 'fast' unless the shot sets
+    its own; use 'calm' in the dilemma, 'off' for a held tableau). Automatic cameras re-frame per beat; explicit
+    pos/path cameras punch in / orbit their own view (scene.ts beatView); over-the-shoulder shots are left alone.
     and a whip / zoom transition, alternating, on every 3D→3D set change that has no explicit cut.
     Smash cuts stay hand-placed (reveals, punchlines)."""
     alt = ['whip', 'zoom']
@@ -31194,7 +31532,7 @@ def apply_ritmo(shots_):
         if sh.get('kind') == 'card':
             continue
         c = sh.get('camera') or {}
-        if 'coverage' not in sh and not (c.get('pos') or c.get('path') or c.get('over')):
+        if 'coverage' not in sh and not c.get('over'):
             sh['coverage'] = 'fast'
         prev = shots_[i - 1] if i else None
         if prev and prev.get('kind') != 'card' and 'cut' not in sh and prev.get('set') != sh.get('set'):
@@ -31310,624 +31648,6 @@ def write(slug, ep, drop_none=True):
         json.dump(clean(ep) if drop_none else ep, f, ensure_ascii=False, indent=1)
     words = sum(len(s.get('vo', '').split()) for s in ep['shots'])
     print(f'{len(ep["shots"])} shots, {words} words -> {os.path.normpath(out)}')
-@@@@ END
-@@@@ FILE tools/episodes/quem_tem_crush.py | text-crlf | 54224 | a3588a953c0c3b599d21e4660d57118cc42cc9ae513105b4946a05024d5dce82
-# Source of public/episodes/quem-tem-crush/episode.json — edit HERE, then run:
-#   .venv/Scripts/python -I tools/episodes/quem_tem_crush.py
-# (episode.json is regenerated from this file; hand edits to the JSON get overwritten.)
-import os
-import sys
-
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # python -I drops the script dir
-from kit import *  # noqa: E402,F401,F403  (A, S, C, cam, crush, TALK, episode, load_timing, write, …)
-
-SLUG = 'quem-tem-crush'
-PINK = '#ff4f9a'
-
-
-BENCH2 = 'bench+-0.42,0,-0.42'  # next seat along the plaza bench (tangent to the ring at 135°)
-RIVAL = 'bench+1.1,0,-0.5'    # standing in front of the bench, facing it (rot -45)
-RULES = ['O BRILHO ATRAVESSA TUDO', 'O NÚMERO MUDA NA HORA', 'SUA VOZ FAZ O NÚMERO SUBIR']
-
-# ---------------------------------------------------------------- 1. abertura fria (sala de aula)
-S('c1', 'classroom', 'Você precisa de uma dupla pra feira de ciências. E ninguém olha pra você.',
-  props=[{'type': 'sign', 'pos': [-4.3, 0.95, 2.2], 'rot': 90, 'w': 0.62, 'h': 0.3, 'text': 'FEIRA DE CIÊNCIAS: DUPLAS', 'bg': '#f6f2e8', 'fg': '#1d2333'}],
-  camera={'pos': [-3.1, 1.15, 2.3], 'look': [-4.3, 0.95, 2.2], 'fov': 30, 'move': 'pushIn'})
-S('c2', 'classroom', 'Você olha em volta. Todo mundo já tem alguém.',
-  actors=[A('hero', 'seat1', -90, 'sit', 'worried'), A('bestie', 'seat3', -90, 'sit', 'happy')],
-  camera=cam('close', 'hero', 20, move='drift'))
-S('c3', 'classroom', 'Aí você vê: a menina da fileira de trás está brilhando. Rosa. Setenta e três por cento.',
-  actors=[A('lia', 'seat2', -90, 'sit', 'smile', glow=PINK)],
-  camera=cam('medium', 'lia', 35, move='pushIn'),
-  overlays=[crush('lia', 73, 0, at='@rosa')], sfx=[{'t': '@rosa', 'name': 'glint'}])
-S('c4', 'classroom', 'Você levanta e vai direto até ela.',
-  actors=[A('lia', 'seat2', -90, 'sit', 'smile', glow=PINK),
-      A('hero', 'seat1', -90, 'stand', 'determined', path=[{'t': 0.2, 'pos': 'seat1+0,0,0.7'}, {'t': 1.6, 'pos': 'seat2+-0.75,0,0.7', 'gait': 'walk'}])],
-  camera=cam('full', 'hero', 40, move='track'))
-S('c5', 'classroom', 'Ela diz sim antes de você terminar a pergunta. O estojo dela vai pro chão.',
-  actors=[A('lia', 'seat2', -90, 'sit', 'grin', glow=PINK, faces=[{'t': 0.4, 'face': {'mouth': 1, 'open': 0.4, 'eyes': 0.8, 'blush': True}}]),
-      A('hero', 'seat2+-0.75,0,0.7', 60, 'relaxed', 'smile', look='lia')],
-  props=[{'type': 'book', 'pos': [1.5, 0.8, 1.45], 'color': '#ff7a3d', 'path': [{'t': '@estojo', 'pos': [1.5, 0.8, 1.45]}, {'t': '@chão', 'pos': [1.15, 0.03, 1.2]}]}],
-  camera=cam('medium', ['lia', 'hero'], -20),
-  overlays=[crush('lia', 80, 73, at='@sim')], sfx=[{'t': '@chão', 'name': 'thud'}])
-S('c6', 'classroom', 'Como você sabia que ela ia topar?', who='male',
-  actors=[A('bestie', 'seat3', 60, 'sit', 'confused', talk=TALK)],
-  camera=cam('close', 'bestie', 0))
-S('c7', 'classroom', 'Intuição.', hold=0.4,
-  actors=[A('hero', 'seat2+-0.75,0,0.7', -60, 'confident', 'smug', talk=[[0.05, 0.7]])],
-  camera=cam('close', 'hero', -10))
-S('c8', 'classroom', 'E através da parede, na sala ao lado, mais um brilho rosa. De alguém que você nunca viu.',
-  actors=[A('extraA', [5.82, 0, -2.0], -90, 'relaxed', 'neutral', ghost=True, glow=PINK)],
-  camera={'pos': [4.3, 1.5, -0.4], 'look': [6, 1.4, -2.0], 'fov': 40, 'move': 'pushIn'},
-  overlays=[crush('extraA', 52, 0, at='@brilho')], sfx=[{'t': '@brilho', 'name': 'glint'}])
-
-# ---------------------------------------------------------------- 2. pergunta do título
-S('t1', 'suburb', 'E se você pudesse ver quem tem crush em você? Vamos ver o que isso realmente muda.',
-  actors=[A('hero', 'sidewalk', 10, 'confident', 'smirk')],
-  camera=cam('wide', 'hero', 35, height=8, move='pushIn'),
-  overlays=[{'type': 'title', 'small': 'E SE VOCÊ PUDESSE VER', 'big': 'QUEM TEM CRUSH EM VOCÊ?', 'at': 0.2}])
-
-# ---------------------------------------------------------------- 3. mecanismo + limite
-C('m1', 'icon', 'Funciona assim: quem tem crush em você brilha. Um brilho rosa, bem no peito.',
-  icon='heart', caption='QUEM TEM CRUSH EM VOCÊ', sub='BRILHA ROSA')
-S('m2', 'void', 'E em cima da cabeça aparece um número, de zero a cem. O quanto a pessoa gosta de você. Agora.',
-  actors=[A('lia', 'left', 30, 'relaxed', 'smile', glow=PINK), A('hero', 'right', -40, 'relaxed', 'surprised', look='lia')],
-  camera=cam('medium', ['lia', 'hero'], 0, move='drift'),
-  overlays=[crush('lia', 73, 0, at='@número')])
-S('m3', 'void', 'Isso é tudo que muda. O resto continua igual.',
-  actors=[A('hero', 'center', 0, 'explain', 'focused')], camera=cam('medium', 'hero', 15))
-C('m4', 'icon', 'Você só vê o que as pessoas sentem por você. De mais ninguém. Nem o que você mesmo sente.',
-  icon='eye', caption='SÓ O QUE SENTEM POR VOCÊ', sub='NEM O QUE VOCÊ SENTE')
-S('m5', 'void', 'Anota isso. Você vai precisar.',
-  actors=[A('hero', 'center', 0, 'point', 'determined')], camera=cam('xclose', 'hero', -10, move='pushIn'))
-
-# ---------------------------------------------------------------- 4. escada de números + ciência
-C('s1', 'icon', 'Agora, a parte estranha: seu corpo já tenta fazer isso sozinho.',
-  icon='brain', caption='SEU CORPO JÁ TENTA')
-C('s2', 'stat', 'Seu cérebro julga um rosto em um décimo de segundo.',
-  value=100, unit='MILISSEGUNDOS', label='PRA JULGAR UM ROSTO', icon='brain')
-C('s3', 'icon', 'E nos anos sessenta, o psicólogo Eckhard Hess mediu outra coisa: a pupila aumenta quando você olha pra algo que te interessa.',
-  icon='eye', caption='A PUPILA AUMENTA', sub='QUANDO ALGO TE INTERESSA')
-C('s4', 'distance', 'Só que, pra ver uma pupila mudar, você precisa estar a um palmo do rosto da pessoa.',
-  value=20, unit='CENTÍMETROS', count=1, pose='stand', target='eye')
-C('s5', 'distance', 'Pra ver alguém ficar vermelho, uns dois metros.',
-  value=2, unit='METROS', count=1, pose='stand', target='heart')
-C('s6', 'compare', 'Você: do outro lado do pátio, atravessando parede, com número exato. Duzentas e cinquenta vezes mais longe que uma pupila.',
-  title='DE ONDE DÁ PRA SABER', left={'label': 'PUPILA', 'value': 0.2, 'display': '20 CM', 'icon': 'eye'},
-  middle={'label': 'RUBOR', 'value': 2, 'display': '2 M', 'icon': 'heart'}, right={'label': 'VOCÊ', 'value': 50, 'display': '50 M', 'icon': 'stand'}, ratioLabel='MAIS LONGE', at='@pátio')
-S('s7', 'home', 'E não, não é amor. É crush. Sua mãe, sua avó, seus professores: zero. Ainda bem.',
-  actors=[A('mom', 'kitchen', 20, 'relaxed', 'happy'), A('hero', 'table', -150, 'relaxed', 'smirk', look='mom')],
-  camera=cam('medium', ['mom', 'hero'], 20),
-  overlays=[crush('mom', 0, at='@mãe')])
-
-# ---------------------------------------------------------------- 5. teste de prova (educação física)
-SCREEN = {'type': 'screen', 'pos': 'sideline+0,1.4,-3.2', 'w': 3.2, 'h': 1.4, 'text': 'BATIMENTOS', 'fg': '#ff6fa8'}
-S('p1', 'stadium', variant=1, vo='Na educação física, todo mundo usa uma faixa no peito que mede o coração.',
-  props=[SCREEN],
-  actors=[A('coach', 'sideline+2,0,-1', -90, 'armsCrossed', 'suspicious'), A('hero', 'sideline+-1,0,-1.5', 0, 'relaxed', 'happy'),
-      A('bestie', 'sideline+-2,0,-1.2', 20, 'relaxed', 'smile'), A('duda', 'sideline+3.2,0,-1.8', -10, 'stretch', 'happy')],
-  camera=cam('wide', 'hero', 25, height=6, move='drift'))
-S('p2', 'stadium', variant=1, vo='Os batimentos de cada um aparecem no telão.',
-  props=[dict(SCREEN, text='DUDA: 92 BPM')], camera={'pos': [-6, 1.9, 26.5], 'look': [-6, 1.6, 22.8], 'fov': 34})
-S('p3', 'stadium', variant=1, vo='Prova.', who='male',
-  actors=[A('bestie', 'sideline+-2,0,-1.2', 60, 'armsCrossed', 'suspicious', look='hero', talk=[[0.05, 0.8]])],
-  camera=cam('close', 'bestie', 10))
-S('p4', 'stadium', variant=1, vo='Você passa do lado da Duda. Oitenta e um por cento.',
-  actors=[A('duda', 'sideline+0.4,0,-2', 10, 'relaxed', 'happy', glow=PINK),
-      A('hero', 'sideline+-1.5,0,-1', 90, 'relaxed', 'smirk', path=[{'t': 0.1, 'pos': 'sideline+-1.5,0,-1'}, {'t': 2.0, 'pos': 'sideline+1.6,0,-1', 'gait': 'walk'}])],
-  camera=cam('full', 'duda', -15, move='drift'), overlays=[crush('duda', 81, 0, at='@duda')])
-C('p5', 'stat', 'No telão, o coração dela pula de noventa e dois pra cento e vinte e oito.',
-  value=128, **{'from': 92}, unit='BPM', label='O CORAÇÃO DA DUDA', icon='heart')
-S('p6', 'stadium', variant=1, vo='Passa de novo.', who='adulto',
-  actors=[A('coach', 'sideline+2,0,-1', -90, 'armsCrossed', 'suspicious', talk=[[0.05, 0.9]])], camera=cam('close', 'coach', 10))
-S('p7', 'stadium', variant=1, vo='Você passa de novo. Cento e trinta.',
-  actors=[A('duda', 'sideline+0.4,0,-2', 10, 'relaxed', 'embarrassed', glow=PINK),
-      A('hero', 'sideline+1.6,0,-1', -90, 'relaxed', 'smirk', path=[{'t': 0.1, 'pos': 'sideline+1.6,0,-1'}, {'t': 1.8, 'pos': 'sideline+-1.5,0,-1', 'gait': 'walk'}])],
-  camera=cam('full', 'duda', 20), overlays=[crush('duda', 81, at=0), {'type': 'label', 'text': '130 BPM', 'at': '@cento', 'corner': 'tr'}])
-S('p8', 'stadium', variant=1, vo='O professor Ramos olha o telão. Olha pra você. Olha o telão de novo.',
-  actors=[A('coach', 'sideline+2,0,-1', -90, 'thinking', 'suspicious',
-        poses=[{'t': 0.0, 'pose': {'spine': [4, 0, 0], 'armR': [55, 10, -40, 140], 'armL': [30, 20, -60, 115], 'head': [0, -50, 0]}}, {'t': '@você', 'pose': {'spine': [4, 0, 0], 'armR': [55, 10, -40, 140], 'armL': [30, 20, -60, 115], 'head': [0, 30, 0]}}, {'t': '@novo', 'pose': {'spine': [4, 0, 0], 'armR': [55, 10, -40, 140], 'armL': [30, 20, -60, 115], 'head': [0, -50, 0]}}])],
-  camera=cam('xclose', 'coach', 0))
-S('p9', 'stadium', variant=1, vo='Hidratação. Todo mundo bebe água.', who='adulto',
-  actors=[A('coach', 'sideline+2,0,-1', -90, 'point', 'focused', talk=TALK)], camera=cam('medium', 'coach', 20))
-S('p10', 'stadium', variant=1, vo='Aí você passa do lado do Caio. Zero.',
-  actors=[A('bestie', 'sideline+-2,0,-1.2', 20, 'confident', 'smug'), A('hero', 'sideline+-1,0,-1.5', -20, 'relaxed', 'neutral', look='bestie')],
-  camera=cam('medium', ['bestie', 'hero'], 15), overlays=[crush('bestie', 0, at='@zero')])
-S('p11', 'stadium', variant=1, vo='Nem um pouquinho?', who='male',
-  actors=[A('bestie', 'sideline+-2,0,-1.2', 20, 'shrug', 'sad', look='hero', talk=[[0.05, 1.2]])], camera=cam('close', 'bestie', 10))
-S('p12', 'stadium', variant=1, vo='Zero.',
-  actors=[A('hero', 'sideline+-1,0,-1.5', -20, 'relaxed', 'smirk', talk=[[0.05, 0.6]])], camera=cam('close', 'hero', -15))
-
-# ---------------------------------------------------------------- 6. regras
-C('r1', 'rules', 'Em uma semana, você descobre as regras.', title='AS REGRAS', prefix='REGRA', rules=RULES, current=0)
-C('r2', 'rules', 'Regra um: o brilho atravessa tudo. Parede, porta, ônibus.', title='AS REGRAS', prefix='REGRA', rules=RULES, current=1)
-S('r3', 'classroom', 'Aquele brilho da sala ao lado continua lá, todo dia. Você cola o ouvido na parede pra descobrir quem é.', variant=1,
-  actors=[A('extraA', [5.82, 0, -2.0], -90, 'relaxed', 'neutral', ghost=True, glow=PINK), A('hero', [5.45, 0, -1.4], 90, 'lean', 'focused', poses=[{'t': 0, 'pose': {'spine': [6, 0, 0], 'head': [0, 0, 25], 'armR': [70, 40, 0, 120]}}])],
-  camera={'pos': [2.6, 1.6, 0.8], 'look': [5.5, 1.25, -1.5], 'fov': 40})
-S('r4', 'classroom', 'Algum problema com a parede?', who='adulta', variant=1,
-  actors=[A('teacher', [3.6, 0, -0.2], 123, 'armsCrossed', 'suspicious', talk=TALK), A('hero', [5.45, 0, -1.4], -57, 'shocked', 'embarrassed', look='teacher')],
-  camera={'shot': 'medium', 'target': 'teacher', 'over': 'hero'})
-C('r5', 'rules', 'Regra dois: o número muda na hora.', title='AS REGRAS', prefix='REGRA', rules=RULES, current=2)
-S('r6', 'classroom', 'Você tropeça na frente da turma inteira. O da Lia cai de setenta e três pra sessenta e nove.',
-  actors=[A('lia', 'seat2', -90, 'sit', 'surprised', glow=PINK),
-      A('hero', 'front+0.6,0,0.6', 90, 'stand', 'shocked', poses=[{'t': 0.3, 'pose': 'fall', 'blend': 0.2}, {'t': 0.75, 'pose': 'kneel', 'blend': 0.3}])],
-  camera={'pos': [-5.0, 2.4, 2.6], 'look': [0.2, 0.6, 0.8], 'fov': 50}, overlays=[crush('lia', 69, 73, at='@lia')], sfx=[{'t': 0.5, 'name': 'thud'}])
-S('r7', 'classroom', 'Aí você faz piada do próprio tombo. Setenta e quatro.',
-  actors=[A('lia', 'seat2', -90, 'sit', 'grin', glow=PINK), A('hero', 'front+0.6,0,0.6', 90, 'shrug', 'grin', look='lia')],
-  camera={'pos': [-5.0, 2.4, 2.6], 'look': [0.2, 0.7, 0.8], 'fov': 44}, overlays=[crush('lia', 74, 69, at='@setenta')])
-C('r8', 'rules', 'Regra três: quando a pessoa ouve a sua voz, o número pula.', title='AS REGRAS', prefix='REGRA', rules=RULES, current=3)
-S('r9', 'cafeteria', 'Você dá oi pra Duda no refeitório. Noventa.', variant=1,
-  actors=[A('duda', 'seat1', 0, 'sit', 'happy', glow=PINK), A('hero', [2.25, 0, 2.75], 180, {'armR': [40, 60, 0, 90], 'handR': 'open'}, 'smile')],
-  camera={'shot': 'medium', 'target': 'duda', 'over': 'hero'}, overlays=[crush('duda', 90, 81, at='@oi')])
-S('r10', 'cafeteria', 'Você para de dar oi pras pessoas. Por segurança.', variant=1,
-  actors=[A('hero', 'aisle', 90, 'stand', 'worried', path=[{'t': 0.2, 'pos': 'aisle'}, {'t': 2.2, 'pos': 'aisle+3,0,0', 'gait': 'sneak'}])],
-  camera=cam('full', 'hero', 30, move='track'))
-
-# ---------------------------------------------------------------- 7. montagem de vantagens
-S('k1', 'cafeteria', 'E aí começa a parte boa. No refeitório, você nunca mais senta no lugar errado.', variant=0,
-  actors=[A('hero', 'seat3', 0, 'sit', 'happy'), A('lia', 'seat1', 0, 'sit', 'smile', glow=PINK)],
-  camera=cam('wide', 'hero', 10, move='drift'))
-PIC = 'picnic'
-GROUP = [A('hero', 'picnic+0,0,0.6', 180, 'kneel', 'smug'), A('bestie', 'picnic+0.9,0,0', -90, 'kneel', 'happy'),
-     A('extraA', 'picnic+0,0,-0.7', 0, 'kneel', 'surprised'), A('extraC', 'picnic+-0.9,0,0', 90, 'kneel', 'grin')]
-S('k2', 'park', 'No verdade ou desafio, alguém pergunta quem gosta de você. Você acerta todas.',
-  actors=GROUP, camera=cam('medium', 'hero', 160, height=20, move='drift'))
-S('k3', 'park', 'Você é banido do verdade ou desafio. Pra sempre.',
-  actors=[A('hero', 'picnic+0,0,0.6', 180, 'shrug', 'embarrassed'), A('bestie', 'picnic+0.9,0,0', -90, 'point', 'grin', look='hero'),
-      A('extraA', 'picnic+0,0,-0.7', 0, 'kneel', 'smug'), A('extraC', 'picnic+-0.9,0,0', 90, 'kneel', 'grin')],
-  camera=cam('medium', 'hero', -150, height=15), sfx=[{'t': '@banido', 'name': 'pop'}])
-S('k4', 'park', 'Você tenta abrir um negócio: cinco reais pra dizer se o crush de alguém gosta dele.',
-  actors=[A('hero', 'bench', 135, 'sit', 'smug'), A('rival', RIVAL, -45, 'holdOut', 'happy', look='hero')],
-  camera=cam('medium', ['hero', 'rival'], 20))
-S('k5', 'park', 'Primeiro cliente: o Rafa. Ele aponta a menina. Ela não brilha. Não pra você.',
-  actors=[A('rival', RIVAL, 160, 'point', 'happy'), A('extraB', 'fountain+1.2,0,0.6', -20, 'relaxed', 'neutral')],
-  camera=cam('medium', 'extraB', 0), overlays=[crush('extraB', 0, at='@brilha')])
-S('k6', 'park', 'Você não faz ideia do que ela sente por ele. Reembolso total.',
-  actors=[A('hero', 'bench', 135, 'sit', 'embarrassed'), A('rival', RIVAL, -45, 'armsCrossed', 'angry', look='hero')],
-  camera=cam('medium', ['hero', 'rival'], 70), sfx=[{'t': '@reembolso', 'name': 'click'}])
-S('k7', 'cafeteria', 'Uma tarde, o número da Duda despenca: de oitenta e um pra quarenta. Você tinha esquecido de responder uma mensagem dela.', variant=1,
-  actors=[A('duda', 'seat2', 0, 'sit', 'sad', glow=PINK, hold={'R': 'phone'})],
-  camera=cam('medium', 'duda', 15, move='pushIn'), overlays=[crush('duda', 40, 81, at='@despenca', countDur=1.4)])
-S('k8', 'cafeteria', 'Você não gosta dela desse jeito. Mas você vai até lá e conta a verdade, com cuidado.', variant=1,
-  actors=[A('duda', 'seat2', 0, 'sit', 'sad', glow=PINK),
-      A('hero', [0.4, 0, 2.75], -90, 'relaxed', 'worried', path=[{'t': 0.2, 'pos': [0.4, 0, 2.75]}, {'t': 2.6, 'pos': [-3.0, 0, 2.75], 'gait': 'walk', 'rot': 180}])],
-  camera={'pos': [-0.6, 1.6, 5.6], 'look': [-2.8, 1.0, 1.6], 'fov': 45})
-S('k9', 'cafeteria', 'Obrigada por falar primeiro.', who='female', variant=1,
-  actors=[A('duda', 'seat2', 0, 'sit', 'smile', glow=PINK, talk=TALK), A('hero', [-3.0, 0, 2.75], 180, 'relaxed', 'worried')],
-  camera={'shot': 'medium', 'target': 'duda', 'over': 'hero'})
-S('k10', 'cafeteria', 'O número dela cai. Ela sorri mesmo assim. É a melhor coisa que você faz com esse poder.', variant=1,
-  actors=[A('duda', 'seat2', 0, 'sit', 'smile', glow=PINK), A('hero', [-3.0, 0, 2.75], 180, 'relaxed', 'smile')],
-  camera={'pos': [-0.6, 1.6, 5.6], 'look': [-2.8, 1.0, 1.6], 'fov': 45}, overlays=[crush('duda', 30, 40, at='@cai')])
-S('k11', 'park', 'Até que você se gaba pro Caio: cinco pessoas gostam de você só essa semana.',
-  actors=[A('hero', 'path', 30, 'confident', 'smug', talk=TALK), A('bestie', 'path+1.2,0,0', -30, 'armsCrossed', 'bored', look='hero')],
-  camera=cam('medium', ['hero', 'bestie'], 0))
-S('k12', 'park', 'A Lia escuta. Setenta e quatro. Sessenta e cinco. Se exibir derruba o número.',
-  actors=[A('hero', 'path', 30, 'facepalm', 'embarrassed'), A('bestie', 'path+1.2,0,0', -30, 'armsCrossed', 'smug', look='hero'), A('lia', 'path+0.6,0,-2.6', 0, 'relaxed', 'sad', glow=PINK)],
-  camera=cam('full', ['hero', 'bestie', 'lia'], 0, height=8), overlays=[crush('lia', 65, 74, at='@sessenta')])
-
-# ---------------------------------------------------------------- 8. "mas" + problemas
-S('q1', 'void', 'Essa é a versão divertida. Aqui vem a conta.',
-  actors=[A('hero', 'center', 0, {'spine': [28, 0, 0], 'head': [-12, 0, 0], 'hipY': -0.05, 'armL': [-4, 2, 0, 0], 'armR': [-4, 2, 0, 0], 'legL': [10, 4, 18], 'legR': [10, 4, 18]}, 'worried')], camera=cam('medium', 'hero', 0, height=-18, move='pullOut'))
-FANS = [('lia', [2.0, 0, 1.7], 58), ('duda', [2.0, 0, 0.0], 81), ('extraA', [0.2, 0, -1.7], 36), ('extraB', [2.0, 0, -1.7], 49), ('extraC', [3.8, 0, 0.0], 62)]
-S('q2', 'classroom', 'Problema um: você não consegue desligar. Na aula de matemática, cinco corações piscando em volta de você.', variant=1,
-  actors=[A('hero', [0.2, 0, 0.0], -90, 'sit', 'tired')] + [A(i, p, -90, 'sit', 'happy', glow=PINK) for i, p, _ in FANS],
-  camera={'pos': [0.8, 2.3, 7.5], 'look': [1.2, 0.9, 0.0], 'fov': 40, 'move': 'drift'},
-  overlays=[crush(i, v, 0, at=0.4 + 0.35 * k) for k, (i, _, v) in enumerate(FANS)])
-S('q3', 'classroom', 'Cinco números mudando o tempo inteiro. Você não escuta uma palavra da professora.', variant=1,
-  actors=[A('hero', [0.2, 0, 0.0], -90, 'sit', 'tired', faces=[{'t': 1.0, 'face': 'sleepy'}])],
-  camera=cam('close', 'hero', 15), sfx=[{'t': 0.3, 'name': 'ticks'}])
-C('q4', 'stat', 'Sua nota cai de oito e meio pra seis.', value='8,5 → 6', label='SUA NOTA DE MATEMÁTICA', icon='check')
-S('q5', 'classroom', 'Solução: sentar na primeira fileira, de frente pro quadro, onde ninguém entra no seu campo de visão.', variant=1,
-  actors=[A('hero', [-1.6, 0, 0.0], -90, 'sit', 'focused')], camera={'pos': [-4.6, 1.7, -0.2], 'look': [-1.6, 0.95, 0.0], 'fov': 34})
-S('q6', 'classroom', 'Primeira fileira? Você?', who='adulta', variant=1,
-  actors=[A('teacher', 'board+0.6,0,1.2', 70, 'armsCrossed', 'surprised', talk=TALK), A('hero', [-1.6, 0, 0.0], -90, 'sit', 'smile')],
-  camera=cam('medium', ['teacher', 'hero'], -30))
-S('q7', 'bedroom', 'Problema dois: você começa a anotar.',
-  actors=[A('hero', 'desk', 180, 'typing', 'focused')], camera=cam('medium', 'hero', -150, move='pushIn'))
-C('q8', 'stat', 'Uma planilha. Trinta e quatro nomes, trinta e quatro números, atualizada todo dia.', value=34, unit='NOMES', label='A PLANILHA', icon='check')
-S('q9', 'bedroom', 'Você confere umas quarenta vezes por dia. E sem perceber, fica mais legal com quem tem oitenta do que com quem tem dez.',
-  actors=[A('hero', 'desk', 180, 'typing', 'smug')], camera=cam('close', 'hero', -160),
-  overlays=[{'type': 'label', 'text': '40× POR DIA', 'at': '@quarenta', 'corner': 'tr'}])
-S('q10', 'bedroom', 'Sua irmã caçula acha a planilha.',
-  actors=[A('sister', 'desk+0.6,0,1.2', -157, 'reach', 'surprised', look=[2.75, 1.05, -3.4]), A('hero', 'rug+1,0,-0.4', 60, 'relaxed', 'worried', look='sister')],
-  camera={'pos': [1.0, 1.5, 3.0], 'look': [2.7, 1.0, -1.4], 'fov': 40})
-S('q11', 'bedroom', 'Por que a Duda tem uma setinha pra baixo?', who='female',
-  actors=[A('sister', 'desk+0.6,0,1.2', -120, 'point', 'confused', look='hero', talk=TALK), A('hero', 'rug+1,0,-0.4', 60, 'scared', 'embarrassed', look='sister')],
-  camera={'pos': [1.2, 1.5, 3.2], 'look': [2.4, 1.0, -1.2], 'fov': 42})
-S('q12', 'bedroom', 'É trabalho de geografia.',
-  actors=[A('hero', 'rug+1,0,-0.4', 60, 'shrug', 'embarrassed', talk=[[0.05, 1.2]])], camera=cam('close', 'hero', 10))
-S('q13', 'bedroom', 'Desde quando você faz planilha?', who='adulta',
-  actors=[A('mom', 'door', -90, 'armsCrossed', 'suspicious', talk=TALK), A('hero', 'rug+1,0,-0.4', 80, 'relaxed', 'embarrassed', look='mom')],
-  camera=cam('medium', 'mom', 15))
-S('q14', 'cafeteria', 'Problema três, o pior: você para de arriscar.', variant=0,
-  actors=[A('hero', 'aisle', 0, 'stand', 'worried')], camera=cam('full', 'hero', 10, move='pullOut'))
-S('q15', 'cafeteria', 'Pra que convidar alguém, se você já sabe a resposta? Pra que perguntar, se dá pra só olhar?', variant=1,
-  actors=[A('lia', 'seat1', 0, 'sit', 'smile', glow=PINK), A('hero', 'aisle+0.6,0,-0.4', 150, 'relaxed', 'neutral', look='lia')],
-  camera=cam('medium', ['lia', 'hero'], -20), overlays=[crush('lia', 74, at=0.3)])
-C('q16', 'stat', 'Em um mês inteiro, você não começa uma única conversa.', value=0, unit='CONVERSAS', label='QUE VOCÊ COMEÇOU NUM MÊS', icon='question')
-S('q17', 'cafeteria', 'Você sabe o que todo mundo sente. E ninguém sabe nada sobre você.', variant=1,
-  actors=[A('hero', 'seat4', 180, 'sit', 'sad')], camera=cam('close', 'hero', 20, move='pushIn'))
-
-# ---------------------------------------------------------------- 9. problema real
-S('x1', 'void', 'Esses são chatos. Esse aqui é perigoso.',
-  actors=[A('hero', 'center', 0, 'stand', 'worried')], camera=cam('close', 'hero', 0, move='pushIn'), sfx=[{'t': '@perigoso', 'name': 'subdrop'}])
-S('x2', 'park', 'Num sábado, no parque, o Caio fica quieto do nada.',
-  actors=[A('hero', 'bench', 135, 'sit', 'smile'), A('bestie', BENCH2, 135, 'sit', 'worried')],
-  camera=cam('medium', ['hero', 'bestie'], 0, move='drift'))
-S('x3', 'park', 'Posso te contar uma coisa?', who='male',
-  actors=[A('bestie', BENCH2, 135, 'sit', 'worried', look='hero', talk=TALK)], camera=cam('close', 'bestie', -10))
-S('x4', 'park', 'Eu gosto da Lia. Desde o quinto ano.', who='male',
-  actors=[A('bestie', BENCH2, 135, 'sit', 'embarrassed', talk=TALK)], camera=cam('xclose', 'bestie', 0))
-S('x5', 'park', 'Três anos. E você sabe uma coisa que ele não sabe.',
-  actors=[A('hero', 'bench', 135, 'sit', 'worried')], camera=cam('xclose', 'hero', 10, move='pushIn'))
-C('x6', 'stat', 'O número da Lia. Noventa e quatro. Por você.', value=94, unit='%', label='A LIA, POR VOCÊ', icon='heart')
-C('x7', 'icon', 'Lembra? Você só vê o que sentem por você. Nunca viu o que o Caio sente. Nem o que você sente.',
-  icon='eye', caption='SÓ O QUE SENTEM POR VOCÊ', sub='NEM O QUE VOCÊ SENTE')
-S('x8', 'park', 'Aí o Caio pede seu celular emprestado, pra mandar mensagem pra ela.',
-  actors=[A('hero', 'bench', 135, 'sit', 'worried', hold={'R': 'phone'}), A('bestie', BENCH2, 135, 'sit', 'happy', look='hero', poses=[{'t': 0.3, 'pose': {'hipY': -0.46, 'spine': [-2, 0, 0], 'legL': [88, 6, 92], 'legR': [88, 6, 92], 'armL': [30, 10, 0, 60], 'armR': [60, 10, 0, 20], 'handR': 'open'}}])],
-  camera=cam('medium', ['hero', 'bestie'], 20))
-C('x9', 'stat', 'A planilha está aberta na tela. Lia, noventa e quatro, com uma setinha pra cima. A um dedo do Caio.', value=94, unit='%', label='LIA, NA PLANILHA ABERTA', icon='phone')
-C('x10', 'stat', 'E o celular desliga. Um por cento de bateria. Salvo por sorte.', value=1, unit='%', label='DE BATERIA', icon='phone')
-S('x11', 'park', 'Da próxima vez, não vai ter sorte.',
-  actors=[A('hero', 'bench', 135, 'sit', {'mouth': -0.3, 'brow': 0.8, 'eyes': 1.1, 'sweat': True})], camera=cam('close', 'hero', 0))
-
-# ---------------------------------------------------------------- 10. maestria + regra tema
-C('y1', 'chain', 'Então você estuda quem resolve isso há milhões de anos: o morcego.',
-  title='O MORCEGO NO ESCURO', nodes=[{'icon': 'lightning', 'label': 'GRITA'}, {'icon': 'arrow', 'label': 'ESCUTA'}, {'icon': 'check', 'label': 'ACHA'}])
-S('y2', 'void', 'No escuro, o morcego não espera pra enxergar. Ele grita primeiro, e escuta o que volta.',
-  actors=[A('hero', 'center', 0, 'focus', 'closed')], camera=cam('medium', 'hero', 20, move='orbitL'), fx={'grade': 'night'})
-C('y3', 'stat', 'Alguns gritam mais alto que um show de rock, mais de cento e dez decibéis, numa frequência que a gente nem escuta.',
-  value=110, unit='DECIBÉIS', label='O GRITO DE UM MORCEGO', icon='lightning')
-C('y4', 'stat', 'E quando estão chegando perto, até duzentos gritos por segundo.', value=200, unit='GRITOS POR SEGUNDO', label='CHEGANDO PERTO', icon='stopwatch')
-S('y5', 'park', 'Você treina com o Caio: de olhos fechados, puxar assunto com três pessoas sem ver número nenhum.',
-  actors=[A('hero', 'center', 0, 'relaxed', 'closed'), A('bestie', 'center+1.2,0,0.4', -60, 'relaxed', 'happy', hold={'R': 'stopwatch'})],
-  camera=cam('medium', ['hero', 'bestie'], 15))
-S('y6', 'park', 'Primeira: você fala do tempo. Falha.',
-  actors=[A('hero', 'center', 30, 'explain', 'closed', talk=TALK), A('extraA', 'center+0.9,0,1.1', -150, 'armsCrossed', 'bored')],
-  camera=cam('medium', ['hero', 'extraA'], 85), sfx=[{'t': '@falha', 'name': 'pop'}])
-S('y7', 'park', 'Segunda: você fala do tempo de novo. Falha pior.',
-  actors=[A('hero', 'center', -30, 'explain', 'closed', talk=TALK), A('extraB', 'center+-0.9,0,1.1', 150, 'relaxed', 'bored',
-      path=[{'t': '@falha', 'pos': 'center+-0.9,0,1.1'}, {'t': '@pior+0.6', 'pos': 'center+-4,0,4', 'gait': 'walk'}])],
-  camera=cam('medium', ['hero', 'extraB'], -85), sfx=[{'t': '@pior', 'name': 'pop'}])
-S('y8', 'park', 'Terceira: você pergunta uma coisa de verdade, e escuta a resposta.',
-  actors=[A('hero', 'center', 0, 'relaxed', 'smile'), A('extraC', 'center+0,0,1.2', 180, 'explain', 'happy', talk=[[1.5, 4.0]])],
-  camera=cam('medium', ['hero', 'extraC'], 85))
-C('y9', 'rules', 'Sua regra: fala primeiro. Olha depois.', title='A SUA REGRA', prefix='REGRA', rules=['FALA PRIMEIRO.', 'OLHA DEPOIS.'], current=0)
-S('y10', 'bedroom', 'Você tira a planilha da tela inicial.',
-  actors=[A('hero', 'desk', 180, 'typing', 'determined')], camera=cam('close', 'hero', -160))
-
-# ---------------------------------------------------------------- 11. crise (incêndio)
-S('z1', 'suburb', 'Por duas semanas, você fala primeiro. Nada de ruim acontece.',
-  actors=[A('hero', 'sidewalk+-4,0,0', 90, 'relaxed', 'happy', path=[{'t': 0.2, 'pos': 'sidewalk+-4,0,0'}, {'t': 3.5, 'pos': 'sidewalk+3,0,0', 'gait': 'walk'}]),
-      A('bestie', 'sidewalk+-2.8,0,0.6', 90, 'relaxed', 'happy', path=[{'t': 0.2, 'pos': 'sidewalk+-2.8,0,0.6'}, {'t': 3.5, 'pos': 'sidewalk+4.2,0,0.6', 'gait': 'walk'}])],
-  camera=cam('wide', 'hero', 20, move='track'))
-S('z2', 'apartments', 'Até um sábado à tarde, na rua da Lia.',
-  actors=[A('extraA', 'crowd+-3,0,0', 90, 'relaxed', 'happy', path=[{'t': 0.2, 'pos': 'crowd+-3,0,0'}, {'t': 4, 'pos': 'crowd+2,0,0', 'gait': 'walk'}])],
-  camera={'pos': [14, 1.6, 4], 'look': [-6, 2.0, -1], 'fov': 45, 'move': 'drift'})
-S('z3', 'apartments', 'O Caio finalmente criou coragem. Comprou uma flor pra ela.',
-  actors=[A('bestie', 'crowd+-1,0,0', 180, 'holdOut', 'embarrassed', hold={'R': 'flower'})],
-  camera=cam('close', 'bestie', 20, focus='handR', dist=1.1))
-S('z4', 'apartments', 'Aí vocês sentem o cheiro. Fumaça. Saindo do quarto andar. Do prédio dela.',
-  camera={'pos': [3, 1.4, 6], 'look': [0, 8.5, -9], 'fov': 46, 'move': 'pushIn'}, sfx=[{'t': '@fumaça', 'name': 'crackle'}])
-S('z5', 'apartments', 'Cadê a Lia? Ela estava em casa!', who='adulta',
-  actors=[A('maeLia', 'crowd+1.2,0,-0.6', 180, 'scared', 'cry', talk=TALK), A('extraA', 'crowd+-1,0,0.8', 180, 'scared', 'worried'), A('extraB', 'crowd+2.4,0,0.6', 180, 'shocked', 'scared')],
-  camera=cam('medium', 'maeLia', 10, move='handheld'))
-S('z6', 'apartments', 'Os bombeiros procuram no segundo andar, onde a avó dela mora. E a fumaça cobre a fachada inteira.',
-  props=[{'type': 'firetruck', 'pos': 'truck', 'stowed': True}, {'type': 'smoke', 'pos': [0, 9.15, -8.2], 'h': 9, 'size': 1.2}],
-  actors=[A('bombeiro', 'street+3,0,1.2', 180, 'point', 'focused', poses=[{'t': 0, 'pose': {'armR': [120, 10, 0, 0], 'handR': 'point'}}])],
-  camera={'pos': [6, 1.5, 5], 'look': [0, 6.5, -9], 'fov': 55})
-LIA_BAL = A('lia', 'balcony+0,0,-0.3', 0, 'lie', 'sleepy', glow=PINK)
-S('z7', 'apartments', 'Mas você vê. No quarto andar, atrás da fumaça, um brilho rosa.',
-  actors=[LIA_BAL, A('bombeiro', 'street+3,0,1.2', 180, 'point', 'focused', poses=[{'t': 0, 'pose': {'armR': [120, 10, 0, 0], 'handR': 'point'}}]), A('hero', 'crowd+0,0,0.3', 180, 'stand', 'surprised', look=[0, 9.5, -8.7])],
-  props=[{'type': 'firetruck', 'pos': 'truck', 'stowed': True}, {'type': 'smoke', 'pos': [0, 9.15, -8.2], 'h': 9, 'size': 1.2},
-     {'type': 'glow', 'pos': 'balcony+0,0,-0.3', 'y': 0.45, 'size': 0.6, 'color': PINK}],
-  camera={'pos': [0.9, 1.0, 9.8], 'look': [0.1, 8.6, -8.6], 'fov': 52, 'move': 'pushIn'}, sfx=[{'t': '@brilho', 'name': 'glint'}])
-S('z8', 'apartments', 'Quarenta e um por cento. Caindo.',
-  actors=[LIA_BAL],
-  camera={'pos': [-2.2, 10.8, -5.4], 'look': [0.1, 9.35, -8.6], 'fov': 34},
-  overlays=[crush('lia', 41, 48, at=0.2, countDur=2.5)], sfx=[{'t': 0.2, 'name': 'heartbeat'}])
-S('z9', 'apartments', 'Um ponto a cada dois segundos. Um minuto e vinte e dois até o zero.',
-  actors=[A('hero', 'crowd+0,0,0.3', 180, 'scared', 'scared', look=[0, 9.5, -8.7])],
-  camera=cam('xclose', 'hero', 10, height=-10),
-  overlays=[{'type': 'stopwatch', 'from': '1:22', 'at': '@minuto'}])
-
-# ---------------------------------------------------------------- 12. dilema
-SW = lambda v: {'type': 'stopwatch', 'from': v, 'persist': True}
-S('d1', 'apartments', 'O bombeiro só vai subir pro quarto andar se você disser como sabe.',
-  actors=[A('hero', 'crowd+0,0,0.3', 180, 'stand', 'worried'), A('bombeiro', 'truck+-3,0,-1.5', 160, 'point', 'focused')],
-  camera={'pos': [-1.5, 1.7, 9.8], 'look': [3.0, 1.4, -2.5], 'fov': 45}, overlays=[SW('1:10')])
-S('d2', 'apartments', 'Na frente da rua inteira. Da mãe dela. Do Caio, segurando a flor.',
-  actors=[A('maeLia', 'crowd+1.2,0,-0.6', 180, 'scared', 'cry'), A('bestie', 'crowd+-1,0,0', 180, 'holdOut', 'worried', hold={'R': 'flower'}),
-      A('extraA', 'crowd+-0.2,0,1.0', 180, 'stand', 'worried'), A('extraC', 'crowd+2.4,0,0.4', 180, 'phone', 'worried', hold={'R': 'phone'}),
-      A('extraB', 'crowd+3.4,0,1.1', 180, 'shocked', 'scared'), A('rival', 'crowd+-2.2,0,0.9', 180, 'stand', 'worried')],
-  camera={'pos': [-0.4, 1.7, 2.2], 'look': [0.6, 1.3, 7.8], 'fov': 46}, overlays=[SW('1:04')])
-S('d3', 'apartments', 'Se você falar, o segredo dela vira de todo mundo. Se você ficar quieto...',
-  actors=[A('hero', 'crowd+0,0,0.3', 180, 'stand', 'worried')], camera=cam('xclose', 'hero', 5), overlays=[SW('0:58')])
-S('d4', 'apartments', 'O segredo dela... ou ela.', hold=2.0,
-  actors=[A('hero', 'crowd+0,0,0.3', 180, 'stand', 'determined')], camera=cam('xclose', 'hero', 0, move='pushIn'),
-  overlays=[SW('0:52')], fx={'vignette': 0.35})
-
-# ---------------------------------------------------------------- 13. clímax
-S('e1', 'apartments', 'Você fala primeiro.',
-  actors=[A('hero', 'crowd+0,0,0.3', 180, 'determined', 'determined')], camera=cam('close', 'hero', 150), overlays=[SW('0:48')])
-S('e2', 'apartments', '[shouting] Quarto andar! Ela está na sacada!',
-  actors=[A('hero', 'crowd+0,0,0.3', 180, 'point', 'furious', talk=TALK, poses=[{'t': 0, 'pose': {'armR': [130, 10, 0, 0], 'handR': 'point', 'head': [-15, 0, 0]}}]),
-],
-  camera=cam('medium', 'hero', 15, height=-8), overlays=[SW('0:46')], sfx=[{'t': 0.05, 'name': 'whoosh'}])
-S('e3', 'apartments', 'Como você sabe?', who='adulto',
-  actors=[A('bombeiro', 'truck+-3,0,-1.5', 30, 'stand', 'suspicious', look='hero', talk=TALK)], camera=cam('close', 'bombeiro', 10), overlays=[SW('0:42')])
-S('e4', 'apartments', 'E você diz. Alto. Na frente de todo mundo.',
-  actors=[A('hero', 'crowd+0,0,0.3', 180, 'stand', 'determined'), A('bestie', 'crowd+-1,0,0', 120, 'stand', 'worried', hold={'R': 'flower'}, look='hero')],
-  camera=cam('medium', ['hero', 'bestie'], 20), overlays=[SW('0:40')])
-S('e5', 'apartments', '[shouting] Porque ela gosta de mim!',
-  actors=[A('hero', 'crowd+0,0,0.3', 180, 'fistPump', 'furious', talk=TALK)], camera=cam('close', 'hero', -5, move='crashIn'),
-  overlays=[SW('0:37')], sfx=[{'t': 0.1, 'name': 'boom'}])
-S('e6', 'apartments', 'O Caio olha pra você. Um segundo inteiro.', hold=0.6,
-  actors=[A('bestie', 'crowd+-1,0,0', 120, 'stand', 'shocked', hold={'R': 'flower'}, look='hero')], camera=cam('xclose', 'bestie', 0), overlays=[SW('0:34')])
-S('e7', 'apartments', '[shouting] Ele não erra! Confia nele!', who='male',
-  actors=[A('bestie', 'crowd+-1,0,0', 180, 'point', 'determined', hold={'R': 'flower'}, talk=TALK, poses=[{'t': 0, 'pose': {'armR': [120, 10, 0, 0], 'handR': 'point'}}])],
-  camera=cam('medium', 'bestie', 15), overlays=[SW('0:30')])
-PIV = [11.6, 2.75, -2.4]
-RIDE_UP = [{'t': 0.1, 'pos': [10.6, 2.85, -2.4]}, {'t': 3.2, 'pos': [1.5, 9.25, -7.3], 'gait': 'carried'}]
-S('e8', 'apartments', 'A escada gira. O cesto sobe até o quarto andar.',
-  props=[{'type': 'firetruck', 'pos': 'truck'}, {'type': 'basket', 'follow': 'bombeiro', 'from': PIV}],
-  actors=[A('bombeiro', [10.6, 2.85, -2.4], -150, 'crouch', 'determined', path=RIDE_UP, gait='carried', contact=True)],
-  camera={'pos': [12, 2.0, 3.2], 'look': [3, 6.2, -7], 'fov': 54}, overlays=[SW('0:26')], sfx=[{'t': 0.2, 'name': 'riser'}])
-HOVER = [1.5, 9.25, -7.3]
-BAL_CAM = {'pos': [-2.6, 10.7, -4.9], 'look': [0.6, 9.55, -8.1], 'fov': 40}
-BASKET = {'type': 'basket', 'follow': 'bombeiro', 'from': PIV}
-S('e9', 'apartments', 'Mas a fumaça engole a sacada. O bombeiro não enxerga nada. Doze por cento.',
-  props=[{'type': 'firetruck', 'pos': 'truck'}, BASKET, {'type': 'smoke', 'pos': [0.9, 9.15, -7.85], 'h': 2.6, 'size': 0.27, 'n': 60, 'wind': [0.45, 0.1]}],
-  actors=[A('bombeiro', HOVER, -131, 'reach', 'worried', gait='carried', contact=True), A('lia', 'balcony+0,0,-0.3', 0, 'lie', 'closed', glow=PINK)],
-  camera=BAL_CAM, overlays=[SW('0:24'), crush('lia', 12, 15, at='@doze')])
-S('e10', 'apartments', 'Regra três: a sua voz faz o número subir.',
-  actors=[A('hero', 'crowd+0,0,0.3', 180, 'stand', 'determined')], camera=cam('close', 'hero', 150), overlays=[SW('0:21')])
-S('e11', 'apartments', '[shouting] Lia!',
-  actors=[A('hero', 'crowd+0,0,0.3', 180, 'cheer', 'furious', talk=[[0.05, 0.8]])], camera=cam('full', 'hero', 150, height=-12),
-  overlays=[SW('0:19')], sfx=[{'t': 0.05, 'name': 'heartbeat'}])
-S('e12', 'apartments', 'Vinte e cinco. Ela levanta a cabeça.',
-  props=[{'type': 'firetruck', 'pos': 'truck'}, BASKET, {'type': 'smoke', 'pos': [0.9, 9.15, -7.85], 'h': 2.6, 'size': 0.23, 'n': 60, 'wind': [0.45, 0.1]}],
-  actors=[A('bombeiro', HOVER, -131, 'reach', 'worried', gait='carried', contact=True),
-      A('lia', 'balcony+0,0,-0.3', 0, 'lie', 'sleepy', glow=PINK, poses=[{'t': 0.4, 'pose': {'hipY': -0.82, 'body': [-90, 0, 0], 'head': [35, 0, 0], 'armL': [0, 12, 0, 6], 'armR': [30, 25, 0, 40]}, 'blend': 0.8}])],
-  camera=BAL_CAM, overlays=[SW('0:17'), crush('lia', 25, 12, at=0.1)], sfx=[{'t': 0.1, 'name': 'chime'}])
-S('e13', 'apartments', '[shouting] Lia!',
-  actors=[A('hero', 'crowd+0,0,0.3', 180, 'cheer', 'furious', talk=[[0.05, 0.8]])], camera=cam('close', 'hero', 20, height=-10),
-  overlays=[SW('0:15')], sfx=[{'t': 0.05, 'name': 'heartbeat'}])
-S('e14', 'apartments', 'Quarenta. Ela se arrasta até a grade.',
-  props=[{'type': 'firetruck', 'pos': 'truck'}, BASKET, {'type': 'smoke', 'pos': [0.9, 9.15, -7.85], 'h': 2.6, 'size': 0.19, 'n': 60, 'wind': [0.45, 0.1]}],
-  actors=[A('bombeiro', HOVER, -131, 'reach', 'determined', gait='carried', contact=True),
-      A('lia', 'balcony+0,0,-0.3', 52, 'crouch', 'scared', glow=PINK, path=[{'t': 0.3, 'pos': 'balcony+0,0,-0.3'}, {'t': 2.2, 'pos': 'balcony+0.3,0,0.35', 'gait': 'carried'}])],
-  camera=BAL_CAM, overlays=[SW('0:13'), crush('lia', 40, 25, at=0.1)], sfx=[{'t': 0.1, 'name': 'chime'}])
-S('e15', 'apartments', '[shouting] Lia!',
-  actors=[A('hero', 'crowd+0,0,0.3', 180, 'cheer', 'furious', talk=[[0.05, 0.8]])], camera=cam('medium', 'hero', 150, height=-12, move='crashIn'),
-  overlays=[SW('0:11')], sfx=[{'t': 0.05, 'name': 'heartbeat'}])
-S('e16', 'apartments', 'Cinquenta e oito. A mão dela atravessa a fumaça.',
-  props=[{'type': 'firetruck', 'pos': 'truck'}, BASKET, {'type': 'smoke', 'pos': [0.9, 9.15, -7.85], 'h': 2.6, 'size': 0.14, 'n': 60, 'wind': [0.45, 0.1]}],
-  actors=[A('bombeiro', HOVER, -131, 'reach', 'determined', gait='carried', contact=True),
-      A('lia', 'balcony+0.3,0,0.35', 52, {'reachR': {'to': [0, 1.25, 0.8]}, 'spine': [15, 0, 0]}, 'scared', glow=PINK, contact=True)],
-  camera=BAL_CAM, overlays=[SW('0:09'), crush('lia', 58, 40, at=0.1)], sfx=[{'t': 0.1, 'name': 'chime'}])
-S('e17', 'apartments', 'O bombeiro segura.',
-  props=[{'type': 'firetruck', 'pos': 'truck'}, BASKET],
-  actors=[A('bombeiro', HOVER, -131, {'reachR': {'to': [0, 1.2, 0.75]}, 'spine': [20, 0, 0]}, 'determined', gait='carried', contact=True),
-      A('lia', 'balcony+0.3,0,0.35', 52, {'reachR': {'to': [0, 1.25, 0.8]}, 'spine': [15, 0, 0]}, 'surprised', glow=PINK, contact=True)],
-  camera={'pos': [-1.8, 10.3, -5.0], 'look': [0.9, 9.8, -7.9], 'fov': 34}, overlays=[SW('0:07')], sfx=[{'t': 0.1, 'name': 'thud'}, {'t': 0.2, 'name': 'swell'}])
-RIDE_DOWN = [{'t': 0.3, 'pos': HOVER}, {'t': 3.5, 'pos': [10.6, 2.85, -2.4], 'gait': 'carried'}]
-S('e18', 'apartments', 'O cesto desce. Ela está tossindo. Viva.', hold=1.2,
-  props=[{'type': 'firetruck', 'pos': 'truck'}, BASKET],
-  actors=[A('bombeiro', HOVER, -150, 'carry', 'focused', path=RIDE_DOWN, gait='carried', contact=True),
-      A('lia', [1.1, 9.25, -7.2], -150, {'reachR': {'to': 'mouth'}, 'spine': [15, 0, 0]}, {'eyes': 0.35, 'open': 0.55, 'mouth': -0.3, 'brow': 0.8}, gait='carried', contact=True,
-        path=[{'t': 0.3, 'pos': [1.1, 9.25, -7.2]}, {'t': 3.5, 'pos': [10.2, 2.85, -2.3], 'gait': 'carried'}])],
-  camera={'pos': [12, 2.0, 3.2], 'look': [3, 6.2, -7], 'fov': 54}, overlays=[{'type': 'stopwatch', 'from': '0:05', 'to': 'SALVA', 'persist': True, 'switchAt': '@viva'}])
-S('e19', 'apartments', 'Você tenta dizer alguma coisa. Não sai nada. Sua voz acabou.',
-  actors=[A('hero', 'crowd+0,0,0.3', 180, {'spine': [14, 0, 0], 'head': [12, 0, 0], 'reachR': {'to': 'chin'}}, 'tired')], camera=cam('close', 'hero', 15))
-
-# ---------------------------------------------------------------- 14. consequência
-CRATES = [{'type': 'crate', 'pos': 'crowd+0,0,0.72', 'w': 0.5, 'h': 0.45, 'd': 0.45, 'color': '#9a6b45'},
-      {'type': 'crate', 'pos': 'crowd+-0.9,0,0.72', 'w': 0.5, 'h': 0.45, 'd': 0.45, 'color': '#9a6b45'}]
-S('f1', 'apartments', 'Rouco por três dias, diz o paramédico.', props=CRATES,
-  actors=[A('hero', 'crowd+0,0,0.6', 180, 'sit', 'tired'), A('bestie', 'crowd+-0.9,0,0.6', 180, 'sit', 'sad', hold={'R': 'flower'})],
-  camera=cam('medium', ['hero', 'bestie'], 0, height=10))
-S('f2', 'apartments', 'Três anos, cara.', props=CRATES, who='male',
-  actors=[A('bestie', 'crowd+-0.9,0,0.6', 180, 'sit', 'sad', hold={'R': 'flower'}, look='hero', talk=TALK)], camera=cam('close', 'bestie', -15))
-S('f3', 'apartments', '[whispering] Desculpa.', props=CRATES,
-  actors=[A('hero', 'crowd+0,0,0.6', 180, 'sit', 'sad', look='bestie', talk=[[0.05, 0.7]])], camera=cam('close', 'hero', 15))
-S('f4', 'apartments', 'Não. Você falou primeiro. Eu nunca falei.', props=CRATES, who='male',
-  actors=[A('bestie', 'crowd+-0.9,0,0.6', 180, 'sit', 'smile', hold={'R': 'flower'}, look='hero', talk=TALK)], camera=cam('close', 'bestie', -20))
-S('f5', 'apartments', 'E eu? Quanto eu tô?', props=CRATES, who='male',
-  actors=[A('bestie', 'crowd+-0.9,0,0.6', 180, 'sit', 'smug', hold={'R': 'flower'}, look='hero', talk=TALK), A('hero', 'crowd+0,0,0.6', 180, 'sit', 'tired')],
-  camera=cam('close', 'bestie', 35), overlays=[crush('bestie', 0, at=0.6)])
-S('f6', 'apartments', 'Você faz um zero com a mão.', props=CRATES,
-  actors=[A('hero', 'crowd+0,0,0.6', 180, 'sit', 'smirk', poses=[{'t': 0.2, 'pose': {'hipY': -0.46, 'spine': [-2, 0, 0], 'legL': [88, 6, 92], 'legR': [88, 6, 92], 'armL': [30, 10, 0, 60], 'armR': [70, 10, -40, 70], 'handR': 'fist'}}])],
-  camera=cam('close', 'hero', 20))
-S('f7', 'apartments', '[chuckling] Grosso.', props=CRATES, who='male',
-  actors=[A('bestie', 'crowd+-0.9,0,0.6', 180, 'sit', 'grin', hold={'R': 'flower'}, talk=[[0.05, 0.9]])], camera=cam('close', 'bestie', -10))
-NEWS = 'O GAROTO MAIS QUIETO DA ESCOLA GRITOU MAIS ALTO QUE A SIRENE'
-S('f8', 'home', 'Até o jantar, o vídeo de um vizinho está em todo lugar.',
-  actors=[A('mom', 'seat', 0, 'sit', 'surprised', hold={'R': 'phone'})], camera=cam('close', 'mom', 15),
-  overlays=[{'type': 'news', 'headline': NEWS, 'tag': 'VIRAL', 'at': 0.4}])
-S('f9', 'home', 'O título: o garoto mais quieto da escola gritou mais alto que a sirene.',
-  actors=[A('mom', 'seat', 0, 'sit', 'happy', hold={'R': 'phone'})],
-  camera=cam('medium', 'mom', -20))
-S('f10', 'home', 'Chá com mel. E nada de planilha hoje.', who='adulta',
-  actors=[A('mom', 'table+-0.5,0,0.9', 60, 'holdOut', 'love', hold={'R': 'cup'}, talk=TALK), A('hero', 'table+0.9,0,0.9', -100, 'relaxed', 'smile', look='mom')],
-  camera=cam('medium', ['mom', 'hero'], 0))
-S('f11', 'bedroom', 'Você abre a planilha. E apaga. Trinta e quatro nomes. Trinta e quatro números.', time='interiorNight',
-  actors=[A('hero', 'desk', 180, 'typing', 'determined')], camera=cam('close', 'hero', -150, move='pushIn'),
-  sfx=[{'t': '@apaga', 'name': 'click'}])
-S('f12', 'home', 'No domingo, a Lia aparece na sua porta.',
-  actors=[A('lia', 'door+-0.6,0,0.6', -120, 'relaxed', 'smile', glow=PINK), A('hero', 'door+-1.8,0,1.2', 60, 'relaxed', 'surprised', look='lia')],
-  camera=cam('medium', ['lia', 'hero'], 20))
-S('f13', 'home', 'Você gritou meu nome três vezes.', who='female',
-  actors=[A('lia', 'door+-0.6,0,0.6', -120, 'relaxed', 'smile', glow=PINK, talk=TALK, look='hero')], camera=cam('close', 'lia', 0))
-S('f14', 'home', '[whispering] Eu sei.',
-  actors=[A('hero', 'door+-1.8,0,1.2', 60, 'relaxed', 'smile', talk=[[0.05, 0.7]], look='lia')], camera=cam('close', 'hero', 0))
-S('f15', 'home', 'Eu ouvi todas.', who='female',
-  actors=[A('lia', 'door+-0.6,0,0.6', -120, 'relaxed', 'love', glow=PINK, talk=TALK, look='hero')], camera=cam('close', 'lia', 10))
-S('f16', 'home', 'E pela primeira vez, você não olha o número dela.',
-  actors=[A('lia', 'door+-0.6,0,0.6', -120, 'relaxed', 'happy', glow=PINK), A('hero', 'door+-1.8,0,1.2', 60, 'relaxed', 'happy', look='lia')],
-  camera=cam('medium', ['lia', 'hero'], -30, move='pullOut'))
-
-# ---------------------------------------------------------------- 15. mundo maior
-S('g1', 'apartments', 'Mas o vídeo do vizinho mostra uma coisa que ninguém comentou.',
-  props=[{'type': 'firetruck', 'pos': 'truck'}],
-  camera={'pos': [3, 1.4, 6], 'look': [0, 8.5, -9], 'fov': 50}, fx={'grade': 'flashback'})
-S('g2', 'apartments', 'Do outro lado da rua, um homem de capa de chuva amarela. Num dia de sol.',
-  actors=[A('estranho', 'crowd+4.5,0,1.2', 180, 'stand', 'neutral'), A('extraA', 'crowd+1.4,0,0.5', 180, 'phone', 'worried', hold={'R': 'phone'}),
-      A('extraB', 'crowd+2.6,0,0.2', 180, 'shocked', 'scared')],
-  camera=cam('full', 'estranho', 20))
-S('g3', 'apartments', 'Todo mundo olha pro fogo. Ele olha pra você.',
-  actors=[A('estranho', 'crowd+4.5,0,1.2', -100, 'stand', {'eyes': 1.1, 'mouth': -0.05, 'brow': -0.2, 'lid': 0.3})], camera=cam('close', 'estranho', 0, move='pushIn'))
-S('g4', 'bedroom', 'Naquela noite, você não consegue dormir. Lá fora, debaixo do poste...', time='interiorNight',
-  actors=[A('hero', 'window', 180, 'stand', 'worried')], camera=cam('medium', 'hero', 150))
-STREET_NIGHT = [{'type': 'lamp', 'pos': 'farSidewalk+1,0,1', 'on': True}]
-S('g5', 'suburb', 'O homem da capa amarela. Parado. Olhando pra sua janela.', time='night',
-  props=STREET_NIGHT, actors=[A('estranho', 'farSidewalk+1,0,0.4', 180, 'stand', 'neutral')], camera=cam('full', 'estranho', -20, move='pushIn'))
-S('g6', 'suburb', 'Ele atravessa a rua, deixa um envelope na sua caixa de correio, e vai embora devagar.', time='night',
-  props=STREET_NIGHT, actors=[A('estranho', 'farSidewalk+1,0,0.4', 180, 'stand', 'neutral',
-                            path=[{'t': 0.3, 'pos': 'farSidewalk+1,0,0.4'}, {'t': 3.0, 'pos': 'mailbox+0,0,1', 'gait': 'walk'}, {'t': 4.6, 'pos': 'mailbox+0,0,1'},
-                                  {'t': 6.5, 'pos': 'mailbox+6,0,2', 'gait': 'walk'}])],
-  camera=cam('wide', 'estranho', 30, move='track'))
-S('g7', 'suburb', 'Você desce sem fazer barulho. Não que você conseguisse fazer barulho.', time='night',
-  actors=[A('hero', 'mailbox+0,0,0.8', 180, 'reach', 'worried')], camera=cam('medium', 'hero', 30))
-S('g8', 'bedroom', 'Dentro, três fotos de crianças que você nunca viu.', time='interiorNight',
-  actors=[A('hero', 'center', 0, 'holdOut', 'confused', hold={'R': 'book'})], camera=cam('close', 'hero', 10))
-S('g9', 'void', 'Uma menina cercada de cópias transparentes dela mesma.',
-  actors=[A('fotoA', 'center', 0, 'relaxed', 'neutral')] + [A(f'echo{k}', p, r, 'relaxed', 'neutral', ghost=True, glow='#7fd6ff') for k, (p, r) in enumerate([('left', 20), ('right', -20), ('back', 0)], 1)],
-  camera=cam('wide', 'fotoA', 0), fx={'grade': 'flashback'})
-S('g10', 'void', 'Um menino no meio de um salto, metade numa sala de aula, metade num telhado.',
-  actors=[A('fotoB', 'center', 90, 'jump', 'determined', glow='#8fc2ff')], camera=cam('wide', 'fotoB', 20), fx={'grade': 'flashback', 'speedLines': 'fotoB'})
-S('g11', 'void', 'E uma criança equilibrando cinco laranjas, depois de olhar um malabarista uma única vez.',
-  actors=[A('fotoC', 'center', 0, {'armL': [70, 20, 0, 60], 'armR': [70, 20, 0, 60], 'head': [-25, 0, 0], 'handL': 'open', 'handR': 'open'}, 'grin')],
-  props=[{'type': 'ball', 'pos': q, 'color': '#ff8c1a', 'scale': 0.6} for q in ['center+-0.28,0.95,0.35', 'center+-0.12,1.25,0.35', 'center+0.05,1.4,0.35', 'center+0.2,1.22,0.35', 'center+0.32,0.98,0.35']],
-  camera=cam('full', 'fotoC', 10), fx={'grade': 'flashback'})
-C('g12', 'icon', 'No verso, escrito à mão: vão precisar de alguém que vê o que as pessoas sentem.',
-  icon='eye', caption='VÃO PRECISAR DE ALGUÉM', sub='QUE VÊ O QUE AS PESSOAS SENTEM')
-S('g13', 'home', 'Tem mais chá no fogão!', who='adulta', time='interiorNight',
-  actors=[A('mom', 'stove+0.4,0,0.8', 10, 'wave', 'happy', talk=TALK)], camera=cam('medium', 'mom', 10))
-S('g14', 'bedroom', 'Você bate duas vezes no chão. Quer dizer obrigado.', time='interiorNight',
-  actors=[A('hero', 'rug', 0, 'crouch', 'smile')], camera=cam('medium', 'hero', 20), sfx=[{'t': '@bate', 'name': 'thud'}, {'t': '@bate+0.35', 'name': 'thud'}])
-
-# ---------------------------------------------------------------- 16. gancho final
-S('h1', 'bedroom', 'No fundo do envelope, tem mais uma folha.', time='interiorNight',
-  actors=[A('hero', 'center', 0, 'holdOut', 'confused', hold={'R': 'book'})], camera=cam('close', 'hero', 10))
-C('h2', 'rules', 'É a sua planilha. A que você apagou hoje à tarde. Lia, noventa e quatro. Duda, oitenta e um. Caio, zero. Todas certas.',
-  title='A SUA PLANILHA', prefix='LINHA', rules=['LIA — 94%', 'DUDA — 81%', 'CAIO — 0%'], current=0)
-S('h3', 'bedroom', 'E uma linha a mais, que você nunca escreveu.', time='interiorNight',
-  actors=[A('hero', 'center', 0, 'holdOut', 'scared', hold={'R': 'book'})], camera=cam('xclose', 'hero', 10), sfx=[{'t': 0.4, 'name': 'subdrop'}])
-C('h4', 'rules', 'O seu nome. Oitenta e sete.', title='A SUA PLANILHA', prefix='LINHA', rules=['LIA — 94%', 'DUDA — 81%', 'CAIO — 0%', 'VOCÊ — 87%'], current=4)
-S('h5', 'bedroom', 'Você nunca viu o seu próprio número. Ninguém consegue.', time='interiorNight',
-  actors=[A('hero', 'center', 0, 'holdOut', 'scared', hold={'R': 'book'})], camera=cam('xclose', 'hero', 10, move='pushIn'))
-S('h6', 'bedroom', 'Alguém consegue.', hold=1.2, time='interiorNight',
-  actors=[A('hero', 'center', 0, 'holdOut', 'scared', hold={'R': 'book'})], camera=cam('xclose', 'hero', 10), overlays=[crush('hero', 87, 0, at='@alguém', countDur=1.2)],
-  fx={'vignette': 0.5}, sfx=[{'t': 0.2, 'name': 'subdrop'}])
-
-# ---------------------------------------------------------------- 17. CTA
-S('i1', 'suburb', 'Então: quem você olharia primeiro, se pudesse ver o número? E aquele oitenta e sete... é por quem? Conta pra gente nos comentários. Todo poder tem um preço. Até a próxima.',
-  time='night', props=STREET_NIGHT, actors=[A('hero', 'sidewalk', 10, 'confident', 'smirk')],
-  camera=cam('wide', 'hero', 30, height=5, move='pullOut'),
-  overlays=[{'type': 'title', 'small': 'QUEM VOCÊ OLHARIA PRIMEIRO?', 'big': 'E O 87... É POR QUEM?', 'at': '@oitenta'}])
-
-# ---------------------------------------------------------------- episode
-idx = shot_index()
-ep = episode(
-    SLUG, 'E Se Você Pudesse Ver Quem Tem Crush em Você?',
-    cast={
-    'bestie': {'name': 'Caio'},
-    'extraB': {'topColor': '#d0533f'},
-    'sister': {'name': 'Bia'},
-    'rival': {'name': 'Rafa'},
-    'teacher': {'name': 'Professora Sônia'},
-    'coach': {'name': 'Professor Ramos'},
-    'mom': {'name': 'Mãe'},
-    'lia': {'name': 'Lia', 'top': 'hoodie', 'topColor': '#7a5cc8', 'accent': '#e9ddff', 'bottom': 'pants', 'bottomColor': '#2c3e63', 'shoes': '#ffffff', 'hair': 'curly'},
-    'duda': {'name': 'Duda', 'top': 'tee', 'topColor': '#2fa6a0', 'bottom': 'skirt', 'bottomColor': '#3b4a6b', 'shoes': '#ffffff', 'hair': 'ponytail'},
-    'maeLia': {'name': 'Mãe da Lia', 'top': 'jacket', 'topColor': '#b8476a', 'accent': '#ffe1ea', 'bottom': 'skirt', 'bottomColor': '#2d3550', 'shoes': '#5a3e33', 'hair': 'bun'},
-    'bombeiro': {'name': 'Bombeiro', 'top': 'coat', 'topColor': '#c8302a', 'accent': '#f2c53c', 'bottom': 'pants', 'bottomColor': '#1f2433', 'shoes': '#1b1b20', 'hat': 'helmet', 'hatColor': '#f2c53c'},
-    'estranho': {'name': 'Homem da capa amarela', 'top': 'coat', 'topColor': '#ffd21f', 'accent': '#fff3d6', 'bottom': 'pants', 'bottomColor': '#1d2333', 'shoes': '#2b2622'},
-    'fotoA': {'top': 'tee', 'topColor': '#4bb37a', 'bottom': 'shorts', 'bottomColor': '#2c3e63', 'shoes': '#ffffff', 'hair': 'bun', 'height': 0.85},
-    'fotoB': {'top': 'hoodie', 'topColor': '#e8a23a', 'accent': '#fff3d6', 'bottom': 'pants', 'bottomColor': '#2b2f3a', 'shoes': '#ffffff', 'hair': 'spiky', 'height': 0.85},
-    'fotoC': {'top': 'tee', 'topColor': '#c94b8a', 'bottom': 'shorts', 'bottomColor': '#3d6fb6', 'shoes': '#ffffff', 'hair': 'afro', 'height': 0.7},
-    **{f'echo{k}': {'top': 'tee', 'topColor': '#4bb37a', 'bottom': 'shorts', 'bottomColor': '#2c3e63', 'shoes': '#ffffff', 'hair': 'bun', 'height': 0.85} for k in (1, 2, 3)},
-    },
-    music=[('c1', 'curious'), ('x1', 'tension'), ('y1', 'wonder'), ('z2', 'tension'), ('e1', 'action'),
-       ('f1', 'sad'), ('f12', 'wonder'), ('g1', 'tension'), ('h6', 'none'), ('i1', 'curious')],
-)
-
-# ---------------------------------------------------------------- fire countdown, from the real voice timing
-# One point every two seconds: the clock reads 2 x Lia's number. It ticks live while her number falls,
-# and jumps up with each shout when it rises. Needs timing.json (after `align`); the draft keeps the static values.
-tm = load_timing(SLUG)
-if tm:
-    st, wt, fmt = tm.start, tm.word, tm.fmt
-    t0 = tm.at('z9', 'minuto')  # the clock shows 1:22 here
-    T = 58 / (st('e9') + wt('e9', 'doze') - t0)  # story seconds per real second: 1:22 -> 0:24 exactly on "doze"
-    rem = lambda sid: 82 - T * (st(sid) - t0)
-    def put(sid, sw):
-        sh = shots[idx[sid]]
-        sh['overlays'] = [o for o in sh.get('overlays', []) if o['type'] != 'stopwatch'] + [sw]
-    put('z9', {'type': 'stopwatch', 'from': '1:22', 'tick': round(T, 3), 'keep': True, 'at': '@minuto'})
-    for sid in ['d1', 'd2', 'd3', 'd4', 'e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'e7', 'e8', 'e9', 'e10', 'e11']:
-        put(sid, {'type': 'stopwatch', 'from': fmt(rem(sid)), 'tick': round(T, 3), 'persist': True, 'keep': True})
-    put('e12', {'type': 'stopwatch', 'from': fmt(rem('e12')), 'to': '0:50', 'switchAt': '@vinte', 'persist': True, 'keep': True})
-    put('e13', {'type': 'stopwatch', 'from': '0:50', 'tick': round(T, 3), 'persist': True, 'keep': True})
-    put('e14', {'type': 'stopwatch', 'from': fmt(50 - T * (st('e14') - st('e13'))), 'to': '1:20', 'switchAt': '@quarenta', 'persist': True, 'keep': True})
-    put('e15', {'type': 'stopwatch', 'from': '1:20', 'tick': round(T, 3), 'persist': True, 'keep': True})
-    put('e16', {'type': 'stopwatch', 'from': fmt(80 - T * (st('e16') - st('e15'))), 'to': '1:56', 'switchAt': '@cinquenta', 'persist': True, 'keep': True})
-    put('e17', {'type': 'stopwatch', 'from': '1:56', 'to': 'SALVA', 'switchAt': '@segura', 'persist': True, 'keep': True})
-    put('e18', {'type': 'stopwatch', 'from': 'SALVA', 'persist': True})
-    print(f'clock: x{T:.2f} story time; e9 starts at {fmt(rem("e9"))}, reads 0:24 on "doze"; e12 starts at {fmt(rem("e12"))}')
-
-write(SLUG, ep, drop_none=False)
-@@@@ END
-@@@@ FILE tools/episodes/teste_ritmo.py | text-crlf | 2573 | 39a0075635073f5eba0839ec0bc76154d352290059afaf2458fa45b46aead249
-# Source of public/episodes/teste-ritmo/episode.json: a 10 s test of the new pacing concepts
-# (coverage sub-cuts, whip/zoom/smash transitions, centre-safe framing for 9:16, acid narrator tone).
-#   .venv/Scripts/python -I tools/episodes/teste_ritmo.py
-import os
-import sys
-
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # python -I drops the script dir
-from kit import *  # noqa: E402,F401,F403
-
-SLUG = 'teste-ritmo'
-TITLE = 'Teste de Ritmo'
-
-# 1. bedroom: he wakes up fast (window behind him, not the whiteboard set)
-S('r1', 'bedroom', '[calm] Você acordou dez vezes mais rápido.',
-  [A('hero', 'rug', 0, 'stand', 'shocked',
-     poses=[{'t': '@rápido', 'pose': 'determined', 'blend': 0.25}],
-     faces=[{'t': '@rápido', 'face': 'determined', 'blend': 0.2}])],
-  cam('medium', 'hero', 15, move='crashIn'))
-
-# 2. street: the dash, whip in; sub-cuts re-frame the run on word starts
-S('r2', 'suburb', '[mischievously] Parabéns. Chegou na escola antes do ônibus sair da garagem.',
-  [A('hero', 'sidewalk+-7,0,0', 90, 'stand', 'determined', gait='dash',
-     path=[{'t': 0, 'pos': 'sidewalk+-7,0,0'}, {'t': 3.2, 'pos': 'sidewalk+16,0,0', 'gait': 'dash'}])],
-  cam('full', 'hero', -70), cut='whip', coverage='fast', fx={'speedLines': 'hero'})
-
-# 3. classroom, close: proud of himself (no legs in frame yet)
-S('r3', 'classroom', '[deadpan] Só esqueceu um detalhe.', variant=0,
-  actors=[A('heroNu', 'aisle', 0, 'confident', 'smug')],
-  camera=cam('close', 'heroNu', 10, move='pushIn'), cut='zoom')
-
-# 4. smash cut to full: the reveal
-S('r4', 'classroom', 'A calça.', variant=0, hold=0.3,
-  actors=[A('heroNu', 'aisle', 0, 'confident', 'smug',
-            faces=[{'t': 0.5, 'face': 'shocked', 'blend': 0.12}],
-            poses=[{'t': 0.5, 'pose': 'shocked', 'blend': 0.15}])],
-  camera=cam('full', 'heroNu', 0, height=24, move='static'), cut='smash')
-
-# 5. the teacher saw it all (back wall behind her), whip in
-S('r5', 'classroom', '[darkly amused] E a professora viu tudo.', variant=0, hold=0.4,
-  actors=[A('teacher', 'window+3.4,0,1.2', 0, 'shocked', 'shocked', look='heroNu'),
-          A('heroNu', 'aisle', 0, 'shocked', 'embarrassed')],
-  camera=cam('medium', 'teacher', -15, move='pushIn'), cut='whip', coverage='fast')
-
-ep = episode(SLUG, TITLE,
-             cast={'heroNu': {'name': 'Hero', 'top': 'jacket', 'topColor': '#8b8f98', 'accent': '#c9a227',
-                              'bottom': 'none', 'shoes': '#f4f1ea', 'hair': 'none'}},
-             music=[('r1', 'action')])
-write(SLUG, ep)
 @@@@ END
 @@@@ FILE tools/ideas/novelty.py | text-crlf | 16828 | 2c1141529e53b2de12d35ad5f90fa1c0f5c83edfb2516bed35b405c1e79c9b9f
 """Novelty checker for "What If" episode ideas.
@@ -32774,7 +32494,7 @@ This copy of the project was set up from `project instructions.md` without the F
 - If the thumbnail mode is `chatgpt`, this memory doesn't block anything — leave it until the user switches modes or asks.
 - Related: [[project-thumbnails-gpt-image]].
 @@@@ END
-@@@@ FILE tools/pack/fresh/stickman.md | text | 4856 | 806a7c6a8920f618b9133b9716354e0e7f814aa9475b75c54ef5adc17c49ede1
+@@@@ FILE tools/pack/fresh/stickman.md | text | 4959 | 79b025c14bf6e392828989c26ce942eba1c3e9994711766b98407417448f7d0c
 ---
 description: Make a full "What If" stickman episode from a topic, then generate its 3 thumbnails
 argument-hint: <video topic, e.g. What If You Could Swap Places With Anyone>
@@ -32793,7 +32513,7 @@ Make one complete narrated episode about this topic with the saved hero, then ge
 - **Hero:** the saved character, the `hero` entry in `src/cast.ts`, exactly as it is. Don't change the outfit, and keep its signature colour off everyone else (CLAUDE.md, "… belongs to the hero").
 - **Idea:** the topic replaces the idea step. Skip candidate generation and pitching. Shape it into a "What If" title (keep the user's wording when it already is one), run `python -I tools/ideas/novelty.py "<title>"`, and mention any close competitor title in the summary.
 - **Slug:** short kebab-case from the title, not already used in `public/episodes/`.
-- **Length:** 8–10 minutes unless the user's topic says otherwise.
+- **Length:** at least 10:00 of voiced narration (user rule, 2026-11-09); the audit warns below that. Write ~1,600–1,700 PT-BR words, since the paced read runs ~175 wpm.
 - **Voice, music, look:** the house defaults in `CLAUDE.md` and memory.
 - **Tone:** acid, bold and still monetizable, never the cute family tone: a narrator who is calm but sometimes malicious or sarcastic (`STORY_BLUEPRINT.md` §6.10, summarised in the cola's "Tom" section).
 - **Pacing:** the generator calls `episode(..., ritmo='rapido')`, as `_modelo.py` does. That gives automatic sub-cuts plus whip/zoom on set changes. Use `coverage='calm'` in the dilemma and `cut='smash'` by hand on reveals. Keep the subject and key text in the 9:16 centre column (audit `vertical`).
@@ -33329,6 +33049,55 @@ header = header.replace(/\{\{HEADER_END\}\}/g, String(headerEnd)).replace(/\{\{S
 if (header.split('\n').includes('@@@@ PAYLOAD BEGIN')) throw new Error('header must not contain the payload marker line');
 fs.writeFileSync(out, header + body);
 console.log(`${path.relative(ROOT, out)}: ${files.size} files, ${dirs.length} empty folders, ${mb} MB, header ${headerEnd} lines`);
+@@@@ END
+@@@@ FILE tools/progress.mjs | text | 2668 | 9229d29e27e929c4538d0605197cf8115d763bb0051916afe7aca4feda720552
+// Progress of a running build-episode.mjs: step, a bar, frames, elapsed time and the estimated time left.
+//   node tools/progress.mjs <slug>            → one snapshot
+//   node tools/progress.mjs <slug> --watch    → refreshes every 3 s until the build is done (Ctrl+C to stop)
+// Reads out/<slug>/progress.json, which build-episode.mjs writes as it goes.
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const ROOT = fileURLToPath(new URL('..', import.meta.url));
+const args = process.argv.slice(2);
+const slug = args.find(a => !a.startsWith('--'));
+if (!slug) {
+  console.error('usage: node tools/progress.mjs <slug> [--watch]');
+  process.exit(1);
+}
+const file = path.join(ROOT, 'out', slug, 'progress.json');
+const STEPS = { audit: 'auditoria da cena', audio: 'trilha sonora (voz, música, efeitos)', render: 'renderizando quadros', encode: 'codificando o vídeo', mux: 'juntando vídeo e áudio', sheets: 'folhas de contato', done: 'pronto', failed: 'FALHOU' };
+const mmss = ms => { const s = Math.max(0, Math.round(ms / 1000)); return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`; };
+
+function snapshot() {
+  if (!fs.existsSync(file)) return { text: `nenhuma build com progresso para "${slug}" (o arquivo ${path.relative(ROOT, file)} não existe)`, end: true };
+  let p;
+  try { p = JSON.parse(fs.readFileSync(file, 'utf8')); } catch { return { text: '(lendo…)', end: false }; }
+  const lines = [`${slug}${p.range ? ` [trecho ${p.range[0]}–${p.range[1]} s]` : ''} — ${STEPS[p.step] || p.step}`];
+  if ((p.step === 'render' || p.step === 'encode') && p.total) {
+    const k = p.done / p.total, n = 30, fill = Math.round(k * n);
+    lines.push(`[${'█'.repeat(fill)}${'░'.repeat(n - fill)}] ${(100 * k).toFixed(1)}%  ${p.done}/${p.total} quadros${p.step === 'encode' ? ' codificados' : ''}`);
+    if (p.eta) lines.push(`faltam ~${p.eta} (estimativa do Remotion)`);
+  }
+  lines.push(`tempo total da build: ${mmss((p.step === 'done' ? p.updated : Date.now()) - p.started)}`);
+  const stale = Date.now() - p.updated > 120000 && !['done', 'failed'].includes(p.step);
+  if (stale) lines.push(`(sem atualização há ${mmss(Date.now() - p.updated)} — a build pode ter parado)`);
+  if (p.step === 'done' && p.final) lines.push(`arquivo: ${p.final}`);
+  return { text: lines.join('\n'), end: ['done', 'failed'].includes(p.step) };
+}
+
+if (!args.includes('--watch')) {
+  console.log(snapshot().text);
+} else {
+  const tick = () => {
+    const s = snapshot();
+    process.stdout.write('\x1b[2J\x1b[H' + s.text + '\n');
+    if (s.end) process.exit(0);
+  };
+  tick();
+  setInterval(tick, 3000);
+}
 @@@@ END
 @@@@ FILE tools/qa.cjs | text-crlf | 2047 | 877b389e4bed50a676c3ad34b6c25d7317cb9e30b23a7b3ea0c1e2771a54d13b
 // QA runner (no frames rendered):
