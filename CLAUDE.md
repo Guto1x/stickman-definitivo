@@ -13,7 +13,7 @@ This project makes IFOLOGY-style 3D stickman videos for the channel **Fora do Ro
 
 ## `/stickman <topic>`: one command, whole episode
 
-`.claude/commands/stickman.md` runs the long-form pipeline (`docs/pipeline/EPISODE.md`) end to end for a topic, with the saved hero: script, shot list, one credit checkpoint, voice, review, build, then the 3 thumbnails, and sends the video and thumbnails. Its portable copy is `tools/pack/fresh/stickman.md`; edit both together (the local one adds a demo shortcut that must not ship).
+`.claude/commands/stickman.md` runs the long-form pipeline (`docs/pipeline/EPISODE.md`) end to end for a topic, with the saved hero: script, shot list, one credit checkpoint, voice, review, build, the 4 vertical shorts (EPISODE.md step 8b), then the 3 thumbnails, and sends the video, shorts and thumbnails. Its portable copy is `tools/pack/fresh/stickman.md`; edit both together (the local one adds a demo shortcut that must not ship).
 
 ## When the user asks for a new shot or video
 

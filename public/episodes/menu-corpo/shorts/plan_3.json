@@ -1,0 +1,72 @@
+{
+ "n": 3,
+ "title": "Desliguei o medo e quase perdi meu amigo",
+ "cta": "Isso devia me assustar, né? Quer ver o que acontece quando o medo volta? Entra no canal.",
+ "pieces": [
+  {
+   "shot": 96,
+   "from": 0,
+   "to": 4.766666666666667
+  },
+  {
+   "shot": 97,
+   "from": 0,
+   "to": 5.6
+  },
+  {
+   "shot": 98,
+   "from": 0,
+   "to": 4.233333333333333
+  },
+  {
+   "shot": 99,
+   "from": 0,
+   "to": 5.933333333333334
+  },
+  {
+   "shot": 100,
+   "from": 0,
+   "to": 4.833333333333333
+  },
+  {
+   "shot": 101,
+   "from": 0,
+   "to": 4.266666666666667
+  },
+  {
+   "shot": 102,
+   "from": 0,
+   "to": 3.7
+  },
+  {
+   "shot": 106,
+   "from": 0,
+   "to": 1.9333333333333333
+  },
+  {
+   "shot": 107,
+   "from": 0,
+   "to": 7.366666666666666
+  },
+  {
+   "shot": 108,
+   "from": 0,
+   "to": 3.3
+  },
+  {
+   "shot": 109,
+   "from": 0,
+   "to": 4.566666666666666
+  }
+ ],
+ "freeze": {
+  "stage": 109,
+  "at": 4.533333333333333,
+  "hold": 0.6,
+  "lead": 0.45,
+  "lineDur": 6.07,
+  "tail": 0.9
+ },
+ "total": 58.52,
+ "voiced": false
+}

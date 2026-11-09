@@ -11,6 +11,7 @@ import { CrushMeter } from '../overlays/CrushMeter';
 import { NewsBar } from '../overlays/NewsBar';
 import { KeyWord } from '../overlays/KeyWord';
 import { BodyMenu, type MenuRow } from '../overlays/BodyMenu';
+import { Emote, FlyIn, HighlightCircle, Spotlight, TimeWarp } from '../overlays/Beats';
 import type { Overlay } from '../types';
 
 export type Projector = (actorId: string) => { x: number; y: number; visible: boolean; scale: number } | null;
@@ -21,7 +22,8 @@ export const OverlayLayer: React.FC<{ overlays: Overlay[]; t: number; dur: numbe
   <>
     {overlays.map((o, i) => {
       const at = (o as { at?: number }).at ?? 0;
-      const until = (o as { until?: number }).until ?? dur;
+      // beat effects end on their own (they fade out); the others last to the end of the shot by default
+      const until = (o as { until?: number }).until ?? (['emote', 'circle', 'flyin', 'timewarp', 'spotlight'].includes(o.type) ? Infinity : dur);
       const lt = t - at;
       if (lt < 0 || t > until) return null;
       switch (o.type) {
@@ -66,6 +68,40 @@ const OverlayExt: React.FC<{ o: Overlay; t: number; project: Projector }> = ({ o
       return <BodyMenu t={t} rows={o.rows as MenuRow[]} title={o.title} note={o.note} noteAt={o.noteAt as number | undefined} alarm={o.alarm} y={o.y} dur={dur} />;
     case 'word':
       return <KeyWord t={t} text={o.text} color={o.color} y={o.y} dur={dur} />;
+    // beat effects: short by default (their own length), `until` stretches them
+    case 'emote': {
+      const d = dur ?? 1.6;
+      const p = project(o.actor);
+      if (t > d || !p || !p.visible) return null;
+      return <Emote t={t} kind={o.kind} x={p.x} y={p.y} px={p.scale} dur={d} />;
+    }
+    case 'circle': {
+      const d = dur ?? 1.6;
+      if (t > d) return null;
+      if (o.actor) {
+        const p = project(o.actor);
+        if (!p || !p.visible) return null;
+        return <HighlightCircle t={t} x={p.x + (o.dx ?? 0) * p.scale} y={p.y + (o.dy ?? 0.24) * p.scale} r={(o.r ?? 0.34) * p.scale} color={o.color} dur={d} />;
+      }
+      return <HighlightCircle t={t} x={o.x ?? 960} y={o.y ?? 540} r={o.r ?? 140} color={o.color} dur={d} />;
+    }
+    case 'flyin': {
+      const d = dur ?? 1.6;
+      if (t > d) return null;
+      return <FlyIn t={t} kinds={o.kinds?.length ? o.kinds : ['paper']} n={o.n} from={o.from} dur={d} />;
+    }
+    case 'timewarp': {
+      const d = dur ?? 1.8;
+      if (t > d) return null;
+      return <TimeWarp t={t} dur={d} />;
+    }
+    case 'spotlight': {
+      const d = dur ?? 2;
+      if (t > d) return null;
+      const p = o.actor ? project(o.actor) : null;
+      const x = p ? p.x : o.x ?? 960, y = p ? p.y + 0.6 * p.scale : o.y ?? 540, r = p ? (o.r ?? 0.9) * p.scale : o.r ?? 260;
+      return <Spotlight t={t} x={x} y={y} r={r} dim={o.dim} dur={d} />;
+    }
     case 'bubble':
     case 'thought': {
       const p = project(o.actor);

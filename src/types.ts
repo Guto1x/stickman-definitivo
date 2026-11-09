@@ -139,7 +139,13 @@ export type Overlay =
   | { type: 'news'; headline: string; ticker?: string; tag?: string; at?: number; until?: number; safe?: boolean } // safe: centred and wrapped inside the 9:16 column
   | { type: 'word'; text: string; at?: number; until?: number; color?: string; y?: 'low' | 'top' | 'mid' } // palavra-destaque: the key word pops in on its cue, centre column (default 1.5 s)
   | { type: 'menu'; rows: { label: string; value: number; from?: number; at?: number | string; warn?: boolean; dim?: boolean }[]; title?: string; note?: string; noteAt?: number | string; alarm?: boolean; y?: 'top' | 'mid' | 'low' | 'above'; at?: number; until?: number } // body-settings HUD (BodyMenu); row `at` / noteAt are shot times or word cues
-  | { type: 'hudList'; items: string[]; at?: number; checked?: number };
+  | { type: 'hudList'; items: string[]; at?: number; checked?: number }
+  // beat effects (2026-11-09, src/overlays/Beats.tsx): each has an automatic sound
+  | { type: 'emote'; actor: string; kind: 'sweat' | 'tears' | 'question' | 'exclaim' | 'notes' | 'sparkle' | 'anger' | 'love' | 'zzz'; at?: number; until?: number }
+  | { type: 'circle'; actor?: string; dx?: number; dy?: number; x?: number; y?: number; r?: number; color?: string; at?: number; until?: number } // dx/dy/r in metres from the actor's head top (default: around the head); or x/y/r in px
+  | { type: 'flyin'; kinds?: ('calendar' | 'clock' | 'paper' | 'money' | 'heart' | 'star' | 'book')[]; n?: number; from?: 'left' | 'right' | 'top' | 'swirl'; at?: number; until?: number }
+  | { type: 'timewarp'; at?: number; until?: number }
+  | { type: 'spotlight'; actor?: string; x?: number; y?: number; r?: number; dim?: number; at?: number; until?: number };
 
 export type ShotFx = {
   swap?: { t: number | string; ids: [string, string]; keepPaths?: boolean }; // the two actors trade places at t (blink-blink, flash, afterimages). keepPaths: their paths already encode the jump (momentum gags)
@@ -152,6 +158,10 @@ export type ShotFx = {
   vignette?: number;
   shake?: number;
   bars?: 'in' | 'out';
+  // beat effects (2026-11-09): selective colour — everyone but `ids` drains to grey (a crowd, the one who matters)
+  focus?: { ids: string[]; at?: number | string; until?: number | string };
+  // a sunburst backdrop behind an actor for a reveal (default the hero; colours gold/purple/teal/pink/blue)
+  burst?: { actor?: string; at?: number | string; until?: number | string; color?: string };
 };
 
 // ---- episode spec (public/episodes/<slug>/episode.json) ------------------------------------
@@ -188,7 +198,7 @@ export type Shot3D = {
 };
 
 // Transitions. whip / zoom / smash play on both sides of the cut (end of the outgoing shot + start of this one).
-export type Cut = 'cut' | 'flow' | 'flash' | 'whip' | 'dip' | 'zoom' | 'smash';
+export type Cut = 'cut' | 'flow' | 'flash' | 'whip' | 'dip' | 'zoom' | 'smash' | 'push'; // push: the new shot shoves the old one sideways
 
 export type CardShot = {
   kind: 'card';
@@ -219,7 +229,9 @@ export type Episode = {
   music?: MusicCue[];
   // Shorts the user cuts by hand from the 16:9 (YouTube Shorts / Reels / TikTok): ≥ 4 per long episode,
   // each a self-contained ~90 s run of whole shots (from/to = shot ids, inclusive). The audit checks length.
-  clips?: { title: string; from: string; to: string }[];
+  clips?: { title: string; from: string; to: string }[]; // retired 2026-11-09 (hand-cut ~90 s clips): use `shorts`
+  // the 4 vertical shorts (user rule, 2026-11-09): tools/shorts.mjs renders them; shorts.json next to the episode overrides
+  shorts?: { title: string; cta: string; from?: string; to?: string; drop?: string[]; shots?: string[]; stage?: string; stageAt?: number; cutAt?: number }[];
   hookCheck?: boolean; // false = skip the audit's first-10-seconds retention check (episodes made before the rule, 2026-11-09)
   shots: Shot[];
 };

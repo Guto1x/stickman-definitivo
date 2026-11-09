@@ -9,7 +9,11 @@ import type { Episode, Shot3D } from '../types';
 import { castOf } from './resolve';
 
 // Mirrors LIB in tools/sfx/episode_audio.py
-export const SFX_NAMES = ['whoosh', 'whooshUp', 'swoosh', 'boom', 'farBoom', 'thud', 'footsteps', 'gulp', 'click', 'pop', 'cloth', 'heartbeat',
+import PACK from '../../efeitos-sonoros/map.json';
+
+// the user's SFX pack (efeitos-sonoros/map.json) adds its own names (bonk, fah, nuke, …)
+const PACK_NAMES = Object.keys(PACK).filter(k => !k.startsWith('_'));
+export const SFX_NAMES = [...PACK_NAMES, 'whoosh', 'whooshUp', 'swoosh', 'boom', 'farBoom', 'thud', 'footsteps', 'gulp', 'click', 'pop', 'cloth', 'heartbeat',
   'subdrop', 'riser', 'swell', 'zap', 'crackle', 'wind', 'debris', 'rustle', 'chime', 'glint', 'ticks', 'ring', 'bell', 'whistle', 'groan', 'groanLow',
   'menu', 'tick', 'alert', 'horn', 'crack', 'splash'];
 const PROPS = ['table', 'roundTable', 'chair', 'bed', 'desk', 'deskLamp', 'door', 'window', 'shelf', 'plant', 'tree', 'bush', 'lamp', 'fence', 'car', 'house',
@@ -17,7 +21,7 @@ const PROPS = ['table', 'roundTable', 'chair', 'bed', 'desk', 'deskLamp', 'door'
   'fire', 'smoke', 'firetruck', 'basket', 'binoculars', 'trafficlight', 'pizza', 'jar', 'iceHole', 'dog'];
 const SHOTS = ['establishing', 'wide', 'full', 'medium', 'close', 'xclose', 'insert'];
 const MOVES = ['static', 'drift', 'pushIn', 'pullOut', 'orbitL', 'orbitR', 'craneUp', 'craneDown', 'truckL', 'truckR', 'track', 'crashIn', 'shake', 'handheld'];
-const OVERLAYS = ['label', 'title', 'stopwatch', 'stat', 'bubble', 'thought', 'crush', 'caption', 'flash', 'counter', 'news', 'hudList', 'word', 'menu'];
+const OVERLAYS = ['label', 'title', 'stopwatch', 'stat', 'bubble', 'thought', 'crush', 'caption', 'flash', 'counter', 'news', 'hudList', 'word', 'menu', 'emote', 'circle', 'flyin', 'timewarp', 'spotlight'];
 
 export function validate(ep: Episode): string[] {
   const out: string[] = [];

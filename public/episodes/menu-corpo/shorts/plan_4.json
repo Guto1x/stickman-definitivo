@@ -1,0 +1,82 @@
+{
+ "n": 4,
+ "title": "Minha irmã caiu no gelo ao vivo",
+ "cta": "Dez minutos e o gelo rachando… será que eu salvo a Ivy? Entra no canal e assiste a história completa.",
+ "pieces": [
+  {
+   "shot": 128,
+   "from": 0,
+   "to": 5.766666666666667
+  },
+  {
+   "shot": 130,
+   "from": 0,
+   "to": 3.533333333333333
+  },
+  {
+   "shot": 131,
+   "from": 0,
+   "to": 2.433333333333333
+  },
+  {
+   "shot": 132,
+   "from": 0,
+   "to": 1.1
+  },
+  {
+   "shot": 133,
+   "from": 0,
+   "to": 5.766666666666667
+  },
+  {
+   "shot": 135,
+   "from": 0,
+   "to": 2.1
+  },
+  {
+   "shot": 136,
+   "from": 0,
+   "to": 5.3
+  },
+  {
+   "shot": 137,
+   "from": 0,
+   "to": 3.6333333333333333
+  },
+  {
+   "shot": 138,
+   "from": 0,
+   "to": 2.4
+  },
+  {
+   "shot": 139,
+   "from": 0,
+   "to": 2.8333333333333335
+  },
+  {
+   "shot": 141,
+   "from": 0,
+   "to": 5.9
+  },
+  {
+   "shot": 142,
+   "from": 0,
+   "to": 5.266666666666667
+  },
+  {
+   "shot": 143,
+   "from": 0,
+   "to": 3.7666666666666666
+  }
+ ],
+ "freeze": {
+  "stage": 143,
+  "at": 3.7333333333333334,
+  "hold": 0.6,
+  "lead": 0.45,
+  "lineDur": 6.97,
+  "tail": 0.9
+ },
+ "total": 58.72,
+ "voiced": false
+}

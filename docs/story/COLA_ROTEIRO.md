@@ -142,7 +142,8 @@ Um fato real verificável dá credibilidade à fantasia e deixa o perigo palpáv
 - Inline no `vo`, em inglês, entre colchetes, **uma por reação real** (não por frase).
 - Antes do trecho = tom da fala; depois = reação a ela.
 - Catálogo: `[whispering] [softly] [slowly] [pause] [voice breaking] [weak] [tired] [bored] [playful] [angry] [excited] [menacing] [chuckling] [laughing] [sighing] [gasping] [panting] [scoffing] [sniffling] [clears throat] [sharp exhale]`. Combinações valem (`[sighs, tired]`). Fora disso, só testando antes.
-- Narrador: `[sarcastic] [mischievously] [deadpan] [darkly amused] [chuckling]`, e `[menacing]` 1–3×/episódio (validadas no Yuri, 2026-11-08). `[excited]` é de personagem. Nada que contradiga a cena.
+- Herói (`who: "hero"`, João Pedro): sempre dinâmico e brincalhão (base `[playful]` automática); só troque o tom com uma tag no início da fala quando a cena exigir (medo, tristeza, sussurro).
+- Narrador: **sempre animado** (Matheus, base `[excited]`, 2026-11-09: é o tom que retém). Por cima: `[sarcastic] [mischievously] [deadpan] [darkly amused] [chuckling]`, e `[menacing]` 1–3×/episódio (validadas no Yuri; reconfirme no Matheus no 1º episódio). Nada que contradiga a cena.
 - Nunca SSML `<break>`; respiro com `…`, vírgula, `[pause]`. Pronúncia errada: IPA `/…/` só na palavra.
 - Gate mecânico: `node tools/episode.mjs check <slug>`.
 
@@ -152,13 +153,32 @@ Um fato real verificável dá credibilidade à fantasia e deixa o perigo palpáv
 **Ritmo da casa (2026-11-08):** `episode(..., ritmo='rapido')` liga sub-cortes automáticos (`coverage: 'fast'`, ~1 corte a cada 1,6 s na palavra) e whip/zoom alternados em toda troca de set. Dilema: `coverage='calm'`; tableau congelado: `'off'`. **Smash** (`cut='smash'`) à mão na revelação ou na piada seca. Meta: ~30 cortes/min fora do dilema.
 **Pensado pra 9:16:** quem fala ou age fica na faixa central (o audit avisa `vertical`); dois personagens longe um do outro = dois planos, não um aberto.
 
-## Cortes para shorts (regra do usuário, 2026-11-08)
-O usuário corta à mão, do 16:9, shorts de **~90 s** para YouTube Shorts, Reels e TikTok. Todo episódio longo nasce com **≥ 4 trechos que funcionam sozinhos**, marcados em `episode(clips=[(título, 1º plano, último plano), ...])` (o audit confere 60–95 s; mire 75–90).
-- **Onde costumam cair:** (1) abertura → poder → escada de números (0:00–1:30); (2) a ladainha de vantagens (2:30–3:40) ou os 3 problemas (3:40–4:40); (3) o problema real/maestria ou o teste de prova; (4) crise → dilema → clímax. Um 5º no mundo maior/gancho é bônus.
-- **Começa frio:** a 1ª frase do trecho prende sem contexto (pergunta, número absurdo, desastre em curso). Nada de "como eu disse", "lembra do…". Se precisar de um nome ou regra, reapresente em meia frase ("a Lia, sua melhor amiga, …").
-- **Fecha com soco:** cada trecho termina numa virada, piada seca ou cliffhanger, não no meio de uma ideia.
-- **Legível no vertical:** dentro dos trechos, personagem e texto importante na faixa central (audit `vertical`). Card de duas colunas (`compare`) perde um lado no corte: prefira `stat`/número único, ou um card com o conteúdo no meio.
-- O build gera um `.srt` (legendas com o tempo exato das palavras) para o editor do usuário.
+## Batida visual e som em tudo (regra do usuário, 2026-11-09; referência: Aprendendo com Vitinho)
+O que mais segura nesses vídeos: **algo muda na tela a cada 1–2 s, mesmo sem corte, e todo evento visual tem som.** Medido nas referências: 23–28 cortes/min (plano mediano 1,5 s) e, entre os cortes, uma "batida" atrás da outra.
+- **Toda frase ganha uma batida visual**, além dos sub-cortes. Ferramentas (cada uma com som automático):
+  - `emote` na cabeça de quem reage: `sweat` (gota), `tears`, `question` (?), `exclaim` (!), `notes`, `sparkle`, `anger`, `love`, `zzz`;
+  - `circle`: um círculo vermelho que se desenha em volta do detalhe que o narrador cita (o dente, a mão, a cara);
+  - `flyin`: objetos que cruzam a tela (`calendar`, `clock`, `paper`, `money`, `heart`, `star`, `book`), pra listas e exageros ("manda fazer lição" → um livro voando);
+  - `timewarp`: o tempo passando (calendário e relógio girando, dia/noite piscando), em "três semanas depois", "todo dia";
+  - `spotlight`: tudo escurece e uma luz fica num personagem ou objeto (uma revelação, "e então ela viu…");
+  - `fx.burst`: raios de sol atrás do personagem na revelação ou no "ta-da";
+  - `fx.focus`: a multidão fica cinza e só quem importa fica colorido ("era assim que eu achava ela");
+  - também contam: `word`, troca de expressão ou pose, objeto que aparece (`sfx` + prop), e as transições.
+- **Transições com borrão:** `whip`, `zoom` e a nova `push` (o plano novo empurra o velho pro lado). Varie entre elas; `smash` na revelação.
+- **Som em todo evento:** o mixer põe som automático em cada efeito, transição, card, `word` e número. Com o pacote de SFX do usuário (`efeitos-sonoros/map.json`), os sons dele substituem os sintetizados.
+- **Respiro seco:** a narração fica colada (pausas de ~0,2 s) e, quando o corte cai numa pausa entre frases, a trilha e o ambiente somem junto por um instante. É automático; escreva pensando nisso (frases curtas, um corte por frase).
+- **Trilha:** a do usuário, que ele manda antes do episódio, baixa (~20 dB sob a voz). Peça se não chegou.
+- O audit avisa `[beat]` em todo trecho de mais de 2,5 s sem nada novo (fora o dilema e tableaux com `coverage` calm/off).
+
+## Shorts: 4 por episódio, verticais, 60 s (regra do usuário, 2026-11-09)
+Os shorts existem pra pessoa **querer entrar no canal**, não pra entregar um pedaço solto sem sentido. Todo episódio gera **4 shorts prontos em 1080×1920** (o usuário não recorta mais nada do 16:9).
+- **Quem escolhe:** se o usuário apontou os momentos enquanto o episódio era feito, use exatamente esses (e não invente outros). Se não apontou, escolha os 4 de maior gancho pelo roteiro e pelas regras de retenção, espalhados pela história (abertura, montagem/vantagens, um problema, a crise).
+- **60 s cada (55–62):** ~52 s de episódio + ~8 s da quebra da 4ª parede. É uma mini-história que faz sentido sozinha: **abre frio** (nada de "E", "Mas", "Esses", "Até"…: o `plan` e o audit avisam), dá o contexto, sobe a tensão e **para no auge, antes da resolução**.
+- **Pode pular planos** (`drop`) que só explicam (cards de fato longos, digressões) e até juntar trechos de lugares diferentes (`shots`), desde que a história continue clara.
+- **O final:** o mundo congela (dessatura, selo de pausa, som de pausa) e só o **herói** se vira pra câmera e fala, na voz dele (`who: "hero"`, João Pedro, tom brincalhão). A fala é **escrita pra cada short**, amarrada ao gancho dele, em 1ª pessoa, e termina mandando pro canal: "Quer saber se eu saio vivo dessa? Entra no canal e assiste a história completa." Máx. ~120 caracteres.
+- **Onde congelar (`stage`/`stageAt`):** num plano com o herói **e o mundo em volta** (a rua, o lago, os outros parados), não no palco vazio. Congelar no meio de uma ação (ele no ar, rastejando no gelo) rende mais.
+- **No gerador:** `episode(shorts=[{'title', 'from', 'to', 'drop', 'stage', 'stageAt', 'cta'}, ...])`; um `shorts.json` na pasta do episódio substitui (re-escolha depois). Comandos: EPISODE.md, passo 8b.
+- **Legível no vertical:** o 3D vertical mostra a faixa central do 16:9, então personagem e texto importante ficam no centro (audit `vertical`). Cards de duas colunas (`compare`) ficam pequenos: prefira `stat`.
 
 ## Checklist rápido (tudo sim antes da voz; versão completa §9)
 - [ ] Fórmula cheia e 6 testes ok; título 3–7 palavras
@@ -173,7 +193,7 @@ O usuário corta à mão, do 16:9, shorts de **~90 s** para YouTube Shorts, Reel
 - [ ] 12–20 falas de reação/piada (≤ 8 pal., nenhuma explicando enredo); piada ≤ 60 s; estatística de frase; sem banidos
 - [ ] Nenhuma frase > 15 palavras; nada de duas frases seguidas com a mesma abertura (fora `repeat`); cada fato mostra a consequência antes do conceito; cético plantado cedo e calado no clímax
 - [ ] Ladainha nas vantagens: 12–16 itens, 1 a cada 4–6 s, escala crescente, quebra a cada 3; número em `word` + SFX
-- [ ] ≥ 4 trechos de ~90 s marcados em `clips`, cada um com abertura fria e final com soco
+- [ ] 4 shorts planejados em `shorts` (os do usuário, se ele apontou): ~60 s, abertura fria, param no auge, congelam num plano com o herói e o mundo, fala do herói por short mandando pro canal
 - [ ] Tom ácido: sarcasmo/maldade a cada 30–60 s, nada no dilema, família interesseira, limite monetizável respeitado
 - [ ] `check` passa; tags descritivas, bem posicionadas, coerentes com a voz; tudo por extenso
 - [ ] Artefato irônico → observador → chegada → gancho justo → CTA ≤ 20 s com assinatura

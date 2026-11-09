@@ -226,7 +226,7 @@ function magnetize(cuts: number[], hits: Hit[], covered: boolean): number[] {
 
 /** Indices (into `words`) of words that start a sentence in the shot's vo, read from its punctuation.
  *  Only trusted when the vo tokenizes to the same word count as the alignment; else none (no preference). */
-function sentenceStarts(vo: string | undefined, words: Words): Set<number> {
+export function sentenceStarts(vo: string | undefined, words: Words): Set<number> {
   const out = new Set<number>();
   if (!vo || !words?.length) return out;
   const toks = vo.replace(/\[[^\]]*\]/g, ' ').replace(/<[^>]*>/g, ' ').replace(/[-–—]/g, ' ').split(/\s+/).filter(w => /[\p{L}\p{N}]/u.test(w));

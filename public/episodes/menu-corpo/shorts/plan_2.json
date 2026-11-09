@@ -1,0 +1,72 @@
+{
+ "n": 2,
+ "title": "Usei o menu do corpo pra tudo",
+ "cta": "Perigo dá visualização… e quase custou tudo. Entra no canal e assiste a história completa.",
+ "pieces": [
+  {
+   "shot": 3,
+   "from": 0,
+   "to": 3.566666666666667
+  },
+  {
+   "shot": 4,
+   "from": 0,
+   "to": 2.6333333333333333
+  },
+  {
+   "shot": 50,
+   "from": 0,
+   "to": 4.366666666666666
+  },
+  {
+   "shot": 52,
+   "from": 0,
+   "to": 4.5
+  },
+  {
+   "shot": 58,
+   "from": 0,
+   "to": 7.033333333333333
+  },
+  {
+   "shot": 60,
+   "from": 0,
+   "to": 7.266666666666667
+  },
+  {
+   "shot": 64,
+   "from": 0,
+   "to": 4.6
+  },
+  {
+   "shot": 69,
+   "from": 0,
+   "to": 5.833333333333333
+  },
+  {
+   "shot": 70,
+   "from": 0,
+   "to": 5.7
+  },
+  {
+   "shot": 71,
+   "from": 0,
+   "to": 2.466666666666667
+  },
+  {
+   "shot": 73,
+   "from": 0,
+   "to": 3.933333333333333
+  }
+ ],
+ "freeze": {
+  "stage": 70,
+  "at": 5.666666666666667,
+  "hold": 0.6,
+  "lead": 0.45,
+  "lineDur": 6.21,
+  "tail": 0.9
+ },
+ "total": 60.06,
+ "voiced": false
+}

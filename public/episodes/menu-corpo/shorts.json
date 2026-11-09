@@ -1,0 +1,49 @@
+[
+  {
+    "title": "Um carro vinha e o meu corpo abriu um menu",
+    "from": "a1",
+    "to": "m4",
+    "cta": "Quer saber o que essas barras escondem? Entra no canal e assiste a história completa.",
+    "stage": "a7",
+    "stageAt": 1.6
+  },
+  {
+    "title": "Usei o menu do corpo pra tudo",
+    "shots": [
+      "a4",
+      "a5",
+      "v1",
+      "v3",
+      "v9",
+      "v11",
+      "v15",
+      "b2",
+      "b3",
+      "b4",
+      "b6"
+    ],
+    "cta": "Perigo dá visualização… e quase custou tudo. Entra no canal e assiste a história completa."
+  },
+  {
+    "title": "Desliguei o medo e quase perdi meu amigo",
+    "from": "x2",
+    "to": "x14",
+    "drop": [
+      "x8",
+      "x9",
+      "x10"
+    ],
+    "cta": "Isso devia me assustar, né? Quer ver o que acontece quando o medo volta? Entra no canal."
+  },
+  {
+    "title": "Minha irmã caiu no gelo ao vivo",
+    "from": "k3",
+    "to": "f8",
+    "drop": [
+      "k3b",
+      "k7",
+      "f5"
+    ],
+    "cta": "Dez minutos e o gelo rachando… será que eu salvo a Ivy? Entra no canal e assiste a história completa."
+  }
+]

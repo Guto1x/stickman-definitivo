@@ -1,7 +1,7 @@
 - [IFOLOGY-style channel](project-ifology-style-channel.md) — channel "Fora do Roteiro", logo public/brand/logo.png; IFOLOGY-look hero in a GRAY quarter-zip jacket (since 2026-11-08), flat final/ folder, Remotion+Three engine, Python SFX, ElevenLabs voice
 - [Review-and-fix loop](feedback-review-and-fix-loop.md) — audit + independent reviewer BEFORE final render, then review the render; fix everything; 1080p final
 - [No camera snaps](feedback-no-camera-snaps.md) — never cut between near-identical framings ("a few pixels over"); flow instead; real angle changes are fine
-- [Voices](project-narrator-voice.md) — ElevenLabs PT-BR: narrator Yuri (eleven_v4) with a calm `[calm]` direction; house male Eduardo / female Sofia; ~0.4 credits/char
+- [Voices](project-narrator-voice.md) — narrator Matheus always animated ([excited]), hero João Pedro always dynamic ([playful], `who: "hero"`), picked 2026-11-09; Eduardo/Sofia others; ~0.45 credits/char
 - [PT-BR content adaptation](project-pt-br-adaptation.md) — scripts/VO/overlays/thumbnails + story docs are PT-BR since 2026-11-08; code/CLAUDE.md stay English
 - [ElevenLabs API key](reference-elevenlabs-key.md) — in D:\stickman-2\.env, gitignored; scoped (no user_read/models_read) — check balance on the dashboard
 - [Thumbnails via GPT Image 2.5](project-thumbnails-gpt-image.md) — 2D GPT Image thumbs, fish or chatgpt mode (chatgpt now), locked 3 variants at 2K medium, only when a video is ~finished; gray quarter-zip jacket
@@ -11,10 +11,11 @@
 - [Tom ácido](feedback-tom-acido.md) — no cute/family tone: narrator calm but sometimes malicious/sarcastic; bold stakes, still monetizable (2026-11-08)
 - [CLAUDE.md enxuto](feedback-nao-reestruturar-claude-md.md) — episode pipeline moved to docs/pipeline/EPISODE.md, round-1 reviewer on sonnet agent revisor-episodio (2026-11-09)
 - [/clear entre tarefas](feedback-clear-entre-tarefas.md) — remind the user to /clear when switching to an unrelated task (2026-11-09)
-- [Ritmo rápido](project-ritmo-rapido.md) — house pacing since 2026-11-08: coverage sub-cuts, whip/zoom/smash, 9:16-safe; generators use ritmo='rapido'; NO native vertical render — user cuts 9:16 by hand from the 16:9
-- [Cortes p/ shorts](feedback-cortes-shorts.md) — every long episode needs ≥ 4 self-contained ~90 s segments (episode clips); build writes .srt + cortes.txt
+- [Ritmo rápido](project-ritmo-rapido.md) — house pacing since 2026-11-08: coverage sub-cuts, whip/zoom/smash, 9:16-safe; generators use ritmo='rapido'; shorts now rendered vertical
+- [Shorts verticais](feedback-cortes-shorts.md) — 4 rendered 1080×1920 shorts/episode, 60 s, freeze + hero breaks the 4th wall → channel; user's picks or mine from the script
 - [Episódios prontos: congelados](project-refazer-episodios.md) — finished episodes are posted at once and never fixed/re-rendered for new rules; zumbi kept; keep /stickman credit stop
 - [Duração ≥ 10 min](feedback-duracao-10min.md) — every long episode ≥ 10:00 voiced (~1,600–1,700 words); audit warns [length]; zumbi stays 9:14 (2026-11-09)
 - [Gancho nos 10 s](feedback-gancho-10s.md) — new episodes only: ≥ 2 hook types, ≥ 6 cuts, punchy move, SFX ≤ 2 s; audit [hook]; zumbi opted out (2026-11-09)
-- [Sem música](feedback-sem-musica.md) — menu-do-corpo episode has NO music (user adds tracks in their editor, 2026-11-09); ask on the next episode if it's a house rule
+- [Música e SFX do usuário](feedback-sem-musica.md) — the user sends the background track before each episode (it goes IN the video) and an SFX pack; no generated beds
 - [Fórmula shorts adotada](project-formula-shorts-adotada.md) — 2026-11-09: ≤15 pal./frase, consequência antes do conceito, cético que perde, sem adjetivo fraco; ímã de graves, ciclo de closes, câmera mais móvel, audit de corpo atravessando objeto
+- [Batida visual](feedback-batida-visual.md) — Vitinho references (2026-11-09): a visual beat every 1–2 s, sound on every visual event, blurred transitions, dry breaths; audit [beat]

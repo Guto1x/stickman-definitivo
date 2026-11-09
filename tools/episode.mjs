@@ -34,16 +34,19 @@ const read = f => JSON.parse(fs.readFileSync(path.join(DIR, f), 'utf8'));
 const write = (f, o) => fs.writeFileSync(path.join(DIR, f), JSON.stringify(o, null, 1));
 const ep = read('episode.json');
 const FPS = ep.fps || 30;
-const DEFAULT_DIRECTION = '[calm]'; // user found "energetic, quick pace" too hyper (2026-10-28); eleven_v4 reads short delivery tags best, so keep this brief
+// the hero's default delivery: always this dynamic, playful tone unless the line's own [tag] asks for another (user, 2026-11-09)
+const HERO_DIRECTION = '[playful]';
+const DEFAULT_DIRECTION = '[excited]'; // user, 2026-11-09: the narrator is always animated, natural and enthusiastic (Matheus test); eleven_v4 reads short delivery tags best, so keep this brief
 // House voices (ElevenLabs, eleven_v4, PT-BR). Shots set `who`; episode.voices can add or override speakers.
 // episode.json's voice.id always wins for the narrator — this is only the fallback.
 export const HOUSE_VOICES = {
-  narrator: 'u7N1p4OIOc6Fl7y72WE7', // Yuri — Natural Brazilian Narrator (user's pick, 2026-11-08)
+  narrator: '36rVQA1AOIPwpA3Hg1tC', // Matheus — Friendly and Energetic (user's pick by ear, 2026-11-09; was Yuri u7N1p4OIOc6Fl7y72WE7)
+  hero: '7u8qsX4HQsSHJ0f8xsQZ', // João Pedro — dynamic, the hero's own voice (user's pick by ear, 2026-11-09): `who: "hero"`
   male: 'H2bV051FngNxkuTNROyc', // Eduardo — Brazilian Portuguese (young, confident): boys, men
   female: 'n2a9VtkZLl8j1FSXHsL7', // Sofia — Natural & Expressive (young, gentle): girls, women
 };
 const MAX_CHARS = 2500;
-const CREDITS_PER_CHAR = 0.4; // measured 2026-11-08: 199 chars → 80 credits on eleven_v4 with Yuri. Varies by model/voice — treat as an estimate.
+const CREDITS_PER_CHAR = 0.45; // measured: 2026-11-08 199 chars → 80 credits (Yuri); 2026-11-09 1905 chars → 869 credits (11 voices) on eleven_v4. Varies by model/voice — treat as an estimate.
 
 /** Spoken words only: drop [direction]/audio-tag brackets and <tags>. */
 const spoken = s => (s || '').replace(/\[[^\]]*\]/g, ' ').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
@@ -141,7 +144,8 @@ function buildSections() {
   return sections.map(s => {
     const who = s.parts[0].who; // one speaker per section (see breakNext above)
     const first = s.parts[0].text;
-    const text = (first.startsWith('[') || who !== 'narrator' || !direction ? '' : direction + ' ') + s.parts.map(p => p.text).join(' ');
+    const lead = who === 'narrator' ? direction : who === 'hero' ? HERO_DIRECTION : '';
+    const text = (first.startsWith('[') || !lead ? '' : lead + ' ') + s.parts.map(p => p.text).join(' ');
     return { id: s.id, shots: s.shots, voice_id: voices[who], model: ep.voice.model || 'eleven_v4', text, file: null };
   });
 }
@@ -168,7 +172,7 @@ async function synthesize(voiceId, text, model, tag = '') {
       body: JSON.stringify({
         text,
         model_id: model,
-        voice_settings: { stability: ep.voice.stability ?? 0.5, similarity_boost: ep.voice.similarityBoost ?? 0.8 },
+        voice_settings: { stability: ep.voice.stability ?? 0.4, similarity_boost: ep.voice.similarityBoost ?? 0.8 },
       }),
     });
     if (res.ok) return res.json(); // { audio_base64, alignment: {characters, character_start_times_seconds, character_end_times_seconds}, normalized_alignment }
@@ -185,7 +189,8 @@ async function synthesize(voiceId, text, model, tag = '') {
 
 function processVoice(src, dst, tempoOverride) {
   const tempo = tempoOverride ?? ep.voice.tempo ?? 1.0;
-  const maxPause = ep.voice.maxPause ?? 0.45;
+  // breaths between sentences stay short and dry (~0.2 s; the Vitinho reference runs ~0.13 s, 2026-11-09)
+  const maxPause = ep.voice.maxPause ?? 0.22;
   const af = [
     'silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.03',
     'areverse', 'silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.06', 'areverse',

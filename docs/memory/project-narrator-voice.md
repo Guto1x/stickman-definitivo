@@ -1,6 +1,6 @@
 ---
 name: project-narrator-voice
-description: "ElevenLabs voices for the stickman channel (PT-BR) — narrator Yuri u7N1p4OIOc6Fl7y72WE7 (eleven_v4) with a calm [calm] direction, plus house male Eduardo and female Sofia for other characters; measured ~0.4 credits/char"
+description: "ElevenLabs PT-BR voices — narrator Matheus 36rVQA1AOIPwpA3Hg1tC always animated ([excited]), hero João Pedro 7u8qsX4HQsSHJ0f8xsQZ always dynamic ([playful]) — both picked by ear 2026-11-09; Eduardo/Sofia for other characters; ~0.45 credits/char"
 metadata:
   node_type: memory
   type: project
@@ -21,8 +21,13 @@ This replaces the old Fish Audio narrator ("Warm Storyteller") entirely — voic
 - **Alignment is exact, not transcribed.** `align` reads ElevenLabs' own per-character timestamps for the text we sent — no Whisper, no ASR, no fuzzy word-matching. See [[feedback-no-camera-snaps]]'s sibling rule in CLAUDE.md's hard-won rules for why this matters (it was a real recurring bug source before).
 - The account's API key is scoped: it can list voices, call TTS and read usage stats, but lacks `user_read` (no automatic balance check) and `models_read`. Check elevenlabs.io/app/subscription manually, or widen the key, if an automatic balance check is ever needed.
 
+**Current voices (user's picks by ear, 2026-11-09 — supersede Yuri and the calm direction above):**
+- **Narrator: Matheus — "Friendly and Energetic"** `36rVQA1AOIPwpA3Hg1tC`. Always in that animated, natural, enthusiastic tone — "tem que ser assim sempre pra reter". Base direction `[excited]`, stability 0.4 (both defaults in tools/episode.mjs). The sarcastic/malicious tags of [[feedback-tom-acido]] ride on top of that energy.
+- **Hero: João Pedro — dynamic** `7u8qsX4HQsSHJ0f8xsQZ`, `who: "hero"`. Always that dynamic, playful tone (`[playful]` added automatically), except when the scene demands another — then the line starts with its own tag. First used for the shorts' 4th-wall break ([[feedback-cortes-shorts]]).
+- Picked from an 11-sample audition (6 narrators, 5 heroes; 1905 chars → 869 credits ≈ 0.45 credits/char).
+
 **How to apply:**
-- Use the narrator voice for all narration, with the `[calm]` base direction — plus sarcastic/malicious tags at chosen beats since 2026-11-08 (see [[feedback-tom-acido]]). Don't go back to a more "energetic" direction without asking — the same lesson from the old Fish voice still applies: the user found hyper/quick pacing unpleasant.
+- Use Matheus for all narration with the `[excited]` base direction — plus sarcastic/malicious tags at chosen beats since 2026-11-08 (see [[feedback-tom-acido]]). (The old "don't go energetic" caution is retired: the user now wants the energetic tone.)
 - Use the house male/female voices for character lines unless the user picks others.
 - Don't swap voices or models without asking.
 - Related: [[project-ifology-style-channel]], [[project-pt-br-adaptation]].

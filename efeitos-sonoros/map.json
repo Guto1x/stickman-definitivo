@@ -1,0 +1,37 @@
+{
+  "_como_usar": "Evento -> arquivos (dentro desta pasta). Variantes giram. 'vol' em dB (opcional). Eventos automáticos: whoosh, whooshUp, swoosh, impact, card, pop, ding, click, sting. Os outros nomes se usam à mão no 'sfx' de um plano: {\"t\": \"@palavra\", \"name\": \"bonk\"}. Ver README.md.",
+  "_direitos": "Os marcados com 'copyright' são trechos de músicas, animes ou jogos: podem dar reivindicação de Content ID no YouTube (desmonetização ou bloqueio). O pipeline só os toca se o roteiro pedir pelo nome.",
+
+  "whoosh":   { "files": ["Fast whip.wav", "Fast whoosh.wav", "whoosh.mp3"], "vol": -10 },
+  "swoosh":   { "files": ["woosh_5.mp3", "whoosh.mp3"], "vol": -11 },
+  "whooshUp": { "files": ["Fast whoosh.wav", "FIRE/FIRE 3.wav", "WATER/WATER 4.wav"], "vol": -10 },
+  "impact":   { "files": ["Punch - Gaming Sound Effect (HD) (320 kbps).mp3"], "vol": -8 },
+  "card":     { "files": ["woosh_5.mp3"], "vol": -14 },
+  "pop":      { "files": ["Discord Join.mp3"], "vol": -14 },
+  "ding":     { "files": ["Discord notification.mp3"], "vol": -13 },
+  "click":    { "files": ["Camera Shutter.mp3"], "vol": -12 },
+  "sting":    { "files": ["shocked-sound-effect.mp3"], "vol": -9 },
+
+  "bonk":     { "files": ["Bonk - Sound Effect (HD) (320 kbps).mp3"], "vol": -8 },
+  "punch":    { "files": ["Punch - Gaming Sound Effect (HD) (320 kbps).mp3"], "vol": -7 },
+  "shock":    { "files": ["shocked-sound-effect.mp3"], "vol": -8 },
+  "fah":      { "files": ["faaaaaah/FAHHH 1.wav", "faaaaaah/FAHHH 2.wav", "faaaaaah/FAHHH 3.wav", "faaaaaah/FAHHH 4.wav", "faaaaaah/FAHHH 5.wav"], "vol": -9 },
+  "awkward":  { "files": ["Awkward Moment.mp3"], "vol": -10 },
+  "nuke":     { "files": ["nuke-bomb.mp3"], "vol": -6 },
+  "angels":   { "files": ["angels-singing.mp3"], "vol": -12 },
+  "dream":    { "files": ["dream-sound.mp3"], "vol": -12 },
+  "photo":    { "files": ["Camera Shutter.mp3"], "vol": -10 },
+  "notify":   { "files": ["Discord notification.mp3"], "vol": -11 },
+  "fire":     { "files": ["FIRE/FIRE 1.wav", "FIRE/FIRE 2.wav", "FIRE/FIRE 3.wav", "FIRE/FIRE 4.wav", "FIRE/FIRE 5.wav", "FIRE/FIRE 6.wav", "FIRE/FIRE 7.wav", "FIRE/FIRE 8.wav", "FIRE/FIRE 9.wav"], "vol": -9 },
+  "water":    { "files": ["WATER/WATER 1.wav", "WATER/WATER 2.wav", "WATER/WATER 3.wav", "WATER/WATER 4.wav", "WATER/WATER 5.wav", "WATER/WATER 6.wav"], "vol": -9 },
+  "rumble":   { "files": ["SUBWAY/SUBWAY 1.wav", "SUBWAY/SUBWAY 2.wav", "SUBWAY/SUBWAY 3.wav", "SUBWAY/SUBWAY 4.wav", "SUBWAY/SUBWAY 5.wav", "SUBWAY/SUBWAY 6.wav", "SUBWAY/SUBWAY 7.wav", "TRAIN/TRAIN 1.wav", "TRAIN/TRAIN 2.wav", "TRAIN/TRAIN 3.wav", "TRAIN/TRAIN 4.wav", "TRAIN/TRAIN 65.wav"], "vol": -9 },
+
+  "door":     { "files": ["Minecraft Door (Open and Close) - Sound Effect (HD).mp3"], "vol": -10, "copyright": true },
+  "eat":      { "files": ["Minecraft Eating - Sound Effect (HD) (320 kbps).mp3"], "vol": -10, "copyright": true },
+  "fall":     { "files": ["Minecraft Fall Damage (Crack) - Sound Effect (HD) (320 kbps).mp3"], "vol": -9, "copyright": true },
+  "teleport": { "files": ["dragon_ball_z_tele.mp3"], "vol": -9, "copyright": true },
+  "villain":  { "files": ["enemy-introduction-one-piece.mp3"], "vol": -10, "copyright": true },
+  "angry":    { "files": ["one-piece-angry.mp3"], "vol": -12, "copyright": true },
+  "sad":      { "files": ["naruto-sad-music-instant.mp3"], "vol": -14, "copyright": true },
+  "badass":   { "files": ["bad-to-the-bone-meme.mp3"], "vol": -9, "copyright": true }
+}

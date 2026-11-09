@@ -15,8 +15,9 @@ __all__ = ['shots', 'A', 'cam', 'S', 'C', 'ladainha', 'apply_ritmo', 'crush', 'w
            'load_timing', 'resolve_countdowns', 'clean', 'write', 'NARRATOR', 'HOUSE_VOICES']
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
-NARRATOR = {'id': 'u7N1p4OIOc6Fl7y72WE7', 'model': 'eleven_v4'}  # Yuri (docs/pipeline/EPISODE.md, Voice)
-HOUSE_VOICES = {'adulto': 'u4sbCzXyUVxIAihOtCss', 'adulta': 'dxIMMSJYSsbUSMhioLNb'}
+NARRATOR = {'id': '36rVQA1AOIPwpA3Hg1tC', 'model': 'eleven_v4'}  # Matheus, always animated (docs/pipeline/EPISODE.md, Voice)
+HOUSE_VOICES = {'adulto': 'u4sbCzXyUVxIAihOtCss', 'adulta': 'dxIMMSJYSsbUSMhioLNb',
+                'hero': '7u8qsX4HQsSHJ0f8xsQZ'}  # João Pedro, the hero's own voice (always dynamic/playful, 2026-11-09)
 
 shots = []
 TALK = [[0.05, 3.0]]                                             # talk window for a short line
@@ -125,9 +126,10 @@ def apply_ritmo(shots_):
             n += 1
 
 
-def episode(slug, title, cast, music, voices=None, voice=None, ritmo=None, clips=None, **kw):
+def episode(slug, title, cast, music, voices=None, voice=None, ritmo=None, clips=None, shorts=None, **kw):
     """The episode dict. music: [(shot id, mood), ...]. ritmo='rapido' applies the house pacing (apply_ritmo).
-    clips: [(title, first shot id, last shot id), ...] — the ≥ 4 self-contained ~90 s shorts (COLA "Cortes")."""
+    clips: retired (hand-cut ~90 s clips). shorts: the 4 vertical ~60 s shorts (COLA "Shorts"), a list of dicts
+    {title, cta, from, to, drop?, shots?, stage?, stageAt?, cutAt?} — rendered by tools/shorts.mjs."""
     if ritmo == 'rapido':
         apply_ritmo(shots)
     idx = shot_index()
@@ -137,11 +139,15 @@ def episode(slug, title, cast, music, voices=None, voice=None, ritmo=None, clips
         'voice': dict(voice or NARRATOR),
         'voices': dict(voices if voices is not None else HOUSE_VOICES),
         'cast': cast,
-        'music': [{'shot': idx[sid], 'mood': mood} for sid, mood in music],
+        # music: (shot id, mood) for a procedural bed, or (shot id, 'music/<slug>/track.mp3') for the user's track
+        # (house rule since 2026-11-09: the user sends the track before each episode), or (shot id, {file, vol})
+        'music': [{'shot': idx[sid], **(m if isinstance(m, dict) else {'file': m, 'vol': -20} if '/' in str(m) else {'mood': m})} for sid, m in music],
         'shots': shots,
     }
     if clips:
         ep['clips'] = [{'title': t, 'from': a, 'to': b} for t, a, b in clips]
+    if shorts:
+        ep['shorts'] = shorts
     ep.update(kw)
     return ep
 

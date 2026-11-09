@@ -20,7 +20,7 @@ Make one complete narrated episode about this topic with the saved hero, then ge
 - **Voice, music, look:** the house defaults in `docs/pipeline/EPISODE.md` and memory.
 - **Tone:** acid, bold and still monetizable, never the cute family tone: a narrator who is calm but sometimes malicious or sarcastic (`STORY_BLUEPRINT.md` §6.10, summarised in the cola's "Tom" section).
 - **Pacing:** the generator calls `episode(..., ritmo='rapido')`, as `_modelo.py` does. That gives automatic sub-cuts plus whip/zoom on set changes. Use `coverage='calm'` in the dilemma and `cut='smash'` by hand on reveals. Keep the subject and key text in the 9:16 centre column (audit `vertical`).
-- **Shorts:** at least 4 self-contained ~90 s clips, marked in `episode(clips=[...])` (cola, "Cortes para shorts"). The user cuts them by hand from the 16:9, so there is no vertical render.
+- **Shorts:** 4 vertical ~60 s shorts, planned in `episode(shorts=[...])` (cola, "Shorts"): the user's picks if they named moments, else the 4 strongest hooks. Each stops on a cliffhanger, the world freezes and the hero breaks the 4th wall with his own line sending viewers to the channel. Rendered after the episode with `tools/shorts.mjs` (EPISODE.md step 8b); their CTA voice (~160 credits) goes into the credit checkpoint.
 
 ## Run
 
@@ -29,11 +29,12 @@ Make one complete narrated episode about this topic with the saved hero, then ge
 3. **One checkpoint before spending credits.** Check the ElevenLabs credit balance (`GET /v1/user/subscription`; if the API key lacks `user_read`, ask the user to check elevenlabs.io/app/subscription or widen the key) and show the user, in one message:
    - the title and a short synopsis;
    - the script score and the path to `script.md`;
-   - the credit estimate: voice (`node tools/episode.mjs sections <slug>` prints it, ~0.4 credits/char on eleven_v4 — see the Voice section of EPISODE.md) plus thumbnails (3 × the per-image cost in `thumbnails/config.json`, fish mode only).
+   - the credit estimate: voice (`node tools/episode.mjs sections <slug>` prints it, ~0.4 credits/char on eleven_v4 — see the Voice section of EPISODE.md) plus the 4 shorts' hero lines (`tools/shorts.mjs voice`, ~160 credits) plus thumbnails (3 × the per-image cost in `thumbnails/config.json`, fish mode only).
 
-   Wait for one OK. That OK covers the voice and the 3 thumbnails; don't ask again for either. If the balance is too low, say so and stop there.
+   Wait for one OK. That OK covers the voice, the shorts' lines and the 3 thumbnails; don't ask again for any of them. If the balance is too low, say so and stop there.
 4. **Voice, align, pre-render review:** EPISODE.md steps 5–7, including the independent reviewer rounds (round 1 on the `revisor-episodio` agent, round 2+ on `revisor-verificacao`). Build only on "ready for final render".
 5. **Build and check:** steps 8–9. Re-render broken ranges until the sheets are clean.
+5b. **Shorts:** step 8b — `node tools/shorts.mjs plan <slug>` (fix its warnings), `voice <slug>`, `render <slug>`. Check each short's cut points and freeze in a frame strip before sending.
 6. **Thumbnails:** step 10, with the video now finished:
    - write `thumbnails/<slug>/brief.json` with exactly 3 variants (one scene per variant, drawn from the episode's strongest moments), then `node tools/thumb-prompt.mjs <slug>`;
    - `fish` mode: run `estimate_image_edit`, then submit all 3 jobs (already approved at the checkpoint), poll them together, and save each to `thumbnails/<slug>/out/<id>_2k_medium.png`. Review each at full size and at ~360 px; regenerate one only if it fails the step-10 checks (spelling, hero colour, stickman-only cast, no stray text), and only within the approved credits;
@@ -44,5 +45,6 @@ Make one complete narrated episode about this topic with the saved hero, then ge
 
 Keep the final message short:
 1. send the video, `final/<Episode title>.mp4`, with SendUserFile (`display: "render"`);
-2. send the 3 thumbnails with SendUserFile in one call, captioned A / B / C with their text;
-3. one or two lines: title, length, the 4+ clip timecodes from `final/<title> - cortes.txt` (the `.srt` beside the video is for the user's editor), and any warning you accepted. Ask which thumbnail to pick (`node tools/thumb-prompt.mjs <slug> --pick <id>`).
+2. send the 4 shorts, `final/shorts/<Episode title>/*.mp4`, with SendUserFile in one call, captioned with their titles;
+3. send the 3 thumbnails with SendUserFile in one call, captioned A / B / C with their text;
+4. one or two lines: title, length, the 4 shorts' hooks, and any warning you accepted. Ask which thumbnail to pick (`node tools/thumb-prompt.mjs <slug> --pick <id>`).

@@ -25,7 +25,7 @@ const memDir = opt('--memory') ?? (fs.existsSync(path.join(DOCS_MEMORY, 'MEMORY.
   : path.join(os.homedir(), '.claude', 'projects', ROOT.replace(/[^a-zA-Z0-9]/g, '-'), 'memory'));
 
 // What ships. Generated media, episodes and installs stay behind; the copy rebuilds what it needs.
-const SKIP_DIRS = new Set(['node_modules', '.venv', '.git', '.bootstrap', '.claude', 'out', 'voice_auditions', '__pycache__']);
+const SKIP_DIRS = new Set(['node_modules', '.venv', '.git', '.bootstrap', '.claude', 'out', 'voice_auditions', '__pycache__', 'referencias']); // referencias: the user's reference videos
 const FIXTURE_EPISODE = 'pipetest'; // the compositions' default slug; ships as JSON only (no audio)
 const EXAMPLE_BRIEF = 'thumbnails/swap-pilot/brief.json'; // docs/pipeline/EPISODE.md points at it as the brief format
 const KEEP_EMPTY = ['final/archive', 'final/thumbnails'];
@@ -33,6 +33,8 @@ function keep(rel) {
   if (rel === OUT_NAME) return false;
   if (rel.startsWith('docs/memory/') && path.resolve(memDir) === DOCS_MEMORY) return false; // ships as @memory/ instead
   if (rel.startsWith('final/')) return rel === 'final/README.md';
+  // the user's SFX pack: the map and guide ship (the validator imports the map); the audio is theirs and stays
+  if (rel.startsWith('efeitos-sonoros/')) return rel === 'efeitos-sonoros/map.json' || rel === 'efeitos-sonoros/README.md';
   if (rel.startsWith('public/episodes/')) return rel.startsWith(`public/episodes/${FIXTURE_EPISODE}/`) && /^[^/]+\.json$/.test(rel.split(`${FIXTURE_EPISODE}/`)[1]);
   if (rel.startsWith('public/audio/')) return !rel.endsWith('.wav'); // demo mixes come from their sfx scripts
   if (/^thumbnails\/[^/]+\//.test(rel) && !rel.startsWith('thumbnails/refs/')) return rel === EXAMPLE_BRIEF;

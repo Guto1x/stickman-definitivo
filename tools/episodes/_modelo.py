@@ -73,8 +73,10 @@ TITLE = 'E Se Você ...?'
 ep = episode(
     SLUG, TITLE,
     ritmo='rapido',
-    clips=[  # ≥ 4 shorts of ~90 s, whole shots, each opens on a cold hook (COLA "Cortes para shorts")
-        # ('O poder', 'c1', 'n3'), ('Os problemas', 'p1', 'p9'), ('O plano', '...', '...'), ('O clímax', 'k1', 'k12'),
+    shorts=[  # the 4 vertical ~60 s shorts (COLA "Shorts"): the user's picks if they named moments, else the 4 strongest hooks
+        # {'title': 'Um carro vinha e o meu corpo abriu um menu', 'from': 'a1', 'to': 'm4', 'stage': 'a7', 'stageAt': 1.6,
+        #  'cta': 'Quer saber o que essas barras escondem? Entra no canal e assiste a história completa.'},
+        # {'title': '...', 'from': 'x2', 'to': 'x14', 'drop': ['x8', 'x9'], 'cta': '... Entra no canal.'},
     ],
     cast={
         'bestie': {'name': '...'},

@@ -15,7 +15,7 @@ Until the key is working, everything except real voice-over works: ideas, script
 2. **Smoke test.** `GET https://api.elevenlabs.io/v1/voices` (header `xi-api-key: <key>`) must return 200. If it 401s, the key is wrong; if it 403s with `missing_permissions`, the key is scoped — note which permissions are missing (voices/TTS access is enough to run the pipeline; `user_read` is only needed for an automatic balance check, see step 5).
 
 3. **Pick house voices.** `tools/episode.mjs`'s `HOUSE_VOICES` needs a narrator, a male and a female voice, in the project's content language. The account's own saved voices (`/v1/voices`) may not have what's needed — search the full public library instead:
-   - `GET /v1/shared-voices?language=<lang>&use_cases=narrative_story` for narrator candidates (calm/warm, not "excited" or "upbeat" — the house style is unhurried).
+   - `GET /v1/shared-voices?language=<lang>&use_cases=narrative_story` for narrator candidates (animated, natural and enthusiastic — the house narrator is energetic, it holds retention; also try `use_cases=social_media`).
    - `GET /v1/shared-voices?language=<lang>&gender=male` / `&gender=female` for the secondary voices (young, casual/natural).
    - Pull 3–4 candidates per role, fetch each one's `preview_url`, and let the user pick by ear — don't choose a voice the user hasn't heard.
    - A public-library voice_id can be used directly in a TTS call without first "adding" it to the account.

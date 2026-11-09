@@ -1,6 +1,6 @@
 # Project instructions: 3D Stickman Long
 
-**Claude: read only lines 1–415 of this file.** Everything after that is the packed project (6.1 MB). If the user typed **start**, follow "For Claude: what start means" below.
+**Claude: read only lines 1–416 of this file.** Everything after that is the packed project (6.2 MB). If the user typed **start**, follow "For Claude: what start means" below.
 
 This one file rebuilds the 3D Stickman Long production system in an empty folder. That system makes IFOLOGY-style "What If" videos with a 3D stickman hero, built in code with Remotion 4 and Three.js, with Python sound effects and ElevenLabs narration. The file holds:
 - the engine, sets, cards and overlays;
@@ -10,7 +10,7 @@ This one file rebuilds the 3D Stickman Long production system in an empty folder
 - Claude's project memory;
 - the `/stickman <topic>` command (topic in, finished video and 3 thumbnails out).
 
-It holds 219 files in all, each with a checksum. It was packed on 2026-11-09. It holds no finished videos or episodes: you start with an empty channel.
+It holds 229 files in all, each with a checksum. It was packed on 2026-11-09. It holds no finished videos or episodes: you start with an empty channel.
 
 ## For the human
 
@@ -18,7 +18,7 @@ It holds 219 files in all, each with a checksum. It was packed on 2026-11-09. It
 2. Open a new Claude Code chat on that folder: the Code tab of the desktop app, or `claude` in a terminal there.
 3. Type **start**. (If Claude asks what to start, say "follow project instructions.md".)
 
-At 6.1 MB, the file is too big to paste into a chat, so it has to sit in the folder.
+At 6.2 MB, the file is too big to paste into a chat, so it has to sit in the folder.
 
 Claude asks four setup questions first:
 - what the main character wears (with ready-made looks if you don't want to describe one);
@@ -46,7 +46,7 @@ Everything else works before either is connected: ideas, scripts, shot lists, pr
 
 You are installing an existing project from this file. Every project file comes out of the payload, byte for byte, with its checksum verified. Never write a project file from memory or "improve" one while installing. The only edits you make are the ones the setup answers call for (step 7).
 
-Never read past line 415 with Read, cat or grep: the rest is 6.1 MB of payload. Keep a task list, and run the long installs in the background.
+Never read past line 416 with Read, cat or grep: the rest is 6.2 MB of payload. Keep a task list, and run the long installs in the background.
 
 **Shell.** Run every command in the Bash tool (Git Bash), with forward slashes, exactly as written here: `.venv/Scripts/python`, `--props='{"view":"close"}'`. If there is no Bash tool, use PowerShell:
 - write `.venv\Scripts\python`;
@@ -73,7 +73,7 @@ Ask all four in **one** AskUserQuestion call. If the tool isn't available, ask i
    - **Portuguese (PT-BR)**: "Scripts, VO text, overlays and thumbnail text in Portuguese. Code, docs and comments stay in English."
    - The automatic "Other" option lets the user name any other language; the story docs (`STORY_BLUEPRINT.md`, `COLA_ROTEIRO.md`, `IDEA_ENGINE.md`, `script_analysis.md`) get translated the same way.
 3. Header "Narrator". Question: "Which narrator voice should ElevenLabs use once it's connected?"
-   - **Default for the chosen language (Recommended)**: "Claude picks a calm, warm narrator in that language from ElevenLabs' public voice library once connected, and confirms it with you by ear before locking it in."
+   - **Default for the chosen language (Recommended)**: "Claude picks an animated, natural, enthusiastic narrator in that language from ElevenLabs' public voice library once connected, and confirms it with you by ear before locking it in."
    - **Audition first**: "When ElevenLabs is connected, Claude plays you free samples of 3–4 narrators in that language and you pick."
 4. Header "Thumbnails". Question: "How should thumbnails be made?"
    - **Fish GPT Image (Recommended)**: "Claude generates 3 options at 2K through Fish once it's connected (about 4.8k credits per episode)."
@@ -392,17 +392,18 @@ End with how to connect ElevenLabs (get a key, give it to Claude in a new chat) 
 | Path | Files | Size | What |
 |---|---|---|---|
 | `.claude/` | 3 | 6 KB | the `/stickman <topic>` command and the `revisor-verificacao` subagent (sonnet) |
-| `(root)` | 10 | 180 KB | `CLAUDE.md` (the project rules), `HOW_TO_USE.md`, `package.json`, `package-lock.json`, Remotion and TypeScript config |
+| `(root)` | 10 (1 binary) | 181 KB | `CLAUDE.md` (the project rules), `HOW_TO_USE.md`, `package.json`, `package-lock.json`, Remotion and TypeScript config |
 | `.vscode/` | 1 | 0 KB |  |
-| `@memory/` | 22 | 35 KB | Claude's memory for this project (extracted into the new project's memory folder) |
+| `@memory/` | 23 | 40 KB | Claude's memory for this project (extracted into the new project's memory folder) |
 | `data/` | 47 | 415 KB | idea-engine data: competitor titles, beat sheets, transcripts, patterns, ideas backlog |
-| `docs/` | 21 (8 binary) | 1367 KB | style bible, story blueprint, idea engine, reviewer brief, ElevenLabs and Fish first-connect checklists, channel research with reference frames |
+| `docs/` | 22 (8 binary) | 1378 KB | style bible, story blueprint, idea engine, reviewer brief, ElevenLabs and Fish first-connect checklists, channel research with reference frames |
+| `efeitos-sonoros/` | 2 | 6 KB |  |
 | `final/` | 1 | 1 KB | its README (finished videos land here) |
 | `projeto-2/` | 1 | 0 KB |  |
 | `public/` | 5 (1 binary) | 1571 KB | the `pipetest` fixture episode (JSON only), empty `music/` and `sfx/` |
-| `src/` | 71 | 619 KB | the engine (rig, Stickman, actors, cameras, materials, effects), sets, cards, overlays, the episode pipeline and its self-tests |
+| `src/` | 75 | 662 KB | the engine (rig, Stickman, actors, cameras, materials, effects), sets, cards, overlays, the episode pipeline and its self-tests |
 | `thumbnails/` | 7 (3 binary) | 306 KB | config, the prompt template, the 3 reference images, an example brief |
-| `tools/` | 30 | 352 KB | build, episode, QA, review, stills, thumbnail and pack tools; Python sound design, music and idea tools |
+| `tools/` | 32 | 373 KB | build, episode, QA, review, stills, thumbnail and pack tools; Python sound design, music and idea tools |
 
 Left out on purpose:
 - finished videos, episodes, voice-overs and thumbnails (you start with an empty channel);
@@ -418,7 +419,6 @@ To repack after changing the project, run `node tools/pack/pack.mjs`. It rewrite
 @@@@ DIR final/archive
 @@@@ DIR final/thumbnails
 @@@@ DIR public/music
-@@@@ DIR public/sfx
 @@@@ FILE .claude/agents/revisor-episodio.md | text | 542 | f561f8f3542511b5e60a39a3a4d2355e115f0e5f605e67bd47a7464bf426b4b1
 ---
 name: revisor-episodio
@@ -439,7 +439,7 @@ effort: medium
 ---
 Você é o revisor de verificação. Siga docs/review/REVIEWER_BRIEF.md, seção "Verification rounds".
 @@@@ END
-@@@@ FILE .claude/commands/stickman.md | text | 5097 | fc0b77a39e80884eea318d5ca042d4b0fcbcc7469d4f19f6ed61bb53196f011e
+@@@@ FILE .claude/commands/stickman.md | text | 5649 | c9a10f0d5097df1c4b667af5a85906c6e1bf87e125371dae3da8e64b2525c777
 ---
 description: Make a full "What If" stickman episode from a topic, then generate its 3 thumbnails
 argument-hint: <video topic, e.g. What If You Could Swap Places With Anyone>
@@ -462,7 +462,7 @@ Make one complete narrated episode about this topic with the saved hero, then ge
 - **Voice, music, look:** the house defaults in `docs/pipeline/EPISODE.md` and memory.
 - **Tone:** acid, bold and still monetizable, never the cute family tone: a narrator who is calm but sometimes malicious or sarcastic (`STORY_BLUEPRINT.md` §6.10, summarised in the cola's "Tom" section).
 - **Pacing:** the generator calls `episode(..., ritmo='rapido')`, as `_modelo.py` does. That gives automatic sub-cuts plus whip/zoom on set changes. Use `coverage='calm'` in the dilemma and `cut='smash'` by hand on reveals. Keep the subject and key text in the 9:16 centre column (audit `vertical`).
-- **Shorts:** at least 4 self-contained ~90 s clips, marked in `episode(clips=[...])` (cola, "Cortes para shorts"). The user cuts them by hand from the 16:9, so there is no vertical render.
+- **Shorts:** 4 vertical ~60 s shorts, planned in `episode(shorts=[...])` (cola, "Shorts"): the user's picks if they named moments, else the 4 strongest hooks. Each stops on a cliffhanger, the world freezes and the hero breaks the 4th wall with his own line sending viewers to the channel. Rendered after the episode with `tools/shorts.mjs` (EPISODE.md step 8b); their CTA voice (~160 credits) goes into the credit checkpoint.
 
 ## Run
 
@@ -471,11 +471,12 @@ Make one complete narrated episode about this topic with the saved hero, then ge
 3. **One checkpoint before spending credits.** Check the ElevenLabs credit balance (`GET /v1/user/subscription`; if the API key lacks `user_read`, ask the user to check elevenlabs.io/app/subscription or widen the key) and show the user, in one message:
    - the title and a short synopsis;
    - the script score and the path to `script.md`;
-   - the credit estimate: voice (`node tools/episode.mjs sections <slug>` prints it, ~0.4 credits/char on eleven_v4 — see the Voice section of EPISODE.md) plus thumbnails (3 × the per-image cost in `thumbnails/config.json`, fish mode only).
+   - the credit estimate: voice (`node tools/episode.mjs sections <slug>` prints it, ~0.4 credits/char on eleven_v4 — see the Voice section of EPISODE.md) plus the 4 shorts' hero lines (`tools/shorts.mjs voice`, ~160 credits) plus thumbnails (3 × the per-image cost in `thumbnails/config.json`, fish mode only).
 
-   Wait for one OK. That OK covers the voice and the 3 thumbnails; don't ask again for either. If the balance is too low, say so and stop there.
+   Wait for one OK. That OK covers the voice, the shorts' lines and the 3 thumbnails; don't ask again for any of them. If the balance is too low, say so and stop there.
 4. **Voice, align, pre-render review:** EPISODE.md steps 5–7, including the independent reviewer rounds (round 1 on the `revisor-episodio` agent, round 2+ on `revisor-verificacao`). Build only on "ready for final render".
 5. **Build and check:** steps 8–9. Re-render broken ranges until the sheets are clean.
+5b. **Shorts:** step 8b — `node tools/shorts.mjs plan <slug>` (fix its warnings), `voice <slug>`, `render <slug>`. Check each short's cut points and freeze in a frame strip before sending.
 6. **Thumbnails:** step 10, with the video now finished:
    - write `thumbnails/<slug>/brief.json` with exactly 3 variants (one scene per variant, drawn from the episode's strongest moments), then `node tools/thumb-prompt.mjs <slug>`;
    - `fish` mode: run `estimate_image_edit`, then submit all 3 jobs (already approved at the checkpoint), poll them together, and save each to `thumbnails/<slug>/out/<id>_2k_medium.png`. Review each at full size and at ~360 px; regenerate one only if it fails the step-10 checks (spelling, hero colour, stickman-only cast, no stray text), and only within the approved credits;
@@ -486,35 +487,33 @@ Make one complete narrated episode about this topic with the saved hero, then ge
 
 Keep the final message short:
 1. send the video, `final/<Episode title>.mp4`, with SendUserFile (`display: "render"`);
-2. send the 3 thumbnails with SendUserFile in one call, captioned A / B / C with their text;
-3. one or two lines: title, length, the 4+ clip timecodes from `final/<title> - cortes.txt` (the `.srt` beside the video is for the user's editor), and any warning you accepted. Ask which thumbnail to pick (`node tools/thumb-prompt.mjs <slug> --pick <id>`).
+2. send the 4 shorts, `final/shorts/<Episode title>/*.mp4`, with SendUserFile in one call, captioned with their titles;
+3. send the 3 thumbnails with SendUserFile in one call, captioned A / B / C with their text;
+4. one or two lines: title, length, the 4 shorts' hooks, and any warning you accepted. Ask which thumbnail to pick (`node tools/thumb-prompt.mjs <slug> --pick <id>`).
 @@@@ END
 @@@@ FILE .env | text | 71 | e2e9b2be43ba6353ae5405004fc726e5ee1d97b39e17ff6fd83e004d925133b0
 ELEVENLABS_API_KEY=sk_9ef151765d9a693da644a2efbe652f10f2b6e8b65cffba9d
 @@@@ END
-@@@@ FILE .gitignore | text-crlf | 259 | 3e776671dc04f99d63bbfd2149e37da4e515142d8be4e029f94caac49cbdc92f
-.env
-node_modules/
-.venv/
-out/
-final/
-# vo/: keep the PAID ElevenLabs audio (sNN.mp3 + sNN.align.json) so a clone never re-bills it; the .wav is derived
-public/episodes/*/vo/*.wav
-public/episodes/*/raw/
-public/episodes/*/mix.wav
-__pycache__/
-*.pyc
+@@@@ FILE .gitignore | base64 | 443 | 0ac993cc71dc89af09b46f941848e35b01c48282cb79744a42d5d8184cbdc116
+LmVudg0Kbm9kZV9tb2R1bGVzLw0KLnZlbnYvDQpvdXQvDQpmaW5hbC8NCiMgdm8vOiBrZWVwIHRo
+ZSBQQUlEIEVsZXZlbkxhYnMgYXVkaW8gKHNOTi5tcDMgKyBzTk4uYWxpZ24uanNvbikgc28gYSBj
+bG9uZSBuZXZlciByZS1iaWxscyBpdDsgdGhlIC53YXYgaXMgZGVyaXZlZA0KcHVibGljL2VwaXNv
+ZGVzLyovdm8vKi53YXYNCnB1YmxpYy9lcGlzb2Rlcy8qL3Jhdy8NCnB1YmxpYy9lcGlzb2Rlcy8q
+L21peC53YXYNCl9fcHljYWNoZV9fLw0KKi5weWMNCiMgc2hvcnRzOiB0aGUgY3V0IHNvdW5kdHJh
+Y2sgaXMgZGVyaXZlZCAoZXBpc29kZSBtaXggKyBmcmVlemUgU0ZYICsgQ1RBKTsga2VlcCBwbGFu
+X04uanNvbiBhbmQgdGhlIFBBSUQgY3RhX04ubXAzL2pzb24KcHVibGljL2VwaXNvZGVzLyovc2hv
+cnRzL3Nob3J0Xyoud2F2CnB1YmxpYy9hdWRpby9zZnhfZnJlZXplLndhdgo=
 @@@@ END
 @@@@ FILE .vscode/settings.json | text-crlf | 44 | 9f46c0b92be738015393f3d975bebbdcc62838d47b61208e8502a225ac4c105d | noeol
 {
     "python.terminal.useEnvFile": true
 }
 @@@@ END
-@@@@ FILE @memory/MEMORY.md | text | 3752 | 715a8def4ee6b8c4e67237b2ed8ee93f8849bf9cf92d8dbf3aac6e2706962217
+@@@@ FILE @memory/MEMORY.md | text-crlf | 3979 | 815851ba503f723e518b684b54970c9cd3c3543b05de42ed33490625ef4d11ef
 - [IFOLOGY-style channel](project-ifology-style-channel.md) — channel "Fora do Roteiro", logo public/brand/logo.png; IFOLOGY-look hero in a GRAY quarter-zip jacket (since 2026-11-08), flat final/ folder, Remotion+Three engine, Python SFX, ElevenLabs voice
 - [Review-and-fix loop](feedback-review-and-fix-loop.md) — audit + independent reviewer BEFORE final render, then review the render; fix everything; 1080p final
 - [No camera snaps](feedback-no-camera-snaps.md) — never cut between near-identical framings ("a few pixels over"); flow instead; real angle changes are fine
-- [Voices](project-narrator-voice.md) — ElevenLabs PT-BR: narrator Yuri (eleven_v4) with a calm `[calm]` direction; house male Eduardo / female Sofia; ~0.4 credits/char
+- [Voices](project-narrator-voice.md) — narrator Matheus always animated ([excited]), hero João Pedro always dynamic ([playful], `who: "hero"`), picked 2026-11-09; Eduardo/Sofia others; ~0.45 credits/char
 - [PT-BR content adaptation](project-pt-br-adaptation.md) — scripts/VO/overlays/thumbnails + story docs are PT-BR since 2026-11-08; code/CLAUDE.md stay English
 - [ElevenLabs API key](reference-elevenlabs-key.md) — in D:\stickman-2\.env, gitignored; scoped (no user_read/models_read) — check balance on the dashboard
 - [Thumbnails via GPT Image 2.5](project-thumbnails-gpt-image.md) — 2D GPT Image thumbs, fish or chatgpt mode (chatgpt now), locked 3 variants at 2K medium, only when a video is ~finished; gray quarter-zip jacket
@@ -524,14 +523,34 @@ __pycache__/
 - [Tom ácido](feedback-tom-acido.md) — no cute/family tone: narrator calm but sometimes malicious/sarcastic; bold stakes, still monetizable (2026-11-08)
 - [CLAUDE.md enxuto](feedback-nao-reestruturar-claude-md.md) — episode pipeline moved to docs/pipeline/EPISODE.md, round-1 reviewer on sonnet agent revisor-episodio (2026-11-09)
 - [/clear entre tarefas](feedback-clear-entre-tarefas.md) — remind the user to /clear when switching to an unrelated task (2026-11-09)
-- [Ritmo rápido](project-ritmo-rapido.md) — house pacing since 2026-11-08: coverage sub-cuts, whip/zoom/smash, 9:16-safe; generators use ritmo='rapido'; NO native vertical render — user cuts 9:16 by hand from the 16:9
-- [Cortes p/ shorts](feedback-cortes-shorts.md) — every long episode needs ≥ 4 self-contained ~90 s segments (episode clips); build writes .srt + cortes.txt
+- [Ritmo rápido](project-ritmo-rapido.md) — house pacing since 2026-11-08: coverage sub-cuts, whip/zoom/smash, 9:16-safe; generators use ritmo='rapido'; shorts now rendered vertical
+- [Shorts verticais](feedback-cortes-shorts.md) — 4 rendered 1080×1920 shorts/episode, 60 s, freeze + hero breaks the 4th wall → channel; user's picks or mine from the script
 - [Episódios prontos: congelados](project-refazer-episodios.md) — finished episodes are posted at once and never fixed/re-rendered for new rules; zumbi kept; keep /stickman credit stop
 - [Duração ≥ 10 min](feedback-duracao-10min.md) — every long episode ≥ 10:00 voiced (~1,600–1,700 words); audit warns [length]; zumbi stays 9:14 (2026-11-09)
 - [Gancho nos 10 s](feedback-gancho-10s.md) — new episodes only: ≥ 2 hook types, ≥ 6 cuts, punchy move, SFX ≤ 2 s; audit [hook]; zumbi opted out (2026-11-09)
-- [Sem música](feedback-sem-musica.md) — menu-do-corpo episode has NO music (user adds tracks in their editor, 2026-11-09); ask on the next episode if it's a house rule
+- [Música e SFX do usuário](feedback-sem-musica.md) — the user sends the background track before each episode (it goes IN the video) and an SFX pack; no generated beds
 - [Fórmula shorts adotada](project-formula-shorts-adotada.md) — 2026-11-09: ≤15 pal./frase, consequência antes do conceito, cético que perde, sem adjetivo fraco; ímã de graves, ciclo de closes, câmera mais móvel, audit de corpo atravessando objeto
+- [Batida visual](feedback-batida-visual.md) — Vitinho references (2026-11-09): a visual beat every 1–2 s, sound on every visual event, blurred transitions, dry breaths; audit [beat]
 - [ElevenLabs pending](project-elevenlabs-pending.md) — no working ELEVENLABS_API_KEY at setup; run docs/ELEVENLABS_SETUP.md once one is added to .env
+@@@@ END
+@@@@ FILE @memory/feedback-batida-visual.md | text | 1843 | 979fa947601130e6de28125a02fe38f357a03b0fc4cca9877320f92b9bda5627
+---
+name: feedback-batida-visual
+description: "House retention rule from the \"Aprendendo com Vitinho\" references (2026-11-09) — a visual beat every 1–2 s even without a cut, a sound on every visual event, blurred transitions, dry sentence breaths"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: dcf204f0-052a-4ee9-a82d-af53fda4b0b3
+  modified: 2026-11-09T23:33:12.357Z
+---
+
+On 2026-11-09 the user dropped 3 reference videos in `referencias/` (Aprendendo com Vitinho, vertical 2–3 min stories) and asked to make their retention tricks a rule: "quantidade de transição, barulho bem feito das animações, cortes e efeitos de áudio".
+
+Measured: 23–28 cuts/min (median shot 1.5 s); between cuts, something changes every 1–2 s (objects flying in, sweat/?/tears marks, a red circle on a detail, sunburst on reveals, crowd greyed with the subject in colour, spotlight, day↔night for time passing); motion-blur whips/zooms; a constant low music bed (~20 dB under the voice); 21–26 dry silences/min (~0.13 s) where everything drops out, often right on the picture cut; a sound on nearly every visual event.
+
+**Why:** that density of change + sound is what holds the viewer; our cuts were already at that rate, the beats and the sound design were not.
+
+**How to apply:** the cola's "Batida visual" section and EPISODE.md list the tools (`emote`, `circle`, `flyin`, `timewarp`, `spotlight`, `fx.burst`, `fx.focus`, cut `push`); every one has an automatic sound; the audit warns `[beat]` on > 2.5 s without anything new. Music + SFX come from the user ([[feedback-sem-musica]]). Applies to new episodes and their shorts ([[feedback-cortes-shorts]]), never to posted ones ([[project-refazer-episodios]]). Analyse the references by style only — never copy their characters or art ([[project-ifology-style-channel]]).
 @@@@ END
 @@@@ FILE @memory/feedback-clear-entre-tarefas.md | text | 722 | 7e584f5dadbd6d2b2cb904e5df33a1ad6801098015cf33ef815276606f2f56f8
 ---
@@ -547,19 +566,26 @@ The user asked (2026-11-09) to be reminded to `/clear` when they switch tasks, s
 
 **How to apply:** when a task finishes and the user's next request is unrelated (new episode, engine change, thumbnails, tooling), add one short line suggesting `/clear` first. Not mid-task, and not more than once per switch. Related: [[feedback-nao-reestruturar-claude-md]].
 @@@@ END
-@@@@ FILE @memory/feedback-cortes-shorts.md | text | 1071 | 743a95b4f29187679ba8c2e35d2841ef00f6386ded9977613b6652b60a057e04
+@@@@ FILE @memory/feedback-cortes-shorts.md | text | 1850 | 6dfee422c5eafac63b1bf1f844efd7389cb6482fcb5c01e75f3e142d9a5fde3d
 ---
 name: feedback-cortes-shorts
-description: Every long (~10 min) episode must contain ≥ 4 self-contained ~90 s segments the user can cut by hand into YouTube Shorts / Reels / TikTok (user rule, 2026-11-08)
+description: "Every episode gets 4 rendered VERTICAL 60 s shorts, each a self-contained mini-story that freezes on a cliffhanger while the hero breaks the 4th wall to send viewers to the channel (user rule, 2026-11-09; replaces the hand-cut ~90 s clips)"
 metadata:
+  node_type: memory
   type: feedback
+  originSessionId: dcf204f0-052a-4ee9-a82d-af53fda4b0b3
+  modified: 2026-11-09T22:52:16.797Z
 ---
 
-The user cuts shorts by hand from the 16:9 episode (no native vertical render, see [[project-ritmo-rapido]]) and requires every long episode to have **at least 4 scenes usable as ~90 s shorts**.
+**Rule (user, 2026-11-09):** after each episode is built, also generate **4 shorts**, rendered **vertical (1080×1920), ready to post** — the user no longer cuts shorts by hand from the 16:9.
 
-**Why:** each long video should also feed Shorts, Reels and TikTok without extra production.
+- **60 s each.** A mini-story that makes sense alone: cold hook → context → tension, cut at the peak **before** the payoff.
+- **Ending = 4th-wall break:** the world freezes (everything stops) and only the hero turns to the lens and talks, e.g. "Quer saber o que acontece? Entra no canal e assiste a história completa." The line is written **per short**, tied to that short's hook (4 new lines per episode).
+- **Who picks the moments:** if the user names the parts while the episode is being made, use exactly those (and don't add others). If not, pick the 4 moments from the script and the retention rules — the strongest hooks whose cut leaves the viewer needing the rest.
 
-**How to apply:** when writing the script and shot list, plan the 4 segments (COLA_ROTEIRO "Cortes para shorts"): each opens on a cold hook that needs no context, ends on a punch or cliffhanger, keeps subject and text in the centre column, and avoids two-column cards. Mark them in the generator with `episode(clips=[(title, first shot id, last shot id), ...])`; the audit warns under 4 clips or outside 60–95 s. The build writes `final/<title>.srt` (exact word times) and `final/<title> - cortes.txt` (timecodes) for the user's editor.
+**Why:** the hand-cut clips had no context ("sem nexo"); a short exists to make people want to subscribe and watch the full story, not to hand them a random fragment.
+
+**How to apply:** plan the 4 shorts at script time (or take the user's picks), check each opens cold and ends on an open question, and render them after the main build. Supersedes the old "≥ 4 ~90 s clips cut by hand" rule and the "no native vertical render" part of [[project-ritmo-rapido]]. Voice for the hero's line: see [[project-narrator-voice]] (being re-chosen).
 @@@@ END
 @@@@ FILE @memory/feedback-duracao-10min.md | text | 1033 | 4b3760cc7ca4e0f1f8f71194fd37df1254e3a6543bd61cc8c66073420dcc92ff
 ---
@@ -677,21 +703,26 @@ On 2026-10-27 the user found a swap bug that two of my reviews had missed: the s
 
 Related: [[project-ifology-style-channel]], [[feedback-no-camera-snaps]].
 @@@@ END
-@@@@ FILE @memory/feedback-sem-musica.md | text | 825 | 337db945292318e7c054d300656403443e170f876359f58f475564919d063907
+@@@@ FILE @memory/feedback-sem-musica.md | text | 1659 | f50caff5e0174453a5fca6a747676cfbdb20ce09baf0c41587828ea4356cb12a
 ---
 name: feedback-sem-musica
-description: "Menu-do-corpo episode (2026-11-09) is built with NO music — the user adds their own background tracks in their editor; ask before assuming this for later episodes"
+description: "Music and SFX come from the user (2026-11-09): a background track goes INTO the video, sent by the user before each episode; a user SFX pack replaces the synthesized sounds; menu-corpo stays music-free"
 metadata:
+  node_type: memory
   type: feedback
+  originSessionId: dcf204f0-052a-4ee9-a82d-af53fda4b0b3
+  modified: 2026-11-09T23:25:36.879Z
 ---
 
-On 2026-11-09, during the `/stickman` run for "E Se Você Encontrasse o Menu de Configurações do Seu Corpo?", the user said: "não adiciona música. Eu vou colocar umas diferentes no editor mesmo para ficar no fundo do vídeo."
+**Music (user, 2026-11-09, after the Vitinho reference analysis):** the background track goes into the video itself (long and shorts), low under the voice (~20 dB below), dropping out with the voice in the short sentence breaths. The user **sends the track before each episode** — the procedural music beds are "muito genéricas" and are not used any more. Ask for the track at the start of each episode if it hasn't arrived; put it in `public/music/<slug>/` and point the generator's `music=[('a1', 'music/<slug>/<file>.mp3')]` at it.
 
-**Why:** they prefer picking background music themselves in their editor.
+**SFX:** the user is leaving an SFX pack in the project before the next episode. It arrived on 2026-11-09 in `efeitos-sonoros/` and is mapped in `efeitos-sonoros/map.json` (event name → files; meme/anime/game excerpts flagged `copyright`, used only by name); mapped events use the pack, unmapped ones fall back to the synthesized sounds in `tools/sfx/sfxlib.py`.
 
-**How to apply:** set every music cue to `none` for that episode (voice, ambience and SFX stay). It isn't yet clear whether it's a house rule: on the next episode, ask once whether to keep leaving music out, then update this memory. Related: [[project-ifology-style-channel]].
+**Why:** the generated music and synthesized SFX sound generic; the reference channel retains with a real music bed and well-made sound effects on every visual event.
+
+**History:** menu-corpo (2026-11-09) was built with no music at all ("vou colocar no editor") — it stays as posted ([[project-refazer-episodios]]). Related: [[project-ifology-style-channel]].
 @@@@ END
-@@@@ FILE @memory/feedback-tom-acido.md | text | 1405 | c8ccc8a2d821310a25b4cad8deaf3dda44fd200b000f6b51529b57ab65af0a06
+@@@@ FILE @memory/feedback-tom-acido.md | text | 1423 | ccbb94c9a2391d8d068568cb1a85e62814d865efaa08ab7e2a59e89d2875ad56
 ---
 name: feedback-tom-acido
 description: Script tone is acid/bold, NOT the cute family IFOLOGY tone — narrator calm at base but sometimes malicious/sarcastic; bold appealing stakes, still YouTube-monetizable (user, 2026-11-08)
@@ -703,7 +734,7 @@ On 2026-11-08 the user said scripts must be bolder and more "apelativo", and the
 
 **Why:** the user felt the episodes were too soft/safe to hold attention.
 
-**How to apply:** follow STORY_BLUEPRINT.md §6.10 (summary in COLA_ROTEIRO "Tom"): one sarcastic/malicious jab every 30–60 s, none in the dilemma; family acts out of self-interest, no hug-fixes-all ending or spoken moral; high stakes early; clickbait titles the episode actually delivers. Narrator tags `[sarcastic] [mischievously] [deadpan] [darkly amused]`, `[menacing]` 1–3×/episode — all 5 tested on Yuri on 2026-11-08 and approved by the user. Base direction stays `[calm]` (see [[project-narrator-voice]]); faster pacing is visual (cuts), not a hyper voice.
+**How to apply:** follow STORY_BLUEPRINT.md §6.10 (summary in COLA_ROTEIRO "Tom"): one sarcastic/malicious jab every 30–60 s, none in the dilemma; family acts out of self-interest, no hug-fixes-all ending or spoken moral; high stakes early; clickbait titles the episode actually delivers. Narrator tags `[sarcastic] [mischievously] [deadpan] [darkly amused]`, `[menacing]` 1–3×/episode — all 5 tested on Yuri on 2026-11-08 and approved by the user. Since 2026-11-09 the base is the animated Matheus voice (`[excited]`, see [[project-narrator-voice]]); the jabs ride on that energy.
 @@@@ END
 @@@@ FILE @memory/project-2-series-future.md | text | 2673 | 62614de0eb046cb3f1c7a0c0ee5c6f43440e92d2bfae669d102ffc27491b18bb
 ---
@@ -823,10 +854,10 @@ The user is building a faceless YouTube channel of 3D stickman "What If" videos.
 - Final output is always 1080p.
 - See [[feedback-review-and-fix-loop]].
 @@@@ END
-@@@@ FILE @memory/project-narrator-voice.md | text | 3009 | 98bd52c2b33c47747d1a3a425723f215d40b65db2457c01b0cb65eb83a6b2be7
+@@@@ FILE @memory/project-narrator-voice.md | text | 3797 | 20a1844d0445280b3c9183675c71122b92c9892f42ea332a244cb9b9c3e9ed50
 ---
 name: project-narrator-voice
-description: "ElevenLabs voices for the stickman channel (PT-BR) — narrator Yuri u7N1p4OIOc6Fl7y72WE7 (eleven_v4) with a calm [calm] direction, plus house male Eduardo and female Sofia for other characters; measured ~0.4 credits/char"
+description: "ElevenLabs PT-BR voices — narrator Matheus 36rVQA1AOIPwpA3Hg1tC always animated ([excited]), hero João Pedro 7u8qsX4HQsSHJ0f8xsQZ always dynamic ([playful]) — both picked by ear 2026-11-09; Eduardo/Sofia for other characters; ~0.45 credits/char"
 metadata:
   node_type: memory
   type: project
@@ -847,8 +878,13 @@ This replaces the old Fish Audio narrator ("Warm Storyteller") entirely — voic
 - **Alignment is exact, not transcribed.** `align` reads ElevenLabs' own per-character timestamps for the text we sent — no Whisper, no ASR, no fuzzy word-matching. See [[feedback-no-camera-snaps]]'s sibling rule in CLAUDE.md's hard-won rules for why this matters (it was a real recurring bug source before).
 - The account's API key is scoped: it can list voices, call TTS and read usage stats, but lacks `user_read` (no automatic balance check) and `models_read`. Check elevenlabs.io/app/subscription manually, or widen the key, if an automatic balance check is ever needed.
 
+**Current voices (user's picks by ear, 2026-11-09 — supersede Yuri and the calm direction above):**
+- **Narrator: Matheus — "Friendly and Energetic"** `36rVQA1AOIPwpA3Hg1tC`. Always in that animated, natural, enthusiastic tone — "tem que ser assim sempre pra reter". Base direction `[excited]`, stability 0.4 (both defaults in tools/episode.mjs). The sarcastic/malicious tags of [[feedback-tom-acido]] ride on top of that energy.
+- **Hero: João Pedro — dynamic** `7u8qsX4HQsSHJ0f8xsQZ`, `who: "hero"`. Always that dynamic, playful tone (`[playful]` added automatically), except when the scene demands another — then the line starts with its own tag. First used for the shorts' 4th-wall break ([[feedback-cortes-shorts]]).
+- Picked from an 11-sample audition (6 narrators, 5 heroes; 1905 chars → 869 credits ≈ 0.45 credits/char).
+
 **How to apply:**
-- Use the narrator voice for all narration, with the `[calm]` base direction — plus sarcastic/malicious tags at chosen beats since 2026-11-08 (see [[feedback-tom-acido]]). Don't go back to a more "energetic" direction without asking — the same lesson from the old Fish voice still applies: the user found hyper/quick pacing unpleasant.
+- Use Matheus for all narration with the `[excited]` base direction — plus sarcastic/malicious tags at chosen beats since 2026-11-08 (see [[feedback-tom-acido]]). (The old "don't go energetic" caution is retired: the user now wants the energetic tone.)
 - Use the house male/female voices for character lines unless the user picks others.
 - Don't swap voices or models without asking.
 - Related: [[project-ifology-style-channel]], [[project-pt-br-adaptation]].
@@ -914,10 +950,10 @@ Only **invasao-zumbi** is kept. quem-tem-crush was discarded as a test on 2026-1
 - Voice-cost lesson: a section spans many shots, so changing one line re-voices the whole section. When re-voicing, show the user a full credit option and a lean one.
 - **Finished = posted = frozen (user, 2026-11-09):** episodes go up as soon as they're ready, so never spend effort fixing or re-rendering a finished one (menu-corpo, zumbi) when a new rule or audit check flags it — e.g. the new `clip` errors in both. New engine/audit rules apply to the next episodes only.
 @@@@ END
-@@@@ FILE @memory/project-ritmo-rapido.md | text | 1785 | fe899e7044d538dc79ad37f634ae2fb929b193e711796b4b8981b5e11f5d8f0f
+@@@@ FILE @memory/project-ritmo-rapido.md | text | 1682 | 7cfa9c11e53735953ee6fa673784caae0376123e14a290dd095ca4db82b89bcb
 ---
 name: project-ritmo-rapido
-description: House pacing since 2026-11-08 — sub-cuts (coverage), two-sided whip/zoom/smash transitions, 9:16-safe framing; user loved the 10 s test (teste-ritmo)
+description: House pacing since 2026-11-08 — sub-cuts (coverage), two-sided whip/zoom/smash transitions, 9:16-safe framing (shorts are rendered vertical since 2026-11-09)
 metadata:
   type: project
 ---
@@ -929,7 +965,7 @@ On 2026-11-08 the user asked for livelier camera work and transitions, faster cu
 
 **Why:** the episodes felt slow (~3.9 s/shot, mostly near-static `drift`, no transitions).
 
-**How to apply:** new episodes use ritmo='rapido'; `calm` in the dilemma, `smash` by hand on reveals/punchlines. **No native 9:16 render** (user, 2026-11-08): they render 16:9 only and cut the shorts by hand in their own editor — cheaper and they keep control. So the 16:9 must stay crop-friendly: subject in the centre column (audit `vertical`), important text inside it too, and helpers that feed their manual edit (e.g. an .srt from the word timings, a hi-res re-render of a chosen range) instead of a shorts pipeline. Pairs with [[feedback-tom-acido]]; never cut between near-identical framings ([[feedback-no-camera-snaps]]).
+**How to apply:** new episodes use ritmo='rapido'; `calm` in the dilemma, `smash` by hand on reveals/punchlines. **Native vertical shorts since 2026-11-09** (the old "no native 9:16, cut by hand" rule is retired): 4 rendered 1080×1920 shorts per episode, see [[feedback-cortes-shorts]]. The 16:9 still keeps the subject and key text in the centre column (audit `vertical`), since the shorts reuse those cameras. Pairs with [[feedback-tom-acido]]; never cut between near-identical framings ([[feedback-no-camera-snaps]]).
 @@@@ END
 @@@@ FILE @memory/project-thumbnails-gpt-image.md | text | 1506 | 76ce0aef767f3b1c939658b94f648496cada7dee05ea0913f64cb8ca4cf8fa82
 ---
@@ -970,7 +1006,7 @@ The ElevenLabs API key `tools/episode.mjs` uses lives in `D:\stickman-2\.env` as
 - To check the real remaining credit balance, ask the user to look at elevenlabs.io/app/subscription, or to create/widen a key with `user_read`.
 - To measure actual cost of a call, use `/v1/usage/character-stats?start_unix=<ms>&end_unix=<ms>&include_live_requests=true` and diff before/after — this works with the current key and is how the ~0.4 credits/char rate for eleven_v4 was measured (see [[project-narrator-voice]]).
 @@@@ END
-@@@@ FILE CLAUDE.md | text-crlf | 13697 | 07464d6a80aee9e66f6a269d70cb35236a4bd37b6b4071ba4e421267272db37d
+@@@@ FILE CLAUDE.md | text-crlf | 13749 | 6d525de2671c705860d409edabe5134254d04b267113c061f81f8bbd82838bc9
 # 3D Stickman Long: production system
 
 > **ElevenLabs is not connected yet.** This copy was set up from `project instructions.md` without a working `ELEVENLABS_API_KEY`. The first time one is added to `.env`, run `docs/ELEVENLABS_SETUP.md` before any voice work; its last step deletes this note. Until then, take episodes as far as the draft preview. (Fish Audio is separate and optional — only needed for `fish`-mode thumbnails; see `docs/FISH_SETUP.md`.)
@@ -988,7 +1024,7 @@ This project makes IFOLOGY-style 3D stickman videos for the channel **Fora do Ro
 
 ## `/stickman <topic>`: one command, whole episode
 
-`.claude/commands/stickman.md` runs the long-form pipeline (`docs/pipeline/EPISODE.md`) end to end for a topic, with the saved hero: script, shot list, one credit checkpoint, voice, review, build, then the 3 thumbnails, and sends the video and thumbnails. Its portable copy is `tools/pack/fresh/stickman.md`; edit both together (the local one adds a demo shortcut that must not ship).
+`.claude/commands/stickman.md` runs the long-form pipeline (`docs/pipeline/EPISODE.md`) end to end for a topic, with the saved hero: script, shot list, one credit checkpoint, voice, review, build, the 4 vertical shorts (EPISODE.md step 8b), then the 3 thumbnails, and sends the video, shorts and thumbnails. Its portable copy is `tools/pack/fresh/stickman.md`; edit both together (the local one adds a demo shortcut that must not ship).
 
 ## When the user asks for a new shot or video
 
@@ -1080,7 +1116,7 @@ These are bugs we already hit. Don't reintroduce them.
 
 Re-run the packer after changing the engine, tools or docs. The start procedure lives in `tools/pack/header.md`; the fresh-copy files live in `tools/pack/fresh/`.
 @@@@ END
-@@@@ FILE HOW_TO_USE.md | text-crlf | 3175 | 91bfa932f6e5690e4261fbb6ea4490950e53b89117ca1b99d6f7e9704433cacc
+@@@@ FILE HOW_TO_USE.md | text-crlf | 3196 | 4fbd5329f6d064ba950695a3a38d9fcabd9ad8afe8fea6e5d3e804541c368444
 # How to use this system
 
 Open this folder in Claude Code and just ask. Claude follows `CLAUDE.md`. These are the things you can say.
@@ -1105,7 +1141,7 @@ Claude runs the idea engine (`docs/story/IDEA_ENGINE.md`):
 Claude then works through five steps, stopping at each checkpoint for you:
 1. **Script.** Claude writes it with `docs/story/STORY_BLUEPRINT.md` and shows it to you with a score. Ask for changes until you're happy.
 2. **Preview.** Claude turns the script into a shot list and renders a quick preview with estimated timing, before any voice credits are spent.
-3. **Voice.** Claude voices it with ElevenLabs (Yuri, eleven_v4; about 0.4 credits per character), aligns every cut to the words, and builds music and sound effects.
+3. **Voice.** Claude voices it with ElevenLabs (Matheus, always animated, eleven_v4; about 0.45 credits per character), aligns every cut to the words, and builds music and sound effects.
 4. **Render.** Claude renders `final/<Episode title>.mp4` and reviews every shot before handing it over. Older cuts move to `final/archive/`.
 5. **Thumbnail.** Claude makes 2–3 thumbnail options; pick one.
 
@@ -10916,7 +10952,7 @@ Format: `[mm:ss]` paragraph start. Narrator (2nd person) is unmarked; character 
 [09:46] On the screen, there's a live camera from the highway. Every car on it has stopped, not crashed, stopped, floating a few centimeters off the road, and standing in the middle of it all is one person looking straight into the camera. Six of you, one alert, and for the very first time, a villain just made [their move]. So, what would you do first if you were 10 times faster? And who do you think the villain is? Tell us in the comments, and subscribe, because this is only the beginning. Every story starts with if.
 
 @@@@ END
-@@@@ FILE docs/ELEVENLABS_SETUP.md | text | 4039 | 013b4b6053f7dc6d007e6255040d5cfd346468eea0a0a4b05df699429c08775b
+@@@@ FILE docs/ELEVENLABS_SETUP.md | text | 4095 | a28d06c05c62d6fd5b2f22e12233f0ce573e532fdd8083b3fb3762129d7d63e1
 # ElevenLabs: first-connect checklist
 
 Voice (narration + character lines) uses the ElevenLabs API, called directly with `fetch` from `tools/episode.mjs` — no MCP. Run this checklist once, the first time a copy of this project has no working `ELEVENLABS_API_KEY`.
@@ -10934,7 +10970,7 @@ Until the key is working, everything except real voice-over works: ideas, script
 2. **Smoke test.** `GET https://api.elevenlabs.io/v1/voices` (header `xi-api-key: <key>`) must return 200. If it 401s, the key is wrong; if it 403s with `missing_permissions`, the key is scoped — note which permissions are missing (voices/TTS access is enough to run the pipeline; `user_read` is only needed for an automatic balance check, see step 5).
 
 3. **Pick house voices.** `tools/episode.mjs`'s `HOUSE_VOICES` needs a narrator, a male and a female voice, in the project's content language. The account's own saved voices (`/v1/voices`) may not have what's needed — search the full public library instead:
-   - `GET /v1/shared-voices?language=<lang>&use_cases=narrative_story` for narrator candidates (calm/warm, not "excited" or "upbeat" — the house style is unhurried).
+   - `GET /v1/shared-voices?language=<lang>&use_cases=narrative_story` for narrator candidates (animated, natural and enthusiastic — the house narrator is energetic, it holds retention; also try `use_cases=social_media`).
    - `GET /v1/shared-voices?language=<lang>&gender=male` / `&gender=female` for the secondary voices (young, casual/natural).
    - Pull 3–4 candidates per role, fetch each one's `preview_url`, and let the user pick by ear — don't choose a voice the user hasn't heard.
    - A public-library voice_id can be used directly in a TTS call without first "adding" it to the account.
@@ -10987,6 +11023,44 @@ Run this checklist again whenever the Fish account changes: the thumbnail refere
 
 - Thumbnails (`fish` mode): 1,601 credits per 2K variant, so 3 variants are about 4.8k per episode.
 - Fish AI video models are not used for episodes. A clip costs 1.4k–53k credits, and the procedural engine is free.
+@@@@ END
+@@@@ FILE docs/HANDOFF.md | text | 4107 | 3b906f82b1a53cf2216df7897aeddd1ed3445f67881f717256ec087e18d8bad0
+# Handoff — retention package (2026-11-09)
+
+State of the work started on 2026-11-09, for the next session. Everything below is in the working tree
+(**not committed yet** — commit only when the user asks). Memory files cover the *why*; this is the *where*.
+
+## Done and verified
+
+| Area | What | Where |
+|---|---|---|
+| Voices | Narrator **Matheus** (`[excited]` default, stability 0.4), hero **João Pedro** (`who: "hero"`, `[playful]` default) | `tools/episode.mjs` HOUSE_VOICES, `kit.py`; memory `project-narrator-voice` |
+| Script rules | ≤ 15 words/sentence, no repeated openings, banned weak adjectives (non-blocking `check` warnings); consequence before concept; the skeptic who loses | `docs/story/COLA_ROTEIRO.md`, `tools/episode.mjs` styleWarnings |
+| Camera | bass magnet, sentence-start sub-cuts, PUNCH→ANGLE→CLOSE cycle, reaction-face closes, tight-beat guard, wider drift | `src/episode/scene.ts`, `camsolve.ts` |
+| Audit | `clip` (bodies through furniture), face-away closes, `shorts`, `beat` (> 2.5 s with nothing new), `sync` (sound with nothing visible) | `src/episode/audit.ts`, `collide.ts` |
+| Shorts | 4 vertical 60 s shorts per episode, freeze + hero 4th-wall line, burned captions; `node tools/shorts.mjs plan|voice|audio|render <slug>` | `src/episode/Short.tsx`, `tools/shorts.mjs`, EPISODE.md step 8b |
+| Beat effects | overlays `emote`, `circle`, `flyin`, `timewarp`, `spotlight`; `fx.burst`, `fx.focus`; cut `push`; stronger whip/zoom blur — all rendered and checked in stills | `src/overlays/Beats.tsx`, `src/engine/Burst.tsx`, `ShotView.tsx` |
+| Sound → picture | every scripted sound gets an automatic visual (shake/flash/punch-in/emote/burst) | `src/episode/sfxVisual.ts`, `ShotView.tsx` |
+| SFX pack | the user's 54 files mapped to 30 events; peaks normalised; meme/anime/game excerpts flagged `copyright` (used only by name) | `efeitos-sonoros/map.json` + `README.md`, `tools/sfx/episode_audio.py` |
+| Audio pacing | narration pauses ≤ 0.22 s; music/ambience drop out in the sentence breath where a cut lands ("dry breaths") | `episode.mjs` processVoice, `episode_audio.py` |
+
+## Not done / to check
+
+1. **Menu-corpo test shorts** (`final/shorts/E Se Você Encontrasse…/1–4`) were re-rendered (wider vertical lens, quieter freeze air) but **not reviewed or sent** to the user. Their CTA line is captions only: the user said not to spend credits on it. They were rendered **before** the beat effects / sound-to-picture work.
+2. **Not seen in a render yet:** the `push` transition, the stronger blur, and the sound-to-picture visuals (shake/flash/punch-in from `sfx`). The test that printed the `[sync]` warning didn't render frames. Check them on the first new episode.
+3. **The SFX pack hasn't been listened to in context.** Levels in `map.json` are estimates. Do a mix pass on the first new episode and adjust `vol`.
+4. **Music:** the user sends the track before each episode (`public/music/<slug>/`, `music=[('a1', 'music/<slug>/x.mp3')]`). Ask at the start if it hasn't arrived. Procedural beds are a fallback only.
+5. **Packer not re-run** after the last changes: run `node tools/pack/pack.mjs` before committing.
+6. `kit.py` has no helper functions for the new overlays; write them as plain dicts (`{'type': 'emote', 'actor': 'hero', 'kind': 'sweat', 'at': '@palavra'}`).
+
+## For the next episode (`/stickman <tema>`)
+
+- Ask for the **music track** first.
+- Script per the cola: the new "Batida visual" and "Shorts" sections apply. Plan the 4 shorts in `episode(shorts=[...])`: the user's picks if they name moments, else the 4 strongest hooks.
+- Put a beat (emote / circle / flyin / word / face change / burst / sub-cut) on every sentence. Every sound needs a visible event: use the pack's names (`bonk`, `shock`, `fah`, `punch`, `angels`…), which come with automatic visuals.
+- Credit checkpoint = voice + 4 shorts CTA lines (~160 credits) + thumbnails.
+- After the build: `node tools/shorts.mjs plan/voice/render <slug>`, review, send video + shorts + thumbnails.
+- Posted episodes (menu-corpo, zumbi) are frozen. Never fix them for new rules.
 @@@@ END
 @@@@ FILE docs/OTIMIZACAO.md | text-crlf | 18502 | 51e6d2eefc3c68ec9299aefc6f1f66acbbea2e0cb5870736d1aec8a464b43ec1
 # Plano de ação: otimizar tokens e velocidade
@@ -11476,7 +11550,7 @@ Benchmark de roteiro (só texto; nenhum episódio, voz ou crédito). Escrito às
 - **Escalada (7):** o risco da cidade só chega na crise. Falta um degrau "público" antes, como a imprensa ou a polícia farejando a pirâmide no bloco 9.
 - **Medido:** 1.786 palavras faladas (~10:12 a 175 ppm). A frase média tem 5,6 palavras (meta da cola: 8–9) e 64% têm ≤ 6 (meta: 35–45%), então o texto está mais picado que o pedido. São 23 falas de personagem (meta: 25–32), todas com ≤ 8 palavras. Nenhuma palavra banida.
 @@@@ END
-@@@@ FILE docs/pipeline/EPISODE.md | text-crlf | 23068 | d72071053545aee5036812acadacab3e27b0a73fe3702691a4125462d11d718e
+@@@@ FILE docs/pipeline/EPISODE.md | text-crlf | 26676 | 78a84e3a7049f1ce5722ba168e79bde7d89afc0cc6862a327a01d8f6faf31654
 # Episode pipeline (moved out of CLAUDE.md on 2026-11-09 to cut per-message tokens; text unchanged)
 
 Read this whole file before any narrated-episode work (`/stickman`, a script, a shot list, voice, review, build or thumbnail). The engine cheat sheet and hard-won rules stay in `CLAUDE.md`.
@@ -11500,7 +11574,8 @@ All files live in `public/episodes/<slug>/`.
      - `fx` takes `freeze`, `particles`, `grade`, `speedLines` and `shake`;
      - `cut` takes `flow`, `cut`, `flash`, `dip` and the two-sided transitions `whip`, `zoom` and `smash` (end of the outgoing shot + start of this one, with automatic sound);
      - `coverage: fast | calm | off` splits one shot into automatic sub-cuts on word starts (punch-in, then new angles; explicit `pos`/`path` cameras punch in on their look point from ≥ 3.2 m and otherwise orbit ~28° around it; `over` cameras get none; set `coverage: 'off'` where a sub-cut crops the action or shows a nape); `camera.beats` places them by hand. **House pacing:** pass `ritmo='rapido'` to `episode()` in the generator (`_modelo.py` does): coverage `fast` everywhere it applies and whip/zoom on set changes. Use `calm` in the dilemma, `smash` by hand on reveals. the `estilo novo` block at the end of `invasao_zumbi.py` (`apply_ritmo`, hand-set `smash` cuts, `word` highlights, `clips`) is the reference;
-     - `sfx` cues use the names in `tools/sfx/episode_audio.py` (LIB);
+     - `sfx` cues use the names in `tools/sfx/episode_audio.py` (LIB) or the user's pack (`efeitos-sonoros/map.json`, see `efeitos-sonoros/README.md`): mapped names play the pack's files, the rest are synthesized;
+     - **Visual beats (2026-11-09, the cola's "Batida visual"):** overlays `emote` (`actor`, `kind`: sweat/tears/question/exclaim/notes/sparkle/anger/love/zzz), `circle` (`actor` + `dx`/`dy`/`r` in metres from the head top, or `x`/`y`/`r` px), `flyin` (`kinds`, `n`, `from`: left/right/top/swirl), `timewarp`, `spotlight` (`actor` or `x`/`y`, `r`, `dim`) — they end on their own (~1.6–2 s) unless `until` is set — and `fx.burst` (`actor`, `at`, `until`, `color`) / `fx.focus` (`ids`, `at`, `until`). Each plays an automatic sound. Cut `push` joins whip/zoom/smash. The audit warns `[beat]` on any stretch over 2.5 s with nothing new on screen;
      - **Cut & close rules (2026-11-09, `scene.ts` above `beatsOf`):** sub-cuts cycle PUNCH (one size tighter, push in) → ANGLE (+38°, higher, orbit) → CLOSE (a face close, two sizes tighter, slow push) → back to the written size from the far side (pull-out / crane down), so no two sub-shots share a size or angle and every sub-shot moves. A reaction face key (`shocked`, `scared`, `furious`, `awe`, `confused`, …) on a camera target pulls a cut onto it and lands on a CLOSE. A group shot's CLOSE frames its first target from the written angle. **Tight-beat guard:** every sub-cut that is a PUNCH, a CLOSE or still a close size is checked at its start, middle and end: the target's face must point at the lens (≤ 45°, and not bowed > 27°) and no other head may sit on the sight line or near the lens; other angles, a lower camera, the ANGLE beat and then one size wider are tried in turn. The written framing (sub-cut 0) is never overridden, but the audit warns `close on X but the face is turned away` — fix those by turning the actor, lifting the head or widening the shot;
      - **Bass magnet (2026-11-09):** heavy `sfx` steer the sub-cuts. Strong hits (`boom`, `farBoom`, `subdrop`) put a cut on their frame (landing on a PUNCH or a CLOSE) (an existing sub-cut within 0.6 s moves there, else one is added) with a short camera kick; medium hits (`thud`, `crack`, `splash`, `debris`) only pull a sub-cut that is already within 0.4 s. Hits < 0.7 s from a shot edge or < 0.9 s after another hit cut are ignored, and `coverage: 'off'` shots never move. So to cut on a bass, place the `sfx` on the word — don't add `camera.beats` for it. Sub-cuts also prefer **sentence starts** (read from the `vo` punctuation), so each sentence tends to open on a new framing;
      - `music` holds mood cues per shot index: curious, wonder, tension, action, sad, none; or `{file}` for your own track.
@@ -11548,6 +11623,7 @@ All files live in `public/episodes/<slug>/`.
       - a camera outside the room walls. Interior sets declare `room`, and the engine pulls such a camera back in along its sight line, but the framing is then tighter than written.
       - **bodies through objects (`clip`, 2026-11-09):** every actor's head, chest, hips, hands, forearms, elbows, thighs, knees, shins and ankles (as spheres sized from the rig) against the indoor sets' furniture (`SetDef.solids`, recorded by `Batch`) and the shot's furniture-like props (`table`, `roundTable`, `desk`, `chair`, `bed`, `car`, `box`/`crate`, `pillar`, `wall`). Head/chest 2 cm past contact is an error (the head fills the frame), limbs from 6 cm; 3 cm+ limb clips are warnings. Resting is not a clip (hips/legs on a seat, feet on a crate), and bedding/cushions are soft (`soft: true` in a builder: mattress, duvet, pillows, sofa seat). Each clip also becomes a review `event` with 3 frames for the reviewer. Outdoor sets have no solids yet; the reviewer checks those by eye.
       - a written close that hides the face (bowed head, back or profile to the lens).
+      - the 4 shorts (`shorts`): 4 planned, 55–62 s with the CTA, a cold opener, the hero in the stage shot, a CTA that names the channel.
    2. **Cheap pre-check first:** `node tools/sheet.mjs <slug>` tiles one still per key shot (opening, each new set, the hook; ~20 s) into `out/lab/<slug>_sheet.jpg`; or pass ids (`sheet.mjs <slug> c8,r6`). Look at it and fix the obvious (sunk or floating feet, empty frames, wrong set, unreadable text) before the full review; every fix here saves a reviewer round.
 
       Then `node tools/review.mjs <slug>` renders labelled review frames into `out/<slug>/review/`:
@@ -11559,9 +11635,15 @@ All files live in `public/episodes/<slug>/`.
    3. Spawn an **independent reviewer** subagent: the `revisor-episodio` agent (`.claude/agents/`, fresh context, pinned to sonnet / high effort since 2026-11-09 — round 1 on the session model cost ~296k tokens), told to follow `docs/review/REVIEWER_BRIEF.md` for `<slug>`. It writes `out/<slug>/review/reviewer_report.md` with must-fix / should-fix / nit rows and a verdict. Fix every must-fix and should-fix, or tell the user which ones you deferred and why.
    4. After the fixes, re-run step 1 and `node tools/review.mjs <slug> --only <ids of the shots you changed>` (only those shots and their events are re-rendered; the manifest's `only` lists them). If the voice was redone or shots were added/removed, it refuses: run the full `review.mjs`. Then a round-2 reviewer verifies each earlier row and checks only the changed shots: spawn the `revisor-verificacao` subagent (`.claude/agents/`, pinned to sonnet / medium effort — verification doesn't need the main model), naming the slug and the previous report (brief section "Verification rounds"; `review.mjs` archives old reports in `out/<slug>/review_history/`). Build only on "ready for final render".
 8. **Build:** `node tools/build-episode.mjs <slug>` makes the soundtrack, renders and muxes. A full build refuses to start while the scene audit has errors. Watch it with `node tools/progress.mjs <slug> --watch` (step, bar, frames, Remotion's time-left estimate; the build writes `out/<slug>/progress.json`).
-   - The soundtrack has narration, music ducked under the voice, per-set ambience, automatic sound effects, and the scripted `sfx`.
+   - The soundtrack has narration, music ducked under the voice, per-set ambience, automatic sound effects, and the scripted `sfx`. **Music is the user's track** (sent before each episode, `public/music/<slug>/`, `music=[('a1', 'music/<slug>/track.mp3')]` in the generator); procedural beds are only a fallback. **Dry breaths:** where a cut lands in a pause between sentences, music and ambience drop out for that breath (automatic). Narration pauses are capped at ~0.22 s (`voice.maxPause`).
    - Output is `final/<Episode title>.mp4` at −14 LUFS, plus `out/<slug>/sheet_N.png` (one frame per shot). All finished videos sit together in `final/`. A full build moves the previous cut to `final/archive/<slug>_<date>.mp4`. Thumbnails go in `final/thumbnails/`, and `final/README.md` lists every episode.
    - Defaults: concurrency = CPU cores − 4 (8 here) and CRF 18. Both were measured: 21% faster than 4/14, the file is ~40% of the size, and there's no visible difference. Override with `--concurrency N` / `--crf N`. A 10-min episode took ~25 min at the old 4/14, so expect ~20 min now.
+8b. **Shorts (user rule, 2026-11-09): 4 vertical ~60 s shorts per episode**, rendered after the episode (the user no longer cuts anything by hand). Each is a self-contained mini-story that stops on a cliffhanger; then the world freezes and the hero alone turns to the lens and sends the viewer to the channel (the 4th-wall break). Rules for picking them: the cola's "Shorts" section (the user's picks if they named moments; else the 4 strongest hooks).
+   - Plan: `episode(shorts=[...])` in the generator, or `public/episodes/<slug>/shorts.json` (wins). Fields: `title`, `cta` (the hero's line, PT-BR, per short), `from`/`to` (+ `drop`) or `shots`, `stage`/`stageAt` (where the world freezes: a shot with the hero and the world around him), `cutAt`.
+   - `node tools/shorts.mjs plan <slug>` checks length (55–62 s), cold opener, the hero in the stage shot and the CTA; the audit runs the same checks on `episode.shorts`.
+   - `node tools/shorts.mjs voice <slug>` voices the 4 CTA lines with the hero voice (João Pedro, `[playful]`; ~4 × 90 chars ≈ 160 credits) — **include it in the credit checkpoint**. Without it the line is captions only.
+   - `node tools/shorts.mjs render <slug>` cuts the episode's own soundtrack (no API) + the freeze SFX + the CTA voice, and renders `final/shorts/<Episode title>/<n> - <title>.mp4` (1080×1920, burned-in word-by-word captions). The `Short` composition (`src/episode/Short.tsx`) plays the pieces with the episode's cameras at 9:16 (same vertical FOV = the 16:9 centre column at full resolution), fits cards to the width over a blurred copy, keeps the title compact, then the freeze: the stage shot held and desaturated, a pause badge, and the hero (re-drawn in colour on a second canvas) looking at the lens and talking.
+   - Check each short like the episode: a frame strip around the cut points and the freeze, and listen to the cut audio.
 9. **Check the build**, per the loop above:
    - Look at every sheet: framing, occluders, the empty side of sets, overlays. Check loudness and that every swap strip still reads.
    - Listen for a leaked audio tag: ElevenLabs occasionally speaks a `[tag]`'s text instead of performing it (STORY_BLUEPRINT.md §6.9). If you hear one, rewrite that tag and re-voice just that section.
@@ -11578,9 +11660,10 @@ All files live in `public/episodes/<slug>/`.
    - **Review** every result at full size and at ~360 px wide: exact spelling, level text, gray jacket, stickman-only cast, no extra text. Send the three to the user to pick.
    - **Pick:** `node tools/thumb-prompt.mjs <slug> --pick <id>` writes `final/thumbnails/<slug>_thumbnail.jpg` (1920×1080, under YouTube's 2 MB limit) and records the choice in `brief.json`.
 
-**Voice:** ElevenLabs, model **eleven_v4**, PT-BR. Narrator is Yuri — "Natural Brazilian Narrator" `u7N1p4OIOc6Fl7y72WE7` — which the user chose on 2026-11-08 after a measured 15 s test (199 chars → 80 credits, ~0.4 credits/char).
-- The default direction is `[calm]` — eleven_v4 reads short delivery tags best (see its prompting best practices: punctuation and ellipses shape pacing more reliably than a long descriptive phrase). Pace is still set in post, same as before. The narrator is calm at the base but **sarcastic and a little malicious** at chosen beats (the user's call, 2026-11-08: no cute/family IFOLOGY tone) — see STORY_BLUEPRINT.md §6.10.
+**Voice:** ElevenLabs, model **eleven_v4**, PT-BR. Narrator is **Matheus — "Friendly and Energetic"** `36rVQA1AOIPwpA3Hg1tC`, picked by ear on 2026-11-09 from 6 candidates (it replaced Yuri `u7N1p4OIOc6Fl7y72WE7`). Measured ~0.45 credits/char.
+- The default direction is `[excited]` and the default stability 0.4: the narrator is **always animated, natural and enthusiastic** — that tone holds retention (user, 2026-11-09). eleven_v4 reads short delivery tags best (punctuation and ellipses shape pacing more reliably than a long descriptive phrase). Pace is still set in post. On top of that energy he is **sarcastic and a little malicious** at chosen beats (the user's call, 2026-11-08: no cute/family IFOLOGY tone) — see STORY_BLUEPRINT.md §6.10.
 - **Audio tags are standard practice, not just the default direction.** Write them inline in `vo`, at the exact beat a character reacts (`docs/story/STORY_BLUEPRINT.md` §6.9 has the full catalog and rules) — e.g. `"Ele esperou. [sighs] Nada aconteceu."` Tags stay in English even in a Portuguese line (that's the model's trained vocabulary); the pipeline already strips bracketed text before matching words to voice time, so `"@word"` cues keep working right through a tag.
+- **Hero voice:** `who: "hero"` is **João Pedro** `7u8qsX4HQsSHJ0f8xsQZ` (picked by ear, 2026-11-09). His lines get `[playful]` automatically — always that dynamic tone — unless the line starts with its own tag because the scene asks for another (fear, sadness, whisper…). He speaks in the shorts' 4th-wall break.
 - **House secondary voices** for other characters: `who: "male"` uses Eduardo "Brazilian Portuguese" `H2bV051FngNxkuTNROyc`, and `who: "female"` uses Sofia "Natural & Expressive" `n2a9VtkZLl8j1FSXHsL7`. For any other speaker, add it to `episode.voices` and use that key in `who`. Put the delivery in the line's `[direction]`, e.g. `[panicked dad, yelling]`.
 - Every speaker change starts a new single-speaker section — ElevenLabs has no multi-speaker-call equivalent to Fish's old `<|speaker:N|>` syntax, so this is no longer optional (`voice.mixSpeakers` is gone).
 - `voice` evens out each section of 12 or more words toward `voice.targetWpm` (default 175; swap-pilot uses 172), stretching only within `voice.tempoRange` (default `[0.9, 1.1]`). Use `voice.tempo` for a fixed value, and `node tools/episode.mjs pace <slug>` to re-pace without new ElevenLabs calls.
@@ -12141,7 +12224,7 @@ End with:
 
 Reply with the counts and every must-fix row.
 @@@@ END
-@@@@ FILE docs/story/COLA_ROTEIRO.md | text | 21125 | 5c9fc66bec139410f307ee5c3b6d2d7e85c2e7166868221900db798163039473
+@@@@ FILE docs/story/COLA_ROTEIRO.md | text | 24516 | e183438bc9d3070613a1502b78ab99dcf3a13b5184d71dc9bc8b61f13c770963
 # COLA DE ROTEIRO — episódio "E Se" de 10 min (2ª pessoa, PT-BR)
 
 Resumo de `STORY_BLUEPRINT.md`. **Leia só isto ao escrever.** Abra o blueprint apenas na seção indicada (§) quando precisar do detalhe ou de exemplos. Originalidade: copie estruturas, nunca falas, piadas, personagens ou bordões da IFOLOGY (§6.7).
@@ -12286,7 +12369,8 @@ Um fato real verificável dá credibilidade à fantasia e deixa o perigo palpáv
 - Inline no `vo`, em inglês, entre colchetes, **uma por reação real** (não por frase).
 - Antes do trecho = tom da fala; depois = reação a ela.
 - Catálogo: `[whispering] [softly] [slowly] [pause] [voice breaking] [weak] [tired] [bored] [playful] [angry] [excited] [menacing] [chuckling] [laughing] [sighing] [gasping] [panting] [scoffing] [sniffling] [clears throat] [sharp exhale]`. Combinações valem (`[sighs, tired]`). Fora disso, só testando antes.
-- Narrador: `[sarcastic] [mischievously] [deadpan] [darkly amused] [chuckling]`, e `[menacing]` 1–3×/episódio (validadas no Yuri, 2026-11-08). `[excited]` é de personagem. Nada que contradiga a cena.
+- Herói (`who: "hero"`, João Pedro): sempre dinâmico e brincalhão (base `[playful]` automática); só troque o tom com uma tag no início da fala quando a cena exigir (medo, tristeza, sussurro).
+- Narrador: **sempre animado** (Matheus, base `[excited]`, 2026-11-09: é o tom que retém). Por cima: `[sarcastic] [mischievously] [deadpan] [darkly amused] [chuckling]`, e `[menacing]` 1–3×/episódio (validadas no Yuri; reconfirme no Matheus no 1º episódio). Nada que contradiga a cena.
 - Nunca SSML `<break>`; respiro com `…`, vírgula, `[pause]`. Pronúncia errada: IPA `/…/` só na palavra.
 - Gate mecânico: `node tools/episode.mjs check <slug>`.
 
@@ -12296,13 +12380,32 @@ Um fato real verificável dá credibilidade à fantasia e deixa o perigo palpáv
 **Ritmo da casa (2026-11-08):** `episode(..., ritmo='rapido')` liga sub-cortes automáticos (`coverage: 'fast'`, ~1 corte a cada 1,6 s na palavra) e whip/zoom alternados em toda troca de set. Dilema: `coverage='calm'`; tableau congelado: `'off'`. **Smash** (`cut='smash'`) à mão na revelação ou na piada seca. Meta: ~30 cortes/min fora do dilema.
 **Pensado pra 9:16:** quem fala ou age fica na faixa central (o audit avisa `vertical`); dois personagens longe um do outro = dois planos, não um aberto.
 
-## Cortes para shorts (regra do usuário, 2026-11-08)
-O usuário corta à mão, do 16:9, shorts de **~90 s** para YouTube Shorts, Reels e TikTok. Todo episódio longo nasce com **≥ 4 trechos que funcionam sozinhos**, marcados em `episode(clips=[(título, 1º plano, último plano), ...])` (o audit confere 60–95 s; mire 75–90).
-- **Onde costumam cair:** (1) abertura → poder → escada de números (0:00–1:30); (2) a ladainha de vantagens (2:30–3:40) ou os 3 problemas (3:40–4:40); (3) o problema real/maestria ou o teste de prova; (4) crise → dilema → clímax. Um 5º no mundo maior/gancho é bônus.
-- **Começa frio:** a 1ª frase do trecho prende sem contexto (pergunta, número absurdo, desastre em curso). Nada de "como eu disse", "lembra do…". Se precisar de um nome ou regra, reapresente em meia frase ("a Lia, sua melhor amiga, …").
-- **Fecha com soco:** cada trecho termina numa virada, piada seca ou cliffhanger, não no meio de uma ideia.
-- **Legível no vertical:** dentro dos trechos, personagem e texto importante na faixa central (audit `vertical`). Card de duas colunas (`compare`) perde um lado no corte: prefira `stat`/número único, ou um card com o conteúdo no meio.
-- O build gera um `.srt` (legendas com o tempo exato das palavras) para o editor do usuário.
+## Batida visual e som em tudo (regra do usuário, 2026-11-09; referência: Aprendendo com Vitinho)
+O que mais segura nesses vídeos: **algo muda na tela a cada 1–2 s, mesmo sem corte, e todo evento visual tem som.** Medido nas referências: 23–28 cortes/min (plano mediano 1,5 s) e, entre os cortes, uma "batida" atrás da outra.
+- **Toda frase ganha uma batida visual**, além dos sub-cortes. Ferramentas (cada uma com som automático):
+  - `emote` na cabeça de quem reage: `sweat` (gota), `tears`, `question` (?), `exclaim` (!), `notes`, `sparkle`, `anger`, `love`, `zzz`;
+  - `circle`: um círculo vermelho que se desenha em volta do detalhe que o narrador cita (o dente, a mão, a cara);
+  - `flyin`: objetos que cruzam a tela (`calendar`, `clock`, `paper`, `money`, `heart`, `star`, `book`), pra listas e exageros ("manda fazer lição" → um livro voando);
+  - `timewarp`: o tempo passando (calendário e relógio girando, dia/noite piscando), em "três semanas depois", "todo dia";
+  - `spotlight`: tudo escurece e uma luz fica num personagem ou objeto (uma revelação, "e então ela viu…");
+  - `fx.burst`: raios de sol atrás do personagem na revelação ou no "ta-da";
+  - `fx.focus`: a multidão fica cinza e só quem importa fica colorido ("era assim que eu achava ela");
+  - também contam: `word`, troca de expressão ou pose, objeto que aparece (`sfx` + prop), e as transições.
+- **Transições com borrão:** `whip`, `zoom` e a nova `push` (o plano novo empurra o velho pro lado). Varie entre elas; `smash` na revelação.
+- **Som em todo evento:** o mixer põe som automático em cada efeito, transição, card, `word` e número. Com o pacote de SFX do usuário (`efeitos-sonoros/map.json`), os sons dele substituem os sintetizados.
+- **Respiro seco:** a narração fica colada (pausas de ~0,2 s) e, quando o corte cai numa pausa entre frases, a trilha e o ambiente somem junto por um instante. É automático; escreva pensando nisso (frases curtas, um corte por frase).
+- **Trilha:** a do usuário, que ele manda antes do episódio, baixa (~20 dB sob a voz). Peça se não chegou.
+- O audit avisa `[beat]` em todo trecho de mais de 2,5 s sem nada novo (fora o dilema e tableaux com `coverage` calm/off).
+
+## Shorts: 4 por episódio, verticais, 60 s (regra do usuário, 2026-11-09)
+Os shorts existem pra pessoa **querer entrar no canal**, não pra entregar um pedaço solto sem sentido. Todo episódio gera **4 shorts prontos em 1080×1920** (o usuário não recorta mais nada do 16:9).
+- **Quem escolhe:** se o usuário apontou os momentos enquanto o episódio era feito, use exatamente esses (e não invente outros). Se não apontou, escolha os 4 de maior gancho pelo roteiro e pelas regras de retenção, espalhados pela história (abertura, montagem/vantagens, um problema, a crise).
+- **60 s cada (55–62):** ~52 s de episódio + ~8 s da quebra da 4ª parede. É uma mini-história que faz sentido sozinha: **abre frio** (nada de "E", "Mas", "Esses", "Até"…: o `plan` e o audit avisam), dá o contexto, sobe a tensão e **para no auge, antes da resolução**.
+- **Pode pular planos** (`drop`) que só explicam (cards de fato longos, digressões) e até juntar trechos de lugares diferentes (`shots`), desde que a história continue clara.
+- **O final:** o mundo congela (dessatura, selo de pausa, som de pausa) e só o **herói** se vira pra câmera e fala, na voz dele (`who: "hero"`, João Pedro, tom brincalhão). A fala é **escrita pra cada short**, amarrada ao gancho dele, em 1ª pessoa, e termina mandando pro canal: "Quer saber se eu saio vivo dessa? Entra no canal e assiste a história completa." Máx. ~120 caracteres.
+- **Onde congelar (`stage`/`stageAt`):** num plano com o herói **e o mundo em volta** (a rua, o lago, os outros parados), não no palco vazio. Congelar no meio de uma ação (ele no ar, rastejando no gelo) rende mais.
+- **No gerador:** `episode(shorts=[{'title', 'from', 'to', 'drop', 'stage', 'stageAt', 'cta'}, ...])`; um `shorts.json` na pasta do episódio substitui (re-escolha depois). Comandos: EPISODE.md, passo 8b.
+- **Legível no vertical:** o 3D vertical mostra a faixa central do 16:9, então personagem e texto importante ficam no centro (audit `vertical`). Cards de duas colunas (`compare`) ficam pequenos: prefira `stat`.
 
 ## Checklist rápido (tudo sim antes da voz; versão completa §9)
 - [ ] Fórmula cheia e 6 testes ok; título 3–7 palavras
@@ -12317,7 +12420,7 @@ O usuário corta à mão, do 16:9, shorts de **~90 s** para YouTube Shorts, Reel
 - [ ] 12–20 falas de reação/piada (≤ 8 pal., nenhuma explicando enredo); piada ≤ 60 s; estatística de frase; sem banidos
 - [ ] Nenhuma frase > 15 palavras; nada de duas frases seguidas com a mesma abertura (fora `repeat`); cada fato mostra a consequência antes do conceito; cético plantado cedo e calado no clímax
 - [ ] Ladainha nas vantagens: 12–16 itens, 1 a cada 4–6 s, escala crescente, quebra a cada 3; número em `word` + SFX
-- [ ] ≥ 4 trechos de ~90 s marcados em `clips`, cada um com abertura fria e final com soco
+- [ ] 4 shorts planejados em `shorts` (os do usuário, se ele apontou): ~60 s, abertura fria, param no auge, congelam num plano com o herói e o mundo, fala do herói por short mandando pro canal
 - [ ] Tom ácido: sarcasmo/maldade a cada 30–60 s, nada no dilema, família interesseira, limite monetizável respeitado
 - [ ] `check` passa; tags descritivas, bem posicionadas, coerentes com a voz; tudo por extenso
 - [ ] Artefato irônico → observador → chegada → gancho justo → CTA ≤ 20 s com assinatura
@@ -12532,7 +12635,7 @@ Todas as 25 são premissas originais escritas para este canal. Os detalhes compl
 
 O gancho final do episódio 1 já planta fotos da "parede", "janelas estilhaçadas" e crianças "no meio da troca", que correspondem às ideias do backlog *Andar Em Paredes*, *Voz 100x Mais Alta* e *Trocar De Lugar*.
 @@@@ END
-@@@@ FILE docs/story/STORY_BLUEPRINT.md | text | 79181 | b0ac1ba1eec791875d636b8132e66ccfd4e49c7adaf3c4b602cae6455e904266
+@@@@ FILE docs/story/STORY_BLUEPRINT.md | text | 79257 | 4aedf3e5dbd44eb1ad3a08b856f33dc763ccf526f8a858a8fe6f6decc02c0230
 # ROTEIRO-MODELO (BLUEPRINT): episódios "E Se" (8–12 min, 2ª pessoa)
 
 Este é o manual de escrita para todo episódio. Siga de cima a baixo: premissa → outline → ficha de plantios → rascunho → checklist → pontuação. Não comece a escrever a narração antes do outline passar pela §9.
@@ -13173,7 +13276,7 @@ O canal **não** tem o tom fofo/família da IFOLOGY. O narrador é um observador
 - **Ganchos e títulos apelativos**, desde que **o episódio entregue o que o título promete** (promessa falsa derruba retenção e o YouTube pune). Ex. de temperatura: "E Se Seu Coração Parasse Por 10 Segundos Todo Dia?", "E Se Todo Mundo Ouvisse Seus Pensamentos?".
 - **Comédia ácida:** ironia dramática (o público sabe o desastre antes de você), schadenfreude, narrador debochando, a terceira da lista de três sendo cruel. A subestimação no clímax vira deboche ("Foi só um prédio.").
 - **Limite monetizável (inegociável):** sem sangue/gore, sem ferimento visível, sem conteúdo sexual, sem palavrão, sem drogas, sem autolesão/suicídio, sem humilhar grupo real (etnia, religião, deficiência). Violência só cartunesca (voa, cai, explode em poeira, levanta). Morte só fora de cena ou como risco.
-- **Tags do narrador para isso** (validadas na voz do Yuri em 2026-11-08: o usuário aprovou as 5): `[sarcastic]` `[mischievously]` `[deadpan]` `[darkly amused]` `[chuckling]` `[menacing]` (este, 1–3 vezes por episódio, no narrador). Personagens podem usar as mesmas.
+- **Tags do narrador para isso** (validadas na voz do Yuri em 2026-11-08: o usuário aprovou as 5; desde 2026-11-09 o narrador é o Matheus, sempre animado, base `[excited]`): `[sarcastic]` `[mischievously]` `[deadpan]` `[darkly amused]` `[chuckling]` `[menacing]` (este, 1–3 vezes por episódio, no narrador). Personagens podem usar as mesmas.
 
 ---
 
@@ -13477,6 +13580,92 @@ Nenhuma lacuna passa de 90 s.
 
 - **Mais fraco:** densidade de números (≈12 números). Adicione 3 números verificados a mais nos problemas.
 - **Também fraco:** escalada. A feira é um salto grande, então adicione uma vantagem de escala de cidade.
+@@@@ END
+@@@@ FILE efeitos-sonoros/README.md | text-crlf | 2185 | 3ed3065d65093c092e14de9d5b4d72a54dd52dda1813d8cda5eaf729a721b55e
+# SFX pack (the user's sounds) — `efeitos-sonoros/`
+
+Drop new files anywhere under this folder, then map them in `map.json`. Every mapped event uses the
+pack (its variants rotate, so repeats don't sound copied); unmapped events fall back to the synthesized sounds
+in `tools/sfx/sfxlib.py`. Peaks are normalised on load, so files can come at any level; `vol` sets the mix level.
+Every sound also gets a visual on its frame (`src/episode/sfxVisual.ts`): add a new name there too.
+
+```json
+{
+  "whoosh":   { "files": ["transicoes/whoosh1.wav", "transicoes/whoosh2.wav"], "vol": -9 },
+  "pop":      { "files": ["ui/pop.wav"] }
+}
+```
+
+`vol` is optional (dB). Entries with `"copyright": true` are excerpts of songs, anime or games (Content ID risk on YouTube): only used when a script names them.
+
+## Event names the mixer plays (`tools/sfx/episode_audio.py`)
+
+| Event | When it plays |
+|---|---|
+| `whoosh` | whip transitions |
+| `whooshUp` | zoom transitions, burst reveals |
+| `swoosh` | push transitions, objects flying in (`flyin`) |
+| `impact` | smash cuts, flash cuts, the title hit |
+| `card` | every 2D card coming in |
+| `sparkle` | flashes, swaps, burst reveals |
+| `pop` | a `word` highlight, emotes (default), things appearing |
+| `ding` | highlight circles, stat numbers landing, music-note emotes |
+| `ticks` | stat counters rolling |
+| `clock` | time passing (`timewarp`) |
+| `swell` | the reverse swell before the title |
+| `click` | labels |
+| `drip` | sweat / tears emotes |
+| `boing` | question-mark emote |
+| `sting` | exclamation emote |
+| `puff` | anger emote |
+| `spot` | a spotlight turning on |
+| `swap`, `swapCharge` | the swap power |
+
+Scripted cues in a shot's `sfx` (`boom`, `thud`, `crack`, `splash`, `heartbeat`, `subdrop`, …) can be mapped
+by the same names, and new names can be added for the pack's own sounds (e.g. `"risada"`) and used in `sfx`.
+
+## The pack's own names (use them in a shot's `sfx`)
+
+`bonk`, `punch`, `shock`, `fah`, `awkward`, `nuke`, `angels`, `dream`, `photo`, `notify`, `fire`, `water`, `rumble`; copyright-risk: `door`, `eat`, `fall`, `teleport`, `villain`, `angry`, `sad`, `badass`.
+@@@@ END
+@@@@ FILE efeitos-sonoros/map.json | text | 3465 | 88aa1a01d7ca71b9ee84b6e9e2d257022d0fef573f870783b22bb091a14010e9
+{
+  "_como_usar": "Evento -> arquivos (dentro desta pasta). Variantes giram. 'vol' em dB (opcional). Eventos automáticos: whoosh, whooshUp, swoosh, impact, card, pop, ding, click, sting. Os outros nomes se usam à mão no 'sfx' de um plano: {\"t\": \"@palavra\", \"name\": \"bonk\"}. Ver README.md.",
+  "_direitos": "Os marcados com 'copyright' são trechos de músicas, animes ou jogos: podem dar reivindicação de Content ID no YouTube (desmonetização ou bloqueio). O pipeline só os toca se o roteiro pedir pelo nome.",
+
+  "whoosh":   { "files": ["Fast whip.wav", "Fast whoosh.wav", "whoosh.mp3"], "vol": -10 },
+  "swoosh":   { "files": ["woosh_5.mp3", "whoosh.mp3"], "vol": -11 },
+  "whooshUp": { "files": ["Fast whoosh.wav", "FIRE/FIRE 3.wav", "WATER/WATER 4.wav"], "vol": -10 },
+  "impact":   { "files": ["Punch - Gaming Sound Effect (HD) (320 kbps).mp3"], "vol": -8 },
+  "card":     { "files": ["woosh_5.mp3"], "vol": -14 },
+  "pop":      { "files": ["Discord Join.mp3"], "vol": -14 },
+  "ding":     { "files": ["Discord notification.mp3"], "vol": -13 },
+  "click":    { "files": ["Camera Shutter.mp3"], "vol": -12 },
+  "sting":    { "files": ["shocked-sound-effect.mp3"], "vol": -9 },
+
+  "bonk":     { "files": ["Bonk - Sound Effect (HD) (320 kbps).mp3"], "vol": -8 },
+  "punch":    { "files": ["Punch - Gaming Sound Effect (HD) (320 kbps).mp3"], "vol": -7 },
+  "shock":    { "files": ["shocked-sound-effect.mp3"], "vol": -8 },
+  "fah":      { "files": ["faaaaaah/FAHHH 1.wav", "faaaaaah/FAHHH 2.wav", "faaaaaah/FAHHH 3.wav", "faaaaaah/FAHHH 4.wav", "faaaaaah/FAHHH 5.wav"], "vol": -9 },
+  "awkward":  { "files": ["Awkward Moment.mp3"], "vol": -10 },
+  "nuke":     { "files": ["nuke-bomb.mp3"], "vol": -6 },
+  "angels":   { "files": ["angels-singing.mp3"], "vol": -12 },
+  "dream":    { "files": ["dream-sound.mp3"], "vol": -12 },
+  "photo":    { "files": ["Camera Shutter.mp3"], "vol": -10 },
+  "notify":   { "files": ["Discord notification.mp3"], "vol": -11 },
+  "fire":     { "files": ["FIRE/FIRE 1.wav", "FIRE/FIRE 2.wav", "FIRE/FIRE 3.wav", "FIRE/FIRE 4.wav", "FIRE/FIRE 5.wav", "FIRE/FIRE 6.wav", "FIRE/FIRE 7.wav", "FIRE/FIRE 8.wav", "FIRE/FIRE 9.wav"], "vol": -9 },
+  "water":    { "files": ["WATER/WATER 1.wav", "WATER/WATER 2.wav", "WATER/WATER 3.wav", "WATER/WATER 4.wav", "WATER/WATER 5.wav", "WATER/WATER 6.wav"], "vol": -9 },
+  "rumble":   { "files": ["SUBWAY/SUBWAY 1.wav", "SUBWAY/SUBWAY 2.wav", "SUBWAY/SUBWAY 3.wav", "SUBWAY/SUBWAY 4.wav", "SUBWAY/SUBWAY 5.wav", "SUBWAY/SUBWAY 6.wav", "SUBWAY/SUBWAY 7.wav", "TRAIN/TRAIN 1.wav", "TRAIN/TRAIN 2.wav", "TRAIN/TRAIN 3.wav", "TRAIN/TRAIN 4.wav", "TRAIN/TRAIN 65.wav"], "vol": -9 },
+
+  "door":     { "files": ["Minecraft Door (Open and Close) - Sound Effect (HD).mp3"], "vol": -10, "copyright": true },
+  "eat":      { "files": ["Minecraft Eating - Sound Effect (HD) (320 kbps).mp3"], "vol": -10, "copyright": true },
+  "fall":     { "files": ["Minecraft Fall Damage (Crack) - Sound Effect (HD) (320 kbps).mp3"], "vol": -9, "copyright": true },
+  "teleport": { "files": ["dragon_ball_z_tele.mp3"], "vol": -9, "copyright": true },
+  "villain":  { "files": ["enemy-introduction-one-piece.mp3"], "vol": -10, "copyright": true },
+  "angry":    { "files": ["one-piece-angry.mp3"], "vol": -12, "copyright": true },
+  "sad":      { "files": ["naruto-sad-music-instant.mp3"], "vol": -14, "copyright": true },
+  "badass":   { "files": ["bad-to-the-bone-meme.mp3"], "vol": -9, "copyright": true }
+}
 @@@@ END
 @@@@ FILE final/README.md | text | 616 | c4aaacd2285d4860ec85f2e8743be690b088b41ef90e1480ab4fc33c8fe69a0f
 # Finished videos
@@ -18562,13 +18751,14 @@ export const CardLab: React.FC<{ card: string; spec?: Record<string, unknown>; d
   );
 };
 @@@@ END
-@@@@ FILE src/Root.tsx | text-crlf | 1782 | 7d7abb43507f4027c4268bea1d1564f168f640bd9599519cc894c4cd127f3822
+@@@@ FILE src/Root.tsx | text-crlf | 2045 | 9e8ee245eaab409b8a60e07ed9ed20c4ccc928609f148a1ebb1ea672c5ec7650
 import React from 'react';
 import { Composition } from 'remotion';
 import { CharacterLab } from './Lab';
 import { CardLab, SetLab } from './RegistryLab';
 import { PillSprint, PILL_SPRINT_SECONDS } from './demo/PillSprint';
 import { calculateEpisodeMetadata, Episode } from './episode/Episode';
+import { calculateShortMetadata, Short } from './episode/Short';
 import { Thumbnail } from './Thumbnail';
 import { AuditView, calcAudit, calcSelfTest, SelfTestView } from './episode/QA';
 
@@ -18578,6 +18768,7 @@ export const Root: React.FC = () => (
     <Composition id="SetLab" component={SetLab} width={1920} height={1080} fps={30} durationInFrames={90} defaultProps={{ set: 'suburb' }} />
     <Composition id="CardLab" component={CardLab} width={1920} height={1080} fps={30} durationInFrames={150} defaultProps={{ card: 'stat' }} />
     <Composition id="Episode" component={Episode} width={1920} height={1080} fps={30} durationInFrames={300} defaultProps={{ slug: 'pipetest' }} calculateMetadata={calculateEpisodeMetadata} />
+    <Composition id="Short" component={Short} width={1080} height={1920} fps={30} durationInFrames={1800} defaultProps={{ slug: 'menu-corpo', n: 1 }} calculateMetadata={calculateShortMetadata} />
     <Composition id="Thumbnail" component={Thumbnail} width={1280} height={720} fps={30} durationInFrames={1} defaultProps={{}} />
     <Composition id="Audit" component={AuditView} width={320} height={180} fps={30} durationInFrames={1} defaultProps={{ slug: 'pipetest' }} calculateMetadata={calcAudit} />
     <Composition id="SelfTest" component={SelfTestView} width={320} height={180} fps={30} durationInFrames={1} defaultProps={{}} calculateMetadata={calcSelfTest} />
@@ -20799,6 +20990,75 @@ export const PillSprint: React.FC<{ withAudio?: boolean }> = ({ withAudio = fals
   }
 }
 @@@@ END
+@@@@ FILE src/engine/Burst.tsx | text | 2995 | 5270e42385beebafefa95992f1b50833c137031c7bf9830dfd49888b54cd4e03
+// Sunburst backdrop for a reveal (house beat effect, 2026-11-09): a big camera-facing disc of rays placed
+// behind a character, slowly turning — the "ta-da" background the Vitinho reference cuts to on a reveal.
+// It sits between the character and the set, so the set disappears behind it for those seconds.
+import React from 'react';
+import * as THREE from 'three';
+import type { CamState } from './cam';
+
+const texCache = new Map<string, THREE.CanvasTexture>();
+
+/** Rays texture (two tones alternating), built once per colour pair. */
+function raysTexture(a: string, b: string): THREE.CanvasTexture {
+  const key = `${a}|${b}`;
+  let tex = texCache.get(key);
+  if (tex) return tex;
+  const S = 1024, c = document.createElement('canvas');
+  c.width = c.height = S;
+  const g = c.getContext('2d')!;
+  g.fillStyle = b;
+  g.fillRect(0, 0, S, S);
+  const n = 18;
+  g.fillStyle = a;
+  for (let k = 0; k < n; k++) {
+    const a0 = (k / n) * Math.PI * 2, a1 = a0 + Math.PI / n;
+    g.beginPath();
+    g.moveTo(S / 2, S / 2);
+    g.lineTo(S / 2 + Math.cos(a0) * S, S / 2 + Math.sin(a0) * S);
+    g.lineTo(S / 2 + Math.cos(a1) * S, S / 2 + Math.sin(a1) * S);
+    g.closePath();
+    g.fill();
+  }
+  // a soft bright core
+  const rg = g.createRadialGradient(S / 2, S / 2, 0, S / 2, S / 2, S * 0.5);
+  rg.addColorStop(0, 'rgba(255,255,255,0.55)');
+  rg.addColorStop(0.35, 'rgba(255,255,255,0.08)');
+  rg.addColorStop(1, 'rgba(255,255,255,0)');
+  g.fillStyle = rg;
+  g.fillRect(0, 0, S, S);
+  tex = new THREE.CanvasTexture(c);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  texCache.set(key, tex);
+  return tex;
+}
+
+const disc = new THREE.CircleGeometry(1, 64);
+
+export const BURST_COLORS: Record<string, [string, string]> = {
+  gold: ['#ffd23f', '#ffb21a'],
+  purple: ['#a58bff', '#7a5cff'],
+  teal: ['#57e0c8', '#25b8a6'],
+  pink: ['#ff8fb5', '#ff5c93'],
+  blue: ['#7fc4ff', '#4a90ff'],
+};
+
+/** `center`: the character's chest; the disc goes `behind` metres further from the camera, facing it. */
+export const Burst: React.FC<{ t: number; cam: CamState; center: THREE.Vector3; color?: string; behind?: number; k?: number }> = ({ t, cam, center, color = 'gold', behind = 1.6, k = 1 }) => {
+  const [a, b] = BURST_COLORS[color] || BURST_COLORS.gold;
+  const mat = React.useMemo(() => new THREE.MeshBasicMaterial({ map: raysTexture(a, b), toneMapped: false, transparent: true, depthWrite: false, fog: false }), [a, b]);
+  mat.opacity = k;
+  const dir = center.clone().sub(cam.pos).normalize();
+  const pos = center.clone().addScaledVector(dir, behind);
+  const dist = pos.distanceTo(cam.pos);
+  const size = Math.tan((cam.fov * Math.PI) / 360) * dist * 2.6 * (0.6 + 0.4 * k);
+  const q = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 0, 1), dir.clone().negate());
+  const spin = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 0, 1), t * 0.35);
+  q.multiply(spin);
+  return <mesh geometry={disc} material={mat} position={pos} quaternion={q} scale={size} renderOrder={-5} />;
+};
+@@@@ END
 @@@@ FILE src/engine/Stage.tsx | text | 1900 | e23f417a2dce8f6153836f401cdef71d905f6500605b5bcf5b43c77b7695c9a4
 // A ThreeCanvas configured for the house look: supersampled, soft shadows, no tone mapping
 // (flat toon colours stay exactly as specified), driven by an explicit CamState each frame.
@@ -22630,16 +22890,242 @@ export const ReviewOverlay: React.FC<{ scene: SceneState; label: string; t: numb
   );
 };
 @@@@ END
-@@@@ FILE src/episode/ShotView.tsx | text-crlf | 10384 | 5a4d47e3b0f4c050ab73ce2fcf16aedadffab56dc73f22c6e103b9ae98310d3b
+@@@@ FILE src/episode/Short.tsx | text | 12363 | 92552f4572845087b150f361c48c7db7fdd7f0b05f88f00e1dc5eaea7cb068cc
+// Vertical short (1080×1920, ~60 s) cut from an episode: a few pieces of shots played as in the episode,
+// then the world FREEZES and the hero alone turns to the lens to send the viewer to the full story
+// (the 4th-wall break, user rule 2026-11-09). The plan comes from tools/shorts.mjs:
+//   public/episodes/<slug>/shorts/plan_<n>.json  (+ short_<n>.wav when the audio was built)
+//   npx remotion render Short out.mp4 --props='{"slug":"menu-corpo","n":1}'
+import React from 'react';
+import { AbsoluteFill, Audio, type CalculateMetadataFunction, Sequence, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
+import { loadFont } from '@remotion/google-fonts/BarlowCondensed';
+import { evalActor } from '../engine/actor';
+import { setRim, Stage } from '../engine/Stage';
+import { Stickman } from '../engine/Stickman';
+import { LOOK } from '../engine/materials';
+import { Lighting, PALETTES } from '../sets/look';
+import { WorldProp } from '../sets/props';
+import { Grade } from '../overlays/Grade';
+import type { CameraSpec, CastMember, Episode as EpisodeSpec, Shot3D, Timing, Vec3 } from '../types';
+import { solveCamera } from './camsolve';
+import { castOf } from './resolve';
+import { evalShot, seedOf, sentenceStarts, type ShotCtx } from './scene';
+import { ShotView, VH, VW } from './ShotView';
+
+const { fontFamily } = loadFont('normal', { weights: ['800'], subsets: ['latin', 'latin-ext'] });
+
+export type ShortPlan = {
+  n: number;
+  title: string;
+  cta: string;
+  pieces: { shot: number; from: number; to: number }[]; // shot-local seconds
+  freeze: {
+    stage: number; // shot whose frozen world (at `at`) stages the 4th-wall break; the hero must be in it
+    at: number;
+    hold: number; // seconds of the frozen last frame (the "pause" hit) before the hero turns
+    lead: number; // seconds into the 4th-wall scene before he speaks
+    lineDur: number;
+    tail: number; // seconds after the line
+    words?: [string, number][]; // CTA word times (s, from the line start) when the line was voiced
+  };
+  total: number;
+};
+
+export type ShortProps = { slug: string; n: number; episode?: EpisodeSpec; timing?: Timing; plan?: ShortPlan; hasAudio?: boolean };
+
+export const calculateShortMetadata: CalculateMetadataFunction<ShortProps> = async ({ props }) => {
+  const base = `episodes/${props.slug}`;
+  const get = (f: string) => fetch(staticFile(`${base}/${f}`)).then(r => {
+    if (!r.ok) throw new Error(`missing ${base}/${f} — run: node tools/shorts.mjs plan ${props.slug}`);
+    return r.json();
+  });
+  const [episode, timing, plan] = await Promise.all([get('episode.json'), get('timing.json'), get(`shorts/plan_${props.n}.json`)]);
+  const hasAudio = await fetch(staticFile(`${base}/shorts/short_${props.n}.wav`), { method: 'HEAD' }).then(r => r.ok).catch(() => false);
+  const fps = episode.fps || 30;
+  return { durationInFrames: Math.ceil(plan.total * fps), fps, width: VW, height: VH, props: { ...props, episode, timing, plan, hasAudio } };
+};
+
+// ---- captions: word by word, 3 words a line, the spoken one highlighted (most shorts are watched muted) ----
+type Cap = { w: string; t: number; br?: boolean }; // br: a sentence ends after this word
+const Captions: React.FC<{ words: Cap[]; t: number; y?: number; hot?: string }> = ({ words, t, y = 1230, hot = '#ffd23f' }) => {
+  let i = -1;
+  for (let k = 0; k < words.length; k++) if (words[k].t <= t) i = k;
+  if (i < 0) return null;
+  // nothing spoken for a while: hide the stale line
+  if (t - words[i].t > 1.6 && (i === words.length - 1 || words[i + 1].t - words[i].t > 1.6)) return null;
+  // lines of up to 3 words that never run across a sentence end
+  let g = 0;
+  for (let k = 0, n = 0; k <= i; k++) {
+    if (k > 0 && (n === 3 || words[k - 1].br)) { g = k; n = 0; }
+    n++;
+  }
+  let e = g;
+  while (e < words.length && e - g < 3) { e++; if (words[e - 1].br) break; }
+  const line = words.slice(g, e);
+  const pop = Math.min(1, (t - words[i].t) / 0.08);
+  return (
+    <div style={{ position: 'absolute', left: 60, right: 60, top: y, display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0 26px' }}>
+      {line.map((c, k) => {
+        const on = g + k === i;
+        return (
+          <span key={k} style={{
+            fontFamily, fontWeight: 800, fontSize: 104, lineHeight: 1.05, textTransform: 'uppercase', color: on ? hot : '#ffffff',
+            WebkitTextStroke: '14px #000', paintOrder: 'stroke fill', textShadow: '0 8px 0 rgba(0,0,0,0.55)',
+            transform: on ? `scale(${1 + 0.12 * (1 - pop)})` : undefined, display: 'inline-block',
+          }}>{c.w}</span>
+        );
+      })}
+    </div>
+  );
+};
+
+// ---- the 4th-wall break -------------------------------------------------------------------------------
+// The stage shot is evaluated at `at` and held: set, props and every other actor stay frozen (and
+// desaturated, as a CSS filter on the world layer). The hero keeps his frozen pose but comes alive: head to
+// the lens, a smug face, the mouth on the line. A second, transparent canvas draws him again on top,
+// unfiltered, so he alone keeps his colour. The camera is a fresh front medium that pushes in.
+const FreezeScene: React.FC<{ ctx: ShotCtx; at: number; t: number; dur: number; lead: number; lineDur: number; cast: Record<string, CastMember> }> = ({ ctx, at, t, dur, lead, lineDur, cast }) => {
+  const sc = evalShot(ctx, at, cast);
+  const hero = sc.byId.hero;
+  const pal = PALETTES[sc.palKey] || PALETTES.afternoon;
+  const fallback: Vec3 = sc.def.marks.center || [0, 0, 0];
+  // a full shot that pushes in toward medium: the whole frozen hero, then his face, with room for the badge
+  const spec: CameraSpec = { shot: 'full', target: 'hero', angle: 8, height: 6, move: 'pushIn', amount: 1.1 };
+  const cam = hero ? solveCamera(spec, t, dur, sc.byId, fallback, { hero: hero.rot }) : sc.cam;
+  const live = hero && evalActor(
+    {
+      ...hero.spec, pos: hero.pos, rot: hero.rot, path: undefined, gait: undefined, poses: undefined,
+      pose: hero.pose as never,
+      faces: [{ t: 0, face: 'smug' }, { t: lead + lineDur * 0.55, face: 'grin', blend: 0.25 }], face: undefined,
+      talk: [[lead, lead + lineDur]], look: 'camera',
+    } as never,
+    cast.hero, t, seedOf('hero'), target => (target === 'camera' ? cam.pos : undefined), ctx.start + at + t,
+  );
+  LOOK.uDesat.value = 0;
+  setRim();
+  const S = sc.def.component;
+  const look = cam.look.toArray() as Vec3;
+  const k = Math.min(1, t / 0.25);
+  const lights = <Lighting p={pal} center={sc.def.shadowCenter || look} shadowBox={sc.def.shadowBox ?? 14} sky={!sc.def.interior} desat={0} />;
+  return (
+    <AbsoluteFill>
+      <AbsoluteFill style={{ filter: `saturate(${1 - 0.8 * k}) brightness(${1 - 0.18 * k}) contrast(1.05)` }}>
+        <Stage cam={cam} width={VW} height={VH}>
+          {lights}
+          <S t={0} center={look} variant={(ctx.shot as Shot3D).variant ?? 0} time={sc.palKey} />
+          {sc.props.map((p, i) => <WorldProp key={i} spec={p} t={0} />)}
+          {sc.states.map((s, i) => (s.spec.id === 'hero' && live ? <Stickman key={i} s={live} /> : <Stickman key={i} s={s} />))}
+        </Stage>
+      </AbsoluteFill>
+      {live && (
+        <AbsoluteFill>
+          <Stage cam={cam} width={VW} height={VH} transparent>
+            {React.cloneElement(lights, { sky: false, bg: false })}
+            <Stickman s={live} shadowBlob={false} />
+          </Stage>
+        </AbsoluteFill>
+      )}
+    </AbsoluteFill>
+  );
+};
+
+// the pause badge pops on the freeze and leaves once the pause has read (~1.3 s), before the push-in
+// brings the hero's head up under it
+const PauseBadge: React.FC<{ t: number }> = ({ t }) => {
+  const k = Math.min(1, t / 0.18);
+  const out = Math.max(0, Math.min(1, (t - 1.1) / 0.3));
+  if (out >= 1) return null;
+  return (
+    <div style={{ position: 'absolute', top: 96, left: 0, right: 0, display: 'flex', justifyContent: 'center', opacity: k * (1 - out) }}>
+      <div style={{ display: 'flex', gap: 22, padding: '26px 34px', borderRadius: 28, background: 'rgba(0,0,0,0.55)', transform: `scale(${1.25 - 0.25 * k})` }}>
+        <div style={{ width: 30, height: 110, background: '#fff', borderRadius: 6 }} />
+        <div style={{ width: 30, height: 110, background: '#fff', borderRadius: 6 }} />
+      </div>
+    </div>
+  );
+};
+
+export const Short: React.FC<ShortProps> = ({ slug, n, episode, timing, plan, hasAudio }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  if (!episode || !timing || !plan) return null;
+  const cast = castOf(episode);
+  const T = frame / fps;
+  const durOf = (i: number) => {
+    const tm = timing.shots[i];
+    return Math.max(1, Math.round((tm.start + tm.dur) * fps) - Math.round(tm.start * fps)) / fps;
+  };
+  // pieces on the short's timeline
+  let off = 0;
+  const laid = plan.pieces.map((p, k) => {
+    const o = off;
+    off += p.to - p.from;
+    return { ...p, k, off: o };
+  });
+  const piecesEnd = off;
+  const { freeze } = plan;
+  const ctaStart = piecesEnd + freeze.hold;
+  // captions: the episode's words inside each piece, then the CTA line
+  const caps: Cap[] = [];
+  laid.forEach(p => {
+    const ws = timing.shots[p.shot].words || [];
+    const starts = sentenceStarts(episode.shots[p.shot].vo, ws);
+    ws.forEach(([w, t], k) => { if (t >= p.from && t < p.to - 0.05) caps.push({ w, t: p.off + t - p.from, br: starts.has(k + 1) || k === ws.length - 1 }); });
+  });
+  const ctaWords: Cap[] = freeze.words?.length
+    ? freeze.words.map(([w, t]) => ({ w, t: ctaStart + freeze.lead + t }))
+    : plan.cta.split(/\s+/).filter(Boolean).map((w, i, a) => ({ w: w.replace(/[.,!?…]+$/, ''), br: /[.!?…]$/.test(w), t: ctaStart + freeze.lead + (i / a.length) * freeze.lineDur }));
+  const last = laid[laid.length - 1];
+  const stageShot = episode.shots[freeze.stage] as Shot3D;
+  const stageTm = timing.shots[freeze.stage];
+  const ctx = (i: number): ShotCtx => ({ shot: episode.shots[i] as Shot3D, dur: durOf(i), start: timing.shots[i].start, words: timing.shots[i].words });
+  return (
+    <AbsoluteFill style={{ background: '#000' }}>
+      {laid.map(p => {
+        const shot = episode.shots[p.shot];
+        const prevP = laid[p.k - 1], nextP = laid[p.k + 1];
+        const contPrev = prevP && prevP.shot === p.shot - 1 && p.from < 0.01 && shot.kind !== 'card' && episode.shots[prevP.shot].kind !== 'card';
+        const contNext = nextP && nextP.shot === p.shot + 1 && p.to >= durOf(p.shot) - 0.01;
+        return (
+          <Sequence key={p.k} from={Math.round(p.off * fps)} durationInFrames={Math.max(1, Math.round((p.to - p.from) * fps))} name={`${p.shot} ${shot.id || ''}`}>
+            <ShotView shot={shot} t={p.from + (frame - Math.round(p.off * fps)) / fps} dur={durOf(p.shot)} cast={cast} frame={frame}
+              words={timing.shots[p.shot].words} start={timing.shots[p.shot].start} vertical
+              prev={contPrev ? ctx(p.shot - 1) : undefined} nextCut={contNext ? episode.shots[p.shot + 1]?.cut : undefined} />
+          </Sequence>
+        );
+      })}
+      {/* the pause hit: the last frame held, draining of colour */}
+      <Sequence from={Math.round(piecesEnd * fps)} durationInFrames={Math.max(1, Math.round(freeze.hold * fps))} name="pause">
+        <AbsoluteFill style={{ filter: `saturate(${1 - 0.8 * Math.min(1, (T - piecesEnd) / freeze.hold)}) brightness(0.92)` }}>
+          <ShotView shot={episode.shots[last.shot]} t={last.to - 1 / fps} dur={durOf(last.shot)} cast={cast} frame={frame}
+            words={timing.shots[last.shot].words} start={timing.shots[last.shot].start} vertical />
+        </AbsoluteFill>
+        <AbsoluteFill style={{ background: '#fff', opacity: Math.max(0, 0.6 - (T - piecesEnd) * 4) }} />
+      </Sequence>
+      <Sequence from={Math.round(ctaStart * fps)} name="4th wall">
+        <FreezeScene ctx={{ shot: stageShot, dur: durOf(freeze.stage), start: stageTm.start, words: stageTm.words }} at={freeze.at}
+          t={T - ctaStart} dur={plan.total - ctaStart} lead={freeze.lead} lineDur={freeze.lineDur} cast={cast} />
+      </Sequence>
+      {T >= piecesEnd && <PauseBadge t={T - piecesEnd} />}
+      <Grade vignette={0.5} grain={0.03} />
+      <Captions words={T < ctaStart ? caps : ctaWords} t={T} hot={T < ctaStart ? '#ffd23f' : '#7fe0ff'} />
+      {hasAudio && <Audio src={staticFile(`episodes/${slug}/shorts/short_${n}.wav`)} />}
+    </AbsoluteFill>
+  );
+};
+
+@@@@ END
+@@@@ FILE src/episode/ShotView.tsx | text-crlf | 16256 | 9b98338e5bb8d59dcc1582dd594b183783c621a764ec58cb6394c58e9f94d4c0
 // Renders one episode shot (3D scene or 2D card) at shot-local time t.
 import React from 'react';
 import * as THREE from 'three';
 import { AbsoluteFill } from 'remotion';
 import { evalActor } from '../engine/actor';
-import { project, pxPerMetre } from '../engine/cam';
+import { impulse, project, pxPerMetre, shake } from '../engine/cam';
 import { rand, Shockwave, Sparks } from '../engine/fx';
 import { LOOK } from '../engine/materials';
 import { setRim, Stage } from '../engine/Stage';
+import { Burst } from '../engine/Burst';
 import { Stickman } from '../engine/Stickman';
 import { CARDS } from '../cards';
 import { Lighting, PALETTES } from '../sets/look';
@@ -22650,6 +23136,7 @@ import { OverlayLayer } from './overlays';
 import { cue, type Words } from './cue';
 import { evalShot, seedOf, type ShotCtx } from './scene';
 import { ReviewOverlay } from './ReviewOverlay';
+import { SFX_VISUAL } from './sfxVisual';
 
 const W = 1920, H = 1080;
 const GRADES: Record<string, string> = {
@@ -22665,6 +23152,21 @@ const GRADES: Record<string, string> = {
 };
 
 const moteGeo = new THREE.SphereGeometry(1, 6, 4);
+
+// Vertical (9:16 shorts) render: the 3D canvas is 1080×1920 with the same vertical field of view, so it shows
+// exactly the 16:9 frame's centre column at full resolution. 2D layers authored in 1920×1080 (overlays, which
+// project actors with the 16:9 maths) are scaled by 1920/1080 and centred, so they land where the 3D does.
+export const VW = 1080, VH = 1920;
+const VS = VH / H;
+// The 16:9 framings are a little tight once only their centre column shows (a close becomes a head wider than
+// the screen), so the vertical view opens the lens by VWIDEN; the 1920×1080 2D layer shrinks to match.
+export const VWIDEN = 1.25;
+export const widenFov = (fov: number) => (2 * Math.atan(Math.tan((fov * Math.PI) / 360) * VWIDEN) * 180) / Math.PI;
+const VO = VS / VWIDEN;
+export const Wide: React.FC<{ vertical?: boolean; children: React.ReactNode }> = ({ vertical, children }) =>
+  vertical ? (
+    <div style={{ position: 'absolute', left: (VW - W * VO) / 2, top: (VH - H * VO) / 2, width: W, height: H, transform: `scale(${VO})`, transformOrigin: 'top left' }}>{children}</div>
+  ) : <>{children}</>;
 
 /** Floating motes for time-freeze and atmosphere (static in the air when frozen). */
 const Motes: React.FC<{ t: number; center: THREE.Vector3; kind: string; frozen?: boolean }> = ({ t, center, kind, frozen }) => {
@@ -22689,19 +23191,41 @@ const Motes: React.FC<{ t: number; center: THREE.Vector3; kind: string; frozen?:
   return <group>{out}</group>;
 };
 
-const Scene3D: React.FC<{ ctx: ShotCtx; t: number; cast: Record<string, CastMember>; prev?: ShotCtx; review?: string }> = ({ ctx, t, cast, prev, review }) => {
+const Scene3D: React.FC<{ ctx: ShotCtx; t: number; cast: Record<string, CastMember>; prev?: ShotCtx; review?: string; vertical?: boolean }> = ({ ctx, t, cast, prev, review, vertical }) => {
   const { shot, dur, words } = ctx;
   const sc = evalShot(ctx, t, cast, prev);
-  const { def, palKey, states, cam, swap: sw, frozen, props } = sc;
+  const { def, palKey, states, swap: sw, frozen, props } = sc;
+  // sound → picture: every scripted sound kicks the camera / flashes / pops an emote on its frame (sfxVisual.ts)
+  const cues = sfxCues(shot, words);
+  const kick = cues.reduce((a, c) => a + (c.v.shake ?? 0) * impulse(t, c.t, 0.25), 0);
+  const cam = kick > 0.001 ? shake(sc.cam, t, 0.04 * kick, 20, 11) : sc.cam;
+  const tgt = shot.camera?.target;
+  const mainActor = typeof tgt === 'string' ? tgt : Array.isArray(tgt) && typeof tgt[0] === 'string' ? (tgt as string[])[0] : sc.byId.hero ? 'hero' : states[0]?.spec.id;
+  const autoOverlays = cues.filter(c => c.v.emote && mainActor).map(c => ({ type: 'emote' as const, actor: mainActor!, kind: c.v.emote!, at: c.t }));
+  const autoBurst = cues.find(c => c.v.burst && t >= c.t && t < c.t + 1.6);
   const pal = PALETTES[palKey] || PALETTES.afternoon;
   LOOK.uDesat.value = frozen ? 0.55 : 0;
   setRim();
   const S = def.component;
   const look = cam.look.toArray() as Vec3;
   const grade = GRADES[shot.fx?.grade || 'none'];
+  // beat effects: a sunburst behind an actor, and selective colour (everyone but fx.focus.ids goes grey)
+  const win = (sp?: { at?: number | string; until?: number | string }, def = 2.2) => {
+    if (!sp) return 0;
+    const a = cue(sp.at, words, 0), b = sp.until !== undefined ? cue(sp.until, words, dur) : a + def;
+    return t < a || t > b ? 0 : Math.min(1, (t - a) / 0.2, (b - t) / 0.2);
+  };
+  const burstK = autoBurst ? Math.min(1, (t - autoBurst.t) / 0.2, (autoBurst.t + 1.6 - t) / 0.2) : win(shot.fx?.burst);
+  const burstWho = burstK > 0 ? sc.byId[(autoBurst ? mainActor : shot.fx?.burst?.actor) || 'hero'] : undefined;
+  const focusK = win(shot.fx?.focus, 2.5);
+  const focusIds = focusK > 0 ? shot.fx?.focus?.ids || [] : [];
+  const camV = vertical ? { ...cam, fov: widenFov(cam.fov) } : cam;
+  const stageSize = vertical ? { width: VW, height: VH } : {};
+  const worldFilter = [grade !== 'none' ? grade : '', focusK > 0 ? `saturate(${1 - 0.85 * focusK}) brightness(${1 - 0.15 * focusK})` : ''].filter(Boolean).join(' ') || 'none';
   return (
-    <AbsoluteFill style={{ filter: grade }}>
-      <Stage cam={cam}>
+    <AbsoluteFill>
+    <AbsoluteFill style={{ filter: worldFilter }}>
+      <Stage cam={camV} {...stageSize}>
         <Lighting p={pal} center={def.shadowCenter || look} shadowBox={def.shadowBox ?? 14} sky={!def.interior} desat={frozen ? 0.55 : 0} />
         <S t={frozen ? 0 : t} center={look} variant={shot.variant ?? 0} time={palKey} />
         {props.map((p, i) => <WorldProp key={i} spec={p} t={frozen ? 0 : t} />)}
@@ -22712,6 +23236,7 @@ const Scene3D: React.FC<{ ctx: ShotCtx; t: number; cast: Record<string, CastMemb
           </React.Fragment>
         ))}
         {(shot.fx?.particles || frozen) && <Motes t={t} center={cam.look} kind={shot.fx?.particles || 'dust'} frozen={frozen} />}
+        {burstWho && <Burst t={t} cam={cam} center={burstWho.anchors.chest} color={autoBurst?.v.burst ?? shot.fx?.burst?.color} k={burstK} />}
         {sw && t >= sw.t && t < sw.t + 0.6 && sw.pre.map((a, i) => (
           <React.Fragment key={'sw' + i}>
             <Stickman s={evalActor(a, cast[a.id] || cast.hero, sw.t - 0.01, seedOf(a.id), undefined, ctx.start + sw.t - 0.01)} ghostOpacity={0.5 * (1 - (t - sw.t) / 0.6)} ghostColor="#b07cff" ghostOrder={40 + i * 2} shadowBlob={false} />
@@ -22720,23 +23245,45 @@ const Scene3D: React.FC<{ ctx: ShotCtx; t: number; cast: Record<string, CastMemb
           </React.Fragment>
         ))}
       </Stage>
+    </AbsoluteFill>
+      {focusIds.length > 0 && (
+        <AbsoluteFill style={{ filter: grade !== 'none' ? grade : undefined }}>
+          <Stage cam={camV} {...stageSize} transparent>
+            <Lighting p={pal} center={def.shadowCenter || look} shadowBox={def.shadowBox ?? 14} sky={false} bg={false} desat={0} />
+            {states.filter(s => focusIds.includes(s.spec.id)).map((s, i) => <Stickman key={i} s={s} faceGlow={s.spec.glow} shadowBlob={false} />)}
+          </Stage>
+        </AbsoluteFill>
+      )}
       {shot.fx?.speedLines && <SpeedLines t={t} opacity={0.55} />}
       {sw && <Flash t={t} at={sw.t} dur={0.14} color="#c9a6ff" peak={0.45} />}
-      <OverlayLayer overlays={(shot.overlays || []).map(o => {
+      {cues.filter(c => c.v.flash).map((c, i) => <Flash key={'sf' + i} t={t} at={c.t} dur={0.16} peak={c.v.flash} />)}
+      <Wide vertical={vertical}>
+      <OverlayLayer overlays={[...(shot.overlays || []), ...autoOverlays].map(o => {
         // overlay times take word cues: `at`, `until` (shot time) and a stopwatch's `switchAt` (time since it appeared)
         const x = o as { at?: number | string; until?: number | string; switchAt?: number | string };
         const at = cue(x.at, words, 0);
         // a body menu's row cues / noteAt are shot times too: make them relative to the panel
         const m = o.type === 'menu' ? { rows: o.rows.map(r => (r.at !== undefined ? { ...r, at: cue(r.at, words, 0) - at } : r)), ...(o.noteAt !== undefined ? { noteAt: cue(o.noteAt, words, 0) - at } : {}) } : {};
-        return { ...o, at, ...m, ...(x.until !== undefined ? { until: cue(x.until, words, 0) } : {}), ...(typeof x.switchAt === 'string' ? { switchAt: cue(x.switchAt, words, 0) - at } : {}) } as typeof o;
+        // vertical shorts keep the title in its compact 9:16 layout (the wide one loses its sides)
+        const vt = vertical && o.type === 'title' ? { compact: 999 } : {};
+        return { ...o, at, ...m, ...vt, ...(x.until !== undefined ? { until: cue(x.until, words, 0) } : {}), ...(typeof x.switchAt === 'string' ? { switchAt: cue(x.switchAt, words, 0) - at } : {}) } as typeof o;
       })} t={t} dur={dur} project={(id: string) => {
         const s = sc.byId[id];
         return s ? { ...project(s.anchors.headTop, cam, W, H), scale: pxPerMetre(s.anchors.head, cam, H) } : null;
       }} />
+      </Wide>
       {review && <ReviewOverlay scene={sc} label={review} t={t} dur={dur} />}
     </AbsoluteFill>
   );
 };
+
+/** The shot's scripted sounds that have an automatic visual (sfxVisual.ts), with their resolved times. */
+function sfxCues(shot: Shot, words: Words | undefined) {
+  return (shot.sfx || []).flatMap(c => {
+    const v = SFX_VISUAL[c.name];
+    return v ? [{ t: cue(c.t as number | string, words, 0), v }] : [];
+  });
+}
 
 // any "@word" string inside a card spec becomes that word's time (seconds into the shot)
 const cueSpec = (v: unknown, words: Words | undefined): unknown =>
@@ -22744,32 +23291,46 @@ const cueSpec = (v: unknown, words: Words | undefined): unknown =>
     : Array.isArray(v) ? v.map(x => cueSpec(x, words))
     : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, cueSpec(x, words)])) : v;
 
-const CardScene: React.FC<{ shot: CardShot; t: number; dur: number; words?: Words }> = ({ shot, t, dur, words }) => {
+const CardScene: React.FC<{ shot: CardShot; t: number; dur: number; words?: Words; vertical?: boolean }> = ({ shot, t, dur, words, vertical }) => {
   const def = CARDS[shot.card];
   if (!def) return <AbsoluteFill style={{ background: '#16203a', color: '#f0b44c', fontSize: 64, justifyContent: 'center', alignItems: 'center' }}>card “{shot.card}” missing</AbsoluteFill>;
   const { kind: _k, vo: _v, who: _w, hold: _h, card: _c, overlays, sfx: _s, cut: _cut, id: _id, ...spec } = shot;
   const C = def.component;
-  return (
+  const card = (
     <AbsoluteFill>
       <C t={t} dur={dur} spec={cueSpec(spec, words) as typeof spec} W={W} H={H} />
       <OverlayLayer overlays={overlays || []} t={t} dur={dur} project={() => null} />
+    </AbsoluteFill>
+  );
+  if (!vertical) return card;
+  // vertical: a 16:9 card would lose its sides in the centre column, so it is fitted to the width,
+  // over a blurred, darkened copy of itself that fills the frame
+  const fit = VW / W;
+  return (
+    <AbsoluteFill style={{ background: '#0d1220', overflow: 'hidden' }}>
+      <div style={{ position: 'absolute', left: (VW - W * VS) / 2, top: 0, width: W, height: H, transform: `scale(${VS})`, transformOrigin: 'top left', filter: 'blur(14px) brightness(0.45) saturate(1.2)' }}>{card}</div>
+      <div style={{ position: 'absolute', left: 0, top: (VH - H * fit) / 2, width: W, height: H, transform: `scale(${fit})`, transformOrigin: 'top left', boxShadow: '0 0 60px rgba(0,0,0,0.6)' }}>{card}</div>
     </AbsoluteFill>
   );
 };
 
 // Two-sided transitions: the outgoing shot plays the first half in its last frames (nextCut),
 // the incoming shot the second half in its first frames (cut). Pure 2D, on the finished frame.
-const TR = { whip: 0.17, zoom: 0.2, smash: 0.28 };
+const TR = { whip: 0.17, zoom: 0.2, smash: 0.28, push: 0.2 };
 let trSeq = 0;
 function transition(cut: string | undefined, nextCut: string | undefined, t: number, dur: number) {
   const id = `tr${++trSeq % 1000}`;
   let x = 0, sc = 1, bx = 0, by = 0, rot = 0;
   const outK = (w: number) => Math.max(0, Math.min(1, (t - (dur - w)) / w));
   const inK = (w: number) => Math.max(0, Math.min(1, 1 - t / w));
-  if (nextCut === 'whip') { const k = outK(TR.whip) ** 2; x -= k * 12; bx += k * 110; sc *= 1 + k * 0.3; }
-  if (cut === 'whip') { const k = inK(TR.whip) ** 2; x += k * 12; bx += k * 110; sc *= 1 + k * 0.3; }
-  if (nextCut === 'zoom') { const k = outK(TR.zoom) ** 2; sc *= 1 + k * 1.1; bx += k * 14; by += k * 14; }
-  if (cut === 'zoom') { const k = inK(TR.zoom) ** 2; sc *= 1 + k * 0.7; bx += k * 14; by += k * 14; }
+  // blur raised 2026-11-09 (Vitinho reference: the motion blur of a whip/zoom is what sells it)
+  if (nextCut === 'whip') { const k = outK(TR.whip) ** 2; x -= k * 14; bx += k * 160; sc *= 1 + k * 0.3; }
+  if (cut === 'whip') { const k = inK(TR.whip) ** 2; x += k * 14; bx += k * 160; sc *= 1 + k * 0.3; }
+  if (nextCut === 'zoom') { const k = outK(TR.zoom) ** 2; sc *= 1 + k * 1.2; bx += k * 24; by += k * 24; }
+  if (cut === 'zoom') { const k = inK(TR.zoom) ** 2; sc *= 1 + k * 0.8; bx += k * 24; by += k * 24; }
+  // push: the new shot shoves the old one out to the left
+  if (nextCut === 'push') { const k = outK(TR.push) ** 2; x -= k * 100; bx += k * 60; }
+  if (cut === 'push') { const k = inK(TR.push) ** 2; x += k * 100; bx += k * 60; }
   if (cut === 'smash') {
     // punch-in that settles + a decaying shake
     const k = inK(TR.smash);
@@ -22781,13 +23342,15 @@ function transition(cut: string | undefined, nextCut: string | undefined, t: num
 }
 
 export const ShotView: React.FC<{
-  shot: Shot; t: number; dur: number; cast: Record<string, CastMember>; frame: number; words?: Words; start?: number; prev?: ShotCtx; review?: string; nextCut?: string;
-}> = ({ shot, t, dur, cast, words, start = 0, prev, review, nextCut }) => {
+  shot: Shot; t: number; dur: number; cast: Record<string, CastMember>; frame: number; words?: Words; start?: number; prev?: ShotCtx; review?: string; nextCut?: string; vertical?: boolean;
+}> = ({ shot, t, dur, cast, words, start = 0, prev, review, nextCut, vertical }) => {
   const body = shot.kind === 'card'
-    ? <CardScene shot={shot as CardShot} t={t} dur={dur} words={words} />
-    : <Scene3D ctx={{ shot: shot as Shot3D, dur, start, words }} t={t} cast={cast} prev={prev} review={review} />;
+    ? <CardScene shot={shot as CardShot} t={t} dur={dur} words={words} vertical={vertical} />
+    : <Scene3D ctx={{ shot: shot as Shot3D, dur, start, words }} t={t} cast={cast} prev={prev} review={review} vertical={vertical} />;
   const cut = shot.cut;
   const tr = transition(cut, nextCut, t, dur);
+  const punch = sfxCues(shot, words).reduce((a, c) => a + (c.v.zoom ?? 0) * impulse(t, c.t, 0.18), 0);
+  if (punch > 0.002) tr.transform = `${tr.transform || ''} scale(${1 + punch})`;
   return (
     <AbsoluteFill>
       {tr.blurX > 0.5 && (
@@ -22808,7 +23371,7 @@ export const ShotView: React.FC<{
   );
 };
 @@@@ END
-@@@@ FILE src/episode/audit.ts | text-crlf | 28225 | fe0f40fea875a5d37ae781c0dde95be60c06293936b757547c14b6d7a6456e6e
+@@@@ FILE src/episode/audit.ts | text | 33212 | 1c41572154eb9be1f4003d65f82ffda71be72bcadbbcbb45cc2f091a51ace580
 // Pre-render scene audit: walks every frame of every 3D shot through evalShot (the same code the
 // renderer uses) and checks numbers, not pictures. Run: node tools/qa.cjs audit <slug>
 import * as THREE from 'three';
@@ -22821,6 +23384,7 @@ import { cue } from './cue';
 import { beatsOf, evalShot, flowInfo, framingDelta, type ShotCtx } from './scene';
 import type { CameraSpec, Vec3 } from '../types';
 import { clipsOf, propSolids, setSolids } from './collide';
+import { SFX_VISUAL } from './sfxVisual';
 import { SETS } from '../sets';
 
 export type Finding = { sev: 'error' | 'warn'; shot: number; id?: string; t?: number; check: string; msg: string };
@@ -23118,6 +23682,62 @@ export function auditEpisode(ep: Episode, timing: Timing): AuditReport {
   // house rule (user, 2026-11-09): every long episode runs at least 10:00
   if (long && !timing.draft && timing.total < 600) add({ sev: 'warn', shot: 0, check: 'length', msg: `episode runs ${Math.floor(timing.total / 60)}:${String(Math.round(timing.total % 60)).padStart(2, '0')} — the house minimum is 10:00 (add narration: an extra problem, rule test or world-bigger scene)` });
   if (long && timing.draft && timing.total < 600) add({ sev: 'warn', shot: 0, check: 'length', msg: `draft estimate ${Math.floor(timing.total / 60)}:${String(Math.round(timing.total % 60)).padStart(2, '0')} — the house minimum is 10:00; write more before buying voice` });
+  // visual beats (house rule 2026-11-09, Vitinho reference): something changes on screen at least every ~2 s —
+  // a cut or sub-cut, an overlay, a sound, a face or pose change, a beat effect. New episodes only (no `clips`);
+  // deliberate holds (coverage 'calm' / 'off': the dilemma, a frozen tableau) are exempt.
+  if (long && !ep.clips?.length) {
+    const ev: number[] = [];
+    const at = (x: unknown, w: typeof timing.shots[number]['words'], base: number) => base + cue(x as number | string | undefined, w, 0);
+    ep.shots.forEach((sh, i) => {
+      const tm = timing.shots[i], w = tm.words;
+      ev.push(tm.start);
+      if (sh.kind !== 'card') beatsOf(ctxOf(i)).forEach(b => { if (b.t0 > 0) ev.push(tm.start + b.t0); });
+      (sh.overlays || []).forEach(o => ev.push(at((o as { at?: unknown }).at, w, tm.start)));
+      (sh.sfx || []).forEach(c => ev.push(at(c.t, w, tm.start)));
+      if (sh.kind === 'card') return;
+      const s3 = sh as Shot3D;
+      (s3.actors || []).forEach(a => {
+        (a.faces || []).forEach(k => ev.push(at(k.t, w, tm.start)));
+        (a.poses || []).forEach(k => ev.push(at(k.t, w, tm.start)));
+        (a.path || []).forEach(k => ev.push(at(k.t, w, tm.start)));
+      });
+      if (s3.fx?.swap) ev.push(at(s3.fx.swap.t, w, tm.start));
+      if (s3.fx?.burst) ev.push(at(s3.fx.burst.at, w, tm.start));
+      if (s3.fx?.focus) ev.push(at(s3.fx.focus.at, w, tm.start));
+    });
+    ev.sort((a, b) => a - b);
+    const shotAt = (t: number) => { let k = 0; timing.shots.forEach((x, i) => { if (x.start <= t + 1e-6) k = i; }); return k; };
+    const flagged = new Set<number>();
+    for (let k = 1; k < ev.length; k++) {
+      const gap = ev[k] - ev[k - 1];
+      if (gap <= 2.5) continue;
+      const i = shotAt(ev[k - 1] + 0.01), sh = ep.shots[i] as Shot3D;
+      if (flagged.has(i) || (ep.shots[i].kind !== 'card' && (sh.coverage === 'calm' || sh.coverage === 'off'))) continue;
+      flagged.add(i);
+      add({ sev: 'warn', shot: i, id: sh.id, t: ev[k - 1] - timing.shots[i].start, check: 'beat', msg: `${gap.toFixed(1)} s with nothing new on screen (from ${(ev[k - 1] - timing.shots[i].start).toFixed(1)} s into the shot) — add a beat: an emote, a highlight circle, a flying object, a word pop, a face/pose change, a burst or a sub-cut (COLA "Batida visual")` });
+    }
+  }
+
+  // sound → picture (house rule 2026-11-09): every scripted sound has a visual event within 0.25 s — an automatic
+  // one (sfxVisual.ts), a cut/sub-cut, an overlay, a face/pose/path key or an effect. New episodes only.
+  if (!ep.clips?.length) ep.shots.forEach((sh, i) => {
+    const tm = timing.shots[i], w = tm.words;
+    const vis: number[] = [0];
+    if (sh.kind !== 'card') beatsOf(ctxOf(i)).forEach(b => vis.push(b.t0));
+    (sh.overlays || []).forEach(o => vis.push(cue((o as { at?: number | string }).at, w, 0)));
+    if (sh.kind !== 'card') {
+      const s3 = sh as Shot3D;
+      (s3.actors || []).forEach(a => [...(a.faces || []), ...(a.poses || []), ...(a.path || [])].forEach(k => vis.push(cue(k.t as number | string, w, 0))));
+      [s3.fx?.swap?.t, s3.fx?.burst?.at, s3.fx?.focus?.at].forEach(x => { if (x !== undefined) vis.push(cue(x as number | string, w, 0)); });
+    }
+    (sh.sfx || []).forEach(c => {
+      if (SFX_VISUAL[c.name]) return;
+      const tc = cue(c.t as number | string, w, 0);
+      if (!vis.some(v => Math.abs(v - tc) <= 0.25))
+        add({ sev: 'warn', shot: i, id: sh.id, t: tc, check: 'sync', msg: `sound "${c.name}" at ${tc.toFixed(2)} s has nothing visible on its frame — show it (a pose/face key, a prop moving, an emote, a cut) or pick a sound with an automatic visual (sfxVisual.ts)` }, `${i}|sync|${c.name}|${tc.toFixed(2)}`);
+    });
+  });
+
   // retention hook (user rule, 2026-11-09, new episodes only): the first 10 s need fast cutting, an early sound and a punchy move.
   // That the power shows by 0:08 needs a reader: COLA "Primeiros 10 s".
   if (long && ep.hookCheck !== false) {
@@ -23147,14 +23767,24 @@ export function auditEpisode(ep: Episode, timing: Timing): AuditReport {
       if (out) add({ sev: 'warn', shot: i, id: sh.id, check: 'vertical', msg: `${x.type} overlay sits outside the 9:16 centre column — a vertical cut loses it (stopwatch corner "tc"/"bc", news safe:true, stat pos "center", or a "word" overlay)` }, `${i}|vov|${x.type}`);
     }
   });
-  if (long && (ep.clips?.length ?? 0) < 4) add({ sev: 'warn', shot: 0, check: 'clips', msg: `${ep.clips?.length ?? 0} short clip(s) marked — a long episode needs ≥ 4 self-contained ~90 s clips (episode.clips)` });
-  for (const c of ep.clips || []) {
-    const a = ids.indexOf(c.from), b = ids.indexOf(c.to);
-    if (a < 0 || b < 0 || b < a) { add({ sev: 'error', shot: Math.max(0, a), check: 'clips', msg: `clip "${c.title}": shot ids ${c.from}…${c.to} not found or out of order` }); continue; }
-    const t0 = timing.shots[a].start, t1 = timing.shots[b].start + timing.shots[b].dur, d = t1 - t0;
-    const tc = (x: number) => `${Math.floor(x / 60)}:${String(Math.floor(x % 60)).padStart(2, '0')}`;
-    if (d < 60 || d > 95) add({ sev: 'warn', shot: a, id: c.from, check: 'clips', msg: `clip "${c.title}" (${tc(t0)}–${tc(t1)}) runs ${d.toFixed(0)} s — aim for 75–90 s (60–95 ok)` });
-  }
+  // the 4 vertical shorts (user rule, 2026-11-09; tools/shorts.mjs renders them). A shorts.json next to the
+  // episode overrides `episode.shorts`; this audits the generator's list (tools/shorts.mjs plan checks either).
+  // Episodes from before the rule (they carry `clips`) are not asked for shorts.
+  if (long && !ep.clips?.length && (ep.shorts?.length ?? 0) !== 4) add({ sev: 'warn', shot: 0, check: 'shorts', msg: `${ep.shorts?.length ?? 0} short(s) planned — every episode gets 4 vertical ~60 s shorts (episode(shorts=[...]): the user's picks if they named moments, else the 4 strongest hooks)` });
+  (ep.shorts || []).forEach((sh, k) => {
+    const list = sh.shots || (() => { const a = ids.indexOf(sh.from || ''), b = ids.indexOf(sh.to || ''); return a < 0 || b < a ? [] : ids.slice(a, b + 1).filter(x => !(sh.drop || []).includes(x as string)); })();
+    const at = list.map(x => ids.indexOf(x as string));
+    if (!list.length || at.some(x => x < 0)) { add({ sev: 'error', shot: 0, check: 'shorts', msg: `short ${k + 1} "${sh.title}": shot ids not found or out of order` }); return; }
+    const body = at.reduce((s, i) => s + timing.shots[i].dur, 0) - (sh.cutAt !== undefined ? timing.shots[at[at.length - 1]].dur - sh.cutAt : 0);
+    const total = body + 1.95 + sh.cta.length / 14.5;
+    if (total < 55 || total > 62) add({ sev: 'warn', shot: at[0], id: list[0], check: 'shorts', msg: `short ${k + 1} "${sh.title}" runs ~${total.toFixed(0)} s with its CTA — aim for 55–62 s (60 s rule)` });
+    const heroIn = (i: number) => !!(ep.shots[i] as Shot3D).actors?.some(a => a.id === 'hero');
+    const stage = sh.stage ? ids.indexOf(sh.stage) : [...at].reverse().find(heroIn);
+    if (stage === undefined || stage < 0 || !heroIn(stage)) add({ sev: 'error', shot: at[0], id: list[0], check: 'shorts', msg: `short ${k + 1}: no shot with the hero to stage the 4th-wall break (set stage)` });
+    const opener = (ep.shots[at[0]].vo || '').replace(/\[[^\]]*\]/g, '').trim();
+    if (/^(e|mas|então|aí|depois|até|por isso|isso|esses?|essas?|aquilo|também)(?!\p{L})/iu.test(opener)) add({ sev: 'warn', shot: at[0], id: list[0], check: 'shorts', msg: `short ${k + 1} opens with "${opener.split(' ').slice(0, 3).join(' ')}…" — a short opens cold, with no connective that needs context` });
+    if (!/canal/i.test(sh.cta)) add({ sev: 'warn', shot: at[0], id: list[0], check: 'shorts', msg: `short ${k + 1}: the hero's line never sends the viewer to the channel` });
+  });
   return { findings, events, flows, frames };
 }
 
@@ -23480,7 +24110,7 @@ export function cue(spec: number | string | undefined, words: Words, fallback = 
   return hit ? hit[1] + off : fallback;
 }
 @@@@ END
-@@@@ FILE src/episode/overlays.tsx | text-crlf | 4586 | 5480425d3dd66f25e1b3c66d8a0bca81e79db84ba73df5e8237e9e9780265707
+@@@@ FILE src/episode/overlays.tsx | text-crlf | 6317 | 024421b34355f0c83cf1b857fb613dcd43363c3564c082c0ba8b17758a38d527
 // Dispatches episode overlay specs (labels, titles, stats, bubbles…) onto overlay components.
 import React from 'react';
 import { AbsoluteFill } from 'remotion';
@@ -23494,6 +24124,7 @@ import { CrushMeter } from '../overlays/CrushMeter';
 import { NewsBar } from '../overlays/NewsBar';
 import { KeyWord } from '../overlays/KeyWord';
 import { BodyMenu, type MenuRow } from '../overlays/BodyMenu';
+import { Emote, FlyIn, HighlightCircle, Spotlight, TimeWarp } from '../overlays/Beats';
 import type { Overlay } from '../types';
 
 export type Projector = (actorId: string) => { x: number; y: number; visible: boolean; scale: number } | null;
@@ -23504,7 +24135,8 @@ export const OverlayLayer: React.FC<{ overlays: Overlay[]; t: number; dur: numbe
   <>
     {overlays.map((o, i) => {
       const at = (o as { at?: number }).at ?? 0;
-      const until = (o as { until?: number }).until ?? dur;
+      // beat effects end on their own (they fade out); the others last to the end of the shot by default
+      const until = (o as { until?: number }).until ?? (['emote', 'circle', 'flyin', 'timewarp', 'spotlight'].includes(o.type) ? Infinity : dur);
       const lt = t - at;
       if (lt < 0 || t > until) return null;
       switch (o.type) {
@@ -23549,6 +24181,40 @@ const OverlayExt: React.FC<{ o: Overlay; t: number; project: Projector }> = ({ o
       return <BodyMenu t={t} rows={o.rows as MenuRow[]} title={o.title} note={o.note} noteAt={o.noteAt as number | undefined} alarm={o.alarm} y={o.y} dur={dur} />;
     case 'word':
       return <KeyWord t={t} text={o.text} color={o.color} y={o.y} dur={dur} />;
+    // beat effects: short by default (their own length), `until` stretches them
+    case 'emote': {
+      const d = dur ?? 1.6;
+      const p = project(o.actor);
+      if (t > d || !p || !p.visible) return null;
+      return <Emote t={t} kind={o.kind} x={p.x} y={p.y} px={p.scale} dur={d} />;
+    }
+    case 'circle': {
+      const d = dur ?? 1.6;
+      if (t > d) return null;
+      if (o.actor) {
+        const p = project(o.actor);
+        if (!p || !p.visible) return null;
+        return <HighlightCircle t={t} x={p.x + (o.dx ?? 0) * p.scale} y={p.y + (o.dy ?? 0.24) * p.scale} r={(o.r ?? 0.34) * p.scale} color={o.color} dur={d} />;
+      }
+      return <HighlightCircle t={t} x={o.x ?? 960} y={o.y ?? 540} r={o.r ?? 140} color={o.color} dur={d} />;
+    }
+    case 'flyin': {
+      const d = dur ?? 1.6;
+      if (t > d) return null;
+      return <FlyIn t={t} kinds={o.kinds?.length ? o.kinds : ['paper']} n={o.n} from={o.from} dur={d} />;
+    }
+    case 'timewarp': {
+      const d = dur ?? 1.8;
+      if (t > d) return null;
+      return <TimeWarp t={t} dur={d} />;
+    }
+    case 'spotlight': {
+      const d = dur ?? 2;
+      if (t > d) return null;
+      const p = o.actor ? project(o.actor) : null;
+      const x = p ? p.x : o.x ?? 960, y = p ? p.y + 0.6 * p.scale : o.y ?? 540, r = p ? (o.r ?? 0.9) * p.scale : o.r ?? 260;
+      return <Spotlight t={t} x={x} y={y} r={r} dim={o.dim} dur={d} />;
+    }
     case 'bubble':
     case 'thought': {
       const p = project(o.actor);
@@ -23604,7 +24270,7 @@ export function castOf(ep: Episode): Record<string, CastMember> {
   return out;
 }
 @@@@ END
-@@@@ FILE src/episode/scene.ts | text-crlf | 29983 | 0fb5f9ae09318a9baee7f781abbb737bd5f3435f5b14bda9cdb02d390bceeb73
+@@@@ FILE src/episode/scene.ts | text-crlf | 29990 | 2e5c0d37b65060914df83c5aafc30c44dd01ed7fa60d480d6571d8a412ea8976
 // Single source of truth for "what is where" in an episode shot at time t: actors (marks, word
 // cues, swap power, continuity blending), camera (solver, shake, flow across near-identical cuts)
 // and props. The renderer (ShotView), the scene audit, the self-tests and the review overlay all
@@ -23833,7 +24499,7 @@ function magnetize(cuts: number[], hits: Hit[], covered: boolean): number[] {
 
 /** Indices (into `words`) of words that start a sentence in the shot's vo, read from its punctuation.
  *  Only trusted when the vo tokenizes to the same word count as the alignment; else none (no preference). */
-function sentenceStarts(vo: string | undefined, words: Words): Set<number> {
+export function sentenceStarts(vo: string | undefined, words: Words): Set<number> {
   const out = new Set<number>();
   if (!vo || !words?.length) return out;
   const toks = vo.replace(/\[[^\]]*\]/g, ' ').replace(/<[^>]*>/g, ' ').replace(/[-–—]/g, ' ').split(/\s+/).filter(w => /[\p{L}\p{N}]/u.test(w));
@@ -24325,7 +24991,61 @@ export function runSelfTests(): TestResult[] {
   return out;
 }
 @@@@ END
-@@@@ FILE src/episode/validate.ts | text | 4618 | a6f61f48feb4cc487b6ba3160a24129725e8eb1096298feb922e53d5426fa4cc
+@@@@ FILE src/episode/sfxVisual.ts | text | 2157 | a8e5175c103e866f167ab5c58188a78977e26dc99404f316badd1430002af1d5
+// Sound → picture (house rule 2026-11-09: "a informação visual deve acompanhar o som pra reter"). Every scripted
+// sound cue in a shot's `sfx` gets an automatic visual answer on its frame, so nothing is heard without being
+// seen: a camera kick, a white flash, a punch-in of the frame, an emote on the shot's main actor, a burst.
+// Sounds not listed here (diegetic ones: a door, eating, footsteps) need a visible action of their own at the
+// cue — the audit warns `[sync]` when a cue has no visual event within 0.25 s.
+import type { EmoteKind } from '../overlays/Beats';
+
+export type SfxVisual = {
+  shake?: number; // camera kick strength (decays in ~0.25 s)
+  flash?: number; // white flash peak 0..1
+  zoom?: number; // 2D punch-in of the frame (fraction, e.g. 0.06)
+  emote?: EmoteKind; // on the shot's main actor (camera target, else the hero)
+  burst?: string; // sunburst colour behind the main actor (~1.6 s)
+};
+
+export const SFX_VISUAL: Record<string, SfxVisual> = {
+  // hits
+  boom: { shake: 1, flash: 0.35, zoom: 0.05 },
+  farBoom: { shake: 0.45 },
+  subdrop: { shake: 0.6, zoom: 0.04 },
+  impact: { shake: 0.8, flash: 0.25, zoom: 0.05 },
+  punch: { shake: 0.9, flash: 0.3, zoom: 0.06 },
+  nuke: { shake: 1.8, flash: 0.9, zoom: 0.08 },
+  thud: { shake: 0.35 },
+  crack: { shake: 0.4, zoom: 0.03 },
+  fall: { shake: 0.6 },
+  debris: { shake: 0.4 },
+  splash: { shake: 0.3 },
+  water: { shake: 0.25 },
+  rumble: { shake: 0.4 },
+  // comedy & reactions
+  bonk: { shake: 0.5, emote: 'sparkle', zoom: 0.05 },
+  shock: { emote: 'exclaim', zoom: 0.07 },
+  sting: { emote: 'exclaim', zoom: 0.05 },
+  fah: { emote: 'sweat', zoom: 0.06, shake: 0.3 },
+  awkward: { emote: 'sweat' },
+  angry: { emote: 'anger', zoom: 0.04 },
+  sad: { emote: 'tears' },
+  villain: { zoom: 0.08, flash: 0.2 },
+  badass: { zoom: 0.05 },
+  angels: { burst: 'gold' },
+  // small UI-like sounds
+  ding: { emote: 'sparkle' },
+  chime: { emote: 'sparkle' },
+  glint: { emote: 'sparkle' },
+  notify: { emote: 'exclaim' },
+  photo: { flash: 0.7 },
+  teleport: { flash: 0.6, zoom: 0.05 },
+  zap: { flash: 0.4 },
+  heartbeat: { zoom: 0.035 },
+  gulp: { emote: 'sweat' },
+};
+@@@@ END
+@@@@ FILE src/episode/validate.ts | text | 4900 | ff64f0ae1253b04214816aaf482463a2ecc823033d0462294afec24a1a3b5a94
 // Checks an episode spec against the registries so mistakes fail fast with a readable list.
 // Runs inside calculateMetadata; check from the CLI with:
 //   npx remotion compositions src/index.ts --props='{"slug":"<slug>"}'
@@ -24337,7 +25057,11 @@ import type { Episode, Shot3D } from '../types';
 import { castOf } from './resolve';
 
 // Mirrors LIB in tools/sfx/episode_audio.py
-export const SFX_NAMES = ['whoosh', 'whooshUp', 'swoosh', 'boom', 'farBoom', 'thud', 'footsteps', 'gulp', 'click', 'pop', 'cloth', 'heartbeat',
+import PACK from '../../efeitos-sonoros/map.json';
+
+// the user's SFX pack (efeitos-sonoros/map.json) adds its own names (bonk, fah, nuke, …)
+const PACK_NAMES = Object.keys(PACK).filter(k => !k.startsWith('_'));
+export const SFX_NAMES = [...PACK_NAMES, 'whoosh', 'whooshUp', 'swoosh', 'boom', 'farBoom', 'thud', 'footsteps', 'gulp', 'click', 'pop', 'cloth', 'heartbeat',
   'subdrop', 'riser', 'swell', 'zap', 'crackle', 'wind', 'debris', 'rustle', 'chime', 'glint', 'ticks', 'ring', 'bell', 'whistle', 'groan', 'groanLow',
   'menu', 'tick', 'alert', 'horn', 'crack', 'splash'];
 const PROPS = ['table', 'roundTable', 'chair', 'bed', 'desk', 'deskLamp', 'door', 'window', 'shelf', 'plant', 'tree', 'bush', 'lamp', 'fence', 'car', 'house',
@@ -24345,7 +25069,7 @@ const PROPS = ['table', 'roundTable', 'chair', 'bed', 'desk', 'deskLamp', 'door'
   'fire', 'smoke', 'firetruck', 'basket', 'binoculars', 'trafficlight', 'pizza', 'jar', 'iceHole', 'dog'];
 const SHOTS = ['establishing', 'wide', 'full', 'medium', 'close', 'xclose', 'insert'];
 const MOVES = ['static', 'drift', 'pushIn', 'pullOut', 'orbitL', 'orbitR', 'craneUp', 'craneDown', 'truckL', 'truckR', 'track', 'crashIn', 'shake', 'handheld'];
-const OVERLAYS = ['label', 'title', 'stopwatch', 'stat', 'bubble', 'thought', 'crush', 'caption', 'flash', 'counter', 'news', 'hudList', 'word', 'menu'];
+const OVERLAYS = ['label', 'title', 'stopwatch', 'stat', 'bubble', 'thought', 'crush', 'caption', 'flash', 'counter', 'news', 'hudList', 'word', 'menu', 'emote', 'circle', 'flyin', 'timewarp', 'spotlight'];
 
 export function validate(ep: Episode): string[] {
   const out: string[] = [];
@@ -24401,6 +25125,199 @@ import { registerRoot } from 'remotion';
 import { Root } from './Root';
 
 registerRoot(Root);
+@@@@ END
+@@@@ FILE src/overlays/Beats.tsx | text | 11478 | a48a4618197bb5a90e9e60e2bf35eeff5fd3987ae4442c4942b258da15558ec2
+// "Visual beats" (house rule 2026-11-09, from the Vitinho reference): something changes on screen every
+// 1–2 s even without a cut. Small 2D effects drawn in the 1920×1080 overlay layer:
+//   emote      a mark on a character's head: sweat, tears, ?, !, music notes, sparkles, anger, hearts, zzz
+//   circle     a highlight ring that draws itself around a detail (a head, a hand, a point)
+//   flyin      objects that fly through the frame (calendar pages, clocks, papers, money, hearts, stars, books)
+//   timewarp   time passing: calendar pages and clocks swirl while the light flickers day ↔ night
+//   spotlight  the frame goes dark except a pool of light on a character or point
+// Every one of them has an automatic sound (tools/sfx/episode_audio.py), so no visual event is silent.
+import React from 'react';
+import { AbsoluteFill } from 'remotion';
+
+const W = 1920, H = 1080;
+const clamp = (x: number, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const easeOutBack = (x: number) => { const c = 1.70158; return 1 + (c + 1) * (x - 1) ** 3 + c * (x - 1) ** 2; };
+const rnd = (seed: number) => () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
+
+/** Pop-in scale (overshoot) and fade-out at the end. */
+const life = (t: number, dur: number) => {
+  const pin = t < 0.22 ? easeOutBack(clamp(t / 0.22)) : 1;
+  const out = 1 - clamp((t - (dur - 0.2)) / 0.2);
+  return { s: Math.max(0, pin), o: clamp(t / 0.06) * out };
+};
+
+export type EmoteKind = 'sweat' | 'tears' | 'question' | 'exclaim' | 'notes' | 'sparkle' | 'anger' | 'love' | 'zzz';
+
+/** A mark on a head. (x, y) = projected head top, `px` = pixels per metre at the head. */
+export const Emote: React.FC<{ t: number; kind: EmoteKind; x: number; y: number; px: number; dur?: number }> = ({ t, kind, x, y, px, dur = 1.6 }) => {
+  const { s, o } = life(t, dur);
+  const R = 0.21 * px; // head radius on screen
+  const cy = y + R * 1.15; // head centre
+  const stroke = Math.max(3, R * 0.06);
+  const ink = '#111';
+  const wrap = (child: React.ReactNode, ox: number, oy: number) => (
+    <div style={{ position: 'absolute', left: ox, top: oy, transform: `translate(-50%, -50%) scale(${s})`, opacity: o }}>{child}</div>
+  );
+  switch (kind) {
+    case 'sweat': {
+      const slide = clamp(t / dur) * R * 0.5;
+      const d = R * 0.42;
+      return wrap(<svg width={d} height={d * 1.4} viewBox="0 0 10 14"><path d="M5 0 C7 4 10 7 10 9.5 A5 5 0 0 1 0 9.5 C0 7 3 4 5 0Z" fill="#7cc8ff" stroke={ink} strokeWidth={0.9} /><ellipse cx={3.4} cy={9} rx={1.1} ry={1.8} fill="#fff" opacity={0.8} /></svg>, x + R * 0.95, cy - R * 0.55 + slide);
+    }
+    case 'tears': {
+      const drops = [0, 0.35, 0.7].map(k => {
+        const u = ((t * 1.6 + k) % 1);
+        return <circle key={k} cx={k * 6 % 3} cy={u * 26} r={1.6 * (1 - u * 0.3)} fill="#7cc8ff" stroke={ink} strokeWidth={0.4} opacity={1 - u} />;
+      });
+      return <>
+        {wrap(<svg width={R * 0.5} height={R * 1.6} viewBox="-2 -2 6 30">{drops}</svg>, x - R * 0.5, cy + R * 0.85)}
+        {wrap(<svg width={R * 0.5} height={R * 1.6} viewBox="-2 -2 6 30">{drops}</svg>, x + R * 0.5, cy + R * 0.85)}
+      </>;
+    }
+    case 'question':
+    case 'exclaim': {
+      const bob = Math.sin(t * 7) * R * 0.05;
+      const ch = kind === 'question' ? '?' : '!';
+      return wrap(
+        <div style={{ fontFamily: 'Arial Black, Arial', fontWeight: 900, fontSize: R * 1.15, color: kind === 'question' ? '#ffd23f' : '#ff4d4d', WebkitTextStroke: `${stroke}px ${ink}`, paintOrder: 'stroke fill', transform: `rotate(${kind === 'question' ? 12 : -8}deg)` }}>{ch}</div>,
+        x + R * 0.95, y - R * 0.35 + bob,
+      );
+    }
+    case 'notes':
+    case 'love':
+    case 'zzz':
+    case 'sparkle': {
+      const n = kind === 'sparkle' ? 5 : 3;
+      const r = rnd(kind.length * 97);
+      const items = Array.from({ length: n }, (_, k) => {
+        const ph = k / n, u = ((t / 1.4 + ph) % 1);
+        const ox = x + R * (0.7 + 0.35 * r()) * (k % 2 ? 1 : -0.4) + Math.sin((t + k) * 3) * R * 0.08;
+        const oy = y + R * 0.2 - u * R * 1.3;
+        const sz = R * (0.38 + 0.15 * r());
+        const op = Math.sin(Math.PI * u) * o;
+        const glyph = kind === 'notes' ? (k % 2 ? '♪' : '♫') : kind === 'love' ? '♥' : kind === 'zzz' ? 'Z' : '✦';
+        const col = kind === 'notes' ? '#7a5cff' : kind === 'love' ? '#ff4f7b' : kind === 'zzz' ? '#9fd0ff' : '#ffe27a';
+        return (
+          <div key={k} style={{ position: 'absolute', left: ox, top: oy, transform: `translate(-50%, -50%) scale(${s * (kind === 'sparkle' ? 0.6 + 0.6 * Math.sin(Math.PI * u) : 1)})`, opacity: op, fontFamily: 'Arial Black, Arial', fontWeight: 900, fontSize: sz, color: col, WebkitTextStroke: `${stroke * 0.7}px ${ink}`, paintOrder: 'stroke fill' }}>{glyph}</div>
+        );
+      });
+      return <>{items}</>;
+    }
+    case 'anger': {
+      const pulse = 1 + 0.12 * Math.sin(t * 14);
+      return wrap(
+        <svg width={R * 0.7 * pulse} height={R * 0.7 * pulse} viewBox="-10 -10 20 20">
+          {[0, 90, 180, 270].map(a => <path key={a} d="M2 -9 C2 -3 3 -2 9 -2" fill="none" stroke="#ff3b3b" strokeWidth={3.2} strokeLinecap="round" transform={`rotate(${a})`} />)}
+        </svg>,
+        x + R * 0.8, y + R * 0.2,
+      );
+    }
+    default:
+      return null;
+  }
+};
+
+/** A ring that draws itself around (x, y), then pulses. */
+export const HighlightCircle: React.FC<{ t: number; x: number; y: number; r: number; color?: string; dur?: number }> = ({ t, x, y, r, color = '#ff3b3b', dur = 1.6 }) => {
+  const draw = clamp(t / 0.35);
+  const out = 1 - clamp((t - (dur - 0.2)) / 0.2);
+  const pulse = 1 + 0.04 * Math.sin(t * 9) * clamp((t - 0.35) / 0.2);
+  const c = 2 * Math.PI * r;
+  return (
+    <svg style={{ position: 'absolute', left: 0, top: 0, opacity: out }} width={W} height={H}>
+      <circle cx={x} cy={y} r={r * pulse} fill="rgba(255,59,59,0.10)" stroke="#000" strokeWidth={14} strokeDasharray={`${c * draw} ${c}`} transform={`rotate(-90 ${x} ${y})`} strokeLinecap="round" />
+      <circle cx={x} cy={y} r={r * pulse} fill="none" stroke={color} strokeWidth={9} strokeDasharray={`${c * draw} ${c}`} transform={`rotate(-90 ${x} ${y})`} strokeLinecap="round" />
+    </svg>
+  );
+};
+
+// ---- flying objects ----
+export type FlyKind = 'calendar' | 'clock' | 'paper' | 'money' | 'heart' | 'star' | 'book';
+const Sprite: React.FC<{ kind: FlyKind; size: number; seed: number }> = ({ kind, size, seed }) => {
+  const ink = '#1a1a1a';
+  switch (kind) {
+    case 'calendar':
+      return (
+        <svg width={size} height={size * 1.1} viewBox="0 0 40 44">
+          <rect x={2} y={4} width={36} height={38} rx={4} fill="#fff" stroke={ink} strokeWidth={2.5} />
+          <rect x={2} y={4} width={36} height={11} rx={4} fill="#e23d3d" stroke={ink} strokeWidth={2.5} />
+          <text x={20} y={36} fontSize={18} fontWeight={900} textAnchor="middle" fontFamily="Arial Black, Arial" fill={ink}>{1 + (seed * 7) % 30}</text>
+        </svg>
+      );
+    case 'clock': {
+      const a = seed * 47;
+      return (
+        <svg width={size} height={size} viewBox="0 0 40 40">
+          <circle cx={20} cy={20} r={17} fill="#fff" stroke={ink} strokeWidth={3} />
+          <line x1={20} y1={20} x2={20 + 9 * Math.sin(a)} y2={20 - 9 * Math.cos(a)} stroke={ink} strokeWidth={3} strokeLinecap="round" />
+          <line x1={20} y1={20} x2={20 + 13 * Math.sin(a * 3)} y2={20 - 13 * Math.cos(a * 3)} stroke="#e23d3d" strokeWidth={2} strokeLinecap="round" />
+        </svg>
+      );
+    }
+    case 'paper':
+      return <svg width={size} height={size * 1.3} viewBox="0 0 30 39"><path d="M2 2 H22 L28 8 V37 H2Z" fill="#fff" stroke={ink} strokeWidth={2} />{[12, 18, 24, 30].map(y => <line key={y} x1={7} y1={y} x2={23} y2={y} stroke="#9aa" strokeWidth={2} />)}</svg>;
+    case 'money':
+      return <svg width={size * 1.6} height={size * 0.8} viewBox="0 0 48 24"><rect x={1} y={1} width={46} height={22} rx={3} fill="#7ccf6b" stroke={ink} strokeWidth={2} /><circle cx={24} cy={12} r={6} fill="#bfe8a8" stroke={ink} strokeWidth={1.5} /><text x={24} y={16} fontSize={10} fontWeight={900} textAnchor="middle" fill={ink}>$</text></svg>;
+    case 'book':
+      return <svg width={size * 1.2} height={size} viewBox="0 0 36 30"><rect x={2} y={3} width={32} height={24} rx={2} fill="#3d6fb6" stroke={ink} strokeWidth={2.5} /><rect x={6} y={6} width={24} height={4} fill="#f2b632" /></svg>;
+    case 'heart':
+      return <div style={{ fontSize: size, color: '#ff4f7b', WebkitTextStroke: `2px ${ink}`, fontFamily: 'Arial Black, Arial', lineHeight: 1 }}>♥</div>;
+    default:
+      return <div style={{ fontSize: size, color: '#ffd23f', WebkitTextStroke: `2px ${ink}`, fontFamily: 'Arial Black, Arial', lineHeight: 1 }}>★</div>;
+  }
+};
+
+/** Objects crossing the frame: from a side, falling from the top, or swirling around the centre. */
+export const FlyIn: React.FC<{ t: number; kinds: FlyKind[]; n?: number; from?: 'left' | 'right' | 'top' | 'swirl'; dur?: number; seed?: number }> = ({ t, kinds, n = 9, from = 'swirl', dur = 1.6, seed = 3 }) => {
+  const r = rnd(seed * 131 + 7);
+  const items = Array.from({ length: n }, (_, k) => {
+    const delay = r() * 0.35, u = clamp((t - delay) / (dur - delay));
+    if (u <= 0 || u >= 1) { r(); r(); r(); return null; }
+    const kind = kinds[k % kinds.length], size = 70 + 70 * r(), lane = r(), spin = (r() - 0.5) * 900;
+    let x = 0, y = 0;
+    if (from === 'swirl') {
+      const a = lane * Math.PI * 2 + u * Math.PI * 2.2, rad = 120 + 520 * u;
+      x = W / 2 + Math.cos(a) * rad * 1.3; y = H / 2 + Math.sin(a) * rad * 0.8;
+    } else if (from === 'top') {
+      x = 260 + lane * (W - 520); y = -150 + u * (H + 300);
+    } else {
+      const dir = from === 'left' ? 1 : -1;
+      x = W / 2 - dir * (W / 2 + 200) + dir * u * (W + 400); y = 160 + lane * (H - 320) - Math.sin(u * Math.PI) * 80;
+    }
+    return (
+      <div key={k} style={{ position: 'absolute', left: x, top: y, transform: `translate(-50%, -50%) rotate(${spin * u}deg)`, filter: 'drop-shadow(0 6px 4px rgba(0,0,0,0.35))' }}>
+        <Sprite kind={kind} size={size} seed={k + seed} />
+      </div>
+    );
+  });
+  return <AbsoluteFill style={{ pointerEvents: 'none' }}>{items}</AbsoluteFill>;
+};
+
+/** Time passing: calendar pages and clocks swirl while the light flickers between night and day. */
+export const TimeWarp: React.FC<{ t: number; dur?: number }> = ({ t, dur = 1.8 }) => {
+  const phase = Math.floor(t / 0.22) % 2;
+  const k = Math.sin(Math.PI * clamp(t / dur));
+  return (
+    <AbsoluteFill>
+      <AbsoluteFill style={{ background: phase ? 'rgba(18,24,70,0.55)' : 'rgba(255,190,90,0.22)', opacity: k, mixBlendMode: phase ? 'multiply' : 'screen' }} />
+      <FlyIn t={t} kinds={['calendar', 'clock', 'calendar']} n={12} from="swirl" dur={dur} seed={11} />
+    </AbsoluteFill>
+  );
+};
+
+/** Darkness everywhere except a soft pool of light at (x, y). */
+export const Spotlight: React.FC<{ t: number; x: number; y: number; r: number; dim?: number; dur?: number }> = ({ t, x, y, r, dim = 0.8, dur = 2 }) => {
+  const k = clamp(t / 0.25) * (1 - clamp((t - (dur - 0.25)) / 0.25));
+  return (
+    <AbsoluteFill style={{ background: `radial-gradient(circle at ${x}px ${y}px, rgba(0,0,0,0) ${r * 0.75}px, rgba(0,0,0,${dim}) ${r * 1.35}px)`, opacity: k }}>
+      <AbsoluteFill style={{ background: `radial-gradient(ellipse ${r * 0.9}px ${r * 2.2}px at ${x}px ${y - r * 1.4}px, rgba(255,245,210,0.18), rgba(255,245,210,0) 70%)` }} />
+    </AbsoluteFill>
+  );
+};
 @@@@ END
 @@@@ FILE src/overlays/BodyMenu.tsx | text-crlf | 6278 | 9bcc2b14dcda7f90b55e577d6f37aa72a60afd53386a8414f80071e5dad33d9a
 // "Body settings" HUD: a videogame-style options panel floating over a 3D shot. A title bar, rows of
@@ -30031,7 +30948,7 @@ export const VOID_MARKS: Record<string, Vec3> = {
   farRight: [4.5, 0, -1.5],
 };
 @@@@ END
-@@@@ FILE src/types.ts | text-crlf | 12738 | 3f3110e5f1beaad0b66e7cb2fae510e18558e7beea322dcf16165a9d8a366379
+@@@@ FILE src/types.ts | text-crlf | 14395 | 08dba19727aeab05441df4ce59fb8c72d55349b137e6f94d0d134e24554442c4
 // Episode spec: the JSON Claude writes for every video (public/episodes/<slug>/episode.json).
 // Everything in a shot is in seconds relative to the shot start; positions are metres,
 // y up, a character with rot 0 faces +z (towards the default camera).
@@ -30173,7 +31090,13 @@ export type Overlay =
   | { type: 'news'; headline: string; ticker?: string; tag?: string; at?: number; until?: number; safe?: boolean } // safe: centred and wrapped inside the 9:16 column
   | { type: 'word'; text: string; at?: number; until?: number; color?: string; y?: 'low' | 'top' | 'mid' } // palavra-destaque: the key word pops in on its cue, centre column (default 1.5 s)
   | { type: 'menu'; rows: { label: string; value: number; from?: number; at?: number | string; warn?: boolean; dim?: boolean }[]; title?: string; note?: string; noteAt?: number | string; alarm?: boolean; y?: 'top' | 'mid' | 'low' | 'above'; at?: number; until?: number } // body-settings HUD (BodyMenu); row `at` / noteAt are shot times or word cues
-  | { type: 'hudList'; items: string[]; at?: number; checked?: number };
+  | { type: 'hudList'; items: string[]; at?: number; checked?: number }
+  // beat effects (2026-11-09, src/overlays/Beats.tsx): each has an automatic sound
+  | { type: 'emote'; actor: string; kind: 'sweat' | 'tears' | 'question' | 'exclaim' | 'notes' | 'sparkle' | 'anger' | 'love' | 'zzz'; at?: number; until?: number }
+  | { type: 'circle'; actor?: string; dx?: number; dy?: number; x?: number; y?: number; r?: number; color?: string; at?: number; until?: number } // dx/dy/r in metres from the actor's head top (default: around the head); or x/y/r in px
+  | { type: 'flyin'; kinds?: ('calendar' | 'clock' | 'paper' | 'money' | 'heart' | 'star' | 'book')[]; n?: number; from?: 'left' | 'right' | 'top' | 'swirl'; at?: number; until?: number }
+  | { type: 'timewarp'; at?: number; until?: number }
+  | { type: 'spotlight'; actor?: string; x?: number; y?: number; r?: number; dim?: number; at?: number; until?: number };
 
 export type ShotFx = {
   swap?: { t: number | string; ids: [string, string]; keepPaths?: boolean }; // the two actors trade places at t (blink-blink, flash, afterimages). keepPaths: their paths already encode the jump (momentum gags)
@@ -30186,6 +31109,10 @@ export type ShotFx = {
   vignette?: number;
   shake?: number;
   bars?: 'in' | 'out';
+  // beat effects (2026-11-09): selective colour — everyone but `ids` drains to grey (a crowd, the one who matters)
+  focus?: { ids: string[]; at?: number | string; until?: number | string };
+  // a sunburst backdrop behind an actor for a reveal (default the hero; colours gold/purple/teal/pink/blue)
+  burst?: { actor?: string; at?: number | string; until?: number | string; color?: string };
 };
 
 // ---- episode spec (public/episodes/<slug>/episode.json) ------------------------------------
@@ -30222,7 +31149,7 @@ export type Shot3D = {
 };
 
 // Transitions. whip / zoom / smash play on both sides of the cut (end of the outgoing shot + start of this one).
-export type Cut = 'cut' | 'flow' | 'flash' | 'whip' | 'dip' | 'zoom' | 'smash';
+export type Cut = 'cut' | 'flow' | 'flash' | 'whip' | 'dip' | 'zoom' | 'smash' | 'push'; // push: the new shot shoves the old one sideways
 
 export type CardShot = {
   kind: 'card';
@@ -30253,7 +31180,9 @@ export type Episode = {
   music?: MusicCue[];
   // Shorts the user cuts by hand from the 16:9 (YouTube Shorts / Reels / TikTok): ≥ 4 per long episode,
   // each a self-contained ~90 s run of whole shots (from/to = shot ids, inclusive). The audit checks length.
-  clips?: { title: string; from: string; to: string }[];
+  clips?: { title: string; from: string; to: string }[]; // retired 2026-11-09 (hand-cut ~90 s clips): use `shorts`
+  // the 4 vertical shorts (user rule, 2026-11-09): tools/shorts.mjs renders them; shorts.json next to the episode overrides
+  shorts?: { title: string; cta: string; from?: string; to?: string; drop?: string[]; shots?: string[]; stage?: string; stageAt?: number; cutAt?: number }[];
   hookCheck?: boolean; // false = skip the audit's first-10-seconds retention check (episodes made before the rule, 2026-11-09)
   shots: Shot[];
 };
@@ -31156,7 +32085,7 @@ run('ffmpeg', ['-v', 'error', '-y', '-framerate', '30', '-i', `"${pattern}"`, '-
   '-frames:v', '1', '-update', '1', `"${path.join(outDir, 'sheet.png')}"`]);
 console.log('done:', final);
 @@@@ END
-@@@@ FILE tools/episode.mjs | text-crlf | 31093 | 145114b4fdb0c584bf6c90dc2b528bcd456f41f9415cb339cfe7dd6be2cc9e4d
+@@@@ FILE tools/episode.mjs | text-crlf | 31678 | 0d13b60a39fd95cb1af5a29073af39c34b323ad94374eec728154a49b5893715
 // Episode voice pipeline.
 //   node tools/episode.mjs check <slug>             validate vo text (tags, SSML, raw numbers) BEFORE spending credits — STORY_BLUEPRINT.md §6.9/§6.4
 //   node tools/episode.mjs sections <slug>          split narration into ElevenLabs TTS sections → sections.json (+ prints the credit estimate)
@@ -31193,16 +32122,19 @@ const read = f => JSON.parse(fs.readFileSync(path.join(DIR, f), 'utf8'));
 const write = (f, o) => fs.writeFileSync(path.join(DIR, f), JSON.stringify(o, null, 1));
 const ep = read('episode.json');
 const FPS = ep.fps || 30;
-const DEFAULT_DIRECTION = '[calm]'; // user found "energetic, quick pace" too hyper (2026-10-28); eleven_v4 reads short delivery tags best, so keep this brief
+// the hero's default delivery: always this dynamic, playful tone unless the line's own [tag] asks for another (user, 2026-11-09)
+const HERO_DIRECTION = '[playful]';
+const DEFAULT_DIRECTION = '[excited]'; // user, 2026-11-09: the narrator is always animated, natural and enthusiastic (Matheus test); eleven_v4 reads short delivery tags best, so keep this brief
 // House voices (ElevenLabs, eleven_v4, PT-BR). Shots set `who`; episode.voices can add or override speakers.
 // episode.json's voice.id always wins for the narrator — this is only the fallback.
 export const HOUSE_VOICES = {
-  narrator: 'u7N1p4OIOc6Fl7y72WE7', // Yuri — Natural Brazilian Narrator (user's pick, 2026-11-08)
+  narrator: '36rVQA1AOIPwpA3Hg1tC', // Matheus — Friendly and Energetic (user's pick by ear, 2026-11-09; was Yuri u7N1p4OIOc6Fl7y72WE7)
+  hero: '7u8qsX4HQsSHJ0f8xsQZ', // João Pedro — dynamic, the hero's own voice (user's pick by ear, 2026-11-09): `who: "hero"`
   male: 'H2bV051FngNxkuTNROyc', // Eduardo — Brazilian Portuguese (young, confident): boys, men
   female: 'n2a9VtkZLl8j1FSXHsL7', // Sofia — Natural & Expressive (young, gentle): girls, women
 };
 const MAX_CHARS = 2500;
-const CREDITS_PER_CHAR = 0.4; // measured 2026-11-08: 199 chars → 80 credits on eleven_v4 with Yuri. Varies by model/voice — treat as an estimate.
+const CREDITS_PER_CHAR = 0.45; // measured: 2026-11-08 199 chars → 80 credits (Yuri); 2026-11-09 1905 chars → 869 credits (11 voices) on eleven_v4. Varies by model/voice — treat as an estimate.
 
 /** Spoken words only: drop [direction]/audio-tag brackets and <tags>. */
 const spoken = s => (s || '').replace(/\[[^\]]*\]/g, ' ').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
@@ -31300,7 +32232,8 @@ function buildSections() {
   return sections.map(s => {
     const who = s.parts[0].who; // one speaker per section (see breakNext above)
     const first = s.parts[0].text;
-    const text = (first.startsWith('[') || who !== 'narrator' || !direction ? '' : direction + ' ') + s.parts.map(p => p.text).join(' ');
+    const lead = who === 'narrator' ? direction : who === 'hero' ? HERO_DIRECTION : '';
+    const text = (first.startsWith('[') || !lead ? '' : lead + ' ') + s.parts.map(p => p.text).join(' ');
     return { id: s.id, shots: s.shots, voice_id: voices[who], model: ep.voice.model || 'eleven_v4', text, file: null };
   });
 }
@@ -31327,7 +32260,7 @@ async function synthesize(voiceId, text, model, tag = '') {
       body: JSON.stringify({
         text,
         model_id: model,
-        voice_settings: { stability: ep.voice.stability ?? 0.5, similarity_boost: ep.voice.similarityBoost ?? 0.8 },
+        voice_settings: { stability: ep.voice.stability ?? 0.4, similarity_boost: ep.voice.similarityBoost ?? 0.8 },
       }),
     });
     if (res.ok) return res.json(); // { audio_base64, alignment: {characters, character_start_times_seconds, character_end_times_seconds}, normalized_alignment }
@@ -31344,7 +32277,8 @@ async function synthesize(voiceId, text, model, tag = '') {
 
 function processVoice(src, dst, tempoOverride) {
   const tempo = tempoOverride ?? ep.voice.tempo ?? 1.0;
-  const maxPause = ep.voice.maxPause ?? 0.45;
+  // breaths between sentences stay short and dry (~0.2 s; the Vitinho reference runs ~0.13 s, 2026-11-09)
+  const maxPause = ep.voice.maxPause ?? 0.22;
   const af = [
     'silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.03',
     'areverse', 'silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.06', 'areverse',
@@ -31689,7 +32623,7 @@ function report(timing) {
   if (short.length) console.log('very short shots (merge or extend): ' + short.map(([i, d]) => `#${i} ${d}s`).join(', '));
 }
 @@@@ END
-@@@@ FILE tools/episodes/_modelo.py | text | 5034 | ffb266af8e7d2d368acd274f4bd82731008814a4df0ad8e2a9cea2a576953d42
+@@@@ FILE tools/episodes/_modelo.py | text | 5276 | 3ad3f31ff27380f7da6ca3b981b28eecf62147f92fff3285af84d70207e08fb1
 # Skeleton for a new episode. Copy to tools/episodes/<slug_with_underscores>.py, set SLUG, fill the beats.
 #   .venv/Scripts/python -I tools/episodes/<file>.py   -> public/episodes/<slug>/episode.json
 # episode.json is regenerated from the .py: never hand-edit the JSON.
@@ -31765,8 +32699,10 @@ TITLE = 'E Se Você ...?'
 ep = episode(
     SLUG, TITLE,
     ritmo='rapido',
-    clips=[  # ≥ 4 shorts of ~90 s, whole shots, each opens on a cold hook (COLA "Cortes para shorts")
-        # ('O poder', 'c1', 'n3'), ('Os problemas', 'p1', 'p9'), ('O plano', '...', '...'), ('O clímax', 'k1', 'k12'),
+    shorts=[  # the 4 vertical ~60 s shorts (COLA "Shorts"): the user's picks if they named moments, else the 4 strongest hooks
+        # {'title': 'Um carro vinha e o meu corpo abriu um menu', 'from': 'a1', 'to': 'm4', 'stage': 'a7', 'stageAt': 1.6,
+        #  'cta': 'Quer saber o que essas barras escondem? Entra no canal e assiste a história completa.'},
+        # {'title': '...', 'from': 'x2', 'to': 'x14', 'drop': ['x8', 'x9'], 'cta': '... Entra no canal.'},
     ],
     cast={
         'bestie': {'name': '...'},
@@ -32511,7 +33447,7 @@ with open(out, 'w', encoding='utf-8') as f:
 words = sum(len(s.get('vo', '').split()) for s in shots)
 print(f'{len(shots)} shots, {words} words -> {os.path.normpath(out)}')
 @@@@ END
-@@@@ FILE tools/episodes/kit.py | text | 9316 | aa31d06eeb4ab6ff13edfac99189138499ec047f9a20b7610f510b122dbb594d
+@@@@ FILE tools/episodes/kit.py | text | 9920 | 1e162990ba6f459cad14b1e4841ce4f6bc64fabbf1b6d3ca1cc09cac8b3b74d8
 """Shared helpers for episode generators (tools/episodes/<slug>.py -> public/episodes/<slug>/episode.json).
 
 Use from a generator:
@@ -32529,8 +33465,9 @@ __all__ = ['shots', 'A', 'cam', 'S', 'C', 'ladainha', 'apply_ritmo', 'crush', 'w
            'load_timing', 'resolve_countdowns', 'clean', 'write', 'NARRATOR', 'HOUSE_VOICES']
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
-NARRATOR = {'id': 'u7N1p4OIOc6Fl7y72WE7', 'model': 'eleven_v4'}  # Yuri (docs/pipeline/EPISODE.md, Voice)
-HOUSE_VOICES = {'adulto': 'u4sbCzXyUVxIAihOtCss', 'adulta': 'dxIMMSJYSsbUSMhioLNb'}
+NARRATOR = {'id': '36rVQA1AOIPwpA3Hg1tC', 'model': 'eleven_v4'}  # Matheus, always animated (docs/pipeline/EPISODE.md, Voice)
+HOUSE_VOICES = {'adulto': 'u4sbCzXyUVxIAihOtCss', 'adulta': 'dxIMMSJYSsbUSMhioLNb',
+                'hero': '7u8qsX4HQsSHJ0f8xsQZ'}  # João Pedro, the hero's own voice (always dynamic/playful, 2026-11-09)
 
 shots = []
 TALK = [[0.05, 3.0]]                                             # talk window for a short line
@@ -32639,9 +33576,10 @@ def apply_ritmo(shots_):
             n += 1
 
 
-def episode(slug, title, cast, music, voices=None, voice=None, ritmo=None, clips=None, **kw):
+def episode(slug, title, cast, music, voices=None, voice=None, ritmo=None, clips=None, shorts=None, **kw):
     """The episode dict. music: [(shot id, mood), ...]. ritmo='rapido' applies the house pacing (apply_ritmo).
-    clips: [(title, first shot id, last shot id), ...] — the ≥ 4 self-contained ~90 s shorts (COLA "Cortes")."""
+    clips: retired (hand-cut ~90 s clips). shorts: the 4 vertical ~60 s shorts (COLA "Shorts"), a list of dicts
+    {title, cta, from, to, drop?, shots?, stage?, stageAt?, cutAt?} — rendered by tools/shorts.mjs."""
     if ritmo == 'rapido':
         apply_ritmo(shots)
     idx = shot_index()
@@ -32651,11 +33589,15 @@ def episode(slug, title, cast, music, voices=None, voice=None, ritmo=None, clips
         'voice': dict(voice or NARRATOR),
         'voices': dict(voices if voices is not None else HOUSE_VOICES),
         'cast': cast,
-        'music': [{'shot': idx[sid], 'mood': mood} for sid, mood in music],
+        # music: (shot id, mood) for a procedural bed, or (shot id, 'music/<slug>/track.mp3') for the user's track
+        # (house rule since 2026-11-09: the user sends the track before each episode), or (shot id, {file, vol})
+        'music': [{'shot': idx[sid], **(m if isinstance(m, dict) else {'file': m, 'vol': -20} if '/' in str(m) else {'mood': m})} for sid, m in music],
         'shots': shots,
     }
     if clips:
         ep['clips'] = [{'title': t, 'from': a, 'to': b} for t, a, b in clips]
+    if shorts:
+        ep['shorts'] = shorts
     ep.update(kw)
     return ep
 
@@ -34254,7 +35196,7 @@ if (n.bad.length) {
   process.exit(1);
 }
 @@@@ END
-@@@@ FILE tools/pack/fresh/ELEVENLABS_SETUP.md | text | 4039 | 013b4b6053f7dc6d007e6255040d5cfd346468eea0a0a4b05df699429c08775b
+@@@@ FILE tools/pack/fresh/ELEVENLABS_SETUP.md | text | 4095 | a28d06c05c62d6fd5b2f22e12233f0ce573e532fdd8083b3fb3762129d7d63e1
 # ElevenLabs: first-connect checklist
 
 Voice (narration + character lines) uses the ElevenLabs API, called directly with `fetch` from `tools/episode.mjs` — no MCP. Run this checklist once, the first time a copy of this project has no working `ELEVENLABS_API_KEY`.
@@ -34272,7 +35214,7 @@ Until the key is working, everything except real voice-over works: ideas, script
 2. **Smoke test.** `GET https://api.elevenlabs.io/v1/voices` (header `xi-api-key: <key>`) must return 200. If it 401s, the key is wrong; if it 403s with `missing_permissions`, the key is scoped — note which permissions are missing (voices/TTS access is enough to run the pipeline; `user_read` is only needed for an automatic balance check, see step 5).
 
 3. **Pick house voices.** `tools/episode.mjs`'s `HOUSE_VOICES` needs a narrator, a male and a female voice, in the project's content language. The account's own saved voices (`/v1/voices`) may not have what's needed — search the full public library instead:
-   - `GET /v1/shared-voices?language=<lang>&use_cases=narrative_story` for narrator candidates (calm/warm, not "excited" or "upbeat" — the house style is unhurried).
+   - `GET /v1/shared-voices?language=<lang>&use_cases=narrative_story` for narrator candidates (animated, natural and enthusiastic — the house narrator is energetic, it holds retention; also try `use_cases=social_media`).
    - `GET /v1/shared-voices?language=<lang>&gender=male` / `&gender=female` for the secondary voices (young, casual/natural).
    - Pull 3–4 candidates per role, fetch each one's `preview_url`, and let the user pick by ear — don't choose a voice the user hasn't heard.
    - A public-library voice_id can be used directly in a TTS call without first "adding" it to the account.
@@ -34360,7 +35302,7 @@ This copy of the project was set up from `project instructions.md` without the F
 - If the thumbnail mode is `chatgpt`, this memory doesn't block anything — leave it until the user switches modes or asks.
 - Related: [[project-thumbnails-gpt-image]].
 @@@@ END
-@@@@ FILE tools/pack/fresh/stickman.md | text | 5097 | fc0b77a39e80884eea318d5ca042d4b0fcbcc7469d4f19f6ed61bb53196f011e
+@@@@ FILE tools/pack/fresh/stickman.md | text | 5649 | c9a10f0d5097df1c4b667af5a85906c6e1bf87e125371dae3da8e64b2525c777
 ---
 description: Make a full "What If" stickman episode from a topic, then generate its 3 thumbnails
 argument-hint: <video topic, e.g. What If You Could Swap Places With Anyone>
@@ -34383,7 +35325,7 @@ Make one complete narrated episode about this topic with the saved hero, then ge
 - **Voice, music, look:** the house defaults in `docs/pipeline/EPISODE.md` and memory.
 - **Tone:** acid, bold and still monetizable, never the cute family tone: a narrator who is calm but sometimes malicious or sarcastic (`STORY_BLUEPRINT.md` §6.10, summarised in the cola's "Tom" section).
 - **Pacing:** the generator calls `episode(..., ritmo='rapido')`, as `_modelo.py` does. That gives automatic sub-cuts plus whip/zoom on set changes. Use `coverage='calm'` in the dilemma and `cut='smash'` by hand on reveals. Keep the subject and key text in the 9:16 centre column (audit `vertical`).
-- **Shorts:** at least 4 self-contained ~90 s clips, marked in `episode(clips=[...])` (cola, "Cortes para shorts"). The user cuts them by hand from the 16:9, so there is no vertical render.
+- **Shorts:** 4 vertical ~60 s shorts, planned in `episode(shorts=[...])` (cola, "Shorts"): the user's picks if they named moments, else the 4 strongest hooks. Each stops on a cliffhanger, the world freezes and the hero breaks the 4th wall with his own line sending viewers to the channel. Rendered after the episode with `tools/shorts.mjs` (EPISODE.md step 8b); their CTA voice (~160 credits) goes into the credit checkpoint.
 
 ## Run
 
@@ -34392,11 +35334,12 @@ Make one complete narrated episode about this topic with the saved hero, then ge
 3. **One checkpoint before spending credits.** Check the ElevenLabs credit balance (`GET /v1/user/subscription`; if the API key lacks `user_read`, ask the user to check elevenlabs.io/app/subscription or widen the key) and show the user, in one message:
    - the title and a short synopsis;
    - the script score and the path to `script.md`;
-   - the credit estimate: voice (`node tools/episode.mjs sections <slug>` prints it, ~0.4 credits/char on eleven_v4 — see the Voice section of EPISODE.md) plus thumbnails (3 × the per-image cost in `thumbnails/config.json`, fish mode only).
+   - the credit estimate: voice (`node tools/episode.mjs sections <slug>` prints it, ~0.4 credits/char on eleven_v4 — see the Voice section of EPISODE.md) plus the 4 shorts' hero lines (`tools/shorts.mjs voice`, ~160 credits) plus thumbnails (3 × the per-image cost in `thumbnails/config.json`, fish mode only).
 
-   Wait for one OK. That OK covers the voice and the 3 thumbnails; don't ask again for either. If the balance is too low, say so and stop there.
+   Wait for one OK. That OK covers the voice, the shorts' lines and the 3 thumbnails; don't ask again for any of them. If the balance is too low, say so and stop there.
 4. **Voice, align, pre-render review:** EPISODE.md steps 5–7, including the independent reviewer rounds (round 1 on the `revisor-episodio` agent, round 2+ on `revisor-verificacao`). Build only on "ready for final render".
 5. **Build and check:** steps 8–9. Re-render broken ranges until the sheets are clean.
+5b. **Shorts:** step 8b — `node tools/shorts.mjs plan <slug>` (fix its warnings), `voice <slug>`, `render <slug>`. Check each short's cut points and freeze in a frame strip before sending.
 6. **Thumbnails:** step 10, with the video now finished:
    - write `thumbnails/<slug>/brief.json` with exactly 3 variants (one scene per variant, drawn from the episode's strongest moments), then `node tools/thumb-prompt.mjs <slug>`;
    - `fish` mode: run `estimate_image_edit`, then submit all 3 jobs (already approved at the checkpoint), poll them together, and save each to `thumbnails/<slug>/out/<id>_2k_medium.png`. Review each at full size and at ~360 px; regenerate one only if it fails the step-10 checks (spelling, hero colour, stickman-only cast, no stray text), and only within the approved credits;
@@ -34407,10 +35350,11 @@ Make one complete narrated episode about this topic with the saved hero, then ge
 
 Keep the final message short:
 1. send the video, `final/<Episode title>.mp4`, with SendUserFile (`display: "render"`);
-2. send the 3 thumbnails with SendUserFile in one call, captioned A / B / C with their text;
-3. one or two lines: title, length, the 4+ clip timecodes from `final/<title> - cortes.txt` (the `.srt` beside the video is for the user's editor), and any warning you accepted. Ask which thumbnail to pick (`node tools/thumb-prompt.mjs <slug> --pick <id>`).
+2. send the 4 shorts, `final/shorts/<Episode title>/*.mp4`, with SendUserFile in one call, captioned with their titles;
+3. send the 3 thumbnails with SendUserFile in one call, captioned A / B / C with their text;
+4. one or two lines: title, length, the 4 shorts' hooks, and any warning you accepted. Ask which thumbnail to pick (`node tools/thumb-prompt.mjs <slug> --pick <id>`).
 @@@@ END
-@@@@ FILE tools/pack/header.md | text | 24584 | 7db83c49c8b3bca3619a8c47757794808914b5b7b3f3365628f53585b32600f1
+@@@@ FILE tools/pack/header.md | text | 24606 | fbec642f0d854790424035243f6c84cd0ec446ad416a90d41de283c461f35732
 # Project instructions: 3D Stickman Long
 
 **Claude: read only lines 1–{{HEADER_END}} of this file.** Everything after that is the packed project ({{SIZE_MB}} MB). If the user typed **start**, follow "For Claude: what start means" below.
@@ -34486,7 +35430,7 @@ Ask all four in **one** AskUserQuestion call. If the tool isn't available, ask i
    - **Portuguese (PT-BR)**: "Scripts, VO text, overlays and thumbnail text in Portuguese. Code, docs and comments stay in English."
    - The automatic "Other" option lets the user name any other language; the story docs (`STORY_BLUEPRINT.md`, `COLA_ROTEIRO.md`, `IDEA_ENGINE.md`, `script_analysis.md`) get translated the same way.
 3. Header "Narrator". Question: "Which narrator voice should ElevenLabs use once it's connected?"
-   - **Default for the chosen language (Recommended)**: "Claude picks a calm, warm narrator in that language from ElevenLabs' public voice library once connected, and confirms it with you by ear before locking it in."
+   - **Default for the chosen language (Recommended)**: "Claude picks an animated, natural, enthusiastic narrator in that language from ElevenLabs' public voice library once connected, and confirms it with you by ear before locking it in."
    - **Audition first**: "When ElevenLabs is connected, Claude plays you free samples of 3–4 narrators in that language and you pick."
 4. Header "Thumbnails". Question: "How should thumbnails be made?"
    - **Fish GPT Image (Recommended)**: "Claude generates 3 options at 2K through Fish once it's connected (about 4.8k credits per episode)."
@@ -34744,7 +35688,7 @@ Left out on purpose:
 
 To repack after changing the project, run `node tools/pack/pack.mjs`. It rewrites this file from the current project.
 @@@@ END
-@@@@ FILE tools/pack/pack.mjs | text | 11570 | d254b87fcd8e109b2d93171f480de5a82344311ea4990f9dda7265dac929c924
+@@@@ FILE tools/pack/pack.mjs | text | 11865 | 69842f5e3f491e57e27cdea0bc3235a49b6e5ca99fa44a6b8e1774f22c4d5506
 // Packs the production system into "project instructions.md": one file that rebuilds it in an empty folder
 // when the user types "start" in a fresh Claude Code chat. It holds the start procedure (tools/pack/header.md),
 // the extractor (tools/pack/extract.mjs) and every source, doc and data file plus Claude's project memory,
@@ -34772,7 +35716,7 @@ const memDir = opt('--memory') ?? (fs.existsSync(path.join(DOCS_MEMORY, 'MEMORY.
   : path.join(os.homedir(), '.claude', 'projects', ROOT.replace(/[^a-zA-Z0-9]/g, '-'), 'memory'));
 
 // What ships. Generated media, episodes and installs stay behind; the copy rebuilds what it needs.
-const SKIP_DIRS = new Set(['node_modules', '.venv', '.git', '.bootstrap', '.claude', 'out', 'voice_auditions', '__pycache__']);
+const SKIP_DIRS = new Set(['node_modules', '.venv', '.git', '.bootstrap', '.claude', 'out', 'voice_auditions', '__pycache__', 'referencias']); // referencias: the user's reference videos
 const FIXTURE_EPISODE = 'pipetest'; // the compositions' default slug; ships as JSON only (no audio)
 const EXAMPLE_BRIEF = 'thumbnails/swap-pilot/brief.json'; // docs/pipeline/EPISODE.md points at it as the brief format
 const KEEP_EMPTY = ['final/archive', 'final/thumbnails'];
@@ -34780,6 +35724,8 @@ function keep(rel) {
   if (rel === OUT_NAME) return false;
   if (rel.startsWith('docs/memory/') && path.resolve(memDir) === DOCS_MEMORY) return false; // ships as @memory/ instead
   if (rel.startsWith('final/')) return rel === 'final/README.md';
+  // the user's SFX pack: the map and guide ship (the validator imports the map); the audio is theirs and stays
+  if (rel.startsWith('efeitos-sonoros/')) return rel === 'efeitos-sonoros/map.json' || rel === 'efeitos-sonoros/README.md';
   if (rel.startsWith('public/episodes/')) return rel.startsWith(`public/episodes/${FIXTURE_EPISODE}/`) && /^[^/]+\.json$/.test(rel.split(`${FIXTURE_EPISODE}/`)[1]);
   if (rel.startsWith('public/audio/')) return !rel.endsWith('.wav'); // demo mixes come from their sfx scripts
   if (/^thumbnails\/[^/]+\//.test(rel) && !rel.startsWith('thumbnails/refs/')) return rel === EXAMPLE_BRIEF;
@@ -35210,7 +36156,7 @@ console.log(only
   ? `review frames (--only): ${only.size} shots, ${items.length} events re-rendered → out/${slug}/review/ (manifest.json, "only" lists them)`
   : `review frames: ${items.length} events, ${mids.length} shots → out/${slug}/review/ (manifest.json)`);
 @@@@ END
-@@@@ FILE tools/sfx/episode_audio.py | text-crlf | 11709 | 10a2475db42576388324a49acb487a9c7457aab7d177f48c3446def49c6f5213
+@@@@ FILE tools/sfx/episode_audio.py | text-crlf | 16547 | 7366a537e064efcbe8bc4873e64b8a1d556311fe1f7acb2ed0db1a690f493568
 """Full episode soundtrack: narration + music (ducked under the voice) + per-set ambience +
 automatic and scripted sound effects → public/episodes/<slug>/mix.wav (stems in out/audio/<slug>/).
 
@@ -35218,8 +36164,15 @@ automatic and scripted sound effects → public/episodes/<slug>/mix.wav (stems i
 
 Scripted cues: shot "sfx": [{"t": 0.4, "name": "boom", "vol": -6, "dur": 1.2}], t = seconds into the shot.
 Automatic: whoosh into cards, whip/flash/zoom/smash cuts, ticks + chime on stat overlays, hits on titles.
-Music: episode "music": [{"shot": 0, "mood": "curious"}, {"shot": 14, "mood": "tension"}] or a file:
-       {"shot": 0, "file": "music/my_track.mp3", "vol": -18} (path under public/).
+Music: the user's track (house rule since 2026-11-09: they send it before each episode):
+       {"shot": 0, "file": "music/<slug>/track.mp3", "vol": -20} (path under public/). Procedural beds
+       ({"mood": "curious"}) are only a fallback.
+SFX pack: efeitos-sonoros/map.json maps event names to the user's files, e.g.
+       {"whoosh": {"files": ["whoosh/w1.wav", "whoosh/w2.wav"], "vol": -9}, "pop": {"files": ["ui/pop.wav"]}}
+       (paths under efeitos-sonoros/). Mapped events use the pack (variants rotate, peaks normalised);
+       the rest are synthesized.
+Dry breaths: where a picture cut lands in a pause of the narration, music and ambience drop out for that
+       breath too (~0.12-0.16 s), the staccato the Vitinho reference uses (2026-11-09).
 """
 import json
 import os
@@ -35282,6 +36235,32 @@ class Bus:
 
 
 vo, mus, amb, fx = Bus(), Bus(), Bus(), Bus()
+
+# --- the user's SFX pack ------------------------------------------------------------------------
+PACK_DIR = os.path.join(ROOT, 'efeitos-sonoros')  # the user's folder (2026-11-09); map.json + README.md inside
+PACK = {k: v for k, v in (json.load(open(os.path.join(PACK_DIR, 'map.json'), encoding='utf-8')) if os.path.exists(os.path.join(PACK_DIR, 'map.json')) else {}).items() if not k.startswith('_')}
+_pack_cache, _pack_turn = {}, {}
+
+
+def ev(name, synth, db):
+    """(sound, dB) for an event: the next variant from the user's pack when `name` is mapped, else the
+    synthesized fallback `synth()` at `db`. A pack entry's own "vol" wins over `db`."""
+    e = PACK.get(name)
+    # a fresh copy ships the map without the audio: missing files fall back to the synthesized sound
+    if not e or not e.get('files') or not all(os.path.exists(os.path.join(PACK_DIR, f)) for f in e['files']):
+        return synth(), db
+    k = _pack_turn.get(name, 0)
+    _pack_turn[name] = k + 1
+    f = e['files'][k % len(e['files'])]
+    if f not in _pack_cache:
+        y = decode(os.path.join(PACK_DIR, f))
+        _pack_cache[f] = y / (np.max(np.abs(y)) + 1e-9) * 0.89  # pack files come at any level: peak -1 dBFS, then the event's dB
+    return _pack_cache[f], e.get('vol', db)
+
+
+def sfx(t, name, synth, db):
+    y, d = ev(name, synth, db)
+    fx.add(t, y, d)
 
 
 def cue(spec, words, fallback=0.0):
@@ -35376,35 +36355,55 @@ DEFAULT_DB = {'whoosh': -9, 'swoosh': -12, 'whooshUp': -9, 'boom': -4, 'farBoom'
 for i, shot in enumerate(ep['shots']):
     st = tm['shots'][i]['start']
     if shot.get('kind') == 'card':
-        fx.add(st - 0.05, S.whoosh(0.3, 4200, 900, 0.5), -15)
+        sfx(st - 0.05, 'card', lambda: S.whoosh(0.3, 4200, 900, 0.5), -15)
     words = tm['shots'][i].get('words')
     swap = (shot.get('fx') or {}).get('swap')
     if swap:
         ts = st + cue(swap['t'], words, 0.5)
-        fx.add(ts - 0.3, S.whoosh(0.3, 600, 5200, 0.6), -11)   # blink-blink charge
-        fx.add(ts, S.mouth_pop(0.8), -6)                      # the swap 'pop'
-        fx.add(ts, S.glint(0.4), -13)
+        sfx(ts - 0.3, 'swapCharge', lambda: S.whoosh(0.3, 600, 5200, 0.6), -11)   # blink-blink charge
+        sfx(ts, 'swap', lambda: S.mouth_pop(0.8), -6)                           # the swap 'pop'
+        sfx(ts, 'sparkle', lambda: S.glint(0.4), -13)
     cut = shot.get('cut')
     if cut == 'whip':
-        fx.add(st - 0.12, S.whoosh(0.3, 3000, 600, 0.9), -8)
+        sfx(st - 0.12, 'whoosh', lambda: S.whoosh(0.3, 3000, 600, 0.9), -8)
+    elif cut == 'push':
+        sfx(st - 0.12, 'swoosh', lambda: S.whoosh(0.28, 4200, 1200, 0.7), -10)
     elif cut == 'flash':
-        fx.add(st, S.glint(0.4), -12)
-        fx.add(st, S.boom(0.6, 0.4), -12)
+        sfx(st, 'sparkle', lambda: S.glint(0.4), -12)
+        sfx(st, 'impact', lambda: S.boom(0.6, 0.4), -12)
     elif cut == 'zoom':
-        fx.add(st - 0.22, S.whoosh(0.35, 600, 5200, 0.7), -9)      # rising rush into the cut
+        sfx(st - 0.22, 'whooshUp', lambda: S.whoosh(0.35, 600, 5200, 0.7), -9)      # rising rush into the cut
     elif cut == 'smash':
-        fx.add(st, S.boom(0.7, 0.2), -7)                            # hard hit on the frame
-        fx.add(st, S.glint(0.3), -14)
+        sfx(st, 'impact', lambda: S.boom(0.7, 0.2), -7)                              # hard hit on the frame
+        sfx(st, 'sparkle', lambda: S.glint(0.3), -14)
     for o in shot.get('overlays', []):
         at = st + cue(o.get('at', 0), words, 0)
         if o['type'] == 'stat':
-            fx.add(at, S.ticks(0.33, 30, 12, 0.18), -14)
-            fx.add(at + 0.33, S.chime(0.45), -10)
+            sfx(at, 'ticks', lambda: S.ticks(0.33, 30, 12, 0.18), -14)
+            sfx(at + 0.33, 'ding', lambda: S.chime(0.45), -10)
         elif o['type'] == 'title':
-            fx.add(at - 0.3, S.reverse_swell(0.3, 0.5), -10)
-            fx.add(at, S.boom(0.8, 0.3), -9)
+            sfx(at - 0.3, 'swell', lambda: S.reverse_swell(0.3, 0.5), -10)
+            sfx(at, 'impact', lambda: S.boom(0.8, 0.3), -9)
         elif o['type'] == 'label':
-            fx.add(at, S.click(2600, 0.03, 0.4), -14)
+            sfx(at, 'click', lambda: S.click(2600, 0.03, 0.4), -14)
+        # beat effects (2026-11-09, Vitinho reference): no visual event without a sound
+        elif o['type'] == 'emote':
+            sfx(at, {'sweat': 'drip', 'tears': 'drip', 'question': 'boing', 'exclaim': 'sting', 'notes': 'ding', 'sparkle': 'sparkle', 'anger': 'puff', 'love': 'pop', 'zzz': 'pop'}.get(o.get('kind', ''), 'pop'),
+                lambda: S.mouth_pop(0.6), -9)
+        elif o['type'] == 'circle':
+            sfx(at, 'ding', lambda: S.chime(0.4), -10)
+        elif o['type'] == 'burst':
+            sfx(at - 0.15, 'whooshUp', lambda: S.whoosh(0.3, 500, 5000, 0.6), -11)
+            sfx(at, 'sparkle', lambda: S.glint(0.4), -11)
+        elif o['type'] == 'flyin':
+            sfx(at, 'swoosh', lambda: S.whoosh(0.35, 4000, 900, 0.6), -11)
+        elif o['type'] == 'timewarp':
+            sfx(at, 'clock', lambda: S.ticks(1.2, 14, 30, 0.2), -12)
+            sfx(at, 'whooshUp', lambda: S.whoosh(0.8, 300, 3000, 0.5), -14)
+        elif o['type'] == 'spotlight':
+            sfx(at, 'spot', lambda: S.boom(0.5, 0.6), -14)
+        elif o['type'] == 'word':
+            sfx(at, 'pop', lambda: S.mouth_pop(0.5), -12)
         elif o['type'] == 'menu':
             # body-settings HUD: open blip, a slider tick per changing row, the toast's alert
             fx.add(at, S.ui_open(0.35), -9)
@@ -35415,10 +36414,11 @@ for i, shot in enumerate(ep['shots']):
                 fx.add(st + cue(o.get('noteAt', 0.6), words, 0) if isinstance(o.get('noteAt'), str) else at + o.get('noteAt', 0.6), S.ui_alert(0.35), -10)
     for c in shot.get('sfx', []):
         name = c['name']
-        if name not in LIB:
+        if name not in LIB and name not in PACK:
             print(f'  ! unknown sfx "{name}" in shot {i} (known: {", ".join(LIB)})')
             continue
-        fx.add(st + cue(c.get('t', 0), words, 0), LIB[name](c.get('dur')), c.get('vol', DEFAULT_DB.get(name, -8)))
+        y, d = ev(name, lambda: LIB[name](c.get('dur')), DEFAULT_DB.get(name, -8))
+        fx.add(st + cue(c.get('t', 0), words, 0), y, c.get('vol', d))
 
 # --- music --------------------------------------------------------------------------------------
 cues = sorted(ep.get('music', [{'shot': 0, 'mood': 'curious'}]), key=lambda c: c['shot'])
@@ -35448,6 +36448,36 @@ duck = np.repeat(g, hop)[:N]
 mus.x *= (1 - 0.55 * duck)[:, None]
 amb.x *= (1 - 0.35 * duck)[:, None]
 
+# --- dry breaths ---------------------------------------------------------------------------------
+# Where a picture cut lands in a pause of the narration, the music and ambience drop out for that breath
+# too (up to 0.16 s, ending on the cut): the track "breathes" with the voice (Vitinho reference, 2026-11-09).
+if not draft:
+    hop10 = SR // 100
+    nf = N // hop10
+    lv = np.sqrt(np.mean(vo.x[: nf * hop10].mean(axis=1).reshape(nf, hop10) ** 2, axis=1))
+    quiet = lv < 0.004
+    gate = np.ones(N)
+    ramp = int(0.008 * SR)
+    breaths = 0
+    for i in range(1, len(tm['shots'])):
+        c = tm['shots'][i]['start']
+        k = int(c * 100)
+        if not (0 < k < nf and quiet[max(0, k - 2):k + 1].all()):
+            continue
+        a = k
+        while a > 0 and quiet[a - 1] and k - a < 16:
+            a -= 1
+        if k - a < 8:  # a breath shorter than 0.08 s is not a sentence break
+            continue
+        i0, i1 = a * hop10, k * hop10
+        gate[i0:i1] = 0
+        gate[i0:i0 + ramp] = np.linspace(1, 0, min(ramp, i1 - i0))
+        gate[max(i0, i1 - ramp):i1] = np.linspace(0, 1, i1 - max(i0, i1 - ramp))
+        breaths += 1
+    mus.x *= gate[:, None]
+    amb.x *= gate[:, None]
+    print(f'dry breaths: music/ambience drop out on {breaths} of {len(tm["shots"]) - 1} cuts')
+
 # --- master -------------------------------------------------------------------------------------
 # Stems first, then sum in place in float32: four float64 buses of a 15-min episode are ~640 MB each,
 # and `vo + mus + amb + fx` used to allocate temporaries until it ran out of memory (menu-corpo, 2026-11-09).
@@ -35471,6 +36501,45 @@ mix = S.fade(mix, 0.01, 0.8)
 S.write_wav(os.path.join(D, 'mix.wav'), mix.astype(np.float32))
 rms = 20 * np.log10(np.sqrt(np.mean(mix ** 2)) + 1e-9)
 print(f'mix.wav: {TOTAL:.1f} s, rms {rms:.1f} dBFS' + (' (draft timing: no narration yet)' if draft else ''))
+@@@@ END
+@@@@ FILE tools/sfx/freeze.py | text | 1479 | dbebf5ec5472beb192145eb747db1415a24858004b0c4eb92b646f366c2a0433
+"""The shorts' "world freezes" sound: a downward whoosh + sub drop on the pause hit, then a quiet airy
+drone under the hero's 4th-wall line (time stopped). One file, reused by every short; tools/shorts.mjs
+places it at the freeze and trims it to the short's length.
+    .venv/Scripts/python.exe tools/sfx/freeze.py  ->  public/audio/sfx_freeze.wav
+"""
+import os
+import sys
+
+import numpy as np
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import sfxlib as S  # noqa: E402
+
+ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
+DUR = 14.0
+out = np.zeros((int(DUR * S.SR), 2), np.float32)
+
+
+def add(t, y, db=0.0):
+    i = int(t * S.SR)
+    y = y[: max(0, len(out) - i)]
+    out[i:i + len(y)] += y * (10 ** (db / 20))
+
+
+add(0.0, S.whoosh(0.5, 3200, 160, 0.9), -4)          # the world winds down
+add(0.04, S.sub_drop(0.8, 110, 30, 1.0), -6)
+add(0.0, S.click(1800, 0.03, 0.8), -10)               # the "pause" click
+add(0.02, S.glint(0.35), -14)
+# time-stopped air: low pink noise + a faint high shimmer, swelling in and slowly breathing
+n = len(out)
+t = np.arange(n) / S.SR
+air = S.lp(S.pink(DUR), 700) * 0.04 + S.hp(S.pink(DUR), 5000) * 0.005  # ~13 dB under the hero's line
+env = np.clip((t - 0.3) / 0.8, 0, 1) * (0.85 + 0.15 * np.sin(t * 1.3))
+out += S.stereo(air * env, width=1)
+out = S.fade(out, 0.002, 1.5)
+S.write_wav(os.path.join(ROOT, 'public', 'audio', 'sfx_freeze.wav'), out)
+print('public/audio/sfx_freeze.wav')
 @@@@ END
 @@@@ FILE tools/sfx/music.py | text | 7452 | ef7d0c7368c144f81126ed59e0ca31d20f5014bb196b065fad2e91b7d3994231
 """Procedural underscore beds (numpy only). Each mood renders one seamless 8-bar loop with
@@ -36430,6 +37499,201 @@ spawnSync('ffmpeg', ['-v', 'error', '-y', ...all.flatMap(f => ['-i', f]), '-filt
   `${all.map((_, j) => `[${j}]scale=480:270[v${j}]`).join(';')};${all.map((_, j) => `[v${j}]`).join('')}xstack=inputs=${all.length}:layout=${all.map((_, j) => `${(j % cols) * 480}_${Math.floor(j / cols) * 270}`).join('|')}`,
   '-q:v', '3', out], { stdio: 'inherit' });
 console.log(`→ ${path.relative(ROOT, out).replace(/\\/g, '/')}`);
+@@@@ END
+@@@@ FILE tools/shorts.mjs | text | 12429 | 380a38d737c2c37f7b3f2be64218076b7df41ce758eed4d21b9e357774ab65d6
+// Vertical shorts from a finished episode (user rule, 2026-11-09): 4 per episode, ~60 s, 1080×1920, each a
+// self-contained mini-story that stops on a cliffhanger, freezes the world, and lets the hero break the 4th
+// wall to send the viewer to the full story on the channel.
+//
+//   node tools/shorts.mjs plan   <slug>          reads public/episodes/<slug>/shorts.json → shorts/plan_<n>.json (checks)
+//   node tools/shorts.mjs voice  <slug> [n...]   ElevenLabs: the hero's CTA lines (COSTS CREDITS; ~0.45/char) → shorts/cta_<n>.mp3
+//   node tools/shorts.mjs audio  <slug>          cuts the episode's own mix (no API) + freeze SFX + CTA voice → shorts/short_<n>.wav
+//   node tools/shorts.mjs render <slug> [n...]   plan + audio + render → final/shorts/<episode title>/<n> - <short title>.mp4
+//
+// The list comes from episode(shorts=[...]) in the generator, or public/episodes/<slug>/shorts.json (wins):
+//   [{ title, cta, from, to, drop?: [ids], shots?: [ids] (instead of from/to), stage?: id, stageAt?: s, cutAt?: s }]
+//   from/to   first and last shot ids (inclusive); drop removes digressions inside the range
+//   shots     an explicit list of shot ids, in order (pieces may jump around the episode)
+//   cutAt     end the last shot early (seconds into it), on the cliffhanger beat
+//   stage     the shot whose frozen world stages the 4th-wall break (default: the last piece with the hero in it);
+//             pick one with the world around him (a street, a lake), not an empty void stage
+//   stageAt   the moment of that shot to freeze (seconds; default its end, or the cut point)
+//   cta       the hero's line, PT-BR, tied to this short's hook, ending with the channel CTA
+import { spawnSync } from 'node:child_process';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const ROOT = fileURLToPath(new URL('..', import.meta.url));
+const [cmd, slug, ...rest] = process.argv.slice(2);
+if (!['plan', 'voice', 'audio', 'render'].includes(cmd) || !slug) {
+  console.error('usage: node tools/shorts.mjs <plan|voice|audio|render> <slug> [n...]');
+  process.exit(2);
+}
+const D = path.join(ROOT, 'public', 'episodes', slug);
+const SD = path.join(D, 'shorts');
+fs.mkdirSync(SD, { recursive: true });
+const read = f => JSON.parse(fs.readFileSync(path.join(D, f), 'utf8'));
+const ep = read('episode.json'), tm = read('timing.json');
+// shorts.json (the user's picks, or a later re-pick) wins over the generator's episode(shorts=[...])
+const specs = fs.existsSync(path.join(D, 'shorts.json')) ? read('shorts.json') : ep.shorts || [];
+if (!specs.length) throw new Error(`no shorts planned for ${slug}: add episode(shorts=[...]) in the generator or public/episodes/${slug}/shorts.json`);
+const fps = ep.fps || 30;
+const only = rest.filter(x => /^\d+$/.test(x)).map(Number);
+const pick = (n) => !only.length || only.includes(n);
+const idx = Object.fromEntries(ep.shots.map((s, i) => [s.id, i]));
+const durOf = i => (Math.round((tm.shots[i].start + tm.shots[i].dur) * fps) - Math.round(tm.shots[i].start * fps)) / fps;
+const hasHero = i => ep.shots[i].kind !== 'card' && (ep.shots[i].actors || []).some(a => a.id === 'hero' && !a.hidden);
+const HERO_VOICE = '7u8qsX4HQsSHJ0f8xsQZ'; // João Pedro (house hero voice, tools/episode.mjs HOUSE_VOICES.hero)
+const CHARS_PER_SEC = 14.5; // PT-BR at the hero's pace, for the CTA estimate before it is voiced
+const TARGET = [55, 62]; // seconds (user rule: 60 s shorts)
+
+function planOf(spec, n) {
+  const ids = spec.shots || (() => {
+    const a = idx[spec.from], b = idx[spec.to];
+    if (a === undefined || b === undefined) throw new Error(`short ${n}: unknown from/to ${spec.from}/${spec.to}`);
+    return ep.shots.slice(a, b + 1).map(s => s.id).filter(id => !(spec.drop || []).includes(id));
+  })();
+  const pieces = ids.map(id => {
+    const i = idx[id];
+    if (i === undefined) throw new Error(`short ${n}: unknown shot ${id}`);
+    return { shot: i, from: 0, to: durOf(i) };
+  });
+  if (spec.cutAt !== undefined) pieces[pieces.length - 1].to = Math.min(pieces[pieces.length - 1].to, spec.cutAt);
+  // merge consecutive whole shots? no: one piece per shot keeps the shot's own time base
+  const last = pieces[pieces.length - 1];
+  let stage = spec.stage !== undefined ? idx[spec.stage] : [...pieces].reverse().find(p => hasHero(p.shot))?.shot;
+  if (stage === undefined || !hasHero(stage)) throw new Error(`short ${n}: no shot with the hero to stage the 4th-wall break (set "stage")`);
+  const at = spec.stageAt !== undefined ? spec.stageAt : stage === last.shot ? Math.max(0, last.to - 1 / fps) : durOf(stage) - 1 / fps;
+  // the CTA's length: the voiced line if it exists, else an estimate
+  const ctaFile = path.join(SD, `cta_${n}.json`);
+  const voiced = fs.existsSync(ctaFile) ? JSON.parse(fs.readFileSync(ctaFile, 'utf8')) : null;
+  const lineDur = voiced ? voiced.dur : spec.cta.length / CHARS_PER_SEC;
+  const freeze = { stage, at, hold: 0.6, lead: 0.45, lineDur: +lineDur.toFixed(2), tail: 0.9, ...(voiced ? { words: voiced.words } : {}) };
+  const body = pieces.reduce((a, p) => a + p.to - p.from, 0);
+  const total = +(body + freeze.hold + freeze.lead + freeze.lineDur + freeze.tail).toFixed(2);
+  return { n, title: spec.title, cta: spec.cta, pieces, freeze, total, voiced: !!voiced };
+}
+
+function checks(plan, spec) {
+  const out = [];
+  if (plan.total < TARGET[0] || plan.total > TARGET[1]) out.push(`runs ${plan.total.toFixed(1)} s — aim for ${TARGET[0]}–${TARGET[1]} s (60 s rule): add or drop a shot`);
+  const first = ep.shots[plan.pieces[0].shot];
+  const opener = (first.vo || '').replace(/\[[^\]]*\]/g, '').trim();
+  if (/^(e|mas|então|aí|depois|até|por isso|isso|esses?|essas?|aquilo|também)(?!\p{L})/iu.test(opener)) out.push(`opens with "${opener.split(' ').slice(0, 3).join(' ')}…" — a short must open cold, without a connective that needs context`);
+  if (first.kind === 'card') out.push('opens on a 2D card — open on a 3D shot with a character (the hook)');
+  if (!/canal/i.test(spec.cta)) out.push('the CTA line never sends the viewer to the channel ("entra no canal…")');
+  if (spec.cta.length > 120) out.push(`the CTA line is ${spec.cta.length} chars — keep it under ~120 (≈ 8 s)`);
+  return out;
+}
+
+const plans = specs.map((s, k) => planOf(s, k + 1));
+
+if (cmd === 'plan' || cmd === 'audio' || cmd === 'render') {
+  plans.forEach((p, k) => {
+    if (!pick(p.n)) return;
+    fs.writeFileSync(path.join(SD, `plan_${p.n}.json`), JSON.stringify(p, null, 1));
+    const warn = checks(p, specs[k]);
+    console.log(`short ${p.n}: ${p.total.toFixed(1)} s  ${p.pieces.length} shots  stage ${ep.shots[p.freeze.stage].id}  ${p.voiced ? 'CTA voiced' : 'CTA not voiced (captions only)'}  — ${p.title}`);
+    warn.forEach(w => console.log('   ~ ' + w));
+  });
+}
+
+if (cmd === 'voice') {
+  const KEY = (fs.readFileSync(path.join(ROOT, '.env'), 'utf8').match(/ELEVENLABS_API_KEY=(.+)/) || [])[1]?.trim();
+  if (!KEY) throw new Error('ELEVENLABS_API_KEY not set in .env');
+  const todo = plans.filter(p => pick(p.n));
+  const chars = todo.reduce((a, p) => a + p.cta.length + 11, 0);
+  console.log(`voicing ${todo.length} CTA line(s), ${chars} chars (~${Math.round(chars * 0.45)} credits)`);
+  for (const p of todo) {
+    const text = (p.cta.trim().startsWith('[') ? '' : '[playful] ') + p.cta;
+    const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${HERO_VOICE}/with-timestamps`, {
+      method: 'POST', headers: { 'xi-api-key': KEY, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text, model_id: 'eleven_v4', voice_settings: { stability: 0.4, similarity_boost: 0.8 } }),
+    });
+    if (!res.ok) throw new Error(`ElevenLabs ${res.status}: ${await res.text()}`);
+    const j = await res.json();
+    fs.writeFileSync(path.join(SD, `cta_${p.n}.mp3`), Buffer.from(j.audio_base64, 'base64'));
+    // words from the character timestamps (tags stripped)
+    const a = j.alignment, words = [];
+    let cur = '', t0 = 0, inTag = false;
+    a.characters.forEach((ch, i) => {
+      if (ch === '[') inTag = true;
+      if (inTag) { if (ch === ']') inTag = false; return; }
+      if (/\s/.test(ch)) { if (cur) words.push([cur, +t0.toFixed(3)]); cur = ''; return; }
+      if (!cur) t0 = a.character_start_times_seconds[i];
+      cur += ch;
+    });
+    if (cur) words.push([cur, +t0.toFixed(3)]);
+    const clean = words.map(([w, t]) => [w.replace(/[.,!?…]+$/, ''), t]).filter(([w]) => w);
+    const dur = a.character_end_times_seconds[a.character_end_times_seconds.length - 1];
+    fs.writeFileSync(path.join(SD, `cta_${p.n}.json`), JSON.stringify({ text, dur, words: clean }));
+    console.log(`  cta_${p.n}.mp3  ${dur.toFixed(2)} s`);
+  }
+  console.log('now: node tools/shorts.mjs render ' + slug);
+}
+
+function sh(c, a) {
+  const r = spawnSync(c, a, { stdio: ['ignore', 'inherit', 'inherit'], cwd: ROOT });
+  if (r.status !== 0) throw new Error(`${c} failed (${r.status})`);
+}
+
+/** The episode's finished soundtrack: mix.wav when it is still there, else the audio of the final mp4. */
+function episodeAudio() {
+  const mix = path.join(D, 'mix.wav');
+  if (fs.existsSync(mix)) return mix;
+  const norm = s => s.normalize('NFC').replace(/[?:*"<>|\\/]/g, '').trim().toLowerCase();
+  const fin = fs.readdirSync(path.join(ROOT, 'final')).find(f => f.endsWith('.mp4') && norm(f.replace(/\.mp4$/, '')) === norm(ep.title));
+  if (!fin) throw new Error(`no mix.wav and no final/<"${ep.title}">.mp4 to take the soundtrack from`);
+  return path.join(ROOT, 'final', fin);
+}
+
+if (cmd === 'audio' || cmd === 'render') {
+  const src = episodeAudio();
+  const sfx = path.join(ROOT, 'public', 'audio', 'sfx_freeze.wav');
+  if (!fs.existsSync(sfx)) sh(path.join(ROOT, '.venv', 'Scripts', 'python.exe'), [path.join(ROOT, 'tools', 'sfx', 'freeze.py')]);
+  for (const p of plans) {
+    if (!pick(p.n)) continue;
+    const parts = [], labels = [];
+    p.pieces.forEach((pc, k) => {
+      const a = tm.shots[pc.shot].start + pc.from, b = tm.shots[pc.shot].start + pc.to, d = b - a;
+      parts.push(`[0:a]atrim=start=${a.toFixed(3)}:end=${b.toFixed(3)},asetpts=PTS-STARTPTS,aformat=sample_rates=48000:channel_layouts=stereo,afade=t=in:d=0.008,afade=t=out:st=${Math.max(0, d - 0.02).toFixed(3)}:d=0.02[p${k}]`);
+      labels.push(`[p${k}]`);
+    });
+    const body = p.pieces.reduce((s, pc) => s + pc.to - pc.from, 0);
+    const ctaAt = body + p.freeze.hold + p.freeze.lead;
+    const cta = path.join(SD, `cta_${p.n}.mp3`);
+    const inputs = ['-i', src, '-i', sfx, ...(fs.existsSync(cta) ? ['-i', cta] : [])];
+    const ms = s => Math.round(s * 1000);
+    const fc = [
+      ...parts,
+      `${labels.join('')}concat=n=${labels.length}:v=0:a=1[body]`,
+      `[1:a]aformat=sample_rates=48000:channel_layouts=stereo,adelay=${ms(body)}|${ms(body)}[fz]`,
+      ...(fs.existsSync(cta) ? [`[2:a]aformat=sample_rates=48000:channel_layouts=stereo,volume=1.6,adelay=${ms(ctaAt)}|${ms(ctaAt)}[cta]`] : []),
+      `[body][fz]${fs.existsSync(cta) ? '[cta]' : ''}amix=inputs=${fs.existsSync(cta) ? 3 : 2}:normalize=0:duration=longest,apad=whole_dur=${p.total},atrim=0:${p.total},loudnorm=I=-14:TP=-1:LRA=9[out]`,
+    ];
+    const out = path.join(SD, `short_${p.n}.wav`);
+    sh('ffmpeg', ['-y', '-v', 'error', ...inputs, '-filter_complex', fc.join(';'), '-map', '[out]', '-ar', '48000', '-ac', '2', out]);
+    console.log(`  ${path.relative(ROOT, out)}  ${p.total.toFixed(1)} s${fs.existsSync(cta) ? '' : '  (no CTA voice yet)'}`);
+  }
+}
+
+if (cmd === 'render') {
+  const dir = path.join(ROOT, 'final', 'shorts', ep.title.replace(/[?:*"<>|\\/]/g, '').trim());
+  fs.mkdirSync(dir, { recursive: true });
+  for (const p of plans) {
+    if (!pick(p.n)) continue;
+    const out = path.join(dir, `${p.n} - ${p.title.replace(/[?:*"<>|\\/]/g, '')}.mp4`);
+    console.log(`rendering short ${p.n} → ${path.relative(ROOT, out)}`);
+    // props go through a file: Windows' shell mangles inline JSON quotes
+    const propsFile = path.join(ROOT, 'out', slug, `short_${p.n}_props.json`);
+    fs.mkdirSync(path.dirname(propsFile), { recursive: true });
+    fs.writeFileSync(propsFile, JSON.stringify({ slug, n: p.n }));
+    const r = spawnSync('npx', ['remotion', 'render', 'Short', `"${out}"`, `--props="${propsFile}"`, '--gl=angle', '--crf=18', '--log=error'],
+      { stdio: 'inherit', cwd: ROOT, shell: process.platform === 'win32' });
+    if (r.status !== 0) throw new Error('render failed');
+  }
+}
 @@@@ END
 @@@@ FILE tools/stills.cjs | text | 2649 | f893e5334652a1e0a1205d03ac7128da44b312fa98441c20aa42910f3efa0389
 // Bundle once, render many stills (~1 s each instead of ~15 s per CLI call), several at a time.

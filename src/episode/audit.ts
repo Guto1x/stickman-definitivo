@@ -10,6 +10,7 @@ import { cue } from './cue';
 import { beatsOf, evalShot, flowInfo, framingDelta, type ShotCtx } from './scene';
 import type { CameraSpec, Vec3 } from '../types';
 import { clipsOf, propSolids, setSolids } from './collide';
+import { SFX_VISUAL } from './sfxVisual';
 import { SETS } from '../sets';
 
 export type Finding = { sev: 'error' | 'warn'; shot: number; id?: string; t?: number; check: string; msg: string };
@@ -307,6 +308,62 @@ export function auditEpisode(ep: Episode, timing: Timing): AuditReport {
   // house rule (user, 2026-11-09): every long episode runs at least 10:00
   if (long && !timing.draft && timing.total < 600) add({ sev: 'warn', shot: 0, check: 'length', msg: `episode runs ${Math.floor(timing.total / 60)}:${String(Math.round(timing.total % 60)).padStart(2, '0')} — the house minimum is 10:00 (add narration: an extra problem, rule test or world-bigger scene)` });
   if (long && timing.draft && timing.total < 600) add({ sev: 'warn', shot: 0, check: 'length', msg: `draft estimate ${Math.floor(timing.total / 60)}:${String(Math.round(timing.total % 60)).padStart(2, '0')} — the house minimum is 10:00; write more before buying voice` });
+  // visual beats (house rule 2026-11-09, Vitinho reference): something changes on screen at least every ~2 s —
+  // a cut or sub-cut, an overlay, a sound, a face or pose change, a beat effect. New episodes only (no `clips`);
+  // deliberate holds (coverage 'calm' / 'off': the dilemma, a frozen tableau) are exempt.
+  if (long && !ep.clips?.length) {
+    const ev: number[] = [];
+    const at = (x: unknown, w: typeof timing.shots[number]['words'], base: number) => base + cue(x as number | string | undefined, w, 0);
+    ep.shots.forEach((sh, i) => {
+      const tm = timing.shots[i], w = tm.words;
+      ev.push(tm.start);
+      if (sh.kind !== 'card') beatsOf(ctxOf(i)).forEach(b => { if (b.t0 > 0) ev.push(tm.start + b.t0); });
+      (sh.overlays || []).forEach(o => ev.push(at((o as { at?: unknown }).at, w, tm.start)));
+      (sh.sfx || []).forEach(c => ev.push(at(c.t, w, tm.start)));
+      if (sh.kind === 'card') return;
+      const s3 = sh as Shot3D;
+      (s3.actors || []).forEach(a => {
+        (a.faces || []).forEach(k => ev.push(at(k.t, w, tm.start)));
+        (a.poses || []).forEach(k => ev.push(at(k.t, w, tm.start)));
+        (a.path || []).forEach(k => ev.push(at(k.t, w, tm.start)));
+      });
+      if (s3.fx?.swap) ev.push(at(s3.fx.swap.t, w, tm.start));
+      if (s3.fx?.burst) ev.push(at(s3.fx.burst.at, w, tm.start));
+      if (s3.fx?.focus) ev.push(at(s3.fx.focus.at, w, tm.start));
+    });
+    ev.sort((a, b) => a - b);
+    const shotAt = (t: number) => { let k = 0; timing.shots.forEach((x, i) => { if (x.start <= t + 1e-6) k = i; }); return k; };
+    const flagged = new Set<number>();
+    for (let k = 1; k < ev.length; k++) {
+      const gap = ev[k] - ev[k - 1];
+      if (gap <= 2.5) continue;
+      const i = shotAt(ev[k - 1] + 0.01), sh = ep.shots[i] as Shot3D;
+      if (flagged.has(i) || (ep.shots[i].kind !== 'card' && (sh.coverage === 'calm' || sh.coverage === 'off'))) continue;
+      flagged.add(i);
+      add({ sev: 'warn', shot: i, id: sh.id, t: ev[k - 1] - timing.shots[i].start, check: 'beat', msg: `${gap.toFixed(1)} s with nothing new on screen (from ${(ev[k - 1] - timing.shots[i].start).toFixed(1)} s into the shot) — add a beat: an emote, a highlight circle, a flying object, a word pop, a face/pose change, a burst or a sub-cut (COLA "Batida visual")` });
+    }
+  }
+
+  // sound → picture (house rule 2026-11-09): every scripted sound has a visual event within 0.25 s — an automatic
+  // one (sfxVisual.ts), a cut/sub-cut, an overlay, a face/pose/path key or an effect. New episodes only.
+  if (!ep.clips?.length) ep.shots.forEach((sh, i) => {
+    const tm = timing.shots[i], w = tm.words;
+    const vis: number[] = [0];
+    if (sh.kind !== 'card') beatsOf(ctxOf(i)).forEach(b => vis.push(b.t0));
+    (sh.overlays || []).forEach(o => vis.push(cue((o as { at?: number | string }).at, w, 0)));
+    if (sh.kind !== 'card') {
+      const s3 = sh as Shot3D;
+      (s3.actors || []).forEach(a => [...(a.faces || []), ...(a.poses || []), ...(a.path || [])].forEach(k => vis.push(cue(k.t as number | string, w, 0))));
+      [s3.fx?.swap?.t, s3.fx?.burst?.at, s3.fx?.focus?.at].forEach(x => { if (x !== undefined) vis.push(cue(x as number | string, w, 0)); });
+    }
+    (sh.sfx || []).forEach(c => {
+      if (SFX_VISUAL[c.name]) return;
+      const tc = cue(c.t as number | string, w, 0);
+      if (!vis.some(v => Math.abs(v - tc) <= 0.25))
+        add({ sev: 'warn', shot: i, id: sh.id, t: tc, check: 'sync', msg: `sound "${c.name}" at ${tc.toFixed(2)} s has nothing visible on its frame — show it (a pose/face key, a prop moving, an emote, a cut) or pick a sound with an automatic visual (sfxVisual.ts)` }, `${i}|sync|${c.name}|${tc.toFixed(2)}`);
+    });
+  });
+
   // retention hook (user rule, 2026-11-09, new episodes only): the first 10 s need fast cutting, an early sound and a punchy move.
   // That the power shows by 0:08 needs a reader: COLA "Primeiros 10 s".
   if (long && ep.hookCheck !== false) {
@@ -336,14 +393,24 @@ export function auditEpisode(ep: Episode, timing: Timing): AuditReport {
       if (out) add({ sev: 'warn', shot: i, id: sh.id, check: 'vertical', msg: `${x.type} overlay sits outside the 9:16 centre column — a vertical cut loses it (stopwatch corner "tc"/"bc", news safe:true, stat pos "center", or a "word" overlay)` }, `${i}|vov|${x.type}`);
     }
   });
-  if (long && (ep.clips?.length ?? 0) < 4) add({ sev: 'warn', shot: 0, check: 'clips', msg: `${ep.clips?.length ?? 0} short clip(s) marked — a long episode needs ≥ 4 self-contained ~90 s clips (episode.clips)` });
-  for (const c of ep.clips || []) {
-    const a = ids.indexOf(c.from), b = ids.indexOf(c.to);
-    if (a < 0 || b < 0 || b < a) { add({ sev: 'error', shot: Math.max(0, a), check: 'clips', msg: `clip "${c.title}": shot ids ${c.from}…${c.to} not found or out of order` }); continue; }
-    const t0 = timing.shots[a].start, t1 = timing.shots[b].start + timing.shots[b].dur, d = t1 - t0;
-    const tc = (x: number) => `${Math.floor(x / 60)}:${String(Math.floor(x % 60)).padStart(2, '0')}`;
-    if (d < 60 || d > 95) add({ sev: 'warn', shot: a, id: c.from, check: 'clips', msg: `clip "${c.title}" (${tc(t0)}–${tc(t1)}) runs ${d.toFixed(0)} s — aim for 75–90 s (60–95 ok)` });
-  }
+  // the 4 vertical shorts (user rule, 2026-11-09; tools/shorts.mjs renders them). A shorts.json next to the
+  // episode overrides `episode.shorts`; this audits the generator's list (tools/shorts.mjs plan checks either).
+  // Episodes from before the rule (they carry `clips`) are not asked for shorts.
+  if (long && !ep.clips?.length && (ep.shorts?.length ?? 0) !== 4) add({ sev: 'warn', shot: 0, check: 'shorts', msg: `${ep.shorts?.length ?? 0} short(s) planned — every episode gets 4 vertical ~60 s shorts (episode(shorts=[...]): the user's picks if they named moments, else the 4 strongest hooks)` });
+  (ep.shorts || []).forEach((sh, k) => {
+    const list = sh.shots || (() => { const a = ids.indexOf(sh.from || ''), b = ids.indexOf(sh.to || ''); return a < 0 || b < a ? [] : ids.slice(a, b + 1).filter(x => !(sh.drop || []).includes(x as string)); })();
+    const at = list.map(x => ids.indexOf(x as string));
+    if (!list.length || at.some(x => x < 0)) { add({ sev: 'error', shot: 0, check: 'shorts', msg: `short ${k + 1} "${sh.title}": shot ids not found or out of order` }); return; }
+    const body = at.reduce((s, i) => s + timing.shots[i].dur, 0) - (sh.cutAt !== undefined ? timing.shots[at[at.length - 1]].dur - sh.cutAt : 0);
+    const total = body + 1.95 + sh.cta.length / 14.5;
+    if (total < 55 || total > 62) add({ sev: 'warn', shot: at[0], id: list[0], check: 'shorts', msg: `short ${k + 1} "${sh.title}" runs ~${total.toFixed(0)} s with its CTA — aim for 55–62 s (60 s rule)` });
+    const heroIn = (i: number) => !!(ep.shots[i] as Shot3D).actors?.some(a => a.id === 'hero');
+    const stage = sh.stage ? ids.indexOf(sh.stage) : [...at].reverse().find(heroIn);
+    if (stage === undefined || stage < 0 || !heroIn(stage)) add({ sev: 'error', shot: at[0], id: list[0], check: 'shorts', msg: `short ${k + 1}: no shot with the hero to stage the 4th-wall break (set stage)` });
+    const opener = (ep.shots[at[0]].vo || '').replace(/\[[^\]]*\]/g, '').trim();
+    if (/^(e|mas|então|aí|depois|até|por isso|isso|esses?|essas?|aquilo|também)(?!\p{L})/iu.test(opener)) add({ sev: 'warn', shot: at[0], id: list[0], check: 'shorts', msg: `short ${k + 1} opens with "${opener.split(' ').slice(0, 3).join(' ')}…" — a short opens cold, with no connective that needs context` });
+    if (!/canal/i.test(sh.cta)) add({ sev: 'warn', shot: at[0], id: list[0], check: 'shorts', msg: `short ${k + 1}: the hero's line never sends the viewer to the channel` });
+  });
   return { findings, events, flows, frames };
 }
 

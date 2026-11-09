@@ -1,6 +1,6 @@
 ---
 name: project-ritmo-rapido
-description: House pacing since 2026-11-08 — sub-cuts (coverage), two-sided whip/zoom/smash transitions, 9:16-safe framing; user loved the 10 s test (teste-ritmo)
+description: House pacing since 2026-11-08 — sub-cuts (coverage), two-sided whip/zoom/smash transitions, 9:16-safe framing (shorts are rendered vertical since 2026-11-09)
 metadata:
   type: project
 ---
@@ -12,4 +12,4 @@ On 2026-11-08 the user asked for livelier camera work and transitions, faster cu
 
 **Why:** the episodes felt slow (~3.9 s/shot, mostly near-static `drift`, no transitions).
 
-**How to apply:** new episodes use ritmo='rapido'; `calm` in the dilemma, `smash` by hand on reveals/punchlines. **No native 9:16 render** (user, 2026-11-08): they render 16:9 only and cut the shorts by hand in their own editor — cheaper and they keep control. So the 16:9 must stay crop-friendly: subject in the centre column (audit `vertical`), important text inside it too, and helpers that feed their manual edit (e.g. an .srt from the word timings, a hi-res re-render of a chosen range) instead of a shorts pipeline. Pairs with [[feedback-tom-acido]]; never cut between near-identical framings ([[feedback-no-camera-snaps]]).
+**How to apply:** new episodes use ritmo='rapido'; `calm` in the dilemma, `smash` by hand on reveals/punchlines. **Native vertical shorts since 2026-11-09** (the old "no native 9:16, cut by hand" rule is retired): 4 rendered 1080×1920 shorts per episode, see [[feedback-cortes-shorts]]. The 16:9 still keeps the subject and key text in the centre column (audit `vertical`), since the shorts reuse those cameras. Pairs with [[feedback-tom-acido]]; never cut between near-identical framings ([[feedback-no-camera-snaps]]).

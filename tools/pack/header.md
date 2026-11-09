@@ -73,7 +73,7 @@ Ask all four in **one** AskUserQuestion call. If the tool isn't available, ask i
    - **Portuguese (PT-BR)**: "Scripts, VO text, overlays and thumbnail text in Portuguese. Code, docs and comments stay in English."
    - The automatic "Other" option lets the user name any other language; the story docs (`STORY_BLUEPRINT.md`, `COLA_ROTEIRO.md`, `IDEA_ENGINE.md`, `script_analysis.md`) get translated the same way.
 3. Header "Narrator". Question: "Which narrator voice should ElevenLabs use once it's connected?"
-   - **Default for the chosen language (Recommended)**: "Claude picks a calm, warm narrator in that language from ElevenLabs' public voice library once connected, and confirms it with you by ear before locking it in."
+   - **Default for the chosen language (Recommended)**: "Claude picks an animated, natural, enthusiastic narrator in that language from ElevenLabs' public voice library once connected, and confirms it with you by ear before locking it in."
    - **Audition first**: "When ElevenLabs is connected, Claude plays you free samples of 3–4 narrators in that language and you pick."
 4. Header "Thumbnails". Question: "How should thumbnails be made?"
    - **Fish GPT Image (Recommended)**: "Claude generates 3 options at 2K through Fish once it's connected (about 4.8k credits per episode)."

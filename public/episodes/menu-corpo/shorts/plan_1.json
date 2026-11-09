@@ -1,0 +1,92 @@
+{
+ "n": 1,
+ "title": "Um carro vinha e o meu corpo abriu um menu",
+ "cta": "Quer saber o que essas barras escondem? Entra no canal e assiste a história completa.",
+ "pieces": [
+  {
+   "shot": 0,
+   "from": 0,
+   "to": 2.466666666666667
+  },
+  {
+   "shot": 1,
+   "from": 0,
+   "to": 3.7
+  },
+  {
+   "shot": 2,
+   "from": 0,
+   "to": 3.033333333333333
+  },
+  {
+   "shot": 3,
+   "from": 0,
+   "to": 3.566666666666667
+  },
+  {
+   "shot": 4,
+   "from": 0,
+   "to": 2.6333333333333333
+  },
+  {
+   "shot": 5,
+   "from": 0,
+   "to": 3
+  },
+  {
+   "shot": 6,
+   "from": 0,
+   "to": 2.433333333333333
+  },
+  {
+   "shot": 7,
+   "from": 0,
+   "to": 2.3333333333333335
+  },
+  {
+   "shot": 8,
+   "from": 0,
+   "to": 2.7333333333333334
+  },
+  {
+   "shot": 9,
+   "from": 0,
+   "to": 5.466666666666667
+  },
+  {
+   "shot": 10,
+   "from": 0,
+   "to": 5.866666666666666
+  },
+  {
+   "shot": 11,
+   "from": 0,
+   "to": 4.633333333333334
+  },
+  {
+   "shot": 12,
+   "from": 0,
+   "to": 4.1
+  },
+  {
+   "shot": 13,
+   "from": 0,
+   "to": 4.4
+  },
+  {
+   "shot": 14,
+   "from": 0,
+   "to": 3.1666666666666665
+  }
+ ],
+ "freeze": {
+  "stage": 6,
+  "at": 1.6,
+  "hold": 0.6,
+  "lead": 0.45,
+  "lineDur": 5.86,
+  "tail": 0.9
+ },
+ "total": 61.34,
+ "voiced": false
+}

@@ -9,3 +9,8 @@ public/episodes/*/raw/
 public/episodes/*/mix.wav
 __pycache__/
 *.pyc
+# shorts: the cut soundtrack is derived (episode mix + freeze SFX + CTA); keep plan_N.json and the PAID cta_N.mp3/json
+public/episodes/*/shorts/short_*.wav
+public/audio/sfx_freeze.wav
+# reference videos from other channels (style study only; never shipped or committed)
+referencias/

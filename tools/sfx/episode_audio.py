@@ -5,8 +5,15 @@ automatic and scripted sound effects → public/episodes/<slug>/mix.wav (stems i
 
 Scripted cues: shot "sfx": [{"t": 0.4, "name": "boom", "vol": -6, "dur": 1.2}], t = seconds into the shot.
 Automatic: whoosh into cards, whip/flash/zoom/smash cuts, ticks + chime on stat overlays, hits on titles.
-Music: episode "music": [{"shot": 0, "mood": "curious"}, {"shot": 14, "mood": "tension"}] or a file:
-       {"shot": 0, "file": "music/my_track.mp3", "vol": -18} (path under public/).
+Music: the user's track (house rule since 2026-11-09: they send it before each episode):
+       {"shot": 0, "file": "music/<slug>/track.mp3", "vol": -20} (path under public/). Procedural beds
+       ({"mood": "curious"}) are only a fallback.
+SFX pack: efeitos-sonoros/map.json maps event names to the user's files, e.g.
+       {"whoosh": {"files": ["whoosh/w1.wav", "whoosh/w2.wav"], "vol": -9}, "pop": {"files": ["ui/pop.wav"]}}
+       (paths under efeitos-sonoros/). Mapped events use the pack (variants rotate, peaks normalised);
+       the rest are synthesized.
+Dry breaths: where a picture cut lands in a pause of the narration, music and ambience drop out for that
+       breath too (~0.12-0.16 s), the staccato the Vitinho reference uses (2026-11-09).
 """
 import json
 import os
@@ -69,6 +76,32 @@ class Bus:
 
 
 vo, mus, amb, fx = Bus(), Bus(), Bus(), Bus()
+
+# --- the user's SFX pack ------------------------------------------------------------------------
+PACK_DIR = os.path.join(ROOT, 'efeitos-sonoros')  # the user's folder (2026-11-09); map.json + README.md inside
+PACK = {k: v for k, v in (json.load(open(os.path.join(PACK_DIR, 'map.json'), encoding='utf-8')) if os.path.exists(os.path.join(PACK_DIR, 'map.json')) else {}).items() if not k.startswith('_')}
+_pack_cache, _pack_turn = {}, {}
+
+
+def ev(name, synth, db):
+    """(sound, dB) for an event: the next variant from the user's pack when `name` is mapped, else the
+    synthesized fallback `synth()` at `db`. A pack entry's own "vol" wins over `db`."""
+    e = PACK.get(name)
+    # a fresh copy ships the map without the audio: missing files fall back to the synthesized sound
+    if not e or not e.get('files') or not all(os.path.exists(os.path.join(PACK_DIR, f)) for f in e['files']):
+        return synth(), db
+    k = _pack_turn.get(name, 0)
+    _pack_turn[name] = k + 1
+    f = e['files'][k % len(e['files'])]
+    if f not in _pack_cache:
+        y = decode(os.path.join(PACK_DIR, f))
+        _pack_cache[f] = y / (np.max(np.abs(y)) + 1e-9) * 0.89  # pack files come at any level: peak -1 dBFS, then the event's dB
+    return _pack_cache[f], e.get('vol', db)
+
+
+def sfx(t, name, synth, db):
+    y, d = ev(name, synth, db)
+    fx.add(t, y, d)
 
 
 def cue(spec, words, fallback=0.0):
@@ -163,35 +196,55 @@ DEFAULT_DB = {'whoosh': -9, 'swoosh': -12, 'whooshUp': -9, 'boom': -4, 'farBoom'
 for i, shot in enumerate(ep['shots']):
     st = tm['shots'][i]['start']
     if shot.get('kind') == 'card':
-        fx.add(st - 0.05, S.whoosh(0.3, 4200, 900, 0.5), -15)
+        sfx(st - 0.05, 'card', lambda: S.whoosh(0.3, 4200, 900, 0.5), -15)
     words = tm['shots'][i].get('words')
     swap = (shot.get('fx') or {}).get('swap')
     if swap:
         ts = st + cue(swap['t'], words, 0.5)
-        fx.add(ts - 0.3, S.whoosh(0.3, 600, 5200, 0.6), -11)   # blink-blink charge
-        fx.add(ts, S.mouth_pop(0.8), -6)                      # the swap 'pop'
-        fx.add(ts, S.glint(0.4), -13)
+        sfx(ts - 0.3, 'swapCharge', lambda: S.whoosh(0.3, 600, 5200, 0.6), -11)   # blink-blink charge
+        sfx(ts, 'swap', lambda: S.mouth_pop(0.8), -6)                           # the swap 'pop'
+        sfx(ts, 'sparkle', lambda: S.glint(0.4), -13)
     cut = shot.get('cut')
     if cut == 'whip':
-        fx.add(st - 0.12, S.whoosh(0.3, 3000, 600, 0.9), -8)
+        sfx(st - 0.12, 'whoosh', lambda: S.whoosh(0.3, 3000, 600, 0.9), -8)
+    elif cut == 'push':
+        sfx(st - 0.12, 'swoosh', lambda: S.whoosh(0.28, 4200, 1200, 0.7), -10)
     elif cut == 'flash':
-        fx.add(st, S.glint(0.4), -12)
-        fx.add(st, S.boom(0.6, 0.4), -12)
+        sfx(st, 'sparkle', lambda: S.glint(0.4), -12)
+        sfx(st, 'impact', lambda: S.boom(0.6, 0.4), -12)
     elif cut == 'zoom':
-        fx.add(st - 0.22, S.whoosh(0.35, 600, 5200, 0.7), -9)      # rising rush into the cut
+        sfx(st - 0.22, 'whooshUp', lambda: S.whoosh(0.35, 600, 5200, 0.7), -9)      # rising rush into the cut
     elif cut == 'smash':
-        fx.add(st, S.boom(0.7, 0.2), -7)                            # hard hit on the frame
-        fx.add(st, S.glint(0.3), -14)
+        sfx(st, 'impact', lambda: S.boom(0.7, 0.2), -7)                              # hard hit on the frame
+        sfx(st, 'sparkle', lambda: S.glint(0.3), -14)
     for o in shot.get('overlays', []):
         at = st + cue(o.get('at', 0), words, 0)
         if o['type'] == 'stat':
-            fx.add(at, S.ticks(0.33, 30, 12, 0.18), -14)
-            fx.add(at + 0.33, S.chime(0.45), -10)
+            sfx(at, 'ticks', lambda: S.ticks(0.33, 30, 12, 0.18), -14)
+            sfx(at + 0.33, 'ding', lambda: S.chime(0.45), -10)
         elif o['type'] == 'title':
-            fx.add(at - 0.3, S.reverse_swell(0.3, 0.5), -10)
-            fx.add(at, S.boom(0.8, 0.3), -9)
+            sfx(at - 0.3, 'swell', lambda: S.reverse_swell(0.3, 0.5), -10)
+            sfx(at, 'impact', lambda: S.boom(0.8, 0.3), -9)
         elif o['type'] == 'label':
-            fx.add(at, S.click(2600, 0.03, 0.4), -14)
+            sfx(at, 'click', lambda: S.click(2600, 0.03, 0.4), -14)
+        # beat effects (2026-11-09, Vitinho reference): no visual event without a sound
+        elif o['type'] == 'emote':
+            sfx(at, {'sweat': 'drip', 'tears': 'drip', 'question': 'boing', 'exclaim': 'sting', 'notes': 'ding', 'sparkle': 'sparkle', 'anger': 'puff', 'love': 'pop', 'zzz': 'pop'}.get(o.get('kind', ''), 'pop'),
+                lambda: S.mouth_pop(0.6), -9)
+        elif o['type'] == 'circle':
+            sfx(at, 'ding', lambda: S.chime(0.4), -10)
+        elif o['type'] == 'burst':
+            sfx(at - 0.15, 'whooshUp', lambda: S.whoosh(0.3, 500, 5000, 0.6), -11)
+            sfx(at, 'sparkle', lambda: S.glint(0.4), -11)
+        elif o['type'] == 'flyin':
+            sfx(at, 'swoosh', lambda: S.whoosh(0.35, 4000, 900, 0.6), -11)
+        elif o['type'] == 'timewarp':
+            sfx(at, 'clock', lambda: S.ticks(1.2, 14, 30, 0.2), -12)
+            sfx(at, 'whooshUp', lambda: S.whoosh(0.8, 300, 3000, 0.5), -14)
+        elif o['type'] == 'spotlight':
+            sfx(at, 'spot', lambda: S.boom(0.5, 0.6), -14)
+        elif o['type'] == 'word':
+            sfx(at, 'pop', lambda: S.mouth_pop(0.5), -12)
         elif o['type'] == 'menu':
             # body-settings HUD: open blip, a slider tick per changing row, the toast's alert
             fx.add(at, S.ui_open(0.35), -9)
@@ -202,10 +255,11 @@ for i, shot in enumerate(ep['shots']):
                 fx.add(st + cue(o.get('noteAt', 0.6), words, 0) if isinstance(o.get('noteAt'), str) else at + o.get('noteAt', 0.6), S.ui_alert(0.35), -10)
     for c in shot.get('sfx', []):
         name = c['name']
-        if name not in LIB:
+        if name not in LIB and name not in PACK:
             print(f'  ! unknown sfx "{name}" in shot {i} (known: {", ".join(LIB)})')
             continue
-        fx.add(st + cue(c.get('t', 0), words, 0), LIB[name](c.get('dur')), c.get('vol', DEFAULT_DB.get(name, -8)))
+        y, d = ev(name, lambda: LIB[name](c.get('dur')), DEFAULT_DB.get(name, -8))
+        fx.add(st + cue(c.get('t', 0), words, 0), y, c.get('vol', d))
 
 # --- music --------------------------------------------------------------------------------------
 cues = sorted(ep.get('music', [{'shot': 0, 'mood': 'curious'}]), key=lambda c: c['shot'])
@@ -234,6 +288,36 @@ for j in range(len(e)):
 duck = np.repeat(g, hop)[:N]
 mus.x *= (1 - 0.55 * duck)[:, None]
 amb.x *= (1 - 0.35 * duck)[:, None]
+
+# --- dry breaths ---------------------------------------------------------------------------------
+# Where a picture cut lands in a pause of the narration, the music and ambience drop out for that breath
+# too (up to 0.16 s, ending on the cut): the track "breathes" with the voice (Vitinho reference, 2026-11-09).
+if not draft:
+    hop10 = SR // 100
+    nf = N // hop10
+    lv = np.sqrt(np.mean(vo.x[: nf * hop10].mean(axis=1).reshape(nf, hop10) ** 2, axis=1))
+    quiet = lv < 0.004
+    gate = np.ones(N)
+    ramp = int(0.008 * SR)
+    breaths = 0
+    for i in range(1, len(tm['shots'])):
+        c = tm['shots'][i]['start']
+        k = int(c * 100)
+        if not (0 < k < nf and quiet[max(0, k - 2):k + 1].all()):
+            continue
+        a = k
+        while a > 0 and quiet[a - 1] and k - a < 16:
+            a -= 1
+        if k - a < 8:  # a breath shorter than 0.08 s is not a sentence break
+            continue
+        i0, i1 = a * hop10, k * hop10
+        gate[i0:i1] = 0
+        gate[i0:i0 + ramp] = np.linspace(1, 0, min(ramp, i1 - i0))
+        gate[max(i0, i1 - ramp):i1] = np.linspace(0, 1, i1 - max(i0, i1 - ramp))
+        breaths += 1
+    mus.x *= gate[:, None]
+    amb.x *= gate[:, None]
+    print(f'dry breaths: music/ambience drop out on {breaths} of {len(tm["shots"]) - 1} cuts')
 
 # --- master -------------------------------------------------------------------------------------
 # Stems first, then sum in place in float32: four float64 buses of a 15-min episode are ~640 MB each,

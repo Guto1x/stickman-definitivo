@@ -22,7 +22,7 @@ Claude runs the idea engine (`docs/story/IDEA_ENGINE.md`):
 Claude then works through five steps, stopping at each checkpoint for you:
 1. **Script.** Claude writes it with `docs/story/STORY_BLUEPRINT.md` and shows it to you with a score. Ask for changes until you're happy.
 2. **Preview.** Claude turns the script into a shot list and renders a quick preview with estimated timing, before any voice credits are spent.
-3. **Voice.** Claude voices it with ElevenLabs (Yuri, eleven_v4; about 0.4 credits per character), aligns every cut to the words, and builds music and sound effects.
+3. **Voice.** Claude voices it with ElevenLabs (Matheus, always animated, eleven_v4; about 0.45 credits per character), aligns every cut to the words, and builds music and sound effects.
 4. **Render.** Claude renders `final/<Episode title>.mp4` and reviews every shot before handing it over. Older cuts move to `final/archive/`.
 5. **Thumbnail.** Claude makes 2–3 thumbnail options; pick one.
 
