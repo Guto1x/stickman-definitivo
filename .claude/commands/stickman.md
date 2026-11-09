@@ -18,6 +18,9 @@ Make one complete narrated episode about this topic with the saved hero, then ge
 - **Slug:** short kebab-case from the title, not already used in `public/episodes/`.
 - **Length:** 8–10 minutes unless the user's topic says otherwise.
 - **Voice, music, look:** the house defaults in `CLAUDE.md` and memory.
+- **Tone:** acid, bold and still monetizable, never the cute family tone: a narrator who is calm but sometimes malicious or sarcastic (`STORY_BLUEPRINT.md` §6.10, summarised in the cola's "Tom" section).
+- **Pacing:** the generator calls `episode(..., ritmo='rapido')`, as `_modelo.py` does. That gives automatic sub-cuts plus whip/zoom on set changes. Use `coverage='calm'` in the dilemma and `cut='smash'` by hand on reveals. Keep the subject and key text in the 9:16 centre column (audit `vertical`).
+- **Shorts:** at least 4 self-contained ~90 s clips, marked in `episode(clips=[...])` (cola, "Cortes para shorts"). The user cuts them by hand from the 16:9, so there is no vertical render.
 
 ## Run
 
@@ -35,11 +38,11 @@ Make one complete narrated episode about this topic with the saved hero, then ge
    - write `thumbnails/<slug>/brief.json` with exactly 3 variants (one scene per variant, drawn from the episode's strongest moments), then `node tools/thumb-prompt.mjs <slug>`;
    - `fish` mode: run `estimate_image_edit`, then submit all 3 jobs (already approved at the checkpoint), poll them together, and save each to `thumbnails/<slug>/out/<id>_2k_medium.png`. Review each at full size and at ~360 px; regenerate one only if it fails the step-10 checks (spelling, hero colour, stickman-only cast, no stray text), and only within the approved credits;
    - `chatgpt` mode: send `CHATGPT.md` and the three prompt files instead.
-7. **Update `final/README.md`** with the new episode row.
+7. **Update `final/README.md`** with the new episode row (create it if missing, e.g. on a fresh clone).
 
 ## Deliver
 
 Keep the final message short:
 1. send the video, `final/<Episode title>.mp4`, with SendUserFile (`display: "render"`);
 2. send the 3 thumbnails with SendUserFile in one call, captioned A / B / C with their text;
-3. one or two lines: title, length, and any warning you accepted. Ask which thumbnail to pick (`node tools/thumb-prompt.mjs <slug> --pick <id>`).
+3. one or two lines: title, length, the 4+ clip timecodes from `final/<title> - cortes.txt` (the `.srt` beside the video is for the user's editor), and any warning you accepted. Ask which thumbnail to pick (`node tools/thumb-prompt.mjs <slug> --pick <id>`).

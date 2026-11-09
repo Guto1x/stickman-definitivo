@@ -4,7 +4,7 @@ automatic and scripted sound effects → public/episodes/<slug>/mix.wav (stems i
     .venv/Scripts/python -I tools/sfx/episode_audio.py <slug>
 
 Scripted cues: shot "sfx": [{"t": 0.4, "name": "boom", "vol": -6, "dur": 1.2}], t = seconds into the shot.
-Automatic: whoosh into cards, whip/flash cuts, ticks + chime on stat overlays, hits on titles.
+Automatic: whoosh into cards, whip/flash/zoom/smash cuts, ticks + chime on stat overlays, hits on titles.
 Music: episode "music": [{"shot": 0, "mood": "curious"}, {"shot": 14, "mood": "tension"}] or a file:
        {"shot": 0, "file": "music/my_track.mp3", "vol": -18} (path under public/).
 """
@@ -171,6 +171,11 @@ for i, shot in enumerate(ep['shots']):
     elif cut == 'flash':
         fx.add(st, S.glint(0.4), -12)
         fx.add(st, S.boom(0.6, 0.4), -12)
+    elif cut == 'zoom':
+        fx.add(st - 0.22, S.whoosh(0.35, 600, 5200, 0.7), -9)      # rising rush into the cut
+    elif cut == 'smash':
+        fx.add(st, S.boom(0.7, 0.2), -7)                            # hard hit on the frame
+        fx.add(st, S.glint(0.3), -14)
     for o in shot.get('overlays', []):
         at = st + cue(o.get('at', 0), words, 0)
         if o['type'] == 'stat':

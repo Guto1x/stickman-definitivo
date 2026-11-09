@@ -618,12 +618,27 @@ Regras (direto da documentação oficial, não só convenção nossa):
 - Uma tag por reação real, não por frase. A mesma lógica de 6.5 (diálogo é reação, não enfeite) vale aqui: a tag marca o momento em que o personagem *reage*, não decora toda fala.
 - **Posição muda o efeito:** uma tag *antes* do trecho define o tom da fala inteira; uma tag *depois* soa como reação a ela. `[sighs] Não dava mais certo` ≠ `Não dava mais certo. [sighs]` — escolha de propósito, não por hábito.
 - **Seja descritivo, não vago.** Uma tag ambígua pode ser lida como efeito sonoro em vez de instrução de entrega — prefira `[low, gravelly voice]` a algo solto demais. Isso também vale pra combinar tags: `[sighs, tired]` é válido e geralmente mais previsível que escolher só uma.
-- Combine a tag com a voz. Um narrador calmo (ver Voice no CLAUDE.md) raramente pede `[excited]` ou `[menacing]` — essas servem mais a personagens (`who: "male" | "female"` ou vozes extras em `episode.voices`). Teste no preview de voz antes de confiar numa combinação nova; nem toda voz tem aquela entrega nos dados de treino, então o resultado é menos confiável quanto mais incomum for a combinação.
+- Combine a tag com a voz. O narrador é calmo na base, mas tem maldade e sarcasmo (§6.10): `[sarcastic]`, `[mischievously]`, `[deadpan]`, `[darkly amused]` e um `[menacing]` raro são dele. `[excited]` continua sendo de personagem (`who: "male" | "female"` ou vozes extras em `episode.voices`). Teste no preview de voz antes de confiar numa combinação nova; nem toda voz tem aquela entrega nos dados de treino, então o resultado é menos confiável quanto mais incomum for a combinação.
 - Pontuação ainda manda no ritmo. `[pause]` existe, mas reticências (`…`), vírgula e o corte de frase já controlam a maior parte do respiro — reserve `[pause]` para um silêncio que precise ser mais longo que o natural. Travessão (`—`) marca interrupção ou fala sobreposta em diálogo.
 - **Nunca use `<break time="Xs" />`** (SSML). Isso é só pra `eleven_flash_v2`/`v2`; no `eleven_v4` (o nosso modelo) não tem efeito — use pontuação ou `[pause]`.
 - Nunca ponha uma tag que contradiga a emoção da cena (um `[playful]` num beat de crise quebra o tom).
 - **Checagem no review de áudio (CLAUDE.md, passo 7):** ao ouvir o `showwavespic`/áudio final, confira que nenhuma tag "vazou" — o modelo às vezes fala o texto de uma tag em voz alta em vez de executá-la (mais comum com tag mal-formada, sem colchete fechando, ou combinação rara demais para a voz). Se acontecer, reescreva a tag (mais descritiva, ou troque por outra do catálogo) e gere de novo essa seção.
 - **Se uma palavra sair com pronúncia errada** (comum em nome próprio ou estrangeirismo), o `eleven_v4` aceita IPA entre barras: `/pɾɔˈnuns.ja/`. Use só na palavra problemática, entre aspas duplas ao passar a transcrição, e teste de novo — a mesma transcrição pode soar diferente em vozes diferentes.
+
+### 6.10 Tom: ácido, ousado, nada fofo (decisão do usuário, 2026-11-08)
+O canal **não** tem o tom fofo/família da IFOLOGY. O narrador é um observador que se diverte com a sua desgraça: calmo na base, mas com **maldade e sarcasmo** nos momentos certos. A estrutura de 17 batidas e as premissas continuam valendo; o que muda é a atitude.
+
+- **Narrador sádico-simpático.** Ele narra o desastre com prazer contido e zomba de "você" de leve. Exemplos de registro (não copie, é só a temperatura):
+  > Parabéns. Você arruinou a vida de três pessoas. [deadpan] E ainda nem é meio-dia.
+  > [mischievously] Claro que você não contou pra ninguém. Ia dar tão certo.
+  > Sua mãe chorou. [pause] De rir, mas chorou.
+- **Dose:** a base continua `[calm]`/seca, porque o sarcasmo só funciona por contraste. Uma estocada de maldade ou sarcasmo a cada **30–60 s** (≈ 10–20 por 10 min), mais densa nos Problemas e na Consequência, **zero no dilema** (lá o peso é sério e a voz cai).
+- **Ninguém é fofo.** A família reage com interesse próprio: a mãe quer lucrar com o poder, o irmão chantageia, o melhor amigo vende o vídeo. Ainda pode haver afeto, mas nunca o "abraço da família resolve tudo". Sem lição de moral dita em voz alta.
+- **Stakes ousados.** Valem morte possível (implícita, nunca mostrada), prisão, governo/laboratório atrás de você, humilhação pública em escala nacional, segredo proibido, o fim de algo grande. Escale mais cedo e mais alto que o padrão.
+- **Ganchos e títulos apelativos**, desde que **o episódio entregue o que o título promete** (promessa falsa derruba retenção e o YouTube pune). Ex. de temperatura: "E Se Seu Coração Parasse Por 10 Segundos Todo Dia?", "E Se Todo Mundo Ouvisse Seus Pensamentos?".
+- **Comédia ácida:** ironia dramática (o público sabe o desastre antes de você), schadenfreude, narrador debochando, a terceira da lista de três sendo cruel. A subestimação no clímax vira deboche ("Foi só um prédio.").
+- **Limite monetizável (inegociável):** sem sangue/gore, sem ferimento visível, sem conteúdo sexual, sem palavrão, sem drogas, sem autolesão/suicídio, sem humilhar grupo real (etnia, religião, deficiência). Violência só cartunesca (voa, cai, explode em poeira, levanta). Morte só fora de cena ou como risco.
+- **Tags do narrador para isso** (ainda a validar com a voz do Yuri antes de virar praxe; teste curto antes do 1º episódio): `[sarcastic]` `[mischievously]` `[deadpan]` `[darkly amused]` `[chuckling]` `[menacing]` (este, 1–3 vezes por episódio, no narrador). Personagens podem usar as mesmas.
 
 ---
 
@@ -658,7 +673,7 @@ Regras (direto da documentação oficial, não só convenção nossa):
 | Crise | `park`/`suburb`/`city`/`stadium` aberto → fechado | `Stopwatch` ou `clock` começa (fica na tela até o fim do clímax) | Plano de estabelecimento aberto, insert do objeto de perigo, close do inocente, reação do herói |
 | Dilema | Mesmo set | Card `distance`/`clock` com a aritmética | Close do rosto do herói; sustente 1,5–2 s de silêncio |
 | Clímax | Mesmo set, a maior escala do episódio | Só overlay `Stopwatch`. Sem cards completos | Movimentos longos, 10–15 cortes/min, 1 tableau congelado ou batida em câmera lenta no máximo, SFX em cada um dos 3 golpes de repetição |
-| Consequência | Mesmo set → `home` | Overlay de celular/vídeo com o título viral (`Label`) | Close do custo (um objeto), plano aberto de abraço de família, insert de celular |
+| Consequência | Mesmo set → `home` | Overlay de celular/vídeo com o título viral (`Label`) | Close do custo (um objeto), reação interesseira da família (nada de abraço), insert de celular |
 | Mundo maior | `suburb` noite, janela de `bedroom`, `void` para revelações | `title`-estilo caixa alta opcional para um envelope ou mensagem | Mais lento; silhuetas; um plano de revelação dramático |
 | Gancho final | `void`/`city`/`rooftop`/janela | nenhum | 2–4 planos, o último um close sustentado, depois 1 s de preto |
 | CTA | Alinhamento de elenco ou close do herói | Card `title` com P1/P2 em caixa alta (nosso fraseado) | Um plano estático ou push-in lento |
@@ -715,7 +730,8 @@ Regras (direto da documentação oficial, não só convenção nossa):
 **Tags de áudio e fala (antes de gastar créditos — §6.9)**
 - [ ] `node tools/episode.mjs check <slug>` passa sem erro (colchete, SSML, número cru). Esse é o gate mecânico; os itens abaixo são julgamento, não checa sozinho.
 - [ ] Toda tag usada é descritiva, não vaga, e está posicionada de propósito — antes da fala pra dar o tom, depois pra reagir a ela.
-- [ ] Nenhuma tag contradiz o tom da cena, e nenhuma pede uma entrega que a voz escolhida provavelmente não tem nos dados de treino (narrador calmo não leva `[excited]`/`[menacing]` sem motivo).
+- [ ] Nenhuma tag contradiz o tom da cena, e nenhuma pede uma entrega que a voz escolhida provavelmente não tem nos dados de treino (narrador não leva `[excited]`; `[menacing]` no máximo 1–3 vezes).
+- [ ] Tom §6.10: uma estocada de sarcasmo/maldade a cada 30–60 s, nenhuma no dilema; família com interesse próprio, sem abraço-resolve-tudo nem lição de moral; nada fora do limite monetizável.
 - [ ] Número, data, dinheiro, hora e sigla em `vo` estão por extenso (§6.4), não em dígito.
 
 **Final**

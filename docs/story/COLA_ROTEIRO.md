@@ -58,6 +58,12 @@ Testes: dá pra dizer numa respirada · abertura mostra em 1 plano de 3 s · o l
 - **Desejo × necessidade:** no clímax você escolhe a necessidade (usa *menos* poder). Mudança mostrada por ação.
 - **Custo:** corpo/objeto/status; ninguém inocente paga.
 
+## Tom (§6.10, decisão do usuário 2026-11-08): ácido, ousado, nada fofo
+- Narrador calmo na base, **com maldade e sarcasmo**: se diverte com a sua desgraça, debocha de "você". Uma estocada a cada 30–60 s; **zero no dilema**.
+- Família e amigos agem por interesse próprio (lucrar, chantagear, vender o vídeo). Nada de abraço-resolve-tudo nem lição de moral falada.
+- Stakes altos e cedo: morte possível (fora de cena), prisão, governo atrás de você, humilhação nacional. Título apelativo **que o episódio entrega**.
+- Limite monetizável: sem sangue, ferimento visível, sexo, palavrão, drogas, autolesão, deboche de grupo real. Violência só cartunesca.
+
 ## Voz
 - 2ª pessoa, presente. Leitura de 2º–4º ano. Nomeie só 1–2 personagens.
 - Frase média 8–9 palavras; 35–45% ≤ 6; < 5% ≥ 20. Pico de ação: frases de 2–4 palavras. Comece por sujeito concreto ("Você…", "Sua mãe…"). PT-BR: priorize tempo de fala sobre contagem.
@@ -76,12 +82,23 @@ Testes: dá pra dizer numa respirada · abertura mostra em 1 plano de 3 s · o l
 - Inline no `vo`, em inglês, entre colchetes, **uma por reação real** (não por frase).
 - Antes do trecho = tom da fala; depois = reação a ela.
 - Catálogo: `[whispering] [softly] [slowly] [pause] [voice breaking] [weak] [tired] [bored] [playful] [angry] [excited] [menacing] [chuckling] [laughing] [sighing] [gasping] [panting] [scoffing] [sniffling] [clears throat] [sharp exhale]`. Combinações valem (`[sighs, tired]`). Fora disso, só testando antes.
-- Narrador calmo raramente leva `[excited]`/`[menacing]` (são de personagem). Nada que contradiga a cena.
+- Narrador: `[sarcastic] [mischievously] [deadpan] [darkly amused] [chuckling]`, e `[menacing]` 1–3×/episódio (validar na voz do Yuri antes do 1º uso). `[excited]` é de personagem. Nada que contradiga a cena.
 - Nunca SSML `<break>`; respiro com `…`, vírgula, `[pause]`. Pronúncia errada: IPA `/…/` só na palavra.
 - Gate mecânico: `node tools/episode.mjs check <slug>`.
 
 ## Visual por batida (resumo; tabela completa §7)
 ~20 cortes/min (planos de ~3 s); montagem 27–44; cards 8–15; clímax 10–15. Card ≤ 6 s, plano 3D ≤ 8 s. **8–14 cards/10 min**, ≥ 1 tableau congelado ou câmera lenta, 1 plano de elenco/multidão. Título: `title` com `bg:false` sobre plano aberto. Números: `compare`/`stat`/`speed`/`distance`. Regras: card `rules` antes de cada teste. Crise → clímax: `stopwatch` com `persist` até o fim. Clímax sem cards completos. CTA: card `title` com P1/P2.
+
+**Ritmo da casa (2026-11-08):** `episode(..., ritmo='rapido')` liga sub-cortes automáticos (`coverage: 'fast'`, ~1 corte a cada 1,6 s na palavra) e whip/zoom alternados em toda troca de set. Dilema: `coverage='calm'`; tableau congelado: `'off'`. **Smash** (`cut='smash'`) à mão na revelação ou na piada seca. Meta: ~30 cortes/min fora do dilema.
+**Pensado pra 9:16:** quem fala ou age fica na faixa central (o audit avisa `vertical`); dois personagens longe um do outro = dois planos, não um aberto.
+
+## Cortes para shorts (regra do usuário, 2026-11-08)
+O usuário corta à mão, do 16:9, shorts de **~90 s** para YouTube Shorts, Reels e TikTok. Todo episódio longo nasce com **≥ 4 trechos que funcionam sozinhos**, marcados em `episode(clips=[(título, 1º plano, último plano), ...])` (o audit confere 60–95 s; mire 75–90).
+- **Onde costumam cair:** (1) abertura → poder → escada de números (0:00–1:30); (2) os 3 problemas (3:10–4:40); (3) o problema real/maestria ou o teste de prova; (4) crise → dilema → clímax. Um 5º no mundo maior/gancho é bônus.
+- **Começa frio:** a 1ª frase do trecho prende sem contexto (pergunta, número absurdo, desastre em curso). Nada de "como eu disse", "lembra do…". Se precisar de um nome ou regra, reapresente em meia frase ("a Lia, sua melhor amiga, …").
+- **Fecha com soco:** cada trecho termina numa virada, piada seca ou cliffhanger, não no meio de uma ideia.
+- **Legível no vertical:** dentro dos trechos, personagem e texto importante na faixa central (audit `vertical`). Card de duas colunas (`compare`) perde um lado no corte: prefira `stat`/número único, ou um card com o conteúdo no meio.
+- O build gera um `.srt` (legendas com o tempo exato das palavras) para o editor do usuário.
 
 ## Checklist rápido (tudo sim antes da voz; versão completa §9)
 - [ ] Fórmula cheia e 6 testes ok; título 3–7 palavras
@@ -92,6 +109,8 @@ Testes: dá pra dizer numa respirada · abertura mostra em 1 plano de 3 s · o l
 - [ ] ≥ 15 números pareados e verificados; 2–3 contas; teasers
 - [ ] Viradas nas janelas; relógio vindo de regra; dilema binário; regra tema vence; custo pago; objeto perdido; frase de mudança
 - [ ] 25–32 falas curtas; piada ≤ 60 s; estatística de frase; sem banidos
+- [ ] ≥ 4 trechos de ~90 s marcados em `clips`, cada um com abertura fria e final com soco
+- [ ] Tom ácido: sarcasmo/maldade a cada 30–60 s, nada no dilema, família interesseira, limite monetizável respeitado
 - [ ] `check` passa; tags descritivas, bem posicionadas, coerentes com a voz; tudo por extenso
 - [ ] Artefato irônico → observador → chegada → gancho justo → CTA ≤ 20 s com assinatura
 - [ ] Toda batida montável com sets/cards/FX existentes

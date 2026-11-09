@@ -122,19 +122,48 @@ const CardScene: React.FC<{ shot: CardShot; t: number; dur: number; words?: Word
   );
 };
 
+// Two-sided transitions: the outgoing shot plays the first half in its last frames (nextCut),
+// the incoming shot the second half in its first frames (cut). Pure 2D, on the finished frame.
+const TR = { whip: 0.17, zoom: 0.2, smash: 0.28 };
+let trSeq = 0;
+function transition(cut: string | undefined, nextCut: string | undefined, t: number, dur: number) {
+  const id = `tr${++trSeq % 1000}`;
+  let x = 0, sc = 1, bx = 0, by = 0, rot = 0;
+  const outK = (w: number) => Math.max(0, Math.min(1, (t - (dur - w)) / w));
+  const inK = (w: number) => Math.max(0, Math.min(1, 1 - t / w));
+  if (nextCut === 'whip') { const k = outK(TR.whip) ** 2; x -= k * 12; bx += k * 110; sc *= 1 + k * 0.3; }
+  if (cut === 'whip') { const k = inK(TR.whip) ** 2; x += k * 12; bx += k * 110; sc *= 1 + k * 0.3; }
+  if (nextCut === 'zoom') { const k = outK(TR.zoom) ** 2; sc *= 1 + k * 1.1; bx += k * 14; by += k * 14; }
+  if (cut === 'zoom') { const k = inK(TR.zoom) ** 2; sc *= 1 + k * 0.7; bx += k * 14; by += k * 14; }
+  if (cut === 'smash') {
+    // punch-in that settles + a decaying shake
+    const k = inK(TR.smash);
+    sc *= 1 + 0.07 * k;
+    x += Math.sin(t * 95) * 1.4 * k;
+    rot += Math.sin(t * 71 + 1) * 1.2 * k;
+  }
+  return { id, transform: x || sc !== 1 || rot ? `translateX(${x}%) scale(${sc}) rotate(${rot}deg)` : undefined, blurX: bx, blurY: by };
+}
+
 export const ShotView: React.FC<{
-  shot: Shot; t: number; dur: number; cast: Record<string, CastMember>; frame: number; words?: Words; start?: number; prev?: ShotCtx; review?: string;
-}> = ({ shot, t, dur, cast, words, start = 0, prev, review }) => {
+  shot: Shot; t: number; dur: number; cast: Record<string, CastMember>; frame: number; words?: Words; start?: number; prev?: ShotCtx; review?: string; nextCut?: string;
+}> = ({ shot, t, dur, cast, words, start = 0, prev, review, nextCut }) => {
   const body = shot.kind === 'card'
     ? <CardScene shot={shot as CardShot} t={t} dur={dur} words={words} />
     : <Scene3D ctx={{ shot: shot as Shot3D, dur, start, words }} t={t} cast={cast} prev={prev} review={review} />;
   const cut = shot.cut;
+  const tr = transition(cut, nextCut, t, dur);
   return (
     <AbsoluteFill>
-      {body}
+      {tr.blurX > 0.5 && (
+        <svg width={0} height={0} style={{ position: 'absolute' }}>
+          <filter id={tr.id} x="-10%" y="0" width="120%" height="100%"><feGaussianBlur stdDeviation={`${tr.blurX} ${tr.blurY}`} /></filter>
+        </svg>
+      )}
+      <AbsoluteFill style={{ transform: tr.transform, filter: tr.blurX > 0.5 ? `url(#${tr.id})` : undefined }}>{body}</AbsoluteFill>
       {cut === 'flash' && <Flash t={t} at={0} dur={0.18} peak={0.7} />}
+      {cut === 'smash' && <Flash t={t} at={0} dur={0.1} peak={0.85} />}
       {cut === 'dip' && t < 0.3 && <AbsoluteFill style={{ background: '#000', opacity: 1 - t / 0.3 }} />}
-      {cut === 'whip' && t < 0.12 && <AbsoluteFill style={{ backdropFilter: `blur(${(1 - t / 0.12) * 18}px)` }} />}
       {review && shot.kind === 'card' && (
         <div style={{ position: 'absolute', left: 0, top: 0, right: 0, padding: '10px 16px', background: 'rgba(0,0,0,0.72)', color: '#ffd23f', fontSize: 26, fontFamily: 'Consolas, monospace' }}>
           {review} · t {t.toFixed(2)} / {dur.toFixed(2)} s · card:{(shot as CardShot).card}

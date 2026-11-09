@@ -56,7 +56,7 @@ export const Episode: React.FC<EpisodeProps> = ({ slug, episode, timing, hasMix,
         return (
           <Sequence key={i} from={from} durationInFrames={len} name={`${i} ${shot.kind === 'card' ? 'card:' + shot.card : (shot as { set: string }).set}`}>
             <ShotView shot={shot} t={(frame - s0) / fps} dur={dur} cast={cast} frame={frame} words={tm.words} start={tm.start}
-              prev={prevCtx(i)} review={review ? `#${i} ${shot.id || ''}` : undefined} />
+              prev={prevCtx(i)} nextCut={episode.shots[i + 1]?.cut} review={review ? `#${i} ${shot.id || ''}` : undefined} />
           </Sequence>
         );
       })}

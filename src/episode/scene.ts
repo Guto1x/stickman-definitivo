@@ -7,7 +7,7 @@ import { blendStates, evalActor, type ActorState } from '../engine/actor';
 import { project, pxPerMetre, shake, type CamState } from '../engine/cam';
 import { ease } from '../engine/rig';
 import { SETS, type SetDef } from '../sets';
-import type { ActorInShot, CastMember, PropSpec, Shot3D, Vec3 } from '../types';
+import type { ActorInShot, CameraSpec, CastMember, PropSpec, Shot3D, Vec3 } from '../types';
 import { solveCamera } from './camsolve';
 import { cue, type Words } from './cue';
 import { place, resolveActor } from './resolve';
@@ -30,6 +30,7 @@ export type SceneState = {
   props: PropSpec[];
   flow?: FlowInfo;
   camOut: number; // metres the camera was pulled back inside the room walls (0 = it was inside)
+  beat: number; // index of the current sub-cut (0 = the framing as written)
 };
 
 /** Stable per-character seed, so breathing/blinks don't jump when the same character is in the next shot. */
@@ -98,6 +99,45 @@ export function framingDelta(a: CamState, b: CamState, points: THREE.Vector3[]) 
   const ref = pts[0];
   const scale = pxPerMetre(ref, b, H) / Math.max(1e-6, pxPerMetre(ref, a, H));
   return { shift: n ? shift / n : 1, angle, scale };
+}
+
+// ---- sub-cuts (coverage) -------------------------------------------------------------------
+// One shot spec, several camera setups: each beat re-frames the same subject (punch-in, then a new
+// angle, ...) so a 4 s line reads as 2–3 cuts without writing more shots. Only automatic cameras.
+export type Beat = { t0: number; t1: number; k: number };
+const TIGHTER: Record<string, CameraSpec['shot']> = { establishing: 'wide', wide: 'full', full: 'medium', medium: 'close', close: 'xclose', xclose: 'xclose', insert: 'insert' };
+const beatCache = new WeakMap<Shot3D, Beat[]>();
+
+export function beatsOf(ctx: ShotCtx): Beat[] {
+  const { shot, dur, words } = ctx;
+  const hit = beatCache.get(shot);
+  if (hit && hit.length && Math.abs(hit[hit.length - 1].t1 - dur) < 1e-6) return hit;
+  const c = shot.camera || {};
+  const auto = !(c.pos || c.path || c.over);
+  let cuts: number[] = [];
+  if (auto && c.beats?.length) cuts = c.beats.map(b => cue(b, words, -1)).filter(x => x > 0.3 && x < dur - 0.3);
+  else if (auto && shot.coverage && shot.coverage !== 'off') {
+    const [target, min] = shot.coverage === 'fast' ? [1.6, 1.1] : [2.6, 1.8];
+    // cut just before a word starts, so the new framing lands on the word
+    const starts = (words || []).map(w => w[1] - 0.08).filter(x => x > 0);
+    const cands = starts.length ? starts : Array.from({ length: Math.floor(dur / 0.4) }, (_, i) => i * 0.4);
+    let last = 0;
+    for (const x of cands) if (x - last >= target && dur - x >= min) { cuts.push(x); last = x; }
+  }
+  cuts.sort((a, b) => a - b);
+  const out: Beat[] = [];
+  let t0 = 0;
+  [...cuts, dur].forEach((t1, k) => { out.push({ t0, t1, k }); t0 = t1; });
+  beatCache.set(shot, out);
+  return out;
+}
+
+/** The camera spec for beat k: 0 = as written; odd = one size tighter, nudged; even = a new angle. */
+export function beatCam(c: CameraSpec | undefined, k: number): CameraSpec | undefined {
+  if (!k || !c) return c;
+  const base = c.angle ?? 20, sign = base >= 0 ? -1 : 1;
+  if (k % 2) return { ...c, shot: TIGHTER[c.shot || 'medium'], angle: base + sign * 10, move: 'pushIn', amount: 0.6, dist: c.dist && c.dist * 0.72 };
+  return { ...c, angle: base + sign * (k % 4 === 2 ? 38 : -30), height: (c.height ?? 6) + 6, move: k % 4 === 2 ? 'orbitR' : 'orbitL', amount: 0.5 };
 }
 
 const rot0Cache = new WeakMap<Shot3D, Record<string, number>>();
@@ -189,7 +229,10 @@ export function evalShot(ctx: ShotCtx, t: number, cast: Record<string, CastMembe
     moveAt: shot.camera.moveAt?.map(x => cue(x, words, 0)) as [number, number] | undefined,
     path: shot.camera.path?.map(k => ({ ...k, t: cue(k.t, words, 0) })),
   } : shot.camera;
-  let cam = solveCamera(camSpec, t, dur, first, fallback, rotAtStart(ctx, cast, first, t));
+  // sub-cuts: solve the camera for the current beat, on the beat's own clock
+  const beats = beatsOf(ctx);
+  const beat = beats.find(b => t < b.t1) || beats[beats.length - 1];
+  let cam = solveCamera(beatCam(camSpec, beat.k), t - beat.t0, beat.t1 - beat.t0, first, fallback, rotAtStart(ctx, cast, first, t));
   const camOut = def.room ? keepInRoom(cam, def.room) : 0;
   if (shot.fx?.shake) cam = shake(cam, t, 0.03 * shot.fx.shake, 18, 4);
   // continuity with the previous shot (same set, near-identical framing): one flowing move
@@ -223,5 +266,5 @@ export function evalShot(ctx: ShotCtx, t: number, cast: Record<string, CastMembe
     const path = p.follow || !p.path ? undefined : p.path.map(k => ({ ...k, t: cue(k.t as number | string, words, 0) }));
     return { ...p, pos, path, ...(ignite !== undefined ? { ignite: cue(ignite, words, 0) } : {}) } as PropSpec;
   });
-  return { setKey, def, palKey, actors, states, byId, cam, swap, frozen, props, flow, camOut };
+  return { setKey, def, palKey, actors, states, byId, cam, swap, frozen, props, flow, camOut, beat: beat.k };
 }

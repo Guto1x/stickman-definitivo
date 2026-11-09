@@ -3,7 +3,8 @@ node_modules/
 .venv/
 out/
 final/
-public/episodes/*/vo/
+# vo/: keep the PAID ElevenLabs audio (sNN.mp3 + sNN.align.json) so a clone never re-bills it; the .wav is derived
+public/episodes/*/vo/*.wav
 public/episodes/*/raw/
 public/episodes/*/mix.wav
 __pycache__/

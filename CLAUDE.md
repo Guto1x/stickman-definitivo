@@ -1,6 +1,7 @@
 # 3D Stickman Long: production system
 
 Project memory (the user's preferences and decisions) lives in `C:\Users\G\.claude\projects\d--stickman-2\memory\`: read MEMORY.md and the files it links at the start of every session, and save new memories there.
+`docs/memory/` is a copy of that memory inside the repo, so a git clone on another machine carries the user's decisions: if the memory folder this session names is empty or missing, copy `docs/memory/*` into it first and read it from there. **Whenever you save or change a memory, copy the file to `docs/memory/` too.** New machine setup: `docs/SETUP.md`.
 
 This project makes IFOLOGY-style 3D stickman videos: our gray-jacket hero in a low-poly toon world. The hero wears a gray quarter-zip jacket with a gold zip pull as of 2026-11-08 (the user's call; it was red). Keep gray off the supporting cast so he stands out.
 
@@ -107,6 +108,8 @@ All files live in `public/episodes/<slug>/`.
      - `kind: "card"` shots use `src/cards` (`CARDS`; each entry's `description` and `example` show its fields). Any `"@word"` string inside a card spec is resolved to that word's time; `compare` takes an optional `middle` row, and each row has `at`;
      - `overlays` are `label`, `title`, `stat`, `stopwatch`, `bubble`, `caption`, `flash` and `news` (a "TRENDING" lower-third: `headline`, `ticker`, `tag`). A countdown that continues across cuts uses one `stopwatch` per shot with `persist: true` (no draw-in). Its `switchAt` and any overlay's `until` take word cues (`"@two"`);
      - `fx` takes `freeze`, `particles`, `grade`, `speedLines` and `shake`;
+     - `cut` takes `flow`, `cut`, `flash`, `dip` and the two-sided transitions `whip`, `zoom` and `smash` (end of the outgoing shot + start of this one, with automatic sound);
+     - `coverage: fast | calm | off` splits one shot into automatic sub-cuts on word starts (punch-in, then new angles; automatic cameras only); `camera.beats` places them by hand. **House pacing:** pass `ritmo='rapido'` to `episode()` in the generator (`_modelo.py` does): coverage `fast` everywhere it applies and whip/zoom on set changes. Use `calm` in the dilemma, `smash` by hand on reveals. `teste_ritmo.py` is the reference;
      - `sfx` cues use the names in `tools/sfx/episode_audio.py` (LIB);
      - `music` holds mood cues per shot index: curious, wonder, tension, action, sad, none; or `{file}` for your own track.
    - **Word cues:** any effect time can be `"@word"`, `"@word#2"` or `"@word+0.2"` instead of seconds. That covers `fx.swap.t`, overlay `at`, `sfx[].t`, actor `poses[].t`, `faces[].t` and `path[].t`, prop `follow[].t` and `ignite`, `camera.moveAt` and `camera.path[].t`, and card spec values. Cues resolve against the aligned narration, so everything lands on the spoken word and survives re-voicing.
@@ -148,6 +151,7 @@ All files live in `public/episodes/<slug>/`.
       - a swapper off-screen during the blink, and action that happens off-screen before the character is ever seen;
       - grounding, camera snaps (position step or turn rate), pose snaps and teleports;
       - forced jump cuts, flow continuity, and unresolved word cues (cards included);
+      - 9:16 safety (`vertical`): a camera target's head outside the centre column a vertical cut keeps;
       - a camera outside the room walls. Interior sets declare `room`, and the engine pulls such a camera back in along its sight line, but the framing is then tighter than written.
    2. **Cheap pre-check first:** `node tools/sheet.mjs <slug>` tiles one still per key shot (opening, each new set, the hook; ~20 s) into `out/lab/<slug>_sheet.jpg`; or pass ids (`sheet.mjs <slug> c8,r6`). Look at it and fix the obvious (sunk or floating feet, empty frames, wrong set, unreadable text) before the full review; every fix here saves a reviewer round.
 
@@ -180,7 +184,7 @@ All files live in `public/episodes/<slug>/`.
    - **Pick:** `node tools/thumb-prompt.mjs <slug> --pick <id>` writes `final/thumbnails/<slug>_thumbnail.jpg` (1920×1080, under YouTube's 2 MB limit) and records the choice in `brief.json`.
 
 **Voice:** ElevenLabs, model **eleven_v4**, PT-BR. Narrator is Yuri — "Natural Brazilian Narrator" `u7N1p4OIOc6Fl7y72WE7` — which the user chose on 2026-11-08 after a measured 15 s test (199 chars → 80 credits, ~0.4 credits/char).
-- The default direction is `[calm]` — eleven_v4 reads short delivery tags best (see its prompting best practices: punctuation and ellipses shape pacing more reliably than a long descriptive phrase). Pace is still set in post, same as before.
+- The default direction is `[calm]` — eleven_v4 reads short delivery tags best (see its prompting best practices: punctuation and ellipses shape pacing more reliably than a long descriptive phrase). Pace is still set in post, same as before. The narrator is calm at the base but **sarcastic and a little malicious** at chosen beats (the user's call, 2026-11-08: no cute/family IFOLOGY tone) — see STORY_BLUEPRINT.md §6.10.
 - **Audio tags are standard practice, not just the default direction.** Write them inline in `vo`, at the exact beat a character reacts (`docs/story/STORY_BLUEPRINT.md` §6.9 has the full catalog and rules) — e.g. `"Ele esperou. [sighs] Nada aconteceu."` Tags stay in English even in a Portuguese line (that's the model's trained vocabulary); the pipeline already strips bracketed text before matching words to voice time, so `"@word"` cues keep working right through a tag.
 - **House secondary voices** for other characters: `who: "male"` uses Eduardo "Brazilian Portuguese" `H2bV051FngNxkuTNROyc`, and `who: "female"` uses Sofia "Natural & Expressive" `n2a9VtkZLl8j1FSXHsL7`. For any other speaker, add it to `episode.voices` and use that key in `who`. Put the delivery in the line's `[direction]`, e.g. `[panicked dad, yelling]`.
 - Every speaker change starts a new single-speaker section — ElevenLabs has no multi-speaker-call equivalent to Fish's old `<|speaker:N|>` syntax, so this is no longer optional (`voice.mixSpeakers` is gone).

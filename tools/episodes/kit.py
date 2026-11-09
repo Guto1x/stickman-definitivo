@@ -11,7 +11,7 @@ Start a new episode from _modelo.py.
 import json
 import os
 
-__all__ = ['shots', 'A', 'cam', 'S', 'C', 'crush', 'walk', 'TALK', 'SW', 'shot_index', 'episode',
+__all__ = ['shots', 'A', 'cam', 'S', 'C', 'apply_ritmo', 'crush', 'walk', 'TALK', 'SW', 'shot_index', 'episode',
            'load_timing', 'resolve_countdowns', 'clean', 'write', 'NARRATOR', 'HOUSE_VOICES']
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
@@ -82,8 +82,30 @@ def shot_index():
     return idx
 
 
-def episode(slug, title, cast, music, voices=None, voice=None, **kw):
-    """The episode dict. music: [(shot id, mood), ...]."""
+def apply_ritmo(shots_):
+    """House pacing (since 2026-11-08): automatic sub-cuts on 3D shots with an automatic camera
+    (coverage 'fast' unless the shot sets its own; use 'calm' in the dilemma, 'off' for a held tableau),
+    and a whip / zoom transition, alternating, on every 3D→3D set change that has no explicit cut.
+    Smash cuts stay hand-placed (reveals, punchlines)."""
+    alt = ['whip', 'zoom']
+    n = 0
+    for i, sh in enumerate(shots_):
+        if sh.get('kind') == 'card':
+            continue
+        c = sh.get('camera') or {}
+        if 'coverage' not in sh and not (c.get('pos') or c.get('path') or c.get('over')):
+            sh['coverage'] = 'fast'
+        prev = shots_[i - 1] if i else None
+        if prev and prev.get('kind') != 'card' and 'cut' not in sh and prev.get('set') != sh.get('set'):
+            sh['cut'] = alt[n % 2]
+            n += 1
+
+
+def episode(slug, title, cast, music, voices=None, voice=None, ritmo=None, clips=None, **kw):
+    """The episode dict. music: [(shot id, mood), ...]. ritmo='rapido' applies the house pacing (apply_ritmo).
+    clips: [(title, first shot id, last shot id), ...] — the ≥ 4 self-contained ~90 s shorts (COLA "Cortes")."""
+    if ritmo == 'rapido':
+        apply_ritmo(shots)
     idx = shot_index()
     ep = {
         'slug': slug,
@@ -94,6 +116,8 @@ def episode(slug, title, cast, music, voices=None, voice=None, **kw):
         'music': [{'shot': idx[sid], 'mood': mood} for sid, mood in music],
         'shots': shots,
     }
+    if clips:
+        ep['clips'] = [{'title': t, 'from': a, 'to': b} for t, a, b in clips]
     ep.update(kw)
     return ep
 

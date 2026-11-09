@@ -111,6 +111,7 @@ export type CameraSpec = {
   ease?: 'inOut' | 'linear' | 'out' | 'in' | 'cruise'; // easing of the explicit `to` move (cruise = steady pan that tracks a mover)
   path?: { t: number | string; pos: Vec3; look: Vec3; fov?: number; ease?: 'inOut' | 'linear' | 'out' | 'in' | 'cruise' }[]; // explicit keyframed camera (word cues ok); overrides pos/look/to
   dutch?: number; // roll degrees
+  beats?: (number | string)[]; // sub-cut times inside the shot (seconds or word cues): each beat re-frames the same coverage (punch-in, new angle)
 };
 
 export type PropSpec = {
@@ -179,8 +180,12 @@ export type Shot3D = {
   overlays?: Overlay[];
   fx?: ShotFx;
   sfx?: SfxCue[];
-  cut?: 'cut' | 'flow' | 'flash' | 'whip' | 'dip'; // default: flow when the framing barely changes in the same set, else cut
+  cut?: Cut; // default: flow when the framing barely changes in the same set, else cut
+  coverage?: 'off' | 'calm' | 'fast'; // automatic sub-cuts on word starts (automatic cameras only): fast ≈ every 1.6 s, calm ≈ 2.6 s
 };
+
+// Transitions. whip / zoom / smash play on both sides of the cut (end of the outgoing shot + start of this one).
+export type Cut = 'cut' | 'flow' | 'flash' | 'whip' | 'dip' | 'zoom' | 'smash';
 
 export type CardShot = {
   kind: 'card';
@@ -191,7 +196,7 @@ export type CardShot = {
   card: string; // CARDS key; the remaining fields are that card's spec
   overlays?: Overlay[];
   sfx?: SfxCue[];
-  cut?: Shot3D['cut'];
+  cut?: Cut;
   [k: string]: unknown;
 };
 
@@ -209,6 +214,9 @@ export type Episode = {
   voices?: Record<string, string>; // extra speakers: key → ElevenLabs voice id (narrator = voice.id)
   cast?: Record<string, CastMember>; // merged over src/cast.ts
   music?: MusicCue[];
+  // Shorts the user cuts by hand from the 16:9 (YouTube Shorts / Reels / TikTok): ≥ 4 per long episode,
+  // each a self-contained ~90 s run of whole shots (from/to = shot ids, inclusive). The audit checks length.
+  clips?: { title: string; from: string; to: string }[];
   shots: Shot[];
 };
 

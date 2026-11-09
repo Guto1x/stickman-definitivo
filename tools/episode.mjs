@@ -26,7 +26,7 @@ const ROOT = fileURLToPath(new URL('..', import.meta.url));
 
 const [cmd, slug, ...rest] = process.argv.slice(2);
 if (!cmd || !slug) {
-  console.error('usage: node tools/episode.mjs <check|sections|voice|align|draft|script|pace> <slug> [...]');
+  console.error('usage: node tools/episode.mjs <check|sections|voice|align|draft|script|pace|srt> <slug> [...]');
   process.exit(1);
 }
 const DIR = path.join(ROOT, 'public', 'episodes', slug);
@@ -309,6 +309,10 @@ if (cmd === 'check') {
   }
   const secs = read('sections.json');
   fs.mkdirSync(path.join(DIR, 'vo'), { recursive: true });
+  // a fresh clone has the paid mp3 + alignment (in git) but not the derived .wav: rebuild it locally, no API call
+  const paid = s => s.file && fs.existsSync(path.join(DIR, 'vo', `${s.id}.mp3`)) && fs.existsSync(path.join(DIR, 'vo', `${s.id}.align.json`));
+  if (!rest.length) for (const s of secs) if (s.file && !fs.existsSync(path.join(DIR, s.file)) && paid(s)) { console.log(`${s.id}: rebuilding ${s.file} from the saved mp3 (no ElevenLabs call)`); pace(s); }
+  write('sections.json', secs);
   const ids = rest.length ? rest : secs.filter(s => !s.file || !fs.existsSync(path.join(DIR, s.file))).map(s => s.id);
   ids.forEach(id => { if (!secs.some(x => x.id === id)) throw new Error('unknown section ' + id); });
   // a few calls at once (voice.parallel, default 3); sections.json is saved after EVERY finished section,
@@ -412,6 +416,54 @@ if (cmd === 'check') {
   });
   fs.writeFileSync(path.join(DIR, 'script.md'), out.join('\n'));
   console.log(`script.md: ${ep.shots.filter(s => s.vo).length} lines`);
+} else if (cmd === 'srt') {
+  // Subtitles for the user's own editor (they cut the 9:16 shorts by hand): the script's own words
+  // (accents, punctuation) on ElevenLabs' exact word times. Plus the marked shorts with timecodes.
+  const tm = read('timing.json');
+  const nice = (ep.title || slug).replace(/[\\/:*?"<>|]/g, '').replace(/\s+/g, ' ').trim();
+  const fin = path.join(ROOT, 'final');
+  fs.mkdirSync(fin, { recursive: true });
+  const ts = x => { const ms = Math.max(0, Math.round(x * 1000)); return `${String(Math.floor(ms / 3600000)).padStart(2, '0')}:${String(Math.floor(ms / 60000) % 60).padStart(2, '0')}:${String(Math.floor(ms / 1000) % 60).padStart(2, '0')},${String(ms % 1000).padStart(3, '0')}`; };
+  const cues = [];
+  ep.shots.forEach((shot, i) => {
+    const w = tm.shots[i]?.words;
+    if (!shot.vo || !w?.length) return;
+    // display words map 1:1 onto timed tokens (a hyphenated word may span several tokens)
+    const disp = spoken(shot.vo).split(/\s+/).filter(Boolean);
+    let k = 0;
+    const timed = [];
+    for (const d of disp) {
+      const n = toks(d).length;
+      if (!n) { if (timed.length) timed[timed.length - 1].text += ' ' + d; continue; }
+      if (k >= w.length) break;
+      timed.push({ text: d, t: tm.shots[i].start + w[k][1] });
+      k += n;
+    }
+    // lines of ≤ 5 words / ≤ 32 chars, broken after punctuation; each stays until the next starts (max 2.5 s)
+    let line = [];
+    const flush = end => { if (line.length) cues.push({ t0: line[0].t, t1: end, text: line.map(x => x.text).join(' ') }); line = []; };
+    timed.forEach((x, j) => {
+      const len = line.map(y => y.text).join(' ').length + x.text.length;
+      // never leave the sentence's last word alone on its own line: it may stretch the line to 6 words / 40 chars
+      const ends = /[.!?…,;:]$/.test(x.text);
+      if (line.length && (line.length >= 5 || len > 32) && !(ends && line.length < 6 && len <= 40)) flush(x.t);
+      line.push(x);
+      if (/[.!?…,;:]$/.test(x.text)) flush(timed[j + 1]?.t ?? x.t + 0.6);
+    });
+    flush((timed.at(-1)?.t ?? 0) + 0.6);
+  });
+  cues.forEach((c, j) => { const nx = cues[j + 1]; c.t1 = Math.min(c.t1, c.t0 + 2.5, nx ? nx.t0 : Infinity); if (c.t1 - c.t0 < 0.3) c.t1 = c.t0 + 0.3; });
+  fs.writeFileSync(path.join(fin, `${nice}.srt`), cues.map((c, j) => `${j + 1}\n${ts(c.t0)} --> ${ts(c.t1)}\n${c.text}\n`).join('\n'));
+  const ids = ep.shots.map(x => x.id);
+  const tc = x => `${Math.floor(x / 60)}:${String(Math.floor(x % 60)).padStart(2, '0')}`;
+  const clips = (ep.clips || []).map((c, j) => {
+    const a = ids.indexOf(c.from), b = ids.indexOf(c.to);
+    if (a < 0 || b < 0) return `${j + 1}. ${c.title}: shot ids not found`;
+    const t0 = Math.max(0, tm.shots[a].start - 0.12), t1 = tm.shots[b].start + tm.shots[b].dur;
+    return `${j + 1}. ${c.title}  ${tc(t0)} → ${tc(t1)}  (${Math.round(t1 - t0)} s)`;
+  });
+  if (clips.length) fs.writeFileSync(path.join(fin, `${nice} - cortes.txt`), `Cortes para shorts (9:16) — ${ep.title}\n\n${clips.join('\n')}\n`);
+  console.log(`srt: ${cues.length} legendas -> final/${nice}.srt${clips.length ? `; ${clips.length} cortes -> final/${nice} - cortes.txt` : ''}`);
 } else {
   console.error('unknown command ' + cmd);
   process.exit(1);

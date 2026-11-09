@@ -4,6 +4,8 @@
 # Beats, word budgets and rules: docs/story/COLA_ROTEIRO.md. Schema: src/types.ts. Cards: src/cards (CARDS).
 # One shot per 2.5–5 s of narration; ids unique (edits by id hit the first match); vo in PT-BR,
 # numbers spelled out, [tags] in English (COLA "Tags de áudio").
+# ritmo='rapido' (house pacing): automatic sub-cuts (coverage 'fast') on automatic cameras and whip/zoom on set
+# changes. Override per shot: coverage='calm' in the dilemma, 'off' for a held tableau; cut='smash' on a reveal/punchline.
 import os
 import sys
 
@@ -64,6 +66,10 @@ TITLE = 'E Se Você ...?'
 # ---------------------------------------------------------------- episode
 ep = episode(
     SLUG, TITLE,
+    ritmo='rapido',
+    clips=[  # ≥ 4 shorts of ~90 s, whole shots, each opens on a cold hook (COLA "Cortes para shorts")
+        # ('O poder', 'c1', 'n3'), ('Os problemas', 'p1', 'p9'), ('O plano', '...', '...'), ('O clímax', 'k1', 'k12'),
+    ],
     cast={
         'bestie': {'name': '...'},
         # 'mom': {'name': 'Mãe'},

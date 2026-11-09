@@ -39,6 +39,13 @@ scene audit has errors: fix them (out/${slug}/audit.json) before the final rende
   }
 }
 
+// fresh clone: the paid mp3s are in git, the derived .wav are not — rebuild them locally (no ElevenLabs call)
+if (!args.includes('--no-audio') && fs.existsSync(path.join(D, 'sections.json'))) {
+  const secs = JSON.parse(fs.readFileSync(path.join(D, 'sections.json'), 'utf8'));
+  if (secs.some(s => s.file && !fs.existsSync(path.join(D, s.file)) && fs.existsSync(path.join(D, 'vo', `${s.id}.mp3`))))
+    run('node', [q(path.join(ROOT, 'tools', 'episode.mjs')), 'pace', slug]);
+}
+
 if (!args.includes('--no-audio')) run(q(path.join(ROOT, '.venv', 'Scripts', 'python.exe')), ['-I', q(path.join(ROOT, 'tools', 'sfx', 'episode_audio.py')), slug]);
 
 const silent = path.join(OUT, 'video_silent.mp4');
@@ -82,4 +89,6 @@ if (from === undefined) {
       '-vf', `trim=end_frame=${per},tile=6x5:padding=4:color=white`, '-frames:v', '1', '-update', '1', path.join(OUT, `sheet_${p + 1}.png`)]);
   }
 }
+// subtitles + the marked shorts' timecodes for the user's own 9:16 edit (no-op on a range preview)
+if (from === undefined && !timing.draft) run('node', [q(path.join(ROOT, 'tools', 'episode.mjs')), 'srt', slug]);
 console.log('done:', final);

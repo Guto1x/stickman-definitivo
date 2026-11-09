@@ -6,7 +6,7 @@ import { project, type CamState } from '../engine/cam';
 import { POSES } from '../engine/rig';
 import type { CastMember, Episode, Pose, Shot3D, Timing } from '../types';
 import { castOf } from './resolve';
-import { evalShot, flowInfo, framingDelta, type ShotCtx } from './scene';
+import { beatCam, evalShot, flowInfo, framingDelta, type ShotCtx } from './scene';
 
 export type Finding = { sev: 'error' | 'warn'; shot: number; id?: string; t?: number; check: string; msg: string };
 export type AuditEvent = { shot: number; id?: string; t: number; kind: 'swap' | 'jump' | 'flow' | 'cut'; what: string };
@@ -157,6 +157,7 @@ export function auditEpisode(ep: Episode, timing: Timing): AuditReport {
     const n = Math.max(1, Math.round(ctx.dur * fps));
     let prevStates: Record<string, ActorState> | null = null;
     let prevCam: CamState | null = null;
+    let prevBeat = 0;
     const targets = (() => {
       const tg = s3.camera?.target;
       return typeof tg === 'string' ? [tg] : Array.isArray(tg) && typeof tg[0] === 'string' ? (tg as string[]) : [];
@@ -205,7 +206,10 @@ export function auditEpisode(ep: Episode, timing: Timing): AuditReport {
         const head = project(s.anchors.head, sc.cam, W, H), feet = project(s.anchors.feet, sc.cam, W, H);
         if (!head.visible) add({ sev: 'error', shot: i, id: sid, t, check: 'framing', msg: `camera target ${id} is behind the camera at t=${t.toFixed(2)} s` }, `${i}|behind|${id}`);
         else if (!inFrame(head, 0.0)) add({ sev: 'error', shot: i, id: sid, t, check: 'framing', msg: `camera target ${id}'s head leaves the frame at t=${t.toFixed(2)} s` }, `${i}|headout|${id}`);
-        const shotSize = s3.camera?.shot || 'medium';
+        const shotSize = beatCam(s3.camera, sc.beat)?.shot || 'medium';
+        // 9:16 safety: the subject's head must sit inside the centre column a vertical cut keeps (608 of 1920 px)
+        const band = (H * 9) / 16 / 2;
+        if (head.visible && inFrame(head, 0.0) && Math.abs(head.x - W / 2) > band) add({ sev: 'warn', shot: i, id: sid, t, check: 'vertical', msg: `${id}'s head is outside the 9:16 centre column at t=${t.toFixed(2)} s (x=${head.x.toFixed(0)} px) — a vertical cut loses them` }, `${i}|vert|${id}`);
         if (['full', 'wide'].includes(shotSize) && head.visible && !inFrame(feet, 0.0)) add({ sev: 'warn', shot: i, id: sid, t, check: 'framing', msg: `${shotSize} shot but ${id}'s feet are out of frame at t=${t.toFixed(2)} s` }, `${i}|feetout|${id}`);
         const px = Math.abs(feet.y - head.y) + 0.24 * (H / 2);
         if (shotSize === 'wide' && head.visible && feet.visible && Math.abs(feet.y - head.y) < 60) add({ sev: 'warn', shot: i, id: sid, t, check: 'framing', msg: `${id} is tiny in frame (${Math.abs(feet.y - head.y).toFixed(0)} px tall)` }, `${i}|tiny|${id}`);
@@ -229,7 +233,7 @@ export function auditEpisode(ep: Episode, timing: Timing): AuditReport {
         const dist = Math.max(0.5, prevCam.pos.distanceTo(prevCam.look));
         const jump = sc.cam.pos.distanceTo(prevCam.pos) / dist;
         const turn = (sc.cam.look.clone().sub(sc.cam.pos).normalize().angleTo(prevCam.look.clone().sub(prevCam.pos).normalize()) * 180) / Math.PI;
-        const allowed = s3.camera?.move === 'shake' || s3.camera?.move === 'crashIn' || (s3.fx?.shake ?? 0) > 0;
+        const allowed = sc.beat !== prevBeat || s3.camera?.move === 'shake' || s3.camera?.move === 'crashIn' || (s3.fx?.shake ?? 0) > 0;
         if ((jump > 0.12 || turn > 4.5) && !allowed) add({ sev: 'warn', shot: i, id: sid, t, check: 'snap', msg: `camera ${jump > 0.12 ? `jumps ${(jump * 100).toFixed(0)}% of its distance` : `turns ${turn.toFixed(1)}°`} in one frame at t=${t.toFixed(2)} s` }, `${i}|camsnap`);
         for (const s of live) {
           const p = prevStates[s.spec.id];
@@ -257,12 +261,24 @@ export function auditEpisode(ep: Episode, timing: Timing): AuditReport {
       prevStates = {};
       for (const s of live) prevStates[s.spec.id] = s;
       prevCam = sc.cam;
+      prevBeat = sc.beat;
     }
     // something should be visible in a shot that has characters
     const mid = evalShot(ctx, ctx.dur * 0.6, cast, prev);
     if (mid.states.length && !mid.states.some(s => inFrame(project(s.anchors.head, mid.cam, W, H), 0.0)))
       add({ sev: 'warn', shot: i, id: sid, check: 'framing', msg: 'no character is visible at mid-shot' });
   });
+  // shorts the user cuts by hand from the 16:9: at least 4 per long episode, each 60–95 s of whole shots
+  const ids = ep.shots.map(s => s.id);
+  const long = timing.total > 240;
+  if (long && (ep.clips?.length ?? 0) < 4) add({ sev: 'warn', shot: 0, check: 'clips', msg: `${ep.clips?.length ?? 0} short clip(s) marked — a long episode needs ≥ 4 self-contained ~90 s clips (episode.clips)` });
+  for (const c of ep.clips || []) {
+    const a = ids.indexOf(c.from), b = ids.indexOf(c.to);
+    if (a < 0 || b < 0 || b < a) { add({ sev: 'error', shot: Math.max(0, a), check: 'clips', msg: `clip "${c.title}": shot ids ${c.from}…${c.to} not found or out of order` }); continue; }
+    const t0 = timing.shots[a].start, t1 = timing.shots[b].start + timing.shots[b].dur, d = t1 - t0;
+    const tc = (x: number) => `${Math.floor(x / 60)}:${String(Math.floor(x % 60)).padStart(2, '0')}`;
+    if (d < 60 || d > 95) add({ sev: 'warn', shot: a, id: c.from, check: 'clips', msg: `clip "${c.title}" (${tc(t0)}–${tc(t1)}) runs ${d.toFixed(0)} s — aim for 75–90 s (60–95 ok)` });
+  }
   return { findings, events, flows, frames };
 }
 

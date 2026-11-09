@@ -2,6 +2,8 @@
 
 Open this folder in Claude Code and just ask. Claude follows `CLAUDE.md`. These are the things you can say.
 
+**New machine?** Follow `docs/SETUP.md` first (clone, `npm ci`, Python venv, FFmpeg, `.env` key).
+
 ## One command: topic to finished video
 > /stickman What If You Could Breathe Underwater
 
