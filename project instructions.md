@@ -1,6 +1,6 @@
 # Project instructions: 3D Stickman Long
 
-**Claude: read only lines 1–414 of this file.** Everything after that is the packed project (3.7 MB). If the user typed **start**, follow "For Claude: what start means" below.
+**Claude: read only lines 1–414 of this file.** Everything after that is the packed project (3.8 MB). If the user typed **start**, follow "For Claude: what start means" below.
 
 This one file rebuilds the 3D Stickman Long production system in an empty folder. That system makes IFOLOGY-style "What If" videos with a 3D stickman hero, built in code with Remotion 4 and Three.js, with Python sound effects and ElevenLabs narration. The file holds:
 - the engine, sets, cards and overlays;
@@ -10,7 +10,7 @@ This one file rebuilds the 3D Stickman Long production system in an empty folder
 - Claude's project memory;
 - the `/stickman <topic>` command (topic in, finished video and 3 thumbnails out).
 
-It holds 207 files in all, each with a checksum. It was packed on 2026-11-09. It holds no finished videos or episodes: you start with an empty channel.
+It holds 209 files in all, each with a checksum. It was packed on 2026-11-09. It holds no finished videos or episodes: you start with an empty channel.
 
 ## For the human
 
@@ -18,7 +18,7 @@ It holds 207 files in all, each with a checksum. It was packed on 2026-11-09. It
 2. Open a new Claude Code chat on that folder: the Code tab of the desktop app, or `claude` in a terminal there.
 3. Type **start**. (If Claude asks what to start, say "follow project instructions.md".)
 
-At 3.7 MB, the file is too big to paste into a chat, so it has to sit in the folder.
+At 3.8 MB, the file is too big to paste into a chat, so it has to sit in the folder.
 
 Claude asks four setup questions first:
 - what the main character wears (with ready-made looks if you don't want to describe one);
@@ -46,7 +46,7 @@ Everything else works before either is connected: ideas, scripts, shot lists, pr
 
 You are installing an existing project from this file. Every project file comes out of the payload, byte for byte, with its checksum verified. Never write a project file from memory or "improve" one while installing. The only edits you make are the ones the setup answers call for (step 7).
 
-Never read past line 414 with Read, cat or grep: the rest is 3.7 MB of payload. Keep a task list, and run the long installs in the background.
+Never read past line 414 with Read, cat or grep: the rest is 3.8 MB of payload. Keep a task list, and run the long installs in the background.
 
 **Shell.** Run every command in the Bash tool (Git Bash), with forward slashes, exactly as written here: `.venv/Scripts/python`, `--props='{"view":"close"}'`. If there is no Bash tool, use PowerShell:
 - write `.venv\Scripts\python`;
@@ -395,13 +395,13 @@ End with how to connect ElevenLabs (get a key, give it to Claude in a new chat) 
 | `.vscode/` | 1 | 0 KB |  |
 | `@memory/` | 19 | 30 KB | Claude's memory for this project (extracted into the new project's memory folder) |
 | `data/` | 47 | 415 KB | idea-engine data: competitor titles, beat sheets, transcripts, patterns, ideas backlog |
-| `docs/` | 18 (8 binary) | 1315 KB | style bible, story blueprint, idea engine, reviewer brief, ElevenLabs and Fish first-connect checklists, channel research with reference frames |
+| `docs/` | 20 (8 binary) | 1341 KB | style bible, story blueprint, idea engine, reviewer brief, ElevenLabs and Fish first-connect checklists, channel research with reference frames |
 | `final/` | 1 | 1 KB | its README (finished videos land here) |
 | `projeto-2/` | 1 | 0 KB |  |
 | `public/` | 4 | 7 KB | the `pipetest` fixture episode (JSON only), empty `music/` and `sfx/` |
 | `src/` | 68 | 579 KB | the engine (rig, Stickman, actors, cameras, materials, effects), sets, cards, overlays, the episode pipeline and its self-tests |
 | `thumbnails/` | 7 (3 binary) | 306 KB | config, the prompt template, the 3 reference images, an example brief |
-| `tools/` | 29 | 271 KB | build, episode, QA, review, stills, thumbnail and pack tools; Python sound design, music and idea tools |
+| `tools/` | 29 | 272 KB | build, episode, QA, review, stills, thumbnail and pack tools; Python sound design, music and idea tools |
 
 Left out on purpose:
 - finished videos, episodes, voice-overs and thumbnails (you start with an empty channel);
@@ -500,7 +500,7 @@ __pycache__/
     "python.terminal.useEnvFile": true
 }
 @@@@ END
-@@@@ FILE @memory/MEMORY.md | text | 3168 | 73e5bedf649fe62699744d79c91648edb803cf3008298ab59cc094c519e455a4
+@@@@ FILE @memory/MEMORY.md | text | 3143 | 7b782436ff3e1229b1905005aaaf7d4805f27ca0d285ee40649ccb015bc4b9c6
 - [IFOLOGY-style channel](project-ifology-style-channel.md) — IFOLOGY-look hero in a GRAY quarter-zip jacket (since 2026-11-08), flat final/ folder, Remotion+Three engine, Python SFX, ElevenLabs voice
 - [Review-and-fix loop](feedback-review-and-fix-loop.md) — audit + independent reviewer BEFORE final render, then review the render; fix everything; 1080p final
 - [No camera snaps](feedback-no-camera-snaps.md) — never cut between near-identical framings ("a few pixels over"); flow instead; real angle changes are fine
@@ -515,7 +515,7 @@ __pycache__/
 - [Don't restructure CLAUDE.md](feedback-nao-reestruturar-claude-md.md) — user declined splitting CLAUDE.md / re-modeling /stickman + reviewers (2026-11-08); wait on earlier optimizations
 - [Ritmo rápido](project-ritmo-rapido.md) — house pacing since 2026-11-08: coverage sub-cuts, whip/zoom/smash, 9:16-safe; generators use ritmo='rapido'; NO native vertical render — user cuts 9:16 by hand from the 16:9
 - [Cortes p/ shorts](feedback-cortes-shorts.md) — every long episode needs ≥ 4 self-contained ~90 s segments (episode clips); build writes .srt + cortes.txt
-- [Refazer episódios: encerrado](project-refazer-episodios.md) — zumbi redone 2026-11-09; crush DISCARDED as a test; repo cleaned to zumbi only; keep /stickman credit stop
+- [Episódios antigos: encerrado](project-refazer-episodios.md) — only zumbi kept; its re-voiced final build is PENDING; keep /stickman credit stop
 - [Duração ≥ 10 min](feedback-duracao-10min.md) — every long episode ≥ 10:00 voiced (~1,600–1,700 words); audit warns [length]; zumbi stays 9:14 (2026-11-09)
 - [Gancho nos 10 s](feedback-gancho-10s.md) — new episodes only: ≥ 2 hook types, ≥ 6 cuts, punchy move, SFX ≤ 2 s; audit [hook]; zumbi opted out (2026-11-09)
 - [ElevenLabs pending](project-elevenlabs-pending.md) — no working ELEVENLABS_API_KEY at setup; run docs/ELEVENLABS_SETUP.md once one is added to .env
@@ -834,21 +834,19 @@ On 2026-11-08 the user asked to adapt the project to Portuguese. They chose the 
 - If the user asks for something to be in English (a one-off), that's a request for that piece only, not a scope change — check before assuming it's permanent.
 - Related: [[project-narrator-voice]] (the ElevenLabs voices are PT-BR too, picked for this reason).
 @@@@ END
-@@@@ FILE @memory/project-refazer-episodios.md | text | 1457 | c7ae17d96095f282a274ec982db0348eb755a9ba649a5ca5cbf4284e1ff7d919
+@@@@ FILE @memory/project-refazer-episodios.md | text | 876 | 8a4a7fc6192505cf3d668bcaf9195fe4a842ae948834a904044d57bd10fb3120
 ---
 name: project-refazer-episodios
-description: Remake of old episodes is CLOSED (2026-11-09) — zumbi redone in the new style; quem-tem-crush discarded as a test; repo cleaned to zumbi only
+description: Old-episode remakes are closed — zumbi is the only episode kept (its re-voiced final build is still PENDING); crush discarded 2026-11-09; keep the /stickman credit stop
 metadata:
   type: project
 ---
 
-On 2026-11-08 the user agreed to remake both finished episodes in the new style. On 2026-11-09 zumbi was finished: visual pass (`apply_ritmo`, clips, 9:16-safe; 2 review rounds), then tone pass (14 lines rewritten, ~1.7k credits, 10 sections re-voiced; 9:14), then the final build.
+Only **invasao-zumbi** is kept. quem-tem-crush was discarded as a test on 2026-11-09, and the user doesn't want much history kept about old projects.
 
-Then the user **discarded quem-tem-crush** ("foi um bom teste pra nós") and asked to clean out every leftover from other videos. Deleted: the crush and teste-ritmo episodes, generators, thumbnails, renders, the old zumbi cut in `final/archive/`, and `out/lab`. Kept as engine infrastructure: `pipetest` (the compositions' default fixture, shipped by the packer), the `swap-pilot` thumbnail brief (example format), and `PillSprint` (reference composition).
-
-**Why:** start the next episodes from a clean repo where zumbi is the only real example.
-
-**How to apply:** don't suggest remaking crush. Lesson to keep: a voice section spans many shots, so one changed line re-voices all of it. Show the user a full option and a lean credit option. Still deferred: card layouts are 16:9-wide (a 9:16 crop loses half); the user was offered a narrow card layout. `/stickman` must still stop once before spending voice credits (the user said "não tire isso").
+- **Pending:** zumbi's re-voiced build (9:14) died at 51% on 2026-11-09, and `final/` still holds the old 8:58 cut. Re-run `node tools/build-episode.mjs invasao-zumbi` and review it before calling it done.
+- `/stickman` must keep its one stop before spending voice credits (the user said "não tire isso").
+- Voice-cost lesson: a section spans many shots, so changing one line re-voices the whole section. When re-voicing, show the user a full credit option and a lean one.
 @@@@ END
 @@@@ FILE @memory/project-ritmo-rapido.md | text | 1785 | fe899e7044d538dc79ad37f634ae2fb929b193e711796b4b8981b5e11f5d8f0f
 ---
@@ -906,7 +904,7 @@ The ElevenLabs API key `tools/episode.mjs` uses lives in `D:\stickman-2\.env` as
 - To check the real remaining credit balance, ask the user to look at elevenlabs.io/app/subscription, or to create/widen a key with `user_read`.
 - To measure actual cost of a call, use `/v1/usage/character-stats?start_unix=<ms>&end_unix=<ms>&include_live_requests=true` and diff before/after — this works with the current key and is how the ~0.4 credits/char rate for eleven_v4 was measured (see [[project-narrator-voice]]).
 @@@@ END
-@@@@ FILE CLAUDE.md | text | 31549 | 42ae466a5797065adbdc651a64053dabc61232ac0a4cd053192ca8bc2870eea1
+@@@@ FILE CLAUDE.md | text | 31661 | 9f52bc502f0d3e59434d9fb22bab9ea0fc2ec62b0ebe4d59cda91d0d4150097d
 # 3D Stickman Long: production system
 
 > **ElevenLabs is not connected yet.** This copy was set up from `project instructions.md` without a working `ELEVENLABS_API_KEY`. The first time one is added to `.env`, run `docs/ELEVENLABS_SETUP.md` before any voice work; its last step deletes this note. Until then, take episodes as far as the draft preview. (Fish Audio is separate and optional — only needed for `fish`-mode thumbnails; see `docs/FISH_SETUP.md`.)
@@ -1008,7 +1006,7 @@ All files live in `public/episodes/<slug>/`.
 
 1. **Idea:** follow `docs/story/IDEA_ENGINE.md`. Generate candidates, check them with `python -I tools/ideas/novelty.py "<title>"`, score them, and pitch the top 3 to the user. Wait for their pick.
 2. **Script:** follow `docs/story/COLA_ROTEIRO.md` (beat sheet, voice rules, checklist, scoring, condensed from `STORY_BLUEPRINT.md`); open the blueprint only at the § the cola names. Show the user the script, with its score, before spending voice credits. Once the shot list exists, `node tools/episode.mjs script <slug>` writes a readable `script.md` (speakers and timestamps). Keep the plant ledger, fact check and score in `script_notes.md`.
-3. **Shot list:** write `episode.json` (schema in `src/types.ts`: `Episode`, `Shot3D`, `CardShot`) through a Python generator: copy `tools/episodes/_modelo.py` (the 17 beats, with helpers from `tools/episodes/kit.py`: `A`, `S`, `C`, `cam`, `walk`, `crush`, `episode`, `load_timing`, `resolve_countdowns`, `write`) to `tools/episodes/<slug>.py` and run it with `.venv/Scripts/python -I`. Edit the .py, never the JSON. `invasao_zumbi.py` is the full example (an older generator with its own helpers; new ones should use the kit). Rules:
+3. **Shot list:** write `episode.json` (schema in `src/types.ts`: `Episode`, `Shot3D`, `CardShot`) through a Python generator: copy `tools/episodes/_modelo.py` (the 17 beats, with helpers from `tools/episodes/kit.py`: `A`, `S`, `C`, `cam`, `walk`, `crush`, `ladainha` (one shot per list item, with its number as a `word` overlay plus SFX: the COLA "Ladainha" montage), `episode`, `load_timing`, `resolve_countdowns`, `write`) to `tools/episodes/<slug>.py` and run it with `.venv/Scripts/python -I`. Edit the .py, never the JSON. `invasao_zumbi.py` is the full example (an older generator with its own helpers; new ones should use the kit). Rules:
    - one shot per 2.5–5 s of narration;
    - the `vo` text, read in order across shots, IS the script;
    - silent beats use `hold`, with no `vo`.
@@ -11242,6 +11240,270 @@ Every sound is generated in Python (`tools/sfx/sfxlib.py`). No samples are used.
 - **Biggest hit:** the main action (the launch), not the setup.
 - **Master:** about −14 dB RMS, peak −1 dBFS.
 @@@@ END
+@@@@ FILE docs/benchmark/comprar-amor/comparacao.md | text | 6502 | a98716e5846a50322e45935c976895556ce91d50d8ed8552e8edcb781d10f8d6
+# Benchmark: "E Se Você Pudesse Comprar Amor?" (nosso) × "What IF You Could Buy Love?" (concorrente)
+
+Nosso roteiro: `roteiro.md`, escrito às cegas pela `COLA_ROTEIRO.md`. Concorrente: a transcrição em inglês do vídeo (~10:40), lida depois.
+
+## Em números (aproximado)
+
+| | Nosso | Concorrente |
+|---|---|---|
+| Duração | ~10:12 (estimada) | ~10:40 |
+| Números na narração | ~25 | **~50** (quase todo "compra" tem preço) |
+| Fatos científicos reais | 1 (pinguim) + contas | **~9** (200 horas para virar amigo, 1/5 de segundo, dopamina, cortisol no abraço, solidão = 15 cigarros, serotonina −40%, coração partido = dor física, densidade de multidão, desmaio em < 1 min) |
+| Falas de personagem | 23 | ~9 (o narrador carrega quase tudo) |
+| Frase média | 5,6 palavras | parecida, também curta |
+| Escala | casa → escola → cidade (praça) | escola → internet → estádio → fama mundial → popstar → atleta mais famoso |
+| Vantagens | ~40 s | **~3 min 20 s** (2:07–5:30) |
+| Virada escura | 4:45 (47%) | **5:57 (~55%)** |
+| Moral falada | não (por regra) | sim: "o único amor que vale é o que você nunca precisou comprar" |
+| Tom | ácido, narrador debocha | sincero, com piadinhas leves ("você é do primeiro ano", "tecnicamente, você arrumou um emprego") |
+
+## Onde convergimos (sinal de que a cola acerta)
+
+- Abertura com o poder em ação nos primeiros segundos, com testemunha.
+- O cachorro de dois dólares/reais, a tabela de preços e o "quem já te ama não custa nada" (eles: "already maxed").
+- Clímax: cancelar tudo de uma vez, perdendo o que ganhou, para salvar alguém na multidão.
+- Gancho final: alguém está comprando o **seu** amor.
+
+## O que eles fazem melhor
+
+1. **Promessa do episódio aos ~0:40.** Uma frase antecipa a escalada inteira e anuncia a virada: "até o fim do ano você vai comprar um estádio, uma popstar, milhões de estranhos. E é aí que o amor fica perigoso." O espectador sabe o que vem e espera por isso. Nós não temos esse mapa: o nosso loop aberto é só "a gente chega lá".
+2. **Ciência real como espinha.** Há um fato real verificável a cada ~60–70 s, sempre amarrado à cena: o abraço baixa o cortisol enquanto os brigões se abraçam; a densidade de multidão aparece no clímax. Isso dá credibilidade e torna o perigo palpável. O nosso único fato é decorativo (o pinguim).
+3. **A fórmula "X custa N. [efeito em 1 linha]."** Repetida ~25 vezes, é o motor de ritmo das vantagens: preço, consequência, piada, e já vem o próximo. É barata de escrever e prende pela dopamina da lista.
+4. **Escala que sai da cidade.** O "problema" dos 30% (a mesada não paga a assinatura) não vira custo, vira **combustível**: comprar espectadores de uma live por 1 centavo, depois seguidores, publis, fama mundial. A gente parou na praça (foi a minha nota mais baixa, Escalada 7).
+5. **Desejo realizado longo antes da virada.** São ~3,5 min de vitórias crescentes. A cola manda 40 s de vantagens e o "mas" aos 25–35%; eles colocam um "mas" falso aos 30% que só aumenta o poder, e a virada de verdade vem perto dos 55%.
+6. **Custo emocional.** Os problemas deles doem: obsessão (140 mensagens por dia), coração partido quando a assinatura vence, "você não namora ela, você aluga ela", o melhor amigo abandonado, "cinquenta milhões te amam e nenhum te conhece". Os nossos problemas são de logística e dinheiro (a pirâmide): espertos, mas frios.
+7. **Perigo concreto no clímax.** Uma criança prensada na grade, sem ar, e o melhor amigo tentando tirá-la de lá, com o fato real de que se desmaia em menos de um minuto. O nosso perigo ("vão sentir o contrário de amor") é abstrato.
+8. **Plantio que falha no clímax.** O "presentear amor", plantado cedo e usado na bondade, é tentado no clímax e dá "saldo insuficiente". Isso fecha a saída fácil de um jeito justo.
+
+## O que nós fazemos melhor
+
+1. **Tom.** Nada de moral falada nem final fofo: a mãe pergunta "quanto disso é meu?", e "nem você se ama de graça". O final deles é o clichê que a cola proíbe de propósito.
+2. **Causalidade e regras.** As nossas 3 regras são testadas em cena e todas voltam no clímax. A meia-noite é um relógio vindo de uma regra. No deles, o relógio do clímax ("10 segundos, talvez menos") não vem de regra nenhuma.
+3. **Plantios amarrados.** A moeda da abertura paga o cachorro no fim; o relógio de ouro escorrega do pulso; o bilhete "Corta antes que cobre" é a mesma frase da ação final.
+4. **Contas trabalhadas.** A torre de notas de 2 m, a pirâmide de 20 mil reais por dia e os juros que quase dobram numa semana. Eles jogam números soltos e quase não fazem contas.
+5. **Dilema mais rico.** "Cancelar todo mundo… ou comprar mais um" testa o vício. No deles a escolha é óbvia, e a tentativa de presentear já elimina a alternativa.
+6. **Cortes para shorts** planejados, e um mundo maior com chegada física (o envelope, o cartão).
+
+## O que eu mudaria na cola
+
+| # | Mudança | Por quê |
+|---|---|---|
+| 1 | **Frase-promessa obrigatória entre 0:30 e 0:50**: antecipa 2–3 marcos da escalada e anuncia a virada ("…e é aí que fica perigoso") | o espectador espera pelo que foi prometido; é o loop aberto mais forte do vídeo deles |
+| 2 | **≥ 6 fatos reais verificáveis por episódio, 1 a cada 60–90 s**, cada um amarrado à cena (não decorativo); 1 deles no clímax para concretizar o perigo | é a maior diferença de credibilidade entre os dois |
+| 3 | **Montagem de vantagens com a fórmula "X custa N. [efeito]."**, mais longa (~1:30–2:00) | é ritmo barato de escrever e rende muitos números pareados |
+| 4 | **O 1º "mas" pode ser combustível**: um problema que obriga a escalar o poder (e o mundo) antes dos problemas que custam | é como eles saem da cidade; mexe na janela "mas 25–35%" |
+| 5 | **Pelo menos 1 dos 3 problemas emocional** (relação, solidão, identidade), não só logístico | é o que dá peso à escolha do clímax sem precisar de moral falada |
+| 6 | **Perigo do clímax físico e visível**: inocente com relógio do corpo (ar, queda, fogo), dentro do limite monetizável | o nosso ficou abstrato |
+| 7 | Rever a meta de **25–32 falas** e de **frase média de 8–9 palavras** | o concorrente tem ~9 falas e frases tão curtas quanto as nossas; as metas podem estar calibradas no inglês da IFOLOGY |
+
+Manter: tom ácido, nenhuma moral falada, relógio vindo de regra, regras testadas em cena, contas e cortes para shorts.
+@@@@ END
+@@@@ FILE docs/benchmark/comprar-amor/roteiro.md | text | 16029 | 7d6c69ce36d9897460c925dee0db298845761d4a516bf09a3fbe6235bc7421aa
+# E Se Você Pudesse Comprar Amor?
+
+Benchmark de roteiro (só texto; nenhum episódio, voz ou crédito). Escrito às cegas, antes de ver o roteiro do outro canal, seguindo `docs/story/COLA_ROTEIRO.md`.
+
+## Premissa
+
+| Campo | |
+|---|---|
+| MECANISMO | Toda pessoa tem uma etiqueta rosa sobre a cabeça, que só você vê: o preço do amor dela por você. Pagou e encostou o dinheiro, ela te ama. |
+| CONTINUA / LIMITE | É assinatura: renova sozinha **à meia-noite**, cobrada da sua conta. Palavra-chave: **meia-noite**. |
+| ÂNCORA | O pinguim-de-adélia conquista a parceira com uma pedrinha. |
+| ESCADA | cachorro R$ 2 → mãe R$ 32 → colega R$ 50 → crush R$ 900 → diretor R$ 3 mil → seu Otávio R$ 2 milhões |
+| REGRAS | 1. Quem já te ama de graça não tem etiqueta · 2. Cancelar antes da meia-noite é de graça, mas tudo o que esse amor te deu volta pro dono · 3. Sem saldo, o amor vira o contrário |
+| REGRA TEMA | "Corta antes que cobre." |
+| CRISE | Praça cheia, 400 assinantes, a conta do seu Otávio é bloqueada às 23h50: faltam 10 minutos |
+| DILEMA | "Cancelar todo mundo… ou comprar mais um." |
+| ARTEFATO | Vídeo viral: "Adolescente mais amado da cidade leva fora de 400 pessoas de uma vez" |
+| GANCHO | Uma etiqueta sobre a sua própria cabeça, que vira coração: alguém comprou você |
+
+---
+
+## Roteiro
+
+### 1 · Abertura fria (0:00–0:20)
+*Close na etiqueta rosa "R$ 2,00" sobre um vira-lata. Ganchos: número no 1º segundo, imagem impossível e estranheza (o preço da mãe).*
+
+**NARRADOR:** [deadpan] Dois reais. É quanto custa o amor desse cachorro.
+**NARRADOR:** Você encosta a moeda no focinho dele. [pause] Pronto. A etiqueta rosa vira um coração.
+**LIA:** Desde quando esse cachorro gosta de você?
+**VOCÊ:** Desde dois reais.
+**NARRADOR:** Você chega em casa. Em cima da cabeça da sua mãe, outra etiqueta.
+**NARRADOR:** [darkly amused] Trinta e dois reais. Nem é caro.
+**MÃE:** Que foi? Tô com alguma coisa na cabeça?
+
+### 2 · Título (0:20–0:27)
+**NARRADOR:** E se você pudesse comprar amor? Sem paquera. Sem sorte. Amor, com recibo. [pause] Vamos ver quanto isso custa de verdade.
+
+### 3 · Mecanismo + limite (0:27–0:55)
+**NARRADOR:** Funciona assim. Toda pessoa tem uma etiqueta rosa flutuando sobre a cabeça. Só você vê. Nela está o preço do amor dela por você. Pagou, encostou o dinheiro, acabou. A pessoa te ama como se te conhecesse a vida inteira.
+**NARRADOR:** Você não fica mais bonito. Nem mais simpático. Nem mais rico. E uma coisa funciona igualzinho ao mundo real. [mischievously] É assinatura. O amor renova sozinho, todo dia, à meia-noite, cobrado direto da sua conta. Guarda essa palavra. Meia-noite.
+**NARRADOR:** E se não tiver saldo? [chuckling] A gente chega lá.
+
+### 4 · Escada + âncora (0:55–1:30)
+**NARRADOR:** A natureza já faz uma versão bem mais barata disso. O pinguim-de-adélia, pra conquistar uma parceira, dá pra ela uma pedra. Uma pedrinha. E funciona.
+**NARRADOR:** Uma pessoa normal leva meses pra conquistar alguém. Você leva o tempo de achar troco.
+**NARRADOR:** E os preços variam. O cachorro, dois reais. A sua colega de sala, cinquenta. A pessoa de quem você gosta desde o sexto ano, novecentos. O diretor da escola, três mil. [pause] E o seu Otávio, o homem mais rico da cidade: dois milhões de reais.
+**NARRADOR:** Dois milhões em notas de cem são vinte mil notas. Empilhadas, viram uma torre de dois metros. Mais alta que o seu pai.
+**NARRADOR:** Dizem que amor não tem preço. [sarcastic] Tem. E o do diretor vale quase cem vezes o da sua mãe.
+
+### 5 · Teste de prova (1:30–1:55)
+**NARRADOR:** A Lia, sua melhor amiga, não acredita. Ela quer prova. Com alguém difícil.
+**LIA:** O professor de matemática. Ele odeia todo mundo.
+**NARRADOR:** Etiqueta dele: doze reais. Você coloca a nota em cima da mesa.
+**NARRADOR:** Ele olha a nota. Olha pra você. Olha a nota de novo.
+**PROFESSOR:** [softly] Que aluno especial.
+**NARRADOR:** Na prova que você entregou em branco, ele dá dez.
+**LIA:** Tá. Faz de novo. Com outra pessoa.
+**NARRADOR:** E é testando que você descobre as regras.
+
+### 6 · Regras (1:55–2:35)
+**NARRADOR:** Regra um: quem já te ama de graça não tem etiqueta. Você olha pra Lia. Nada em cima da cabeça dela. Você acha que é defeito. [deadpan] A sua mãe, lembra, custa trinta e dois.
+**NARRADOR:** Regra dois: dá pra cancelar a qualquer hora antes da meia-noite. Sem drama. A pessoa só para de te amar. Mas tudo o que você ganhou com aquele amor volta pro dono. Você cancela o professor, de teste. O dez vira zero. Na hora. Na sua frente.
+**PROFESSOR:** Quem te deu esse dez?
+**NARRADOR:** Regra três. Essa você aprende do jeito ruim. Se a renovação falhar por falta de saldo, o amor não acaba. [pause] Vira o contrário. Na mesma medida.
+**NARRADOR:** Meia-noite. Você tem um real e cinquenta na conta. O cachorro custa dois.
+**NARRADOR:** [darkly amused] Você passa a madrugada em cima de um muro. Ele passa a madrugada embaixo.
+**NARRADOR:** De manhã você paga, e ele volta a te amar. Mas agora ele te olha diferente.
+
+### 7 · Vantagens (2:35–3:15)
+**NARRADOR:** Com o saldo em dia, a vida melhora rápido.
+**NARRADOR:** Em casa, a sua irmã custa quinze reais. Ela lava a louça cantando. Ela nunca lavou nada cantando. [chuckling] Ela nunca lavou nada.
+**NARRADOR:** Na escola, a pessoa dos novecentos reais. Você paga. Ela te ama. E escreve o seu nome em todos os cadernos, em todas as paredes e no braço do diretor, de caneta.
+**DIRETOR:** Isso sai?
+**NARRADOR:** Na sua rua, a dona Cida, oitenta anos, mora sozinha. A etiqueta dela: oito reais. Ninguém nunca pagou. Você paga. Ela faz bolo pra você toda tarde.
+**NARRADOR:** E o dinheiro? O padeiro te ama e te dá pão. A gerente do banco te ama e te dá um empréstimo. Cada pessoa que te ama paga a próxima. Em três semanas, você compra o seu Otávio.
+**SEU OTÁVIO:** Toma, meu filho. Um relógio de ouro.
+**NARRADOR:** E três milhões por dia de mesada. [sarcastic] Parabéns. Você inventou uma pirâmide. Só que de amor.
+
+### 8 · "Mas" + problemas 1–3 (3:15–4:45)
+**NARRADOR:** Só que toda assinatura tem letra miúda.
+**NARRADOR:** Problema um: gente que te ama quer atenção. Você já tem quatrocentos assinantes. Às seis da manhã, o seu celular vibra quatrocentas vezes. O padeiro manda áudio de quatro minutos. O seu Otávio manda foto do café. Você liga o modo avião e mora nele.
+**MÃE:** Por que tem um padeiro cantando no portão?
+**NARRADOR:** Problema dois: a conta. Quatrocentas pessoas, a cinquenta reais em média, dá vinte mil reais. Por dia. Mais o seu Otávio: dois milhões. Por dia. Ele te dá três. Sobra um milhão.
+**NARRADOR:** Você é rico. [deadpan] Um rico que vence todo dia à meia-noite.
+**LIA:** Montei uma planilha. Isso aqui não fecha.
+**NARRADOR:** A sua mãe descobre. Ela não pergunta se é certo. Ela pergunta outra coisa.
+**MÃE:** Quanto disso é meu?
+**NARRADOR:** Ela pede uma casa nova. Você compra. Ela renova os trinta e dois sem reclamar.
+**NARRADOR:** Problema três: quem te ama faz qualquer coisa por você. Inclusive olhar pra você na hora errada. O motorista do ônibus custa vinte reais. Ele te olha pelo retrovisor o caminho inteiro. Não a rua. Você.
+**NARRADOR:** O ônibus sobe na calçada duas vezes numa semana. A solução: sentar no fundo, atrás de uma pilastra. [sarcastic] Você passa a andar de ônibus escondido. Como um fugitivo. De quem te ama.
+**MOTORISTA:** Tá tudo bem aí atrás, meu anjo?
+
+### 9 · O problema real (4:45–5:30)
+**NARRADOR:** Nenhum desses é o problema de verdade. O problema de verdade tem hora marcada. Meia-noite.
+**NARRADOR:** Pensa na conta. O dinheiro do seu Otávio paga todo mundo. O amor dele paga o dinheiro. E a meia-noite cobra o amor. Se uma peça falhar, cai tudo. E cai em cima de você.
+**NARRADOR:** Numa terça, às onze e cinquenta e oito da noite, o aplicativo do banco sai do ar. A transferência do seu Otávio não chega.
+**NARRADOR:** Você olha o relógio. Pensa nas quatrocentas pessoas dormindo. E lembra do cachorro. [pause] Multiplicado por quatrocentos.
+**NARRADOR:** Às onze e cinquenta e nove e quarenta, o banco volta. O dinheiro cai. Faltavam vinte segundos.
+**NARRADOR:** Não foi esperteza. Foi sorte. E sorte não renova sozinha.
+
+### 10 · Maestria + regra tema (5:30–6:10)
+**NARRADOR:** Então você aprende com quem sobrevive ao inverno. A árvore não segura todas as folhas. Ela solta as que não consegue sustentar. Antes do frio.
+**NARRADOR:** Você e a Lia treinam. Ela lê um nome, você cancela. Um por segundo.
+**LIA:** Padeiro.
+**NARRADOR:** Você cancela o motorista sem querer. O ônibus para no meio da rua e ele te põe pra fora.
+**LIA:** Esse aqui você nem conhece.
+**NARRADOR:** Na terceira noite, você corta cem pessoas em cem segundos. E cola um bilhete na geladeira, com a letra da Lia: "Corta antes que cobre."
+**NARRADOR:** E todo dia você confere a cabeça dela. Continua sem etiqueta. Você confere do jeito que se confere o fogão antes de sair.
+
+### 11 · Crise (6:10–6:35)
+**NARRADOR:** Tudo isso aguenta até uma sexta-feira.
+**NARRADOR:** A festa da cidade. A praça lotada. E no meio dela, os seus quatrocentos assinantes, todos juntos, cantando o seu nome.
+**NARRADOR:** Onze e cinquenta. O celular do seu Otávio toca. O banco bloqueou a conta dele. Acharam estranho um homem mandar três milhões por dia pra um adolescente. [sarcastic] O banco tem razão.
+**NARRADOR:** Sem a conta dele, não tem renovação. À meia-noite, quatrocentas pessoas vão sentir o contrário de amor. Ao mesmo tempo. E a Lia está bem no meio delas.
+**NARRADOR:** Faltam dez minutos.
+
+### 12 · Dilema (6:35–6:55)
+*Sem piada e sem tag ácida. 2 s de silêncio no fim.*
+
+**NARRADOR:** A conta é simples. Quatrocentas pessoas. Um segundo pra cancelar cada uma. Seis minutos e quarenta segundos. Dá tempo.
+**NARRADOR:** Mas cancelar devolve tudo. A casa da sua mãe. O relógio. A festa. E o seu Otávio vai lembrar de cada centavo.
+**NARRADOR:** Ou você compra mais um. O gerente do banco, ali na barraca do pastel. Dez mil reais. Ele pode destravar a conta. Talvez. A tempo.
+**NARRADOR:** [slowly] Cancelar todo mundo… ou comprar mais um.
+
+### 13 · Clímax (6:55–7:40)
+**NARRADOR:** Corta antes que cobre.
+**LIA:** Padeiro.
+**NARRADOR:** Cancela.
+**LIA:** Motorista.
+**NARRADOR:** Cancela.
+**LIA:** Diretor.
+**NARRADOR:** Cancela. E a praça começa a esvaziar de amor, uma pessoa por segundo.
+**NARRADOR:** O palco apaga. Era do seu Otávio. O bolo some da mesa. A chave da casa nova some da mão da sua mãe.
+**MÃE:** [angry] Cadê a minha casa?
+**NARRADOR:** Onze e cinquenta e oito. Sobra um nome na lista. O dele. Cancela. O relógio de ouro escorrega do seu pulso e volta pro dono.
+**NARRADOR:** Onze e cinquenta e nove. Uma última etiqueta pisca no meio da praça. Dois reais. O cachorro.
+**NARRADOR:** No seu bolso, uma moeda. A primeira. Dinheiro seu, de verdade. Você paga.
+**NARRADOR:** [pause] Meia-noite. Silêncio. Ninguém te odeia. Ninguém te ama também.
+**NARRADOR:** [deadpan] Bom. O cachorro ainda gosta de você.
+
+### 14 · Consequência (7:40–8:05)
+**NARRADOR:** De manhã, você tem zero reais, um cachorro e uma mãe que não fala com você. A etiqueta dela continua lá. Trinta e dois. Você continua pagando.
+**MÃE:** Hoje a janta é ovo.
+**NARRADOR:** Alguém filmou a praça. O vídeo tem doze milhões de visualizações. Título: "Adolescente mais amado da cidade leva fora de quatrocentas pessoas de uma vez."
+**NARRADOR:** Você olha pra Lia. E, pela primeira vez, não confere a cabeça dela.
+
+### 15 · Mundo maior (8:05–9:15)
+**NARRADOR:** Só que alguém mais viu a praça. Não o vídeo: a praça. Ao vivo.
+**NARRADOR:** Uma mulher de blazer roxo, na barraca do pastel, assistiu a quatrocentas etiquetas apagando em seis minutos. E ela sabia exatamente o que estava vendo.
+**NARRADOR:** Segunda-feira, um envelope por baixo da porta. Dentro, um cartão rosa. Sem banco, sem bandeira. Só uma frase: "Limite de um milhão. Pago em amor."
+**NARRADOR:** E um bilhete: "Você tem talento. Falta capital. Juros de dez por cento ao dia."
+**NARRADOR:** Dez por cento ao dia parece pouco. Em uma semana, a sua dívida quase dobra. Em um mês, você deve dezessete vezes o que pegou.
+**LIA:** Não pega isso.
+**MÃE:** Esse cartão dá milhas?
+**NARRADOR:** No verso do bilhete, mais uma linha. [menacing] "O seu Otávio lembra de cada centavo. Ele só não sabe ainda pra quem mandou."
+**NARRADOR:** Ou seja: ou você pega o cartão, ou ela conta.
+**NARRADOR:** Você guarda o cartão na gaveta. Não usa. Mas também não joga fora. [darkly amused] O que, convenhamos, já diz muito sobre você.
+**NARRADOR:** Na rua, o seu Otávio passa de carro. Devagar. Olhando pro seu portão.
+**SEU OTÁVIO:** Bom dia, rapaz. A gente se conhece?
+
+### 16 · Gancho final (9:15–9:45)
+**NARRADOR:** Naquela noite, você escova os dentes e olha no espelho. E vê uma coisa que nunca tinha visto.
+**NARRADOR:** Em cima da sua cabeça, uma etiqueta. Rosa.
+**NARRADOR:** A regra um sempre disse: quem já te ama de graça não tem etiqueta. [sarcastic] Pelo jeito, nem você se ama de graça.
+**NARRADOR:** O preço some. No lugar, um coração.
+**NARRADOR:** E você sente, com toda a força do mundo, saudade de alguém que você nunca viu.
+**NARRADOR:** O relógio da parede marca meia-noite. [menacing] Alguém acabou de assinar você.
+
+*(1 s de preto)*
+
+### 17 · CTA (9:45–10:05)
+**NARRADOR:** Se você visse as etiquetas, de quem você compraria o amor? E quanto pagaria?
+**NARRADOR:** E quem comprou você? A mulher do cartão rosa, o seu Otávio querendo o dinheiro de volta… ou a Lia, a única que nunca teve etiqueta?
+**NARRADOR:** Conta pra gente nos comentários.
+**[ASSINATURA]**
+
+---
+
+## Notas
+
+**Plantios → pagamentos**
+| Plantio | Onde | Pago em |
+|---|---|---|
+| Meia-noite (limite) | 3 | 6, 9, 11, 13, 16 |
+| Regra 1: Lia sem etiqueta | 6 | 10, 14, 16 (virada), 17 |
+| Regra 2: cancelar devolve tudo | 6 (dez vira zero) | 12, 13 (casa, palco, relógio) |
+| Regra 3: sem saldo vira o contrário | 6 (cachorro no muro) | 9, 11 |
+| Cachorro de dois reais (piada recorrente) | 1 | 6, 9, 13, 14 |
+| A moeda de dois reais | 1 | 13 |
+| Relógio de ouro (objeto perdido) | 7 | 12, 13 |
+| Mãe a trinta e dois reais | 1 | 4, 6, 8, 14 |
+| Loop aberto | 15–16 | cartão rosa, seu Otávio, quem comprou você |
+
+**Fatos e contas (conferidos 2×):** 3.000 ÷ 32 ≈ 94 ("quase cem vezes") · 2.000.000 ÷ 100 = 20.000 notas × ~0,1 mm = 2 m · 400 × 50 = 20.000 · 3 − 2 = 1 milhão · 400 × 1 s = 6 min 40 s · 1,1⁷ ≈ 1,95 ("quase dobra") · 1,1³⁰ ≈ 17,4 ("dezessete vezes") · pinguim-de-adélia: o macho oferece pedras à parceira (ninho de pedras).
+
+**Cortes para shorts (~90 s cada):** (1) 0:00–1:30, abertura → escada, termina em "quase cem vezes o da sua mãe" · (2) 3:15–4:45, os três problemas, termina no "meu anjo" · (3) 4:45–6:10, o problema real e a maestria, termina no fogão · (4) 6:10–7:40, crise → clímax, termina em "o cachorro ainda gosta de você".
+
+**Autonota: 84/100.** Gancho 9 · Premissa 8 · Causalidade 9 · Setup/payoff 10 · Escalada 7 · Retenção 9 · Comédia 7 · Números 8 · Dilema/clímax 10 · Personagem 4 · Final 5 · Voz/produção 4 (−1 por tirar a pontuação do próprio lado).
+- **Pior item, Personagem (4):** o "você" quase não decide nada antes do clímax; a pirâmide acontece com ele, não por escolha dele.
+- **Escalada (7):** o risco da cidade só chega na crise. Falta um degrau "público" antes, como a imprensa ou a polícia farejando a pirâmide no bloco 9.
+- **Medido:** 1.786 palavras faladas (~10:12 a 175 ppm). A frase média tem 5,6 palavras (meta da cola: 8–9) e 64% têm ≤ 6 (meta: 35–45%), então o texto está mais picado que o pedido. São 23 falas de personagem (meta: 25–32), todas com ≤ 8 palavras. Nenhuma palavra banida.
+@@@@ END
 @@@@ FILE docs/research/script_analysis.md | text | 52041 | 28a079655cdd0a0cb771cfac0da91c86e411cf50bdc930f5dd727ff732091bdb
 # Análise de Roteiro, Narrativa e Empacotamento: Referências Longform de Stickman 3D
 
@@ -11794,7 +12056,7 @@ End with:
 
 Reply with the counts and every must-fix row.
 @@@@ END
-@@@@ FILE docs/story/COLA_ROTEIRO.md | text | 15383 | b376a7d8802c7e60e48c58bd19e672a59dbcdbf558aef24bdb36dc0151a653ca
+@@@@ FILE docs/story/COLA_ROTEIRO.md | text | 19124 | 8a4f3aa5a69b6bdd0f237ee659d1aafa8c26f88a46a6b6aeb2bd6f883d429a08
 # COLA DE ROTEIRO — episódio "E Se" de 10 min (2ª pessoa, PT-BR)
 
 Resumo de `STORY_BLUEPRINT.md`. **Leia só isto ao escrever.** Abra o blueprint apenas na seção indicada (§) quando precisar do detalhe ou de exemplos. Originalidade: copie estruturas, nunca falas, piadas, personagens ou bordões da IFOLOGY (§6.7).
@@ -11834,8 +12096,8 @@ Testes: dá pra dizer numa respirada · abertura mostra em 1 plano de 3 s · o l
 | 4 | 0:50–1:25 | Escada + âncora | 100 | Teaser → fato real → normal vs você → 3 comparações crescentes → bate-recorde/desmente mito |
 | 5 | 1:25–1:50 | Teste de prova | 70 | Autoridade cética + instrumento; olhar triplo; desconfia/pede repetição |
 | 6 | 1:50–2:30 | Regras | 115 | "Regra um…" 2–3, descobertas testando; cena + piada cada; ≥ 2 voltam no clímax |
-| 7 | 2:30–3:10 | Vantagens | 115 | 4 de escala crescente, 20–35 pal. cada, botão; 1 bondade; 1 falha cômica; nada perigoso |
-| 8 | 3:10–4:40 | "Mas" + Problemas 1–3 | 265 | Pivô de 1 linha; cada: nome → número → 2–4 consequências → solução barata → reação da família |
+| 7 | 2:30–3:40 | Vantagens (ladainha) | 180 | **Ladainha** de 12–16 itens (seção abaixo), escala crescente; 1 bondade; 1 falha cômica; nada perigoso |
+| 8 | 3:40–4:40 | "Mas" + Problemas 1–3 | 200 | Pivô de 1 linha; cada: nome → número → 2–4 consequências → solução barata → reação da família |
 | 9 | 4:40–5:25 | Problema real (47%) | 130 | "Nenhum desses é o real" reformulado; **palavra-chave do limite repetida**; quase-desastre por sorte |
 | 10 | 5:25–6:05 | Maestria + regra tema | 115 | Teaser → analogia natureza/máquina → treino com falha e amigos → **regra tema como instrução** |
 | 11 | 6:05–6:30 | Crise (61%) | 70 | Linha de compressão → dia/lugar → inocente em perigo → **relógio começa (número)** |
@@ -11878,7 +12140,7 @@ O audit avisa `[hook]` quando faltar o mínimo de cortes, o SFX cedo ou o movime
 ## Estrutura (o que o checklist cobra)
 - **Mas/portanto** entre batidas; "e então" só na montagem de vantagens.
 - **Risco:** ≤ 2/5 até 45%, 5/5 em 60–65%, no 5 por ≤ 25% da duração. Escala: casa → escola → cidade → público → mundo (≥ 4 sets).
-- **Retenção:** informação nova a cada ≤ 40 s (primeiros 60%), regancho a cada ≤ 90 s, sempre 1 loop aberto. Viradas: "mas" 25–35%, real 43–50%, crise 56–65%, clímax 65–72%, mundo maior 76–88%.
+- **Retenção:** informação nova a cada ≤ 40 s (primeiros 60%) e **a cada ≤ 6 s nas montagens** (ladainha), regancho a cada ≤ 90 s, sempre 1 loop aberto. Viradas: "mas" 25–35%, real 43–50%, crise 56–65%, clímax 65–72%, mundo maior 76–88%.
 - **Plantios:** ≥ 5; ≥ 3 pagos no clímax; 1 piada recorrente paga na consequência; 1 loop aberto pra sequência. Falhas do poder ≥ 3, custo crescente (cômica → cara → quase-desastre).
 - **Regra do três:** 3 vantagens, 3 problemas, 3 golpes; o 3º é o mais longo/estranho.
 - **Desejo × necessidade:** no clímax você escolhe a necessidade (usa *menos* poder). Mudança mostrada por ação.
@@ -11893,10 +12155,36 @@ O audit avisa `[hook]` quando faltar o mínimo de cortes, o SFX cedo ou o movime
 ## Voz
 - 2ª pessoa, presente. Leitura de 2º–4º ano. Nomeie só 1–2 personagens.
 - Frase média 8–9 palavras; 35–45% ≤ 6; < 5% ≥ 20. Pico de ação: frases de 2–4 palavras. Comece por sujeito concreto ("Você…", "Sua mãe…"). PT-BR: priorize tempo de fala sobre contagem.
-- **Comédia:** 25–32 falas de personagem/10 min, ≥ 90% com ≤ 8 palavras (1 a cada 19–25 s); piada a cada ≤ 60 s antes da crise; nunca no dilema. Ferramentas: duplo tempo impassível, piadinha de testemunha, aparte do narrador (1–3), lista de três com virada, piada recorrente, subestimação no clímax.
+- **Comédia:** **12–20 falas de personagem/10 min**, todas com ≤ 8 palavras e todas reação ou piada (testemunha, piada seca, réplica impassível); **nenhuma explica o enredo**, quem explica é o narrador. Menos falas e mais fortes: meta alta empurra fala fraca (benchmark 2026-11-09, `docs/benchmark/comprar-amor/`). Piada a cada ≤ 60 s antes da crise (o aparte do narrador conta); nunca no dilema. Isto substitui o "25–32 falas" do blueprint. Ferramentas: duplo tempo impassível, piadinha de testemunha, aparte do narrador (1–3), lista de três com virada, piada recorrente, subestimação no clímax.
 - **Diálogo é reação, não exposição.** Mãe 2–4 falas (nota o custo primeiro); amigo 3–5; cético 1–2; vilão frases curtas, ≤ 3 por fala.
 - **Transições:** use o banco da §6.6 e nunca repita uma dentro do episódio.
 - **Banidos (busque cada um):** "em um mundo onde", "de repente", "literalmente" (fora de diálogo), "jornada", "tudo mudou", "você não vai acreditar", "no final das contas", "mas espera, tem mais", "embarca", "desperta/libera", "insano/épico" (> 1×). Lista completa e assinaturas da IFOLOGY proibidas (estranho de casaco cinza, organização, slogan "IF"): §6.7. Sem marcas nem celebridades.
+
+## Ladainha: informação nova a cada ≤ 6 s (benchmark 2026-11-09)
+O que mais segura o espectador é uma novidade a cada poucos segundos, e não a quantidade de falas. A ladainha é uma lista de itens curtos, **um a cada 4–6 s**, cada um com duas frases:
+
+> **[quem/o quê] + [número].** **[efeito em 1 linha, de preferência com piada].**
+> "A moça da cantina custa três reais. Agora o seu pastel vem com dois recheios."
+
+- **Escala crescente** (casa → escola → rua → cidade → além); o último item é o maior.
+- **A cada 3 itens, uma quebra:** uma fala de reação (≤ 8 palavras) ou um aparte ácido do narrador.
+- ≥ 1 item de bondade e ≥ 1 falha cômica (os da batida 7).
+- **Onde:** vantagens (12–16 itens, ~1:10), escada de números (versão curta, 4–5 itens), problema 1 (a lista do que irrita). **Nunca** no dilema nem no clímax (lá vale a repetição ×3).
+- Vale para qualquer premissa, não só preço: "Um pote de picles: aberto. Um carro: de lado."
+- Cada item é um par normal vs você com número, então a ladainha cobre boa parte dos ≥ 15 números.
+- **Montagem:** um plano por item, com o número em palavra-destaque (`word`) no momento em que é dito e um SFX curto. O helper `ladainha()` do `tools/episodes/kit.py` gera tudo isso a partir da lista de itens (exemplo no `_modelo.py`, batida 7).
+- **Shorts:** a ladainha das vantagens é um dos ≥ 4 cortes, ~75–90 s, abrindo num número e fechando no item maior.
+
+## Fatos científicos reais (benchmark 2026-11-09)
+Um fato real verificável dá credibilidade à fantasia e deixa o perigo palpável. No benchmark, o concorrente tinha ~9 fatos e nós só 1.
+- **≥ 6 por 10 min**, mais ou menos 1 a cada 60–90 s até a crise, e **1 no clímax**. Nenhum no dilema.
+- **Preso à cena, nunca decorativo.** Cada fato explica por que o poder funciona, mede uma vantagem ou deixa um custo/perigo concreto. Formato: teaser → fato com número → 1 frase que volta pro "você".
+  > "Quando um cachorro olha nos olhos do dono, os dois cérebros soltam ocitocina. O seu cachorro de dois reais olha pra você o dia inteiro."
+- **No clímax, o fato torna o perigo físico:** "Cair de seis metros é bater num muro a quarenta quilômetros por hora."
+- **Fontes:** corpo/cérebro, animais (a âncora conta como 1), física, dinheiro/lei, história.
+- **Só fato sólido.** Registre cada um na ficha de fatos do `script_notes.md` com a fonte. Arredonde para baixo e use "cerca de" ou "menos de". Mito de internet não entra ("só usamos dez por cento do cérebro"), nem conselho médico. Física e contas: confira 2×.
+- O narrador pode torcer o fato com maldade ("…o seu olha pra cima primeiro"), mas o fato em si fica correto.
+- **Na tela:** o número do fato em `word` ou `stat`. Cada fato conta para os ≥ 15 números.
 
 ## Números (§6.4)
 - 2–4/min na 1ª metade, ~1/min depois; **≥ 15 por 10 min**, todos na ficha de fatos.
@@ -11913,14 +12201,14 @@ O audit avisa `[hook]` quando faltar o mínimo de cortes, o SFX cedo ou o movime
 - Gate mecânico: `node tools/episode.mjs check <slug>`.
 
 ## Visual por batida (resumo; tabela completa §7)
-~20 cortes/min (planos de ~3 s); montagem 27–44; cards 8–15; clímax 10–15. Card ≤ 6 s, plano 3D ≤ 8 s. **8–14 cards/10 min**, ≥ 1 tableau congelado ou câmera lenta, 1 plano de elenco/multidão. Título: `title` com `bg:false` sobre plano aberto. Números: `compare`/`stat`/`speed`/`distance`. Regras: card `rules` antes de cada teste. Crise → clímax: `stopwatch` com `persist` até o fim. Clímax sem cards completos. CTA: card `title` com P1/P2.
+~20 cortes/min (planos de ~3 s); montagem 27–44 (na ladainha, 1 plano por item); **todo pico ou número ganha palavra-destaque (`word`) + SFX curto**; cards 8–15; clímax 10–15. Card ≤ 6 s, plano 3D ≤ 8 s. **8–14 cards/10 min**, ≥ 1 tableau congelado ou câmera lenta, 1 plano de elenco/multidão. Título: `title` com `bg:false` sobre plano aberto. Números: `compare`/`stat`/`speed`/`distance`. Regras: card `rules` antes de cada teste. Crise → clímax: `stopwatch` com `persist` até o fim. Clímax sem cards completos. CTA: card `title` com P1/P2.
 
 **Ritmo da casa (2026-11-08):** `episode(..., ritmo='rapido')` liga sub-cortes automáticos (`coverage: 'fast'`, ~1 corte a cada 1,6 s na palavra) e whip/zoom alternados em toda troca de set. Dilema: `coverage='calm'`; tableau congelado: `'off'`. **Smash** (`cut='smash'`) à mão na revelação ou na piada seca. Meta: ~30 cortes/min fora do dilema.
 **Pensado pra 9:16:** quem fala ou age fica na faixa central (o audit avisa `vertical`); dois personagens longe um do outro = dois planos, não um aberto.
 
 ## Cortes para shorts (regra do usuário, 2026-11-08)
 O usuário corta à mão, do 16:9, shorts de **~90 s** para YouTube Shorts, Reels e TikTok. Todo episódio longo nasce com **≥ 4 trechos que funcionam sozinhos**, marcados em `episode(clips=[(título, 1º plano, último plano), ...])` (o audit confere 60–95 s; mire 75–90).
-- **Onde costumam cair:** (1) abertura → poder → escada de números (0:00–1:30); (2) os 3 problemas (3:10–4:40); (3) o problema real/maestria ou o teste de prova; (4) crise → dilema → clímax. Um 5º no mundo maior/gancho é bônus.
+- **Onde costumam cair:** (1) abertura → poder → escada de números (0:00–1:30); (2) a ladainha de vantagens (2:30–3:40) ou os 3 problemas (3:40–4:40); (3) o problema real/maestria ou o teste de prova; (4) crise → dilema → clímax. Um 5º no mundo maior/gancho é bônus.
 - **Começa frio:** a 1ª frase do trecho prende sem contexto (pergunta, número absurdo, desastre em curso). Nada de "como eu disse", "lembra do…". Se precisar de um nome ou regra, reapresente em meia frase ("a Lia, sua melhor amiga, …").
 - **Fecha com soco:** cada trecho termina numa virada, piada seca ou cliffhanger, não no meio de uma ideia.
 - **Legível no vertical:** dentro dos trechos, personagem e texto importante na faixa central (audit `vertical`). Card de duas colunas (`compare`) perde um lado no corte: prefira `stat`/número único, ou um card com o conteúdo no meio.
@@ -11934,8 +12222,10 @@ O usuário corta à mão, do 16:9, shorts de **~90 s** para YouTube Shorts, Reel
 - [ ] Plano 1 close de objeto; poder ≤ 0:08; testemunha + impassível; título ≤ 0:40
 - [ ] Primeiros 10 s: ≥ 2 tipos de gancho, ≥ 6 cortes, movimento forte no poder, fala no 1º s, SFX ≤ 2 s (audit `[hook]` limpo)
 - [ ] ≥ 15 números pareados e verificados; 2–3 contas; teasers
+- [ ] ≥ 6 fatos científicos reais presos à cena (1 a cada 60–90 s, 1 no clímax, 0 no dilema), cada um com fonte na ficha de fatos
 - [ ] Viradas nas janelas; relógio vindo de regra; dilema binário; regra tema vence; custo pago; objeto perdido; frase de mudança
-- [ ] 25–32 falas curtas; piada ≤ 60 s; estatística de frase; sem banidos
+- [ ] 12–20 falas de reação/piada (≤ 8 pal., nenhuma explicando enredo); piada ≤ 60 s; estatística de frase; sem banidos
+- [ ] Ladainha nas vantagens: 12–16 itens, 1 a cada 4–6 s, escala crescente, quebra a cada 3; número em `word` + SFX
 - [ ] ≥ 4 trechos de ~90 s marcados em `clips`, cada um com abertura fria e final com soco
 - [ ] Tom ácido: sarcasmo/maldade a cada 30–60 s, nada no dilema, família interesseira, limite monetizável respeitado
 - [ ] `check` passa; tags descritivas, bem posicionadas, coerentes com a voz; tudo por extenso
@@ -11943,7 +12233,7 @@ O usuário corta à mão, do 16:9, shorts de **~90 s** para YouTube Shorts, Reel
 - [ ] Toda batida montável com sets/cards/FX existentes
 
 ## Nota (100; ≥ 85 manda, 80–84 corrige a pior, 70–79 refaz as 2 piores, < 70 repensa)
-Gancho 10 · Premissa 8 · Causalidade 10 · Setup/payoff 10 · Escalada 8 · Retenção 10 · Comédia 8 · Números 8 (número errado limita o total a 70) · Dilema/clímax 12 · Personagem 6 · Final 5 · Voz/produção 5. Critérios de cada nota: §10. Exemplo completo de outline nota 92: §11.
+Gancho 10 · Premissa 8 · Causalidade 10 · Setup/payoff 10 · Escalada 8 · Retenção 10 (inclui a ladainha) · Comédia 8 (12–20 falas de reação, não 25–32) · Números 8 (inclui os ≥ 6 fatos reais; número ou fato errado limita o total a 70) · Dilema/clímax 12 · Personagem 6 · Final 5 · Voz/produção 5. Critérios de cada nota: §10. Exemplo completo de outline nota 92: §11.
 @@@@ END
 @@@@ FILE docs/story/IDEA_ENGINE.md | text | 17497 | d4176d928a1fabfa5e36d5a4ec0192393b154b712f96e9c4ba5a8314ffb22a9d
 # MOTOR DE IDEIAS: gerando premissas "E Se" que vencem
@@ -12151,7 +12441,7 @@ Todas as 25 são premissas originais escritas para este canal. Os detalhes compl
 
 O gancho final do episódio 1 já planta fotos da "parede", "janelas estilhaçadas" e crianças "no meio da troca", que correspondem às ideias do backlog *Andar Em Paredes*, *Voz 100x Mais Alta* e *Trocar De Lugar*.
 @@@@ END
-@@@@ FILE docs/story/STORY_BLUEPRINT.md | text | 78795 | 265235298929173b51fbfd5c7ad3a0fd0dc2b8c05f9fdd5c9e6b16ac4612bcb0
+@@@@ FILE docs/story/STORY_BLUEPRINT.md | text | 78983 | fbfda9cee9aac5ac9bacd2619d51d9d620b93adeb4abcbeac89db0b298f2a96e
 # ROTEIRO-MODELO (BLUEPRINT): episódios "E Se" (8–12 min, 2ª pessoa)
 
 Este é o manual de escrita para todo episódio. Siga de cima a baixo: premissa → outline → ficha de plantios → rascunho → checklist → pontuação. Não comece a escrever a narração antes do outline passar pela §9.
@@ -12365,7 +12655,7 @@ Legenda:
 | 4 | 0:50–1:25 | 8–14 | **Escada de números + âncora científica** | 100 | Teaser → precedente real → base vs você → 3 comparações crescentes → linha de bater recorde | N | 15–20 |
 | 5 | 1:25–1:50 | 14–18 | **Teste de prova** | 70 | Uma autoridade cética com um instrumento (cronômetro, balança, teste); olhar triplo; 1–2 piadinhas | ↻ | 20–30 |
 | 6 | 1:50–2:30 | 18–25 | **Regras descobertas** | 115 | 2–3 regras numeradas, cada uma com declaração → cena de teste → consequência cômica. *Poderes simples: substitua por piadas de descoberta de "primeiro dia"* | N | 18–25 |
-| 7 | 2:30–3:10 | 25–32 | **Montagem de vantagens** | 115 | 4 vantagens de escala crescente (casa → escola → trabalho/esporte → grande); 1 referência de bondade; 1 falha cômica; 2 piadinhas | ↻ | 25–40 |
+| 7 | 2:30–3:10 | 25–32 | **Montagem de vantagens** | 115 | ladainha de 12–16 itens, 1 a cada 4–6 s, escala crescente (COLA_ROTEIRO "Ladainha"; desde 2026-11-09 vai até 3:40); 1 referência de bondade; 1 falha cômica; 2 piadinhas | ↻ | 25–40 |
 | 8 | 3:10–4:40 | 32–47 | **Virada de "mas" + Problemas 1–3** | 265 | Linha de pivô de "mas"; cada problema: nome → número real → 2–4 consequências vívidas → solução barata → reação da família. Ordem: irritante → caro → meio perigoso | N ↻ | 15–25 |
 | 9 | 4:40–5:25 | 47–54 | **O problema real** | 130 | "Nenhum desses é o problema real" (reformulado) → **callback ao limite plantado usando sua palavra-chave** → quase-desastre sobrevivido por sorte | N ↻ | 10–18 |
 | 10 | 5:25–6:05 | 54–61 | **Maestria + regra tema** | 115 | Teaser → analogia animal ou científica → treino de tentativa-e-falha (amigos ajudam) → **regra tema declarada como instrução** | N ↻ | 12–20 |
@@ -12646,7 +12936,7 @@ Os exemplos usam uma premissa de demonstração, **"E Se Você Fosse Magnético?
 > **Nota sobre português:** português tende a ter palavras mais longas que inglês, então "8–9 palavras por frase" pode render frases um pouco mais longas em duração de fala. Priorize o **tempo de fala** sobre a contagem exata de palavras — meça com o wpm real da voz escolhida.
 
 ### 6.3 Proporção de comédia
-- **Falas de personagem:** 25–32 por 10 min, quase todas **≤ 8 palavras**. Isso é 8–12% das palavras, uma fala a cada 19–25 s.
+- **Falas de personagem:** **12–20 por 10 min** (desde 2026-11-09; antes 25–32), todas **≤ 8 palavras** e todas reação ou piada, nenhuma explicando o enredo. O ritmo vem da ladainha (COLA_ROTEIRO, "Ladainha") e dos cortes, não do número de falas.
 - **Batidas cômicas:** pelo menos uma a cada 45–60 s nos Atos 1–2 e uma a cada 90 s depois da crise. Nunca dentro do dilema.
 - **Ferramentas (K1–K9):**
   - duplo tempo impassível
@@ -12875,7 +13165,7 @@ O canal **não** tem o tom fofo/família da IFOLOGY. O narrador é um observador
 - [ ] A frase de mudança aparece na consequência.
 
 **Comédia e voz**
-- [ ] 25–32 falas de personagem por 10 min, ≥ 90% delas ≤ 8 palavras.
+- [ ] 12–20 falas de personagem por 10 min, todas ≤ 8 palavras e todas reação/piada.
 - [ ] Uma batida cômica a cada ≤ 60 s antes da crise.
 - [ ] 2ª pessoa presente o tempo todo; frase média de 8–9 palavras; 35–45% das frases ≤ 6 palavras.
 - [ ] Sem clichês banidos ou assinaturas de referência (§6.7). Faça uma busca por cada frase.
@@ -12916,7 +13206,7 @@ Pontue o outline antes de rascunhar e o rascunho antes da produção.
 | Setup/payoff | 10 | ≥ 5 plantios; o clímax resgata ≥ 3; piada recorrente; virada justa | 3–4 plantios ou o clímax resgata 2 | O clímax usa algo novo |
 | Escalada | 8 | Escada de escala em ≥ 4 sets; a curva de risco bate com a §9 | O risco sobe cedo ou tarde demais | Risco plano ou aleatório |
 | Cadência de retenção | 10 | Informação nova ≤ 40 s de intervalo; reganchos ≤ 90 s de intervalo; um loop aberto a todo momento | Um período seco de 60–90 s | Períodos secos acima de 90 s |
-| Comédia | 8 | 25–32 piadinhas curtas; duplos tempos impassíveis; piada recorrente; um aparte | Piadinhas presentes mas longas ou raras | Sem piadas, ou piadas no dilema |
+| Comédia | 8 | 12–20 falas curtas de reação/piada; duplos tempos impassíveis; piada recorrente; um aparte | Piadinhas presentes mas longas ou raras | Sem piadas, ou piadas no dilema |
 | Ciência e números | 8 | ≥ 15 números verificados e emparelhados; 2–3 contas trabalhadas; teasers | Menos de 10, ou desemparelhados | Números errados ou inventados (limita a pontuação total em 70) |
 | Dilema e clímax | 12 | O poder é o perigo; linha binária; relógio correndo a partir de uma regra; a regra tema vence; custo pago | Falta um relógio ou o custo | Vencido por sorte ou poder novo |
 | Personagem | 6 | Desejo vs necessidade, mudança mostrada; a mãe percebe o custo; o amigo tem uma função; um cético presente | Papéis presentes mas planos | Só "você" existe |
@@ -30619,7 +30909,7 @@ function report(timing) {
   if (short.length) console.log('very short shots (merge or extend): ' + short.map(([i, d]) => `#${i} ${d}s`).join(', '));
 }
 @@@@ END
-@@@@ FILE tools/episodes/_modelo.py | text-crlf | 4783 | 2b8bd48dc4d00530238dc517d4ceb526900fe29c5b28ebde850f8bafa393ecb2
+@@@@ FILE tools/episodes/_modelo.py | text | 5034 | ffb266af8e7d2d368acd274f4bd82731008814a4df0ad8e2a9cea2a576953d42
 # Skeleton for a new episode. Copy to tools/episodes/<slug_with_underscores>.py, set SLUG, fill the beats.
 #   .venv/Scripts/python -I tools/episodes/<file>.py   -> public/episodes/<slug>/episode.json
 # episode.json is regenerated from the .py: never hand-edit the JSON.
@@ -30659,9 +30949,15 @@ TITLE = 'E Se Você ...?'
 
 # ---------------------------------------------------------------- 6. regras (1:50–2:30)
 
-# ---------------------------------------------------------------- 7. montagem de vantagens (2:30–3:10)
+# ---------------------------------------------------------------- 7. ladainha de vantagens (2:30–3:40)
+# 12–16 itens "X + número. Efeito em 1 linha." (COLA "Ladainha"); um plano por item, número em destaque + SFX:
+# ladainha('v', 'suburb', [
+#     {'vo': 'A moça da cantina custa três reais. Agora o pastel vem com dois recheios.',
+#      'word': ('R$ 3', '@três'), 'actors': [...], 'camera': cam('medium', 'cantina')},
+#     ...
+# ])
 
-# ---------------------------------------------------------------- 8. "mas" + problemas 1–3 (3:10–4:40)
+# ---------------------------------------------------------------- 8. "mas" + problemas 1–3 (3:40–4:40)
 
 # ---------------------------------------------------------------- 9. problema real (4:40–5:25)
 
@@ -31435,7 +31731,7 @@ with open(out, 'w', encoding='utf-8') as f:
 words = sum(len(s.get('vo', '').split()) for s in shots)
 print(f'{len(shots)} shots, {words} words -> {os.path.normpath(out)}')
 @@@@ END
-@@@@ FILE tools/episodes/kit.py | text-crlf | 8094 | 18f7859004a9e89ce292bf3a44a445676e5f10b16c7e3a36179ed2845f49b5d8
+@@@@ FILE tools/episodes/kit.py | text | 9218 | c02f72a5e61c1be78a637883867ee2a388f8e8b8e148ef866893f3422585be43
 """Shared helpers for episode generators (tools/episodes/<slug>.py -> public/episodes/<slug>/episode.json).
 
 Use from a generator:
@@ -31449,7 +31745,7 @@ Start a new episode from _modelo.py.
 import json
 import os
 
-__all__ = ['shots', 'A', 'cam', 'S', 'C', 'apply_ritmo', 'crush', 'walk', 'TALK', 'SW', 'shot_index', 'episode',
+__all__ = ['shots', 'A', 'cam', 'S', 'C', 'ladainha', 'apply_ritmo', 'crush', 'walk', 'TALK', 'SW', 'shot_index', 'episode',
            'load_timing', 'resolve_countdowns', 'clean', 'write', 'NARRATOR', 'HOUSE_VOICES']
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
@@ -31497,6 +31793,29 @@ def C(id, card, vo, **spec):
     d = {'id': id, 'kind': 'card', 'card': card, 'vo': vo}
     d.update(spec)
     shots.append(d)
+
+
+def ladainha(prefix, set_, itens, sfx='chime', color='yellow', **common):
+    """A list montage (COLA "Ladainha"): one 3D shot per item, ~4–6 s each, ids prefix1, prefix2, ...
+    Each item is a dict of S() fields (vo required; actors, camera, set, fx, ... optional) plus
+      word: the item's number or key word, shown as a palavra-destaque on its spoken cue with a short SFX.
+            Either (shown text, cue) — ('R$ 3', '@três') — or a plain spoken word ('cinco' → cue '@cinco').
+    `common` holds fields every item shares (e.g. coverage='fast'); an item's own fields win.
+    sfx=None drops the per-item sound."""
+    for i, it in enumerate(itens, 1):
+        it = {**common, **it}
+        word = it.pop('word', None)
+        overlays, cues = list(it.pop('overlays', [])), list(it.pop('sfx', []))
+        if word:
+            text, cue = word if isinstance(word, (list, tuple)) else (word.upper(), '@' + word.lower())
+            overlays.insert(0, {'type': 'word', 'text': text, 'at': cue, 'color': color})
+            if sfx:
+                cues.insert(0, {'t': cue, 'name': sfx})
+        if overlays:
+            it['overlays'] = overlays
+        if cues:
+            it['sfx'] = cues
+        S(f'{prefix}{i}', it.pop('set', set_), it.pop('vo'), it.pop('actors', None), it.pop('camera', None), **it)
 
 
 def crush(actor, value, frm=None, at=0.3, **kw):

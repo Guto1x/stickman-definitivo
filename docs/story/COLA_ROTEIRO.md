@@ -37,8 +37,8 @@ Testes: dá pra dizer numa respirada · abertura mostra em 1 plano de 3 s · o l
 | 4 | 0:50–1:25 | Escada + âncora | 100 | Teaser → fato real → normal vs você → 3 comparações crescentes → bate-recorde/desmente mito |
 | 5 | 1:25–1:50 | Teste de prova | 70 | Autoridade cética + instrumento; olhar triplo; desconfia/pede repetição |
 | 6 | 1:50–2:30 | Regras | 115 | "Regra um…" 2–3, descobertas testando; cena + piada cada; ≥ 2 voltam no clímax |
-| 7 | 2:30–3:10 | Vantagens | 115 | 4 de escala crescente, 20–35 pal. cada, botão; 1 bondade; 1 falha cômica; nada perigoso |
-| 8 | 3:10–4:40 | "Mas" + Problemas 1–3 | 265 | Pivô de 1 linha; cada: nome → número → 2–4 consequências → solução barata → reação da família |
+| 7 | 2:30–3:40 | Vantagens (ladainha) | 180 | **Ladainha** de 12–16 itens (seção abaixo), escala crescente; 1 bondade; 1 falha cômica; nada perigoso |
+| 8 | 3:40–4:40 | "Mas" + Problemas 1–3 | 200 | Pivô de 1 linha; cada: nome → número → 2–4 consequências → solução barata → reação da família |
 | 9 | 4:40–5:25 | Problema real (47%) | 130 | "Nenhum desses é o real" reformulado; **palavra-chave do limite repetida**; quase-desastre por sorte |
 | 10 | 5:25–6:05 | Maestria + regra tema | 115 | Teaser → analogia natureza/máquina → treino com falha e amigos → **regra tema como instrução** |
 | 11 | 6:05–6:30 | Crise (61%) | 70 | Linha de compressão → dia/lugar → inocente em perigo → **relógio começa (número)** |
@@ -81,7 +81,7 @@ O audit avisa `[hook]` quando faltar o mínimo de cortes, o SFX cedo ou o movime
 ## Estrutura (o que o checklist cobra)
 - **Mas/portanto** entre batidas; "e então" só na montagem de vantagens.
 - **Risco:** ≤ 2/5 até 45%, 5/5 em 60–65%, no 5 por ≤ 25% da duração. Escala: casa → escola → cidade → público → mundo (≥ 4 sets).
-- **Retenção:** informação nova a cada ≤ 40 s (primeiros 60%), regancho a cada ≤ 90 s, sempre 1 loop aberto. Viradas: "mas" 25–35%, real 43–50%, crise 56–65%, clímax 65–72%, mundo maior 76–88%.
+- **Retenção:** informação nova a cada ≤ 40 s (primeiros 60%) e **a cada ≤ 6 s nas montagens** (ladainha), regancho a cada ≤ 90 s, sempre 1 loop aberto. Viradas: "mas" 25–35%, real 43–50%, crise 56–65%, clímax 65–72%, mundo maior 76–88%.
 - **Plantios:** ≥ 5; ≥ 3 pagos no clímax; 1 piada recorrente paga na consequência; 1 loop aberto pra sequência. Falhas do poder ≥ 3, custo crescente (cômica → cara → quase-desastre).
 - **Regra do três:** 3 vantagens, 3 problemas, 3 golpes; o 3º é o mais longo/estranho.
 - **Desejo × necessidade:** no clímax você escolhe a necessidade (usa *menos* poder). Mudança mostrada por ação.
@@ -96,10 +96,36 @@ O audit avisa `[hook]` quando faltar o mínimo de cortes, o SFX cedo ou o movime
 ## Voz
 - 2ª pessoa, presente. Leitura de 2º–4º ano. Nomeie só 1–2 personagens.
 - Frase média 8–9 palavras; 35–45% ≤ 6; < 5% ≥ 20. Pico de ação: frases de 2–4 palavras. Comece por sujeito concreto ("Você…", "Sua mãe…"). PT-BR: priorize tempo de fala sobre contagem.
-- **Comédia:** 25–32 falas de personagem/10 min, ≥ 90% com ≤ 8 palavras (1 a cada 19–25 s); piada a cada ≤ 60 s antes da crise; nunca no dilema. Ferramentas: duplo tempo impassível, piadinha de testemunha, aparte do narrador (1–3), lista de três com virada, piada recorrente, subestimação no clímax.
+- **Comédia:** **12–20 falas de personagem/10 min**, todas com ≤ 8 palavras e todas reação ou piada (testemunha, piada seca, réplica impassível); **nenhuma explica o enredo**, quem explica é o narrador. Menos falas e mais fortes: meta alta empurra fala fraca (benchmark 2026-11-09, `docs/benchmark/comprar-amor/`). Piada a cada ≤ 60 s antes da crise (o aparte do narrador conta); nunca no dilema. Isto substitui o "25–32 falas" do blueprint. Ferramentas: duplo tempo impassível, piadinha de testemunha, aparte do narrador (1–3), lista de três com virada, piada recorrente, subestimação no clímax.
 - **Diálogo é reação, não exposição.** Mãe 2–4 falas (nota o custo primeiro); amigo 3–5; cético 1–2; vilão frases curtas, ≤ 3 por fala.
 - **Transições:** use o banco da §6.6 e nunca repita uma dentro do episódio.
 - **Banidos (busque cada um):** "em um mundo onde", "de repente", "literalmente" (fora de diálogo), "jornada", "tudo mudou", "você não vai acreditar", "no final das contas", "mas espera, tem mais", "embarca", "desperta/libera", "insano/épico" (> 1×). Lista completa e assinaturas da IFOLOGY proibidas (estranho de casaco cinza, organização, slogan "IF"): §6.7. Sem marcas nem celebridades.
+
+## Ladainha: informação nova a cada ≤ 6 s (benchmark 2026-11-09)
+O que mais segura o espectador é uma novidade a cada poucos segundos, e não a quantidade de falas. A ladainha é uma lista de itens curtos, **um a cada 4–6 s**, cada um com duas frases:
+
+> **[quem/o quê] + [número].** **[efeito em 1 linha, de preferência com piada].**
+> "A moça da cantina custa três reais. Agora o seu pastel vem com dois recheios."
+
+- **Escala crescente** (casa → escola → rua → cidade → além); o último item é o maior.
+- **A cada 3 itens, uma quebra:** uma fala de reação (≤ 8 palavras) ou um aparte ácido do narrador.
+- ≥ 1 item de bondade e ≥ 1 falha cômica (os da batida 7).
+- **Onde:** vantagens (12–16 itens, ~1:10), escada de números (versão curta, 4–5 itens), problema 1 (a lista do que irrita). **Nunca** no dilema nem no clímax (lá vale a repetição ×3).
+- Vale para qualquer premissa, não só preço: "Um pote de picles: aberto. Um carro: de lado."
+- Cada item é um par normal vs você com número, então a ladainha cobre boa parte dos ≥ 15 números.
+- **Montagem:** um plano por item, com o número em palavra-destaque (`word`) no momento em que é dito e um SFX curto. O helper `ladainha()` do `tools/episodes/kit.py` gera tudo isso a partir da lista de itens (exemplo no `_modelo.py`, batida 7).
+- **Shorts:** a ladainha das vantagens é um dos ≥ 4 cortes, ~75–90 s, abrindo num número e fechando no item maior.
+
+## Fatos científicos reais (benchmark 2026-11-09)
+Um fato real verificável dá credibilidade à fantasia e deixa o perigo palpável. No benchmark, o concorrente tinha ~9 fatos e nós só 1.
+- **≥ 6 por 10 min**, mais ou menos 1 a cada 60–90 s até a crise, e **1 no clímax**. Nenhum no dilema.
+- **Preso à cena, nunca decorativo.** Cada fato explica por que o poder funciona, mede uma vantagem ou deixa um custo/perigo concreto. Formato: teaser → fato com número → 1 frase que volta pro "você".
+  > "Quando um cachorro olha nos olhos do dono, os dois cérebros soltam ocitocina. O seu cachorro de dois reais olha pra você o dia inteiro."
+- **No clímax, o fato torna o perigo físico:** "Cair de seis metros é bater num muro a quarenta quilômetros por hora."
+- **Fontes:** corpo/cérebro, animais (a âncora conta como 1), física, dinheiro/lei, história.
+- **Só fato sólido.** Registre cada um na ficha de fatos do `script_notes.md` com a fonte. Arredonde para baixo e use "cerca de" ou "menos de". Mito de internet não entra ("só usamos dez por cento do cérebro"), nem conselho médico. Física e contas: confira 2×.
+- O narrador pode torcer o fato com maldade ("…o seu olha pra cima primeiro"), mas o fato em si fica correto.
+- **Na tela:** o número do fato em `word` ou `stat`. Cada fato conta para os ≥ 15 números.
 
 ## Números (§6.4)
 - 2–4/min na 1ª metade, ~1/min depois; **≥ 15 por 10 min**, todos na ficha de fatos.
@@ -116,14 +142,14 @@ O audit avisa `[hook]` quando faltar o mínimo de cortes, o SFX cedo ou o movime
 - Gate mecânico: `node tools/episode.mjs check <slug>`.
 
 ## Visual por batida (resumo; tabela completa §7)
-~20 cortes/min (planos de ~3 s); montagem 27–44; cards 8–15; clímax 10–15. Card ≤ 6 s, plano 3D ≤ 8 s. **8–14 cards/10 min**, ≥ 1 tableau congelado ou câmera lenta, 1 plano de elenco/multidão. Título: `title` com `bg:false` sobre plano aberto. Números: `compare`/`stat`/`speed`/`distance`. Regras: card `rules` antes de cada teste. Crise → clímax: `stopwatch` com `persist` até o fim. Clímax sem cards completos. CTA: card `title` com P1/P2.
+~20 cortes/min (planos de ~3 s); montagem 27–44 (na ladainha, 1 plano por item); **todo pico ou número ganha palavra-destaque (`word`) + SFX curto**; cards 8–15; clímax 10–15. Card ≤ 6 s, plano 3D ≤ 8 s. **8–14 cards/10 min**, ≥ 1 tableau congelado ou câmera lenta, 1 plano de elenco/multidão. Título: `title` com `bg:false` sobre plano aberto. Números: `compare`/`stat`/`speed`/`distance`. Regras: card `rules` antes de cada teste. Crise → clímax: `stopwatch` com `persist` até o fim. Clímax sem cards completos. CTA: card `title` com P1/P2.
 
 **Ritmo da casa (2026-11-08):** `episode(..., ritmo='rapido')` liga sub-cortes automáticos (`coverage: 'fast'`, ~1 corte a cada 1,6 s na palavra) e whip/zoom alternados em toda troca de set. Dilema: `coverage='calm'`; tableau congelado: `'off'`. **Smash** (`cut='smash'`) à mão na revelação ou na piada seca. Meta: ~30 cortes/min fora do dilema.
 **Pensado pra 9:16:** quem fala ou age fica na faixa central (o audit avisa `vertical`); dois personagens longe um do outro = dois planos, não um aberto.
 
 ## Cortes para shorts (regra do usuário, 2026-11-08)
 O usuário corta à mão, do 16:9, shorts de **~90 s** para YouTube Shorts, Reels e TikTok. Todo episódio longo nasce com **≥ 4 trechos que funcionam sozinhos**, marcados em `episode(clips=[(título, 1º plano, último plano), ...])` (o audit confere 60–95 s; mire 75–90).
-- **Onde costumam cair:** (1) abertura → poder → escada de números (0:00–1:30); (2) os 3 problemas (3:10–4:40); (3) o problema real/maestria ou o teste de prova; (4) crise → dilema → clímax. Um 5º no mundo maior/gancho é bônus.
+- **Onde costumam cair:** (1) abertura → poder → escada de números (0:00–1:30); (2) a ladainha de vantagens (2:30–3:40) ou os 3 problemas (3:40–4:40); (3) o problema real/maestria ou o teste de prova; (4) crise → dilema → clímax. Um 5º no mundo maior/gancho é bônus.
 - **Começa frio:** a 1ª frase do trecho prende sem contexto (pergunta, número absurdo, desastre em curso). Nada de "como eu disse", "lembra do…". Se precisar de um nome ou regra, reapresente em meia frase ("a Lia, sua melhor amiga, …").
 - **Fecha com soco:** cada trecho termina numa virada, piada seca ou cliffhanger, não no meio de uma ideia.
 - **Legível no vertical:** dentro dos trechos, personagem e texto importante na faixa central (audit `vertical`). Card de duas colunas (`compare`) perde um lado no corte: prefira `stat`/número único, ou um card com o conteúdo no meio.
@@ -137,8 +163,10 @@ O usuário corta à mão, do 16:9, shorts de **~90 s** para YouTube Shorts, Reel
 - [ ] Plano 1 close de objeto; poder ≤ 0:08; testemunha + impassível; título ≤ 0:40
 - [ ] Primeiros 10 s: ≥ 2 tipos de gancho, ≥ 6 cortes, movimento forte no poder, fala no 1º s, SFX ≤ 2 s (audit `[hook]` limpo)
 - [ ] ≥ 15 números pareados e verificados; 2–3 contas; teasers
+- [ ] ≥ 6 fatos científicos reais presos à cena (1 a cada 60–90 s, 1 no clímax, 0 no dilema), cada um com fonte na ficha de fatos
 - [ ] Viradas nas janelas; relógio vindo de regra; dilema binário; regra tema vence; custo pago; objeto perdido; frase de mudança
-- [ ] 25–32 falas curtas; piada ≤ 60 s; estatística de frase; sem banidos
+- [ ] 12–20 falas de reação/piada (≤ 8 pal., nenhuma explicando enredo); piada ≤ 60 s; estatística de frase; sem banidos
+- [ ] Ladainha nas vantagens: 12–16 itens, 1 a cada 4–6 s, escala crescente, quebra a cada 3; número em `word` + SFX
 - [ ] ≥ 4 trechos de ~90 s marcados em `clips`, cada um com abertura fria e final com soco
 - [ ] Tom ácido: sarcasmo/maldade a cada 30–60 s, nada no dilema, família interesseira, limite monetizável respeitado
 - [ ] `check` passa; tags descritivas, bem posicionadas, coerentes com a voz; tudo por extenso
@@ -146,4 +174,4 @@ O usuário corta à mão, do 16:9, shorts de **~90 s** para YouTube Shorts, Reel
 - [ ] Toda batida montável com sets/cards/FX existentes
 
 ## Nota (100; ≥ 85 manda, 80–84 corrige a pior, 70–79 refaz as 2 piores, < 70 repensa)
-Gancho 10 · Premissa 8 · Causalidade 10 · Setup/payoff 10 · Escalada 8 · Retenção 10 · Comédia 8 · Números 8 (número errado limita o total a 70) · Dilema/clímax 12 · Personagem 6 · Final 5 · Voz/produção 5. Critérios de cada nota: §10. Exemplo completo de outline nota 92: §11.
+Gancho 10 · Premissa 8 · Causalidade 10 · Setup/payoff 10 · Escalada 8 · Retenção 10 (inclui a ladainha) · Comédia 8 (12–20 falas de reação, não 25–32) · Números 8 (inclui os ≥ 6 fatos reais; número ou fato errado limita o total a 70) · Dilema/clímax 12 · Personagem 6 · Final 5 · Voz/produção 5. Critérios de cada nota: §10. Exemplo completo de outline nota 92: §11.

@@ -1,14 +1,12 @@
 ---
 name: project-refazer-episodios
-description: Remake of old episodes is CLOSED (2026-11-09) — zumbi redone in the new style; quem-tem-crush discarded as a test; repo cleaned to zumbi only
+description: Old-episode remakes are closed — zumbi is the only episode kept (its re-voiced final build is still PENDING); crush discarded 2026-11-09; keep the /stickman credit stop
 metadata:
   type: project
 ---
 
-On 2026-11-08 the user agreed to remake both finished episodes in the new style. On 2026-11-09 zumbi was finished: visual pass (`apply_ritmo`, clips, 9:16-safe; 2 review rounds), then tone pass (14 lines rewritten, ~1.7k credits, 10 sections re-voiced; 9:14), then the final build.
+Only **invasao-zumbi** is kept. quem-tem-crush was discarded as a test on 2026-11-09, and the user doesn't want much history kept about old projects.
 
-Then the user **discarded quem-tem-crush** ("foi um bom teste pra nós") and asked to clean out every leftover from other videos. Deleted: the crush and teste-ritmo episodes, generators, thumbnails, renders, the old zumbi cut in `final/archive/`, and `out/lab`. Kept as engine infrastructure: `pipetest` (the compositions' default fixture, shipped by the packer), the `swap-pilot` thumbnail brief (example format), and `PillSprint` (reference composition).
-
-**Why:** start the next episodes from a clean repo where zumbi is the only real example.
-
-**How to apply:** don't suggest remaking crush. Lesson to keep: a voice section spans many shots, so one changed line re-voices all of it. Show the user a full option and a lean credit option. Still deferred: card layouts are 16:9-wide (a 9:16 crop loses half); the user was offered a narrow card layout. `/stickman` must still stop once before spending voice credits (the user said "não tire isso").
+- **Pending:** zumbi's re-voiced build (9:14) died at 51% on 2026-11-09, and `final/` still holds the old 8:58 cut. Re-run `node tools/build-episode.mjs invasao-zumbi` and review it before calling it done.
+- `/stickman` must keep its one stop before spending voice credits (the user said "não tire isso").
+- Voice-cost lesson: a section spans many shots, so changing one line re-voices the whole section. When re-voicing, show the user a full credit option and a lean one.

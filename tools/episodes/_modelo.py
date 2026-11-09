@@ -37,9 +37,15 @@ TITLE = 'E Se Você ...?'
 
 # ---------------------------------------------------------------- 6. regras (1:50–2:30)
 
-# ---------------------------------------------------------------- 7. montagem de vantagens (2:30–3:10)
+# ---------------------------------------------------------------- 7. ladainha de vantagens (2:30–3:40)
+# 12–16 itens "X + número. Efeito em 1 linha." (COLA "Ladainha"); um plano por item, número em destaque + SFX:
+# ladainha('v', 'suburb', [
+#     {'vo': 'A moça da cantina custa três reais. Agora o pastel vem com dois recheios.',
+#      'word': ('R$ 3', '@três'), 'actors': [...], 'camera': cam('medium', 'cantina')},
+#     ...
+# ])
 
-# ---------------------------------------------------------------- 8. "mas" + problemas 1–3 (3:10–4:40)
+# ---------------------------------------------------------------- 8. "mas" + problemas 1–3 (3:40–4:40)
 
 # ---------------------------------------------------------------- 9. problema real (4:40–5:25)
 

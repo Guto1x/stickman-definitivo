@@ -211,7 +211,7 @@ Legenda:
 | 4 | 0:50–1:25 | 8–14 | **Escada de números + âncora científica** | 100 | Teaser → precedente real → base vs você → 3 comparações crescentes → linha de bater recorde | N | 15–20 |
 | 5 | 1:25–1:50 | 14–18 | **Teste de prova** | 70 | Uma autoridade cética com um instrumento (cronômetro, balança, teste); olhar triplo; 1–2 piadinhas | ↻ | 20–30 |
 | 6 | 1:50–2:30 | 18–25 | **Regras descobertas** | 115 | 2–3 regras numeradas, cada uma com declaração → cena de teste → consequência cômica. *Poderes simples: substitua por piadas de descoberta de "primeiro dia"* | N | 18–25 |
-| 7 | 2:30–3:10 | 25–32 | **Montagem de vantagens** | 115 | 4 vantagens de escala crescente (casa → escola → trabalho/esporte → grande); 1 referência de bondade; 1 falha cômica; 2 piadinhas | ↻ | 25–40 |
+| 7 | 2:30–3:10 | 25–32 | **Montagem de vantagens** | 115 | ladainha de 12–16 itens, 1 a cada 4–6 s, escala crescente (COLA_ROTEIRO "Ladainha"; desde 2026-11-09 vai até 3:40); 1 referência de bondade; 1 falha cômica; 2 piadinhas | ↻ | 25–40 |
 | 8 | 3:10–4:40 | 32–47 | **Virada de "mas" + Problemas 1–3** | 265 | Linha de pivô de "mas"; cada problema: nome → número real → 2–4 consequências vívidas → solução barata → reação da família. Ordem: irritante → caro → meio perigoso | N ↻ | 15–25 |
 | 9 | 4:40–5:25 | 47–54 | **O problema real** | 130 | "Nenhum desses é o problema real" (reformulado) → **callback ao limite plantado usando sua palavra-chave** → quase-desastre sobrevivido por sorte | N ↻ | 10–18 |
 | 10 | 5:25–6:05 | 54–61 | **Maestria + regra tema** | 115 | Teaser → analogia animal ou científica → treino de tentativa-e-falha (amigos ajudam) → **regra tema declarada como instrução** | N ↻ | 12–20 |
@@ -492,7 +492,7 @@ Os exemplos usam uma premissa de demonstração, **"E Se Você Fosse Magnético?
 > **Nota sobre português:** português tende a ter palavras mais longas que inglês, então "8–9 palavras por frase" pode render frases um pouco mais longas em duração de fala. Priorize o **tempo de fala** sobre a contagem exata de palavras — meça com o wpm real da voz escolhida.
 
 ### 6.3 Proporção de comédia
-- **Falas de personagem:** 25–32 por 10 min, quase todas **≤ 8 palavras**. Isso é 8–12% das palavras, uma fala a cada 19–25 s.
+- **Falas de personagem:** **12–20 por 10 min** (desde 2026-11-09; antes 25–32), todas **≤ 8 palavras** e todas reação ou piada, nenhuma explicando o enredo. O ritmo vem da ladainha (COLA_ROTEIRO, "Ladainha") e dos cortes, não do número de falas.
 - **Batidas cômicas:** pelo menos uma a cada 45–60 s nos Atos 1–2 e uma a cada 90 s depois da crise. Nunca dentro do dilema.
 - **Ferramentas (K1–K9):**
   - duplo tempo impassível
@@ -721,7 +721,7 @@ O canal **não** tem o tom fofo/família da IFOLOGY. O narrador é um observador
 - [ ] A frase de mudança aparece na consequência.
 
 **Comédia e voz**
-- [ ] 25–32 falas de personagem por 10 min, ≥ 90% delas ≤ 8 palavras.
+- [ ] 12–20 falas de personagem por 10 min, todas ≤ 8 palavras e todas reação/piada.
 - [ ] Uma batida cômica a cada ≤ 60 s antes da crise.
 - [ ] 2ª pessoa presente o tempo todo; frase média de 8–9 palavras; 35–45% das frases ≤ 6 palavras.
 - [ ] Sem clichês banidos ou assinaturas de referência (§6.7). Faça uma busca por cada frase.
@@ -762,7 +762,7 @@ Pontue o outline antes de rascunhar e o rascunho antes da produção.
 | Setup/payoff | 10 | ≥ 5 plantios; o clímax resgata ≥ 3; piada recorrente; virada justa | 3–4 plantios ou o clímax resgata 2 | O clímax usa algo novo |
 | Escalada | 8 | Escada de escala em ≥ 4 sets; a curva de risco bate com a §9 | O risco sobe cedo ou tarde demais | Risco plano ou aleatório |
 | Cadência de retenção | 10 | Informação nova ≤ 40 s de intervalo; reganchos ≤ 90 s de intervalo; um loop aberto a todo momento | Um período seco de 60–90 s | Períodos secos acima de 90 s |
-| Comédia | 8 | 25–32 piadinhas curtas; duplos tempos impassíveis; piada recorrente; um aparte | Piadinhas presentes mas longas ou raras | Sem piadas, ou piadas no dilema |
+| Comédia | 8 | 12–20 falas curtas de reação/piada; duplos tempos impassíveis; piada recorrente; um aparte | Piadinhas presentes mas longas ou raras | Sem piadas, ou piadas no dilema |
 | Ciência e números | 8 | ≥ 15 números verificados e emparelhados; 2–3 contas trabalhadas; teasers | Menos de 10, ou desemparelhados | Números errados ou inventados (limita a pontuação total em 70) |
 | Dilema e clímax | 12 | O poder é o perigo; linha binária; relógio correndo a partir de uma regra; a regra tema vence; custo pago | Falta um relógio ou o custo | Vencido por sorte ou poder novo |
 | Personagem | 6 | Desejo vs necessidade, mudança mostrada; a mãe percebe o custo; o amigo tem uma função; um cético presente | Papéis presentes mas planos | Só "você" existe |

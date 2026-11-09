@@ -11,7 +11,7 @@ Start a new episode from _modelo.py.
 import json
 import os
 
-__all__ = ['shots', 'A', 'cam', 'S', 'C', 'apply_ritmo', 'crush', 'walk', 'TALK', 'SW', 'shot_index', 'episode',
+__all__ = ['shots', 'A', 'cam', 'S', 'C', 'ladainha', 'apply_ritmo', 'crush', 'walk', 'TALK', 'SW', 'shot_index', 'episode',
            'load_timing', 'resolve_countdowns', 'clean', 'write', 'NARRATOR', 'HOUSE_VOICES']
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
@@ -59,6 +59,29 @@ def C(id, card, vo, **spec):
     d = {'id': id, 'kind': 'card', 'card': card, 'vo': vo}
     d.update(spec)
     shots.append(d)
+
+
+def ladainha(prefix, set_, itens, sfx='chime', color='yellow', **common):
+    """A list montage (COLA "Ladainha"): one 3D shot per item, ~4–6 s each, ids prefix1, prefix2, ...
+    Each item is a dict of S() fields (vo required; actors, camera, set, fx, ... optional) plus
+      word: the item's number or key word, shown as a palavra-destaque on its spoken cue with a short SFX.
+            Either (shown text, cue) — ('R$ 3', '@três') — or a plain spoken word ('cinco' → cue '@cinco').
+    `common` holds fields every item shares (e.g. coverage='fast'); an item's own fields win.
+    sfx=None drops the per-item sound."""
+    for i, it in enumerate(itens, 1):
+        it = {**common, **it}
+        word = it.pop('word', None)
+        overlays, cues = list(it.pop('overlays', [])), list(it.pop('sfx', []))
+        if word:
+            text, cue = word if isinstance(word, (list, tuple)) else (word.upper(), '@' + word.lower())
+            overlays.insert(0, {'type': 'word', 'text': text, 'at': cue, 'color': color})
+            if sfx:
+                cues.insert(0, {'t': cue, 'name': sfx})
+        if overlays:
+            it['overlays'] = overlays
+        if cues:
+            it['sfx'] = cues
+        S(f'{prefix}{i}', it.pop('set', set_), it.pop('vo'), it.pop('actors', None), it.pop('camera', None), **it)
 
 
 def crush(actor, value, frm=None, at=0.3, **kw):
