@@ -12,3 +12,4 @@
 - [Don't restructure CLAUDE.md](feedback-nao-reestruturar-claude-md.md) — user declined splitting CLAUDE.md / re-modeling /stickman + reviewers (2026-11-08); wait on earlier optimizations
 - [Ritmo rápido](project-ritmo-rapido.md) — house pacing since 2026-11-08: coverage sub-cuts, whip/zoom/smash, 9:16-safe; generators use ritmo='rapido'; NO native vertical render — user cuts 9:16 by hand from the 16:9
 - [Cortes p/ shorts](feedback-cortes-shorts.md) — every long episode needs ≥ 4 self-contained ~90 s segments (episode clips); build writes .srt + cortes.txt
+- [NEXT: refazer episódios](project-refazer-episodios.md) — redo zumbi then crush: free visual pass (ritmo, clips, centre) then targeted acid rewrite before voice; keep /stickman credit stop
