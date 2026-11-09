@@ -5,6 +5,7 @@
 import React from 'react';
 import type { SetProps } from './index';
 import type { Vec3 } from '../types';
+import { solidChair, solidSofa, solidTable } from './solids';
 import { Ball, Box, Chair, Cone, Cyl, Door, Table, WallClock, mix, rng } from './kit';
 import { Batch, Batched, CeilingPanel, checkerFloor, FloorLamp, FruitBowl, isNight, LeafPlant, Picture, Pinboard, plankFloor, RoomWindow, Shell, Sofa } from './roomkit';
 
@@ -147,6 +148,19 @@ function buildLiving(b: Batch) {
   b.add('cyl', '#c46b47', [1.08, 2.2, HOME.z0 + 0.12], [0.07, 0.13, 0.07]);
   b.add('ico', '#5aa54a', [1.08, 2.33, HOME.z0 + 0.12], [0.12, 0.11, 0.12]);
 }
+
+/** Solid furniture for the clip audit: the batched kitchen/living plus the JSX table, chairs, coffee table and couch. */
+export const HOME_SOLIDS = () => [
+  { name: 'kitchen', build: buildKitchen }, { name: 'living room', build: buildLiving },
+  {
+    name: 'dining set', build: (b: Batch) => {
+      solidTable(b, [-3.0, 0, -1.3], 0, 1.7, 0.95, 0.76);
+      solidChair(b, [-3.45, 0, -2.02]); solidChair(b, [-2.55, 0, -2.02]);
+      solidChair(b, [-4.2, 0, -1.3], Math.PI / 2); solidChair(b, [-1.8, 0, -1.3], -Math.PI / 2);
+    },
+  },
+  { name: 'couch + coffee table', build: (b: Batch) => { solidSofa(b, [1.62, 0, -0.4], Math.PI / 2, 2.3); solidTable(b, [3.1, 0, -0.4], 0, 0.75, 1.25, 0.43); } },
+];
 
 export const Home: React.FC<SetProps> = ({ t, time }) => {
   const night = isNight(time);

@@ -93,6 +93,10 @@ audit.events.forEach((e, k) => {
   } else if (e.kind === 'jump') {
     times = [e.t - 0.2, e.t + 0.05, e.t + 0.5];
     expect = `JUMP: ${e.what}. The move should read as intended (a swap/teleport/momentum gag), not as a glitch. Nobody overlaps after it.`;
+  } else if (e.kind === 'clip') {
+    const d = tm.shots[e.shot].dur;
+    times = [Math.max(0.03, e.t - 0.3), e.t, Math.min(d - 0.03, e.t + 0.3)];
+    expect = `CLIP: ${e.what} (audit). Look at the body against the furniture/prop in all 3 frames: does any part visibly pass THROUGH it (a hand inside a box, legs inside a sofa, a head sunk into a desk)? If it shows, it's a defect: move the actor or prop, change the pose, or re-seat them. If the camera can't see it (behind the body, off-frame), say so and pass it.`;
   } else if (e.kind === 'flow') {
     const prevDur = tm.shots[e.shot - 1].dur;
     const pa = frameAt(e.shot - 1, prevDur - 0.05), b0 = frameAt(e.shot, 0.05), b1 = frameAt(e.shot, 1.0);

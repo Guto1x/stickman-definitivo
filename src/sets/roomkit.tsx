@@ -22,14 +22,23 @@ const TEMPL = {
 } as const;
 export type Shape = keyof typeof TEMPL;
 type Kind = 'env' | 'glow' | 'ink';
-type AddOpts = { kind?: Kind; cast?: boolean };
+type AddOpts = { kind?: Kind; cast?: boolean; soft?: boolean }; // soft = bedding/cushions: bodies may sink into it, the clip audit skips it
 type BatchMesh = { geo: THREE.BufferGeometry; kind: Kind; c: string; cast: boolean };
 
 const mtx = (p: Vec3, r?: R, s?: Vec3 | number) =>
   new THREE.Matrix4().compose(new THREE.Vector3(...p), new THREE.Quaternion().setFromEuler(new THREE.Euler(...rotV(r))), new THREE.Vector3(...sclV(s)));
 
-/** Collects primitives and merges them into one geometry per (colour, material kind, cast flag). */
+/** A solid primitive of a set, in world space (unit template × matrix): what the clip audit tests bodies against. */
+export type SolidPrim = { shape: 'box' | 'cyl' | 'sphere'; m: THREE.Matrix4; from: string };
+const SOLID_SHAPES: Partial<Record<Shape, SolidPrim['shape']>> = { box: 'box', cyl: 'cyl', cyl8: 'cyl', sphere: 'sphere', ico: 'sphere' };
+
+/** Collects primitives and merges them into one geometry per (colour, material kind, cast flag).
+ *  It also records every solid primitive (boxes, cylinders, spheres; not planes or glows) in `solids`,
+ *  so the audit can test bodies against the furniture. `geometry = false` records only (no meshes). */
 export class Batch {
+  readonly solids: SolidPrim[] = [];
+  from = '';
+  constructor(private geometry = true) {}
   private groups = new Map<string, { kind: Kind; c: string; cast: boolean; geos: THREE.BufferGeometry[] }>();
   private stack: THREE.Matrix4[] = [new THREE.Matrix4()];
   private top() {
@@ -44,13 +53,17 @@ export class Batch {
   add(shape: Shape, c: string, p: Vec3, s: Vec3 | number, r?: R, o: AddOpts = {}) {
     const kind = o.kind ?? 'env';
     const cast = kind === 'glow' ? false : o.cast ?? true;
+    const m = this.top().clone().multiply(mtx(p, r, s));
+    const solid = SOLID_SHAPES[shape];
+    if (solid && kind !== 'glow' && !o.soft) this.solids.push({ shape: solid, m, from: this.from });
+    if (!this.geometry) return;
     const key = `${kind}|${c}|${cast}`;
     let g = this.groups.get(key);
     if (!g) {
       g = { kind, c, cast, geos: [] };
       this.groups.set(key, g);
     }
-    g.geos.push(TEMPL[shape].clone().applyMatrix4(this.top().clone().multiply(mtx(p, r, s))));
+    g.geos.push(TEMPL[shape].clone().applyMatrix4(m));
   }
   box(p: Vec3, s: Vec3, c: string, r?: R, o?: AddOpts) {
     this.add('box', c, p, s, r, o);
@@ -78,6 +91,13 @@ export class Batch {
     });
     return out;
   }
+}
+
+/** Run set builders in record-only mode and return their solid primitives (tagged with the builder's name). */
+export function collectSolids(builds: { name?: string; build: (b: Batch) => void }[]): SolidPrim[] {
+  const b = new Batch(false);
+  builds.forEach(x => { b.from = x.name || x.build.name || 'set'; x.build(b); });
+  return b.solids;
 }
 
 const batchCache = new Map<string, BatchMesh[]>();

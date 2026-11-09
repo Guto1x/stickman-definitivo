@@ -105,6 +105,12 @@ const drawMenu = (g: CanvasRenderingContext2D, W: number, H: number) => {
   });
 };
 
+/** Solid furniture for the clip audit (same builders the set draws). */
+export const CAFETERIA_SOLIDS = (variant: number) => [
+  { name: 'tables', build: buildTables }, { name: 'counter props', build: buildProps },
+  ...(variant % 2 === 0 ? [{ name: 'seated extras', build: buildExtras }] : []),
+];
+
 export const Cafeteria: React.FC<SetProps> = ({ t, time, variant }) => {
   const night = isNight(time);
   const { x0, x1, z0 } = SCHOOL;

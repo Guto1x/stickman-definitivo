@@ -3,6 +3,7 @@
 // To add a set: build it in src/sets/<name>.tsx from kit.tsx pieces, then register it here.
 import React from 'react';
 import type { Vec3 } from '../types';
+import type { Batch } from './roomkit';
 import { Suburb } from './suburb';
 import { INDOOR_SETS } from './indoor';
 import { OUTDOOR_SETS } from './outdoor';
@@ -23,6 +24,7 @@ export type SetDef = {
   interior?: boolean; // true = no sky dome needed
   room?: { min: Vec3; max: Vec3 }; // walls/floor/ceiling the camera must stay inside (open side = large max); the engine pulls a camera that ends up outside back in along its sight line
   description: string; // one line for Claude when picking sets
+  solids?: (variant: number) => { name: string; build: (b: Batch) => void }[]; // furniture the clip audit tests bodies against (indoor sets)
 };
 
 const SuburbSet: React.FC<SetProps> = ({ center }) => React.createElement(Suburb, { centerX: center[0], behind: 80, ahead: 120 });

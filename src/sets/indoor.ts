@@ -3,15 +3,16 @@
 // a one-sided fourth wall at the +z edge only shows in reverse shots from inside). Pass
 // time:'interiorNight' for night windows + lamps on. Building blocks live in roomkit.tsx.
 import type { SetDef } from './index';
-import { Home, HOME_MARKS } from './home';
-import { Bedroom, BEDROOM_MARKS } from './bedroom';
-import { Classroom, CLASSROOM_MARKS } from './classroom';
-import { Cafeteria, CAFETERIA_MARKS } from './cafeteria';
+import { Home, HOME_MARKS, HOME_SOLIDS } from './home';
+import { Bedroom, BEDROOM_MARKS, BEDROOM_SOLIDS } from './bedroom';
+import { Classroom, CLASSROOM_MARKS, CLASSROOM_SOLIDS } from './classroom';
+import { Cafeteria, CAFETERIA_MARKS, CAFETERIA_SOLIDS } from './cafeteria';
 import { VoidStage, VOID_MARKS } from './voidstage';
 
 export const INDOOR_SETS: Record<string, SetDef> = {
   home: {
     component: Home,
+    solids: HOME_SOLIDS,
     palette: 'interior',
     marks: HOME_MARKS,
     shadowCenter: [0, 1, -0.5],
@@ -23,6 +24,7 @@ export const INDOOR_SETS: Record<string, SetDef> = {
   },
   bedroom: {
     component: Bedroom,
+    solids: BEDROOM_SOLIDS,
     palette: 'interior',
     marks: BEDROOM_MARKS,
     shadowCenter: [0, 1, -0.5],
@@ -34,6 +36,7 @@ export const INDOOR_SETS: Record<string, SetDef> = {
   },
   classroom: {
     component: Classroom,
+    solids: CLASSROOM_SOLIDS,
     palette: 'interior',
     marks: CLASSROOM_MARKS,
     shadowCenter: [0, 1, 0],
@@ -45,6 +48,7 @@ export const INDOOR_SETS: Record<string, SetDef> = {
   },
   cafeteria: {
     component: Cafeteria,
+    solids: CAFETERIA_SOLIDS,
     palette: 'interior',
     marks: CAFETERIA_MARKS,
     shadowCenter: [0, 1, 0],

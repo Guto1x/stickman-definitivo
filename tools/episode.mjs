@@ -75,6 +75,45 @@ function checkVoiceText(episode) {
   return errors;
 }
 
+/** Style lint on `vo` (COLA_ROTEIRO "Voz", 2026-11-09): warnings only, never blocks the voice step.
+ *  - sentences over 15 spoken words (the hard cap; sentences can span shots, reported at their first shot);
+ *  - banned words/phrases (weak adjectives + the COLA ban list);
+ *  - two sentences in a row with the same opening word (same structure), outside the ladainha / climax ×3,
+ *    which repeat on purpose: mark those shots `repeat: true` to silence it. */
+const MAX_SENTENCE_WORDS = 15;
+const BANNED = ['incrível', 'incríveis', 'fantástico', 'fantástica', 'fantásticos', 'fantásticas', 'surpreendente', 'surpreendentes',
+  'em um mundo onde', 'de repente', 'jornada', 'tudo mudou', 'você não vai acreditar', 'no final das contas', 'mas espera, tem mais', 'embarca'];
+function styleWarnings(episode) {
+  const out = [];
+  let cur = null; // the sentence being read: { words, at, repeat }
+  let prevOpen = null, prevRepeat = false;
+  const flush = () => {
+    if (!cur) return;
+    if (cur.words.length > MAX_SENTENCE_WORDS) out.push(`${cur.at}: ${cur.words.length}-word sentence (cap ${MAX_SENTENCE_WORDS}): "${cur.words.join(' ').slice(0, 90)}…"`);
+    // same structure = the same first two words; 1–3-word staccato lines are exempt
+    const open = cur.words.length > 3 ? norm(cur.words.slice(0, 2).join(' ')) : null;
+    if (open && open === prevOpen && !(cur.repeat || prevRepeat)) out.push(`${cur.at}: two sentences in a row open with "${open}" — vary the structure (or mark the shot repeat: true)`);
+    prevOpen = open; prevRepeat = cur.repeat;
+    cur = null;
+  };
+  episode.shots.forEach((shot, i) => {
+    if (!shot.vo) return;
+    const where = `shot #${i}${shot.id ? ` (${shot.id})` : ''}`;
+    const text = spoken(shot.vo);
+    const low = ' ' + norm(text) + ' ';
+    BANNED.forEach(b => { if (low.includes(' ' + norm(b) + ' ')) out.push(`${where}: banned "${b}" — show it, don't qualify it`); });
+    if (/\bliteralmente\b/i.test(text) && (shot.who || 'narrator') === 'narrator') out.push(`${where}: banned "literalmente" in narration`);
+    if ((shot.who || 'narrator') !== 'narrator') { flush(); prevOpen = null; return; } // character lines have their own ≤ 8-word rule
+    for (const w of text.split(/\s+/).filter(x => /[\p{L}\p{N}]/u.test(x))) {
+      if (!cur) cur = { words: [], at: where, repeat: !!shot.repeat };
+      cur.words.push(w);
+      if (/[.!?…][”"'»)]*$/.test(w)) flush();
+    }
+  });
+  flush();
+  return out;
+}
+
 function buildSections() {
   const sections = [];
   let cur = null, breakNext = false, lastWho = null;
@@ -282,6 +321,11 @@ if (cmd === 'check') {
     process.exit(1);
   }
   console.log(`vo text check: 0 problems, ${ep.shots.filter(s => s.vo).length} shots with narration.`);
+  const style = styleWarnings(ep);
+  if (style.length) {
+    console.log(`\n${style.length} style warning(s) (COLA_ROTEIRO "Voz" — not blocking, but fix before the credit checkpoint):`);
+    style.forEach(w => console.log('  ~ ' + w));
+  } else console.log('style: no sentence over 15 words, no banned words, no repeated openings.');
   console.log(`Mechanical only (brackets, SSML, raw numbers) — still self-certify the judgment items in STORY_BLUEPRINT.md §9 (tag placement, descriptiveness, voice match) before the credit checkpoint.`);
 } else if (cmd === 'sections') {
   const secs = buildSections();

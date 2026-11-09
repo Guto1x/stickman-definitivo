@@ -183,6 +183,7 @@ export type Shot3D = {
   fx?: ShotFx;
   sfx?: SfxCue[];
   cut?: Cut; // default: flow when the framing barely changes in the same set, else cut
+  repeat?: boolean; // vo repeats its structure on purpose (ladainha, climax ×3): silences the repeated-opening style warning
   coverage?: 'off' | 'calm' | 'fast'; // automatic sub-cuts on word starts: fast ≈ every 1.6 s, calm ≈ 2.6 s (explicit pos/path cameras: 2.2 / 3.0 s, punch-in or orbit of their own view; `over` cameras: none)
 };
 

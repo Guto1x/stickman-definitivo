@@ -89,7 +89,9 @@ export function solveCamera(
   const look = focus.clone();
 
   switch (s.move || 'drift') {
-    case 'drift': yaw += 5 * ke * amt; dist *= 1 - 0.05 * ke * amt; break;
+    // raised 2026-11-09 ("move the camera more"): the default drift is a visible arc, plus a push on medium
+    // and tighter sizes only (a bigger push crops the feet of a full/wide shot). Written moves keep their size.
+    case 'drift': yaw += 10 * ke * amt; dist *= 1 - (h < 2 ? 0.12 : 0.05) * ke * amt; break;
     case 'pushIn': dist *= 1 - 0.22 * ke * amt; break;
     case 'pullOut': dist *= 0.82 + 0.25 * ke * amt; break;
     case 'orbitL': yaw -= 28 * ke * amt; break;
@@ -128,6 +130,6 @@ function finish(c: CamState, s: CameraSpec, t: number, amt: number): CamState {
   if (s.move === 'shake') return shake(c, t, 0.03 * amt, 16, 3);
   if (s.move === 'handheld') return shake(c, t, 0.012 * amt, 3.5, 7);
   // every shot breathes a little, like IFOLOGY's constantly moving camera
-  const b = 0.004;
+  const b = 0.007;
   return { ...c, pos: c.pos.clone().add(new THREE.Vector3(noise1(t * 0.7, 1) * b, noise1(t * 0.6, 2) * b, 0)) };
 }

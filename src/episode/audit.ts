@@ -7,10 +7,13 @@ import { POSES } from '../engine/rig';
 import type { CastMember, Episode, Pose, Shot3D, Timing } from '../types';
 import { castOf } from './resolve';
 import { cue } from './cue';
-import { beatCam, beatsOf, evalShot, flowInfo, framingDelta, type ShotCtx } from './scene';
+import { beatsOf, evalShot, flowInfo, framingDelta, type ShotCtx } from './scene';
+import type { CameraSpec, Vec3 } from '../types';
+import { clipsOf, propSolids, setSolids } from './collide';
+import { SETS } from '../sets';
 
 export type Finding = { sev: 'error' | 'warn'; shot: number; id?: string; t?: number; check: string; msg: string };
-export type AuditEvent = { shot: number; id?: string; t: number; kind: 'swap' | 'jump' | 'flow' | 'cut'; what: string };
+export type AuditEvent = { shot: number; id?: string; t: number; kind: 'swap' | 'jump' | 'flow' | 'cut' | 'clip'; what: string };
 export type AuditReport = { findings: Finding[]; events: AuditEvent[]; flows: { shot: number; on: boolean; reason: string; shift?: number; angle?: number; scale?: number }[]; frames: number };
 
 const W = 1920, H = 1080;
@@ -159,12 +162,16 @@ export function auditEpisode(ep: Episode, timing: Timing): AuditReport {
     let prevStates: Record<string, ActorState> | null = null;
     let prevCam: CamState | null = null;
     let prevBeat = 0;
-    const targets = (() => {
-      const tg = s3.camera?.target;
+    // the beat's own targets: a CLOSE sub-cut of a group shot frames only its first actor, on purpose
+    const targetsOf = (spec: CameraSpec | undefined) => {
+      const tg = spec?.target;
       return typeof tg === 'string' ? [tg] : Array.isArray(tg) && typeof tg[0] === 'string' ? (tg as string[]) : [];
-    })();
+    };
     // per actor: seconds spent moving while off-screen, before their last on-screen frame (exits are fine)
     const hidden: Record<string, { moving: number; lastSeen: number; from: number; to: number }[]> = {};
+    // clip: body parts inside furniture / props (worst depth per actor+part over the shot, every 2nd frame)
+    const furniture = setSolids(SETS[s3.set] ? s3.set : 'suburb', s3.variant ?? 0);
+    const clipWorst = new Map<string, { id: string; part: string; depth: number; t: number; what: string; size: string; at: Vec3 }>();
     for (let f = 0; f < n; f++) {
       const t = f / fps;
       const sc = evalShot(ctx, t, cast, prev);
@@ -201,13 +208,18 @@ export function auditEpisode(ep: Episode, timing: Timing): AuditReport {
         if (sc.cam.pos.distanceTo(s.anchors.head) < 0.42 * s.scale) add({ sev: 'error', shot: i, id: sid, t, check: 'camera', msg: `camera is inside ${s.spec.id}'s head at t=${t.toFixed(2)} s` }, `${i}|camin|${s.spec.id}`);
       }
       // framing of camera targets
-      for (const id of targets) {
+      for (const id of targetsOf(sc.beatSpec)) {
         const s = sc.byId[id];
         if (!s) continue;
         const head = project(s.anchors.head, sc.cam, W, H), feet = project(s.anchors.feet, sc.cam, W, H);
         if (!head.visible) add({ sev: 'error', shot: i, id: sid, t, check: 'framing', msg: `camera target ${id} is behind the camera at t=${t.toFixed(2)} s` }, `${i}|behind|${id}`);
         else if (!inFrame(head, 0.0)) add({ sev: 'error', shot: i, id: sid, t, check: 'framing', msg: `camera target ${id}'s head leaves the frame at t=${t.toFixed(2)} s` }, `${i}|headout|${id}`);
-        const shotSize = beatCam(s3.camera, sc.beat)?.shot || 'medium';
+        const shotSize = sc.beatSpec?.shot || 'medium';
+        // a close that doesn't show the face (bowed head, back or profile to the lens) reads as a black disc
+        if (['close', 'xclose'].includes(shotSize) && head.visible && id === targetsOf(sc.beatSpec)[0]) {
+          const face = new THREE.Vector3(0, 0, 1).transformDirection(s.bones.head);
+          if (face.dot(sc.cam.pos.clone().sub(s.anchors.head).normalize()) < 0.5) add({ sev: 'warn', shot: i, id: sid, t, check: 'framing', msg: `${shotSize} on ${id} but the face is turned away from the lens at t=${t.toFixed(2)} s (sub-cut ${sc.beat}) (bowed head / back / profile): it reads as a black disc — change the angle, lift the head or widen the shot` }, `${i}|faceaway|${id}`);
+        }
         // 9:16 safety: the subject's head must sit inside the centre column a vertical cut keeps (608 of 1920 px)
         const band = (H * 9) / 16 / 2;
         if (head.visible && inFrame(head, 0.0) && Math.abs(head.x - W / 2) > band) add({ sev: 'warn', shot: i, id: sid, t, check: 'vertical', msg: `${id}'s head is outside the 9:16 centre column at t=${t.toFixed(2)} s (x=${head.x.toFixed(0)} px) — a vertical cut loses them` }, `${i}|vert|${id}`);
@@ -263,7 +275,27 @@ export function auditEpisode(ep: Episode, timing: Timing): AuditReport {
       for (const s of live) prevStates[s.spec.id] = s;
       prevCam = sc.cam;
       prevBeat = sc.beat;
+      if (f % 2 === 0) {
+        const solids = [...furniture, ...propSolids(sc.props, t)];
+        for (const st of live)
+          for (const c of clipsOf(st, solids)) {
+            const k = `${st.spec.id}|${c.part}`, w = clipWorst.get(k);
+            if (!w || c.depth > w.depth) clipWorst.set(k, { id: st.spec.id, part: c.part, depth: c.depth, t, what: c.solid.what, size: c.solid.size, at: c.solid.at });
+          }
+      }
     }
+    // one finding per actor+part. Head/chest fill the frame, so 2 cm past contact is already visible (error);
+    // a limb is an error from 6 cm; shallower ones are warnings to check in the review frames
+    // (under 3 cm a limb clip doesn't show on screen, under 2 cm a head/chest one: not reported)
+    const shown = [...clipWorst.values()].filter(w => w.depth >= (/^(head|chest)/.test(w.part) ? 0.02 : 0.03));
+    shown.forEach(w => add({
+      sev: w.depth > (/^(head|chest)/.test(w.part) ? 0.02 : 0.06) ? 'error' : 'warn', shot: i, id: sid, t: w.t, check: 'clip',
+      msg: `${w.id}'s ${w.part} goes ${(w.depth * 100).toFixed(0)} cm into ${w.what} (${w.size} m at [${w.at.join(', ')}]) at t=${w.t.toFixed(2)} s — move the actor/prop, change the pose, or seat them properly`,
+    }, `${i}|clip|${w.id}|${w.part}`));
+    // one review event per actor (their deepest clip), so review.mjs renders the moment for the reviewer
+    const perActor = new Map<string, (typeof shown)[number]>();
+    shown.forEach(w => { const b2 = perActor.get(w.id); if (!b2 || w.depth > b2.depth) perActor.set(w.id, w); });
+    perActor.forEach(w => events.push({ shot: i, id: sid, t: w.t, kind: 'clip', what: `${w.id}'s ${w.part} ${(w.depth * 100).toFixed(0)} cm into ${w.what}` }));
     // something should be visible in a shot that has characters
     const mid = evalShot(ctx, ctx.dur * 0.6, cast, prev);
     if (mid.states.length && !mid.states.some(s => inFrame(project(s.anchors.head, mid.cam, W, H), 0.0)))

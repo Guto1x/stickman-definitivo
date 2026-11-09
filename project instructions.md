@@ -1,6 +1,6 @@
 # Project instructions: 3D Stickman Long
 
-**Claude: read only lines 1–415 of this file.** Everything after that is the packed project (6.0 MB). If the user typed **start**, follow "For Claude: what start means" below.
+**Claude: read only lines 1–415 of this file.** Everything after that is the packed project (6.1 MB). If the user typed **start**, follow "For Claude: what start means" below.
 
 This one file rebuilds the 3D Stickman Long production system in an empty folder. That system makes IFOLOGY-style "What If" videos with a 3D stickman hero, built in code with Remotion 4 and Three.js, with Python sound effects and ElevenLabs narration. The file holds:
 - the engine, sets, cards and overlays;
@@ -10,7 +10,7 @@ This one file rebuilds the 3D Stickman Long production system in an empty folder
 - Claude's project memory;
 - the `/stickman <topic>` command (topic in, finished video and 3 thumbnails out).
 
-It holds 216 files in all, each with a checksum. It was packed on 2026-11-09. It holds no finished videos or episodes: you start with an empty channel.
+It holds 219 files in all, each with a checksum. It was packed on 2026-11-09. It holds no finished videos or episodes: you start with an empty channel.
 
 ## For the human
 
@@ -18,7 +18,7 @@ It holds 216 files in all, each with a checksum. It was packed on 2026-11-09. It
 2. Open a new Claude Code chat on that folder: the Code tab of the desktop app, or `claude` in a terminal there.
 3. Type **start**. (If Claude asks what to start, say "follow project instructions.md".)
 
-At 6.0 MB, the file is too big to paste into a chat, so it has to sit in the folder.
+At 6.1 MB, the file is too big to paste into a chat, so it has to sit in the folder.
 
 Claude asks four setup questions first:
 - what the main character wears (with ready-made looks if you don't want to describe one);
@@ -46,7 +46,7 @@ Everything else works before either is connected: ideas, scripts, shot lists, pr
 
 You are installing an existing project from this file. Every project file comes out of the payload, byte for byte, with its checksum verified. Never write a project file from memory or "improve" one while installing. The only edits you make are the ones the setup answers call for (step 7).
 
-Never read past line 415 with Read, cat or grep: the rest is 6.0 MB of payload. Keep a task list, and run the long installs in the background.
+Never read past line 415 with Read, cat or grep: the rest is 6.1 MB of payload. Keep a task list, and run the long installs in the background.
 
 **Shell.** Run every command in the Bash tool (Git Bash), with forward slashes, exactly as written here: `.venv/Scripts/python`, `--props='{"view":"close"}'`. If there is no Bash tool, use PowerShell:
 - write `.venv\Scripts\python`;
@@ -394,15 +394,15 @@ End with how to connect ElevenLabs (get a key, give it to Claude in a new chat) 
 | `.claude/` | 3 | 6 KB | the `/stickman <topic>` command and the `revisor-verificacao` subagent (sonnet) |
 | `(root)` | 10 | 180 KB | `CLAUDE.md` (the project rules), `HOW_TO_USE.md`, `package.json`, `package-lock.json`, Remotion and TypeScript config |
 | `.vscode/` | 1 | 0 KB |  |
-| `@memory/` | 21 | 32 KB | Claude's memory for this project (extracted into the new project's memory folder) |
+| `@memory/` | 22 | 35 KB | Claude's memory for this project (extracted into the new project's memory folder) |
 | `data/` | 47 | 415 KB | idea-engine data: competitor titles, beat sheets, transcripts, patterns, ideas backlog |
-| `docs/` | 21 (8 binary) | 1362 KB | style bible, story blueprint, idea engine, reviewer brief, ElevenLabs and Fish first-connect checklists, channel research with reference frames |
+| `docs/` | 21 (8 binary) | 1367 KB | style bible, story blueprint, idea engine, reviewer brief, ElevenLabs and Fish first-connect checklists, channel research with reference frames |
 | `final/` | 1 | 1 KB | its README (finished videos land here) |
 | `projeto-2/` | 1 | 0 KB |  |
 | `public/` | 5 (1 binary) | 1571 KB | the `pipetest` fixture episode (JSON only), empty `music/` and `sfx/` |
-| `src/` | 69 | 589 KB | the engine (rig, Stickman, actors, cameras, materials, effects), sets, cards, overlays, the episode pipeline and its self-tests |
+| `src/` | 71 | 619 KB | the engine (rig, Stickman, actors, cameras, materials, effects), sets, cards, overlays, the episode pipeline and its self-tests |
 | `thumbnails/` | 7 (3 binary) | 306 KB | config, the prompt template, the 3 reference images, an example brief |
-| `tools/` | 30 | 349 KB | build, episode, QA, review, stills, thumbnail and pack tools; Python sound design, music and idea tools |
+| `tools/` | 30 | 352 KB | build, episode, QA, review, stills, thumbnail and pack tools; Python sound design, music and idea tools |
 
 Left out on purpose:
 - finished videos, episodes, voice-overs and thumbnails (you start with an empty channel);
@@ -415,7 +415,6 @@ To repack after changing the project, run `node tools/pack/pack.mjs`. It rewrite
 
 ~~~~~~~~~~~~~~~~ payload
 @@@@ PAYLOAD BEGIN
-@@@@ DIR episodes
 @@@@ DIR final/archive
 @@@@ DIR final/thumbnails
 @@@@ DIR public/music
@@ -511,7 +510,7 @@ __pycache__/
     "python.terminal.useEnvFile": true
 }
 @@@@ END
-@@@@ FILE @memory/MEMORY.md | text | 3447 | 6f1e927f859b51a0b9cf12a140fd0cca8c71017ce5a835a3389a76860b5a54e6
+@@@@ FILE @memory/MEMORY.md | text | 3752 | 715a8def4ee6b8c4e67237b2ed8ee93f8849bf9cf92d8dbf3aac6e2706962217
 - [IFOLOGY-style channel](project-ifology-style-channel.md) — channel "Fora do Roteiro", logo public/brand/logo.png; IFOLOGY-look hero in a GRAY quarter-zip jacket (since 2026-11-08), flat final/ folder, Remotion+Three engine, Python SFX, ElevenLabs voice
 - [Review-and-fix loop](feedback-review-and-fix-loop.md) — audit + independent reviewer BEFORE final render, then review the render; fix everything; 1080p final
 - [No camera snaps](feedback-no-camera-snaps.md) — never cut between near-identical framings ("a few pixels over"); flow instead; real angle changes are fine
@@ -527,10 +526,11 @@ __pycache__/
 - [/clear entre tarefas](feedback-clear-entre-tarefas.md) — remind the user to /clear when switching to an unrelated task (2026-11-09)
 - [Ritmo rápido](project-ritmo-rapido.md) — house pacing since 2026-11-08: coverage sub-cuts, whip/zoom/smash, 9:16-safe; generators use ritmo='rapido'; NO native vertical render — user cuts 9:16 by hand from the 16:9
 - [Cortes p/ shorts](feedback-cortes-shorts.md) — every long episode needs ≥ 4 self-contained ~90 s segments (episode clips); build writes .srt + cortes.txt
-- [Episódios antigos: encerrado](project-refazer-episodios.md) — only zumbi kept (final build done 2026-11-09); keep /stickman credit stop
+- [Episódios prontos: congelados](project-refazer-episodios.md) — finished episodes are posted at once and never fixed/re-rendered for new rules; zumbi kept; keep /stickman credit stop
 - [Duração ≥ 10 min](feedback-duracao-10min.md) — every long episode ≥ 10:00 voiced (~1,600–1,700 words); audit warns [length]; zumbi stays 9:14 (2026-11-09)
 - [Gancho nos 10 s](feedback-gancho-10s.md) — new episodes only: ≥ 2 hook types, ≥ 6 cuts, punchy move, SFX ≤ 2 s; audit [hook]; zumbi opted out (2026-11-09)
 - [Sem música](feedback-sem-musica.md) — menu-do-corpo episode has NO music (user adds tracks in their editor, 2026-11-09); ask on the next episode if it's a house rule
+- [Fórmula shorts adotada](project-formula-shorts-adotada.md) — 2026-11-09: ≤15 pal./frase, consequência antes do conceito, cético que perde, sem adjetivo fraco; ímã de graves, ciclo de closes, câmera mais móvel, audit de corpo atravessando objeto
 - [ElevenLabs pending](project-elevenlabs-pending.md) — no working ELEVENLABS_API_KEY at setup; run docs/ELEVENLABS_SETUP.md once one is added to .env
 @@@@ END
 @@@@ FILE @memory/feedback-clear-entre-tarefas.md | text | 722 | 7e584f5dadbd6d2b2cb904e5df33a1ad6801098015cf33ef815276606f2f56f8
@@ -772,6 +772,31 @@ As of 2026-11-08, voice no longer depends on Fish Audio at all — it uses the E
 - Only run `docs/FISH_SETUP.md` if the thumbnail mode is switched to `fish`, or the user explicitly asks.
 - Related: [[project-narrator-voice]], [[project-thumbnails-gpt-image]].
 @@@@ END
+@@@@ FILE @memory/project-formula-shorts-adotada.md | text | 2432 | bc49d96ef5ad0ba73f0c942f557dd10f365da43b4856b42486d26e8b0335ea40
+---
+name: project-formula-shorts-adotada
+description: "2026-11-09 the user adopted parts of a viral-shorts script formula for long episodes, plus the \"bass magnet\" camera (cut on heavy SFX)"
+metadata:
+  node_type: memory
+  type: project
+  originSessionId: dcf204f0-052a-4ee9-a82d-af53fda4b0b3
+  modified: 2026-11-09T21:50:07.309Z
+---
+
+On 2026-11-09 the user pasted a viral 3D-shorts script formula (third person, 5 blocks, 60–75 s) and asked to adopt what fits the long "E Se Você" episodes. Adopted:
+- ≤ 15 words per sentence (hard cap); no two sentences in a row with the same opening (ladainha and the climax ×3 are exempt via `repeat: True`); "each sentence is a cut".
+- Facts show the consequence BEFORE the concept (scene → fact → back to "você").
+- A skeptic who doubts early and is silenced by the climax ("right person vs. a doubting world").
+- Weak adjectives banned: incrível, fantástico, surpreendente.
+- Camera: the "bass magnet": strong SFX (boom/farBoom/subdrop) pull or add a sub-cut onto their frame with a camera kick; medium hits (thud/crack/splash/debris) only pull a nearby cut; sub-cuts prefer sentence starts.
+- Cut & close rules + more camera movement (same day, "isso agrega muito em reels"): sub-cut cycle PUNCH → ANGLE → CLOSE (face) → pull-out/crane; reaction faces pull a close; stronger default drift; a tight-beat guard (face toward lens, nobody in the sight line, else angle/wider). Written closes that hide the face are only warned by the audit, never overridden.
+- Review checks bodies through objects (same day, after a head sank into a classroom desk in menu-corpo q10): audit `clip` + a review event per clip; head/chest errors from 2 cm. Finished episodes now carry clip errors that block a rebuild until fixed.
+
+Rejected: third person (it breaks the second-person What-If format), the 5-block structure (that's for shorts; the 17 beats stay), and "a cut on EVERY bass" (bursts would strobe and break [[feedback-no-camera-snaps]]).
+
+**Why:** the user wants to keep refining our own animation and writing instead of switching to another channel's visual style (they dropped that idea the same day).
+**How to apply:** the rules live in docs/story/COLA_ROTEIRO.md ("Voz", "Fatos"), are checked by `episode.mjs check` (non-blocking style warnings), and the camera logic is in src/episode/scene.ts (beatsOf / magnetize). See [[project-ritmo-rapido]] and [[feedback-tom-acido]].
+@@@@ END
 @@@@ FILE @memory/project-ifology-style-channel.md | text | 2620 | 1bda6937ba73a59b68bbce05365955a456eabc4388cdbcdf40e17dfcbd4d5c66
 ---
 name: project-ifology-style-channel
@@ -874,10 +899,10 @@ On 2026-11-08 the user asked to adapt the project to Portuguese. They chose the 
 - If the user asks for something to be in English (a one-off), that's a request for that piece only, not a scope change — check before assuming it's permanent.
 - Related: [[project-narrator-voice]] (the ElevenLabs voices are PT-BR too, picked for this reason).
 @@@@ END
-@@@@ FILE @memory/project-refazer-episodios.md | text | 914 | 735f35eec5189cbe91b60df01e8fd04cef408cb4740b131f38e5bc6a808ee725
+@@@@ FILE @memory/project-refazer-episodios.md | text | 1229 | 9747cc39815029af834cc877b21df3bda31a79b8dbbbe28e904856a7bd782ac0
 ---
 name: project-refazer-episodios
-description: Old-episode remakes are closed — zumbi is the only episode kept (finished 2026-11-09); crush discarded 2026-11-09; keep the /stickman credit stop
+description: Finished episodes are posted as soon as they're done and never touched again (no fixes for new audit checks); zumbi kept; keep the /stickman credit stop
 metadata:
   type: project
 ---
@@ -887,6 +912,7 @@ Only **invasao-zumbi** is kept. quem-tem-crush was discarded as a test on 2026-1
 - **Done 2026-11-09 02:03:** zumbi's re-voiced final build (9:14, −14.1 LUFS, 6 cortes + .srt) is in `final/`; the old 8:58 cut sits in `final/archive/`. `out/invasao-zumbi/` and `out/audio/invasao-zumbi/` (~900 MB) are disposable once the user approves the video.
 - `/stickman` must keep its one stop before spending voice credits (the user said "não tire isso").
 - Voice-cost lesson: a section spans many shots, so changing one line re-voices the whole section. When re-voicing, show the user a full credit option and a lean one.
+- **Finished = posted = frozen (user, 2026-11-09):** episodes go up as soon as they're ready, so never spend effort fixing or re-rendering a finished one (menu-corpo, zumbi) when a new rule or audit check flags it — e.g. the new `clip` errors in both. New engine/audit rules apply to the next episodes only.
 @@@@ END
 @@@@ FILE @memory/project-ritmo-rapido.md | text | 1785 | fe899e7044d538dc79ad37f634ae2fb929b193e711796b4b8981b5e11f5d8f0f
 ---
@@ -944,7 +970,7 @@ The ElevenLabs API key `tools/episode.mjs` uses lives in `D:\stickman-2\.env` as
 - To check the real remaining credit balance, ask the user to look at elevenlabs.io/app/subscription, or to create/widen a key with `user_read`.
 - To measure actual cost of a call, use `/v1/usage/character-stats?start_unix=<ms>&end_unix=<ms>&include_live_requests=true` and diff before/after — this works with the current key and is how the ~0.4 credits/char rate for eleven_v4 was measured (see [[project-narrator-voice]]).
 @@@@ END
-@@@@ FILE CLAUDE.md | text-crlf | 13351 | c347b35aaf6c21bbd55915184bf851a14eac194b67ca5db0ce980c0fb9681755
+@@@@ FILE CLAUDE.md | text-crlf | 13697 | 07464d6a80aee9e66f6a269d70cb35236a4bd37b6b4071ba4e421267272db37d
 # 3D Stickman Long: production system
 
 > **ElevenLabs is not connected yet.** This copy was set up from `project instructions.md` without a working `ELEVENLABS_API_KEY`. The first time one is added to `.env`, run `docs/ELEVENLABS_SETUP.md` before any voice work; its last step deletes this note. Until then, take episodes as far as the draft preview. (Fish Audio is separate and optional — only needed for `fish`-mode thumbnails; see `docs/FISH_SETUP.md`.)
@@ -1021,6 +1047,7 @@ These are bugs we already hit. Don't reintroduce them.
 - **Additive volumes tint ink.** An additive mesh between the lens and a character (the void-stage beam with the camera inside it) washes the black head navy. The void beam now fades when the camera enters it; any new glow volume needs the same guard.
 - **Set RNG and negative seeds:** JS `%` keeps the sign. `rng()` in `src/sets/kit.tsx` normalises it now; without that, blocks at −x got undefined colours (white trees and houses).
 - **Cameras behind walls:** a push-in or a camera "in front of" a character facing a wall can start inside or behind the wall and render a few blank frames that a mid-shot still never shows. Interior sets declare `room` now, so the engine pulls the camera back in and the audit warns. Give new interior sets a `room` too.
+- **Bodies through furniture:** the audit's `clip` check tests bodies against `SetDef.solids` (indoor furniture recorded by `Batch`) and furniture props. A new indoor set declares `solids` (its `Batch` builders, plus `src/sets/solids.ts` stand-ins for JSX furniture) and marks bedding/cushions `soft: true`, or bodies pass through it unchecked.
 - **Stops:** a run must brake into a stop (the stride shrinks over the last 0.3 s). Freezing the gait mid-stride leaves a foot in the air.
 - **Swaps:** `ids[0]` is the swapper (it blinks). Both actors trade position and facing unless `keepPaths`. Merged keyframe tracks must be time-sorted (`track()` sorts them now), or injected blink keys override later faces.
 - **Gaits replace the pose while moving.** A crouched hero riding a basket stood up under `glide`. Use `carried` for anyone being moved: riders, a seated flight.
@@ -11449,7 +11476,7 @@ Benchmark de roteiro (só texto; nenhum episódio, voz ou crédito). Escrito às
 - **Escalada (7):** o risco da cidade só chega na crise. Falta um degrau "público" antes, como a imprensa ou a polícia farejando a pirâmide no bloco 9.
 - **Medido:** 1.786 palavras faladas (~10:12 a 175 ppm). A frase média tem 5,6 palavras (meta da cola: 8–9) e 64% têm ≤ 6 (meta: 35–45%), então o texto está mais picado que o pedido. São 23 falas de personagem (meta: 25–32), todas com ≤ 8 palavras. Nenhuma palavra banida.
 @@@@ END
-@@@@ FILE docs/pipeline/EPISODE.md | text-crlf | 20406 | af06d6f8458c2ba60c41b5325015fbb44b4390dc1471f616b540bffa6a4f5e06
+@@@@ FILE docs/pipeline/EPISODE.md | text-crlf | 23068 | d72071053545aee5036812acadacab3e27b0a73fe3702691a4125462d11d718e
 # Episode pipeline (moved out of CLAUDE.md on 2026-11-09 to cut per-message tokens; text unchanged)
 
 Read this whole file before any narrated-episode work (`/stickman`, a script, a shot list, voice, review, build or thumbnail). The engine cheat sheet and hard-won rules stay in `CLAUDE.md`.
@@ -11474,6 +11501,8 @@ All files live in `public/episodes/<slug>/`.
      - `cut` takes `flow`, `cut`, `flash`, `dip` and the two-sided transitions `whip`, `zoom` and `smash` (end of the outgoing shot + start of this one, with automatic sound);
      - `coverage: fast | calm | off` splits one shot into automatic sub-cuts on word starts (punch-in, then new angles; explicit `pos`/`path` cameras punch in on their look point from ≥ 3.2 m and otherwise orbit ~28° around it; `over` cameras get none; set `coverage: 'off'` where a sub-cut crops the action or shows a nape); `camera.beats` places them by hand. **House pacing:** pass `ritmo='rapido'` to `episode()` in the generator (`_modelo.py` does): coverage `fast` everywhere it applies and whip/zoom on set changes. Use `calm` in the dilemma, `smash` by hand on reveals. the `estilo novo` block at the end of `invasao_zumbi.py` (`apply_ritmo`, hand-set `smash` cuts, `word` highlights, `clips`) is the reference;
      - `sfx` cues use the names in `tools/sfx/episode_audio.py` (LIB);
+     - **Cut & close rules (2026-11-09, `scene.ts` above `beatsOf`):** sub-cuts cycle PUNCH (one size tighter, push in) → ANGLE (+38°, higher, orbit) → CLOSE (a face close, two sizes tighter, slow push) → back to the written size from the far side (pull-out / crane down), so no two sub-shots share a size or angle and every sub-shot moves. A reaction face key (`shocked`, `scared`, `furious`, `awe`, `confused`, …) on a camera target pulls a cut onto it and lands on a CLOSE. A group shot's CLOSE frames its first target from the written angle. **Tight-beat guard:** every sub-cut that is a PUNCH, a CLOSE or still a close size is checked at its start, middle and end: the target's face must point at the lens (≤ 45°, and not bowed > 27°) and no other head may sit on the sight line or near the lens; other angles, a lower camera, the ANGLE beat and then one size wider are tried in turn. The written framing (sub-cut 0) is never overridden, but the audit warns `close on X but the face is turned away` — fix those by turning the actor, lifting the head or widening the shot;
+     - **Bass magnet (2026-11-09):** heavy `sfx` steer the sub-cuts. Strong hits (`boom`, `farBoom`, `subdrop`) put a cut on their frame (landing on a PUNCH or a CLOSE) (an existing sub-cut within 0.6 s moves there, else one is added) with a short camera kick; medium hits (`thud`, `crack`, `splash`, `debris`) only pull a sub-cut that is already within 0.4 s. Hits < 0.7 s from a shot edge or < 0.9 s after another hit cut are ignored, and `coverage: 'off'` shots never move. So to cut on a bass, place the `sfx` on the word — don't add `camera.beats` for it. Sub-cuts also prefer **sentence starts** (read from the `vo` punctuation), so each sentence tends to open on a new framing;
      - `music` holds mood cues per shot index: curious, wonder, tension, action, sad, none; or `{file}` for your own track.
    - **Word cues:** any effect time can be `"@word"`, `"@word#2"` or `"@word+0.2"` instead of seconds. That covers `fx.swap.t`, overlay `at`, `sfx[].t`, actor `poses[].t`, `faces[].t` and `path[].t`, prop `follow[].t` and `ignite`, `camera.moveAt` and `camera.path[].t`, and card spec values. Cues resolve against the aligned narration, so everything lands on the spoken word and survives re-voicing.
      - Fast repeats ("Blink. Blink.") now resolve to two distinct words with their own times (ElevenLabs' character alignment, not transcription) — `"@blink#2"` works. This used to need an offset workaround (`"@blink+0.75"`) back when alignment came from Whisper; not needed anymore.
@@ -11517,6 +11546,8 @@ All files live in `public/episodes/<slug>/`.
       - forced jump cuts, flow continuity, and unresolved word cues (cards included);
       - 9:16 safety (`vertical`): a camera target's head outside the centre column a vertical cut keeps;
       - a camera outside the room walls. Interior sets declare `room`, and the engine pulls such a camera back in along its sight line, but the framing is then tighter than written.
+      - **bodies through objects (`clip`, 2026-11-09):** every actor's head, chest, hips, hands, forearms, elbows, thighs, knees, shins and ankles (as spheres sized from the rig) against the indoor sets' furniture (`SetDef.solids`, recorded by `Batch`) and the shot's furniture-like props (`table`, `roundTable`, `desk`, `chair`, `bed`, `car`, `box`/`crate`, `pillar`, `wall`). Head/chest 2 cm past contact is an error (the head fills the frame), limbs from 6 cm; 3 cm+ limb clips are warnings. Resting is not a clip (hips/legs on a seat, feet on a crate), and bedding/cushions are soft (`soft: true` in a builder: mattress, duvet, pillows, sofa seat). Each clip also becomes a review `event` with 3 frames for the reviewer. Outdoor sets have no solids yet; the reviewer checks those by eye.
+      - a written close that hides the face (bowed head, back or profile to the lens).
    2. **Cheap pre-check first:** `node tools/sheet.mjs <slug>` tiles one still per key shot (opening, each new set, the hook; ~20 s) into `out/lab/<slug>_sheet.jpg`; or pass ids (`sheet.mjs <slug> c8,r6`). Look at it and fix the obvious (sunk or floating feet, empty frames, wrong set, unreadable text) before the full review; every fix here saves a reviewer round.
 
       Then `node tools/review.mjs <slug>` renders labelled review frames into `out/<slug>/review/`:
@@ -12033,7 +12064,7 @@ Cada um tem um título, um dispositivo de HUD, uma tática de voz interior e uma
 9. **COMECEI 9. TERMINEI 0.**: uma estante de hobbies abandonados; a voz diz "você não é um finalizador"; o contador vira TERMINEI 1.
 10. **SILÊNCIO**: HUD "NOTIFICAÇÕES: 999+ / CONVERSAS REAIS: 0"; solidão dentro de um grupo. Termina com uma ligação em vez de uma mensagem de texto.
 @@@@ END
-@@@@ FILE docs/review/REVIEWER_BRIEF.md | text-crlf | 4759 | a519033037ff42c2f9fa897394df86ade970382941d99289fa18ed262b86dc57
+@@@@ FILE docs/review/REVIEWER_BRIEF.md | text-crlf | 5251 | dbeffdc76801346992e06b4b716e01fdce55d8be6898081e699964b6de1c3368
 # Independent reviewer brief
 
 You are the **second reviewer** for an animated episode. You review it **before the final render**.
@@ -12062,12 +12093,14 @@ All files are in `out/<slug>/review/`.
 1. Open **every** event image and check each frame against its `expect` line. Typical failures:
    - two name tags on one spot (characters overlapping);
    - a dashed marker with no character on it;
-   - the wrong character doing the action.
+   - the wrong character doing the action;
+   - **`clip` events:** a body part passing THROUGH furniture or a prop (a hand inside a box, legs inside a sofa, a head sunk into a desk or a book). The audit measured it; you judge whether it shows. Visible = a defect (move the actor/prop, change the pose, re-seat them). Hidden by the angle (behind the body, off-frame) = say so and pass it.
 2. Open **every** shot strip (`shots[].strip`) and compare the pictures with the narration (`vo`, timed by `words`). Open a `full` frame when a detail is too small to judge. Ask:
    - Does the frame show what the line says?
    - Is the right person on screen?
    - Is the speaker visible when they talk?
    - Do the numbers on cards and overlays match the narration?
+   - Does any body pass through a desk, chair, sofa, bed, table or prop, even where the audit didn't flag it (outdoor sets aren't measured yet)?
 3. Look for these problems in every frame:
    - A character cut off by the frame edge, tiny, or hidden behind an object.
    - A character floating, sinking into the floor, or walking through furniture.
@@ -12108,7 +12141,7 @@ End with:
 
 Reply with the counts and every must-fix row.
 @@@@ END
-@@@@ FILE docs/story/COLA_ROTEIRO.md | text | 19124 | 8a4f3aa5a69b6bdd0f237ee659d1aafa8c26f88a46a6b6aeb2bd6f883d429a08
+@@@@ FILE docs/story/COLA_ROTEIRO.md | text | 21125 | 5c9fc66bec139410f307ee5c3b6d2d7e85c2e7166868221900db798163039473
 # COLA DE ROTEIRO — episódio "E Se" de 10 min (2ª pessoa, PT-BR)
 
 Resumo de `STORY_BLUEPRINT.md`. **Leia só isto ao escrever.** Abra o blueprint apenas na seção indicada (§) quando precisar do detalhe ou de exemplos. Originalidade: copie estruturas, nunca falas, piadas, personagens ou bordões da IFOLOGY (§6.7).
@@ -12206,11 +12239,15 @@ O audit avisa `[hook]` quando faltar o mínimo de cortes, o SFX cedo ou o movime
 
 ## Voz
 - 2ª pessoa, presente. Leitura de 2º–4º ano. Nomeie só 1–2 personagens.
-- Frase média 8–9 palavras; 35–45% ≤ 6; < 5% ≥ 20. Pico de ação: frases de 2–4 palavras. Comece por sujeito concreto ("Você…", "Sua mãe…"). PT-BR: priorize tempo de fala sobre contagem.
+- **Teto de 15 palavras por frase** (2026-11-09, da fórmula de shorts virais). Frase de tensão: curta, staccato. Frase de revelação: pode respirar, mas ainda ≤ 15. O `check` avisa cada frase acima do teto.
+- **Nunca duas frases seguidas com a mesma estrutura** (mesmas 2 primeiras palavras). Exceção: a ladainha e a repetição ×3 do clímax repetem de propósito; marque esses planos com `repeat: True` no shot. O `check` avisa.
+- **Cada frase é um corte:** escreva pensando que cada frase abre num enquadramento novo. Os sub-cortes automáticos já preferem o início de frase.
+- Frase média 8–9 palavras; 35–45% ≤ 6; nenhuma > 15. Pico de ação: frases de 2–4 palavras. Comece por sujeito concreto ("Você…", "Sua mãe…"). PT-BR: priorize tempo de fala sobre contagem.
 - **Comédia:** **12–20 falas de personagem/10 min**, todas com ≤ 8 palavras e todas reação ou piada (testemunha, piada seca, réplica impassível); **nenhuma explica o enredo**, quem explica é o narrador. Menos falas e mais fortes: meta alta empurra fala fraca (benchmark 2026-11-09, `docs/benchmark/comprar-amor/`). Piada a cada ≤ 60 s antes da crise (o aparte do narrador conta); nunca no dilema. Isto substitui o "25–32 falas" do blueprint. Ferramentas: duplo tempo impassível, piadinha de testemunha, aparte do narrador (1–3), lista de três com virada, piada recorrente, subestimação no clímax.
-- **Diálogo é reação, não exposição.** Mãe 2–4 falas (nota o custo primeiro); amigo 3–5; cético 1–2; vilão frases curtas, ≤ 3 por fala.
+- **O cético que perde** (2026-11-09): um personagem duvida de você cedo (até o teste de prova), volta a duvidar em 1–2 momentos e é calado pelo clímax, de preferência só com uma reação, sem fala. É a tensão "alguém certo × um mundo que duvida", espalhada pelos 10 min. Conta como 1 plantio pago no clímax.
+- **Diálogo é reação, não exposição.** Mãe 2–4 falas (nota o custo primeiro); amigo 3–5; cético 2–3 (o que perde); vilão frases curtas, ≤ 3 por fala.
 - **Transições:** use o banco da §6.6 e nunca repita uma dentro do episódio.
-- **Banidos (busque cada um):** "em um mundo onde", "de repente", "literalmente" (fora de diálogo), "jornada", "tudo mudou", "você não vai acreditar", "no final das contas", "mas espera, tem mais", "embarca", "desperta/libera", "insano/épico" (> 1×). Lista completa e assinaturas da IFOLOGY proibidas (estranho de casaco cinza, organização, slogan "IF"): §6.7. Sem marcas nem celebridades.
+- **Banidos (o `check` busca):** "incrível", "fantástico", "surpreendente" (adjetivo fraco: mostre, não qualifique), "em um mundo onde", "de repente", "literalmente" (fora de diálogo), "jornada", "tudo mudou", "você não vai acreditar", "no final das contas", "mas espera, tem mais", "embarca", "desperta/libera", "insano/épico" (> 1×). Lista completa e assinaturas da IFOLOGY proibidas (estranho de casaco cinza, organização, slogan "IF"): §6.7. Sem marcas nem celebridades.
 
 ## Ladainha: informação nova a cada ≤ 6 s (benchmark 2026-11-09)
 O que mais segura o espectador é uma novidade a cada poucos segundos, e não a quantidade de falas. A ladainha é uma lista de itens curtos, **um a cada 4–6 s**, cada um com duas frases:
@@ -12230,8 +12267,9 @@ O que mais segura o espectador é uma novidade a cada poucos segundos, e não a 
 ## Fatos científicos reais (benchmark 2026-11-09)
 Um fato real verificável dá credibilidade à fantasia e deixa o perigo palpável. No benchmark, o concorrente tinha ~9 fatos e nós só 1.
 - **≥ 6 por 10 min**, mais ou menos 1 a cada 60–90 s até a crise, e **1 no clímax**. Nenhum no dilema.
-- **Preso à cena, nunca decorativo.** Cada fato explica por que o poder funciona, mede uma vantagem ou deixa um custo/perigo concreto. Formato: teaser → fato com número → 1 frase que volta pro "você".
-  > "Quando um cachorro olha nos olhos do dono, os dois cérebros soltam ocitocina. O seu cachorro de dois reais olha pra você o dia inteiro."
+- **Preso à cena, nunca decorativo.** Cada fato explica por que o poder funciona, mede uma vantagem ou deixa um custo/perigo concreto.
+- **Consequência antes do conceito** (2026-11-09): o espectador vê o efeito na cena primeiro e só depois ganha o porquê. Formato: **cena estranha → fato com número que explica → 1 frase que volta pro "você"**. Nada de abrir com "sabia que…".
+  > "O seu cachorro de dois reais não tira o olho de você. O dia inteiro. Quando um cachorro olha nos olhos do dono, os dois cérebros soltam ocitocina. Ele está viciado em você."
 - **No clímax, o fato torna o perigo físico:** "Cair de seis metros é bater num muro a quarenta quilômetros por hora."
 - **Fontes:** corpo/cérebro, animais (a âncora conta como 1), física, dinheiro/lei, história.
 - **Só fato sólido.** Registre cada um na ficha de fatos do `script_notes.md` com a fonte. Arredonde para baixo e use "cerca de" ou "menos de". Mito de internet não entra ("só usamos dez por cento do cérebro"), nem conselho médico. Física e contas: confira 2×.
@@ -12253,7 +12291,7 @@ Um fato real verificável dá credibilidade à fantasia e deixa o perigo palpáv
 - Gate mecânico: `node tools/episode.mjs check <slug>`.
 
 ## Visual por batida (resumo; tabela completa §7)
-~20 cortes/min (planos de ~3 s); montagem 27–44 (na ladainha, 1 plano por item); **todo pico ou número ganha palavra-destaque (`word`) + SFX curto**; cards 8–15; clímax 10–15. Card ≤ 6 s, plano 3D ≤ 8 s. **8–14 cards/10 min**, ≥ 1 tableau congelado ou câmera lenta, 1 plano de elenco/multidão. Título: `title` com `bg:false` sobre plano aberto. Números: `compare`/`stat`/`speed`/`distance`. Regras: card `rules` antes de cada teste. Crise → clímax: `stopwatch` com `persist` até o fim. Clímax sem cards completos. CTA: card `title` com P1/P2.
+**Closes automáticos:** os sub-cortes alternam aproxima → novo ângulo → close de rosto → volta, sempre em movimento. Rosto de reação (`shocked`, `scared`, `furious`, `awe`…) no alvo da câmera ganha corte e close na hora; pra um close de reação, ponha a cara na palavra. Close escrito à mão precisa mostrar o rosto (nada de cabeça curvada ou de costas): o audit avisa. **Corte no grave:** todo impacto forte (`boom`, `farBoom`, `subdrop`) posto no `sfx` vira corte com tranco de câmera automaticamente; pra cortar num grave, ponha o som na palavra. ~20 cortes/min (planos de ~3 s); montagem 27–44 (na ladainha, 1 plano por item); **todo pico ou número ganha palavra-destaque (`word`) + SFX curto**; cards 8–15; clímax 10–15. Card ≤ 6 s, plano 3D ≤ 8 s. **8–14 cards/10 min**, ≥ 1 tableau congelado ou câmera lenta, 1 plano de elenco/multidão. Título: `title` com `bg:false` sobre plano aberto. Números: `compare`/`stat`/`speed`/`distance`. Regras: card `rules` antes de cada teste. Crise → clímax: `stopwatch` com `persist` até o fim. Clímax sem cards completos. CTA: card `title` com P1/P2.
 
 **Ritmo da casa (2026-11-08):** `episode(..., ritmo='rapido')` liga sub-cortes automáticos (`coverage: 'fast'`, ~1 corte a cada 1,6 s na palavra) e whip/zoom alternados em toda troca de set. Dilema: `coverage='calm'`; tableau congelado: `'off'`. **Smash** (`cut='smash'`) à mão na revelação ou na piada seca. Meta: ~30 cortes/min fora do dilema.
 **Pensado pra 9:16:** quem fala ou age fica na faixa central (o audit avisa `vertical`); dois personagens longe um do outro = dois planos, não um aberto.
@@ -12277,6 +12315,7 @@ O usuário corta à mão, do 16:9, shorts de **~90 s** para YouTube Shorts, Reel
 - [ ] ≥ 6 fatos científicos reais presos à cena (1 a cada 60–90 s, 1 no clímax, 0 no dilema), cada um com fonte na ficha de fatos
 - [ ] Viradas nas janelas; relógio vindo de regra; dilema binário; regra tema vence; custo pago; objeto perdido; frase de mudança
 - [ ] 12–20 falas de reação/piada (≤ 8 pal., nenhuma explicando enredo); piada ≤ 60 s; estatística de frase; sem banidos
+- [ ] Nenhuma frase > 15 palavras; nada de duas frases seguidas com a mesma abertura (fora `repeat`); cada fato mostra a consequência antes do conceito; cético plantado cedo e calado no clímax
 - [ ] Ladainha nas vantagens: 12–16 itens, 1 a cada 4–6 s, escala crescente, quebra a cada 3; número em `word` + SFX
 - [ ] ≥ 4 trechos de ~90 s marcados em `clips`, cada um com abertura fria e final com soco
 - [ ] Tom ácido: sarcasmo/maldade a cada 30–60 s, nada no dilema, família interesseira, limite monetizável respeitado
@@ -22769,7 +22808,7 @@ export const ShotView: React.FC<{
   );
 };
 @@@@ END
-@@@@ FILE src/episode/audit.ts | text-crlf | 25197 | e53cc1bafe1c90beddaff9b1a96d0dc27370346a67766d9a8bbb5df5892c7c97
+@@@@ FILE src/episode/audit.ts | text-crlf | 28225 | fe0f40fea875a5d37ae781c0dde95be60c06293936b757547c14b6d7a6456e6e
 // Pre-render scene audit: walks every frame of every 3D shot through evalShot (the same code the
 // renderer uses) and checks numbers, not pictures. Run: node tools/qa.cjs audit <slug>
 import * as THREE from 'three';
@@ -22779,10 +22818,13 @@ import { POSES } from '../engine/rig';
 import type { CastMember, Episode, Pose, Shot3D, Timing } from '../types';
 import { castOf } from './resolve';
 import { cue } from './cue';
-import { beatCam, beatsOf, evalShot, flowInfo, framingDelta, type ShotCtx } from './scene';
+import { beatsOf, evalShot, flowInfo, framingDelta, type ShotCtx } from './scene';
+import type { CameraSpec, Vec3 } from '../types';
+import { clipsOf, propSolids, setSolids } from './collide';
+import { SETS } from '../sets';
 
 export type Finding = { sev: 'error' | 'warn'; shot: number; id?: string; t?: number; check: string; msg: string };
-export type AuditEvent = { shot: number; id?: string; t: number; kind: 'swap' | 'jump' | 'flow' | 'cut'; what: string };
+export type AuditEvent = { shot: number; id?: string; t: number; kind: 'swap' | 'jump' | 'flow' | 'cut' | 'clip'; what: string };
 export type AuditReport = { findings: Finding[]; events: AuditEvent[]; flows: { shot: number; on: boolean; reason: string; shift?: number; angle?: number; scale?: number }[]; frames: number };
 
 const W = 1920, H = 1080;
@@ -22931,12 +22973,16 @@ export function auditEpisode(ep: Episode, timing: Timing): AuditReport {
     let prevStates: Record<string, ActorState> | null = null;
     let prevCam: CamState | null = null;
     let prevBeat = 0;
-    const targets = (() => {
-      const tg = s3.camera?.target;
+    // the beat's own targets: a CLOSE sub-cut of a group shot frames only its first actor, on purpose
+    const targetsOf = (spec: CameraSpec | undefined) => {
+      const tg = spec?.target;
       return typeof tg === 'string' ? [tg] : Array.isArray(tg) && typeof tg[0] === 'string' ? (tg as string[]) : [];
-    })();
+    };
     // per actor: seconds spent moving while off-screen, before their last on-screen frame (exits are fine)
     const hidden: Record<string, { moving: number; lastSeen: number; from: number; to: number }[]> = {};
+    // clip: body parts inside furniture / props (worst depth per actor+part over the shot, every 2nd frame)
+    const furniture = setSolids(SETS[s3.set] ? s3.set : 'suburb', s3.variant ?? 0);
+    const clipWorst = new Map<string, { id: string; part: string; depth: number; t: number; what: string; size: string; at: Vec3 }>();
     for (let f = 0; f < n; f++) {
       const t = f / fps;
       const sc = evalShot(ctx, t, cast, prev);
@@ -22973,13 +23019,18 @@ export function auditEpisode(ep: Episode, timing: Timing): AuditReport {
         if (sc.cam.pos.distanceTo(s.anchors.head) < 0.42 * s.scale) add({ sev: 'error', shot: i, id: sid, t, check: 'camera', msg: `camera is inside ${s.spec.id}'s head at t=${t.toFixed(2)} s` }, `${i}|camin|${s.spec.id}`);
       }
       // framing of camera targets
-      for (const id of targets) {
+      for (const id of targetsOf(sc.beatSpec)) {
         const s = sc.byId[id];
         if (!s) continue;
         const head = project(s.anchors.head, sc.cam, W, H), feet = project(s.anchors.feet, sc.cam, W, H);
         if (!head.visible) add({ sev: 'error', shot: i, id: sid, t, check: 'framing', msg: `camera target ${id} is behind the camera at t=${t.toFixed(2)} s` }, `${i}|behind|${id}`);
         else if (!inFrame(head, 0.0)) add({ sev: 'error', shot: i, id: sid, t, check: 'framing', msg: `camera target ${id}'s head leaves the frame at t=${t.toFixed(2)} s` }, `${i}|headout|${id}`);
-        const shotSize = beatCam(s3.camera, sc.beat)?.shot || 'medium';
+        const shotSize = sc.beatSpec?.shot || 'medium';
+        // a close that doesn't show the face (bowed head, back or profile to the lens) reads as a black disc
+        if (['close', 'xclose'].includes(shotSize) && head.visible && id === targetsOf(sc.beatSpec)[0]) {
+          const face = new THREE.Vector3(0, 0, 1).transformDirection(s.bones.head);
+          if (face.dot(sc.cam.pos.clone().sub(s.anchors.head).normalize()) < 0.5) add({ sev: 'warn', shot: i, id: sid, t, check: 'framing', msg: `${shotSize} on ${id} but the face is turned away from the lens at t=${t.toFixed(2)} s (sub-cut ${sc.beat}) (bowed head / back / profile): it reads as a black disc — change the angle, lift the head or widen the shot` }, `${i}|faceaway|${id}`);
+        }
         // 9:16 safety: the subject's head must sit inside the centre column a vertical cut keeps (608 of 1920 px)
         const band = (H * 9) / 16 / 2;
         if (head.visible && inFrame(head, 0.0) && Math.abs(head.x - W / 2) > band) add({ sev: 'warn', shot: i, id: sid, t, check: 'vertical', msg: `${id}'s head is outside the 9:16 centre column at t=${t.toFixed(2)} s (x=${head.x.toFixed(0)} px) — a vertical cut loses them` }, `${i}|vert|${id}`);
@@ -23035,7 +23086,27 @@ export function auditEpisode(ep: Episode, timing: Timing): AuditReport {
       for (const s of live) prevStates[s.spec.id] = s;
       prevCam = sc.cam;
       prevBeat = sc.beat;
+      if (f % 2 === 0) {
+        const solids = [...furniture, ...propSolids(sc.props, t)];
+        for (const st of live)
+          for (const c of clipsOf(st, solids)) {
+            const k = `${st.spec.id}|${c.part}`, w = clipWorst.get(k);
+            if (!w || c.depth > w.depth) clipWorst.set(k, { id: st.spec.id, part: c.part, depth: c.depth, t, what: c.solid.what, size: c.solid.size, at: c.solid.at });
+          }
+      }
     }
+    // one finding per actor+part. Head/chest fill the frame, so 2 cm past contact is already visible (error);
+    // a limb is an error from 6 cm; shallower ones are warnings to check in the review frames
+    // (under 3 cm a limb clip doesn't show on screen, under 2 cm a head/chest one: not reported)
+    const shown = [...clipWorst.values()].filter(w => w.depth >= (/^(head|chest)/.test(w.part) ? 0.02 : 0.03));
+    shown.forEach(w => add({
+      sev: w.depth > (/^(head|chest)/.test(w.part) ? 0.02 : 0.06) ? 'error' : 'warn', shot: i, id: sid, t: w.t, check: 'clip',
+      msg: `${w.id}'s ${w.part} goes ${(w.depth * 100).toFixed(0)} cm into ${w.what} (${w.size} m at [${w.at.join(', ')}]) at t=${w.t.toFixed(2)} s — move the actor/prop, change the pose, or seat them properly`,
+    }, `${i}|clip|${w.id}|${w.part}`));
+    // one review event per actor (their deepest clip), so review.mjs renders the moment for the reviewer
+    const perActor = new Map<string, (typeof shown)[number]>();
+    shown.forEach(w => { const b2 = perActor.get(w.id); if (!b2 || w.depth > b2.depth) perActor.set(w.id, w); });
+    perActor.forEach(w => events.push({ shot: i, id: sid, t: w.t, kind: 'clip', what: `${w.id}'s ${w.part} ${(w.depth * 100).toFixed(0)} cm into ${w.what}` }));
     // something should be visible in a shot that has characters
     const mid = evalShot(ctx, ctx.dur * 0.6, cast, prev);
     if (mid.states.length && !mid.states.some(s => inFrame(project(s.anchors.head, mid.cam, W, H), 0.0)))
@@ -23096,7 +23167,7 @@ export function formatReport(r: AuditReport, slug: string) {
 
 export { THREE };
 @@@@ END
-@@@@ FILE src/episode/camsolve.ts | text-crlf | 6902 | 9fd3920714273a6340e4ba2c4a50030c3ed4119d583f3e6bd0cc32ea55204030
+@@@@ FILE src/episode/camsolve.ts | text-crlf | 7144 | 6fe627c21af0e185f791273de4e18006b862c9a1043008b30ad7a9b64c95a99f
 // Camera solver: turns a high-level CameraSpec ("close on hero, 30° to his left, push in")
 // into a CamState for time t, re-framing every frame so moving actors stay framed.
 import * as THREE from 'three';
@@ -23188,7 +23259,9 @@ export function solveCamera(
   const look = focus.clone();
 
   switch (s.move || 'drift') {
-    case 'drift': yaw += 5 * ke * amt; dist *= 1 - 0.05 * ke * amt; break;
+    // raised 2026-11-09 ("move the camera more"): the default drift is a visible arc, plus a push on medium
+    // and tighter sizes only (a bigger push crops the feet of a full/wide shot). Written moves keep their size.
+    case 'drift': yaw += 10 * ke * amt; dist *= 1 - (h < 2 ? 0.12 : 0.05) * ke * amt; break;
     case 'pushIn': dist *= 1 - 0.22 * ke * amt; break;
     case 'pullOut': dist *= 0.82 + 0.25 * ke * amt; break;
     case 'orbitL': yaw -= 28 * ke * amt; break;
@@ -23227,8 +23300,168 @@ function finish(c: CamState, s: CameraSpec, t: number, amt: number): CamState {
   if (s.move === 'shake') return shake(c, t, 0.03 * amt, 16, 3);
   if (s.move === 'handheld') return shake(c, t, 0.012 * amt, 3.5, 7);
   // every shot breathes a little, like IFOLOGY's constantly moving camera
-  const b = 0.004;
+  const b = 0.007;
   return { ...c, pos: c.pos.clone().add(new THREE.Vector3(noise1(t * 0.7, 1) * b, noise1(t * 0.6, 2) * b, 0)) };
+}
+@@@@ END
+@@@@ FILE src/episode/collide.ts | text | 8916 | cc66d5974d890a186a0bc6ad8dfd19728aed01e0c1ca78a2df857e98df1dbc9e
+// Clip audit: does any part of a character go INTO a solid object (set furniture or a scene prop)?
+// Sets record their solid primitives through Batch (sets/roomkit.ts, SetDef.solids); free-standing props
+// use the stand-ins in sets/solids.ts. Bodies are spheres (head, chest, hips, hands, forearms, elbows, thighs,
+// knees, shins, ankles) and the audit measures how far each primitive cuts into each sphere, in metres — so a
+// 4 cm desk top through a head counts. Light contact (a hand on a desk, thighs on a seat) stays under tolerance.
+import * as THREE from 'three';
+import { DIM, type ActorState } from '../engine/actor';
+import { SETS } from '../sets';
+import { Batch, collectSolids, type SolidPrim } from '../sets/roomkit';
+import { solidBed, solidCar, solidChair, solidTable } from '../sets/solids';
+import type { PropSpec, Vec3 } from '../types';
+
+export type Solid = { shape: SolidPrim['shape']; m: THREE.Matrix4; inv: THREE.Matrix4; s: THREE.Vector3; min: THREE.Vector3; max: THREE.Vector3; what: string; size: string; at: Vec3 };
+
+const UNIT: Record<Solid['shape'], [number, number, number]> = { box: [0.5, 0.5, 0.5], cyl: [1, 0.5, 1], sphere: [1, 1, 1] };
+
+function toSolid(p: SolidPrim, what: string): Solid {
+  const pos = new THREE.Vector3(), q = new THREE.Quaternion(), s = new THREE.Vector3();
+  p.m.decompose(pos, q, s);
+  const [ux, uy, uz] = UNIT[p.shape];
+  const box = new THREE.Box3();
+  for (const x of [-ux, ux]) for (const y of [-uy, uy]) for (const z of [-uz, uz]) box.expandByPoint(new THREE.Vector3(x, y, z).applyMatrix4(p.m));
+  const dims = [2 * ux * Math.abs(s.x), 2 * uy * Math.abs(s.y), 2 * uz * Math.abs(s.z)];
+  return {
+    shape: p.shape, m: p.m, inv: p.m.clone().invert(), s: new THREE.Vector3(Math.abs(s.x), Math.abs(s.y), Math.abs(s.z)), min: box.min, max: box.max,
+    what, size: dims.map(v => v.toFixed(2)).join('×'), at: [+pos.x.toFixed(2), +pos.y.toFixed(2), +pos.z.toFixed(2)],
+  };
+}
+
+/** Depth (m) of a world point inside a solid; ≤ 0 = outside. */
+export function depthIn(sol: Solid, p: THREE.Vector3): number {
+  if (p.x < sol.min.x || p.y < sol.min.y || p.z < sol.min.z || p.x > sol.max.x || p.y > sol.max.y || p.z > sol.max.z) return -1;
+  const q = p.clone().applyMatrix4(sol.inv), s = sol.s;
+  if (sol.shape === 'box') return Math.min((0.5 - Math.abs(q.x)) * s.x, (0.5 - Math.abs(q.y)) * s.y, (0.5 - Math.abs(q.z)) * s.z);
+  if (sol.shape === 'cyl') return Math.min((1 - Math.hypot(q.x, q.z)) * Math.min(s.x, s.z), (0.5 - Math.abs(q.y)) * s.y);
+  return (1 - q.length()) * Math.min(s.x, s.y, s.z);
+}
+
+/** How far a solid cuts into a sphere (centre c, radius r), in metres; ≤ 0 = no contact. A thin desk top
+ *  through a head counts fully (that's what shows), unlike a point-depth test. */
+export function sphereCut(sol: Solid, c: THREE.Vector3, r: number): number {
+  if (c.x < sol.min.x - r || c.y < sol.min.y - r || c.z < sol.min.z - r || c.x > sol.max.x + r || c.y > sol.max.y + r || c.z > sol.max.z + r) return -1;
+  const inside = depthIn(sol, c);
+  if (inside > 0) return r + inside;
+  const q = c.clone().applyMatrix4(sol.inv);
+  if (sol.shape === 'box') q.set(THREE.MathUtils.clamp(q.x, -0.5, 0.5), THREE.MathUtils.clamp(q.y, -0.5, 0.5), THREE.MathUtils.clamp(q.z, -0.5, 0.5));
+  else if (sol.shape === 'cyl') {
+    const h = Math.hypot(q.x, q.z);
+    if (h > 1) { q.x /= h; q.z /= h; }
+    q.y = THREE.MathUtils.clamp(q.y, -0.5, 0.5);
+  } else if (q.length() > 1) q.normalize();
+  return r - c.distanceTo(q.applyMatrix4(sol.m));
+}
+
+const setCache = new Map<string, Solid[]>();
+/** The set's furniture solids (cached per set + variant). Outdoor sets have none registered yet. */
+export function setSolids(setKey: string, variant = 0): Solid[] {
+  const key = `${setKey}|${variant}`;
+  let out = setCache.get(key);
+  if (!out) {
+    const builds = SETS[setKey]?.solids?.(variant) || [];
+    // floor coverings (rugs, tiles, mats: thin and at floor level) are walked on, not solid
+    out = collectSolids(builds).map(p => toSolid(p, `${setKey} ${p.from}`)).filter(x => x.max.y > 0.05);
+    setCache.set(key, out);
+  }
+  return out;
+}
+
+const N = (v: unknown, d: number) => (typeof v === 'number' ? v : d);
+
+/** Solids of the shot's free-standing props at time t (furniture-like types only; hand props don't count). */
+export function propSolids(props: PropSpec[], t: number): Solid[] {
+  const b = new Batch(false);
+  props.forEach((p, i) => {
+    let pos: Vec3 = p.pos || [0, 0, 0];
+    let r = p.rot;
+    const pts = p.path;
+    if (pts?.length) {
+      if (t <= pts[0].t) pos = pts[0].pos;
+      else if (t >= pts[pts.length - 1].t) pos = pts[pts.length - 1].pos;
+      else for (let k = 0; k < pts.length - 1; k++) if (t >= pts[k].t && t < pts[k + 1].t) {
+        const u = (t - pts[k].t) / (pts[k + 1].t - pts[k].t);
+        pos = pts[k].pos.map((v, j) => v + (pts[k + 1].pos[j] - v) * u) as Vec3;
+      }
+    }
+    const rr: Vec3 = typeof r === 'number' ? [0, (r * Math.PI) / 180, 0] : r ? (r.map(v => (v * Math.PI) / 180) as Vec3) : [0, 0, 0];
+    b.from = `prop #${i} ${p.type}`;
+    b.at(pos, rr, () => {
+      switch (p.type) {
+        case 'table': solidTable(b, [0, 0, 0], 0, N(p.w, 1.4), N(p.d, 0.8)); break;
+        case 'roundTable': solidTable(b, [0, 0, 0], 0, N(p.w, 0.9), 0.9, 0.75, true); break;
+        case 'desk': solidTable(b, [0, 0, 0], 0, 1.4, 0.7, 0.75); break;
+        case 'chair': solidChair(b, [0, 0, 0]); break;
+        case 'bed': solidBed(b, [0, 0, 0]); break;
+        case 'car': solidCar(b, [0, 0, 0]); break;
+        case 'box': case 'crate': b.box([0, N(p.h, 0.5) / 2, 0], [N(p.w, 0.5), N(p.h, 0.5), N(p.d, 0.5)], '#000'); break;
+        case 'pillar': b.add('cyl', '#000', [0, N(p.h, 3) / 2, 0], [N(p.w, 0.3), N(p.h, 3), N(p.w, 0.3)]); break;
+        case 'wall': b.box([0, N(p.h, 3) / 2, 0], [N(p.w, 4), N(p.h, 3), 0.15], '#000'); break;
+        default: break;
+      }
+    }, p.scale ?? 1);
+  });
+  return b.solids.map(x => toSolid(x, x.from));
+}
+
+const pos = (m: THREE.Matrix4) => new THREE.Vector3().setFromMatrixPosition(m);
+
+/** The body as spheres (centre, radius, and how much contact is fine: a hand resting on a desk, thighs on a seat). */
+export function bodySpheres(a: ActorState): { part: string; p: THREE.Vector3; r: number; tol: number }[] {
+  const B = a.bones, head = a.anchors.head, k = a.scale;
+  const r = head.distanceTo(a.anchors.headTop) / 1.15;
+  // radii from the rig (DIM.limbR = 3 cm sticks); tolerances let resting contact pass (hands on a desk, a seat)
+  const L = DIM.limbR * k;
+  const out = [
+    { part: 'head', p: head.clone(), r, tol: 0.005 }, // the head fills the frame: 2 cm into a desk already shows
+    { part: 'chest', p: a.anchors.chest.clone(), r: 0.1 * k, tol: 0.02 },
+    { part: 'hips', p: a.anchors.hips.clone(), r: 0.05 * k, tol: 0.03 },
+  ];
+  for (const sd of ['L', 'R'] as const) {
+    const hand = a.anchors[`hand${sd}`], elbow = pos(B[`forearm${sd}`]), hip = pos(B[`thigh${sd}`]), knee = pos(B[`shin${sd}`]), ankle = pos(B[`foot${sd}`]);
+    out.push(
+      { part: `hand ${sd}`, p: hand.clone(), r: 0.045 * k, tol: 0.025 },
+      { part: `forearm ${sd}`, p: elbow.clone().lerp(hand, 0.5), r: L, tol: 0.02 },
+      { part: `elbow ${sd}`, p: elbow, r: L, tol: 0.02 },
+      { part: `thigh ${sd}`, p: hip.clone().lerp(knee, 0.5), r: L, tol: 0.02 },
+      { part: `knee ${sd}`, p: knee, r: L, tol: 0.02 },
+      { part: `shin ${sd}`, p: knee.clone().lerp(ankle, 0.5), r: L, tol: 0.02 },
+      { part: `ankle ${sd}`, p: ankle, r: L, tol: 0.02 },
+    );
+  }
+  return out;
+}
+
+export type Clip = { part: string; depth: number; solid: Solid };
+
+/** The deepest clip of each body part into any of `solids` (only cuts beyond the part's tolerance). */
+export function clipsOf(a: ActorState, solids: Solid[]): Clip[] {
+  if (!solids.length) return [];
+  const parts = bodySpheres(a);
+  // broad phase: solids whose box meets the body's box
+  const bb = new THREE.Box3();
+  parts.forEach(x => bb.expandByPoint(x.p));
+  bb.expandByScalar(0.2);
+  const near = solids.filter(s => !(s.max.x < bb.min.x || s.min.x > bb.max.x || s.max.y < bb.min.y || s.min.y > bb.max.y || s.max.z < bb.min.z || s.min.z > bb.max.z));
+  if (!near.length) return [];
+  const best = new Map<string, Clip>();
+  for (const x of parts) {
+    // hips/legs whose centre is above a surface are resting on it (sitting, standing on a crate): not a clip.
+    // Head, chest and hands get no such pass — a head sunk into a desk still has its centre above the top.
+    const rests = /^(hips|thigh|knee|ankle)/.test(x.part);
+    for (const s of near) {
+      if (rests && x.p.y >= s.max.y - (x.part === 'hips' ? 0.04 : 0.01)) continue; // a seated pelvis sits ~3 cm into the seat line
+      const d = sphereCut(s, x.p, x.r) - x.tol;
+      if (d > 0 && (!best.has(x.part) || best.get(x.part)!.depth < d)) best.set(x.part, { part: x.part, depth: d, solid: s });
+    }
+  }
+  return [...best.values()];
 }
 @@@@ END
 @@@@ FILE src/episode/cue.ts | text-crlf | 803 | c078dc9a09719ddf16b4c6e1d8240ddf1571580706caabb9ca7eefb088f1bf2d
@@ -23371,14 +23604,14 @@ export function castOf(ep: Episode): Record<string, CastMember> {
   return out;
 }
 @@@@ END
-@@@@ FILE src/episode/scene.ts | text-crlf | 17116 | 320f16bbfd5704744734415d0ce8f24396c59981569eb04c8d3591ac1144bd02
+@@@@ FILE src/episode/scene.ts | text-crlf | 29983 | 0fb5f9ae09318a9baee7f781abbb737bd5f3435f5b14bda9cdb02d390bceeb73
 // Single source of truth for "what is where" in an episode shot at time t: actors (marks, word
 // cues, swap power, continuity blending), camera (solver, shake, flow across near-identical cuts)
 // and props. The renderer (ShotView), the scene audit, the self-tests and the review overlay all
 // call evalShot, so what gets checked is exactly what gets drawn.
 import * as THREE from 'three';
 import { blendStates, evalActor, type ActorState } from '../engine/actor';
-import { project, pxPerMetre, shake, type CamState } from '../engine/cam';
+import { impulse, project, pxPerMetre, shake, type CamState } from '../engine/cam';
 import { ease } from '../engine/rig';
 import { SETS, type SetDef } from '../sets';
 import type { ActorInShot, CameraSpec, CastMember, PropSpec, Shot3D, Vec3 } from '../types';
@@ -23405,6 +23638,7 @@ export type SceneState = {
   flow?: FlowInfo;
   camOut: number; // metres the camera was pulled back inside the room walls (0 = it was inside)
   beat: number; // index of the current sub-cut (0 = the framing as written)
+  beatSpec?: CameraSpec; // the camera spec this beat actually used (after the tight-beat guard)
 };
 
 /** Stable per-character seed, so breathing/blinks don't jump when the same character is in the next shot. */
@@ -23476,10 +23710,21 @@ export function framingDelta(a: CamState, b: CamState, points: THREE.Vector3[]) 
 }
 
 // ---- sub-cuts (coverage) -------------------------------------------------------------------
-// One shot spec, several camera setups: each beat re-frames the same subject (punch-in, then a new
-// angle, ...) so a 4 s line reads as 2–3 cuts without writing more shots. Only automatic cameras.
+// One shot spec, several camera setups: each beat re-frames the same subject so a 4 s line reads as
+// 2–3 cuts without writing more shots. Only automatic cameras.
+//
+// House cut & close rules (2026-11-09, "move the camera more": reels and long episodes):
+//  1. The beat cycle never repeats a size or angle back to back:
+//       k%4 = 0 (k ≥ 4)  back to the written size, the far side (−30°), pulling out / craning down
+//       k%4 = 1  PUNCH   one size tighter, small angle change, pushing in
+//       k%4 = 2  ANGLE   the written size, new angle (+38°), higher, orbiting
+//       k%4 = 3  CLOSE   a face close (two sizes tighter, at most xclose), a touch low, slow push
+//  2. Every beat moves (no static sub-shot), and a short beat covers the same move faster.
+//  3. A strong bass hit lands on a PUNCH or a CLOSE (the next k with k%4 ∈ {1,3}); a reaction face
+//     (shocked, scared, furious, …) on a camera target pulls a cut onto it and lands on a CLOSE.
 export type Beat = { t0: number; t1: number; k: number };
 const TIGHTER: Record<string, CameraSpec['shot']> = { establishing: 'wide', wide: 'full', full: 'medium', medium: 'close', close: 'xclose', xclose: 'xclose', insert: 'insert' };
+const WIDER: Record<string, CameraSpec['shot']> = { xclose: 'close', close: 'medium', medium: 'full', full: 'wide', wide: 'establishing', establishing: 'establishing', insert: 'close' };
 const beatCache = new WeakMap<Shot3D, Beat[]>();
 
 export function beatsOf(ctx: ShotCtx): Beat[] {
@@ -23491,21 +23736,110 @@ export function beatsOf(ctx: ShotCtx): Beat[] {
   const expl = isExplicit(c);
   const auto = !(c.pos || c.path || c.over) || expl;
   let cuts: number[] = [];
+  const covered = auto && shot.coverage && shot.coverage !== 'off';
   if (auto && c.beats?.length) cuts = c.beats.map(b => cue(b, words, -1)).filter(x => x > 0.3 && x < dur - 0.3);
-  else if (auto && shot.coverage && shot.coverage !== 'off') {
+  else if (covered) {
     // explicit cameras usually frame an action tableau: cut them less often, so the action still reads
     const [target, min] = shot.coverage === 'fast' ? (expl ? [2.2, 1.4] : [1.6, 1.1]) : (expl ? [3.0, 2.0] : [2.6, 1.8]);
-    // cut just before a word starts, so the new framing lands on the word
-    const starts = (words || []).map(w => w[1] - 0.08).filter(x => x > 0);
-    const cands = starts.length ? starts : Array.from({ length: Math.floor(dur / 0.4) }, (_, i) => i * 0.4);
+    // cut just before a word starts, so the new framing lands on the word — preferably a sentence start
+    // ("each sentence is a cut", 2026-11-09): a sentence start may come a little early (75% of target),
+    // and a plain word start waits up to 0.6 s for a sentence start right after it
+    const starts = (words || []).map(w => w[1] - 0.08);
+    const sent = sentenceStarts(shot.vo, words);
+    const cands = starts.length ? starts.map((x, i) => ({ x, s: sent.has(i) })).filter(c2 => c2.x > 0)
+      : Array.from({ length: Math.floor(dur / 0.4) }, (_, i) => ({ x: i * 0.4, s: false }));
     let last = 0;
-    for (const x of cands) if (x - last >= target && dur - x >= min) { cuts.push(x); last = x; }
+    for (let i = 0; i < cands.length; i++) {
+      const { x, s } = cands[i];
+      if (dur - x < min || x <= last) continue;
+      if (x - last >= (s ? target * 0.75 : target)) {
+        const ahead = s ? undefined : cands.slice(i + 1).find(c2 => c2.s && c2.x - x <= 0.6 && dur - c2.x >= min);
+        const at = ahead ? ahead.x : x;
+        cuts.push(at); last = at;
+      }
+    }
   }
-  cuts.sort((a, b) => a - b);
+  // magnets (2026-11-09): heavy hits and reaction faces pull the cut onto their frame
+  const hits = auto && shot.coverage !== 'off' ? [...hitsOf(shot, words, dur), ...(expl ? [] : reactionsOf(shot, words, dur))].sort((a, b) => a.t - b.t) : [];
+  cuts = magnetize(cuts, hits, !!covered).sort((a, b) => a - b);
   const out: Beat[] = [];
-  let t0 = 0;
-  [...cuts, dur].forEach((t1, k) => { out.push({ t0, t1, k }); t0 = t1; });
+  let t0 = 0, k = 0;
+  [...cuts, dur].forEach((t1, i) => {
+    if (i > 0) {
+      k++;
+      const h = hits.find(x => Math.abs(x.t - t0) < 1e-6);
+      if (h?.kind === 'strong') while (k % 4 !== 1 && k % 4 !== 3) k++; // punch or close on the boom
+      if (h?.kind === 'face') while (k % 4 !== 3) k++; // close on the reaction
+    }
+    out.push({ t0, t1, k }); t0 = t1;
+  });
   beatCache.set(shot, out);
+  return out;
+}
+
+// ---- the bass magnet ---------------------------------------------------------------------------
+// Low, heavy SFX declared on the shot (shot.sfx) steer the sub-cuts. strong: the cut lands on the hit (an
+// existing cut within 0.6 s moves there, else a new cut is added, with a short shake — ShotView/evalShot).
+// medium: only an existing cut within 0.4 s moves onto it. Light sounds (whooshes, ticks) never move the camera.
+// Not every bass is a cut: hits closer than 0.9 s to the previous kept cut are skipped, so a burst of booms
+// never strobes into near-identical framings (feedback: no camera snaps).
+export const HIT_STRONG = new Set(['boom', 'farBoom', 'subdrop']);
+export const HIT_MEDIUM = new Set(['thud', 'crack', 'splash', 'debris']);
+// reaction faces: on a camera target they pull a cut and land on a CLOSE (rule 3), like a strong hit
+const REACTIONS = new Set(['shocked', 'surprised', 'scared', 'furious', 'angry', 'cry', 'awe', 'embarrassed', 'confused', 'suspicious']);
+type Hit = { t: number; kind: 'strong' | 'medium' | 'face'; strong: boolean };
+
+// a hit nearer the shot's edge would leave a sub-shot too short to read
+const inside = (dur: number) => (h: { t: number }) => h.t >= 0.7 && h.t <= dur - 0.7;
+
+export function hitsOf(shot: Shot3D, words: Words, dur: number): Hit[] {
+  return (shot.sfx || [])
+    .filter(c => HIT_STRONG.has(c.name) || HIT_MEDIUM.has(c.name))
+    .map(c => { const strong = HIT_STRONG.has(c.name); return { t: cue(c.t as number | string, words, -1), kind: strong ? 'strong' as const : 'medium' as const, strong }; })
+    .filter(inside(dur))
+    .sort((a, b) => a.t - b.t);
+}
+
+/** Reaction face keys (named faces in REACTIONS) of the camera's target actors (all actors when untargeted). */
+function reactionsOf(shot: Shot3D, words: Words, dur: number): Hit[] {
+  const tg = shot.camera?.target;
+  const ids = typeof tg === 'string' ? [tg] : Array.isArray(tg) && typeof tg[0] === 'string' ? (tg as string[]) : null;
+  const out: Hit[] = [];
+  (shot.actors || []).forEach(a => {
+    if (ids && !ids.includes(a.id)) return;
+    (a.faces || []).forEach(f => { if (typeof f.face === 'string' && REACTIONS.has(f.face)) out.push({ t: cue(f.t as number | string, words, -1), kind: 'face', strong: true }); });
+  });
+  return out.filter(inside(dur));
+}
+
+function magnetize(cuts: number[], hits: Hit[], covered: boolean): number[] {
+  if (!hits.length) return cuts;
+  let out = [...cuts].sort((a, b) => a - b);
+  const pinned: number[] = [];
+  for (const h of hits) {
+    if (pinned.some(p => Math.abs(p - h.t) < 0.9)) continue;
+    const reach = h.strong ? 0.6 : 0.4;
+    let best = -1;
+    out.forEach((x, i) => { if (!pinned.includes(x) && Math.abs(x - h.t) <= reach && (best < 0 || Math.abs(x - h.t) < Math.abs(out[best] - h.t))) best = i; });
+    if (best >= 0) out[best] = h.t;
+    else if (h.strong && (covered || out.length)) out.push(h.t); // a strong hit adds a cut on covered shots / shots with beats
+    else continue;
+    pinned.push(h.t);
+    // keep the new framing on screen long enough to read: drop unpinned cuts crowding the hit
+    out = out.filter(x => pinned.includes(x) || Math.abs(x - h.t) >= 0.7);
+  }
+  return [...new Set(out)].sort((a, b) => a - b);
+}
+
+/** Indices (into `words`) of words that start a sentence in the shot's vo, read from its punctuation.
+ *  Only trusted when the vo tokenizes to the same word count as the alignment; else none (no preference). */
+function sentenceStarts(vo: string | undefined, words: Words): Set<number> {
+  const out = new Set<number>();
+  if (!vo || !words?.length) return out;
+  const toks = vo.replace(/\[[^\]]*\]/g, ' ').replace(/<[^>]*>/g, ' ').replace(/[-–—]/g, ' ').split(/\s+/).filter(w => /[\p{L}\p{N}]/u.test(w));
+  if (toks.length !== words.length) return out;
+  out.add(0);
+  toks.forEach((w, i) => { if (i + 1 < toks.length && /[.!?…:;]["'”»)]*$/.test(w)) out.add(i + 1); });
   return out;
 }
 
@@ -23522,19 +23856,36 @@ export function beatView(cam: CamState, k: number, u: number): CamState {
   if (!k) return cam;
   // a camera already close to its subject (< 3.2 m) would punch into a giant head: orbit the other way instead
   const near = cam.pos.distanceTo(cam.look) < 3.2;
-  if (k % 2 && !near) return { ...cam, fov: cam.fov * (0.64 - 0.035 * u) };
+  // PUNCH ~1.55x, CLOSE ~2x, and both keep creeping in through the beat
+  if (k % 2 && !near) return { ...cam, fov: cam.fov * ((k % 4 === 3 ? 0.5 : 0.64) - 0.05 * u) };
   const side = k % 2 ? -1 : k % 4 === 2 ? 1 : -1;
-  const a = side * (28 + 3 * u) * (Math.PI / 180);
+  const a = side * (28 + 9 * u) * (Math.PI / 180);
   const off = cam.pos.clone().sub(cam.look).applyAxisAngle(new THREE.Vector3(0, 1, 0), a);
-  return { ...cam, pos: cam.look.clone().add(off), fov: cam.fov * 0.9 };
+  return { ...cam, pos: cam.look.clone().add(off), fov: cam.fov * (0.9 - 0.04 * u) };
 }
 
-/** The camera spec for beat k: 0 = as written; odd = one size tighter, nudged; even = a new angle. */
+/** Two sizes tighter, stopping at xclose: the CLOSE beat. Inserts stay as they are. */
+const closeOf = (shot: CameraSpec['shot']): CameraSpec['shot'] => (shot === 'insert' ? 'insert' : TIGHTER[TIGHTER[shot || 'medium'] || 'close']);
+
+/** The camera spec for beat k (the cut & close rules above beatsOf). */
 export function beatCam(c: CameraSpec | undefined, k: number): CameraSpec | undefined {
   if (!k || !c || isExplicit(c)) return c;
-  const base = c.angle ?? 20, sign = base >= 0 ? -1 : 1;
-  if (k % 2) return { ...c, shot: TIGHTER[c.shot || 'medium'], angle: base + sign * 10, move: 'pushIn', amount: 0.6, dist: c.dist && c.dist * 0.72 };
-  return { ...c, angle: base + sign * (k % 4 === 2 ? 38 : -30), height: (c.height ?? 6) + 6, move: k % 4 === 2 ? 'orbitR' : 'orbitL', amount: 0.5 };
+  const base = c.angle ?? 20, sign = base >= 0 ? -1 : 1, size = c.shot || 'medium';
+  switch (k % 4) {
+    case 1: return { ...c, shot: TIGHTER[size], angle: base + sign * 10, move: 'pushIn', amount: 0.9, dist: c.dist && c.dist * 0.72 };
+    case 2: return { ...c, angle: base + sign * 38, height: (c.height ?? 6) + 6, move: 'orbitR', amount: 0.8 };
+    case 3: {
+      // CLOSE on the first target's face (a group shot closes on its first actor)
+      // in a group shot, stay on the written angle (its side is clear of the others) and stop at 'close':
+      // swinging in toward a neighbour put the lens inside their head
+      const tg = c.target, group = Array.isArray(tg) && typeof tg[0] === 'string' && tg.length > 1;
+      const one = group ? (tg as string[])[0] : tg;
+      const shot = group && closeOf(size) === 'xclose' ? 'close' : closeOf(size);
+      return { ...c, target: one, shot, focus: 'head', angle: group ? base : base - sign * 16, height: (c.height ?? 4) - 3, move: 'pushIn', amount: 0.6, dist: c.dist && c.dist * 0.5 };
+    }
+    // pull-out / crane, not a truck: those keep the subject in the 9:16 centre column
+    default: return { ...c, angle: base - sign * 30, move: k % 8 === 4 ? 'pullOut' : 'craneDown', amount: 0.8 };
+  }
 }
 
 const rot0Cache = new WeakMap<Shot3D, Record<string, number>>();
@@ -23552,6 +23903,79 @@ function rotAtStart(ctx: ShotCtx, cast: Record<string, CastMember>, now: Record<
   }
   rot0Cache.set(ctx.shot, r);
   return r;
+}
+
+// ---- tight-beat guard ------------------------------------------------------------------------
+// PUNCH and CLOSE beats only work when the face reads. Two failures seen on menu-corpo (2026-11-09):
+// a neighbour's back/head between the lens and the target (a hug: the close filled the frame with a nape),
+// and a head bowed over a desk (the close was a giant black disc). So each tight beat is checked once,
+// on the scene at its midpoint: the target's face must point at the lens (≤ ~45°) and no other head may
+// sit on the sight line or near the lens. Other angles and a lower camera are tried in turn; if none
+// works the beat becomes an ANGLE beat at the written size. Decided once per beat (deterministic, no flicker).
+const tightCache = new WeakMap<Shot3D, Map<number, CameraSpec | undefined>>();
+
+function guardedBeatCam(ctx: ShotCtx, cast: Record<string, CastMember>, camSpec: CameraSpec | undefined, beat: Beat, fallback: Vec3): CameraSpec | undefined {
+  const spec = beatCam(camSpec, beat.k);
+  const closeSize = (c2: CameraSpec) => ['close', 'xclose'].includes(c2.shot || 'medium');
+  // tight beats (PUNCH, CLOSE) and any other sub-cut that is still a close (a close shot's ANGLE beat)
+  // (beat 0 is the framing as written: never overridden — the audit warns when a written close shows no face)
+  if (!beat.k || !spec || !camSpec || isExplicit(camSpec) || !(beat.k % 2 || closeSize(spec))) return spec;
+  const tight = beat.k % 2 === 1;
+  let memo = tightCache.get(ctx.shot);
+  if (!memo) tightCache.set(ctx.shot, (memo = new Map()));
+  if (memo.has(beat.k)) return memo.get(beat.k);
+  const span = beat.t1 - beat.t0;
+  const setKey = SETS[ctx.shot.set] ? ctx.shot.set : 'suburb';
+  // the scene at the start, middle and end of the beat: a face that turns away mid-beat fails too
+  const sample = (u: number) => {
+    const tt = beat.t0 + span * u;
+    const { actors } = resolveShotActors(ctx.shot, tt, ctx.words, setKey);
+    const st: Record<string, ActorState> = {};
+    const dup: Record<string, number> = {};
+    actors.forEach((a, i) => {
+      const n = (dup[a.id] = (dup[a.id] ?? -1) + 1);
+      st[st[a.id] ? `${a.id}#${i}` : a.id] = evalActor(a, cast[a.id] || cast.hero, tt, seedOf(a.id, n), undefined, ctx.start + tt);
+    });
+    return { u, st };
+  };
+  const samples = [0.1, 0.5, 0.9].map(sample);
+  const rot0 = rotAtStart(ctx, cast, samples[1].st, beat.t0 + span / 2);
+  const tg = spec.target;
+  const tgId = typeof tg === 'string' ? tg : Array.isArray(tg) && typeof tg[0] === 'string' ? (tg as string[])[0] : Object.keys(samples[1].st)[0];
+  let pick: CameraSpec | undefined = spec;
+  if (samples.every(x => x.st[tgId])) {
+    const faceOf = (a: ActorState) => new THREE.Vector3(0, 0, 1).transformDirection(a.bones.head);
+    // ok = nothing on the sight line or at the lens; for a close size, also the face pointing at the lens
+    const okAt = (s2: CameraSpec, { u, st }: { u: number; st: Record<string, ActorState> }) => {
+      const who = st[tgId], head = who.anchors.head;
+      const cam = solveCamera(s2, span * u, span, st, fallback, rot0);
+      const toCam = cam.pos.clone().sub(head);
+      const len = toCam.length();
+      const dir = toCam.clone().normalize();
+      if (closeSize(s2) && faceOf(who).dot(dir) < 0.7) return false; // face turned away / bowed (> ~45° off the lens)
+      for (const [id, o] of Object.entries(st)) {
+        if (id === tgId) continue;
+        const oh = o.anchors.head;
+        if (cam.pos.distanceTo(oh) < 0.6) return false;
+        const along = oh.clone().sub(head).dot(dir);
+        if (along > 0 && along < len && oh.clone().sub(head).addScaledVector(dir, -along).length() < 0.32 * o.scale) return false; // on the sight line
+      }
+      return true;
+    };
+    const ok = (s2: CameraSpec) => samples.every(x => okAt(s2, x));
+    const around = (s2: CameraSpec, low: boolean) => [s2, ...[25, -25, 50, -50, 75, -75].map(d => ({ ...s2, angle: (s2.angle ?? 20) + d })),
+      ...(low ? [0, 30, -30].map(d => ({ ...s2, angle: (s2.angle ?? 20) + d, height: (s2.height ?? 4) - 14 })) : [])];
+    const widen = (s2: CameraSpec): CameraSpec => (closeSize(s2) ? { ...s2, shot: WIDER[s2.shot!], dist: s2.dist && s2.dist * 1.6 } : s2);
+    // a bowed head (face > ~27° down: reading, slumped over a desk) never gives a face close from any angle
+    // (a low camera ends up behind the desk edge): skip the tight tries
+    const bowed = samples.some(x => faceOf(x.st[tgId]).y < -0.45);
+    const angleBeat = tight ? beatCam(camSpec, 2)! : spec;
+    // chain: tight framings from several angles → the ANGLE beat → one size wider from several angles
+    const chain = [...(tight && !bowed ? around(spec, true) : []), ...around(angleBeat, false), ...around(widen(angleBeat), false)];
+    pick = chain.find(ok) ?? beatCam(camSpec, 0);
+  }
+  memo.set(beat.k, pick);
+  return pick;
 }
 
 const flowCache = new WeakMap<Shot3D, FlowInfo>();
@@ -23629,11 +24053,14 @@ export function evalShot(ctx: ShotCtx, t: number, cast: Record<string, CastMembe
   // sub-cuts: solve the camera for the current beat, on the beat's own clock
   const beats = beatsOf(ctx);
   const beat = beats.find(b => t < b.t1) || beats[beats.length - 1];
+  const beatSpec = isExplicit(camSpec) ? camSpec : guardedBeatCam(ctx, cast, camSpec, beat, fallback);
   let cam = isExplicit(camSpec)
     ? beatView(solveCamera(camSpec, t, ctx.dur, first, fallback), beat.k, (t - beat.t0) / Math.max(1e-6, beat.t1 - beat.t0))
-    : solveCamera(beatCam(camSpec, beat.k), t - beat.t0, beat.t1 - beat.t0, first, fallback, rotAtStart(ctx, cast, first, t));
+    : solveCamera(beatSpec, t - beat.t0, beat.t1 - beat.t0, first, fallback, rotAtStart(ctx, cast, first, t));
   const camOut = def.room ? keepInRoom(cam, def.room) : 0;
   if (shot.fx?.shake) cam = shake(cam, t, 0.03 * shot.fx.shake, 18, 4);
+  // bass magnet: a strong hit that opens a beat kicks the camera (decays in ~0.25 s)
+  if (beat.t0 > 0) { const h = hitsOf(shot, words, dur).find(x => x.kind === 'strong' && Math.abs(x.t - beat.t0) < 1e-6); if (h) cam = shake(cam, t, 0.05 * impulse(t, h.t, 0.22), 20, 9); }
   // continuity with the previous shot (same set, near-identical framing): one flowing move
   const flow = prev ? flowInfo(prev, ctx, cast) : undefined;
   let prevEnd: SceneState | undefined;
@@ -23665,7 +24092,7 @@ export function evalShot(ctx: ShotCtx, t: number, cast: Record<string, CastMembe
     const path = p.follow || !p.path ? undefined : p.path.map(k => ({ ...k, t: cue(k.t as number | string, words, 0) }));
     return { ...p, pos, path, ...(ignite !== undefined ? { ignite: cue(ignite, words, 0) } : {}) } as PropSpec;
   });
-  return { setKey, def, palKey, actors, states, byId, cam, swap, frozen, props, flow, camOut, beat: beat.k };
+  return { setKey, def, palKey, actors, states, byId, cam, swap, frozen, props, flow, camOut, beat: beat.k, beatSpec };
 }
 @@@@ END
 @@@@ FILE src/episode/selftest.ts | text | 14596 | d766d09446c104fd4c02db79640fe67b08d2679f011bd418c3c06f21630b8aa5
@@ -25032,7 +25459,7 @@ export const APARTMENTS_MARKS: Record<string, Vec3> = {
   road: [0, 0, 0],
 };
 @@@@ END
-@@@@ FILE src/sets/bedroom.tsx | text-crlf | 9277 | ce48530a51a32bf8af2330f4ff0a275d1d21000433618095af814058112c68a4
+@@@@ FILE src/sets/bedroom.tsx | text-crlf | 9784 | acadac34286e24cb45249ad322084f7472750e56c8001bff506047c71681f2b1
 // Teen bedroom: bed against the back wall (left), window with pink curtains, gaming desk with
 // glowing monitor (right), bookshelf, wardrobe, posters, round rug. Room x∈[-4.5,4.5],
 // back wall z=-4, ceiling 2.8, open toward +z (one-sided fourth wall at z=5).
@@ -25062,23 +25489,23 @@ function buildFurniture(b: Batch) {
   b.at([-2.55, 0, Z + 1.12], 0, () => {
     const wood = '#8a5e43';
     b.box([0, 0.2, 0], [1.68, 0.28, 2.14], wood);
-    b.box([0, 0.42, 0.02], [1.56, 0.2, 2.0], '#f4f1ea');
-    b.box([0, 0.44, 0.32], [1.64, 0.3, 1.5], DUVET);
-    b.box([0, 0.53, 0.32], [1.6, 0.12, 1.48], DUVET);
-    b.box([0, 0.535, -0.42], [1.645, 0.13, 0.16], mix(DUVET, '#ffffff', 0.55));
-    b.box([0, 0.545, 0.86], [1.65, 0.13, 0.3], '#f2b632');
-    b.box([-0.38, 0.62, -0.72], [0.6, 0.14, 0.38], '#fbf8f2', [0.25, 0.08, 0]);
-    b.box([0.38, 0.62, -0.72], [0.6, 0.14, 0.38], '#fbf8f2', [0.25, -0.06, 0]);
+    b.box([0, 0.42, 0.02], [1.56, 0.2, 2.0], '#f4f1ea', 0, { soft: true }); // mattress
+    b.box([0, 0.44, 0.32], [1.64, 0.3, 1.5], DUVET, 0, { soft: true });
+    b.box([0, 0.53, 0.32], [1.6, 0.12, 1.48], DUVET, 0, { soft: true });
+    b.box([0, 0.535, -0.42], [1.645, 0.13, 0.16], mix(DUVET, '#ffffff', 0.55), 0, { soft: true });
+    b.box([0, 0.545, 0.86], [1.65, 0.13, 0.3], '#f2b632', 0, { soft: true });
+    b.box([-0.38, 0.62, -0.72], [0.6, 0.14, 0.38], '#fbf8f2', [0.25, 0.08, 0], { soft: true });
+    b.box([0.38, 0.62, -0.72], [0.6, 0.14, 0.38], '#fbf8f2', [0.25, -0.06, 0], { soft: true });
     b.box([0, 0.63, -1.06], [1.74, 1.06, 0.08], wood);
     b.box([0, 1.18, -1.06], [1.82, 0.07, 0.12], mix(wood, '#000000', 0.2));
     b.box([0, 0.3, 1.08], [1.68, 0.5, 0.06], wood);
-    // teddy bear
+    // teddy bear (soft: the clip audit lets a sleeper's arm sink into it)
     b.at([0.45, 0.6, -0.25], 0.4, () => {
-      b.add('sphere', '#b07a4f', [0, 0.1, 0], [0.12, 0.13, 0.1]);
-      b.add('sphere', '#b07a4f', [0, 0.29, 0], 0.085);
-      b.add('sphere', '#b07a4f', [-0.07, 0.36, 0], 0.035);
-      b.add('sphere', '#b07a4f', [0.07, 0.36, 0], 0.035);
-      b.add('sphere', '#e6c9a8', [0, 0.27, 0.07], [0.035, 0.03, 0.025]);
+      b.add('sphere', '#b07a4f', [0, 0.1, 0], [0.12, 0.13, 0.1], undefined, { soft: true });
+      b.add('sphere', '#b07a4f', [0, 0.29, 0], 0.085, undefined, { soft: true });
+      b.add('sphere', '#b07a4f', [-0.07, 0.36, 0], 0.035, undefined, { soft: true });
+      b.add('sphere', '#b07a4f', [0.07, 0.36, 0], 0.035, undefined, { soft: true });
+      b.add('sphere', '#e6c9a8', [0, 0.27, 0.07], [0.035, 0.03, 0.025], undefined, { soft: true });
     });
   });
   // nightstand
@@ -25171,6 +25598,9 @@ const PlanetPoster: React.FC<{ p: Vec3; r?: number }> = ({ p, r = 0 }) => (
   </At>
 );
 
+/** Solid furniture for the clip audit (same builder the set draws; floor excluded). */
+export const BEDROOM_SOLIDS = () => [{ name: 'furniture', build: buildFurniture }];
+
 export const Bedroom: React.FC<SetProps> = ({ t, time }) => {
   const night = isNight(time);
   const { x0, x1, z0, z1, h } = BEDROOM;
@@ -25212,7 +25642,7 @@ export const BEDROOM_MARKS: Record<string, Vec3> = {
   rug: [0.5, 0, -0.4],
 };
 @@@@ END
-@@@@ FILE src/sets/cafeteria.tsx | text | 6963 | 6db1b1e192892c97f66c907c5a9b551941e17659cab9740205e9c682a0593b82
+@@@@ FILE src/sets/cafeteria.tsx | text | 7264 | 37b3a950511f4ac833ba7a52a87a0076a3a2ec114b264f7db88f41d7136d60db
 // School cafeteria from IFOLOGY "Stop Time": navy/yellow walls, grey checker floor, long white
 // tables with attached navy benches and lunch trays, menu board, dot banner, wall clock, bins.
 // Shares the classroom shell: x∈[-6,6], back wall z=-5, ceiling 3.2, one-sided fourth wall z=6.
@@ -25319,6 +25749,12 @@ const drawMenu = (g: CanvasRenderingContext2D, W: number, H: number) => {
     g.fillText(p, W * 0.92, y);
   });
 };
+
+/** Solid furniture for the clip audit (same builders the set draws). */
+export const CAFETERIA_SOLIDS = (variant: number) => [
+  { name: 'tables', build: buildTables }, { name: 'counter props', build: buildProps },
+  ...(variant % 2 === 0 ? [{ name: 'seated extras', build: buildExtras }] : []),
+];
 
 export const Cafeteria: React.FC<SetProps> = ({ t, time, variant }) => {
   const night = isNight(time);
@@ -25725,7 +26161,7 @@ export const CITY_MARKS: Record<string, Vec3> = {
   cones: [1.6, 0, 20.4], // just behind the line of cones
 };
 @@@@ END
-@@@@ FILE src/sets/classroom.tsx | text | 13290 | 5d156662eccea2a4cf8198140f9f268da7fa3b5f68d27a62a0bd4271409c4cca
+@@@@ FILE src/sets/classroom.tsx | text | 13742 | e3a1b279f18ff03e9dd5424254ddd6c14ec41bbbe4c0ee2c3e0423887be99f27
 // School classroom in IFOLOGY "Stop Time" colours: navy lower walls, white rail, yellow upper
 // walls, grey checker floor, light panels. The whiteboard is on the LEFT wall (x=-6) and the
 // 4×5 grid of desks faces it (students look -x), so a camera on the open +z side sees the class
@@ -25735,6 +26171,7 @@ export const CITY_MARKS: Record<string, Vec3> = {
 import React from 'react';
 import type { SetProps } from './index';
 import type { Vec3 } from '../types';
+import { solidChair } from './solids';
 import { At, Box, Chair, Door, G, WallClock, mix, rng } from './kit';
 import { envMaterial } from '../engine/materials';
 import {
@@ -25976,6 +26413,12 @@ function buildTeacherArea(b: Batch) {
   });
 }
 
+/** Solid furniture for the clip audit (same builders the set draws; floor excluded). */
+export const CLASSROOM_SOLIDS = (variant: number) => [
+  { name: 'desks', build: buildDesks }, { name: 'teacher desk', build: buildTeacherArea }, { name: 'teacher chair', build: (b: Batch) => solidChair(b, [-4.95, 0, 2.2], Math.PI / 2) },
+  ...(variant % 2 === 0 ? [{ name: 'seated extras', build: buildExtras }] : []),
+];
+
 export const Classroom: React.FC<SetProps> = ({ t, time, variant }) => {
   const night = isNight(time);
   const { x0, x1, z0 } = SCHOOL;
@@ -26020,7 +26463,7 @@ export const CLASSROOM_MARKS: Record<string, Vec3> = {
 };
 
 @@@@ END
-@@@@ FILE src/sets/home.tsx | text-crlf | 11732 | 38f1fc29eb9537ef32aebfc3fcd2a2e7a9fc61ef859097a3cd50c589c99d9eb6
+@@@@ FILE src/sets/home.tsx | text-crlf | 12513 | ed14b1a72092158c331ee40c6b4d4f5ff889044cb91ad0f270e47934a0edf52e
 // Open-plan home: IFOLOGY "Shapeshift" kitchen (purple cabinets, white tiled backsplash, fridge,
 // oven, hood) on the left (x<0.4, checker floor) and a living area on the right (wood floor, rug,
 // couch facing a wall TV). Room x∈[-6,6], back wall z=-5, ceiling 3.0, open toward +z
@@ -26028,6 +26471,7 @@ export const CLASSROOM_MARKS: Record<string, Vec3> = {
 import React from 'react';
 import type { SetProps } from './index';
 import type { Vec3 } from '../types';
+import { solidChair, solidSofa, solidTable } from './solids';
 import { Ball, Box, Chair, Cone, Cyl, Door, Table, WallClock, mix, rng } from './kit';
 import { Batch, Batched, CeilingPanel, checkerFloor, FloorLamp, FruitBowl, isNight, LeafPlant, Picture, Pinboard, plankFloor, RoomWindow, Shell, Sofa } from './roomkit';
 
@@ -26171,6 +26615,19 @@ function buildLiving(b: Batch) {
   b.add('ico', '#5aa54a', [1.08, 2.33, HOME.z0 + 0.12], [0.12, 0.11, 0.12]);
 }
 
+/** Solid furniture for the clip audit: the batched kitchen/living plus the JSX table, chairs, coffee table and couch. */
+export const HOME_SOLIDS = () => [
+  { name: 'kitchen', build: buildKitchen }, { name: 'living room', build: buildLiving },
+  {
+    name: 'dining set', build: (b: Batch) => {
+      solidTable(b, [-3.0, 0, -1.3], 0, 1.7, 0.95, 0.76);
+      solidChair(b, [-3.45, 0, -2.02]); solidChair(b, [-2.55, 0, -2.02]);
+      solidChair(b, [-4.2, 0, -1.3], Math.PI / 2); solidChair(b, [-1.8, 0, -1.3], -Math.PI / 2);
+    },
+  },
+  { name: 'couch + coffee table', build: (b: Batch) => { solidSofa(b, [1.62, 0, -0.4], Math.PI / 2, 2.3); solidTable(b, [3.1, 0, -0.4], 0, 0.75, 1.25, 0.43); } },
+];
+
 export const Home: React.FC<SetProps> = ({ t, time }) => {
   const night = isNight(time);
   const { x0, x1, z0, z1, h } = HOME;
@@ -26236,12 +26693,13 @@ export const HOME_MARKS: Record<string, Vec3> = {
   door: [5.35, 0, -3.6],
 };
 @@@@ END
-@@@@ FILE src/sets/index.ts | text-crlf | 2192 | 0f58b76bf8a60b097528d5287d974b3cabdf8587f1ffa5fdf3aa0ce4e341cc3d
+@@@@ FILE src/sets/index.ts | text-crlf | 2376 | e9cf4ef650ffa5f7c670554c3d3be58ad4389c4939db79ccf0b93010701c7cae
 // Set registry. Every set is a React component drawn around the origin plus named "marks"
 // (staging spots) so episode specs can say `"pos": "desk"` instead of raw coordinates.
 // To add a set: build it in src/sets/<name>.tsx from kit.tsx pieces, then register it here.
 import React from 'react';
 import type { Vec3 } from '../types';
+import type { Batch } from './roomkit';
 import { Suburb } from './suburb';
 import { INDOOR_SETS } from './indoor';
 import { OUTDOOR_SETS } from './outdoor';
@@ -26262,6 +26720,7 @@ export type SetDef = {
   interior?: boolean; // true = no sky dome needed
   room?: { min: Vec3; max: Vec3 }; // walls/floor/ceiling the camera must stay inside (open side = large max); the engine pulls a camera that ends up outside back in along its sight line
   description: string; // one line for Claude when picking sets
+  solids?: (variant: number) => { name: string; build: (b: Batch) => void }[]; // furniture the clip audit tests bodies against (indoor sets)
 };
 
 const SuburbSet: React.FC<SetProps> = ({ center }) => React.createElement(Suburb, { centerX: center[0], behind: 80, ahead: 120 });
@@ -26285,21 +26744,22 @@ export const SETS: Record<string, SetDef> = {
   ...OUTDOOR_SETS,
 };
 @@@@ END
-@@@@ FILE src/sets/indoor.ts | text-crlf | 5076 | 65a14ac0e31a37c932b535bc892a00dadddc243e957d2a7405906e127d30dc69
+@@@@ FILE src/sets/indoor.ts | text-crlf | 5258 | 6bfe6a60e6bd9d37a78f4167dca4b1c4ed0e5730471ab4c2482b44c33fe125f2
 // Indoor sets registry (owned by the indoor-sets builder). Entries merge into SETS in index.ts.
 // All rooms: metres, y up, floor y=0, open toward +z (cameras outside a wall see straight in;
 // a one-sided fourth wall at the +z edge only shows in reverse shots from inside). Pass
 // time:'interiorNight' for night windows + lamps on. Building blocks live in roomkit.tsx.
 import type { SetDef } from './index';
-import { Home, HOME_MARKS } from './home';
-import { Bedroom, BEDROOM_MARKS } from './bedroom';
-import { Classroom, CLASSROOM_MARKS } from './classroom';
-import { Cafeteria, CAFETERIA_MARKS } from './cafeteria';
+import { Home, HOME_MARKS, HOME_SOLIDS } from './home';
+import { Bedroom, BEDROOM_MARKS, BEDROOM_SOLIDS } from './bedroom';
+import { Classroom, CLASSROOM_MARKS, CLASSROOM_SOLIDS } from './classroom';
+import { Cafeteria, CAFETERIA_MARKS, CAFETERIA_SOLIDS } from './cafeteria';
 import { VoidStage, VOID_MARKS } from './voidstage';
 
 export const INDOOR_SETS: Record<string, SetDef> = {
   home: {
     component: Home,
+    solids: HOME_SOLIDS,
     palette: 'interior',
     marks: HOME_MARKS,
     shadowCenter: [0, 1, -0.5],
@@ -26311,6 +26771,7 @@ export const INDOOR_SETS: Record<string, SetDef> = {
   },
   bedroom: {
     component: Bedroom,
+    solids: BEDROOM_SOLIDS,
     palette: 'interior',
     marks: BEDROOM_MARKS,
     shadowCenter: [0, 1, -0.5],
@@ -26322,6 +26783,7 @@ export const INDOOR_SETS: Record<string, SetDef> = {
   },
   classroom: {
     component: Classroom,
+    solids: CLASSROOM_SOLIDS,
     palette: 'interior',
     marks: CLASSROOM_MARKS,
     shadowCenter: [0, 1, 0],
@@ -26333,6 +26795,7 @@ export const INDOOR_SETS: Record<string, SetDef> = {
   },
   cafeteria: {
     component: Cafeteria,
+    solids: CAFETERIA_SOLIDS,
     palette: 'interior',
     marks: CAFETERIA_MARKS,
     shadowCenter: [0, 1, 0],
@@ -28345,7 +28808,7 @@ export const ROOFTOP_MARKS: Record<string, Vec3> = {
   corner: [11.2, 0, -8.4], // front-right corner by the satellite dish
 };
 @@@@ END
-@@@@ FILE src/sets/roomkit.tsx | text-crlf | 25272 | 38943d0a9cd8c11e47e747e6299a5b58ae8fe43f2772a4bed64a3e24c440445d
+@@@@ FILE src/sets/roomkit.tsx | text-crlf | 26570 | 02c9f31bcc835acd0cbe11a94de72964875ca75283c5fd8b2e5d4365fabdcf50
 // Shared building blocks for the indoor sets (home, bedroom, classroom, cafeteria, void).
 // Owned by the indoor-sets builder. Rooms are "dollhouses": every wall is a one-sided plane facing
 // into the room, so a camera outside any wall (usually the open +z side) sees straight in, and the
@@ -28370,14 +28833,23 @@ const TEMPL = {
 } as const;
 export type Shape = keyof typeof TEMPL;
 type Kind = 'env' | 'glow' | 'ink';
-type AddOpts = { kind?: Kind; cast?: boolean };
+type AddOpts = { kind?: Kind; cast?: boolean; soft?: boolean }; // soft = bedding/cushions: bodies may sink into it, the clip audit skips it
 type BatchMesh = { geo: THREE.BufferGeometry; kind: Kind; c: string; cast: boolean };
 
 const mtx = (p: Vec3, r?: R, s?: Vec3 | number) =>
   new THREE.Matrix4().compose(new THREE.Vector3(...p), new THREE.Quaternion().setFromEuler(new THREE.Euler(...rotV(r))), new THREE.Vector3(...sclV(s)));
 
-/** Collects primitives and merges them into one geometry per (colour, material kind, cast flag). */
+/** A solid primitive of a set, in world space (unit template × matrix): what the clip audit tests bodies against. */
+export type SolidPrim = { shape: 'box' | 'cyl' | 'sphere'; m: THREE.Matrix4; from: string };
+const SOLID_SHAPES: Partial<Record<Shape, SolidPrim['shape']>> = { box: 'box', cyl: 'cyl', cyl8: 'cyl', sphere: 'sphere', ico: 'sphere' };
+
+/** Collects primitives and merges them into one geometry per (colour, material kind, cast flag).
+ *  It also records every solid primitive (boxes, cylinders, spheres; not planes or glows) in `solids`,
+ *  so the audit can test bodies against the furniture. `geometry = false` records only (no meshes). */
 export class Batch {
+  readonly solids: SolidPrim[] = [];
+  from = '';
+  constructor(private geometry = true) {}
   private groups = new Map<string, { kind: Kind; c: string; cast: boolean; geos: THREE.BufferGeometry[] }>();
   private stack: THREE.Matrix4[] = [new THREE.Matrix4()];
   private top() {
@@ -28392,13 +28864,17 @@ export class Batch {
   add(shape: Shape, c: string, p: Vec3, s: Vec3 | number, r?: R, o: AddOpts = {}) {
     const kind = o.kind ?? 'env';
     const cast = kind === 'glow' ? false : o.cast ?? true;
+    const m = this.top().clone().multiply(mtx(p, r, s));
+    const solid = SOLID_SHAPES[shape];
+    if (solid && kind !== 'glow' && !o.soft) this.solids.push({ shape: solid, m, from: this.from });
+    if (!this.geometry) return;
     const key = `${kind}|${c}|${cast}`;
     let g = this.groups.get(key);
     if (!g) {
       g = { kind, c, cast, geos: [] };
       this.groups.set(key, g);
     }
-    g.geos.push(TEMPL[shape].clone().applyMatrix4(this.top().clone().multiply(mtx(p, r, s))));
+    g.geos.push(TEMPL[shape].clone().applyMatrix4(m));
   }
   box(p: Vec3, s: Vec3, c: string, r?: R, o?: AddOpts) {
     this.add('box', c, p, s, r, o);
@@ -28426,6 +28902,13 @@ export class Batch {
     });
     return out;
   }
+}
+
+/** Run set builders in record-only mode and return their solid primitives (tagged with the builder's name). */
+export function collectSolids(builds: { name?: string; build: (b: Batch) => void }[]): SolidPrim[] {
+  const b = new Batch(false);
+  builds.forEach(x => { b.from = x.name || x.build.name || 'set'; x.build(b); });
+  return b.solids;
 }
 
 const batchCache = new Map<string, BatchMesh[]>();
@@ -28862,6 +29345,58 @@ export function seatedExtra(b: Batch, p: Vec3, yaw: number, shirt: string, pants
 }
 
 export { rng, mix };
+@@@@ END
+@@@@ FILE src/sets/solids.ts | text | 1971 | 28688bcf0e76f735580a5dbf404bba705ae31f40eb3a87bca12fb7d4e882fe6b
+// Solid stand-ins for furniture that is drawn as JSX components (kit Table/Chair/Bed/Desk, roomkit Sofa) and
+// for free-standing scene props, recorded into a Batch for the clip audit. Each mirrors the drawn component's
+// main volumes (top, legs, seat, back, body); keep the numbers in step when a component changes shape.
+import type { Vec3 } from '../types';
+import type { Batch } from './roomkit';
+
+type R = number;
+const K = '#000';
+
+export function solidTable(b: Batch, p: Vec3, r: R = 0, w = 1.4, d = 0.8, h = 0.75, round = false) {
+  b.at(p, r, () => {
+    if (round) {
+      b.add('cyl', K, [0, h, 0], [w / 2, 0.05, w / 2]);
+      b.add('cyl', K, [0, h / 2, 0], [0.05, h, 0.05]);
+      return;
+    }
+    b.box([0, h, 0], [w, 0.06, d], K);
+    [[-1, -1], [1, -1], [-1, 1], [1, 1]].forEach(([x, z]) => b.box([x * (w / 2 - 0.06), h / 2, z * (d / 2 - 0.06)], [0.06, h, 0.06], K));
+  });
+}
+
+export function solidChair(b: Batch, p: Vec3, r: R = 0) {
+  b.at(p, r, () => {
+    b.box([0, 0.45, 0], [0.46, 0.05, 0.44], K);
+    b.box([0, 0.78, -0.2], [0.46, 0.6, 0.05], K);
+    [[-1, -1], [1, -1], [-1, 1], [1, 1]].forEach(([x, z]) => b.box([x * 0.2, 0.22, z * 0.19], [0.04, 0.45, 0.04], K));
+  });
+}
+
+export function solidBed(b: Batch, p: Vec3, r: R = 0) {
+  b.at(p, r, () => {
+    b.box([0, 0.2, 0], [1.5, 0.3, 2.1], K); // frame + headboard; the mattress is soft (sleepers sink in)
+    b.box([0, 0.65, -1.05], [1.5, 0.95, 0.08], K);
+  });
+}
+
+export function solidSofa(b: Batch, p: Vec3, r: R = 0, w = 2.2) {
+  b.at(p, r, () => {
+    b.box([0, 0.2, 0], [w, 0.2, 0.92], K); // frame only: the seat cushions above it are soft (sitters sink in)
+    b.box([0, 0.68, -0.36], [w, 0.66, 0.2], K);
+    [-1, 1].forEach(sd => b.box([sd * (w / 2 - 0.11), 0.48, 0.02], [0.22, 0.42, 0.92], K));
+  });
+}
+
+export function solidCar(b: Batch, p: Vec3, r: R = 0) {
+  b.at(p, r, () => {
+    b.box([0, 0.5, 0], [1.8, 0.55, 4.0], K);
+    b.box([0, 0.98, -0.2], [1.6, 0.48, 2.1], K);
+  });
+}
 @@@@ END
 @@@@ FILE src/sets/stadium.tsx | text | 17056 | 17518126253099994d24aadc651576ce62102a0da5ec8f29881071b834db192c
 // American-football stadium: striped turf with yard lines, numbers and coloured end zones, yellow
@@ -29496,7 +30031,7 @@ export const VOID_MARKS: Record<string, Vec3> = {
   farRight: [4.5, 0, -1.5],
 };
 @@@@ END
-@@@@ FILE src/types.ts | text-crlf | 12610 | 07e2a14c875b35c1ebabfb5ada46b3bb8eaf81a1fd7cc696fd37517d33943f12
+@@@@ FILE src/types.ts | text-crlf | 12738 | 3f3110e5f1beaad0b66e7cb2fae510e18558e7beea322dcf16165a9d8a366379
 // Episode spec: the JSON Claude writes for every video (public/episodes/<slug>/episode.json).
 // Everything in a shot is in seconds relative to the shot start; positions are metres,
 // y up, a character with rot 0 faces +z (towards the default camera).
@@ -29682,6 +30217,7 @@ export type Shot3D = {
   fx?: ShotFx;
   sfx?: SfxCue[];
   cut?: Cut; // default: flow when the framing barely changes in the same set, else cut
+  repeat?: boolean; // vo repeats its structure on purpose (ladainha, climax ×3): silences the repeated-opening style warning
   coverage?: 'off' | 'calm' | 'fast'; // automatic sub-cuts on word starts: fast ≈ every 1.6 s, calm ≈ 2.6 s (explicit pos/path cameras: 2.2 / 3.0 s, punch-in or orbit of their own view; `over` cameras: none)
 };
 
@@ -30620,7 +31156,7 @@ run('ffmpeg', ['-v', 'error', '-y', '-framerate', '30', '-i', `"${pattern}"`, '-
   '-frames:v', '1', '-update', '1', `"${path.join(outDir, 'sheet.png')}"`]);
 console.log('done:', final);
 @@@@ END
-@@@@ FILE tools/episode.mjs | text-crlf | 28233 | 62b95af49baff769fd8bc9f1b07310dbd903175b67eecc71a2112e9c2274c913
+@@@@ FILE tools/episode.mjs | text-crlf | 31093 | 145114b4fdb0c584bf6c90dc2b528bcd456f41f9415cb339cfe7dd6be2cc9e4d
 // Episode voice pipeline.
 //   node tools/episode.mjs check <slug>             validate vo text (tags, SSML, raw numbers) BEFORE spending credits — STORY_BLUEPRINT.md §6.9/§6.4
 //   node tools/episode.mjs sections <slug>          split narration into ElevenLabs TTS sections → sections.json (+ prints the credit estimate)
@@ -30696,6 +31232,45 @@ function checkVoiceText(episode) {
     if (digits) errors.push(`${where}: raw digit(s) ${digits.join(', ')} in vo — spell numbers, dates, money, time and abbreviations out for narration (STORY_BLUEPRINT.md §6.4), e.g. "365" → "trezentos e sessenta e cinco"`);
   });
   return errors;
+}
+
+/** Style lint on `vo` (COLA_ROTEIRO "Voz", 2026-11-09): warnings only, never blocks the voice step.
+ *  - sentences over 15 spoken words (the hard cap; sentences can span shots, reported at their first shot);
+ *  - banned words/phrases (weak adjectives + the COLA ban list);
+ *  - two sentences in a row with the same opening word (same structure), outside the ladainha / climax ×3,
+ *    which repeat on purpose: mark those shots `repeat: true` to silence it. */
+const MAX_SENTENCE_WORDS = 15;
+const BANNED = ['incrível', 'incríveis', 'fantástico', 'fantástica', 'fantásticos', 'fantásticas', 'surpreendente', 'surpreendentes',
+  'em um mundo onde', 'de repente', 'jornada', 'tudo mudou', 'você não vai acreditar', 'no final das contas', 'mas espera, tem mais', 'embarca'];
+function styleWarnings(episode) {
+  const out = [];
+  let cur = null; // the sentence being read: { words, at, repeat }
+  let prevOpen = null, prevRepeat = false;
+  const flush = () => {
+    if (!cur) return;
+    if (cur.words.length > MAX_SENTENCE_WORDS) out.push(`${cur.at}: ${cur.words.length}-word sentence (cap ${MAX_SENTENCE_WORDS}): "${cur.words.join(' ').slice(0, 90)}…"`);
+    // same structure = the same first two words; 1–3-word staccato lines are exempt
+    const open = cur.words.length > 3 ? norm(cur.words.slice(0, 2).join(' ')) : null;
+    if (open && open === prevOpen && !(cur.repeat || prevRepeat)) out.push(`${cur.at}: two sentences in a row open with "${open}" — vary the structure (or mark the shot repeat: true)`);
+    prevOpen = open; prevRepeat = cur.repeat;
+    cur = null;
+  };
+  episode.shots.forEach((shot, i) => {
+    if (!shot.vo) return;
+    const where = `shot #${i}${shot.id ? ` (${shot.id})` : ''}`;
+    const text = spoken(shot.vo);
+    const low = ' ' + norm(text) + ' ';
+    BANNED.forEach(b => { if (low.includes(' ' + norm(b) + ' ')) out.push(`${where}: banned "${b}" — show it, don't qualify it`); });
+    if (/\bliteralmente\b/i.test(text) && (shot.who || 'narrator') === 'narrator') out.push(`${where}: banned "literalmente" in narration`);
+    if ((shot.who || 'narrator') !== 'narrator') { flush(); prevOpen = null; return; } // character lines have their own ≤ 8-word rule
+    for (const w of text.split(/\s+/).filter(x => /[\p{L}\p{N}]/u.test(x))) {
+      if (!cur) cur = { words: [], at: where, repeat: !!shot.repeat };
+      cur.words.push(w);
+      if (/[.!?…][”"'»)]*$/.test(w)) flush();
+    }
+  });
+  flush();
+  return out;
 }
 
 function buildSections() {
@@ -30905,6 +31480,11 @@ if (cmd === 'check') {
     process.exit(1);
   }
   console.log(`vo text check: 0 problems, ${ep.shots.filter(s => s.vo).length} shots with narration.`);
+  const style = styleWarnings(ep);
+  if (style.length) {
+    console.log(`\n${style.length} style warning(s) (COLA_ROTEIRO "Voz" — not blocking, but fix before the credit checkpoint):`);
+    style.forEach(w => console.log('  ~ ' + w));
+  } else console.log('style: no sentence over 15 words, no banned words, no repeated openings.');
   console.log(`Mechanical only (brackets, SSML, raw numbers) — still self-certify the judgment items in STORY_BLUEPRINT.md §9 (tag placement, descriptiveness, voice match) before the credit checkpoint.`);
 } else if (cmd === 'sections') {
   const secs = buildSections();
@@ -31931,7 +32511,7 @@ with open(out, 'w', encoding='utf-8') as f:
 words = sum(len(s.get('vo', '').split()) for s in shots)
 print(f'{len(shots)} shots, {words} words -> {os.path.normpath(out)}')
 @@@@ END
-@@@@ FILE tools/episodes/kit.py | text | 9233 | f8c3bf93e70b4ab14d67177d7c89764b7ec5c684502546a6fefe4301515d0d7b
+@@@@ FILE tools/episodes/kit.py | text | 9316 | aa31d06eeb4ab6ff13edfac99189138499ec047f9a20b7610f510b122dbb594d
 """Shared helpers for episode generators (tools/episodes/<slug>.py -> public/episodes/<slug>/episode.json).
 
 Use from a generator:
@@ -32003,7 +32583,7 @@ def ladainha(prefix, set_, itens, sfx='chime', color='yellow', **common):
     `common` holds fields every item shares (e.g. coverage='fast'); an item's own fields win.
     sfx=None drops the per-item sound."""
     for i, it in enumerate(itens, 1):
-        it = {**common, **it}
+        it = {'repeat': True, **common, **it}  # a ladainha repeats its structure on purpose (episode.mjs check)
         word = it.pop('word', None)
         overlays, cues = list(it.pop('overlays', [])), list(it.pop('sfx', []))
         if word:
@@ -34433,7 +35013,7 @@ ${res.length - failed}/${res.length} passed`);
   process.exit(code);
 })();
 @@@@ END
-@@@@ FILE tools/review.mjs | text-crlf | 11917 | 5ef93720966d476cdc463adc0483a2ec8b9c4a9e8e34175d468a279161fce4a6
+@@@@ FILE tools/review.mjs | text-crlf | 12439 | 22fb94f4f3eca32e659e21e5a67796d6434187ad2826e192906ca25e21eca188
 // Review frames: event-anchored, labelled stills for the visual review and the independent reviewer.
 //   node tools/review.mjs <slug>
 // 1. runs the scene audit (out/<slug>/audit.json) for the event list
@@ -34529,6 +35109,10 @@ audit.events.forEach((e, k) => {
   } else if (e.kind === 'jump') {
     times = [e.t - 0.2, e.t + 0.05, e.t + 0.5];
     expect = `JUMP: ${e.what}. The move should read as intended (a swap/teleport/momentum gag), not as a glitch. Nobody overlaps after it.`;
+  } else if (e.kind === 'clip') {
+    const d = tm.shots[e.shot].dur;
+    times = [Math.max(0.03, e.t - 0.3), e.t, Math.min(d - 0.03, e.t + 0.3)];
+    expect = `CLIP: ${e.what} (audit). Look at the body against the furniture/prop in all 3 frames: does any part visibly pass THROUGH it (a hand inside a box, legs inside a sofa, a head sunk into a desk)? If it shows, it's a defect: move the actor or prop, change the pose, or re-seat them. If the camera can't see it (behind the body, off-frame), say so and pass it.`;
   } else if (e.kind === 'flow') {
     const prevDur = tm.shots[e.shot - 1].dur;
     const pa = frameAt(e.shot - 1, prevDur - 0.05), b0 = frameAt(e.shot, 0.05), b1 = frameAt(e.shot, 1.0);

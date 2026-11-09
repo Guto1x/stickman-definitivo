@@ -7,6 +7,7 @@
 import React from 'react';
 import type { SetProps } from './index';
 import type { Vec3 } from '../types';
+import { solidChair } from './solids';
 import { At, Box, Chair, Door, G, WallClock, mix, rng } from './kit';
 import { envMaterial } from '../engine/materials';
 import {
@@ -247,6 +248,12 @@ function buildTeacherArea(b: Batch) {
     b.add('cyl', '#3a4a7a', [1.65, 0.33, 0.3], [0.2, 0.66, 0.2]);
   });
 }
+
+/** Solid furniture for the clip audit (same builders the set draws; floor excluded). */
+export const CLASSROOM_SOLIDS = (variant: number) => [
+  { name: 'desks', build: buildDesks }, { name: 'teacher desk', build: buildTeacherArea }, { name: 'teacher chair', build: (b: Batch) => solidChair(b, [-4.95, 0, 2.2], Math.PI / 2) },
+  ...(variant % 2 === 0 ? [{ name: 'seated extras', build: buildExtras }] : []),
+];
 
 export const Classroom: React.FC<SetProps> = ({ t, time, variant }) => {
   const night = isNight(time);

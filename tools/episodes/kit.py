@@ -69,7 +69,7 @@ def ladainha(prefix, set_, itens, sfx='chime', color='yellow', **common):
     `common` holds fields every item shares (e.g. coverage='fast'); an item's own fields win.
     sfx=None drops the per-item sound."""
     for i, it in enumerate(itens, 1):
-        it = {**common, **it}
+        it = {'repeat': True, **common, **it}  # a ladainha repeats its structure on purpose (episode.mjs check)
         word = it.pop('word', None)
         overlays, cues = list(it.pop('overlays', [])), list(it.pop('sfx', []))
         if word:

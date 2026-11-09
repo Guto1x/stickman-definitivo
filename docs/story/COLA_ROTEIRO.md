@@ -95,11 +95,15 @@ O audit avisa `[hook]` quando faltar o mínimo de cortes, o SFX cedo ou o movime
 
 ## Voz
 - 2ª pessoa, presente. Leitura de 2º–4º ano. Nomeie só 1–2 personagens.
-- Frase média 8–9 palavras; 35–45% ≤ 6; < 5% ≥ 20. Pico de ação: frases de 2–4 palavras. Comece por sujeito concreto ("Você…", "Sua mãe…"). PT-BR: priorize tempo de fala sobre contagem.
+- **Teto de 15 palavras por frase** (2026-11-09, da fórmula de shorts virais). Frase de tensão: curta, staccato. Frase de revelação: pode respirar, mas ainda ≤ 15. O `check` avisa cada frase acima do teto.
+- **Nunca duas frases seguidas com a mesma estrutura** (mesmas 2 primeiras palavras). Exceção: a ladainha e a repetição ×3 do clímax repetem de propósito; marque esses planos com `repeat: True` no shot. O `check` avisa.
+- **Cada frase é um corte:** escreva pensando que cada frase abre num enquadramento novo. Os sub-cortes automáticos já preferem o início de frase.
+- Frase média 8–9 palavras; 35–45% ≤ 6; nenhuma > 15. Pico de ação: frases de 2–4 palavras. Comece por sujeito concreto ("Você…", "Sua mãe…"). PT-BR: priorize tempo de fala sobre contagem.
 - **Comédia:** **12–20 falas de personagem/10 min**, todas com ≤ 8 palavras e todas reação ou piada (testemunha, piada seca, réplica impassível); **nenhuma explica o enredo**, quem explica é o narrador. Menos falas e mais fortes: meta alta empurra fala fraca (benchmark 2026-11-09, `docs/benchmark/comprar-amor/`). Piada a cada ≤ 60 s antes da crise (o aparte do narrador conta); nunca no dilema. Isto substitui o "25–32 falas" do blueprint. Ferramentas: duplo tempo impassível, piadinha de testemunha, aparte do narrador (1–3), lista de três com virada, piada recorrente, subestimação no clímax.
-- **Diálogo é reação, não exposição.** Mãe 2–4 falas (nota o custo primeiro); amigo 3–5; cético 1–2; vilão frases curtas, ≤ 3 por fala.
+- **O cético que perde** (2026-11-09): um personagem duvida de você cedo (até o teste de prova), volta a duvidar em 1–2 momentos e é calado pelo clímax, de preferência só com uma reação, sem fala. É a tensão "alguém certo × um mundo que duvida", espalhada pelos 10 min. Conta como 1 plantio pago no clímax.
+- **Diálogo é reação, não exposição.** Mãe 2–4 falas (nota o custo primeiro); amigo 3–5; cético 2–3 (o que perde); vilão frases curtas, ≤ 3 por fala.
 - **Transições:** use o banco da §6.6 e nunca repita uma dentro do episódio.
-- **Banidos (busque cada um):** "em um mundo onde", "de repente", "literalmente" (fora de diálogo), "jornada", "tudo mudou", "você não vai acreditar", "no final das contas", "mas espera, tem mais", "embarca", "desperta/libera", "insano/épico" (> 1×). Lista completa e assinaturas da IFOLOGY proibidas (estranho de casaco cinza, organização, slogan "IF"): §6.7. Sem marcas nem celebridades.
+- **Banidos (o `check` busca):** "incrível", "fantástico", "surpreendente" (adjetivo fraco: mostre, não qualifique), "em um mundo onde", "de repente", "literalmente" (fora de diálogo), "jornada", "tudo mudou", "você não vai acreditar", "no final das contas", "mas espera, tem mais", "embarca", "desperta/libera", "insano/épico" (> 1×). Lista completa e assinaturas da IFOLOGY proibidas (estranho de casaco cinza, organização, slogan "IF"): §6.7. Sem marcas nem celebridades.
 
 ## Ladainha: informação nova a cada ≤ 6 s (benchmark 2026-11-09)
 O que mais segura o espectador é uma novidade a cada poucos segundos, e não a quantidade de falas. A ladainha é uma lista de itens curtos, **um a cada 4–6 s**, cada um com duas frases:
@@ -119,8 +123,9 @@ O que mais segura o espectador é uma novidade a cada poucos segundos, e não a 
 ## Fatos científicos reais (benchmark 2026-11-09)
 Um fato real verificável dá credibilidade à fantasia e deixa o perigo palpável. No benchmark, o concorrente tinha ~9 fatos e nós só 1.
 - **≥ 6 por 10 min**, mais ou menos 1 a cada 60–90 s até a crise, e **1 no clímax**. Nenhum no dilema.
-- **Preso à cena, nunca decorativo.** Cada fato explica por que o poder funciona, mede uma vantagem ou deixa um custo/perigo concreto. Formato: teaser → fato com número → 1 frase que volta pro "você".
-  > "Quando um cachorro olha nos olhos do dono, os dois cérebros soltam ocitocina. O seu cachorro de dois reais olha pra você o dia inteiro."
+- **Preso à cena, nunca decorativo.** Cada fato explica por que o poder funciona, mede uma vantagem ou deixa um custo/perigo concreto.
+- **Consequência antes do conceito** (2026-11-09): o espectador vê o efeito na cena primeiro e só depois ganha o porquê. Formato: **cena estranha → fato com número que explica → 1 frase que volta pro "você"**. Nada de abrir com "sabia que…".
+  > "O seu cachorro de dois reais não tira o olho de você. O dia inteiro. Quando um cachorro olha nos olhos do dono, os dois cérebros soltam ocitocina. Ele está viciado em você."
 - **No clímax, o fato torna o perigo físico:** "Cair de seis metros é bater num muro a quarenta quilômetros por hora."
 - **Fontes:** corpo/cérebro, animais (a âncora conta como 1), física, dinheiro/lei, história.
 - **Só fato sólido.** Registre cada um na ficha de fatos do `script_notes.md` com a fonte. Arredonde para baixo e use "cerca de" ou "menos de". Mito de internet não entra ("só usamos dez por cento do cérebro"), nem conselho médico. Física e contas: confira 2×.
@@ -142,7 +147,7 @@ Um fato real verificável dá credibilidade à fantasia e deixa o perigo palpáv
 - Gate mecânico: `node tools/episode.mjs check <slug>`.
 
 ## Visual por batida (resumo; tabela completa §7)
-~20 cortes/min (planos de ~3 s); montagem 27–44 (na ladainha, 1 plano por item); **todo pico ou número ganha palavra-destaque (`word`) + SFX curto**; cards 8–15; clímax 10–15. Card ≤ 6 s, plano 3D ≤ 8 s. **8–14 cards/10 min**, ≥ 1 tableau congelado ou câmera lenta, 1 plano de elenco/multidão. Título: `title` com `bg:false` sobre plano aberto. Números: `compare`/`stat`/`speed`/`distance`. Regras: card `rules` antes de cada teste. Crise → clímax: `stopwatch` com `persist` até o fim. Clímax sem cards completos. CTA: card `title` com P1/P2.
+**Closes automáticos:** os sub-cortes alternam aproxima → novo ângulo → close de rosto → volta, sempre em movimento. Rosto de reação (`shocked`, `scared`, `furious`, `awe`…) no alvo da câmera ganha corte e close na hora; pra um close de reação, ponha a cara na palavra. Close escrito à mão precisa mostrar o rosto (nada de cabeça curvada ou de costas): o audit avisa. **Corte no grave:** todo impacto forte (`boom`, `farBoom`, `subdrop`) posto no `sfx` vira corte com tranco de câmera automaticamente; pra cortar num grave, ponha o som na palavra. ~20 cortes/min (planos de ~3 s); montagem 27–44 (na ladainha, 1 plano por item); **todo pico ou número ganha palavra-destaque (`word`) + SFX curto**; cards 8–15; clímax 10–15. Card ≤ 6 s, plano 3D ≤ 8 s. **8–14 cards/10 min**, ≥ 1 tableau congelado ou câmera lenta, 1 plano de elenco/multidão. Título: `title` com `bg:false` sobre plano aberto. Números: `compare`/`stat`/`speed`/`distance`. Regras: card `rules` antes de cada teste. Crise → clímax: `stopwatch` com `persist` até o fim. Clímax sem cards completos. CTA: card `title` com P1/P2.
 
 **Ritmo da casa (2026-11-08):** `episode(..., ritmo='rapido')` liga sub-cortes automáticos (`coverage: 'fast'`, ~1 corte a cada 1,6 s na palavra) e whip/zoom alternados em toda troca de set. Dilema: `coverage='calm'`; tableau congelado: `'off'`. **Smash** (`cut='smash'`) à mão na revelação ou na piada seca. Meta: ~30 cortes/min fora do dilema.
 **Pensado pra 9:16:** quem fala ou age fica na faixa central (o audit avisa `vertical`); dois personagens longe um do outro = dois planos, não um aberto.
@@ -166,6 +171,7 @@ O usuário corta à mão, do 16:9, shorts de **~90 s** para YouTube Shorts, Reel
 - [ ] ≥ 6 fatos científicos reais presos à cena (1 a cada 60–90 s, 1 no clímax, 0 no dilema), cada um com fonte na ficha de fatos
 - [ ] Viradas nas janelas; relógio vindo de regra; dilema binário; regra tema vence; custo pago; objeto perdido; frase de mudança
 - [ ] 12–20 falas de reação/piada (≤ 8 pal., nenhuma explicando enredo); piada ≤ 60 s; estatística de frase; sem banidos
+- [ ] Nenhuma frase > 15 palavras; nada de duas frases seguidas com a mesma abertura (fora `repeat`); cada fato mostra a consequência antes do conceito; cético plantado cedo e calado no clímax
 - [ ] Ladainha nas vantagens: 12–16 itens, 1 a cada 4–6 s, escala crescente, quebra a cada 3; número em `word` + SFX
 - [ ] ≥ 4 trechos de ~90 s marcados em `clips`, cada um com abertura fria e final com soco
 - [ ] Tom ácido: sarcasmo/maldade a cada 30–60 s, nada no dilema, família interesseira, limite monetizável respeitado

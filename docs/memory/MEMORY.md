@@ -13,7 +13,8 @@
 - [/clear entre tarefas](feedback-clear-entre-tarefas.md) — remind the user to /clear when switching to an unrelated task (2026-11-09)
 - [Ritmo rápido](project-ritmo-rapido.md) — house pacing since 2026-11-08: coverage sub-cuts, whip/zoom/smash, 9:16-safe; generators use ritmo='rapido'; NO native vertical render — user cuts 9:16 by hand from the 16:9
 - [Cortes p/ shorts](feedback-cortes-shorts.md) — every long episode needs ≥ 4 self-contained ~90 s segments (episode clips); build writes .srt + cortes.txt
-- [Episódios antigos: encerrado](project-refazer-episodios.md) — only zumbi kept (final build done 2026-11-09); keep /stickman credit stop
+- [Episódios prontos: congelados](project-refazer-episodios.md) — finished episodes are posted at once and never fixed/re-rendered for new rules; zumbi kept; keep /stickman credit stop
 - [Duração ≥ 10 min](feedback-duracao-10min.md) — every long episode ≥ 10:00 voiced (~1,600–1,700 words); audit warns [length]; zumbi stays 9:14 (2026-11-09)
 - [Gancho nos 10 s](feedback-gancho-10s.md) — new episodes only: ≥ 2 hook types, ≥ 6 cuts, punchy move, SFX ≤ 2 s; audit [hook]; zumbi opted out (2026-11-09)
 - [Sem música](feedback-sem-musica.md) — menu-do-corpo episode has NO music (user adds tracks in their editor, 2026-11-09); ask on the next episode if it's a house rule
+- [Fórmula shorts adotada](project-formula-shorts-adotada.md) — 2026-11-09: ≤15 pal./frase, consequência antes do conceito, cético que perde, sem adjetivo fraco; ímã de graves, ciclo de closes, câmera mais móvel, audit de corpo atravessando objeto

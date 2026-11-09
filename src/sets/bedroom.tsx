@@ -27,23 +27,23 @@ function buildFurniture(b: Batch) {
   b.at([-2.55, 0, Z + 1.12], 0, () => {
     const wood = '#8a5e43';
     b.box([0, 0.2, 0], [1.68, 0.28, 2.14], wood);
-    b.box([0, 0.42, 0.02], [1.56, 0.2, 2.0], '#f4f1ea');
-    b.box([0, 0.44, 0.32], [1.64, 0.3, 1.5], DUVET);
-    b.box([0, 0.53, 0.32], [1.6, 0.12, 1.48], DUVET);
-    b.box([0, 0.535, -0.42], [1.645, 0.13, 0.16], mix(DUVET, '#ffffff', 0.55));
-    b.box([0, 0.545, 0.86], [1.65, 0.13, 0.3], '#f2b632');
-    b.box([-0.38, 0.62, -0.72], [0.6, 0.14, 0.38], '#fbf8f2', [0.25, 0.08, 0]);
-    b.box([0.38, 0.62, -0.72], [0.6, 0.14, 0.38], '#fbf8f2', [0.25, -0.06, 0]);
+    b.box([0, 0.42, 0.02], [1.56, 0.2, 2.0], '#f4f1ea', 0, { soft: true }); // mattress
+    b.box([0, 0.44, 0.32], [1.64, 0.3, 1.5], DUVET, 0, { soft: true });
+    b.box([0, 0.53, 0.32], [1.6, 0.12, 1.48], DUVET, 0, { soft: true });
+    b.box([0, 0.535, -0.42], [1.645, 0.13, 0.16], mix(DUVET, '#ffffff', 0.55), 0, { soft: true });
+    b.box([0, 0.545, 0.86], [1.65, 0.13, 0.3], '#f2b632', 0, { soft: true });
+    b.box([-0.38, 0.62, -0.72], [0.6, 0.14, 0.38], '#fbf8f2', [0.25, 0.08, 0], { soft: true });
+    b.box([0.38, 0.62, -0.72], [0.6, 0.14, 0.38], '#fbf8f2', [0.25, -0.06, 0], { soft: true });
     b.box([0, 0.63, -1.06], [1.74, 1.06, 0.08], wood);
     b.box([0, 1.18, -1.06], [1.82, 0.07, 0.12], mix(wood, '#000000', 0.2));
     b.box([0, 0.3, 1.08], [1.68, 0.5, 0.06], wood);
-    // teddy bear
+    // teddy bear (soft: the clip audit lets a sleeper's arm sink into it)
     b.at([0.45, 0.6, -0.25], 0.4, () => {
-      b.add('sphere', '#b07a4f', [0, 0.1, 0], [0.12, 0.13, 0.1]);
-      b.add('sphere', '#b07a4f', [0, 0.29, 0], 0.085);
-      b.add('sphere', '#b07a4f', [-0.07, 0.36, 0], 0.035);
-      b.add('sphere', '#b07a4f', [0.07, 0.36, 0], 0.035);
-      b.add('sphere', '#e6c9a8', [0, 0.27, 0.07], [0.035, 0.03, 0.025]);
+      b.add('sphere', '#b07a4f', [0, 0.1, 0], [0.12, 0.13, 0.1], undefined, { soft: true });
+      b.add('sphere', '#b07a4f', [0, 0.29, 0], 0.085, undefined, { soft: true });
+      b.add('sphere', '#b07a4f', [-0.07, 0.36, 0], 0.035, undefined, { soft: true });
+      b.add('sphere', '#b07a4f', [0.07, 0.36, 0], 0.035, undefined, { soft: true });
+      b.add('sphere', '#e6c9a8', [0, 0.27, 0.07], [0.035, 0.03, 0.025], undefined, { soft: true });
     });
   });
   // nightstand
@@ -135,6 +135,9 @@ const PlanetPoster: React.FC<{ p: Vec3; r?: number }> = ({ p, r = 0 }) => (
     ))}
   </At>
 );
+
+/** Solid furniture for the clip audit (same builder the set draws; floor excluded). */
+export const BEDROOM_SOLIDS = () => [{ name: 'furniture', build: buildFurniture }];
 
 export const Bedroom: React.FC<SetProps> = ({ t, time }) => {
   const night = isNight(time);

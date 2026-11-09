@@ -26,12 +26,14 @@ All files are in `out/<slug>/review/`.
 1. Open **every** event image and check each frame against its `expect` line. Typical failures:
    - two name tags on one spot (characters overlapping);
    - a dashed marker with no character on it;
-   - the wrong character doing the action.
+   - the wrong character doing the action;
+   - **`clip` events:** a body part passing THROUGH furniture or a prop (a hand inside a box, legs inside a sofa, a head sunk into a desk or a book). The audit measured it; you judge whether it shows. Visible = a defect (move the actor/prop, change the pose, re-seat them). Hidden by the angle (behind the body, off-frame) = say so and pass it.
 2. Open **every** shot strip (`shots[].strip`) and compare the pictures with the narration (`vo`, timed by `words`). Open a `full` frame when a detail is too small to judge. Ask:
    - Does the frame show what the line says?
    - Is the right person on screen?
    - Is the speaker visible when they talk?
    - Do the numbers on cards and overlays match the narration?
+   - Does any body pass through a desk, chair, sofa, bed, table or prop, even where the audit didn't flag it (outdoor sets aren't measured yet)?
 3. Look for these problems in every frame:
    - A character cut off by the frame edge, tiny, or hidden behind an object.
    - A character floating, sinking into the floor, or walking through furniture.
