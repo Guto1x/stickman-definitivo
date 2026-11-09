@@ -82,7 +82,7 @@ Testes: dá pra dizer numa respirada · abertura mostra em 1 plano de 3 s · o l
 - Inline no `vo`, em inglês, entre colchetes, **uma por reação real** (não por frase).
 - Antes do trecho = tom da fala; depois = reação a ela.
 - Catálogo: `[whispering] [softly] [slowly] [pause] [voice breaking] [weak] [tired] [bored] [playful] [angry] [excited] [menacing] [chuckling] [laughing] [sighing] [gasping] [panting] [scoffing] [sniffling] [clears throat] [sharp exhale]`. Combinações valem (`[sighs, tired]`). Fora disso, só testando antes.
-- Narrador: `[sarcastic] [mischievously] [deadpan] [darkly amused] [chuckling]`, e `[menacing]` 1–3×/episódio (validar na voz do Yuri antes do 1º uso). `[excited]` é de personagem. Nada que contradiga a cena.
+- Narrador: `[sarcastic] [mischievously] [deadpan] [darkly amused] [chuckling]`, e `[menacing]` 1–3×/episódio (validadas no Yuri, 2026-11-08). `[excited]` é de personagem. Nada que contradiga a cena.
 - Nunca SSML `<break>`; respiro com `…`, vírgula, `[pause]`. Pronúncia errada: IPA `/…/` só na palavra.
 - Gate mecânico: `node tools/episode.mjs check <slug>`.
 

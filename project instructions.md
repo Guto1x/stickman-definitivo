@@ -10,7 +10,7 @@ This one file rebuilds the 3D Stickman Long production system in an empty folder
 - Claude's project memory;
 - the `/stickman <topic>` command (topic in, finished video and 3 thumbnails out).
 
-It holds 204 files in all, each with a checksum. It was packed on 2026-11-09. It holds no finished videos or episodes: you start with an empty channel.
+It holds 205 files in all, each with a checksum. It was packed on 2026-11-09. It holds no finished videos or episodes: you start with an empty channel.
 
 ## For the human
 
@@ -393,9 +393,9 @@ End with how to connect ElevenLabs (get a key, give it to Claude in a new chat) 
 | `.claude/` | 2 | 5 KB | the `/stickman <topic>` command and the `revisor-verificacao` subagent (sonnet) |
 | `(root)` | 10 | 197 KB | `CLAUDE.md` (the project rules), `HOW_TO_USE.md`, `package.json`, `package-lock.json`, Remotion and TypeScript config |
 | `.vscode/` | 1 | 0 KB |  |
-| `@memory/` | 16 | 26 KB | Claude's memory for this project (extracted into the new project's memory folder) |
+| `@memory/` | 17 (1 binary) | 28 KB | Claude's memory for this project (extracted into the new project's memory folder) |
 | `data/` | 47 | 415 KB | idea-engine data: competitor titles, beat sheets, transcripts, patterns, ideas backlog |
-| `docs/` | 18 (8 binary) | 1314 KB | style bible, story blueprint, idea engine, reviewer brief, ElevenLabs and Fish first-connect checklists, channel research with reference frames |
+| `docs/` | 18 (8 binary) | 1313 KB | style bible, story blueprint, idea engine, reviewer brief, ElevenLabs and Fish first-connect checklists, channel research with reference frames |
 | `final/` | 1 | 1 KB | its README (finished videos land here) |
 | `projeto-2/` | 1 | 0 KB |  |
 | `public/` | 4 | 7 KB | the `pipetest` fixture episode (JSON only), empty `music/` and `sfx/` |
@@ -500,22 +500,58 @@ __pycache__/
     "python.terminal.useEnvFile": true
 }
 @@@@ END
-@@@@ FILE @memory/MEMORY.md | text-crlf | 2674 | be42e82fb5f604845a9acadcca1e66f2c0ef6976befbb1fa2bbd98a556dbfce6
-- [IFOLOGY-style channel](project-ifology-style-channel.md) — IFOLOGY-look hero in a GRAY quarter-zip jacket (since 2026-11-08), flat final/ folder, Remotion+Three engine, Python SFX, ElevenLabs voice
-- [Review-and-fix loop](feedback-review-and-fix-loop.md) — audit + independent reviewer BEFORE final render, then review the render; fix everything; 1080p final
-- [No camera snaps](feedback-no-camera-snaps.md) — never cut between near-identical framings ("a few pixels over"); flow instead; real angle changes are fine
-- [Voices](project-narrator-voice.md) — ElevenLabs PT-BR: narrator Yuri (eleven_v4) with a calm `[calm]` direction; house male Eduardo / female Sofia; ~0.4 credits/char
-- [PT-BR content adaptation](project-pt-br-adaptation.md) — scripts/VO/overlays/thumbnails + story docs are PT-BR since 2026-11-08; code/CLAUDE.md stay English
-- [ElevenLabs API key](reference-elevenlabs-key.md) — in D:\stickman-2\.env, gitignored; scoped (no user_read/models_read) — check balance on the dashboard
-- [Thumbnails via GPT Image 2.5](project-thumbnails-gpt-image.md) — 2D GPT Image thumbs, fish or chatgpt mode (chatgpt now), locked 3 variants at 2K medium, only when a video is ~finished; gray quarter-zip jacket
-- [Fish Audio pending](project-fish-pending.md) — Fish MCP NOT connected; now only needed for fish-mode thumbnails (chatgpt mode is current), not voice
-- [Optimization action plan](project-otimizacao.md) — docs/OTIMIZACAO.md all done 2026-11-08; confirm real-API parallel voice + sonnet round-2 cost on next episode; 2nd account on a separate PC
-- [Projeto 2: future series idea](project-2-series-future.md) — NOT started; continuous "Day N" series voted by YouTube comments, reusing the engine not the What-If blueprint; see futuro.md
-- [Tom ácido](feedback-tom-acido.md) — no cute/family tone: narrator calm but sometimes malicious/sarcastic; bold stakes, still monetizable (2026-11-08)
-- [Don't restructure CLAUDE.md](feedback-nao-reestruturar-claude-md.md) — user declined splitting CLAUDE.md / re-modeling /stickman + reviewers (2026-11-08); wait on earlier optimizations
-- [Ritmo rápido](project-ritmo-rapido.md) — house pacing since 2026-11-08: coverage sub-cuts, whip/zoom/smash, 9:16-safe; generators use ritmo='rapido'; NO native vertical render — user cuts 9:16 by hand from the 16:9
-- [Cortes p/ shorts](feedback-cortes-shorts.md) — every long episode needs ≥ 4 self-contained ~90 s segments (episode clips); build writes .srt + cortes.txt
-- [ElevenLabs pending](project-elevenlabs-pending.md) — no working ELEVENLABS_API_KEY at setup; run docs/ELEVENLABS_SETUP.md once one is added to .env
+@@@@ FILE @memory/MEMORY.md | base64 | 2868 | 87778d0d208b42f03f7a0732fd7dac7fd5a4b44ff31d217ec5ebe75c19a07872
+LSBbSUZPTE9HWS1zdHlsZSBjaGFubmVsXShwcm9qZWN0LWlmb2xvZ3ktc3R5bGUtY2hhbm5lbC5t
+ZCkg4oCUIElGT0xPR1ktbG9vayBoZXJvIGluIGEgR1JBWSBxdWFydGVyLXppcCBqYWNrZXQgKHNp
+bmNlIDIwMjYtMTEtMDgpLCBmbGF0IGZpbmFsLyBmb2xkZXIsIFJlbW90aW9uK1RocmVlIGVuZ2lu
+ZSwgUHl0aG9uIFNGWCwgRWxldmVuTGFicyB2b2ljZQ0KLSBbUmV2aWV3LWFuZC1maXggbG9vcF0o
+ZmVlZGJhY2stcmV2aWV3LWFuZC1maXgtbG9vcC5tZCkg4oCUIGF1ZGl0ICsgaW5kZXBlbmRlbnQg
+cmV2aWV3ZXIgQkVGT1JFIGZpbmFsIHJlbmRlciwgdGhlbiByZXZpZXcgdGhlIHJlbmRlcjsgZml4
+IGV2ZXJ5dGhpbmc7IDEwODBwIGZpbmFsDQotIFtObyBjYW1lcmEgc25hcHNdKGZlZWRiYWNrLW5v
+LWNhbWVyYS1zbmFwcy5tZCkg4oCUIG5ldmVyIGN1dCBiZXR3ZWVuIG5lYXItaWRlbnRpY2FsIGZy
+YW1pbmdzICgiYSBmZXcgcGl4ZWxzIG92ZXIiKTsgZmxvdyBpbnN0ZWFkOyByZWFsIGFuZ2xlIGNo
+YW5nZXMgYXJlIGZpbmUNCi0gW1ZvaWNlc10ocHJvamVjdC1uYXJyYXRvci12b2ljZS5tZCkg4oCU
+IEVsZXZlbkxhYnMgUFQtQlI6IG5hcnJhdG9yIFl1cmkgKGVsZXZlbl92NCkgd2l0aCBhIGNhbG0g
+YFtjYWxtXWAgZGlyZWN0aW9uOyBob3VzZSBtYWxlIEVkdWFyZG8gLyBmZW1hbGUgU29maWE7IH4w
+LjQgY3JlZGl0cy9jaGFyDQotIFtQVC1CUiBjb250ZW50IGFkYXB0YXRpb25dKHByb2plY3QtcHQt
+YnItYWRhcHRhdGlvbi5tZCkg4oCUIHNjcmlwdHMvVk8vb3ZlcmxheXMvdGh1bWJuYWlscyArIHN0
+b3J5IGRvY3MgYXJlIFBULUJSIHNpbmNlIDIwMjYtMTEtMDg7IGNvZGUvQ0xBVURFLm1kIHN0YXkg
+RW5nbGlzaA0KLSBbRWxldmVuTGFicyBBUEkga2V5XShyZWZlcmVuY2UtZWxldmVubGFicy1rZXku
+bWQpIOKAlCBpbiBEOlxzdGlja21hbi0yXC5lbnYsIGdpdGlnbm9yZWQ7IHNjb3BlZCAobm8gdXNl
+cl9yZWFkL21vZGVsc19yZWFkKSDigJQgY2hlY2sgYmFsYW5jZSBvbiB0aGUgZGFzaGJvYXJkDQot
+IFtUaHVtYm5haWxzIHZpYSBHUFQgSW1hZ2UgMi41XShwcm9qZWN0LXRodW1ibmFpbHMtZ3B0LWlt
+YWdlLm1kKSDigJQgMkQgR1BUIEltYWdlIHRodW1icywgZmlzaCBvciBjaGF0Z3B0IG1vZGUgKGNo
+YXRncHQgbm93KSwgbG9ja2VkIDMgdmFyaWFudHMgYXQgMksgbWVkaXVtLCBvbmx5IHdoZW4gYSB2
+aWRlbyBpcyB+ZmluaXNoZWQ7IGdyYXkgcXVhcnRlci16aXAgamFja2V0DQotIFtGaXNoIEF1ZGlv
+IHBlbmRpbmddKHByb2plY3QtZmlzaC1wZW5kaW5nLm1kKSDigJQgRmlzaCBNQ1AgTk9UIGNvbm5l
+Y3RlZDsgbm93IG9ubHkgbmVlZGVkIGZvciBmaXNoLW1vZGUgdGh1bWJuYWlscyAoY2hhdGdwdCBt
+b2RlIGlzIGN1cnJlbnQpLCBub3Qgdm9pY2UNCi0gW09wdGltaXphdGlvbiBhY3Rpb24gcGxhbl0o
+cHJvamVjdC1vdGltaXphY2FvLm1kKSDigJQgZG9jcy9PVElNSVpBQ0FPLm1kIGFsbCBkb25lIDIw
+MjYtMTEtMDg7IGNvbmZpcm0gcmVhbC1BUEkgcGFyYWxsZWwgdm9pY2UgKyBzb25uZXQgcm91bmQt
+MiBjb3N0IG9uIG5leHQgZXBpc29kZTsgMm5kIGFjY291bnQgb24gYSBzZXBhcmF0ZSBQQw0KLSBb
+UHJvamV0byAyOiBmdXR1cmUgc2VyaWVzIGlkZWFdKHByb2plY3QtMi1zZXJpZXMtZnV0dXJlLm1k
+KSDigJQgTk9UIHN0YXJ0ZWQ7IGNvbnRpbnVvdXMgIkRheSBOIiBzZXJpZXMgdm90ZWQgYnkgWW91
+VHViZSBjb21tZW50cywgcmV1c2luZyB0aGUgZW5naW5lIG5vdCB0aGUgV2hhdC1JZiBibHVlcHJp
+bnQ7IHNlZSBmdXR1cm8ubWQNCi0gW1RvbSDDoWNpZG9dKGZlZWRiYWNrLXRvbS1hY2lkby5tZCkg
+4oCUIG5vIGN1dGUvZmFtaWx5IHRvbmU6IG5hcnJhdG9yIGNhbG0gYnV0IHNvbWV0aW1lcyBtYWxp
+Y2lvdXMvc2FyY2FzdGljOyBib2xkIHN0YWtlcywgc3RpbGwgbW9uZXRpemFibGUgKDIwMjYtMTEt
+MDgpDQotIFtEb24ndCByZXN0cnVjdHVyZSBDTEFVREUubWRdKGZlZWRiYWNrLW5hby1yZWVzdHJ1
+dHVyYXItY2xhdWRlLW1kLm1kKSDigJQgdXNlciBkZWNsaW5lZCBzcGxpdHRpbmcgQ0xBVURFLm1k
+IC8gcmUtbW9kZWxpbmcgL3N0aWNrbWFuICsgcmV2aWV3ZXJzICgyMDI2LTExLTA4KTsgd2FpdCBv
+biBlYXJsaWVyIG9wdGltaXphdGlvbnMNCi0gW1JpdG1vIHLDoXBpZG9dKHByb2plY3Qtcml0bW8t
+cmFwaWRvLm1kKSDigJQgaG91c2UgcGFjaW5nIHNpbmNlIDIwMjYtMTEtMDg6IGNvdmVyYWdlIHN1
+Yi1jdXRzLCB3aGlwL3pvb20vc21hc2gsIDk6MTYtc2FmZTsgZ2VuZXJhdG9ycyB1c2Ugcml0bW89
+J3JhcGlkbyc7IE5PIG5hdGl2ZSB2ZXJ0aWNhbCByZW5kZXIg4oCUIHVzZXIgY3V0cyA5OjE2IGJ5
+IGhhbmQgZnJvbSB0aGUgMTY6OQ0KLSBbQ29ydGVzIHAvIHNob3J0c10oZmVlZGJhY2stY29ydGVz
+LXNob3J0cy5tZCkg4oCUIGV2ZXJ5IGxvbmcgZXBpc29kZSBuZWVkcyDiiaUgNCBzZWxmLWNvbnRh
+aW5lZCB+OTAgcyBzZWdtZW50cyAoZXBpc29kZSBjbGlwcyk7IGJ1aWxkIHdyaXRlcyAuc3J0ICsg
+Y29ydGVzLnR4dAotIFtORVhUOiByZWZhemVyIGVwaXPDs2Rpb3NdKHByb2plY3QtcmVmYXplci1l
+cGlzb2Rpb3MubWQpIOKAlCByZWRvIHp1bWJpIHRoZW4gY3J1c2g6IGZyZWUgdmlzdWFsIHBhc3Mg
+KHJpdG1vLCBjbGlwcywgY2VudHJlKSB0aGVuIHRhcmdldGVkIGFjaWQgcmV3cml0ZSBiZWZvcmUg
+dm9pY2U7IGtlZXAgL3N0aWNrbWFuIGNyZWRpdCBzdG9wDQotIFtFbGV2ZW5MYWJzIHBlbmRpbmdd
+KHByb2plY3QtZWxldmVubGFicy1wZW5kaW5nLm1kKSDigJQgbm8gd29ya2luZyBFTEVWRU5MQUJT
+X0FQSV9LRVkgYXQgc2V0dXA7IHJ1biBkb2NzL0VMRVZFTkxBQlNfU0VUVVAubWQgb25jZSBvbmUg
+aXMgYWRkZWQgdG8gLmVudg0K
 @@@@ END
 @@@@ FILE @memory/feedback-cortes-shorts.md | text | 1071 | 743a95b4f29187679ba8c2e35d2841ef00f6386ded9977613b6652b60a057e04
 ---
@@ -604,7 +640,7 @@ On 2026-10-27 the user found a swap bug that two of my reviews had missed: the s
 
 Related: [[project-ifology-style-channel]], [[feedback-no-camera-snaps]].
 @@@@ END
-@@@@ FILE @memory/feedback-tom-acido.md | text | 1410 | b716c5d6c506cb45526fabe90324fbf4ee3a662d194a8d42fa1202287e92e4a3
+@@@@ FILE @memory/feedback-tom-acido.md | text | 1405 | c8ccc8a2d821310a25b4cad8deaf3dda44fd200b000f6b51529b57ab65af0a06
 ---
 name: feedback-tom-acido
 description: Script tone is acid/bold, NOT the cute family IFOLOGY tone — narrator calm at base but sometimes malicious/sarcastic; bold appealing stakes, still YouTube-monetizable (user, 2026-11-08)
@@ -616,7 +652,7 @@ On 2026-11-08 the user said scripts must be bolder and more "apelativo", and the
 
 **Why:** the user felt the episodes were too soft/safe to hold attention.
 
-**How to apply:** follow STORY_BLUEPRINT.md §6.10 (summary in COLA_ROTEIRO "Tom"): one sarcastic/malicious jab every 30–60 s, none in the dilemma; family acts out of self-interest, no hug-fixes-all ending or spoken moral; high stakes early; clickbait titles the episode actually delivers. Narrator tags `[sarcastic] [mischievously] [deadpan] [darkly amused]`, `[menacing]` 1–3×/episode — not yet validated on Yuri's voice, test before the first episode. Base direction stays `[calm]` (see [[project-narrator-voice]]); faster pacing is visual (cuts), not a hyper voice.
+**How to apply:** follow STORY_BLUEPRINT.md §6.10 (summary in COLA_ROTEIRO "Tom"): one sarcastic/malicious jab every 30–60 s, none in the dilemma; family acts out of self-interest, no hug-fixes-all ending or spoken moral; high stakes early; clickbait titles the episode actually delivers. Narrator tags `[sarcastic] [mischievously] [deadpan] [darkly amused]`, `[menacing]` 1–3×/episode — all 5 tested on Yuri on 2026-11-08 and approved by the user. Base direction stays `[calm]` (see [[project-narrator-voice]]); faster pacing is visual (cuts), not a hyper voice.
 @@@@ END
 @@@@ FILE @memory/project-2-series-future.md | text | 2673 | 62614de0eb046cb3f1c7a0c0ee5c6f43440e92d2bfae669d102ffc27491b18bb
 ---
@@ -789,6 +825,35 @@ On 2026-11-08 the user asked to adapt the project to Portuguese. They chose the 
 - Write new scripts/VO/overlays/thumbnails in Portuguese by default; don't ask each time.
 - If the user asks for something to be in English (a one-off), that's a request for that piece only, not a scope change — check before assuming it's permanent.
 - Related: [[project-narrator-voice]] (the ElevenLabs voices are PT-BR too, picked for this reason).
+@@@@ END
+@@@@ FILE @memory/project-refazer-episodios.md | text | 1786 | 22fbf4253ca107197285af6d22c9253d8230e20d22d1817650115efc2022c8cc
+---
+name: project-refazer-episodios
+description: NEXT TASK (agreed 2026-11-08) — redo invasao-zumbi then quem-tem-crush in the new style: free visual pass first, then a targeted acid-tone rewrite shown before any voice credits
+metadata:
+  type: project
+---
+
+On 2026-11-08 the user agreed to remake both finished episodes in the new style. They asked to start in a fresh session (after /clear).
+
+**Order:** invasao-zumbi first (shorter, 7.9k chars, its stakes already suit the acid tone), then quem-tem-crush (9.1k chars, the cutest story, so it needs more rewriting).
+
+**Per episode:**
+1. **Visual pass (0 credits, keeps the current voice).** In `tools/episodes/<slug>.py`:
+   - add `ritmo='rapido'` (coverage sub-cuts + whip/zoom on set changes; `coverage='calm'` in the dilemma; `cut='smash'` by hand on reveals);
+   - mark ≥ 4 self-contained ~90 s `clips` ([[feedback-cortes-shorts]]);
+   - move key overlays and subjects into the 9:16 centre column (audit `vertical`).
+
+   Then regenerate, `qa.cjs audit`, `review.mjs`, reviewer, build. The build writes `.srt` and `- cortes.txt`.
+2. **Tone pass ([[feedback-tom-acido]]).** Rewrite only the lines that need it: narrator jabs, self-interested family, no hug or moral at the end. Show the user the script and the credit estimate before `voice`. Only changed sections are billed.
+
+**Not built yet (do it during the zumbi):**
+- a "palavra-destaque" overlay (the key word pops in on its `@word` cue, centre column);
+- an audit warning when an important overlay (stopwatch/stat/label corner) sits outside the 9:16 centre column.
+
+**Keep:** `/stickman` must still stop once before spending voice credits — the user said "não tire isso".
+
+**Tags:** the user approved all 5 sarcastic tags on Yuri (2026-11-08); nothing pending there.
 @@@@ END
 @@@@ FILE @memory/project-ritmo-rapido.md | text-crlf | 1677 | dc3cd2c462104aceb84fa236ffcbd5df7de3bdb1ca5ee808a6f1a5216eef710c
 ---
@@ -11734,7 +11799,7 @@ End with:
 
 Reply with the counts and every must-fix row.
 @@@@ END
-@@@@ FILE docs/story/COLA_ROTEIRO.md | text-crlf | 12998 | 3ef069c5d2cdde6402b75657b0f65d2993e9ae42011c7a874dc7cc4fb7d87d29
+@@@@ FILE docs/story/COLA_ROTEIRO.md | text | 12869 | 4a5a046385cb1aea5408e68ac63eac1a4dda877ce84fe2194414745e289d14ae
 # COLA DE ROTEIRO — episódio "E Se" de 10 min (2ª pessoa, PT-BR)
 
 Resumo de `STORY_BLUEPRINT.md`. **Leia só isto ao escrever.** Abra o blueprint apenas na seção indicada (§) quando precisar do detalhe ou de exemplos. Originalidade: copie estruturas, nunca falas, piadas, personagens ou bordões da IFOLOGY (§6.7).
@@ -11819,7 +11884,7 @@ Testes: dá pra dizer numa respirada · abertura mostra em 1 plano de 3 s · o l
 - Inline no `vo`, em inglês, entre colchetes, **uma por reação real** (não por frase).
 - Antes do trecho = tom da fala; depois = reação a ela.
 - Catálogo: `[whispering] [softly] [slowly] [pause] [voice breaking] [weak] [tired] [bored] [playful] [angry] [excited] [menacing] [chuckling] [laughing] [sighing] [gasping] [panting] [scoffing] [sniffling] [clears throat] [sharp exhale]`. Combinações valem (`[sighs, tired]`). Fora disso, só testando antes.
-- Narrador: `[sarcastic] [mischievously] [deadpan] [darkly amused] [chuckling]`, e `[menacing]` 1–3×/episódio (validar na voz do Yuri antes do 1º uso). `[excited]` é de personagem. Nada que contradiga a cena.
+- Narrador: `[sarcastic] [mischievously] [deadpan] [darkly amused] [chuckling]`, e `[menacing]` 1–3×/episódio (validadas no Yuri, 2026-11-08). `[excited]` é de personagem. Nada que contradiga a cena.
 - Nunca SSML `<break>`; respiro com `…`, vírgula, `[pause]`. Pronúncia errada: IPA `/…/` só na palavra.
 - Gate mecânico: `node tools/episode.mjs check <slug>`.
 
@@ -12061,7 +12126,7 @@ Todas as 25 são premissas originais escritas para este canal. Os detalhes compl
 
 O gancho final do episódio 1 já planta fotos da "parede", "janelas estilhaçadas" e crianças "no meio da troca", que correspondem às ideias do backlog *Andar Em Paredes*, *Voz 100x Mais Alta* e *Trocar De Lugar*.
 @@@@ END
-@@@@ FILE docs/story/STORY_BLUEPRINT.md | text-crlf | 79766 | 17e33750ba44477908b7894335beb6bf41d2ea5f4ca56d522538ecc7a2a43649
+@@@@ FILE docs/story/STORY_BLUEPRINT.md | text | 78795 | 265235298929173b51fbfd5c7ad3a0fd0dc2b8c05f9fdd5c9e6b16ac4612bcb0
 # ROTEIRO-MODELO (BLUEPRINT): episódios "E Se" (8–12 min, 2ª pessoa)
 
 Este é o manual de escrita para todo episódio. Siga de cima a baixo: premissa → outline → ficha de plantios → rascunho → checklist → pontuação. Não comece a escrever a narração antes do outline passar pela §9.
@@ -12702,7 +12767,7 @@ O canal **não** tem o tom fofo/família da IFOLOGY. O narrador é um observador
 - **Ganchos e títulos apelativos**, desde que **o episódio entregue o que o título promete** (promessa falsa derruba retenção e o YouTube pune). Ex. de temperatura: "E Se Seu Coração Parasse Por 10 Segundos Todo Dia?", "E Se Todo Mundo Ouvisse Seus Pensamentos?".
 - **Comédia ácida:** ironia dramática (o público sabe o desastre antes de você), schadenfreude, narrador debochando, a terceira da lista de três sendo cruel. A subestimação no clímax vira deboche ("Foi só um prédio.").
 - **Limite monetizável (inegociável):** sem sangue/gore, sem ferimento visível, sem conteúdo sexual, sem palavrão, sem drogas, sem autolesão/suicídio, sem humilhar grupo real (etnia, religião, deficiência). Violência só cartunesca (voa, cai, explode em poeira, levanta). Morte só fora de cena ou como risco.
-- **Tags do narrador para isso** (ainda a validar com a voz do Yuri antes de virar praxe; teste curto antes do 1º episódio): `[sarcastic]` `[mischievously]` `[deadpan]` `[darkly amused]` `[chuckling]` `[menacing]` (este, 1–3 vezes por episódio, no narrador). Personagens podem usar as mesmas.
+- **Tags do narrador para isso** (validadas na voz do Yuri em 2026-11-08: o usuário aprovou as 5): `[sarcastic]` `[mischievously]` `[deadpan]` `[darkly amused]` `[chuckling]` `[menacing]` (este, 1–3 vezes por episódio, no narrador). Personagens podem usar as mesmas.
 
 ---
 

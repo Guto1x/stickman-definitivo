@@ -24,4 +24,4 @@ On 2026-11-08 the user agreed to remake both finished episodes in the new style.
 
 **Keep:** `/stickman` must still stop once before spending voice credits — the user said "não tire isso".
 
-**Still waiting on the user:** which of the 5 sarcastic tags sounded good on Yuri (`out/lab/teste_tags_yuri.mp3`: sarcastic, mischievously, deadpan, darkly amused, menacing). Prune the cola/§6.10 list to those.
+**Tags:** the user approved all 5 sarcastic tags on Yuri (2026-11-08); nothing pending there.

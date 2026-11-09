@@ -638,7 +638,7 @@ O canal **não** tem o tom fofo/família da IFOLOGY. O narrador é um observador
 - **Ganchos e títulos apelativos**, desde que **o episódio entregue o que o título promete** (promessa falsa derruba retenção e o YouTube pune). Ex. de temperatura: "E Se Seu Coração Parasse Por 10 Segundos Todo Dia?", "E Se Todo Mundo Ouvisse Seus Pensamentos?".
 - **Comédia ácida:** ironia dramática (o público sabe o desastre antes de você), schadenfreude, narrador debochando, a terceira da lista de três sendo cruel. A subestimação no clímax vira deboche ("Foi só um prédio.").
 - **Limite monetizável (inegociável):** sem sangue/gore, sem ferimento visível, sem conteúdo sexual, sem palavrão, sem drogas, sem autolesão/suicídio, sem humilhar grupo real (etnia, religião, deficiência). Violência só cartunesca (voa, cai, explode em poeira, levanta). Morte só fora de cena ou como risco.
-- **Tags do narrador para isso** (ainda a validar com a voz do Yuri antes de virar praxe; teste curto antes do 1º episódio): `[sarcastic]` `[mischievously]` `[deadpan]` `[darkly amused]` `[chuckling]` `[menacing]` (este, 1–3 vezes por episódio, no narrador). Personagens podem usar as mesmas.
+- **Tags do narrador para isso** (validadas na voz do Yuri em 2026-11-08: o usuário aprovou as 5): `[sarcastic]` `[mischievously]` `[deadpan]` `[darkly amused]` `[chuckling]` `[menacing]` (este, 1–3 vezes por episódio, no narrador). Personagens podem usar as mesmas.
 
 ---
 
