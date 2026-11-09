@@ -1,4 +1,4 @@
-- [IFOLOGY-style channel](project-ifology-style-channel.md) — IFOLOGY-look hero in a GRAY quarter-zip jacket (since 2026-11-08), flat final/ folder, Remotion+Three engine, Python SFX, ElevenLabs voice
+- [IFOLOGY-style channel](project-ifology-style-channel.md) — channel "Fora do Roteiro", logo public/brand/logo.png; IFOLOGY-look hero in a GRAY quarter-zip jacket (since 2026-11-08), flat final/ folder, Remotion+Three engine, Python SFX, ElevenLabs voice
 - [Review-and-fix loop](feedback-review-and-fix-loop.md) — audit + independent reviewer BEFORE final render, then review the render; fix everything; 1080p final
 - [No camera snaps](feedback-no-camera-snaps.md) — never cut between near-identical framings ("a few pixels over"); flow instead; real angle changes are fine
 - [Voices](project-narrator-voice.md) — ElevenLabs PT-BR: narrator Yuri (eleven_v4) with a calm `[calm]` direction; house male Eduardo / female Sofia; ~0.4 credits/char
@@ -12,6 +12,6 @@
 - [Don't restructure CLAUDE.md](feedback-nao-reestruturar-claude-md.md) — user declined splitting CLAUDE.md / re-modeling /stickman + reviewers (2026-11-08); wait on earlier optimizations
 - [Ritmo rápido](project-ritmo-rapido.md) — house pacing since 2026-11-08: coverage sub-cuts, whip/zoom/smash, 9:16-safe; generators use ritmo='rapido'; NO native vertical render — user cuts 9:16 by hand from the 16:9
 - [Cortes p/ shorts](feedback-cortes-shorts.md) — every long episode needs ≥ 4 self-contained ~90 s segments (episode clips); build writes .srt + cortes.txt
-- [Episódios antigos: encerrado](project-refazer-episodios.md) — only zumbi kept; its re-voiced final build is PENDING; keep /stickman credit stop
+- [Episódios antigos: encerrado](project-refazer-episodios.md) — only zumbi kept (final build done 2026-11-09); keep /stickman credit stop
 - [Duração ≥ 10 min](feedback-duracao-10min.md) — every long episode ≥ 10:00 voiced (~1,600–1,700 words); audit warns [length]; zumbi stays 9:14 (2026-11-09)
 - [Gancho nos 10 s](feedback-gancho-10s.md) — new episodes only: ≥ 2 hook types, ≥ 6 cuts, punchy move, SFX ≤ 2 s; audit [hook]; zumbi opted out (2026-11-09)

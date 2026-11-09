@@ -603,7 +603,7 @@ Escolha uma e mantenha para sempre:
 - "Fique curioso. Fique estranho."
 - "Todo poder tem um preço. Até a próxima."
 
-O nome do canal e o slogan são decisão do usuário. Deixe `[ASSINATURA]` no roteiro até eles decidirem.
+O canal se chama **Fora do Roteiro** (decisão do usuário, 2026-11-09; logo em `public/brand/logo.png`). O `invasao-zumbi` fecha com "Todo poder tem um preço. Até a próxima." O slogan definitivo ainda é decisão do usuário: até lá, deixe `[ASSINATURA]` no roteiro e use essa frase.
 
 ### 6.9 Tags de áudio ElevenLabs (praxe, não opcional)
 Use tags de áudio **dentro** do texto de `vo`, exatamente onde a reação acontece — não só como prefixo de direção no começo da fala. Elas não são faladas: o modelo as interpreta como instrução de entrega ou efeito vocal, e o pipeline já ignora o texto dentro de `[colchetes]` ao casar palavras com o tempo de voz, então cues (`"@palavra"`) continuam funcionando normalmente ao redor delas. Sempre em inglês, entre colchetes — é o vocabulário com que o modelo foi treinado, mesmo com o resto da fala em português. (Fonte: elevenlabs.io/docs — "Text to speech prompting", seção eleven v4.)
