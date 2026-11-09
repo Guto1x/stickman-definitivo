@@ -93,7 +93,9 @@ const Scene3D: React.FC<{ ctx: ShotCtx; t: number; cast: Record<string, CastMemb
         // overlay times take word cues: `at`, `until` (shot time) and a stopwatch's `switchAt` (time since it appeared)
         const x = o as { at?: number | string; until?: number | string; switchAt?: number | string };
         const at = cue(x.at, words, 0);
-        return { ...o, at, ...(x.until !== undefined ? { until: cue(x.until, words, 0) } : {}), ...(typeof x.switchAt === 'string' ? { switchAt: cue(x.switchAt, words, 0) - at } : {}) } as typeof o;
+        // a body menu's row cues / noteAt are shot times too: make them relative to the panel
+        const m = o.type === 'menu' ? { rows: o.rows.map(r => (r.at !== undefined ? { ...r, at: cue(r.at, words, 0) - at } : r)), ...(o.noteAt !== undefined ? { noteAt: cue(o.noteAt, words, 0) - at } : {}) } : {};
+        return { ...o, at, ...m, ...(x.until !== undefined ? { until: cue(x.until, words, 0) } : {}), ...(typeof x.switchAt === 'string' ? { switchAt: cue(x.switchAt, words, 0) - at } : {}) } as typeof o;
       })} t={t} dur={dur} project={(id: string) => {
         const s = sc.byId[id];
         return s ? { ...project(s.anchors.headTop, cam, W, H), scale: pxPerMetre(s.anchors.head, cam, H) } : null;

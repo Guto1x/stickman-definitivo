@@ -517,6 +517,79 @@ def groan(dur: float = 1.4, level: float = 0.3, f0: float = 110.0) -> np.ndarray
     x = voice * env_adsr(dur, 0.18, 0.2, 0.8, 0.4)
     return reverb(stereo(fade(norm(x) * level, 0.02, 0.2), 0.0, 0.3), 0.6, 0.25)
 
+def ui_open(level: float = 0.35) -> np.ndarray:
+    """Game-menu open: a soft two-step rising blip with a glassy tail."""
+    out = np.zeros(int(0.5 * SR))
+    for k, f in enumerate((880.0, 1318.5)):
+        d = 0.16
+        t = t_axis(d)
+        b = (np.sin(2 * np.pi * f * t) + 0.3 * np.sin(2 * np.pi * 2 * f * t)) * np.exp(-t / 0.07) * np.clip(t / 0.003, 0, 1)
+        i = int(k * 0.07 * SR)
+        out[i:i + len(b)] += b
+    return fade(reverb(stereo(norm(out) * level), 0.7, 0.25), 0.001, 0.05)
+
+
+def ui_tick(level: float = 0.3) -> np.ndarray:
+    """Slider notch: a short square-ish tick with a pitch blip."""
+    d = 0.09
+    t = t_axis(d)
+    x = np.sign(np.sin(2 * np.pi * 1760 * t)) * np.exp(-t / 0.015) * 0.5 + np.sin(2 * np.pi * 2640 * t) * np.exp(-t / 0.03)
+    return fade(stereo(norm(x) * level), 0.001, 0.02)
+
+
+def ui_alert(level: float = 0.35) -> np.ndarray:
+    """Notification: two falling tones, a little ominous (the debt toast)."""
+    out = np.zeros(int(0.7 * SR))
+    for k, f in enumerate((987.8, 659.3)):
+        d = 0.32
+        t = t_axis(d)
+        b = (np.sin(2 * np.pi * f * t) + 0.25 * np.sin(2 * np.pi * 1.5 * f * t)) * np.exp(-t / 0.14) * np.clip(t / 0.004, 0, 1)
+        i = int(k * 0.16 * SR)
+        out[i:i + len(b)] += b
+    return fade(reverb(stereo(norm(out) * level), 0.9, 0.25), 0.001, 0.08)
+
+
+def horn(dur: float = 0.8, level: float = 0.5) -> np.ndarray:
+    """Car horn: two detuned buzzy tones (a major third), slight doppler drop."""
+    t = t_axis(dur)
+    f = np.where(t < dur * 0.6, 1.0, 1.0 - 0.04 * (t - dur * 0.6) / (dur * 0.4))
+    x = np.zeros_like(t)
+    for base in (415.0, 523.0):
+        ph = 2 * np.pi * np.cumsum(base * f) / SR
+        x += np.sign(np.sin(ph)) * 0.6 + np.sin(2 * ph) * 0.3
+    x = lp(x, 3500) * env_adsr(dur, 0.01, 0.05, 0.9, 0.08)
+    return fade(stereo(norm(saturate(x, 1.5)) * level), 0.003, 0.05)
+
+
+def ice_crack(level: float = 0.6) -> np.ndarray:
+    """Ice cracking: a sharp snap, a few ringing pings and a low creak."""
+    d = 1.0
+    t = t_axis(d)
+    x = hp(white(d), 1800) * np.exp(-t / 0.012) * 1.2
+    for k, (f, at) in enumerate(((3100, 0.0), (2300, 0.05), (4200, 0.11), (1700, 0.19))):
+        tt = np.clip(t - at, 0, None)
+        x += np.where(t >= at, np.sin(2 * np.pi * f * tt * (1 - 0.25 * tt)) * np.exp(-tt / 0.09), 0) * 0.45
+    x += lp(brown(d), 180) * np.exp(-t / 0.35) * 0.8
+    return fade(reverb(stereo(norm(x) * level, 0.0, 0.3), 1.0, 0.3), 0.001, 0.1)
+
+
+def splash(level: float = 0.6) -> np.ndarray:
+    """Body into water: low thump + a noisy splash burst + bubbling tail."""
+    d = 1.4
+    t = t_axis(d)
+    x = np.sin(2 * np.pi * 70 * t) * np.exp(-t / 0.08) * 0.8
+    x += bp(white(d), 400, 4000) * np.exp(-t / 0.18) * np.clip(t / 0.01, 0, 1)
+    bub = np.zeros_like(t)
+    rnd = np.random.default_rng(7)
+    for _ in range(14):
+        at = 0.25 + rnd.random() * 0.9
+        f = 500 + rnd.random() * 900
+        tt = np.clip(t - at, 0, None)
+        bub += np.where(t >= at, np.sin(2 * np.pi * f * tt * (1 + 3 * tt)) * np.exp(-tt / 0.03), 0)
+    x += bub * 0.18
+    return fade(reverb(stereo(norm(x) * level, 0, 0.4), 0.8, 0.2), 0.002, 0.15)
+
+
 def write_wav(path: str, x: np.ndarray):
     from scipy.io import wavfile
     wavfile.write(path, SR, (np.clip(x, -1, 1) * 32767).astype(np.int16))

@@ -1,6 +1,6 @@
 # Fish Audio: thumbnail-mode first-connect checklist
 
-Fish Audio is used only for `fish`-mode thumbnail image generation (GPT Image 2.5 via Fish's media API) — see CLAUDE.md step 10. Voice does not use Fish; see `docs/ELEVENLABS_SETUP.md` for that.
+Fish Audio is used only for `fish`-mode thumbnail image generation (GPT Image 2.5 via Fish's media API) — see docs/pipeline/EPISODE.md step 10. Voice does not use Fish; see `docs/ELEVENLABS_SETUP.md` for that.
 
 Run this checklist once, the first time Fish tools are available in a session, if the thumbnail mode is `fish`. Their tool names end in `get_media_model`, `list_media_models`, `create_media_upload`, `get_credit_balance`, `list_my_workspaces`. If they appear only as deferred tools, load them with ToolSearch first.
 

@@ -1,0 +1,10650 @@
+{
+ "slug": "menu-corpo",
+ "title": "E Se Você Encontrasse um Menu de Configurações do Seu Corpo?",
+ "voice": {
+  "id": "u7N1p4OIOc6Fl7y72WE7",
+  "model": "eleven_v4"
+ },
+ "voices": {
+  "adulto": "u4sbCzXyUVxIAihOtCss",
+  "adulta": "dxIMMSJYSsbUSMhioLNb",
+  "vila": "pFZP5JQG7iQjIQuC4Bku"
+ },
+ "cast": {
+  "bestie": {
+   "name": "Caio"
+  },
+  "sister": {
+   "name": "Ivy"
+  },
+  "mom": {
+   "name": "Mãe"
+  },
+  "kid": {
+   "name": "Menino da rua"
+  },
+  "rival": {
+   "name": "Bruno"
+  },
+  "teacher": {
+   "name": "Diretor",
+   "hair": "none"
+  },
+  "extraB": {
+   "name": "Vizinha"
+  },
+  "rute": {
+   "name": "Dona Rute",
+   "top": "coat",
+   "topColor": "#f3f1ea",
+   "accent": "#e05a6a",
+   "bottom": "pants",
+   "bottomColor": "#3a4256",
+   "shoes": "#ffffff",
+   "hair": "bun",
+   "glasses": true,
+   "glassesColor": "#9fd3f2"
+  },
+  "mulher": {
+   "name": "Mulher de terno vinho",
+   "top": "suit",
+   "topColor": "#6e1f33",
+   "accent": "#f0d9a8",
+   "bottom": "pants",
+   "bottomColor": "#1d1a24",
+   "shoes": "#1b1b20",
+   "hair": "bob"
+  }
+ },
+ "music": [
+  {
+   "shot": 0,
+   "mood": "none"
+  }
+ ],
+ "shots": [
+  {
+   "id": "a1",
+   "set": "suburb",
+   "vo": "Você atravessa a rua olhando o celular.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      0,
+      0,
+      -2.4
+     ],
+     "rot": 0,
+     "pose": "phone",
+     "face": "bored",
+     "hold": {
+      "R": "phone"
+     },
+     "path": [
+      {
+       "t": 0,
+       "pos": [
+        0,
+        0,
+        -2.4
+       ]
+      },
+      {
+       "t": 2.2,
+       "pos": [
+        0,
+        0,
+        -1.4
+       ],
+       "gait": "walk"
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     0.55,
+     1.3,
+     0.9
+    ],
+    "look": [
+     0,
+     1.15,
+     -1.6
+    ],
+    "fov": 30,
+    "beats": [
+     "@olhando"
+    ]
+   },
+   "sfx": [
+    {
+     "t": 0.15,
+     "name": "horn",
+     "dur": 0.9
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "a2",
+   "set": "suburb",
+   "vo": "Um carro. A quarenta por hora. A três metros de você.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      0,
+      0,
+      -1.4
+     ],
+     "rot": 0,
+     "pose": "phone",
+     "face": "bored",
+     "hold": {
+      "R": "phone"
+     }
+    }
+   ],
+   "camera": {
+    "pos": [
+     5.2,
+     1.0,
+     4.6
+    ],
+    "look": [
+     -3.0,
+     0.9,
+     0.2
+    ],
+    "fov": 44,
+    "beats": [
+     "@quarenta",
+     "@três"
+    ]
+   },
+   "props": [
+    {
+     "type": "car",
+     "pos": [
+      -16,
+      0,
+      -1.4
+     ],
+     "rot": 90,
+     "color": "#c8402f",
+     "path": [
+      {
+       "t": 0,
+       "pos": [
+        -16,
+        0,
+        -1.4
+       ]
+      },
+      {
+       "t": 2.8,
+       "pos": [
+        -4.4,
+        0,
+        -1.4
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@carro",
+     "name": "horn",
+     "dur": 1.2
+    }
+   ],
+   "overlays": [
+    {
+     "type": "word",
+     "text": "40 KM/H",
+     "at": "@quarenta"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "a3",
+   "set": "suburb",
+   "vo": "Seu coração dispara. E o mundo… para.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      0,
+      0,
+      -1.4
+     ],
+     "rot": -60,
+     "pose": "shocked",
+     "face": "shocked",
+     "look": [
+      -4,
+      0.9,
+      -1.4
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": -30,
+    "height": -10,
+    "move": "crashIn"
+   },
+   "props": [
+    {
+     "type": "car",
+     "pos": [
+      -4.4,
+      0,
+      -1.4
+     ],
+     "rot": 90,
+     "color": "#c8402f"
+    }
+   ],
+   "fx": {
+    "freeze": "@para"
+   },
+   "sfx": [
+    {
+     "t": "@dispara",
+     "name": "heartbeat"
+    },
+    {
+     "t": "@para",
+     "name": "subdrop"
+    }
+   ],
+   "coverage": "off"
+  },
+  {
+   "id": "a4",
+   "set": "suburb",
+   "vo": "Na sua frente, flutuando, um menu. Igual de videogame.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      0,
+      0,
+      -1.4
+     ],
+     "rot": -60,
+     "pose": "shocked",
+     "face": "awe"
+    }
+   ],
+   "camera": {
+    "pos": [
+     1.9,
+     1.35,
+     1.6
+    ],
+    "look": [
+     -0.1,
+     1.45,
+     -1.3
+    ],
+    "fov": 40,
+    "beats": [
+     "@igual"
+    ]
+   },
+   "props": [
+    {
+     "type": "car",
+     "pos": [
+      -4.4,
+      0,
+      -1.4
+     ],
+     "rot": 90,
+     "color": "#c8402f"
+    }
+   ],
+   "fx": {
+    "freeze": true
+   },
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "value": 100
+      },
+      {
+       "label": "SONO",
+       "value": 100
+      },
+      {
+       "label": "MEDO",
+       "value": 100
+      },
+      {
+       "label": "FORÇA",
+       "value": 60
+      }
+     ],
+     "at": "@menu",
+     "y": "low",
+     "alarm": true
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "a5",
+   "set": "suburb",
+   "vo": "Medo: cem. Você arrasta pra zero.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      0,
+      0,
+      -1.4
+     ],
+     "rot": -60,
+     "pose": "reach",
+     "face": "focused"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 40,
+    "height": -8
+   },
+   "props": [
+    {
+     "type": "car",
+     "pos": [
+      -4.4,
+      0,
+      -1.4
+     ],
+     "rot": 90,
+     "color": "#c8402f"
+    }
+   ],
+   "fx": {
+    "freeze": true
+   },
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "value": 100
+      },
+      {
+       "label": "SONO",
+       "value": 100
+      },
+      {
+       "label": "MEDO",
+       "from": 100,
+       "value": 0,
+       "at": "@zero"
+      },
+      {
+       "label": "FORÇA",
+       "value": 60
+      }
+     ],
+     "at": 0,
+     "y": "low",
+     "alarm": true
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "a6",
+   "set": "suburb",
+   "vo": "Força nas pernas: sessenta. Você joga pra cem.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      0,
+      0,
+      -1.4
+     ],
+     "rot": -60,
+     "pose": "determined",
+     "face": "determined"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": -20,
+    "height": 10
+   },
+   "props": [
+    {
+     "type": "car",
+     "pos": [
+      -4.4,
+      0,
+      -1.4
+     ],
+     "rot": 90,
+     "color": "#c8402f"
+    }
+   ],
+   "fx": {
+    "freeze": true
+   },
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "value": 100
+      },
+      {
+       "label": "SONO",
+       "value": 100
+      },
+      {
+       "label": "MEDO",
+       "value": 0
+      },
+      {
+       "label": "FORÇA",
+       "from": 60,
+       "value": 100,
+       "at": "@cem"
+      }
+     ],
+     "at": 0,
+     "y": "low",
+     "alarm": true
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "a7",
+   "set": "suburb",
+   "vo": "O mundo volta. E você pula.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      0,
+      0,
+      -1.4
+     ],
+     "rot": -90,
+     "pose": "crouch",
+     "face": "determined",
+     "path": [
+      {
+       "t": "@pula",
+       "pos": [
+        0,
+        0,
+        -1.4
+       ]
+      },
+      {
+       "t": "@pula+0.25",
+       "pos": [
+        0,
+        1.7,
+        -1.6
+       ],
+       "gait": "carried"
+      },
+      {
+       "t": "@pula+0.6",
+       "pos": [
+        0,
+        0.1,
+        -4.2
+       ],
+       "gait": "carried"
+      }
+     ],
+     "poses": [
+      {
+       "t": "@pula",
+       "pose": "jump",
+       "blend": 0.12
+      },
+      {
+       "t": "@pula+0.55",
+       "pose": "crouch",
+       "blend": 0.4
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     0.6,
+     1.4,
+     8.5
+    ],
+    "look": [
+     0,
+     1.4,
+     -1.8
+    ],
+    "fov": 42
+   },
+   "props": [
+    {
+     "type": "car",
+     "pos": [
+      -4.4,
+      0,
+      -1.4
+     ],
+     "rot": 90,
+     "color": "#c8402f",
+     "path": [
+      {
+       "t": "@volta",
+       "pos": [
+        -4.4,
+        0,
+        -1.4
+       ]
+      },
+      {
+       "t": "@pula-0.05",
+       "pos": [
+        -3.6,
+        0,
+        -1.4
+       ]
+      },
+      {
+       "t": "@pula+0.55",
+       "pos": [
+        4.2,
+        0,
+        -1.4
+       ]
+      },
+      {
+       "t": "@pula+1.4",
+       "pos": [
+        16,
+        0,
+        -1.4
+       ]
+      }
+     ]
+    }
+   ],
+   "fx": {
+    "speedLines": "hero"
+   },
+   "sfx": [
+    {
+     "t": "@volta",
+     "name": "whoosh"
+    },
+    {
+     "t": "@pula",
+     "name": "whooshUp"
+    },
+    {
+     "t": "@pula+0.6",
+     "name": "thud"
+    }
+   ],
+   "cut": "smash",
+   "coverage": "off"
+  },
+  {
+   "id": "a8",
+   "set": "suburb",
+   "vo": "Você pulou um carro?!",
+   "actors": [
+    {
+     "id": "kid",
+     "pos": [
+      2.2,
+      0.1,
+      4.6
+     ],
+     "rot": 180,
+     "pose": "shocked",
+     "face": "awe",
+     "look": "hero",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "kid",
+    "angle": 15,
+    "height": -10
+   },
+   "who": "female",
+   "coverage": "fast"
+  },
+  {
+   "id": "a9",
+   "set": "suburb",
+   "vo": "[deadpan] Não. Eu ajustei as configurações.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      0,
+      0.1,
+      -4.2
+     ],
+     "rot": 20,
+     "pose": "relaxed",
+     "face": "smug",
+     "look": "kid",
+     "talk": [
+      [
+       0.05,
+       2.4
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": -20,
+    "height": 8
+   },
+   "coverage": "fast"
+  },
+  {
+   "id": "a10",
+   "set": "suburb",
+   "vo": "Aí chega uma notificação. [darkly amused] Empréstimo registrado. Pagamento: amanhã.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      0,
+      0.1,
+      -4.2
+     ],
+     "rot": 20,
+     "pose": "relaxed",
+     "face": "worried"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 10,
+    "move": "pushIn"
+   },
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "value": 100
+      },
+      {
+       "label": "SONO",
+       "value": 100
+      },
+      {
+       "label": "MEDO",
+       "value": 0
+      },
+      {
+       "label": "FORÇA",
+       "value": 100
+      }
+     ],
+     "at": 0.1,
+     "y": "low",
+     "note": "EMPRÉSTIMO REGISTRADO · PAGAMENTO: AMANHÃ",
+     "noteAt": "@empréstimo"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "t1",
+   "set": "suburb",
+   "vo": "E se você encontrasse um menu de configurações do seu corpo? Veja como isso realmente aconteceria.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      0,
+      0.1,
+      -4.2
+     ],
+     "rot": 0,
+     "pose": "relaxed",
+     "face": "smirk"
+    }
+   ],
+   "camera": {
+    "pos": [
+     2.2,
+     1.9,
+     2.4
+    ],
+    "look": [
+     0,
+     1.2,
+     -4.2
+    ],
+    "fov": 42,
+    "move": "pullOut"
+   },
+   "overlays": [
+    {
+     "type": "title",
+     "small": "E SE VOCÊ ENCONTRASSE UM",
+     "big": "MENU DO SEU CORPO?",
+     "at": 0.2
+    }
+   ],
+   "coverage": "off"
+  },
+  {
+   "id": "m1",
+   "set": "void",
+   "vo": "O menu tem quatro barras. Dor. Sono. Medo. Força.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 15,
+     "pose": "thinking",
+     "face": "focused"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 15,
+    "move": "drift"
+   },
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "value": 100
+      },
+      {
+       "label": "SONO",
+       "value": 100
+      },
+      {
+       "label": "MEDO",
+       "value": 100
+      },
+      {
+       "label": "FORÇA",
+       "value": 60
+      }
+     ],
+     "at": "@quatro",
+     "y": "low"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "whip"
+  },
+  {
+   "id": "m2",
+   "set": "void",
+   "vo": "Cada uma vai de zero a cem. E você arrasta qualquer uma com o pensamento.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": -10,
+     "pose": "reach",
+     "face": "focused"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": -20
+   },
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "from": 100,
+       "value": 30,
+       "at": "@zero"
+      },
+      {
+       "label": "SONO",
+       "value": 100
+      },
+      {
+       "label": "MEDO",
+       "from": 100,
+       "value": 70,
+       "at": "@pensamento"
+      },
+      {
+       "label": "FORÇA",
+       "value": 60
+      }
+     ],
+     "at": 0.1,
+     "y": "low"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "m3",
+   "set": "void",
+   "vo": "O resto continua igual. Você não voa. Não fica invisível. Não vira gênio.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 0,
+     "pose": "shrug",
+     "face": "bored"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 25,
+    "move": "pushIn"
+   },
+   "sfx": [
+    {
+     "t": "@voa",
+     "name": "pop"
+    },
+    {
+     "t": "@invisível",
+     "name": "pop"
+    },
+    {
+     "t": "@gênio",
+     "name": "pop"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "m4",
+   "set": "void",
+   "vo": "E tem uma coisa que ninguém te conta sobre essas barras.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 0,
+     "pose": "stand",
+     "face": "suspicious"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": 0,
+    "move": "pushIn"
+   },
+   "coverage": "fast"
+  },
+  {
+   "id": "m5",
+   "kind": "card",
+   "card": "icon",
+   "vo": "Cada uma é um alarme. Dor, sono e medo não são defeitos. São o seu corpo gritando: para.",
+   "icon": "warning",
+   "caption": "CADA BARRA É UM ALARME",
+   "sub": "NÃO UM DEFEITO"
+  },
+  {
+   "id": "m6",
+   "set": "void",
+   "vo": "Guarda isso.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 0,
+     "pose": "point",
+     "face": "determined"
+    }
+   ],
+   "camera": {
+    "shot": "xclose",
+    "target": "hero",
+    "angle": -10,
+    "move": "pushIn"
+   },
+   "coverage": "off"
+  },
+  {
+   "id": "m7",
+   "set": "bedroom",
+   "vo": "E o empréstimo? No dia seguinte, você dorme catorze horas seguidas. E acorda com as pernas doendo como se tivesse corrido uma maratona.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -2.55,
+      0,
+      -2.75
+     ],
+     "rot": 0,
+     "pose": "sleep",
+     "face": "tired",
+     "faces": [
+      {
+       "t": "@acorda",
+       "face": {
+        "eyes": 0.5,
+        "brow": 0.9,
+        "mouth": -0.6,
+        "sweat": true
+       },
+       "blend": 0.4
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     1.4,
+     1.45,
+     1.8
+    ],
+    "look": [
+     -1.6,
+     0.75,
+     -2.4
+    ],
+    "fov": 40,
+    "move": "pushIn"
+   },
+   "overlays": [
+    {
+     "type": "word",
+     "text": "14 HORAS",
+     "at": "@catorze",
+     "color": "white"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "zoom"
+  },
+  {
+   "id": "s1",
+   "kind": "card",
+   "card": "icon",
+   "vo": "Agora, a parte estranha: o menu só aparece quando o seu coração dispara.",
+   "icon": "heart",
+   "caption": "SÓ ABRE QUANDO",
+   "sub": "O CORAÇÃO DISPARA"
+  },
+  {
+   "id": "s2",
+   "kind": "card",
+   "card": "compare",
+   "vo": "Parado, o seu coração bate umas setenta vezes por minuto. Num susto de verdade, passa de cento e vinte.",
+   "title": "BATIDAS POR MINUTO",
+   "unit": "BPM",
+   "left": {
+    "label": "PARADO",
+    "value": 70,
+    "icon": "sit",
+    "at": "@parado"
+   },
+   "right": {
+    "label": "NUM SUSTO",
+    "value": 120,
+    "icon": "heart",
+    "at": "@susto"
+   },
+   "ratio": false
+  },
+  {
+   "id": "s3",
+   "set": "suburb",
+   "vo": "E no susto, o tempo parece andar devagar. Isso tem explicação.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      0,
+      0,
+      -1.4
+     ],
+     "rot": -60,
+     "pose": "shocked",
+     "face": "shocked"
+    }
+   ],
+   "camera": {
+    "pos": [
+     1.6,
+     1.5,
+     1.4
+    ],
+    "look": [
+     -0.6,
+     1.2,
+     -1.0
+    ],
+    "fov": 44,
+    "move": "drift"
+   },
+   "props": [
+    {
+     "type": "car",
+     "pos": [
+      -4.4,
+      0,
+      -1.4
+     ],
+     "rot": 90,
+     "color": "#c8402f"
+    }
+   ],
+   "fx": {
+    "freeze": true,
+    "grade": "flashback"
+   },
+   "coverage": "fast"
+  },
+  {
+   "id": "s4",
+   "kind": "card",
+   "card": "distance",
+   "vo": "Cientistas soltaram voluntários de costas, de trinta e um metros de altura, numa rede.",
+   "value": 31,
+   "unit": "METROS",
+   "count": 1,
+   "pose": "fall",
+   "target": "flag",
+   "label": "QUEDA LIVRE NUMA REDE"
+  },
+  {
+   "id": "s5",
+   "kind": "card",
+   "card": "stat",
+   "vo": "Depois, todo mundo jurou que a própria queda durou mais. Um terço a mais. [deadpan] Não durou.",
+   "value": "1/3",
+   "label": "MAIS LONGA NA LEMBRANÇA",
+   "icon": "clock"
+  },
+  {
+   "id": "s6",
+   "set": "void",
+   "vo": "No susto, o cérebro grava mais detalhes. [mischievously] E o seu menu mora exatamente nesse buraco.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 20,
+     "pose": "explain",
+     "face": "smirk"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 20,
+    "move": "drift"
+   },
+   "coverage": "fast"
+  },
+  {
+   "id": "s7",
+   "kind": "card",
+   "card": "icon",
+   "vo": "E a próxima parte é real: existem pessoas que nascem com a dor em zero.",
+   "icon": "warning",
+   "caption": "GENTE QUE NASCE",
+   "sub": "SEM SENTIR DOR"
+  },
+  {
+   "id": "s8",
+   "kind": "card",
+   "card": "chain",
+   "vo": "Elas mordem a língua sem perceber. Quebram um osso e continuam andando.",
+   "title": "SEM DOR, SEM AVISO",
+   "nodes": [
+    {
+     "icon": "fall",
+     "label": "MACHUCA"
+    },
+    {
+     "icon": "cross",
+     "label": "NÃO SENTE"
+    },
+    {
+     "icon": "walk",
+     "label": "CONTINUA"
+    }
+   ]
+  },
+  {
+   "id": "s9",
+   "set": "void",
+   "vo": "Pra elas, isso é perigo todo dia. [deadpan] Pra você, é só uma barra.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": -15,
+     "pose": "armsCrossed",
+     "face": "smug"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": -15
+   },
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "from": 100,
+       "value": 0,
+       "at": "@barra"
+      }
+     ],
+     "at": "@você",
+     "y": "low"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "p1",
+   "set": "classroom",
+   "vo": "Na escola, você conta tudo pra enfermeira, a dona Rute. Ela não acredita em nada.",
+   "actors": [
+    {
+     "id": "rute",
+     "pos": "front+0.4,0,0.6",
+     "rot": 90,
+     "pose": "armsCrossed",
+     "face": "suspicious",
+     "look": "hero"
+    },
+    {
+     "id": "hero",
+     "pos": "seat1",
+     "rot": -90,
+     "pose": "sit",
+     "face": "happy"
+    }
+   ],
+   "camera": {
+    "pos": [
+     -1.2,
+     1.55,
+     4.6
+    ],
+    "look": [
+     -1.5,
+     1.1,
+     1.0
+    ],
+    "fov": 44,
+    "move": "drift"
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "sign",
+     "pos": [
+      -5.92,
+      2.1,
+      0.8
+     ],
+     "rot": 90,
+     "w": 1.3,
+     "h": 0.34,
+     "text": "ENFERMARIA",
+     "bg": "#f6f2e8",
+     "fg": "#c8402f"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "whip"
+  },
+  {
+   "id": "p2",
+   "set": "classroom",
+   "vo": "Ela traz um balde de água com gelo. É um teste de verdade, usado em laboratório.",
+   "actors": [
+    {
+     "id": "rute",
+     "pos": [
+      -1.25,
+      0,
+      1.2
+     ],
+     "rot": 70,
+     "pose": "holdOut",
+     "face": "suspicious"
+    },
+    {
+     "id": "hero",
+     "pos": "seat1",
+     "rot": -90,
+     "pose": "sit",
+     "face": "worried",
+     "look": [
+      -0.42,
+      0.79,
+      1.7
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     0.9,
+     1.5,
+     -0.6
+    ],
+    "look": [
+     -0.8,
+     1.15,
+     1.4
+    ],
+    "fov": 44
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "sign",
+     "pos": [
+      -5.92,
+      2.1,
+      0.8
+     ],
+     "rot": 90,
+     "w": 1.3,
+     "h": 0.34,
+     "text": "ENFERMARIA",
+     "bg": "#f6f2e8",
+     "fg": "#c8402f"
+    },
+    {
+     "type": "box",
+     "pos": [
+      -0.42,
+      0.79,
+      1.7
+     ],
+     "w": 0.28,
+     "h": 0.16,
+     "d": 0.28,
+     "color": "#5d9bd1"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@balde",
+     "name": "thud"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "p3",
+   "kind": "card",
+   "card": "stat",
+   "vo": "Muita gente não aguenta nem um minuto com a mão lá dentro.",
+   "value": 1,
+   "unit": "MINUTO",
+   "label": "O NORMAL NO BALDE DE GELO",
+   "icon": "stopwatch"
+  },
+  {
+   "id": "p4",
+   "set": "classroom",
+   "vo": "Você põe a dor em zero. E a mão no gelo.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "seat1",
+     "rot": -90,
+     "pose": {
+      "reachR": {
+       "to": [
+        0.02,
+        0.88,
+        0.58
+       ]
+      },
+      "spine": [
+       16,
+       0,
+       0
+      ],
+      "hipY": -0.46,
+      "legL": [
+       88,
+       6,
+       92
+      ],
+      "legR": [
+       88,
+       6,
+       92
+      ]
+     },
+     "face": "smug"
+    }
+   ],
+   "camera": {
+    "pos": [
+     -1.4,
+     1.85,
+     2.7
+    ],
+    "look": [
+     -0.15,
+     0.95,
+     1.7
+    ],
+    "fov": 40
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "box",
+     "pos": [
+      -0.42,
+      0.79,
+      1.7
+     ],
+     "w": 0.28,
+     "h": 0.16,
+     "d": 0.28,
+     "color": "#5d9bd1"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "from": 100,
+       "value": 0,
+       "at": "@zero"
+      }
+     ],
+     "at": 0.1,
+     "y": "top"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@gelo",
+     "name": "splash",
+     "vol": -16
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "p5",
+   "set": "classroom",
+   "vo": "Um minuto. Cinco. Dez.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "seat1",
+     "rot": -90,
+     "pose": {
+      "reachR": {
+       "to": [
+        0.02,
+        0.88,
+        0.58
+       ]
+      },
+      "spine": [
+       16,
+       0,
+       0
+      ],
+      "hipY": -0.46,
+      "legL": [
+       88,
+       6,
+       92
+      ],
+      "legR": [
+       88,
+       6,
+       92
+      ]
+     },
+     "face": "bored"
+    },
+    {
+     "id": "rute",
+     "pos": [
+      -1.25,
+      0,
+      1.2
+     ],
+     "rot": 70,
+     "pose": "armsCrossed",
+     "face": "surprised",
+     "look": "hero"
+    }
+   ],
+   "camera": {
+    "pos": [
+     1.6,
+     1.4,
+     4.4
+    ],
+    "look": [
+     -0.5,
+     1.0,
+     1.5
+    ],
+    "fov": 40,
+    "move": "pushIn"
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "sign",
+     "pos": [
+      -5.92,
+      2.1,
+      0.8
+     ],
+     "rot": 90,
+     "w": 1.3,
+     "h": 0.34,
+     "text": "ENFERMARIA",
+     "bg": "#f6f2e8",
+     "fg": "#c8402f"
+    },
+    {
+     "type": "box",
+     "pos": [
+      -0.42,
+      0.79,
+      1.7
+     ],
+     "w": 0.28,
+     "h": 0.16,
+     "d": 0.28,
+     "color": "#5d9bd1"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "from": "0:00",
+     "to": "10:00",
+     "corner": "bc",
+     "at": 0.1
+    }
+   ],
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "ticks",
+     "dur": 1.6
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "p6",
+   "set": "classroom",
+   "vo": "Cadê o frio?",
+   "actors": [
+    {
+     "id": "rute",
+     "pos": [
+      -1.25,
+      0,
+      1.2
+     ],
+     "rot": 70,
+     "pose": "shocked",
+     "face": "shocked",
+     "look": "hero",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "rute",
+    "angle": 20
+   },
+   "who": "adulta",
+   "variant": 1,
+   "coverage": "fast"
+  },
+  {
+   "id": "p7",
+   "set": "classroom",
+   "vo": "[deadpan] Desliguei.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "seat1",
+     "rot": -90,
+     "pose": {
+      "reachR": {
+       "to": [
+        0.02,
+        0.88,
+        0.58
+       ]
+      },
+      "spine": [
+       16,
+       0,
+       0
+      ],
+      "hipY": -0.46,
+      "legL": [
+       88,
+       6,
+       92
+      ],
+      "legR": [
+       88,
+       6,
+       92
+      ]
+     },
+     "face": "smug",
+     "look": "rute",
+     "talk": [
+      [
+       0.05,
+       0.8
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": -30
+   },
+   "variant": 1,
+   "hold": 0.4,
+   "coverage": "off"
+  },
+  {
+   "id": "p8",
+   "set": "classroom",
+   "vo": "Ela olha a sua mão. Roxa. Você não sente nada. [darkly amused] E acha isso ótimo.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "seat1",
+     "rot": -90,
+     "pose": {
+      "armR": [
+       70,
+       10,
+       -20,
+       40
+      ],
+      "handR": "open",
+      "hipY": -0.46,
+      "legL": [
+       88,
+       6,
+       92
+      ],
+      "legR": [
+       88,
+       6,
+       92
+      ]
+     },
+     "face": "grin",
+     "look": [
+      -0.3,
+      1.2,
+      1.7
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     -1.6,
+     1.3,
+     0.5
+    ],
+    "look": [
+     0.0,
+     1.05,
+     1.7
+    ],
+    "fov": 38
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "box",
+     "pos": [
+      -0.42,
+      0.79,
+      1.7
+     ],
+     "w": 0.28,
+     "h": 0.16,
+     "d": 0.28,
+     "color": "#5d9bd1"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "word",
+     "text": "ROXA",
+     "at": "@roxa",
+     "color": "white"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "p9",
+   "set": "classroom",
+   "vo": "De novo. Com a outra.",
+   "actors": [
+    {
+     "id": "rute",
+     "pos": [
+      -1.25,
+      0,
+      1.2
+     ],
+     "rot": 70,
+     "pose": "point",
+     "face": "suspicious",
+     "look": "hero",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    },
+    {
+     "id": "hero",
+     "pos": "seat1",
+     "rot": -90,
+     "pose": {
+      "reachR": {
+       "to": [
+        0.02,
+        0.88,
+        0.58
+       ]
+      },
+      "spine": [
+       16,
+       0,
+       0
+      ],
+      "hipY": -0.46,
+      "legL": [
+       88,
+       6,
+       92
+      ],
+      "legR": [
+       88,
+       6,
+       92
+      ]
+     },
+     "face": "smug"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "rute",
+    "angle": 0,
+    "over": "hero",
+    "dist": 1.7
+   },
+   "who": "adulta",
+   "variant": 1,
+   "cut": "smash"
+  },
+  {
+   "id": "p10",
+   "set": "classroom",
+   "vo": "A dona Rute anota tudo num caderno. E liga pra alguém.",
+   "actors": [
+    {
+     "id": "rute",
+     "pos": [
+      -1.25,
+      0,
+      1.2
+     ],
+     "rot": 160,
+     "pose": "phone",
+     "face": "sly",
+     "hold": {
+      "R": "phone"
+     }
+    }
+   ],
+   "camera": {
+    "pos": [
+     -0.5,
+     1.5,
+     -0.9
+    ],
+    "look": [
+     -1.25,
+     1.3,
+     1.2
+    ],
+    "fov": 40
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "sign",
+     "pos": [
+      -5.92,
+      2.1,
+      0.8
+     ],
+     "rot": 90,
+     "w": 1.3,
+     "h": 0.34,
+     "text": "ENFERMARIA",
+     "bg": "#f6f2e8",
+     "fg": "#c8402f"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@liga",
+     "name": "ring",
+     "dur": 1.0,
+     "vol": -14
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "r1",
+   "kind": "card",
+   "card": "rules",
+   "vo": "Em três semanas testando, você descobre as regras.",
+   "title": "AS REGRAS DO MENU",
+   "prefix": "REGRA",
+   "rules": [
+    "SÓ ABRE NUM ALARME DE VERDADE",
+    "TODA MUDANÇA DESEQUILIBRA OUTRA",
+    "NÃO CRIA NADA, SÓ MEXE NO QUE É SEU"
+   ],
+   "current": 0
+  },
+  {
+   "id": "r2",
+   "kind": "card",
+   "card": "rules",
+   "vo": "Regra um: o menu só abre num alarme de verdade.",
+   "title": "AS REGRAS DO MENU",
+   "prefix": "REGRA",
+   "rules": [
+    "SÓ ABRE NUM ALARME DE VERDADE",
+    "TODA MUDANÇA DESEQUILIBRA OUTRA",
+    "NÃO CRIA NADA, SÓ MEXE NO QUE É SEU"
+   ],
+   "current": 1
+  },
+  {
+   "id": "r3",
+   "set": "bedroom",
+   "vo": "Você tenta abrir deitado, calmo, na cama. Nada. Você tenta fazendo força, de careta. Nada.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -2.55,
+      0,
+      -2.75
+     ],
+     "rot": 0,
+     "pose": "sleep",
+     "face": "focused",
+     "faces": [
+      {
+       "t": "@careta",
+       "face": {
+        "eyes": 0.4,
+        "brow": -0.8,
+        "mouth": -0.6,
+        "width": 1.2
+       },
+       "blend": 0.3
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     1.4,
+     1.45,
+     1.8
+    ],
+    "look": [
+     -1.6,
+     0.75,
+     -2.4
+    ],
+    "fov": 40,
+    "move": "pushIn"
+   },
+   "sfx": [
+    {
+     "t": "@nada",
+     "name": "click"
+    },
+    {
+     "t": "@nada#2",
+     "name": "click"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "word",
+     "text": "NADA",
+     "at": "@nada#2",
+     "color": "white"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "r4",
+   "set": "bedroom",
+   "vo": "[deadpan] Susto ensaiado não conta.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -2.55,
+      0,
+      -2.75
+     ],
+     "rot": 0,
+     "pose": "sleep",
+     "face": "bored"
+    }
+   ],
+   "camera": {
+    "pos": [
+     -3.9,
+     1.4,
+     -2.0
+    ],
+    "look": [
+     -2.55,
+     0.8,
+     -3.3
+    ],
+    "fov": 38
+   },
+   "coverage": "off"
+  },
+  {
+   "id": "r4b",
+   "set": "classroom",
+   "vo": "O Caio tenta ajudar. Ele grita no seu ouvido no meio da aula. Você leva uma advertência. [deadpan] O menu nem pisca.",
+   "actors": [
+    {
+     "id": "bestie",
+     "pos": "seat2+0.35,0,-0.55",
+     "rot": -120,
+     "pose": "cheer",
+     "face": "angry",
+     "talk": [
+      [
+       0.9,
+       2.2
+      ]
+     ]
+    },
+    {
+     "id": "hero",
+     "pos": "seat2",
+     "rot": -90,
+     "pose": "sit",
+     "face": "bored"
+    }
+   ],
+   "camera": {
+    "pos": [
+     2.4,
+     1.4,
+     4.4
+    ],
+    "look": [
+     2.1,
+     1.1,
+     1.4
+    ],
+    "fov": 42
+   },
+   "variant": 1,
+   "sfx": [
+    {
+     "t": "@grita",
+     "name": "pop"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "zoom"
+  },
+  {
+   "id": "r4c",
+   "set": "void",
+   "vo": "Precisa de perigo de verdade. Um carro. Uma queda. Não um amigo gritando.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 10,
+     "pose": "explain",
+     "face": "bored"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 10
+   },
+   "coverage": "fast",
+   "cut": "whip"
+  },
+  {
+   "id": "r5",
+   "kind": "card",
+   "card": "rules",
+   "vo": "Regra dois: toda mudança desequilibra outra coisa.",
+   "title": "AS REGRAS DO MENU",
+   "prefix": "REGRA",
+   "rules": [
+    "SÓ ABRE NUM ALARME DE VERDADE",
+    "TODA MUDANÇA DESEQUILIBRA OUTRA",
+    "NÃO CRIA NADA, SÓ MEXE NO QUE É SEU"
+   ],
+   "current": 2
+  },
+  {
+   "id": "r6",
+   "set": "void",
+   "vo": "Você joga a força pra cem. E aparece uma barra nova, que estava escondida: foco. Caindo.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 10,
+     "pose": "power",
+     "face": "determined",
+     "faces": [
+      {
+       "t": "@foco",
+       "face": "confused",
+       "blend": 0.4
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 10,
+    "height": -10
+   },
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "value": 100
+      },
+      {
+       "label": "SONO",
+       "value": 100
+      },
+      {
+       "label": "MEDO",
+       "value": 100
+      },
+      {
+       "label": "FORÇA",
+       "from": 60,
+       "value": 100,
+       "at": "@cem"
+      },
+      {
+       "label": "FOCO",
+       "from": 80,
+       "value": 15,
+       "at": "@caindo",
+       "warn": true
+      }
+     ],
+     "at": 0.1,
+     "y": "low"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "r7",
+   "kind": "card",
+   "card": "stat",
+   "vo": "Faz sentido: o seu cérebro gasta uns vinte por cento de toda a sua energia. A força tem que vir de algum lugar.",
+   "value": 20,
+   "unit": "%",
+   "label": "DA SUA ENERGIA VAI PRO CÉREBRO",
+   "icon": "brain"
+  },
+  {
+   "id": "r8",
+   "set": "classroom",
+   "vo": "Com a força em cem, você tenta fazer dois mais dois. [deadpan] Você usa os dedos.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "seat2",
+     "rot": -90,
+     "pose": "sitThink",
+     "face": "confused"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": 25
+   },
+   "variant": 0,
+   "overlays": [
+    {
+     "type": "word",
+     "text": "2 + 2 = ?",
+     "at": "@dois",
+     "color": "white",
+     "y": "top"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "r9",
+   "kind": "card",
+   "card": "rules",
+   "vo": "Regra três: o menu não cria nada. Só mexe no que já é seu.",
+   "title": "AS REGRAS DO MENU",
+   "prefix": "REGRA",
+   "rules": [
+    "SÓ ABRE NUM ALARME DE VERDADE",
+    "TODA MUDANÇA DESEQUILIBRA OUTRA",
+    "NÃO CRIA NADA, SÓ MEXE NO QUE É SEU"
+   ],
+   "current": 3
+  },
+  {
+   "id": "r10",
+   "set": "void",
+   "vo": "Força cem não é força de super-herói. É a força máxima dos seus músculos, que o cérebro trava, pra você não se rasgar.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": -20,
+     "pose": "fistPump",
+     "face": "determined"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": -20,
+    "move": "pushIn"
+   },
+   "coverage": "fast"
+  },
+  {
+   "id": "r11",
+   "set": "void",
+   "vo": "Você procura uma barra escrita voar. [darkly amused] Não tem. Nem inteligência. Você confere duas vezes.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 15,
+     "pose": "thinking",
+     "face": "suspicious"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": 15
+   },
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "value": 100
+      },
+      {
+       "label": "SONO",
+       "value": 100
+      },
+      {
+       "label": "MEDO",
+       "value": 100
+      },
+      {
+       "label": "FORÇA",
+       "value": 60
+      }
+     ],
+     "at": "@procura",
+     "y": "low",
+     "note": "BARRA \"VOAR\" NÃO ENCONTRADA",
+     "noteAt": "@tem"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "v1",
+   "set": "classroom",
+   "vo": "Vacina na escola: dor em dez. Você boceja enquanto a agulha entra.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "seat1",
+     "rot": -90,
+     "pose": "sit",
+     "face": "bored"
+    },
+    {
+     "id": "rute",
+     "pos": [
+      -0.2,
+      0,
+      2.4
+     ],
+     "rot": -150,
+     "pose": "reach",
+     "face": "focused",
+     "look": "hero",
+     "contact": true
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": -50
+   },
+   "variant": 0,
+   "overlays": [
+    {
+     "type": "word",
+     "text": "DOR 10",
+     "at": "@dez",
+     "color": "yellow"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@dez",
+     "name": "chime"
+    },
+    {
+     "t": "@boceja",
+     "name": "pop"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "zoom"
+  },
+  {
+   "id": "v2",
+   "set": "classroom",
+   "vo": "Apresentação de trabalho: medo em vinte. Doze minutos sem gaguejar.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "front",
+     "rot": 90,
+     "pose": "explain",
+     "face": "smug",
+     "talk": [
+      [
+       0.2,
+       3.5
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 0,
+    "height": -6
+   },
+   "variant": 0,
+   "coverage": "off",
+   "overlays": [
+    {
+     "type": "word",
+     "text": "12 MIN",
+     "at": "@doze",
+     "color": "yellow"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@doze",
+     "name": "chime"
+    }
+   ]
+  },
+  {
+   "id": "v3",
+   "set": "home",
+   "vo": "O pote de azeitona da sua mãe: força em noventa. Abre de primeira.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "kitchen",
+     "rot": 0,
+     "pose": "holdOut",
+     "face": "smug",
+     "hold": {
+      "R": "jar"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 20
+   },
+   "overlays": [
+    {
+     "type": "word",
+     "text": "FORÇA 90",
+     "at": "@noventa",
+     "color": "yellow"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@noventa",
+     "name": "chime"
+    },
+    {
+     "t": "@primeira",
+     "name": "pop"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "whip"
+  },
+  {
+   "id": "v4",
+   "set": "home",
+   "vo": "[sweetly] Abre o de pepino também.",
+   "actors": [
+    {
+     "id": "mom",
+     "pos": "kitchen+1.1,0,0.4",
+     "rot": -60,
+     "pose": "holdOut",
+     "face": "happy",
+     "look": "hero",
+     "hold": {
+      "R": "jar"
+     },
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "mom",
+    "angle": -20
+   },
+   "who": "adulta",
+   "coverage": "fast"
+  },
+  {
+   "id": "v5",
+   "set": "home",
+   "vo": "Banho gelado: dor em zero. A conta de gás cai trinta reais.",
+   "actors": [
+    {
+     "id": "mom",
+     "pos": "table",
+     "rot": 0,
+     "pose": "holdOut",
+     "face": "bliss",
+     "hold": {
+      "R": "paper"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "mom",
+    "angle": 15
+   },
+   "overlays": [
+    {
+     "type": "word",
+     "text": "-R$ 30",
+     "at": "@trinta",
+     "color": "yellow"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@trinta",
+     "name": "chime"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "v6",
+   "set": "home",
+   "vo": "Cebola pro almoço de domingo: dor em zero nos olhos. Três quilos picados. Sua mãe vende o que sobra pra vizinha.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "stove",
+     "rot": 0,
+     "pose": "typing",
+     "face": "bored"
+    },
+    {
+     "id": "mom",
+     "pos": "stove+1.2,0,0.5",
+     "rot": -60,
+     "pose": "holdOut",
+     "face": "sly",
+     "hold": {
+      "R": "bag"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": -25
+   },
+   "overlays": [
+    {
+     "type": "word",
+     "text": "3 KG",
+     "at": "@três",
+     "color": "yellow"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@três",
+     "name": "chime"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "v7",
+   "set": "bedroom",
+   "vo": "Sono em zero na véspera da prova: seis horas a mais de estudo.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "desk",
+     "rot": 180,
+     "pose": "sit",
+     "face": "focused"
+    }
+   ],
+   "camera": {
+    "pos": [
+     1.4,
+     1.55,
+     -0.6
+    ],
+    "look": [
+     2.9,
+     1.05,
+     -3.8
+    ],
+    "fov": 44
+   },
+   "time": "interiorNight",
+   "overlays": [
+    {
+     "type": "word",
+     "text": "+6 HORAS",
+     "at": "@seis",
+     "color": "yellow"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@seis",
+     "name": "chime"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "zoom"
+  },
+  {
+   "id": "v8",
+   "set": "bedroom",
+   "vo": "Acordar às seis no inverno: sono em quarenta. Você levanta antes do despertador. Ele se sente inútil.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "bed+0.9,0,0.6",
+     "rot": 0,
+     "pose": "stretch",
+     "face": "smug"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 25
+   },
+   "overlays": [
+    {
+     "type": "word",
+     "text": "6:00",
+     "at": "@seis",
+     "color": "yellow"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@seis",
+     "name": "chime"
+    },
+    {
+     "t": "@despertador",
+     "name": "ring",
+     "dur": 0.8,
+     "vol": -12
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "v9",
+   "set": "home",
+   "vo": "Filme de terror com a Ivy, sua irmã de nove anos: medo em zero. Ela grita oitenta vezes. Você come pipoca.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "couch",
+     "rot": 90,
+     "pose": "sit",
+     "face": "bored"
+    },
+    {
+     "id": "sister",
+     "pos": "couch+0,0,0.75",
+     "rot": 90,
+     "pose": "sit",
+     "face": "scared"
+    }
+   ],
+   "camera": {
+    "pos": [
+     3.3,
+     1.25,
+     1.2
+    ],
+    "look": [
+     1.8,
+     0.85,
+     -0.05
+    ],
+    "fov": 44
+   },
+   "time": "interiorNight",
+   "overlays": [
+    {
+     "type": "word",
+     "text": "80 GRITOS",
+     "at": "@oitenta",
+     "color": "yellow"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@oitenta",
+     "name": "chime"
+    },
+    {
+     "t": "@grita",
+     "name": "pop"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "whip"
+  },
+  {
+   "id": "v10",
+   "set": "home",
+   "vo": "Você é muito estranho.",
+   "actors": [
+    {
+     "id": "sister",
+     "pos": "couch+0,0,0.75",
+     "rot": 90,
+     "pose": "sit",
+     "face": "suspicious",
+     "look": "hero",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "sister",
+    "angle": 30
+   },
+   "who": "female",
+   "time": "interiorNight",
+   "coverage": "fast"
+  },
+  {
+   "id": "v11",
+   "set": "cafeteria",
+   "vo": "O Bruno, o maior do nono ano, te encurrala: medo em cinco. Você boceja na cara dele. Ele que recua.",
+   "actors": [
+    {
+     "id": "rival",
+     "pos": [
+      0.6,
+      0,
+      3.0
+     ],
+     "rot": -90,
+     "pose": "fight",
+     "face": "angry",
+     "look": "hero",
+     "path": [
+      {
+       "t": "@recua",
+       "pos": [
+        0.6,
+        0,
+        3.0
+       ]
+      },
+      {
+       "t": "@recua+1.2",
+       "pos": [
+        1.6,
+        0,
+        3.0
+       ],
+       "gait": "sneak"
+      }
+     ],
+     "strafe": true,
+     "faces": [
+      {
+       "t": "@boceja",
+       "face": "scared",
+       "blend": 0.4
+      }
+     ]
+    },
+    {
+     "id": "hero",
+     "pos": [
+      -0.4,
+      0,
+      3.0
+     ],
+     "rot": 90,
+     "pose": "relaxed",
+     "face": "bored",
+     "look": "rival"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 35
+   },
+   "variant": 1,
+   "coverage": "off",
+   "overlays": [
+    {
+     "type": "word",
+     "text": "MEDO 5",
+     "at": "@cinco",
+     "color": "yellow"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@cinco",
+     "name": "chime"
+    }
+   ],
+   "cut": "zoom"
+  },
+  {
+   "id": "v12",
+   "set": "suburb",
+   "vo": "A vizinha do lado, com cinco sacolas de feira: força em oitenta. Você leva tudo. Ela te paga um bolo.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      5.4,
+      0.1,
+      -4.6
+     ],
+     "rot": 90,
+     "pose": "carry",
+     "face": "happy",
+     "hold": {
+      "R": "bag",
+      "L": "bag"
+     }
+    },
+    {
+     "id": "extraB",
+     "pos": [
+      7.2,
+      0.1,
+      -4.6
+     ],
+     "rot": -90,
+     "pose": "cheer",
+     "face": "happy",
+     "look": "hero"
+    }
+   ],
+   "camera": {
+    "pos": [
+     6.3,
+     1.5,
+     -1.2
+    ],
+    "look": [
+     6.3,
+     1.1,
+     -4.6
+    ],
+    "fov": 42
+   },
+   "overlays": [
+    {
+     "type": "word",
+     "text": "5 SACOLAS",
+     "at": "@cinco",
+     "color": "yellow"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@cinco",
+     "name": "chime"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "whip"
+  },
+  {
+   "id": "v13",
+   "set": "park",
+   "vo": "A pipa de um menino presa numa árvore: medo em dez. Oito metros de galho. A pipa desce inteira. Você também.",
+   "actors": [
+    {
+     "id": "kid",
+     "pos": "lawn",
+     "rot": -30,
+     "pose": "cheer",
+     "face": "happy",
+     "look": "hero"
+    },
+    {
+     "id": "hero",
+     "pos": "lawn+-0.75,0,0.35",
+     "rot": 60,
+     "pose": "holdOut",
+     "face": "grin",
+     "hold": {
+      "R": "paper"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 20
+   },
+   "overlays": [
+    {
+     "type": "word",
+     "text": "8 METROS",
+     "at": "@oito",
+     "color": "yellow"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@oito",
+     "name": "chime"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "zoom"
+  },
+  {
+   "id": "v14",
+   "set": "stadium",
+   "vo": "Corrida na educação física: dor em vinte. Você dá doze voltas na quadra. O segundo lugar dá sete.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -6,
+      0.02,
+      4
+     ],
+     "rot": 90,
+     "pose": "stand",
+     "face": "determined",
+     "path": [
+      {
+       "t": 0,
+       "pos": [
+        -6,
+        0.02,
+        4
+       ]
+      },
+      {
+       "t": 4.5,
+       "pos": [
+        8,
+        0.02,
+        4
+       ],
+       "gait": "run"
+      }
+     ]
+    },
+    {
+     "id": "bestie",
+     "pos": [
+      -9,
+      0.02,
+      5.2
+     ],
+     "rot": 90,
+     "pose": "stand",
+     "face": "tired",
+     "path": [
+      {
+       "t": 0,
+       "pos": [
+        -9,
+        0.02,
+        5.2
+       ]
+      },
+      {
+       "t": 4.5,
+       "pos": [
+        -2,
+        0.02,
+        5.2
+       ],
+       "gait": "jog"
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "path": [
+     {
+      "t": 0,
+      "pos": [
+       -6,
+       1.5,
+       12
+      ],
+      "look": [
+       -6,
+       1.0,
+       4
+      ]
+     },
+     {
+      "t": 4.5,
+      "pos": [
+       6,
+       1.5,
+       12
+      ],
+      "look": [
+       6,
+       1.0,
+       4
+      ],
+      "ease": "cruise"
+     }
+    ],
+    "fov": 44
+   },
+   "variant": 1,
+   "overlays": [
+    {
+     "type": "word",
+     "text": "12 VOLTAS",
+     "at": "@doze",
+     "color": "yellow"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@doze",
+     "name": "chime"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "whip"
+  },
+  {
+   "id": "v15",
+   "set": "classroom",
+   "vo": "Aperto de mão com o diretor: força em cem. [deadpan] Ele precisou de gelo.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -2.6,
+      0,
+      3.2
+     ],
+     "rot": 90,
+     "pose": {
+      "armR": [
+       55,
+       4,
+       0,
+       30
+      ],
+      "handR": "open"
+     },
+     "face": "happy",
+     "look": "teacher",
+     "contact": true
+    },
+    {
+     "id": "teacher",
+     "pos": [
+      -1.95,
+      0,
+      3.2
+     ],
+     "rot": -90,
+     "pose": {
+      "armR": [
+       55,
+       4,
+       0,
+       30
+      ],
+      "handR": "open"
+     },
+     "face": "neutral",
+     "look": "hero",
+     "contact": true,
+     "faces": [
+      {
+       "t": "@cem+0.3",
+       "face": "shocked",
+       "blend": 0.2
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     -2.4,
+     1.35,
+     1.5
+    ],
+    "look": [
+     -2.25,
+     1.2,
+     3.2
+    ],
+    "fov": 40
+   },
+   "variant": 1,
+   "overlays": [
+    {
+     "type": "word",
+     "text": "FORÇA 100",
+     "at": "@cem",
+     "color": "yellow"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@cem",
+     "name": "chime"
+    },
+    {
+     "t": "@cem+0.3",
+     "name": "thud"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "zoom"
+  },
+  {
+   "id": "v16",
+   "set": "classroom",
+   "vo": "Você quebrou o diretor.",
+   "actors": [
+    {
+     "id": "bestie",
+     "pos": [
+      -3.6,
+      0,
+      4.4
+     ],
+     "rot": 60,
+     "pose": {
+      "head": [
+       -18,
+       0,
+       0
+      ],
+      "armL": [
+       35,
+       20,
+       0,
+       60
+      ],
+      "armR": [
+       35,
+       20,
+       0,
+       60
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "shocked",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "bestie",
+    "angle": 0,
+    "height": -12
+   },
+   "who": "male",
+   "variant": 1,
+   "coverage": "fast"
+  },
+  {
+   "id": "v17",
+   "set": "cafeteria",
+   "vo": "Queda de braço no bairro: força em cem, dor em zero. Vinte e três vitórias seguidas.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      0.6,
+      0,
+      2.22
+     ],
+     "rot": 180,
+     "pose": {
+      "reachR": {
+       "to": [
+        0.0,
+        1.05,
+        0.62
+       ]
+      },
+      "handR": "fist",
+      "hipY": -0.46,
+      "legL": [
+       88,
+       6,
+       92
+      ],
+      "legR": [
+       88,
+       6,
+       92
+      ],
+      "spine": [
+       12,
+       0,
+       0
+      ]
+     },
+     "face": "determined",
+     "contact": true
+    },
+    {
+     "id": "rival",
+     "pos": [
+      0.6,
+      0,
+      0.98
+     ],
+     "rot": 0,
+     "pose": {
+      "reachR": {
+       "to": [
+        0.0,
+        1.05,
+        0.62
+       ]
+      },
+      "handR": "fist",
+      "hipY": -0.42,
+      "legL": [
+       88,
+       6,
+       92
+      ],
+      "legR": [
+       88,
+       6,
+       92
+      ],
+      "spine": [
+       12,
+       0,
+       0
+      ]
+     },
+     "face": "furious",
+     "contact": true
+    }
+   ],
+   "camera": {
+    "pos": [
+     3.0,
+     1.4,
+     1.6
+    ],
+    "look": [
+     0.6,
+     1.0,
+     1.6
+    ],
+    "fov": 40
+   },
+   "variant": 1,
+   "overlays": [
+    {
+     "type": "word",
+     "text": "23 VITÓRIAS",
+     "at": "@vinte",
+     "color": "yellow"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@vinte",
+     "name": "chime"
+    },
+    {
+     "t": "@seguidas",
+     "name": "thud"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "whip"
+  },
+  {
+   "id": "v18",
+   "set": "suburb",
+   "vo": "O prêmio: um troféu de plástico e trezentos reais. [mischievously] Você nunca dormiu tão pouco. Nem ganhou tanto.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      0,
+      0.1,
+      -4.4
+     ],
+     "rot": 0,
+     "pose": "celebrate",
+     "face": "grin"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": -15,
+    "height": -12,
+    "move": "pushIn"
+   },
+   "props": [
+    {
+     "type": "trophy",
+     "pos": [
+      0.6,
+      0.1,
+      -4.0
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "word",
+     "text": "R$ 300",
+     "at": "@trezentos",
+     "color": "yellow"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@trezentos",
+     "name": "chime"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "zoom"
+  },
+  {
+   "id": "b1",
+   "set": "home",
+   "vo": "Quem mais lucra com tudo isso é a Ivy.",
+   "actors": [
+    {
+     "id": "sister",
+     "pos": "center",
+     "rot": 20,
+     "pose": "phone",
+     "face": "sly",
+     "hold": {
+      "R": "phone"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "sister",
+    "angle": 20,
+    "move": "pushIn"
+   },
+   "coverage": "fast",
+   "cut": "whip"
+  },
+  {
+   "id": "b2",
+   "set": "home",
+   "vo": "Ela tem um canal. Trezentos e doze inscritos. E um plano: dez mil até o fim do inverno.",
+   "actors": [
+    {
+     "id": "sister",
+     "pos": "center",
+     "rot": -10,
+     "pose": "holdOut",
+     "face": "determined",
+     "hold": {
+      "R": "phone"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "sister",
+    "angle": -15
+   },
+   "overlays": [
+    {
+     "type": "word",
+     "text": "312",
+     "at": "@trezentos"
+    },
+    {
+     "type": "word",
+     "text": "10.000",
+     "at": "@dez",
+     "y": "mid"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "b3",
+   "set": "home",
+   "vo": "Ela grava tudo o que você faz. O pote, o diretor, o carro. [sarcastic] Sem autorização, claro.",
+   "actors": [
+    {
+     "id": "sister",
+     "pos": "center+1.6,0,0.4",
+     "rot": -90,
+     "pose": "phone",
+     "face": "focused",
+     "hold": {
+      "R": "phone"
+     }
+    },
+    {
+     "id": "hero",
+     "pos": "kitchen",
+     "rot": 0,
+     "pose": "holdOut",
+     "face": "smug",
+     "hold": {
+      "R": "jar"
+     }
+    }
+   ],
+   "camera": {
+    "pos": [
+     2.6,
+     1.5,
+     3.4
+    ],
+    "look": [
+     -1.4,
+     1.1,
+     -1.8
+    ],
+    "fov": 44
+   },
+   "coverage": "fast"
+  },
+  {
+   "id": "b4",
+   "set": "home",
+   "vo": "Você é meu conteúdo.",
+   "actors": [
+    {
+     "id": "sister",
+     "pos": "center+1.6,0,0.4",
+     "rot": -90,
+     "pose": "phone",
+     "face": "smug",
+     "hold": {
+      "R": "phone"
+     },
+     "look": "camera",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "sister",
+    "angle": 25
+   },
+   "who": "female",
+   "coverage": "fast"
+  },
+  {
+   "id": "b5",
+   "set": "home",
+   "vo": "E ela quer um vídeo que ninguém nunca fez. Essa parte vai importar.",
+   "actors": [
+    {
+     "id": "sister",
+     "pos": "center+1.6,0,0.4",
+     "rot": -90,
+     "pose": "thinking",
+     "face": "sly",
+     "hold": {
+      "R": "phone"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "xclose",
+    "target": "sister",
+    "angle": -10,
+    "move": "pushIn"
+   },
+   "coverage": "off"
+  },
+  {
+   "id": "b6",
+   "set": "home",
+   "vo": "Algo perigoso. Perigo dá visualização.",
+   "actors": [
+    {
+     "id": "sister",
+     "pos": "center+1.6,0,0.4",
+     "rot": -90,
+     "pose": "point",
+     "face": "sly",
+     "look": "hero",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "sister",
+    "angle": 35
+   },
+   "who": "female",
+   "coverage": "fast"
+  },
+  {
+   "id": "q1",
+   "set": "void",
+   "vo": "Essa é a versão divertida. Aqui vem a conta.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 0,
+     "pose": "stand",
+     "face": "worried"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 0,
+    "move": "pullOut"
+   },
+   "sfx": [
+    {
+     "t": "@conta",
+     "name": "subdrop"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "zoom"
+  },
+  {
+   "id": "q2",
+   "set": "void",
+   "vo": "O menu disse empréstimo. [darkly amused] O banco é o seu corpo. E ele cobra juros.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 0,
+     "pose": "stand",
+     "face": "scared"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": 15
+   },
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "value": 100
+      },
+      {
+       "label": "SONO",
+       "value": 100
+      },
+      {
+       "label": "MEDO",
+       "value": 100
+      },
+      {
+       "label": "FORÇA",
+       "value": 60
+      }
+     ],
+     "at": 0.1,
+     "y": "low",
+     "note": "EMPRÉSTIMO ATIVO · JUROS DIÁRIOS",
+     "noteAt": "@juros"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "q3",
+   "kind": "card",
+   "card": "stat",
+   "vo": "Problema um: o sono. Você passa quatro noites com o sono em zero.",
+   "value": 4,
+   "unit": "NOITES",
+   "label": "SEM DORMIR",
+   "icon": "clock"
+  },
+  {
+   "id": "q4",
+   "set": "classroom",
+   "vo": "No quinto dia, a conta chega inteira. Você dorme em pé. No meio da apresentação.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "front",
+     "rot": 90,
+     "pose": {
+      "head": [
+       35,
+       0,
+       15
+      ],
+      "spine": [
+       6,
+       0,
+       0
+      ],
+      "armL": [
+       0,
+       6,
+       0,
+       10
+      ],
+      "armR": [
+       0,
+       6,
+       0,
+       10
+      ]
+     },
+     "face": "closed"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 0,
+    "height": -6
+   },
+   "variant": 0,
+   "coverage": "off",
+   "overlays": [
+    {
+     "type": "word",
+     "text": "Zzz",
+     "at": "@pé",
+     "color": "white"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@pé",
+     "name": "subdrop"
+    }
+   ]
+  },
+  {
+   "id": "q5",
+   "kind": "card",
+   "card": "stat",
+   "vo": "Em mil novecentos e sessenta e quatro, um estudante americano ficou onze dias sem dormir. No fim, ele via coisas que não existiam.",
+   "value": 11,
+   "unit": "DIAS",
+   "label": "ACORDADO, EM 1964",
+   "icon": "eye"
+  },
+  {
+   "id": "q5b",
+   "kind": "card",
+   "card": "icon",
+   "vo": "E tem mais: dormindo, o cérebro faz faxina. Um líquido lava o lixo do dia. Isso foi visto em camundongos, em dois mil e treze. Sem sono, o lixo fica.",
+   "icon": "brain",
+   "caption": "O CÉREBRO FAZ FAXINA",
+   "sub": "SÓ QUANDO VOCÊ DORME"
+  },
+  {
+   "id": "q6",
+   "set": "bedroom",
+   "vo": "Você chega no quarto dia. [deadpan] E conversa dez minutos com o guarda-roupa.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "wardrobe+1.0,0,0",
+     "rot": -90,
+     "pose": "explain",
+     "face": "tired",
+     "talk": [
+      [
+       0.4,
+       3.6
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     0.6,
+     1.5,
+     2.6
+    ],
+    "look": [
+     -2.2,
+     1.2,
+     0.8
+    ],
+    "fov": 42
+   },
+   "time": "interiorNight",
+   "overlays": [
+    {
+     "type": "word",
+     "text": "10 MIN",
+     "at": "@dez",
+     "color": "white"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "q7",
+   "set": "bedroom",
+   "vo": "Ele tá discutindo com o guarda-roupa de novo.",
+   "actors": [
+    {
+     "id": "sister",
+     "pos": "door",
+     "rot": -90,
+     "pose": "phone",
+     "face": "smirk",
+     "hold": {
+      "R": "phone"
+     },
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "sister",
+    "angle": -20
+   },
+   "who": "female",
+   "time": "interiorNight",
+   "coverage": "fast"
+  },
+  {
+   "id": "q8",
+   "set": "void",
+   "vo": "Solução barata: sono nunca abaixo de sessenta.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 0,
+     "pose": "point",
+     "face": "tired"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 10
+   },
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "SONO",
+       "from": 0,
+       "value": 60,
+       "at": "@sessenta"
+      }
+     ],
+     "at": 0.1,
+     "y": "low"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "whip"
+  },
+  {
+   "id": "q9",
+   "set": "void",
+   "vo": "Problema dois: a força. Você deixa em cem depois da queda de braço. E esquece de baixar.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 20,
+     "pose": "power",
+     "face": "grin"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 20,
+    "height": -10
+   },
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "FORÇA",
+       "value": 100
+      },
+      {
+       "label": "FOCO",
+       "value": 12,
+       "warn": true
+      }
+     ],
+     "at": "@força",
+     "y": "low",
+     "title": "CONFIGURAÇÕES"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "q10",
+   "set": "classroom",
+   "vo": "Na prova de matemática, o foco está em doze. [deadpan] Você tira meio ponto.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "seat2",
+     "rot": -90,
+     "pose": "sitSlump",
+     "face": "confused",
+     "hold": {
+      "R": "paper"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": 30
+   },
+   "variant": 0,
+   "overlays": [
+    {
+     "type": "word",
+     "text": "0,5",
+     "at": "@meio",
+     "color": "red"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@meio",
+     "name": "subdrop"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "zoom"
+  },
+  {
+   "id": "q11",
+   "set": "home",
+   "vo": "Recuperação: quatrocentos reais. Sua mãe desconta da sua mesada.",
+   "actors": [
+    {
+     "id": "mom",
+     "pos": "table",
+     "rot": 0,
+     "pose": "holdOut",
+     "face": "angry",
+     "hold": {
+      "R": "paper"
+     }
+    },
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": -150,
+     "pose": "sad",
+     "face": "sad",
+     "look": "mom"
+    }
+   ],
+   "camera": {
+    "pos": [
+     0.8,
+     1.5,
+     3.4
+    ],
+    "look": [
+     -2.0,
+     1.1,
+     -0.6
+    ],
+    "fov": 44
+   },
+   "overlays": [
+    {
+     "type": "word",
+     "text": "R$ 400",
+     "at": "@quatrocentos"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "whip"
+  },
+  {
+   "id": "q12",
+   "set": "home",
+   "vo": "Com juros.",
+   "actors": [
+    {
+     "id": "mom",
+     "pos": "table",
+     "rot": 0,
+     "pose": "armsCrossed",
+     "face": "smug",
+     "look": "hero",
+     "talk": [
+      [
+       0.05,
+       0.9
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "mom",
+    "angle": 10
+   },
+   "who": "adulta",
+   "cut": "smash",
+   "coverage": "fast"
+  },
+  {
+   "id": "q12b",
+   "set": "classroom",
+   "vo": "O professor de matemática olha a sua prova, olha pra você, e pergunta se está tudo bem em casa. [darkly amused] Não está. Mas não pelo motivo que ele pensa.",
+   "actors": [
+    {
+     "id": "teacher",
+     "pos": "front",
+     "rot": 60,
+     "pose": "holdOut",
+     "face": "worried",
+     "hold": {
+      "R": "paper"
+     },
+     "look": "hero"
+    },
+    {
+     "id": "hero",
+     "pos": "seat3",
+     "rot": -90,
+     "pose": "sit",
+     "face": "embarrassed",
+     "look": "teacher"
+    }
+   ],
+   "camera": {
+    "pos": [
+     -1.6,
+     1.5,
+     3.6
+    ],
+    "look": [
+     -2.0,
+     1.1,
+     0.0
+    ],
+    "fov": 44
+   },
+   "variant": 1,
+   "coverage": "fast",
+   "cut": "zoom"
+  },
+  {
+   "id": "q13",
+   "set": "stadium",
+   "vo": "Problema três: a dor. No futebol da escola, você joga com a dor em zero.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -4,
+      0.02,
+      2
+     ],
+     "rot": 90,
+     "pose": "stand",
+     "face": "determined",
+     "path": [
+      {
+       "t": 0.2,
+       "pos": [
+        -4,
+        0.02,
+        2
+       ]
+      },
+      {
+       "t": 3.6,
+       "pos": [
+        3,
+        0.02,
+        1.6
+       ],
+       "gait": "run"
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "path": [
+     {
+      "t": 0,
+      "pos": [
+       -4,
+       1.4,
+       9
+      ],
+      "look": [
+       -3,
+       0.9,
+       2
+      ]
+     },
+     {
+      "t": 3.6,
+      "pos": [
+       3,
+       1.4,
+       9
+      ],
+      "look": [
+       3,
+       0.9,
+       2
+      ],
+      "ease": "cruise"
+     }
+    ],
+    "fov": 44
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "ball",
+     "pos": [
+      -3.4,
+      0.02,
+      2.1
+     ],
+     "path": [
+      {
+       "t": 0.2,
+       "pos": [
+        -3.4,
+        0.02,
+        2.1
+       ]
+      },
+      {
+       "t": 3.6,
+       "pos": [
+        3.6,
+        0.02,
+        1.7
+       ]
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "value": 0
+      }
+     ],
+     "at": "@dor",
+     "y": "top"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "whip"
+  },
+  {
+   "id": "q14",
+   "set": "stadium",
+   "vo": "Na primeira dividida, o seu pulso entorta pro lado errado. Você não sente. E faz mais dois gols.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      0.4,
+      0.02,
+      1.6
+     ],
+     "rot": 90,
+     "pose": {
+      "hipY": 0.05,
+      "head": [
+       -4,
+       0,
+       0
+      ],
+      "armL": [
+       150,
+       40,
+       0,
+       10
+      ],
+      "armR": [
+       140,
+       40,
+       95,
+       70
+      ],
+      "handL": "fist",
+      "handR": "open",
+      "legL": [
+       20,
+       8,
+       40
+      ],
+      "legR": [
+       6,
+       8,
+       20
+      ]
+     },
+     "face": "grin"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 0,
+    "height": -10
+   },
+   "variant": 1,
+   "coverage": "off",
+   "sfx": [
+    {
+     "t": "@entorta",
+     "name": "thud"
+    },
+    {
+     "t": "@gols",
+     "name": "chime"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "word",
+     "text": "2 GOLS",
+     "at": "@dois"
+    }
+   ]
+  },
+  {
+   "id": "q14b",
+   "set": "stadium",
+   "vo": "No vestiário, o Caio aponta pro seu braço.",
+   "actors": [
+    {
+     "id": "bestie",
+     "pos": [
+      0.2,
+      0.02,
+      3.2
+     ],
+     "rot": 160,
+     "pose": "point",
+     "face": "shocked",
+     "look": "hero"
+    },
+    {
+     "id": "hero",
+     "pos": [
+      0.6,
+      0.02,
+      2.2
+     ],
+     "rot": -20,
+     "pose": "relaxed",
+     "face": "happy",
+     "look": "bestie"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": [
+     "hero",
+     "bestie"
+    ],
+    "angle": 90
+   },
+   "variant": 1,
+   "coverage": "fast"
+  },
+  {
+   "id": "q14c",
+   "set": "stadium",
+   "vo": "Isso aí não dobra pra esse lado.",
+   "actors": [
+    {
+     "id": "bestie",
+     "pos": [
+      0.2,
+      0.02,
+      3.2
+     ],
+     "rot": 160,
+     "pose": "point",
+     "face": "scared",
+     "look": "hero",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "bestie",
+    "angle": 20
+   },
+   "who": "male",
+   "variant": 1,
+   "coverage": "fast"
+  },
+  {
+   "id": "q15",
+   "kind": "card",
+   "card": "stat",
+   "vo": "No hospital: pulso quebrado em dois lugares. Você jogou quarenta minutos com ele assim.",
+   "value": 40,
+   "unit": "MINUTOS",
+   "label": "JOGANDO COM O PULSO QUEBRADO",
+   "icon": "warning"
+  },
+  {
+   "id": "q16",
+   "set": "home",
+   "vo": "Esse gesso sai da sua mesada.",
+   "actors": [
+    {
+     "id": "mom",
+     "pos": "center",
+     "rot": 160,
+     "pose": "point",
+     "face": "angry",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    },
+    {
+     "id": "hero",
+     "pos": "center+1.0,0,-1.5",
+     "rot": -30,
+     "pose": {
+      "armR": [
+       60,
+       10,
+       -20,
+       95
+      ],
+      "armL": [
+       4,
+       8,
+       0,
+       20
+      ]
+     },
+     "face": "sad",
+     "look": "mom"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "mom",
+    "angle": -25
+   },
+   "who": "adulta",
+   "coverage": "fast"
+  },
+  {
+   "id": "q17",
+   "set": "void",
+   "vo": "Por isso quem nasce sem dor vive se machucando. A dor é o aviso. [deadpan] E você desligou o aviso. Solução: dor nunca abaixo de trinta.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 0,
+     "pose": {
+      "armR": [
+       60,
+       10,
+       -20,
+       95
+      ],
+      "armL": [
+       4,
+       8,
+       0,
+       20
+      ]
+     },
+     "face": "worried"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": -15,
+    "move": "pushIn"
+   },
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "from": 0,
+       "value": 30,
+       "at": "@trinta"
+      }
+     ],
+     "at": "@solução",
+     "y": "low"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "zoom"
+  },
+  {
+   "id": "x1",
+   "set": "void",
+   "vo": "Esses doem no bolso. O próximo dói em outra pessoa.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 0,
+     "pose": "stand",
+     "face": "neutral"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": 0,
+    "move": "pushIn"
+   },
+   "sfx": [
+    {
+     "t": "@pessoa",
+     "name": "subdrop"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "x2",
+   "set": "park",
+   "vo": "Você passa uma semana com o medo em zero. E se sente ótimo. Até o sábado.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 0,
+     "pose": "relaxed",
+     "face": "smug"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 15
+   },
+   "variant": 1,
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "MEDO",
+       "value": 0
+      }
+     ],
+     "at": "@medo",
+     "y": "top"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "whip"
+  },
+  {
+   "id": "x2b",
+   "set": "home",
+   "vo": "Na quarta, a Ivy chora de medo de um trovão. Você assiste. [deadpan] Parece um vídeo engraçado.",
+   "actors": [
+    {
+     "id": "sister",
+     "pos": "couch+0,0,0.5",
+     "rot": 90,
+     "pose": "sit",
+     "face": "cry"
+    },
+    {
+     "id": "hero",
+     "pos": [
+      3.0,
+      0,
+      1.5
+     ],
+     "rot": -120,
+     "pose": "armsCrossed",
+     "face": "smirk",
+     "look": "sister"
+    }
+   ],
+   "camera": {
+    "pos": [
+     4.0,
+     1.4,
+     -0.7
+    ],
+    "look": [
+     2.2,
+     1.0,
+     0.7
+    ],
+    "fov": 44
+   },
+   "time": "interiorNight",
+   "sfx": [
+    {
+     "t": "@trovão",
+     "name": "farBoom"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "zoom"
+  },
+  {
+   "id": "x3",
+   "set": "park",
+   "vo": "O lago do parque congelou na primeira semana de frio. Gelo fininho.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -11.6,
+      0,
+      -9.0
+     ],
+     "rot": -133,
+     "pose": "stand",
+     "face": "neutral"
+    },
+    {
+     "id": "bestie",
+     "pos": [
+      -11.0,
+      0,
+      -9.8
+     ],
+     "rot": -133,
+     "pose": "armsCrossed",
+     "face": "worried"
+    }
+   ],
+   "camera": {
+    "pos": [
+     -6,
+     1.7,
+     -2
+    ],
+    "look": [
+     -15,
+     0.6,
+     -12
+    ],
+    "fov": 42,
+    "move": "pushIn"
+   },
+   "variant": 1,
+   "sfx": [
+    {
+     "t": 0.3,
+     "name": "wind",
+     "dur": 2.5
+    }
+   ],
+   "coverage": "fast",
+   "cut": "whip"
+  },
+  {
+   "id": "x4",
+   "kind": "card",
+   "card": "stat",
+   "vo": "Com menos de cinco centímetros de gelo, ninguém deveria pisar. Pra andar com segurança, precisa de uns dez.",
+   "value": 10,
+   "unit": "CM",
+   "label": "O MÍNIMO PRA ANDAR NO GELO",
+   "icon": "warning"
+  },
+  {
+   "id": "x5",
+   "set": "park",
+   "vo": "Você desafia o Caio, seu melhor amigo, a atravessar. [mischievously] Valendo vinte reais.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -11.6,
+      0,
+      -9.0
+     ],
+     "rot": 143,
+     "pose": "point",
+     "face": "grin",
+     "look": "bestie"
+    },
+    {
+     "id": "bestie",
+     "pos": [
+      -11.0,
+      0,
+      -9.8
+     ],
+     "rot": 100,
+     "pose": "stand",
+     "face": "worried",
+     "look": "hero"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 25
+   },
+   "variant": 1,
+   "coverage": "off",
+   "overlays": [
+    {
+     "type": "word",
+     "text": "R$ 20",
+     "at": "@vinte"
+    }
+   ]
+  },
+  {
+   "id": "x6",
+   "set": "park",
+   "vo": "A cara do Caio está gritando. Olhos arregalados. Boca tremendo.",
+   "actors": [
+    {
+     "id": "bestie",
+     "pos": [
+      -13.6,
+      0.04,
+      -10.9
+     ],
+     "rot": 47,
+     "pose": "scared",
+     "face": "scared",
+     "look": "hero"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "bestie",
+    "angle": 10
+   },
+   "variant": 1,
+   "sfx": [
+    {
+     "t": 0.4,
+     "name": "crack",
+     "vol": -14
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "x7",
+   "set": "park",
+   "vo": "E você não entende. Você acha que ele está fazendo careta. E ri.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -11.6,
+      0,
+      -9.0
+     ],
+     "rot": -133,
+     "pose": "shrug",
+     "face": "neutral",
+     "faces": [
+      {
+       "t": "@ri",
+       "face": "grin",
+       "blend": 0.3
+      }
+     ],
+     "look": "bestie"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": 25
+   },
+   "variant": 1,
+   "sfx": [
+    {
+     "t": "@ri",
+     "name": "pop"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "x8",
+   "kind": "card",
+   "card": "icon",
+   "vo": "Nos Estados Unidos, uma mulher conhecida só pelas iniciais S M perdeu a parte do cérebro que sente medo.",
+   "icon": "brain",
+   "caption": "A MULHER QUE NÃO",
+   "sub": "SENTE MEDO"
+  },
+  {
+   "id": "x9",
+   "kind": "card",
+   "card": "chain",
+   "vo": "Ela não sente medo. E não reconhece o medo na cara de ninguém.",
+   "title": "SEM MEDO",
+   "nodes": [
+    {
+     "icon": "brain",
+     "label": "SEM ALARME"
+    },
+    {
+     "icon": "eye",
+     "label": "NÃO LÊ O MEDO"
+    },
+    {
+     "icon": "question",
+     "label": "NOS OUTROS"
+    }
+   ]
+  },
+  {
+   "id": "x10",
+   "set": "park",
+   "vo": "[softly] É isso que você virou. Sem medo, você não vê o medo dos outros.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -11.6,
+      0,
+      -9.0
+     ],
+     "rot": -133,
+     "pose": "stand",
+     "face": "neutral",
+     "look": "bestie"
+    }
+   ],
+   "camera": {
+    "shot": "xclose",
+    "target": "hero",
+    "angle": 15,
+    "move": "pushIn"
+   },
+   "variant": 1,
+   "overlays": [
+    {
+     "type": "word",
+     "text": "MEDO",
+     "at": "@medo#2",
+     "color": "red",
+     "y": "top"
+    }
+   ],
+   "coverage": "off"
+  },
+  {
+   "id": "x11",
+   "set": "park",
+   "vo": "O gelo estala embaixo do Caio.",
+   "actors": [
+    {
+     "id": "bestie",
+     "pos": [
+      -13.6,
+      0.04,
+      -10.9
+     ],
+     "rot": 47,
+     "pose": "scared",
+     "face": "shocked"
+    }
+   ],
+   "camera": {
+    "shot": "full",
+    "target": "bestie",
+    "angle": -20,
+    "height": 25
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "iceHole",
+     "pos": [
+      -13.6,
+      0.04,
+      -10.9
+     ],
+     "cracks": true,
+     "size": 0.5,
+     "ignite": "@estala"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@estala",
+     "name": "crack"
+    }
+   ],
+   "cut": "smash",
+   "coverage": "fast"
+  },
+  {
+   "id": "x12",
+   "set": "park",
+   "vo": "Um cachorro late do outro lado. O Caio se assusta, pula pra trás, e cai sentado na grama. Salvo por um cachorro.",
+   "actors": [
+    {
+     "id": "bestie",
+     "pos": [
+      -13.6,
+      0.04,
+      -10.9
+     ],
+     "rot": 47,
+     "pose": "scared",
+     "face": "scared",
+     "path": [
+      {
+       "t": "@pula",
+       "pos": [
+        -13.6,
+        0.04,
+        -10.9
+       ]
+      },
+      {
+       "t": "@pula+0.8",
+       "pos": [
+        -11.6,
+        0,
+        -9.9
+       ],
+       "gait": "run"
+      }
+     ],
+     "poses": [
+      {
+       "t": "@cai",
+       "pose": {
+        "hipY": -0.71,
+        "spine": [
+         8,
+         0,
+         0
+        ],
+        "legL": [
+         88,
+         8,
+         8
+        ],
+        "legR": [
+         86,
+         8,
+         14
+        ],
+        "armL": [
+         -25,
+         20,
+         0,
+         10
+        ],
+        "armR": [
+         -25,
+         20,
+         0,
+         10
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.3
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     -7.8,
+     1.6,
+     -5.6
+    ],
+    "look": [
+     -14.4,
+     0.6,
+     -12.6
+    ],
+    "fov": 44
+   },
+   "variant": 1,
+   "props": [
+    {
+     "type": "iceHole",
+     "pos": [
+      -13.6,
+      0.04,
+      -10.9
+     ],
+     "cracks": true,
+     "size": 0.5
+    },
+    {
+     "type": "dog",
+     "pos": [
+      -14.8,
+      0,
+      -19.4
+     ],
+     "rot": 20,
+     "scale": 1.6
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@late",
+     "name": "pop"
+    },
+    {
+     "t": "@cai",
+     "name": "thud"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "x13",
+   "set": "park",
+   "vo": "Eu quase afundei. E você riu.",
+   "actors": [
+    {
+     "id": "bestie",
+     "pos": [
+      -11.6,
+      0,
+      -9.9
+     ],
+     "rot": 40,
+     "pose": {
+      "hipY": -0.71,
+      "spine": [
+       8,
+       0,
+       0
+      ],
+      "legL": [
+       88,
+       8,
+       8
+      ],
+      "legR": [
+       86,
+       8,
+       14
+      ],
+      "armL": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "armR": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "angry",
+     "look": "hero",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "bestie",
+    "angle": 20,
+    "height": 15
+   },
+   "who": "male",
+   "variant": 1,
+   "coverage": "fast"
+  },
+  {
+   "id": "x14",
+   "set": "park",
+   "vo": "Ele vai embora. E você não sente nada. [pause] Isso deveria te assustar.",
+   "actors": [
+    {
+     "id": "bestie",
+     "pos": [
+      -10.6,
+      0,
+      -9.0
+     ],
+     "rot": 50,
+     "pose": "stand",
+     "face": "sad",
+     "path": [
+      {
+       "t": 0.3,
+       "pos": [
+        -10.6,
+        0,
+        -9.0
+       ]
+      },
+      {
+       "t": 4.0,
+       "pos": [
+        -7.6,
+        0,
+        -6.2
+       ],
+       "gait": "walk"
+      }
+     ]
+    },
+    {
+     "id": "hero",
+     "pos": [
+      -11.6,
+      0,
+      -9.0
+     ],
+     "rot": 45,
+     "pose": "stand",
+     "face": "neutral",
+     "look": "bestie"
+    }
+   ],
+   "camera": {
+    "pos": [
+     -14.6,
+     1.5,
+     -11.0
+    ],
+    "look": [
+     -9.8,
+     1.0,
+     -7.8
+    ],
+    "fov": 42
+   },
+   "variant": 1,
+   "coverage": "fast"
+  },
+  {
+   "id": "z1",
+   "set": "home",
+   "vo": "Em casa, a sua mãe repara antes de todo mundo.",
+   "actors": [
+    {
+     "id": "mom",
+     "pos": "kitchen",
+     "rot": 30,
+     "pose": "armsCrossed",
+     "face": "suspicious",
+     "look": "hero"
+    },
+    {
+     "id": "hero",
+     "pos": "seat",
+     "rot": 0,
+     "pose": "sit",
+     "face": "neutral"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "mom",
+    "angle": 20
+   },
+   "time": "interiorNight",
+   "coverage": "fast",
+   "cut": "zoom"
+  },
+  {
+   "id": "z2",
+   "set": "home",
+   "vo": "Você não come há dois dias. [chuckling] Tá saindo barato.",
+   "actors": [
+    {
+     "id": "mom",
+     "pos": "kitchen",
+     "rot": 30,
+     "pose": "relaxed",
+     "face": "smug",
+     "look": "hero",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    },
+    {
+     "id": "hero",
+     "pos": "seat",
+     "rot": 0,
+     "pose": "sit",
+     "face": "neutral"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "mom",
+    "angle": 25
+   },
+   "who": "adulta",
+   "time": "interiorNight",
+   "coverage": "fast"
+  },
+  {
+   "id": "z3",
+   "set": "home",
+   "vo": "Ela ri. Você não. Você olha pra cara dela e não sabe o que ela está sentindo.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "seat",
+     "rot": 0,
+     "pose": "sit",
+     "face": "confused",
+     "look": "mom"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": -20
+   },
+   "time": "interiorNight",
+   "coverage": "fast"
+  },
+  {
+   "id": "z3b",
+   "set": "home",
+   "vo": "No celular, o Caio não responde. Faz quatro dias.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "seat",
+     "rot": 0,
+     "pose": "phone",
+     "face": "sad",
+     "hold": {
+      "R": "phone"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": 30
+   },
+   "time": "interiorNight",
+   "overlays": [
+    {
+     "type": "word",
+     "text": "4 DIAS",
+     "at": "@quatro",
+     "color": "white",
+     "y": "top"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "z4",
+   "set": "bedroom",
+   "vo": "Naquela noite, você tropeça no escuro. O coração dispara. O menu abre. E você volta tudo pro padrão.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 0,
+     "pose": "stand",
+     "face": "scared",
+     "poses": [
+      {
+       "t": "@tropeça",
+       "pose": "fall",
+       "blend": 0.2
+      },
+      {
+       "t": "@tropeça+0.5",
+       "pose": "stand",
+       "blend": 0.4
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 15
+   },
+   "time": "interiorNight",
+   "sfx": [
+    {
+     "t": "@tropeça",
+     "name": "thud"
+    },
+    {
+     "t": "@dispara",
+     "name": "heartbeat"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "from": 30,
+       "value": 100,
+       "at": "@padrão"
+      },
+      {
+       "label": "SONO",
+       "from": 60,
+       "value": 100,
+       "at": "@padrão+0.1"
+      },
+      {
+       "label": "MEDO",
+       "from": 0,
+       "value": 100,
+       "at": "@padrão+0.2"
+      },
+      {
+       "label": "FORÇA",
+       "from": 100,
+       "value": 60,
+       "at": "@padrão+0.3"
+      }
+     ],
+     "at": "@abre",
+     "y": "low",
+     "alarm": true
+    }
+   ],
+   "coverage": "fast",
+   "cut": "whip"
+  },
+  {
+   "id": "z5",
+   "set": "bedroom",
+   "vo": "E sente tudo de uma vez. O pulso. O sono. E a vergonha.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -1.95,
+      0,
+      -2.1
+     ],
+     "rot": 90,
+     "pose": "sitSlump",
+     "face": "cry"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 0,
+    "move": "pushIn"
+   },
+   "time": "interiorNight",
+   "coverage": "calm"
+  },
+  {
+   "id": "y1",
+   "set": "void",
+   "vo": "Aí você aprende com quem faz isso há milhões de anos.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 0,
+     "pose": "thinking",
+     "face": "focused"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 0,
+    "move": "pushIn"
+   },
+   "coverage": "fast",
+   "cut": "zoom"
+  },
+  {
+   "id": "y2",
+   "kind": "card",
+   "card": "stat",
+   "vo": "Um urso hibernando derruba o coração pra menos de dez batidas por minuto. Mas nunca pra zero.",
+   "value": "< 10",
+   "unit": "BPM",
+   "label": "URSO HIBERNANDO · NUNCA ZERO",
+   "icon": "heart"
+  },
+  {
+   "id": "y3",
+   "set": "void",
+   "vo": "Ele abaixa tudo pra sobreviver ao inverno. Mas deixa o alarme ligado. Baixinho.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 20,
+     "pose": "explain",
+     "face": "focused"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": 20
+   },
+   "coverage": "fast"
+  },
+  {
+   "id": "y4",
+   "set": "void",
+   "vo": "Você treina igual. Dor em setenta. Medo em sessenta. Nunca nos extremos.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": -15,
+     "pose": "focus",
+     "face": "determined"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": -15
+   },
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "from": 100,
+       "value": 70,
+       "at": "@setenta"
+      },
+      {
+       "label": "SONO",
+       "value": 100
+      },
+      {
+       "label": "MEDO",
+       "from": 100,
+       "value": 60,
+       "at": "@sessenta"
+      },
+      {
+       "label": "FORÇA",
+       "value": 60
+      }
+     ],
+     "at": 0.1,
+     "y": "low"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "y4b",
+   "set": "void",
+   "vo": "Dor em setenta ainda dói. Mas você sabe onde está o seu pulso. Medo em sessenta ainda assusta. Mas você para antes da beirada.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 25,
+     "pose": "stand",
+     "face": "focused"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": 25,
+    "move": "drift"
+   },
+   "coverage": "fast"
+  },
+  {
+   "id": "y5",
+   "set": "home",
+   "vo": "E pra abrir o menu quando precisa, você contrata a Ivy. Ela te dá sustos. Cinco reais cada.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "couch",
+     "rot": 90,
+     "pose": "sit",
+     "face": "neutral"
+    },
+    {
+     "id": "sister",
+     "pos": "couch+-1.0,0,-0.9",
+     "rot": 90,
+     "pose": "crouch",
+     "face": "sly",
+     "poses": [
+      {
+       "t": "@sustos",
+       "pose": "fight",
+       "blend": 0.15
+      }
+     ],
+     "faces": [
+      {
+       "t": "@sustos",
+       "face": "furious",
+       "blend": 0.1
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     3.4,
+     1.3,
+     1.6
+    ],
+    "look": [
+     1.4,
+     0.95,
+     -0.4
+    ],
+    "fov": 42
+   },
+   "overlays": [
+    {
+     "type": "word",
+     "text": "R$ 5",
+     "at": "@cinco"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@sustos",
+     "name": "pop"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "whip"
+  },
+  {
+   "id": "y6",
+   "set": "home",
+   "vo": "Pagamento adiantado.",
+   "actors": [
+    {
+     "id": "sister",
+     "pos": "couch+-1.0,0,-0.9",
+     "rot": 90,
+     "pose": "holdOut",
+     "face": "smug",
+     "look": "hero",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "sister",
+    "angle": 30
+   },
+   "who": "female",
+   "cut": "smash",
+   "coverage": "fast"
+  },
+  {
+   "id": "y7",
+   "set": "bedroom",
+   "vo": "Você erra. Quase deixa a força em cem de novo. O Caio, que voltou a falar com você depois de uma pizza, te segura.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 30,
+     "pose": "power",
+     "face": "determined"
+    },
+    {
+     "id": "bestie",
+     "pos": "center+0.7,0,0.2",
+     "rot": -60,
+     "pose": "reach",
+     "face": "worried",
+     "look": "hero",
+     "contact": true
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": [
+     "hero",
+     "bestie"
+    ],
+    "angle": 20
+   },
+   "props": [
+    {
+     "type": "pizza",
+     "pos": "rug"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "zoom"
+  },
+  {
+   "id": "y8",
+   "set": "bedroom",
+   "vo": "Até que você escreve a regra num papel amarelo. E cola na parede, do lado da cama.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -0.6,
+      0,
+      -3.35
+     ],
+     "rot": 180,
+     "pose": {
+      "reachR": {
+       "to": [
+        0.12,
+        1.5,
+        0.48
+       ]
+      }
+     },
+     "face": "focused"
+    }
+   ],
+   "camera": {
+    "pos": [
+     1.0,
+     1.5,
+     -1.2
+    ],
+    "look": [
+     -0.75,
+     1.35,
+     -3.8
+    ],
+    "fov": 40
+   },
+   "props": [
+    {
+     "type": "sign",
+     "pos": [
+      -0.85,
+      1.55,
+      -3.96
+     ],
+     "rot": 0,
+     "w": 0.5,
+     "h": 0.42,
+     "text": "NUNCA ZERO",
+     "bg": "#ffe36b",
+     "fg": "#1d2333"
+    }
+   ],
+   "coverage": "off"
+  },
+  {
+   "id": "y9",
+   "set": "bedroom",
+   "vo": "Nunca zero. Só mais baixo.",
+   "camera": {
+    "pos": [
+     -0.75,
+     1.5,
+     -2.7
+    ],
+    "look": [
+     -0.85,
+     1.55,
+     -3.96
+    ],
+    "fov": 34,
+    "move": "pushIn"
+   },
+   "props": [
+    {
+     "type": "sign",
+     "pos": [
+      -0.85,
+      1.55,
+      -3.96
+     ],
+     "rot": 0,
+     "w": 0.5,
+     "h": 0.42,
+     "text": "NUNCA ZERO",
+     "bg": "#ffe36b",
+     "fg": "#1d2333"
+    }
+   ],
+   "coverage": "off"
+  },
+  {
+   "id": "k1",
+   "set": "park",
+   "vo": "Por dois meses, nada dá errado.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 20,
+     "pose": "relaxed",
+     "face": "smile"
+    }
+   ],
+   "camera": {
+    "shot": "wide",
+    "target": "hero",
+    "angle": 20
+   },
+   "variant": 1,
+   "time": "golden",
+   "coverage": "fast",
+   "cut": "whip"
+  },
+  {
+   "id": "k2",
+   "set": "park",
+   "vo": "Até um domingo de inverno, no fim da tarde.",
+   "camera": {
+    "pos": [
+     -6,
+     1.7,
+     -2
+    ],
+    "look": [
+     -15,
+     0.6,
+     -12
+    ],
+    "fov": 44,
+    "move": "drift"
+   },
+   "variant": 1,
+   "time": "golden",
+   "sfx": [
+    {
+     "t": 0.2,
+     "name": "wind",
+     "dur": 3.0
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "k3",
+   "set": "park",
+   "vo": "A Ivy está no meio do lago congelado. Ao vivo. Pros trezentos e doze inscritos.",
+   "actors": [
+    {
+     "id": "sister",
+     "pos": [
+      -15.5,
+      0.04,
+      -12.6
+     ],
+     "rot": 40,
+     "pose": "phone",
+     "face": "happy",
+     "hold": {
+      "R": "phone"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "sister",
+    "angle": 0
+   },
+   "variant": 1,
+   "time": "golden",
+   "overlays": [
+    {
+     "type": "word",
+     "text": "● AO VIVO",
+     "at": "@vivo",
+     "color": "red",
+     "y": "top"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "k3b",
+   "set": "park",
+   "vo": "Ela queria o vídeo que ninguém nunca fez. E escolheu o lugar que você mesmo testou com o Caio.",
+   "actors": [
+    {
+     "id": "sister",
+     "pos": [
+      -15.5,
+      0.04,
+      -12.6
+     ],
+     "rot": 40,
+     "pose": "phone",
+     "face": "grin",
+     "hold": {
+      "R": "phone"
+     }
+    }
+   ],
+   "camera": {
+    "pos": [
+     -6,
+     1.7,
+     -2
+    ],
+    "look": [
+     -15,
+     0.6,
+     -12
+    ],
+    "fov": 34,
+    "move": "pushIn"
+   },
+   "variant": 1,
+   "time": "golden",
+   "coverage": "fast"
+  },
+  {
+   "id": "k4",
+   "set": "park",
+   "vo": "[excited] Oi, gente! Patinando sem patins!",
+   "actors": [
+    {
+     "id": "sister",
+     "pos": [
+      -15.5,
+      0.04,
+      -12.6
+     ],
+     "rot": 40,
+     "pose": "holdOut",
+     "face": "grin",
+     "hold": {
+      "R": "phone"
+     },
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "sister",
+    "angle": 30
+   },
+   "who": "female",
+   "variant": 1,
+   "time": "golden",
+   "coverage": "fast"
+  },
+  {
+   "id": "k5",
+   "set": "park",
+   "vo": "O gelo faz um barulho de vidro.",
+   "actors": [
+    {
+     "id": "sister",
+     "pos": [
+      -15.5,
+      0.04,
+      -12.6
+     ],
+     "rot": 40,
+     "pose": "scared",
+     "face": "scared",
+     "hold": {
+      "R": "phone"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "full",
+    "target": "sister",
+    "angle": -30,
+    "height": 30
+   },
+   "variant": 1,
+   "time": "golden",
+   "props": [
+    {
+     "type": "iceHole",
+     "pos": [
+      -15.5,
+      0.04,
+      -12.6
+     ],
+     "cracks": true,
+     "size": 0.6,
+     "ignite": "@barulho"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@barulho",
+     "name": "crack"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "k6",
+   "set": "park",
+   "vo": "E ela some.",
+   "actors": [
+    {
+     "id": "sister",
+     "pos": [
+      -15.5,
+      0.04,
+      -12.6
+     ],
+     "rot": 40,
+     "pose": "fall",
+     "face": "shocked",
+     "path": [
+      {
+       "t": "@some",
+       "pos": [
+        -15.5,
+        0.04,
+        -12.6
+       ]
+      },
+      {
+       "t": "@some+0.25",
+       "pos": [
+        -15.5,
+        -1.6,
+        -12.6
+       ],
+       "gait": "carried"
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     -12.6,
+     1.6,
+     -9.6
+    ],
+    "look": [
+     -15.5,
+     0.5,
+     -12.6
+    ],
+    "fov": 40
+   },
+   "variant": 1,
+   "time": "golden",
+   "props": [
+    {
+     "type": "iceHole",
+     "pos": [
+      -15.5,
+      0.04,
+      -12.6
+     ],
+     "size": 0.6,
+     "ignite": "@some"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@some",
+     "name": "splash"
+    }
+   ],
+   "cut": "smash",
+   "coverage": "off"
+  },
+  {
+   "id": "k6b",
+   "set": "park",
+   "vo": "Na margem, três adultos pegam o celular. Ninguém entra. [sarcastic] Todo mundo quer o melhor ângulo.",
+   "actors": [
+    {
+     "id": "extraA",
+     "pos": [
+      -10.2,
+      0,
+      -8.2
+     ],
+     "rot": -130,
+     "pose": "phone",
+     "face": "shocked",
+     "hold": {
+      "R": "phone"
+     }
+    },
+    {
+     "id": "extraB",
+     "pos": [
+      -9.2,
+      0,
+      -9.2
+     ],
+     "rot": -125,
+     "pose": "phone",
+     "face": "surprised",
+     "hold": {
+      "R": "phone"
+     }
+    },
+    {
+     "id": "extraC",
+     "pos": [
+      -11.0,
+      0,
+      -7.2
+     ],
+     "rot": -135,
+     "pose": "phone",
+     "face": "awe",
+     "hold": {
+      "R": "phone"
+     }
+    }
+   ],
+   "camera": {
+    "pos": [
+     -12.6,
+     1.5,
+     -10.6
+    ],
+    "look": [
+     -10.0,
+     1.3,
+     -8.0
+    ],
+    "fov": 44
+   },
+   "variant": 1,
+   "time": "golden",
+   "coverage": "fast"
+  },
+  {
+   "id": "k7",
+   "kind": "card",
+   "card": "chain",
+   "vo": "Água perto de zero grau tem uma regra: um minuto pra recuperar o fôlego. Dez minutos de braço funcionando. Depois, os braços param.",
+   "title": "ÁGUA GELADA",
+   "nodes": [
+    {
+     "icon": "heart",
+     "label": "FÔLEGO",
+     "value": "1 MIN"
+    },
+    {
+     "icon": "muscle",
+     "label": "BRAÇOS",
+     "value": "10 MIN"
+    },
+    {
+     "icon": "cross",
+     "label": "PARAM"
+    }
+   ]
+  },
+  {
+   "id": "k8",
+   "set": "park",
+   "vo": "Dez minutos. Começando agora.",
+   "actors": [
+    {
+     "id": "sister",
+     "pos": [
+      -15.5,
+      -0.78,
+      -12.6
+     ],
+     "rot": 40,
+     "pose": {
+      "armL": [
+       120,
+       50,
+       0,
+       30
+      ],
+      "armR": [
+       120,
+       50,
+       0,
+       30
+      ],
+      "head": [
+       -20,
+       0,
+       0
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "scared"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "sister",
+    "angle": 20,
+    "height": 20
+   },
+   "variant": 1,
+   "time": "golden",
+   "props": [
+    {
+     "type": "iceHole",
+     "pos": [
+      -15.5,
+      0.04,
+      -12.6
+     ],
+     "size": 0.6
+    }
+   ],
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "9:59",
+     "tick": 5.284,
+     "keep": true,
+     "at": 1.567
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@agora",
+     "name": "ticks",
+     "dur": 1.0
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "f1",
+   "set": "park",
+   "vo": "O seu coração dispara. O menu abre sozinho. E você faz o que sempre quis fazer.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -11.6,
+      0,
+      -9.0
+     ],
+     "rot": -133,
+     "pose": "shocked",
+     "face": "shocked"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 20,
+    "height": -10
+   },
+   "variant": 1,
+   "time": "golden",
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "value": 100
+      },
+      {
+       "label": "SONO",
+       "value": 100
+      },
+      {
+       "label": "MEDO",
+       "value": 100
+      },
+      {
+       "label": "FORÇA",
+       "value": 60
+      }
+     ],
+     "at": "@abre",
+     "y": "top",
+     "alarm": true
+    },
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "9:57",
+     "tick": 5.284,
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@dispara",
+     "name": "heartbeat"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "f2",
+   "set": "park",
+   "vo": "Medo: zero. Dor: zero. Força: cem.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -11.6,
+      0,
+      -9.0
+     ],
+     "rot": -133,
+     "pose": "power",
+     "face": "determined"
+    }
+   ],
+   "camera": {
+    "shot": "full",
+    "target": "hero",
+    "angle": 0,
+    "height": -12
+   },
+   "variant": 1,
+   "time": "golden",
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "from": 100,
+       "value": 0,
+       "at": "@dor"
+      },
+      {
+       "label": "SONO",
+       "value": 100
+      },
+      {
+       "label": "MEDO",
+       "from": 100,
+       "value": 0,
+       "at": "@medo"
+      },
+      {
+       "label": "FORÇA",
+       "from": 60,
+       "value": 100,
+       "at": "@cem"
+      }
+     ],
+     "at": 0,
+     "y": "top",
+     "alarm": true
+    },
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "9:29",
+     "tick": 5.284,
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "f3",
+   "set": "park",
+   "vo": "Você corre pro gelo. Em pé. Rápido.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -11.6,
+      0,
+      -9.0
+     ],
+     "rot": -133,
+     "pose": "stand",
+     "face": "determined",
+     "path": [
+      {
+       "t": 0.1,
+       "pos": [
+        -11.6,
+        0,
+        -9.0
+       ]
+      },
+      {
+       "t": 2.0,
+       "pos": [
+        -13.6,
+        0.04,
+        -10.9
+       ],
+       "gait": "sprint"
+      }
+     ]
+    },
+    {
+     "id": "sister",
+     "pos": [
+      -15.5,
+      -0.78,
+      -12.6
+     ],
+     "rot": 40,
+     "pose": {
+      "armL": [
+       120,
+       50,
+       0,
+       30
+      ],
+      "armR": [
+       120,
+       50,
+       0,
+       30
+      ],
+      "head": [
+       -20,
+       0,
+       0
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "scared"
+    }
+   ],
+   "camera": {
+    "pos": [
+     -9.0,
+     1.0,
+     -12.8
+    ],
+    "look": [
+     -13.0,
+     0.8,
+     -10.6
+    ],
+    "fov": 46
+   },
+   "variant": 1,
+   "time": "golden",
+   "props": [
+    {
+     "type": "iceHole",
+     "pos": [
+      -15.5,
+      0.04,
+      -12.6
+     ],
+     "size": 0.6
+    }
+   ],
+   "fx": {
+    "speedLines": "hero"
+   },
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "9:09",
+     "tick": 5.284,
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "f4",
+   "set": "park",
+   "vo": "Na terceira passada, o gelo racha embaixo de você.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -13.6,
+      0.04,
+      -10.9
+     ],
+     "rot": -133,
+     "pose": "shocked",
+     "face": "neutral"
+    }
+   ],
+   "camera": {
+    "shot": "full",
+    "target": "hero",
+    "angle": 20,
+    "height": 35
+   },
+   "variant": 1,
+   "time": "golden",
+   "props": [
+    {
+     "type": "iceHole",
+     "pos": [
+      -13.6,
+      0.04,
+      -10.9
+     ],
+     "cracks": true,
+     "size": 0.7,
+     "ignite": "@racha"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@racha",
+     "name": "crack"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "8:57",
+     "tick": 5.284,
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "cut": "smash",
+   "coverage": "fast"
+  },
+  {
+   "id": "f5",
+   "set": "park",
+   "vo": "Sem medo, você não para. Sem dor, você não sente o frio subindo pelas pernas.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -13.6,
+      -0.8,
+      -10.9
+     ],
+     "rot": -133,
+     "pose": {
+      "armL": [
+       120,
+       50,
+       0,
+       30
+      ],
+      "armR": [
+       120,
+       50,
+       0,
+       30
+      ],
+      "head": [
+       -20,
+       0,
+       0
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "neutral"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": -25,
+    "height": 25
+   },
+   "variant": 1,
+   "time": "golden",
+   "props": [
+    {
+     "type": "iceHole",
+     "pos": [
+      -13.6,
+      0.04,
+      -10.9
+     ],
+     "size": 0.55
+    }
+   ],
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "8:42",
+     "tick": 5.284,
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "sfx": [
+    {
+     "t": 0.2,
+     "name": "splash",
+     "vol": -12
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "f6",
+   "set": "park",
+   "vo": "E quando olha pra Ivy, você não entende a cara dela. Ela grita o seu nome. Você acha que ela está brincando.",
+   "actors": [
+    {
+     "id": "sister",
+     "pos": [
+      -15.5,
+      -0.78,
+      -12.6
+     ],
+     "rot": 40,
+     "pose": {
+      "armL": [
+       120,
+       50,
+       0,
+       30
+      ],
+      "armR": [
+       120,
+       50,
+       0,
+       30
+      ],
+      "head": [
+       -20,
+       0,
+       0
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "scared",
+     "talk": [
+      [
+       1.0,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "sister",
+    "angle": -10,
+    "height": 15
+   },
+   "variant": 1,
+   "time": "golden",
+   "props": [
+    {
+     "type": "iceHole",
+     "pos": [
+      -15.5,
+      0.04,
+      -12.6
+     ],
+     "size": 0.6
+    }
+   ],
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "8:18",
+     "tick": 5.284,
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "f7",
+   "set": "park",
+   "vo": "[darkly amused] Você não sente nada. Mas o seu corpo sente tudo. As pernas param de obedecer.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -13.6,
+      -0.8,
+      -10.9
+     ],
+     "rot": -133,
+     "pose": {
+      "armL": [
+       120,
+       50,
+       0,
+       30
+      ],
+      "armR": [
+       120,
+       50,
+       0,
+       30
+      ],
+      "head": [
+       -20,
+       0,
+       0
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "confused"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": 30
+   },
+   "variant": 1,
+   "time": "golden",
+   "props": [
+    {
+     "type": "iceHole",
+     "pos": [
+      -13.6,
+      0.04,
+      -10.9
+     ],
+     "size": 0.55
+    }
+   ],
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "7:47",
+     "tick": 5.284,
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "f8",
+   "set": "park",
+   "vo": "Você sai do buraco de quatro e volta pra margem. O relógio não esperou.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -13.6,
+      0.04,
+      -10.9
+     ],
+     "rot": 47,
+     "pose": {
+      "hipY": -0.5,
+      "spine": [
+       72,
+       0,
+       0
+      ],
+      "head": [
+       -55,
+       0,
+       0
+      ],
+      "armL": [
+       80,
+       10,
+       0,
+       5
+      ],
+      "armR": [
+       60,
+       10,
+       0,
+       5
+      ],
+      "legL": [
+       95,
+       8,
+       100
+      ],
+      "legR": [
+       80,
+       8,
+       105
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "tired",
+     "path": [
+      {
+       "t": 0.3,
+       "pos": [
+        -13.6,
+        0.04,
+        -10.9
+       ]
+      },
+      {
+       "t": 3.4,
+       "pos": [
+        -11.6,
+        0,
+        -9.0
+       ],
+       "gait": "carried"
+      }
+     ],
+     "poses": [
+      {
+       "t": 0.3,
+       "pose": {
+        "hipY": -0.5,
+        "spine": [
+         72,
+         0,
+         0
+        ],
+        "head": [
+         -55,
+         0,
+         0
+        ],
+        "armL": [
+         80,
+         10,
+         0,
+         5
+        ],
+        "armR": [
+         60,
+         10,
+         0,
+         5
+        ],
+        "legL": [
+         95,
+         8,
+         100
+        ],
+        "legR": [
+         80,
+         8,
+         105
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.25
+      },
+      {
+       "t": 0.75,
+       "pose": {
+        "hipY": -0.5,
+        "spine": [
+         72,
+         0,
+         0
+        ],
+        "head": [
+         -55,
+         0,
+         0
+        ],
+        "armL": [
+         60,
+         10,
+         0,
+         5
+        ],
+        "armR": [
+         80,
+         10,
+         0,
+         5
+        ],
+        "legL": [
+         80,
+         8,
+         105
+        ],
+        "legR": [
+         95,
+         8,
+         100
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.25
+      },
+      {
+       "t": 1.2,
+       "pose": {
+        "hipY": -0.5,
+        "spine": [
+         72,
+         0,
+         0
+        ],
+        "head": [
+         -55,
+         0,
+         0
+        ],
+        "armL": [
+         80,
+         10,
+         0,
+         5
+        ],
+        "armR": [
+         60,
+         10,
+         0,
+         5
+        ],
+        "legL": [
+         95,
+         8,
+         100
+        ],
+        "legR": [
+         80,
+         8,
+         105
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.25
+      },
+      {
+       "t": 1.65,
+       "pose": {
+        "hipY": -0.5,
+        "spine": [
+         72,
+         0,
+         0
+        ],
+        "head": [
+         -55,
+         0,
+         0
+        ],
+        "armL": [
+         60,
+         10,
+         0,
+         5
+        ],
+        "armR": [
+         80,
+         10,
+         0,
+         5
+        ],
+        "legL": [
+         80,
+         8,
+         105
+        ],
+        "legR": [
+         95,
+         8,
+         100
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.25
+      },
+      {
+       "t": 2.1,
+       "pose": {
+        "hipY": -0.5,
+        "spine": [
+         72,
+         0,
+         0
+        ],
+        "head": [
+         -55,
+         0,
+         0
+        ],
+        "armL": [
+         80,
+         10,
+         0,
+         5
+        ],
+        "armR": [
+         60,
+         10,
+         0,
+         5
+        ],
+        "legL": [
+         95,
+         8,
+         100
+        ],
+        "legR": [
+         80,
+         8,
+         105
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.25
+      },
+      {
+       "t": 2.55,
+       "pose": {
+        "hipY": -0.5,
+        "spine": [
+         72,
+         0,
+         0
+        ],
+        "head": [
+         -55,
+         0,
+         0
+        ],
+        "armL": [
+         60,
+         10,
+         0,
+         5
+        ],
+        "armR": [
+         80,
+         10,
+         0,
+         5
+        ],
+        "legL": [
+         80,
+         8,
+         105
+        ],
+        "legR": [
+         95,
+         8,
+         100
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.25
+      },
+      {
+       "t": 3.0,
+       "pose": {
+        "hipY": -0.5,
+        "spine": [
+         72,
+         0,
+         0
+        ],
+        "head": [
+         -55,
+         0,
+         0
+        ],
+        "armL": [
+         80,
+         10,
+         0,
+         5
+        ],
+        "armR": [
+         60,
+         10,
+         0,
+         5
+        ],
+        "legL": [
+         95,
+         8,
+         100
+        ],
+        "legR": [
+         80,
+         8,
+         105
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.25
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     -8.6,
+     1.4,
+     -7.4
+    ],
+    "look": [
+     -12.4,
+     0.6,
+     -9.9
+    ],
+    "fov": 42
+   },
+   "variant": 1,
+   "time": "golden",
+   "props": [
+    {
+     "type": "iceHole",
+     "pos": [
+      -13.6,
+      0.04,
+      -10.9
+     ],
+     "size": 0.55
+    }
+   ],
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "7:19",
+     "tick": 5.284,
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "d1",
+   "set": "park",
+   "vo": "Força total quebra o gelo. Sem dor, você congela sem perceber. Sem medo, você não entende a sua irmã.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -11.6,
+      0,
+      -9.0
+     ],
+     "rot": -133,
+     "pose": "kneel",
+     "face": "worried"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 10
+   },
+   "variant": 1,
+   "time": "golden",
+   "coverage": "calm",
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "6:59",
+     "tick": 5.71,
+     "keep": true,
+     "persist": true
+    }
+   ]
+  },
+  {
+   "id": "d2",
+   "set": "park",
+   "vo": "Correr sem sentir nada…",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -11.6,
+      0,
+      -9.0
+     ],
+     "rot": -133,
+     "pose": "kneel",
+     "face": "worried"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": -35
+   },
+   "variant": 1,
+   "time": "golden",
+   "coverage": "off",
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "6:23",
+     "tick": 5.71,
+     "keep": true,
+     "persist": true
+    }
+   ]
+  },
+  {
+   "id": "d3",
+   "set": "park",
+   "vo": "…ou rastejar sentindo tudo.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -11.6,
+      0,
+      -9.0
+     ],
+     "rot": -133,
+     "pose": "kneel",
+     "face": "determined"
+    }
+   ],
+   "camera": {
+    "shot": "xclose",
+    "target": "hero",
+    "angle": 10,
+    "move": "pushIn"
+   },
+   "variant": 1,
+   "time": "golden",
+   "hold": 2,
+   "coverage": "off",
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "6:13",
+     "tick": 5.71,
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "sfx": [
+    {
+     "t": 0.4,
+     "name": "heartbeat"
+    }
+   ]
+  },
+  {
+   "id": "e1",
+   "set": "park",
+   "vo": "Você abre o menu. E pela primeira vez, não vai pro extremo.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -11.6,
+      0,
+      -9.0
+     ],
+     "rot": -133,
+     "pose": "kneel",
+     "face": "focused"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 30
+   },
+   "variant": 1,
+   "time": "golden",
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "value": 0
+      },
+      {
+       "label": "SONO",
+       "value": 100
+      },
+      {
+       "label": "MEDO",
+       "value": 0
+      },
+      {
+       "label": "FORÇA",
+       "value": 100
+      }
+     ],
+     "at": "@menu",
+     "y": "top",
+     "alarm": true
+    },
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "5:52",
+     "tick": 5.71,
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "e2",
+   "set": "park",
+   "vo": "Medo: quarenta. Pra ver o medo da Ivy. Dor: trinta. Pra sentir quando a mão estiver congelando. Força: oitenta.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -11.6,
+      0,
+      -9.0
+     ],
+     "rot": -133,
+     "pose": "kneel",
+     "face": "determined"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": -20,
+    "height": -8
+   },
+   "variant": 1,
+   "time": "golden",
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "from": 0,
+       "value": 30,
+       "at": "@trinta"
+      },
+      {
+       "label": "SONO",
+       "value": 100
+      },
+      {
+       "label": "MEDO",
+       "from": 0,
+       "value": 40,
+       "at": "@quarenta"
+      },
+      {
+       "label": "FORÇA",
+       "from": 100,
+       "value": 80,
+       "at": "@oitenta"
+      }
+     ],
+     "at": 0,
+     "y": "top",
+     "alarm": true
+    },
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "5:27",
+     "tick": 5.71,
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "e3",
+   "set": "park",
+   "vo": "Nunca zero. Só mais baixo.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -11.6,
+      0,
+      -9.0
+     ],
+     "rot": -133,
+     "pose": "kneel",
+     "face": "determined"
+    }
+   ],
+   "camera": {
+    "shot": "xclose",
+    "target": "hero",
+    "angle": 0
+   },
+   "variant": 1,
+   "time": "golden",
+   "coverage": "off",
+   "overlays": [
+    {
+     "type": "word",
+     "text": "NUNCA ZERO",
+     "at": "@nunca",
+     "y": "top"
+    },
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "4:39",
+     "tick": 5.71,
+     "keep": true,
+     "persist": true
+    }
+   ]
+  },
+  {
+   "id": "e4",
+   "set": "park",
+   "vo": "Você deita no gelo. Deitado, o seu peso se espalha numa área umas dez vezes maior que a dos seus pés.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -12.3,
+      0.04,
+      -9.65
+     ],
+     "rot": -133,
+     "pose": "kneel",
+     "face": "focused",
+     "poses": [
+      {
+       "t": "@deita",
+       "pose": {
+        "hipY": -0.86,
+        "body": [
+         88,
+         0,
+         0
+        ],
+        "head": [
+         -55,
+         0,
+         0
+        ],
+        "armL": [
+         165,
+         14,
+         0,
+         20
+        ],
+        "armR": [
+         165,
+         14,
+         0,
+         20
+        ],
+        "legL": [
+         4,
+         6,
+         6
+        ],
+        "legR": [
+         4,
+         6,
+         6
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.5
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 70,
+    "height": 25
+   },
+   "variant": 1,
+   "time": "golden",
+   "props": [
+    {
+     "type": "iceHole",
+     "pos": [
+      -15.5,
+      0.04,
+      -12.6
+     ],
+     "size": 0.6
+    }
+   ],
+   "overlays": [
+    {
+     "type": "word",
+     "text": "10×",
+     "at": "@dez"
+    },
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "4:27",
+     "tick": 5.71,
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "e5",
+   "set": "park",
+   "vo": "Você rasteja. O gelo estala. Mas aguenta.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -12.3,
+      0.04,
+      -9.65
+     ],
+     "rot": -133,
+     "pose": {
+      "hipY": -0.86,
+      "body": [
+       88,
+       0,
+       0
+      ],
+      "head": [
+       -55,
+       0,
+       0
+      ],
+      "armL": [
+       165,
+       14,
+       0,
+       20
+      ],
+      "armR": [
+       165,
+       14,
+       0,
+       20
+      ],
+      "legL": [
+       4,
+       6,
+       6
+      ],
+      "legR": [
+       4,
+       6,
+       6
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "focused",
+     "path": [
+      {
+       "t": 0.2,
+       "pos": [
+        -12.3,
+        0.04,
+        -9.65
+       ]
+      },
+      {
+       "t": 3.4,
+       "pos": [
+        -13.6,
+        0.04,
+        -10.85
+       ],
+       "gait": "carried"
+      }
+     ],
+     "poses": [
+      {
+       "t": 0.3,
+       "pose": {
+        "hipY": -0.86,
+        "body": [
+         88,
+         0,
+         0
+        ],
+        "head": [
+         -55,
+         0,
+         0
+        ],
+        "armL": [
+         165,
+         14,
+         0,
+         20
+        ],
+        "armR": [
+         165,
+         14,
+         0,
+         20
+        ],
+        "legL": [
+         4,
+         6,
+         6
+        ],
+        "legR": [
+         4,
+         6,
+         6
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.3
+      },
+      {
+       "t": 0.9,
+       "pose": {
+        "hipY": -0.86,
+        "body": [
+         88,
+         0,
+         0
+        ],
+        "head": [
+         -55,
+         0,
+         0
+        ],
+        "armL": [
+         150,
+         24,
+         0,
+         30
+        ],
+        "armR": [
+         178,
+         4,
+         0,
+         0
+        ],
+        "legL": [
+         4,
+         6,
+         6
+        ],
+        "legR": [
+         4,
+         6,
+         6
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.3
+      },
+      {
+       "t": 1.5,
+       "pose": {
+        "hipY": -0.86,
+        "body": [
+         88,
+         0,
+         0
+        ],
+        "head": [
+         -55,
+         0,
+         0
+        ],
+        "armL": [
+         165,
+         14,
+         0,
+         20
+        ],
+        "armR": [
+         165,
+         14,
+         0,
+         20
+        ],
+        "legL": [
+         4,
+         6,
+         6
+        ],
+        "legR": [
+         4,
+         6,
+         6
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.3
+      },
+      {
+       "t": 2.1,
+       "pose": {
+        "hipY": -0.86,
+        "body": [
+         88,
+         0,
+         0
+        ],
+        "head": [
+         -55,
+         0,
+         0
+        ],
+        "armL": [
+         150,
+         24,
+         0,
+         30
+        ],
+        "armR": [
+         178,
+         4,
+         0,
+         0
+        ],
+        "legL": [
+         4,
+         6,
+         6
+        ],
+        "legR": [
+         4,
+         6,
+         6
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.3
+      },
+      {
+       "t": 2.7,
+       "pose": {
+        "hipY": -0.86,
+        "body": [
+         88,
+         0,
+         0
+        ],
+        "head": [
+         -55,
+         0,
+         0
+        ],
+        "armL": [
+         165,
+         14,
+         0,
+         20
+        ],
+        "armR": [
+         165,
+         14,
+         0,
+         20
+        ],
+        "legL": [
+         4,
+         6,
+         6
+        ],
+        "legR": [
+         4,
+         6,
+         6
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.3
+      },
+      {
+       "t": 3.3,
+       "pose": {
+        "hipY": -0.86,
+        "body": [
+         88,
+         0,
+         0
+        ],
+        "head": [
+         -55,
+         0,
+         0
+        ],
+        "armL": [
+         150,
+         24,
+         0,
+         30
+        ],
+        "armR": [
+         178,
+         4,
+         0,
+         0
+        ],
+        "legL": [
+         4,
+         6,
+         6
+        ],
+        "legR": [
+         4,
+         6,
+         6
+        ],
+        "handL": "open",
+        "handR": "open"
+       },
+       "blend": 0.3
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     -11.0,
+     0.5,
+     -11.6
+    ],
+    "look": [
+     -13.0,
+     0.2,
+     -10.2
+    ],
+    "fov": 42
+   },
+   "variant": 1,
+   "time": "golden",
+   "props": [
+    {
+     "type": "iceHole",
+     "pos": [
+      -15.5,
+      0.04,
+      -12.6
+     ],
+     "size": 0.6
+    },
+    {
+     "type": "iceHole",
+     "pos": [
+      -13.4,
+      0.04,
+      -10.7
+     ],
+     "cracks": true,
+     "size": 0.5,
+     "ignite": "@estala"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@estala",
+     "name": "crack",
+     "vol": -10
+    }
+   ],
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "3:53",
+     "tick": 5.71,
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "e5b",
+   "set": "park",
+   "vo": "A água rouba o calor do corpo umas vinte e cinco vezes mais rápido que o ar. Com a dor em trinta, você sente isso nas mãos. Ainda bem.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -13.6,
+      0.04,
+      -10.85
+     ],
+     "rot": -133,
+     "pose": {
+      "hipY": -0.86,
+      "body": [
+       88,
+       0,
+       0
+      ],
+      "head": [
+       -55,
+       0,
+       0
+      ],
+      "armL": [
+       165,
+       14,
+       0,
+       20
+      ],
+      "armR": [
+       165,
+       14,
+       0,
+       20
+      ],
+      "legL": [
+       4,
+       6,
+       6
+      ],
+      "legR": [
+       4,
+       6,
+       6
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "focused",
+     "faces": [
+      {
+       "t": "@mãos",
+       "face": {
+        "eyes": 0.8,
+        "brow": 0.6,
+        "mouth": -0.6
+       },
+       "blend": 0.3
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 60,
+    "height": 20
+   },
+   "variant": 1,
+   "time": "golden",
+   "props": [
+    {
+     "type": "iceHole",
+     "pos": [
+      -15.5,
+      0.04,
+      -12.6
+     ],
+     "size": 0.6
+    }
+   ],
+   "overlays": [
+    {
+     "type": "word",
+     "text": "25×",
+     "at": "@vinte",
+     "y": "top"
+    },
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "3:35",
+     "tick": 5.71,
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "e6",
+   "set": "park",
+   "vo": "E agora você vê a cara da Ivy. Ela não está brincando. Ela está apavorada.",
+   "actors": [
+    {
+     "id": "sister",
+     "pos": [
+      -15.5,
+      -0.78,
+      -12.6
+     ],
+     "rot": 40,
+     "pose": {
+      "armL": [
+       120,
+       50,
+       0,
+       30
+      ],
+      "armR": [
+       120,
+       50,
+       0,
+       30
+      ],
+      "head": [
+       -20,
+       0,
+       0
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": {
+      "eyes": 1.45,
+      "brow": 1,
+      "mouth": -0.8,
+      "open": 0.6,
+      "tears": true
+     }
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "sister",
+    "angle": 5,
+    "height": 10
+   },
+   "variant": 1,
+   "time": "golden",
+   "props": [
+    {
+     "type": "iceHole",
+     "pos": [
+      -15.5,
+      0.04,
+      -12.6
+     ],
+     "size": 0.6
+    }
+   ],
+   "overlays": [
+    {
+     "type": "word",
+     "text": "APAVORADA",
+     "at": "@apavorada",
+     "color": "white",
+     "y": "top"
+    },
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "2:52",
+     "tick": 5.71,
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "e7",
+   "set": "park",
+   "vo": "[softly] Olha pra mim. Respira. Me dá a mão.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -14.55,
+      0.04,
+      -11.75
+     ],
+     "rot": -133,
+     "pose": {
+      "hipY": -0.86,
+      "body": [
+       88,
+       0,
+       0
+      ],
+      "head": [
+       -85,
+       0,
+       0
+      ],
+      "armL": [
+       165,
+       14,
+       0,
+       20
+      ],
+      "armR": [
+       170,
+       4,
+       0,
+       10
+      ],
+      "legL": [
+       4,
+       6,
+       6
+      ],
+      "legR": [
+       4,
+       6,
+       6
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "determined",
+     "talk": [
+      [
+       0.1,
+       2.8
+      ]
+     ]
+    },
+    {
+     "id": "sister",
+     "pos": [
+      -15.5,
+      -0.78,
+      -12.6
+     ],
+     "rot": 47,
+     "pose": {
+      "armL": [
+       60,
+       40,
+       0,
+       30
+      ],
+      "armR": [
+       60,
+       40,
+       0,
+       30
+      ],
+      "head": [
+       -20,
+       0,
+       0
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "scared"
+    }
+   ],
+   "camera": {
+    "pos": [
+     -14.25,
+     0.55,
+     -13.55
+    ],
+    "look": [
+     -14.95,
+     0.4,
+     -12.1
+    ],
+    "fov": 40
+   },
+   "variant": 1,
+   "time": "golden",
+   "props": [
+    {
+     "type": "iceHole",
+     "pos": [
+      -15.5,
+      0.04,
+      -12.6
+     ],
+     "size": 0.6
+    }
+   ],
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "2:21",
+     "tick": 5.71,
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "coverage": "off"
+  },
+  {
+   "id": "e8",
+   "set": "park",
+   "vo": "Ela dá.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -14.55,
+      0.04,
+      -11.75
+     ],
+     "rot": -133,
+     "pose": {
+      "hipY": -0.86,
+      "body": [
+       88,
+       0,
+       0
+      ],
+      "head": [
+       -62,
+       0,
+       0
+      ],
+      "armL": [
+       150,
+       24,
+       0,
+       30
+      ],
+      "armR": [
+       165,
+       14,
+       0,
+       20
+      ],
+      "legL": [
+       4,
+       6,
+       6
+      ],
+      "legR": [
+       4,
+       6,
+       6
+      ],
+      "handL": "open",
+      "handR": "open",
+      "reachR": {
+       "to": [
+        0.0,
+        0.16,
+        1.0
+       ]
+      }
+     },
+     "face": "focused",
+     "contact": true
+    },
+    {
+     "id": "sister",
+     "pos": [
+      -15.5,
+      -0.78,
+      -12.6
+     ],
+     "rot": 47,
+     "pose": {
+      "armL": [
+       120,
+       50,
+       0,
+       30
+      ],
+      "armR": [
+       120,
+       50,
+       0,
+       30
+      ],
+      "head": [
+       -20,
+       0,
+       0
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "scared",
+     "contact": true,
+     "poses": [
+      {
+       "t": "@dá",
+       "pose": {
+        "armL": [
+         50,
+         35,
+         0,
+         30
+        ],
+        "armR": [
+         120,
+         50,
+         0,
+         30
+        ],
+        "head": [
+         -25,
+         0,
+         0
+        ],
+        "handL": "open",
+        "handR": "open",
+        "reachR": {
+         "to": [
+          0.0,
+          0.745,
+          0.42
+         ]
+        }
+       },
+       "blend": 0.3
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     -13.83,
+     0.6,
+     -14.06
+    ],
+    "look": [
+     -15.3,
+     0.15,
+     -12.42
+    ],
+    "fov": 40
+   },
+   "variant": 1,
+   "time": "golden",
+   "props": [
+    {
+     "type": "iceHole",
+     "pos": [
+      -15.5,
+      0.04,
+      -12.6
+     ],
+     "size": 0.6
+    }
+   ],
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "2:06",
+     "tick": 5.71,
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "coverage": "off"
+  },
+  {
+   "id": "e9",
+   "set": "park",
+   "vo": "Puxa.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -14.55,
+      0.04,
+      -11.75
+     ],
+     "rot": -133,
+     "pose": {
+      "hipY": -0.86,
+      "body": [
+       88,
+       0,
+       0
+      ],
+      "head": [
+       -62,
+       0,
+       0
+      ],
+      "armL": [
+       150,
+       24,
+       0,
+       30
+      ],
+      "armR": [
+       165,
+       14,
+       0,
+       20
+      ],
+      "legL": [
+       4,
+       6,
+       6
+      ],
+      "legR": [
+       4,
+       6,
+       6
+      ],
+      "handL": "open",
+      "handR": "open",
+      "reachR": {
+       "to": [
+        0.0,
+        0.16,
+        1.0
+       ]
+      }
+     },
+     "face": "determined",
+     "contact": true,
+     "faces": [
+      {
+       "t": "@puxa",
+       "face": {
+        "eyes": 0.5,
+        "brow": -0.9,
+        "mouth": -0.7,
+        "width": 1.2
+       },
+       "blend": 0.2
+      }
+     ]
+    },
+    {
+     "id": "sister",
+     "pos": [
+      -15.5,
+      -0.78,
+      -12.6
+     ],
+     "rot": 47,
+     "pose": {
+      "armL": [
+       50,
+       35,
+       0,
+       30
+      ],
+      "armR": [
+       120,
+       50,
+       0,
+       30
+      ],
+      "head": [
+       -25,
+       0,
+       0
+      ],
+      "handL": "open",
+      "handR": "open",
+      "reachR": {
+       "to": [
+        0.0,
+        0.745,
+        0.42
+       ]
+      }
+     },
+     "face": "scared",
+     "contact": true,
+     "path": [
+      {
+       "t": "@puxa",
+       "pos": [
+        -15.5,
+        -0.78,
+        -12.6
+       ]
+      },
+      {
+       "t": "@puxa+0.4",
+       "pos": [
+        -15.5,
+        -0.56,
+        -12.6
+       ],
+       "gait": "carried"
+      }
+     ],
+     "poses": [
+      {
+       "t": "@puxa",
+       "pose": {
+        "armL": [
+         50,
+         35,
+         0,
+         30
+        ],
+        "armR": [
+         120,
+         50,
+         0,
+         30
+        ],
+        "head": [
+         -25,
+         0,
+         0
+        ],
+        "handL": "open",
+        "handR": "open",
+        "reachR": {
+         "to": [
+          0.0,
+          0.745,
+          0.42
+         ]
+        }
+       },
+       "blend": 0.05
+      },
+      {
+       "t": "@puxa+0.4",
+       "pose": {
+        "armL": [
+         50,
+         35,
+         0,
+         30
+        ],
+        "armR": [
+         120,
+         50,
+         0,
+         30
+        ],
+        "head": [
+         -25,
+         0,
+         0
+        ],
+        "handL": "open",
+        "handR": "open",
+        "reachR": {
+         "to": [
+          0.0,
+          0.477,
+          0.42
+         ]
+        }
+       },
+       "blend": 0.4
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     -14.2,
+     0.45,
+     -13.45
+    ],
+    "look": [
+     -15.3,
+     0.2,
+     -12.42
+    ],
+    "fov": 34
+   },
+   "variant": 1,
+   "time": "golden",
+   "hold": 0.5,
+   "props": [
+    {
+     "type": "iceHole",
+     "pos": [
+      -15.5,
+      0.04,
+      -12.6
+     ],
+     "size": 0.6
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@puxa",
+     "name": "crack",
+     "vol": -8
+    }
+   ],
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "2:02",
+     "tick": 5.71,
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "coverage": "off",
+   "cut": "smash"
+  },
+  {
+   "id": "e10",
+   "set": "park",
+   "vo": "Puxa.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -14.55,
+      0.04,
+      -11.75
+     ],
+     "rot": -133,
+     "pose": {
+      "hipY": -0.86,
+      "body": [
+       88,
+       0,
+       0
+      ],
+      "head": [
+       -62,
+       0,
+       0
+      ],
+      "armL": [
+       150,
+       24,
+       0,
+       30
+      ],
+      "armR": [
+       165,
+       14,
+       0,
+       20
+      ],
+      "legL": [
+       4,
+       6,
+       6
+      ],
+      "legR": [
+       4,
+       6,
+       6
+      ],
+      "handL": "open",
+      "handR": "open",
+      "reachR": {
+       "to": [
+        0.0,
+        0.16,
+        1.0
+       ]
+      }
+     },
+     "face": "determined",
+     "contact": true,
+     "faces": [
+      {
+       "t": "@puxa",
+       "face": {
+        "eyes": 0.5,
+        "brow": -0.9,
+        "mouth": -0.7,
+        "width": 1.2
+       },
+       "blend": 0.2
+      }
+     ]
+    },
+    {
+     "id": "sister",
+     "pos": [
+      -15.5,
+      -0.56,
+      -12.6
+     ],
+     "rot": 47,
+     "pose": {
+      "armL": [
+       50,
+       35,
+       0,
+       30
+      ],
+      "armR": [
+       120,
+       50,
+       0,
+       30
+      ],
+      "head": [
+       -25,
+       0,
+       0
+      ],
+      "handL": "open",
+      "handR": "open",
+      "reachR": {
+       "to": [
+        0.0,
+        0.477,
+        0.42
+       ]
+      }
+     },
+     "face": "scared",
+     "contact": true,
+     "path": [
+      {
+       "t": "@puxa",
+       "pos": [
+        -15.5,
+        -0.56,
+        -12.6
+       ]
+      },
+      {
+       "t": "@puxa+0.4",
+       "pos": [
+        -15.5,
+        -0.34,
+        -12.6
+       ],
+       "gait": "carried"
+      }
+     ],
+     "poses": [
+      {
+       "t": "@puxa",
+       "pose": {
+        "armL": [
+         50,
+         35,
+         0,
+         30
+        ],
+        "armR": [
+         120,
+         50,
+         0,
+         30
+        ],
+        "head": [
+         -25,
+         0,
+         0
+        ],
+        "handL": "open",
+        "handR": "open",
+        "reachR": {
+         "to": [
+          0.0,
+          0.477,
+          0.42
+         ]
+        }
+       },
+       "blend": 0.05
+      },
+      {
+       "t": "@puxa+0.4",
+       "pose": {
+        "armL": [
+         50,
+         35,
+         0,
+         30
+        ],
+        "armR": [
+         120,
+         50,
+         0,
+         30
+        ],
+        "head": [
+         -25,
+         0,
+         0
+        ],
+        "handL": "open",
+        "handR": "open",
+        "reachR": {
+         "to": [
+          0.0,
+          0.209,
+          0.42
+         ]
+        }
+       },
+       "blend": 0.4
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     -16.6,
+     0.8,
+     -10.9
+    ],
+    "look": [
+     -15.35,
+     0.2,
+     -12.45
+    ],
+    "fov": 38
+   },
+   "variant": 1,
+   "time": "golden",
+   "hold": 0.5,
+   "props": [
+    {
+     "type": "iceHole",
+     "pos": [
+      -15.5,
+      0.04,
+      -12.6
+     ],
+     "size": 0.6
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@puxa",
+     "name": "crack",
+     "vol": -8
+    }
+   ],
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "1:55",
+     "tick": 5.71,
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "coverage": "off",
+   "cut": "smash"
+  },
+  {
+   "id": "e11",
+   "set": "park",
+   "vo": "Puxa.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -14.55,
+      0.04,
+      -11.75
+     ],
+     "rot": -133,
+     "pose": {
+      "hipY": -0.86,
+      "body": [
+       88,
+       0,
+       0
+      ],
+      "head": [
+       -62,
+       0,
+       0
+      ],
+      "armL": [
+       150,
+       24,
+       0,
+       30
+      ],
+      "armR": [
+       165,
+       14,
+       0,
+       20
+      ],
+      "legL": [
+       4,
+       6,
+       6
+      ],
+      "legR": [
+       4,
+       6,
+       6
+      ],
+      "handL": "open",
+      "handR": "open",
+      "reachR": {
+       "to": [
+        0.0,
+        0.16,
+        1.0
+       ]
+      }
+     },
+     "face": "determined",
+     "contact": true,
+     "faces": [
+      {
+       "t": "@puxa",
+       "face": {
+        "eyes": 0.5,
+        "brow": -0.9,
+        "mouth": -0.7,
+        "width": 1.2
+       },
+       "blend": 0.2
+      }
+     ]
+    },
+    {
+     "id": "sister",
+     "pos": [
+      -15.5,
+      -0.34,
+      -12.6
+     ],
+     "rot": 47,
+     "pose": {
+      "armL": [
+       50,
+       35,
+       0,
+       30
+      ],
+      "armR": [
+       120,
+       50,
+       0,
+       30
+      ],
+      "head": [
+       -25,
+       0,
+       0
+      ],
+      "handL": "open",
+      "handR": "open",
+      "reachR": {
+       "to": [
+        0.0,
+        0.209,
+        0.42
+       ]
+      }
+     },
+     "face": "scared",
+     "contact": true,
+     "path": [
+      {
+       "t": "@puxa",
+       "pos": [
+        -15.5,
+        -0.34,
+        -12.6
+       ]
+      },
+      {
+       "t": "@puxa+0.4",
+       "pos": [
+        -15.5,
+        -0.12,
+        -12.6
+       ],
+       "gait": "carried"
+      }
+     ],
+     "poses": [
+      {
+       "t": "@puxa",
+       "pose": {
+        "armL": [
+         50,
+         35,
+         0,
+         30
+        ],
+        "armR": [
+         120,
+         50,
+         0,
+         30
+        ],
+        "head": [
+         -25,
+         0,
+         0
+        ],
+        "handL": "open",
+        "handR": "open",
+        "reachR": {
+         "to": [
+          0.0,
+          0.209,
+          0.42
+         ]
+        }
+       },
+       "blend": 0.05
+      },
+      {
+       "t": "@puxa+0.4",
+       "pose": {
+        "armL": [
+         50,
+         35,
+         0,
+         30
+        ],
+        "armR": [
+         120,
+         50,
+         0,
+         30
+        ],
+        "head": [
+         -25,
+         0,
+         0
+        ],
+        "handL": "open",
+        "handR": "open",
+        "reachR": {
+         "to": [
+          0.0,
+          -0.06,
+          0.42
+         ]
+        }
+       },
+       "blend": 0.4
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     -13.2,
+     2.4,
+     -14.6
+    ],
+    "look": [
+     -15.3,
+     0.1,
+     -12.42
+    ],
+    "fov": 40
+   },
+   "variant": 1,
+   "time": "golden",
+   "hold": 0.5,
+   "props": [
+    {
+     "type": "iceHole",
+     "pos": [
+      -15.5,
+      0.04,
+      -12.6
+     ],
+     "size": 0.6
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@puxa",
+     "name": "splash",
+     "vol": -8
+    }
+   ],
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "1:48",
+     "tick": 5.71,
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "coverage": "off"
+  },
+  {
+   "id": "e12",
+   "set": "park",
+   "vo": "Ela sai da água de barriga, por cima do gelo. E vocês dois rastejam até a margem.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -14.55,
+      0.04,
+      -11.75
+     ],
+     "rot": 47,
+     "pose": {
+      "hipY": -0.86,
+      "body": [
+       88,
+       0,
+       0
+      ],
+      "head": [
+       -55,
+       0,
+       0
+      ],
+      "armL": [
+       165,
+       14,
+       0,
+       20
+      ],
+      "armR": [
+       165,
+       14,
+       0,
+       20
+      ],
+      "legL": [
+       4,
+       6,
+       6
+      ],
+      "legR": [
+       4,
+       6,
+       6
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "determined",
+     "path": [
+      {
+       "t": 0.4,
+       "pos": [
+        -14.55,
+        0.04,
+        -11.75
+       ]
+      },
+      {
+       "t": 4.6,
+       "pos": [
+        -12.2,
+        0.04,
+        -9.6
+       ],
+       "gait": "carried"
+      }
+     ]
+    },
+    {
+     "id": "sister",
+     "pos": [
+      -15.0,
+      0.04,
+      -12.2
+     ],
+     "rot": 47,
+     "pose": {
+      "hipY": -0.86,
+      "body": [
+       88,
+       0,
+       0
+      ],
+      "head": [
+       -55,
+       0,
+       0
+      ],
+      "armL": [
+       165,
+       14,
+       0,
+       20
+      ],
+      "armR": [
+       165,
+       14,
+       0,
+       20
+      ],
+      "legL": [
+       4,
+       6,
+       6
+      ],
+      "legR": [
+       4,
+       6,
+       6
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "scared",
+     "path": [
+      {
+       "t": 0.4,
+       "pos": [
+        -15.0,
+        0.04,
+        -12.2
+       ]
+      },
+      {
+       "t": 4.6,
+       "pos": [
+        -12.8,
+        0.04,
+        -10.4
+       ],
+       "gait": "carried"
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     -8.4,
+     2.2,
+     -7.2
+    ],
+    "look": [
+     -12.8,
+     0.3,
+     -10.2
+    ],
+    "fov": 42
+   },
+   "variant": 1,
+   "time": "golden",
+   "props": [
+    {
+     "type": "iceHole",
+     "pos": [
+      -15.5,
+      0.04,
+      -12.6
+     ],
+     "size": 0.6
+    }
+   ],
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "1:40",
+     "tick": 5.71,
+     "keep": true,
+     "persist": true
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "e13",
+   "set": "park",
+   "vo": "Um minuto e dez segundos sobrando.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -11.6,
+      0,
+      -9.0
+     ],
+     "rot": 0,
+     "pose": {
+      "hipY": -0.71,
+      "spine": [
+       8,
+       0,
+       0
+      ],
+      "legL": [
+       88,
+       8,
+       8
+      ],
+      "legR": [
+       86,
+       8,
+       14
+      ],
+      "armL": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "armR": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "tired"
+    },
+    {
+     "id": "sister",
+     "pos": [
+      -12.3,
+      0,
+      -9.3
+     ],
+     "rot": 60,
+     "pose": {
+      "hipY": -0.71,
+      "spine": [
+       8,
+       0,
+       0
+      ],
+      "legL": [
+       88,
+       8,
+       8
+      ],
+      "legR": [
+       86,
+       8,
+       14
+      ],
+      "armL": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "armR": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "cry",
+     "contact": true
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": [
+     "hero",
+     "sister"
+    ],
+    "angle": 10
+   },
+   "variant": 1,
+   "time": "golden",
+   "overlays": [
+    {
+     "type": "stopwatch",
+     "corner": "bc",
+     "from": "1:10",
+     "tick": 0.001,
+     "keep": false,
+     "persist": true
+    },
+    {
+     "type": "word",
+     "text": "1:10",
+     "at": "@minuto",
+     "y": "top"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "e14",
+   "set": "park",
+   "vo": "O celular dela afunda. [deadpan] A live, não.",
+   "camera": {
+    "pos": [
+     -14.6,
+     1.0,
+     -11.6
+    ],
+    "look": [
+     -15.5,
+     0.0,
+     -12.6
+    ],
+    "fov": 36
+   },
+   "variant": 1,
+   "time": "golden",
+   "props": [
+    {
+     "type": "iceHole",
+     "pos": [
+      -15.5,
+      0.04,
+      -12.6
+     ],
+     "size": 0.6
+    },
+    {
+     "type": "phone",
+     "pos": [
+      -15.5,
+      0.05,
+      -12.6
+     ],
+     "path": [
+      {
+       "t": 0.3,
+       "pos": [
+        -15.5,
+        0.05,
+        -12.6
+       ]
+      },
+      {
+       "t": 2.0,
+       "pos": [
+        -15.5,
+        -0.4,
+        -12.6
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "t": 0.3,
+     "name": "splash",
+     "vol": -14
+    }
+   ],
+   "cut": "smash",
+   "coverage": "fast"
+  },
+  {
+   "id": "h1",
+   "set": "park",
+   "vo": "Aí chega a conta. O menu fecha. E tudo volta pra cem de uma vez.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -11.6,
+      0,
+      -9.0
+     ],
+     "rot": 0,
+     "pose": {
+      "hipY": -0.71,
+      "spine": [
+       8,
+       0,
+       0
+      ],
+      "legL": [
+       88,
+       8,
+       8
+      ],
+      "legR": [
+       86,
+       8,
+       14
+      ],
+      "armL": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "armR": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "shocked"
+    },
+    {
+     "id": "sister",
+     "pos": [
+      -12.3,
+      0,
+      -9.3
+     ],
+     "rot": 60,
+     "pose": {
+      "hipY": -0.71,
+      "spine": [
+       8,
+       0,
+       0
+      ],
+      "legL": [
+       88,
+       8,
+       8
+      ],
+      "legR": [
+       86,
+       8,
+       14
+      ],
+      "armL": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "armR": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "tired",
+     "contact": true
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 20,
+    "height": 12
+   },
+   "variant": 1,
+   "time": "dusk",
+   "props": [
+    {
+     "type": "rug",
+     "pos": [
+      -11.6,
+      0.01,
+      -9.0
+     ],
+     "w": 1.4,
+     "d": 1.2,
+     "color": "#d9a441"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "from": 30,
+       "value": 100,
+       "at": "@cem"
+      },
+      {
+       "label": "SONO",
+       "value": 100
+      },
+      {
+       "label": "MEDO",
+       "from": 40,
+       "value": 100,
+       "at": "@cem+0.1"
+      },
+      {
+       "label": "FORÇA",
+       "from": 80,
+       "value": 60,
+       "at": "@cem+0.2"
+      }
+     ],
+     "at": "@conta",
+     "y": "low",
+     "note": "EMPRÉSTIMO VENCIDO · COBRANDO AGORA",
+     "noteAt": "@fecha"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "h2",
+   "set": "park",
+   "vo": "O frio. A dor nas mãos. O medo que ficou guardado. Você treme por uma hora, embrulhado num cobertor.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -11.6,
+      0,
+      -9.0
+     ],
+     "rot": 0,
+     "pose": {
+      "hipY": -0.71,
+      "spine": [
+       8,
+       0,
+       0
+      ],
+      "legL": [
+       88,
+       8,
+       8
+      ],
+      "legR": [
+       86,
+       8,
+       14
+      ],
+      "armL": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "armR": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": {
+      "eyes": 0.9,
+      "brow": 1,
+      "mouth": -0.5,
+      "sweat": true
+     }
+    },
+    {
+     "id": "sister",
+     "pos": [
+      -12.3,
+      0,
+      -9.3
+     ],
+     "rot": 60,
+     "pose": {
+      "hipY": -0.71,
+      "spine": [
+       8,
+       0,
+       0
+      ],
+      "legL": [
+       88,
+       8,
+       8
+      ],
+      "legR": [
+       86,
+       8,
+       14
+      ],
+      "armL": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "armR": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "tired",
+     "contact": true
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": -20
+   },
+   "variant": 1,
+   "time": "dusk",
+   "props": [
+    {
+     "type": "rug",
+     "pos": [
+      -11.6,
+      0.01,
+      -9.0
+     ],
+     "w": 1.4,
+     "d": 1.2,
+     "color": "#d9a441"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "word",
+     "text": "1 HORA",
+     "at": "@hora",
+     "color": "white"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "h2b",
+   "set": "void",
+   "vo": "No hospital, o médico olha as suas mãos: vermelhas, inchadas, mas inteiras. Com a dor em zero, você nem teria saído do gelo a tempo.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 10,
+     "pose": {
+      "armL": [
+       60,
+       10,
+       -40,
+       70
+      ],
+      "armR": [
+       60,
+       10,
+       -40,
+       70
+      ],
+      "head": [
+       25,
+       0,
+       0
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "tired"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": 10,
+    "height": 10
+   },
+   "coverage": "fast",
+   "cut": "zoom"
+  },
+  {
+   "id": "h3",
+   "set": "park",
+   "vo": "Esse susto eu cobro em dobro.",
+   "actors": [
+    {
+     "id": "sister",
+     "pos": [
+      -12.3,
+      0,
+      -9.3
+     ],
+     "rot": 60,
+     "pose": {
+      "hipY": -0.71,
+      "spine": [
+       8,
+       0,
+       0
+      ],
+      "legL": [
+       88,
+       8,
+       8
+      ],
+      "legR": [
+       86,
+       8,
+       14
+      ],
+      "armL": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "armR": [
+       -25,
+       20,
+       0,
+       10
+      ],
+      "handL": "open",
+      "handR": "open"
+     },
+     "face": "smug",
+     "look": "hero",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "sister",
+    "angle": 25
+   },
+   "who": "female",
+   "variant": 1,
+   "time": "dusk",
+   "cut": "smash",
+   "coverage": "fast"
+  },
+  {
+   "id": "h4",
+   "set": "home",
+   "vo": "Na manhã seguinte, a live tem dois milhões de visualizações. O título: garoto sem medo salva irmã no gelo.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "couch",
+     "rot": 90,
+     "pose": "phone",
+     "face": "tired",
+     "hold": {
+      "R": "phone"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 30
+   },
+   "overlays": [
+    {
+     "type": "news",
+     "headline": "GAROTO SEM MEDO SALVA IRMÃ NO GELO",
+     "ticker": "2.000.000 VISUALIZAÇÕES · AO VIVO",
+     "tag": "VIRAL",
+     "safe": true,
+     "at": "@título"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "whip"
+  },
+  {
+   "id": "h4b",
+   "set": "home",
+   "vo": "A Ivy passa de trezentos e doze inscritos pra oitocentos mil. E cobra cinquenta reais por entrevista com o irmão.",
+   "actors": [
+    {
+     "id": "sister",
+     "pos": "center+1.6,0,0.4",
+     "rot": -90,
+     "pose": "holdOut",
+     "face": "smug",
+     "hold": {
+      "R": "phone"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "sister",
+    "angle": -20
+   },
+   "overlays": [
+    {
+     "type": "word",
+     "text": "800 MIL",
+     "at": "@oitocentos"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "h4c",
+   "set": "home",
+   "vo": "E os meus vinte reais?",
+   "actors": [
+    {
+     "id": "bestie",
+     "pos": "door+-0.8,0,0.4",
+     "rot": -100,
+     "pose": "armsCrossed",
+     "face": "suspicious",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "bestie",
+    "angle": 20
+   },
+   "who": "male",
+   "cut": "smash",
+   "coverage": "fast"
+  },
+  {
+   "id": "h5",
+   "set": "home",
+   "vo": "[sarcastic] Sem medo. Foi justamente o medo que salvou. E por uma semana, você não toca no menu.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "couch",
+     "rot": 90,
+     "pose": "sit",
+     "face": "smirk"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": -20
+   },
+   "coverage": "fast"
+  },
+  {
+   "id": "w1",
+   "set": "rooftop",
+   "vo": "Do outro lado da cidade, alguém assiste o vídeo quadro a quadro.",
+   "actors": [
+    {
+     "id": "mulher",
+     "pos": "ledge",
+     "rot": 0,
+     "pose": "phone",
+     "face": "focused",
+     "hold": {
+      "R": "phone"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "mulher",
+    "angle": 25,
+    "move": "pushIn"
+   },
+   "time": "night",
+   "coverage": "fast",
+   "cut": "zoom"
+  },
+  {
+   "id": "w2",
+   "set": "rooftop",
+   "vo": "Ela para no meio segundo antes de você deitar no gelo. O seu olho parado, olhando pro nada.",
+   "actors": [
+    {
+     "id": "mulher",
+     "pos": "ledge",
+     "rot": 0,
+     "pose": "phone",
+     "face": "suspicious",
+     "hold": {
+      "R": "phone"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "mulher",
+    "angle": -20
+   },
+   "time": "night",
+   "overlays": [
+    {
+     "type": "word",
+     "text": "0,5 S",
+     "at": "@meio",
+     "color": "white"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "w3",
+   "set": "rooftop",
+   "vo": "Ela sabe o que é aquilo.",
+   "actors": [
+    {
+     "id": "mulher",
+     "pos": "ledge",
+     "rot": 0,
+     "pose": "stand",
+     "face": "smirk"
+    }
+   ],
+   "camera": {
+    "shot": "xclose",
+    "target": "mulher",
+    "angle": 10,
+    "move": "pushIn"
+   },
+   "time": "night",
+   "coverage": "off",
+   "sfx": [
+    {
+     "t": 0.3,
+     "name": "subdrop"
+    }
+   ]
+  },
+  {
+   "id": "w4",
+   "set": "suburb",
+   "vo": "Três dias depois, a campainha toca.",
+   "actors": [
+    {
+     "id": "mulher",
+     "pos": [
+      8.45,
+      0.08,
+      -11.2
+     ],
+     "rot": 180,
+     "pose": "stand",
+     "face": "neutral"
+    }
+   ],
+   "camera": {
+    "pos": [
+     10.6,
+     1.4,
+     -6.6
+    ],
+    "look": [
+     8.45,
+     1.4,
+     -12.2
+    ],
+    "fov": 40
+   },
+   "sfx": [
+    {
+     "t": "@campainha",
+     "name": "chime"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "whip"
+  },
+  {
+   "id": "w5",
+   "set": "suburb",
+   "vo": "Uma mulher de terno vinho, com um envelope.",
+   "actors": [
+    {
+     "id": "mulher",
+     "pos": [
+      8.45,
+      0.08,
+      -11.2
+     ],
+     "rot": 180,
+     "pose": "holdOut",
+     "face": "smile",
+     "hold": {
+      "R": "letter"
+     }
+    },
+    {
+     "id": "hero",
+     "pos": "door",
+     "rot": 0,
+     "pose": "stand",
+     "face": "suspicious",
+     "look": "mulher"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "mulher",
+    "angle": -30
+   },
+   "coverage": "fast"
+  },
+  {
+   "id": "w6",
+   "set": "suburb",
+   "vo": "[softly] Eu sei do menu.",
+   "actors": [
+    {
+     "id": "mulher",
+     "pos": [
+      8.45,
+      0.08,
+      -11.2
+     ],
+     "rot": 180,
+     "pose": "holdOut",
+     "face": "smirk",
+     "hold": {
+      "R": "letter"
+     },
+     "look": "hero",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "mulher",
+    "angle": 15
+   },
+   "who": "vila",
+   "cut": "smash",
+   "coverage": "fast"
+  },
+  {
+   "id": "w7",
+   "set": "home",
+   "vo": "No envelope, um contrato. E um número com seis zeros.",
+   "actors": [
+    {
+     "id": "mom",
+     "pos": "table",
+     "rot": 0,
+     "pose": "holdOut",
+     "face": "awe",
+     "hold": {
+      "R": "paper"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "mom",
+    "angle": 20
+   },
+   "overlays": [
+    {
+     "type": "word",
+     "text": "R$ 1.000.000",
+     "at": "@zeros"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "zoom"
+  },
+  {
+   "id": "w8",
+   "set": "home",
+   "vo": "Ela quer estudar você. Descobrir como desligar a dor de outras pessoas. Muitas pessoas.",
+   "actors": [
+    {
+     "id": "mulher",
+     "pos": "center",
+     "rot": -40,
+     "pose": "explain",
+     "face": "smile",
+     "look": "mom"
+    },
+    {
+     "id": "mom",
+     "pos": "table",
+     "rot": 0,
+     "pose": "sit",
+     "face": "awe",
+     "look": "mulher"
+    },
+    {
+     "id": "hero",
+     "pos": "center+1.6,0,0.6",
+     "rot": -90,
+     "pose": "armsCrossed",
+     "face": "suspicious",
+     "look": "mulher"
+    }
+   ],
+   "camera": {
+    "pos": [
+     1.2,
+     1.55,
+     4.8
+    ],
+    "look": [
+     -1.0,
+     1.1,
+     -0.4
+    ],
+    "fov": 44
+   },
+   "coverage": "fast"
+  },
+  {
+   "id": "w8b",
+   "set": "home",
+   "vo": "Ela explica que o menu não é só seu. Que existem outros. Poucos. [pause] E que quem não assina com ela costuma assinar com alguém pior.",
+   "actors": [
+    {
+     "id": "mulher",
+     "pos": "center",
+     "rot": -40,
+     "pose": "explain",
+     "face": "smile",
+     "look": "hero"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "mulher",
+    "angle": -30
+   },
+   "coverage": "fast"
+  },
+  {
+   "id": "w8c",
+   "set": "home",
+   "vo": "A sua enfermeira manda lembranças.",
+   "actors": [
+    {
+     "id": "mulher",
+     "pos": "center",
+     "rot": -10,
+     "pose": "stand",
+     "face": "sly",
+     "look": "hero",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "mulher",
+    "angle": 15
+   },
+   "who": "vila",
+   "cut": "smash",
+   "coverage": "fast"
+  },
+  {
+   "id": "w9",
+   "set": "home",
+   "vo": "[menacing] Gente que precisa ir pra lugares onde a dor só atrapalha.",
+   "actors": [
+    {
+     "id": "mulher",
+     "pos": "center",
+     "rot": 20,
+     "pose": "stand",
+     "face": "sly",
+     "look": "camera"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "mulher",
+    "angle": 0,
+    "move": "pushIn"
+   },
+   "coverage": "off"
+  },
+  {
+   "id": "w10",
+   "set": "home",
+   "vo": "Quanto é isso em mesadas?",
+   "actors": [
+    {
+     "id": "mom",
+     "pos": "table",
+     "rot": 0,
+     "pose": "sit",
+     "face": "happy",
+     "look": "mulher",
+     "talk": [
+      [
+       0.05,
+       3.0
+      ]
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "mom",
+    "angle": -20
+   },
+   "who": "adulta",
+   "cut": "smash",
+   "coverage": "fast"
+  },
+  {
+   "id": "w11",
+   "set": "home",
+   "vo": "A sua mãe já está procurando uma caneta.",
+   "actors": [
+    {
+     "id": "mom",
+     "pos": "table",
+     "rot": 0,
+     "pose": "sit",
+     "face": "focused",
+     "hold": {
+      "R": "pen"
+     }
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "mom",
+    "angle": 30
+   },
+   "coverage": "fast"
+  },
+  {
+   "id": "w12",
+   "set": "home",
+   "vo": "Você diz que vai pensar. A mulher sorri, como quem já sabe a resposta.",
+   "actors": [
+    {
+     "id": "mulher",
+     "pos": "center",
+     "rot": 60,
+     "pose": "stand",
+     "face": "smirk",
+     "look": "hero"
+    },
+    {
+     "id": "hero",
+     "pos": "center+1.6,0,0.6",
+     "rot": -90,
+     "pose": "armsCrossed",
+     "face": "worried",
+     "look": "mulher"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "mulher",
+    "angle": 25
+   },
+   "coverage": "fast"
+  },
+  {
+   "id": "w13",
+   "set": "suburb",
+   "vo": "Ela vai embora a pé. Sem carro. Sem pressa. Como quem sabe que vai voltar.",
+   "actors": [
+    {
+     "id": "mulher",
+     "pos": [
+      8.45,
+      0.08,
+      -11.2
+     ],
+     "rot": 90,
+     "pose": "stand",
+     "face": "smirk",
+     "path": [
+      {
+       "t": 0.3,
+       "pos": [
+        8.45,
+        0.08,
+        -11.2
+       ]
+      },
+      {
+       "t": 2.2,
+       "pos": [
+        8.45,
+        0.1,
+        -5.0
+       ],
+       "gait": "walk"
+      },
+      {
+       "t": 4.6,
+       "pos": [
+        14.0,
+        0.1,
+        -4.6
+       ],
+       "gait": "walk"
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     4.0,
+     1.5,
+     -1.0
+    ],
+    "look": [
+     9.5,
+     1.2,
+     -5.5
+    ],
+    "fov": 44
+   },
+   "time": "dusk",
+   "coverage": "fast",
+   "cut": "whip"
+  },
+  {
+   "id": "g1",
+   "set": "bedroom",
+   "vo": "Naquela noite, o menu abre sozinho. Sem susto. Sem alarme. Isso nunca tinha acontecido.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -2.55,
+      0,
+      -2.75
+     ],
+     "rot": 0,
+     "pose": "sleep",
+     "face": "closed",
+     "faces": [
+      {
+       "t": "@abre",
+       "face": "shocked",
+       "blend": 0.3
+      }
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     1.4,
+     1.45,
+     1.8
+    ],
+    "look": [
+     -1.6,
+     0.75,
+     -2.4
+    ],
+    "fov": 40,
+    "move": "pushIn"
+   },
+   "time": "interiorNight",
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "value": 100
+      },
+      {
+       "label": "SONO",
+       "value": 100
+      },
+      {
+       "label": "MEDO",
+       "value": 100
+      },
+      {
+       "label": "FORÇA",
+       "value": 60
+      }
+     ],
+     "at": "@abre",
+     "y": "low"
+    }
+   ],
+   "sfx": [
+    {
+     "t": "@nunca",
+     "name": "subdrop"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "zoom"
+  },
+  {
+   "id": "g2",
+   "set": "bedroom",
+   "vo": "Uma notificação. Atualização disponível. Agora com acesso às configurações de pessoas num raio de cinco metros.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -1.95,
+      0,
+      -2.1
+     ],
+     "rot": 90,
+     "pose": "sitSlump",
+     "face": "shocked"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": 30
+   },
+   "time": "interiorNight",
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "value": 100
+      },
+      {
+       "label": "SONO",
+       "value": 100
+      },
+      {
+       "label": "MEDO",
+       "value": 100
+      },
+      {
+       "label": "FORÇA",
+       "value": 60
+      }
+     ],
+     "at": 0,
+     "y": "low",
+     "title": "ATUALIZAÇÃO 2.0",
+     "note": "ACESSO A PESSOAS NUM RAIO DE 5 METROS",
+     "noteAt": "@acesso"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "g3",
+   "set": "bedroom",
+   "vo": "E aparecem quatro barras novas. São da Ivy, dormindo no quarto ao lado.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -1.95,
+      0,
+      -2.1
+     ],
+     "rot": 90,
+     "pose": "sitSlump",
+     "face": "awe",
+     "look": [
+      0.5,
+      1.6,
+      -0.5
+     ]
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": -25
+   },
+   "time": "interiorNight",
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "value": 100
+      },
+      {
+       "label": "SONO",
+       "value": 100
+      },
+      {
+       "label": "MEDO",
+       "value": 100
+      },
+      {
+       "label": "FORÇA",
+       "value": 60
+      }
+     ],
+     "at": "@barras",
+     "y": "low",
+     "title": "IVY"
+    }
+   ],
+   "coverage": "fast"
+  },
+  {
+   "id": "g4",
+   "set": "bedroom",
+   "vo": "Você poderia apagar o medo de gelo dela pra sempre. Ou o medo da sua mãe de perder dinheiro. [pause] Ou o de qualquer um.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -1.95,
+      0,
+      -2.1
+     ],
+     "rot": 90,
+     "pose": "sitThink",
+     "face": "focused"
+    }
+   ],
+   "camera": {
+    "shot": "close",
+    "target": "hero",
+    "angle": 10,
+    "move": "pushIn"
+   },
+   "time": "interiorNight",
+   "coverage": "calm"
+  },
+  {
+   "id": "g4b",
+   "set": "bedroom",
+   "vo": "Seria tão fácil. Uma barra. Um dedo. Ninguém ia saber.",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": [
+      -1.95,
+      0,
+      -2.1
+     ],
+     "rot": 90,
+     "pose": {
+      "hipY": -0.46,
+      "spine": [
+       10,
+       0,
+       0
+      ],
+      "legL": [
+       88,
+       6,
+       92
+      ],
+      "legR": [
+       88,
+       6,
+       92
+      ],
+      "armR": [
+       70,
+       6,
+       0,
+       10
+      ],
+      "handR": "point",
+      "armL": [
+       10,
+       10,
+       0,
+       30
+      ]
+     },
+     "face": "focused"
+    }
+   ],
+   "camera": {
+    "pos": [
+     0.9,
+     1.35,
+     0.4
+    ],
+    "look": [
+     -1.3,
+     0.95,
+     -2.3
+    ],
+    "fov": 38
+   },
+   "time": "interiorNight",
+   "coverage": "off",
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "value": 100
+      },
+      {
+       "label": "SONO",
+       "value": 100
+      },
+      {
+       "label": "MEDO",
+       "from": 100,
+       "value": 70,
+       "at": "@dedo"
+      },
+      {
+       "label": "FORÇA",
+       "value": 60
+      }
+     ],
+     "at": "@barra",
+     "y": "low",
+     "title": "IVY"
+    }
+   ]
+  },
+  {
+   "id": "g5",
+   "set": "suburb",
+   "vo": "Aí o menu mostra mais alguém no raio. Do lado de fora da sua janela.",
+   "actors": [
+    {
+     "id": "mulher",
+     "pos": [
+      6.5,
+      0.08,
+      -9.5
+     ],
+     "rot": 180,
+     "pose": "stand",
+     "face": "smirk",
+     "look": [
+      6.5,
+      4,
+      -17
+     ]
+    }
+   ],
+   "camera": {
+    "pos": [
+     7.2,
+     1.6,
+     -6.9
+    ],
+    "look": [
+     6.5,
+     1.5,
+     -9.5
+    ],
+    "fov": 42,
+    "move": "pushIn"
+   },
+   "time": "night",
+   "sfx": [
+    {
+     "t": "@fora",
+     "name": "subdrop"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "whip"
+  },
+  {
+   "id": "g6",
+   "set": "suburb",
+   "vo": "Medo: zero.",
+   "actors": [
+    {
+     "id": "mulher",
+     "pos": [
+      6.5,
+      0.08,
+      -9.5
+     ],
+     "rot": 180,
+     "pose": "stand",
+     "face": "sly",
+     "look": "camera"
+    }
+   ],
+   "camera": {
+    "shot": "xclose",
+    "target": "mulher",
+    "angle": 0,
+    "move": "pushIn"
+   },
+   "time": "night",
+   "hold": 1,
+   "coverage": "off",
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "value": 100
+      },
+      {
+       "label": "SONO",
+       "value": 100
+      },
+      {
+       "label": "MEDO",
+       "value": 0,
+       "warn": true
+      },
+      {
+       "label": "FORÇA",
+       "value": 60
+      }
+     ],
+     "at": 0.05,
+     "y": "low",
+     "title": "ELA"
+    }
+   ],
+   "cut": "smash"
+  },
+  {
+   "id": "i1",
+   "set": "void",
+   "vo": "Então: qual barra você mexeria primeiro? E pra quanto?",
+   "actors": [
+    {
+     "id": "hero",
+     "pos": "center",
+     "rot": 0,
+     "pose": "shrug",
+     "face": "smirk"
+    }
+   ],
+   "camera": {
+    "shot": "medium",
+    "target": "hero",
+    "angle": 0
+   },
+   "overlays": [
+    {
+     "type": "menu",
+     "rows": [
+      {
+       "label": "DOR",
+       "value": 100
+      },
+      {
+       "label": "SONO",
+       "value": 100
+      },
+      {
+       "label": "MEDO",
+       "value": 100
+      },
+      {
+       "label": "FORÇA",
+       "value": 60
+      }
+     ],
+     "at": 0.3,
+     "y": "low"
+    }
+   ],
+   "coverage": "fast",
+   "cut": "zoom"
+  },
+  {
+   "id": "i2",
+   "kind": "card",
+   "card": "title",
+   "vo": "E se essa atualização chegasse pra você: você mudaria o medo de outra pessoa? Conta pra gente nos comentários. Todo poder tem um preço. Até a próxima.",
+   "small": "VOCÊ MUDARIA O MEDO",
+   "big": "DE OUTRA PESSOA?"
+  }
+ ],
+ "clips": [
+  {
+   "title": "Um carro vinha, e eu abri o menu do meu corpo",
+   "from": "a1",
+   "to": "s5"
+  },
+  {
+   "title": "O teste do balde de gelo",
+   "from": "p1",
+   "to": "r8"
+  },
+  {
+   "title": "O que eu fiz com o menu do corpo",
+   "from": "v1",
+   "to": "v15"
+  },
+  {
+   "title": "Sem medo, você não vê o medo dos outros",
+   "from": "x1",
+   "to": "x14"
+  },
+  {
+   "title": "A irmã caiu no gelo ao vivo",
+   "from": "k3",
+   "to": "d3"
+  },
+  {
+   "title": "Nunca zero: o resgate no gelo",
+   "from": "e1",
+   "to": "h3"
+  }
+ ]
+}

@@ -15,7 +15,7 @@ __all__ = ['shots', 'A', 'cam', 'S', 'C', 'ladainha', 'apply_ritmo', 'crush', 'w
            'load_timing', 'resolve_countdowns', 'clean', 'write', 'NARRATOR', 'HOUSE_VOICES']
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
-NARRATOR = {'id': 'u7N1p4OIOc6Fl7y72WE7', 'model': 'eleven_v4'}  # Yuri (CLAUDE.md, Voice)
+NARRATOR = {'id': 'u7N1p4OIOc6Fl7y72WE7', 'model': 'eleven_v4'}  # Yuri (docs/pipeline/EPISODE.md, Voice)
 HOUSE_VOICES = {'adulto': 'u4sbCzXyUVxIAihOtCss', 'adulta': 'dxIMMSJYSsbUSMhioLNb'}
 
 shots = []

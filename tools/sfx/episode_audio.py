@@ -150,6 +150,12 @@ LIB = {
     'whistle': lambda d: S.whistle(d or 0.7),
     'groan': lambda d: S.groan(d or 1.4),
     'groanLow': lambda d: S.groan(d or 1.8, 0.3, 82.0),
+    'menu': lambda d: S.ui_open(0.35),
+    'tick': lambda d: S.ui_tick(0.3),
+    'alert': lambda d: S.ui_alert(0.35),
+    'horn': lambda d: S.horn(d or 0.8),
+    'crack': lambda d: S.ice_crack(0.6),
+    'splash': lambda d: S.splash(0.6),
 }
 DEFAULT_DB = {'whoosh': -9, 'swoosh': -12, 'whooshUp': -9, 'boom': -4, 'farBoom': -8, 'gulp': -2, 'chime': -8, 'ticks': -12, 'glint': -10,
               'wind': -8, 'riser': -10, 'crackle': -12, 'heartbeat': -4, 'subdrop': -8, 'click': -10, 'pop': -6, 'cloth': -10, 'footsteps': -10}
@@ -186,6 +192,14 @@ for i, shot in enumerate(ep['shots']):
             fx.add(at, S.boom(0.8, 0.3), -9)
         elif o['type'] == 'label':
             fx.add(at, S.click(2600, 0.03, 0.4), -14)
+        elif o['type'] == 'menu':
+            # body-settings HUD: open blip, a slider tick per changing row, the toast's alert
+            fx.add(at, S.ui_open(0.35), -9)
+            for r in o.get('rows', []):
+                if 'from' in r:
+                    fx.add(st + cue(r.get('at', 0), words, 0), S.ui_tick(0.3), -10)
+            if o.get('note'):
+                fx.add(st + cue(o.get('noteAt', 0.6), words, 0) if isinstance(o.get('noteAt'), str) else at + o.get('noteAt', 0.6), S.ui_alert(0.35), -10)
     for c in shot.get('sfx', []):
         name = c['name']
         if name not in LIB:
@@ -222,19 +236,25 @@ mus.x *= (1 - 0.55 * duck)[:, None]
 amb.x *= (1 - 0.35 * duck)[:, None]
 
 # --- master -------------------------------------------------------------------------------------
-mix = vo.x + mus.x + amb.x + fx.x
-mix -= mix.mean(axis=0)
-mix = S.hp(mix.T, 25, 2).T
-peak = np.max(np.abs(mix)) + 1e-9
-mix = mix / peak
-mix = np.tanh(mix * 1.2) / np.tanh(1.2)
-mix = S.norm(mix, 10 ** (-1.0 / 20))
-mix = S.fade(mix, 0.01, 0.8)
-
+# Stems first, then sum in place in float32: four float64 buses of a 15-min episode are ~640 MB each,
+# and `vo + mus + amb + fx` used to allocate temporaries until it ran out of memory (menu-corpo, 2026-11-09).
 out_dir = os.path.join(ROOT, 'out', 'audio', slug)
 os.makedirs(out_dir, exist_ok=True)
 for name, b in (('vo', vo), ('music', mus), ('ambience', amb), ('sfx', fx)):
     S.write_wav(os.path.join(out_dir, f'{name}.wav'), S.norm(b.x, 0.9) if np.any(b.x) else b.x)
+mix = vo.x.astype(np.float32)
+vo.x = None
+for b in (mus, amb, fx):
+    mix += b.x.astype(np.float32)
+    b.x = None
+mix -= mix.mean(axis=0)
+mix = S.hp(mix.T, 25, 2).T.astype(np.float32)
+peak = np.max(np.abs(mix)) + 1e-9
+mix /= peak
+mix = (np.tanh(mix * 1.2) / np.tanh(1.2)).astype(np.float32)
+mix = S.norm(mix, 10 ** (-1.0 / 20))
+mix = S.fade(mix, 0.01, 0.8)
+
 S.write_wav(os.path.join(D, 'mix.wav'), mix.astype(np.float32))
 rms = 20 * np.log10(np.sqrt(np.mean(mix ** 2)) + 1e-9)
 print(f'mix.wav: {TOTAL:.1f} s, rms {rms:.1f} dBFS' + (' (draft timing: no narration yet)' if draft else ''))

@@ -10,13 +10,14 @@ import { castOf } from './resolve';
 
 // Mirrors LIB in tools/sfx/episode_audio.py
 export const SFX_NAMES = ['whoosh', 'whooshUp', 'swoosh', 'boom', 'farBoom', 'thud', 'footsteps', 'gulp', 'click', 'pop', 'cloth', 'heartbeat',
-  'subdrop', 'riser', 'swell', 'zap', 'crackle', 'wind', 'debris', 'rustle', 'chime', 'glint', 'ticks', 'ring', 'bell', 'whistle', 'groan', 'groanLow'];
+  'subdrop', 'riser', 'swell', 'zap', 'crackle', 'wind', 'debris', 'rustle', 'chime', 'glint', 'ticks', 'ring', 'bell', 'whistle', 'groan', 'groanLow',
+  'menu', 'tick', 'alert', 'horn', 'crack', 'splash'];
 const PROPS = ['table', 'roundTable', 'chair', 'bed', 'desk', 'deskLamp', 'door', 'window', 'shelf', 'plant', 'tree', 'bush', 'lamp', 'fence', 'car', 'house',
   'building', 'clock', 'rug', 'crowd', 'sign', 'screen', 'box', 'crate', 'ball', 'basketball', 'cup', 'phone', 'book', 'laptop', 'glow', 'pillar', 'wall', 'portal', 'cone', 'trophy', 'skateboard', 'spot',
-  'fire', 'smoke', 'firetruck', 'basket', 'binoculars', 'trafficlight', 'pizza', 'jar'];
+  'fire', 'smoke', 'firetruck', 'basket', 'binoculars', 'trafficlight', 'pizza', 'jar', 'iceHole', 'dog'];
 const SHOTS = ['establishing', 'wide', 'full', 'medium', 'close', 'xclose', 'insert'];
 const MOVES = ['static', 'drift', 'pushIn', 'pullOut', 'orbitL', 'orbitR', 'craneUp', 'craneDown', 'truckL', 'truckR', 'track', 'crashIn', 'shake', 'handheld'];
-const OVERLAYS = ['label', 'title', 'stopwatch', 'stat', 'bubble', 'thought', 'crush', 'caption', 'flash', 'counter', 'news', 'hudList', 'word'];
+const OVERLAYS = ['label', 'title', 'stopwatch', 'stat', 'bubble', 'thought', 'crush', 'caption', 'flash', 'counter', 'news', 'hudList', 'word', 'menu'];
 
 export function validate(ep: Episode): string[] {
   const out: string[] = [];

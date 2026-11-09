@@ -2,7 +2,7 @@
 
 Voice (narration + character lines) uses the ElevenLabs API, called directly with `fetch` from `tools/episode.mjs` — no MCP. Run this checklist once, the first time a copy of this project has no working `ELEVENLABS_API_KEY`.
 
-Until the key is working, everything except real voice-over works: ideas, scripts, shot lists, `draft` previews, short shots with Python sound, audits, reviews and preview renders. If the user asks for a finished episode before the key works, go up to the preview (CLAUDE.md long-form step 4), then ask them for a key.
+Until the key is working, everything except real voice-over works: ideas, scripts, shot lists, `draft` previews, short shots with Python sound, audits, reviews and preview renders. If the user asks for a finished episode before the key works, go up to the preview (docs/pipeline/EPISODE.md step 4), then ask them for a key.
 
 ## Steps
 
@@ -16,12 +16,12 @@ Until the key is working, everything except real voice-over works: ideas, script
    - Pull 3–4 candidates per role, fetch each one's `preview_url`, and let the user pick by ear — don't choose a voice the user hasn't heard.
    - A public-library voice_id can be used directly in a TTS call without first "adding" it to the account.
 
-4. **Measure the real cost before committing.** Credit cost per character varies by model and isn't published cleanly — measure it: call `POST /v1/text-to-speech/{voice_id}/with-timestamps` with a short (~15 s) test script in the target language and the chosen narrator voice and model (`eleven_v4` unless the user asks otherwise), then diff `GET /v1/usage/character-stats?start_unix=<ms>&end_unix=<ms>&include_live_requests=true` before/after (its `usage.All` series updates within a few seconds). Report the measured credits/char to the user and update the `CREDITS_PER_CHAR` constant and the Voice section of `CLAUDE.md`.
+4. **Measure the real cost before committing.** Credit cost per character varies by model and isn't published cleanly — measure it: call `POST /v1/text-to-speech/{voice_id}/with-timestamps` with a short (~15 s) test script in the target language and the chosen narrator voice and model (`eleven_v4` unless the user asks otherwise), then diff `GET /v1/usage/character-stats?start_unix=<ms>&end_unix=<ms>&include_live_requests=true` before/after (its `usage.All` series updates within a few seconds). Report the measured credits/char to the user and update the `CREDITS_PER_CHAR` constant and the Voice section of `docs/pipeline/EPISODE.md`.
 
 5. **Balance checks.** `GET /v1/user/subscription` gives the real remaining balance, but needs the `user_read` permission. If the key doesn't have it, tell the user to check elevenlabs.io/app/subscription manually, or to create a key with that permission added, before any `/stickman` credit checkpoint.
 
 6. **Finish.**
-   - Update `HOUSE_VOICES` in `tools/episode.mjs`, the **Voice** section of `CLAUDE.md`, and `public/episodes/pipetest/episode.json` (`voice.id`) if it exists.
+   - Update `HOUSE_VOICES` in `tools/episode.mjs`, the **Voice** section of `docs/pipeline/EPISODE.md`, and `public/episodes/pipetest/episode.json` (`voice.id`) if it exists.
    - Replace any "ElevenLabs pending" memory with a short `reference` memory: "ElevenLabs connected `<date>`, narrator `<voice>`, measured `<rate>` credits/char." Update its line in `MEMORY.md`.
    - Tell the user what was checked, which voices were picked, and the measured cost.
 

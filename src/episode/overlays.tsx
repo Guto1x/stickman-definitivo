@@ -10,6 +10,7 @@ import { Bubble } from '../overlays/Bubble';
 import { CrushMeter } from '../overlays/CrushMeter';
 import { NewsBar } from '../overlays/NewsBar';
 import { KeyWord } from '../overlays/KeyWord';
+import { BodyMenu, type MenuRow } from '../overlays/BodyMenu';
 import type { Overlay } from '../types';
 
 export type Projector = (actorId: string) => { x: number; y: number; visible: boolean; scale: number } | null;
@@ -61,6 +62,8 @@ const OverlayExt: React.FC<{ o: Overlay; t: number; project: Projector }> = ({ o
       return <Stopwatch t={t} from={o.from || '0.00 s'} to={o.to} switchAt={(o as { switchAt?: number }).switchAt} dur={dur} persist={(o as { persist?: boolean }).persist} tick={(o as { tick?: number }).tick} keep={(o as { keep?: boolean }).keep} corner={(o as { corner?: 'tl' | 'tr' | 'bl' | 'br' | 'tc' | 'bc' }).corner} />;
     case 'news':
       return <NewsBar t={t} headline={o.headline} ticker={o.ticker} tag={(o as { tag?: string }).tag} dur={dur} safe={o.safe} />;
+    case 'menu':
+      return <BodyMenu t={t} rows={o.rows as MenuRow[]} title={o.title} note={o.note} noteAt={o.noteAt as number | undefined} alarm={o.alarm} y={o.y} dur={dur} />;
     case 'word':
       return <KeyWord t={t} text={o.text} color={o.color} y={o.y} dur={dur} />;
     case 'bubble':

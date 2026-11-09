@@ -138,6 +138,7 @@ export type Overlay =
   | { type: 'counter'; text: string; at?: number }
   | { type: 'news'; headline: string; ticker?: string; tag?: string; at?: number; until?: number; safe?: boolean } // safe: centred and wrapped inside the 9:16 column
   | { type: 'word'; text: string; at?: number; until?: number; color?: string; y?: 'low' | 'top' | 'mid' } // palavra-destaque: the key word pops in on its cue, centre column (default 1.5 s)
+  | { type: 'menu'; rows: { label: string; value: number; from?: number; at?: number | string; warn?: boolean; dim?: boolean }[]; title?: string; note?: string; noteAt?: number | string; alarm?: boolean; y?: 'top' | 'mid' | 'low' | 'above'; at?: number; until?: number } // body-settings HUD (BodyMenu); row `at` / noteAt are shot times or word cues
   | { type: 'hudList'; items: string[]; at?: number; checked?: number };
 
 export type ShotFx = {

@@ -27,7 +27,7 @@ const memDir = opt('--memory') ?? (fs.existsSync(path.join(DOCS_MEMORY, 'MEMORY.
 // What ships. Generated media, episodes and installs stay behind; the copy rebuilds what it needs.
 const SKIP_DIRS = new Set(['node_modules', '.venv', '.git', '.bootstrap', '.claude', 'out', 'voice_auditions', '__pycache__']);
 const FIXTURE_EPISODE = 'pipetest'; // the compositions' default slug; ships as JSON only (no audio)
-const EXAMPLE_BRIEF = 'thumbnails/swap-pilot/brief.json'; // CLAUDE.md points at it as the brief format
+const EXAMPLE_BRIEF = 'thumbnails/swap-pilot/brief.json'; // docs/pipeline/EPISODE.md points at it as the brief format
 const KEEP_EMPTY = ['final/archive', 'final/thumbnails'];
 function keep(rel) {
   if (rel === OUT_NAME) return false;
@@ -62,7 +62,8 @@ const EXTRA = [
   ['@memory/project-fish-pending.md', path.join(HERE, 'fresh', 'project-fish-pending.md')],
   // the /stickman command; .claude/ itself is skipped, so the local copy (which adds a demo shortcut) never ships
   ['.claude/commands/stickman.md', path.join(HERE, 'fresh', 'stickman.md')],
-  // the round-2+ review subagent, pinned to a smaller model (CLAUDE.md step 7.4)
+  // the review subagents, pinned to a smaller model (docs/pipeline/EPISODE.md steps 7.3 and 7.4)
+  ['.claude/agents/revisor-episodio.md', path.join(ROOT, '.claude', 'agents', 'revisor-episodio.md')],
   ['.claude/agents/revisor-verificacao.md', path.join(ROOT, '.claude', 'agents', 'revisor-verificacao.md')],
 ];
 const MEMORY_LINES = [

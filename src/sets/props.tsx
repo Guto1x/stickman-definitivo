@@ -313,6 +313,49 @@ export const WorldProp: React.FC<{ spec: PropSpec; t: number }> = ({ spec, t }) 
           </group>
         );
       }
+      case 'dog': return (
+        // a small toon dog facing +z: body, head with ears and snout, four legs, tail up; wags with t
+        <At>
+          <Box p={[0, 0.42, 0]} s={[0.26, 0.24, 0.55]} c={c || '#b5793f'} />
+          <Box p={[0, 0.6, 0.33]} s={[0.22, 0.2, 0.22]} c={c || '#b5793f'} />
+          <Box p={[0, 0.56, 0.47]} s={[0.12, 0.09, 0.1]} c="#e9d2b0" />
+          <Box p={[0, 0.58, 0.53]} s={[0.05, 0.04, 0.03]} c="#1b1b20" />
+          {[-1, 1].map(k => <Box key={'e' + k} p={[k * 0.09, 0.72, 0.3]} r={[0, 0, k * 0.3]} s={[0.06, 0.12, 0.05]} c="#6e4524" />)}
+          {[[-1, -1], [1, -1], [-1, 1], [1, 1]].map(([x, z], i) => <Box key={i} p={[x * 0.09, 0.15, z * 0.2]} s={[0.07, 0.3, 0.07]} c={c || '#b5793f'} />)}
+          <At p={[0, 0.52, -0.28]} r={[-0.7, Math.sin(t * 14) * 0.5, 0]}><Box p={[0, 0.1, 0]} s={[0.05, 0.22, 0.05]} c={c || '#b5793f'} /></At>
+        </At>
+      );
+      case 'iceHole': {
+        // a break in pond ice: crack lines grow over the second before `ignite` (cue-resolved), then the
+        // hole opens (dark water, broken slabs round the rim). `cracks: true` = cracks only, no hole.
+        // An actor standing at the same spot with pos y ≈ -0.9 reads as treading water (the water disc hides the body).
+        const r = N(spec.size, 0.75);
+        const ig = typeof spec.ignite === 'number' ? spec.ignite : undefined;
+        const ck = ig === undefined ? 1 : Math.max(0, Math.min(1, (t - ig + 1) / 1));
+        const open = !spec.cracks && (ig === undefined || t >= ig);
+        const ok = open ? Math.min(1, (t - (ig ?? -1)) / 0.15) : 0;
+        return (
+          <group>
+            {Array.from({ length: 9 }, (_, i) => {
+              const a = (i / 9) * Math.PI * 2 + (i % 3) * 0.31;
+              const L = r * (1.4 + (i % 4) * 0.45) * ck;
+              return <Box key={i} p={[Math.cos(a) * L / 2, 0.036, Math.sin(a) * L / 2]} r={[0, -a, 0]} s={[Math.max(0.001, L), 0.004, 0.025]} c="#5f7f90" />;
+            })}
+            {open && (
+              <>
+                <At p={[0, 0.038, 0]} s={[ok, 1, ok]}>
+                  <Cyl s={[r, 0.01, r]} c={c || '#1d3f5e'} />
+                  <Cyl p={[0, 0.006, 0]} s={[r * 0.55, 0.004, r * 0.55]} c="#2a5578" />
+                </At>
+                {Array.from({ length: 7 }, (_, i) => {
+                  const a = (i / 7) * Math.PI * 2 + 0.4;
+                  return <Box key={'s' + i} p={[Math.cos(a) * r * 1.02, 0.05, Math.sin(a) * r * 1.02]} r={[0.12 * ((i % 2) * 2 - 1), -a, 0.08]} s={[0.22 * ok, 0.05, 0.34 * ok]} c={i % 2 ? '#e6f4fa' : '#cfe6f1'} />;
+                })}
+              </>
+            )}
+          </group>
+        );
+      }
       case 'skateboard': return (
         <At p={[0, 0.07, 0]}>
           <Box s={[0.21, 0.025, 0.8]} c={c || '#7a4fa0'} />

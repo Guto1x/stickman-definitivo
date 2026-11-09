@@ -200,7 +200,8 @@ If the chosen look is that one, skip to "Narrator". Otherwise work through these
    Environment colours (walls, chairs, roofs, cabinets) and effect colours (power glows, aura, ghosts) don't count. But check the sets whose environment shares the new colour (purple: the home kitchen's cabinets, the suburb's roofs). Render each one with the hero in it (`"hero":"hero"` in the SetLab props), and tell the user what clashes, rather than repainting the set.
 
 3. **Text.** Every mention of the hero's outfit must describe the new one. The known places:
-   - `CLAUDE.md`: the intro paragraph, the "… belongs to the hero" rule in the hard-won rules, and both step-10 thumbnail lines;
+   - `CLAUDE.md`: the intro paragraph, the "… belongs to the hero" rule in the hard-won rules;
+   - `docs/pipeline/EPISODE.md`: both step-10 thumbnail lines;
    - `HOW_TO_USE.md`: the outfits line;
    - `docs/STYLE.md`: the "wardrobe" line near the top and the hero section;
    - `docs/review/REVIEWER_BRIEF.md`: the colour rule;
@@ -285,7 +286,7 @@ Otherwise change nothing — step 9 picks a default once ElevenLabs is connected
 
 If the answer was "ChatGPT, by hand":
 - in `thumbnails/config.json`, set `"mode": "chatgpt"`;
-- in CLAUDE.md step 10, change "(current: `fish`)" to "(current: `chatgpt`)";
+- in `docs/pipeline/EPISODE.md` step 10, change "(current: `fish`)" to "(current: `chatgpt`)";
 - in `project-thumbnails-gpt-image.md`, change "Mode stays `fish` for now" to "Mode is `chatgpt` (chosen at setup, <date>)";
 - in `MEMORY.md`, change "(fish now)" to "(chatgpt now)";
 - in `docs/FISH_SETUP.md`, change the "Thumbnails" line to "`chatgpt` mode, chosen at setup: skip steps 5–6 unless the user switches to `fish`".

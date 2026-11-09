@@ -6,12 +6,14 @@
 - [ElevenLabs API key](reference-elevenlabs-key.md) — in D:\stickman-2\.env, gitignored; scoped (no user_read/models_read) — check balance on the dashboard
 - [Thumbnails via GPT Image 2.5](project-thumbnails-gpt-image.md) — 2D GPT Image thumbs, fish or chatgpt mode (chatgpt now), locked 3 variants at 2K medium, only when a video is ~finished; gray quarter-zip jacket
 - [Fish Audio pending](project-fish-pending.md) — Fish MCP NOT connected; now only needed for fish-mode thumbnails (chatgpt mode is current), not voice
-- [Optimization action plan](project-otimizacao.md) — docs/OTIMIZACAO.md all done 2026-11-08; confirm real-API parallel voice + sonnet round-2 cost on next episode; 2nd account on a separate PC
+- [Optimization action plan](project-otimizacao.md) — docs/OTIMIZACAO.md all done; parallel voice + sonnet round-2 confirmed on menu-corpo (2026-11-09)
 - [Projeto 2: future series idea](project-2-series-future.md) — NOT started; continuous "Day N" series voted by YouTube comments, reusing the engine not the What-If blueprint; see futuro.md
 - [Tom ácido](feedback-tom-acido.md) — no cute/family tone: narrator calm but sometimes malicious/sarcastic; bold stakes, still monetizable (2026-11-08)
-- [Don't restructure CLAUDE.md](feedback-nao-reestruturar-claude-md.md) — user declined splitting CLAUDE.md / re-modeling /stickman + reviewers (2026-11-08); wait on earlier optimizations
+- [CLAUDE.md enxuto](feedback-nao-reestruturar-claude-md.md) — episode pipeline moved to docs/pipeline/EPISODE.md, round-1 reviewer on sonnet agent revisor-episodio (2026-11-09)
+- [/clear entre tarefas](feedback-clear-entre-tarefas.md) — remind the user to /clear when switching to an unrelated task (2026-11-09)
 - [Ritmo rápido](project-ritmo-rapido.md) — house pacing since 2026-11-08: coverage sub-cuts, whip/zoom/smash, 9:16-safe; generators use ritmo='rapido'; NO native vertical render — user cuts 9:16 by hand from the 16:9
 - [Cortes p/ shorts](feedback-cortes-shorts.md) — every long episode needs ≥ 4 self-contained ~90 s segments (episode clips); build writes .srt + cortes.txt
 - [Episódios antigos: encerrado](project-refazer-episodios.md) — only zumbi kept (final build done 2026-11-09); keep /stickman credit stop
 - [Duração ≥ 10 min](feedback-duracao-10min.md) — every long episode ≥ 10:00 voiced (~1,600–1,700 words); audit warns [length]; zumbi stays 9:14 (2026-11-09)
 - [Gancho nos 10 s](feedback-gancho-10s.md) — new episodes only: ≥ 2 hook types, ≥ 6 cuts, punchy move, SFX ≤ 2 s; audit [hook]; zumbi opted out (2026-11-09)
+- [Sem música](feedback-sem-musica.md) — menu-do-corpo episode has NO music (user adds tracks in their editor, 2026-11-09); ask on the next episode if it's a house rule

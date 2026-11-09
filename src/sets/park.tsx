@@ -216,7 +216,10 @@ const PicnicBlanket: React.FC<{ p: Vec3; r?: number }> = ({ p, r = 0 }) => (
   </At>
 );
 
-const ParkScene: React.FC<{ time: string }> = React.memo(({ time }) => {
+// winter (variant odd): snow on the lawn, the pond frozen over (pale ice, no ducks or lily pads), frosted hills
+const SNOW = '#e9f0f4';
+const ICE = '#cfe6f1';
+const ParkScene: React.FC<{ time: string; winter?: boolean }> = React.memo(({ time, winter }) => {
   const on = lampsOn(time);
   const rand = rng(9);
   // benches around the plaza, facing the fountain
@@ -235,7 +238,7 @@ const ParkScene: React.FC<{ time: string }> = React.memo(({ time }) => {
   return (
     <group>
       {/* lawn */}
-      <mesh geometry={G.plane} material={envMaterial(GRASS)} rotation={[-Math.PI / 2, 0, 0]} scale={[700, 700, 1]} receiveShadow />
+      <mesh geometry={G.plane} material={envMaterial(winter ? SNOW : GRASS)} rotation={[-Math.PI / 2, 0, 0]} scale={[700, 700, 1]} receiveShadow />
       {/* plaza */}
       <mesh geometry={disc48} material={envMaterial(mix(PLAZA, '#000', 0.12))} position={[0, 0.0, 0]} scale={[8.0, 0.05, 8.0]} receiveShadow />
       <mesh geometry={disc48} material={envMaterial(PLAZA)} position={[0, 0.005, 0]} scale={[7.6, 0.05, 7.6]} receiveShadow />
@@ -266,21 +269,23 @@ const ParkScene: React.FC<{ time: string }> = React.memo(({ time }) => {
       {/* pond */}
       <At p={[POND.c[0], 0, POND.c[1]]}>
         <mesh geometry={disc48} material={envMaterial('#d9c79c')} position={[0, 0.0, 0]} scale={[POND.rx + 0.7, 0.04, POND.rz + 0.7]} receiveShadow />
-        <mesh geometry={disc48} material={envMaterial('#5cb6e0')} position={[0, 0.012, 0]} scale={[POND.rx, 0.04, POND.rz]} receiveShadow />
-        <mesh geometry={disc48} material={envMaterial('#4aa3d2')} position={[0.6, 0.02, -0.3]} scale={[POND.rx * 0.62, 0.04, POND.rz * 0.6]} receiveShadow />
+        <mesh geometry={disc48} material={envMaterial(winter ? ICE : '#5cb6e0')} position={[0, 0.012, 0]} scale={[POND.rx, 0.04, POND.rz]} receiveShadow />
+        <mesh geometry={disc48} material={envMaterial(winter ? '#dcf0f8' : '#4aa3d2')} position={[0.6, 0.02, -0.3]} scale={[POND.rx * 0.62, 0.04, POND.rz * 0.6]} receiveShadow />
         {Array.from({ length: 22 }, (_, i) => {
           const a = (i / 22) * Math.PI * 2 + rand() * 0.15;
           return <Ball key={i} p={[Math.cos(a) * (POND.rx + 0.45), 0.08, Math.sin(a) * (POND.rz + 0.45)]} s={[0.32 + rand() * 0.2, 0.18 + rand() * 0.1, 0.28 + rand() * 0.15]} c={rand() < 0.5 ? '#a9a49a' : '#bdb7ab'} ico />;
         })}
-        {[[-3.5, -1.5], [2.5, 1.8], [-1, 2.4], [4.4, -1.2]].map(([x, z], i) => (
+        {!winter && [[-3.5, -1.5], [2.5, 1.8], [-1, 2.4], [4.4, -1.2]].map(([x, z], i) => (
           <mesh key={i} geometry={G.circle} material={envMaterial('#4f9a45')} position={[x, 0.05, z]} rotation={[-Math.PI / 2, 0, i]} scale={0.42 + (i % 2) * 0.12} receiveShadow />
         ))}
         {Array.from({ length: 9 }, (_, i) => (
           <Cyl key={i} p={[-6.3 + (i % 3) * 0.35, 0.5 + (i % 2) * 0.12, -1.6 + Math.floor(i / 3) * 0.4]} r={[0, 0, (i % 3 - 1) * 0.12]} s={[0.03, 1.0 + (i % 2) * 0.25, 0.03]} c="#4f8a3a" seg8 />
         ))}
-        <Duck p={[1.2, 0.03, 0.4]} r={2.2} />
-        <Duck p={[2.3, 0.03, -0.6]} r={2.6} c="#f2c53c" s={0.6} />
-        <Duck p={[2.9, 0.03, -1.1]} r={2.4} c="#f2c53c" s={0.6} />
+        {!winter && <>
+          <Duck p={[1.2, 0.03, 0.4]} r={2.2} />
+          <Duck p={[2.3, 0.03, -0.6]} r={2.6} c="#f2c53c" s={0.6} />
+          <Duck p={[2.9, 0.03, -1.1]} r={2.4} c="#f2c53c" s={0.6} />
+        </>}
       </At>
       {/* picnic */}
       <PicnicBlanket p={[9, 0, 9]} r={0.4} />
@@ -290,17 +295,17 @@ const ParkScene: React.FC<{ time: string }> = React.memo(({ time }) => {
       {Array.from({ length: 36 }, (_, i) => {
         const a = (i / 36) * Math.PI * 2;
         const r = 78 + (i % 3) * 7;
-        return <mesh key={i} geometry={blob} material={farMat(i % 2 ? '#4b8f4a' : '#45874a')} position={[Math.cos(a) * r, 3, Math.sin(a) * r]} rotation={[0, -a, 0]} scale={[7, 7 + (i % 4), 15]} />;
+        return <mesh key={i} geometry={blob} material={farMat(winter ? (i % 2 ? '#c9d9de' : '#bfd2d8') : i % 2 ? '#4b8f4a' : '#45874a')} position={[Math.cos(a) * r, 3, Math.sin(a) * r]} rotation={[0, -a, 0]} scale={[7, 7 + (i % 4), 15]} />;
       })}
       {Array.from({ length: 10 }, (_, i) => {
         const a = (i / 10) * Math.PI * 2 + 0.3;
-        return <mesh key={'h' + i} geometry={blob} material={farMat('#5c9c55')} position={[Math.cos(a) * 160, -8, Math.sin(a) * 160]} scale={[60, 26 + (i % 3) * 8, 60]} />;
+        return <mesh key={'h' + i} geometry={blob} material={farMat(winter ? '#d6e3e8' : '#5c9c55')} position={[Math.cos(a) * 160, -8, Math.sin(a) * 160]} scale={[60, 26 + (i % 3) * 8, 60]} />;
       })}
     </group>
   );
 });
 
-export const ParkSet: React.FC<SetProps> = ({ time }) => <ParkScene time={time} />;
+export const ParkSet: React.FC<SetProps> = ({ time, variant }) => <ParkScene time={time} winter={variant % 2 === 1} />;
 
 const benchMark = (() => {
   const a = (135 * Math.PI) / 180;
@@ -314,6 +319,8 @@ export const PARK_MARKS: Record<string, Vec3> = {
   path: along(0, 0.3).p.map((v, i) => (i === 1 ? 0.02 : v)) as Vec3, // on the main path towards +z
   pathFar: along(0, 0.6).p.map((v, i) => (i === 1 ? 0.02 : v)) as Vec3,
   pond: [-12.5, 0, -8.6], // lawn at the pond's edge, ducks in front (-z)
+  ice: [-15.5, 0.03, -12.6], // out on the (winter) pond ice, ~3 m from the near shore
+  shore: [-11.6, 0, -9.0], // near shore of the pond, facing the ice (rot ~ -125)
   lawn: [6, 0, 12], // open grass by the picnic blanket
   picnic: [9, 0.02, 9],
   west: along(1, 0.35).p.map((v, i) => (i === 1 ? 0.02 : v)) as Vec3, // path B (towards -x)

@@ -21,7 +21,7 @@ export const OUTDOOR_SETS: Record<string, SetDef> = {
     marks: PARK_MARKS,
     shadowBox: 22,
     description:
-      'City park: lawn (y 0) with a round paved plaza + two-tier fountain at the origin (plaza top y 0.03), curving paths to +z, -x and +x/-z (top y 0.02), duck pond at (-17,-14), benches, park lamps, flower beds, picnic blanket at (9,9), tree line + hills. Sit on `bench` with rot 135. Palettes: afternoon, day, golden, dusk, night. Cams: plaza {pos:[0,1.6,13],look:[0,1.2,3]}; path {pos:[-1,1.5,32],look:[-2,1.1,20]}; pond {pos:[-6,1.7,-2],look:[-15,0.6,-12]}.',
+      'City park: lawn (y 0) with a round paved plaza + two-tier fountain at the origin (plaza top y 0.03), curving paths to +z, -x and +x/-z (top y 0.02), duck pond at (-17,-14), benches, park lamps, flower beds, picnic blanket at (9,9), tree line + hills. Sit on `bench` with rot 135. variant odd = WINTER: snow lawn, frozen pond (ice top y≈0.03; marks `ice`, `shore`; prop `iceHole` for a break-through). Palettes: afternoon, day, golden, dusk, night. Cams: plaza {pos:[0,1.6,13],look:[0,1.2,3]}; path {pos:[-1,1.5,32],look:[-2,1.1,20]}; pond {pos:[-6,1.7,-2],look:[-15,0.6,-12]}.',
   },
   stadium: {
     component: StadiumSet,
